@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on 布淇</title>
+    <link>http://bookie.xiaoshutiao.top/about/</link>
+    <description>Recent content in Abouts on 布淇</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jul 2015 14:08:35 +0200</lastBuildDate>
+    
+	<atom:link href="http://bookie.xiaoshutiao.top/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于布淇</title>
+      <link>http://bookie.xiaoshutiao.top/about/about/</link>
+      <pubDate>Sat, 18 Jul 2015 14:08:35 +0200</pubDate>
+      
+      <guid>http://bookie.xiaoshutiao.top/about/about/</guid>
+      <description>通过布淇，你能从几千本电子书中找到自己喜欢的那本，并一键发送到自己的Kindle，或者自己的电子邮箱。</description>
+    </item>
+    
+  </channel>
+</rss>
