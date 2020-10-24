@@ -1,0 +1,140 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NativeAllocationEntries
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Profiling.Memory.Experimental
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含本机分配条目数据的类，由
+   <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeAllocations.html">
+    PackedMemorySnapshot.nativeAllocations
+   </a>
+   返回。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-address.html">
+      address
+     </a>
+    </td>
+    <td class="desc">
+     包含本机内存分配地址的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-allocationSiteId.html">
+      allocationSiteId
+     </a>
+    </td>
+    <td class="desc">
+     分配的分配站点 ID，由 NativeAllocationSiteEntries.id 使用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-memoryRegionIndex.html">
+      memoryRegionIndex
+     </a>
+    </td>
+    <td class="desc">
+     这是索引数组，其中的索引用于指示内存分配所表示的内存区域、起始区域、内部区域或结束区域。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-overheadSize.html">
+      overheadSize
+     </a>
+    </td>
+    <td class="desc">
+     这是一个数组，用于指定返回的本机分配中有多少内存量不属于您请求的量（以字节为单位）。开销内存用于分配标头和其他描述分配的元数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-paddingSize.html">
+      paddingSize
+     </a>
+    </td>
+    <td class="desc">
+     这是一个数组，用于指定所需的填充量（以字节为单位）以对齐返回的本机分配。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-rootReferenceId.html">
+      rootReferenceId
+     </a>
+    </td>
+    <td class="desc">
+     用于分配的根引用 ID 数组。与 NativeRootReferenceEntries.id 数组中的条目相对应。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     包含本机分配总大小（以字节为单位）的数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeAllocationEntries.GetNumEntries.html">
+      GetNumEntries
+     </a>
+    </td>
+    <td class="desc">
+     获取分配条目的数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

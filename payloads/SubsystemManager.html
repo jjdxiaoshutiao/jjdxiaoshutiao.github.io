@@ -1,0 +1,116 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SubsystemManager
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供对子系统（通过插件提供额外功能）的访问权限。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   提供查询
+   <a href="SubsystemDescriptor.html">
+    SubsystemDescriptor
+   </a>
+   （枚举了功能）的功能。给定一个
+   <a href="SubsystemDescriptor.html">
+    SubsystemDescriptor
+   </a>
+   ，您可以创建
+   <a href="Subsystem.html">
+    Subsystem
+   </a>
+   来利用子系统。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SubsystemManager.GetAllSubsystemDescriptors.html">
+      GetAllSubsystemDescriptors
+     </a>
+    </td>
+    <td class="desc">
+     不管特定的子系统类型为何，都将获取所有当前已知的子系统描述符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SubsystemManager.GetInstances.html">
+      GetInstances
+     </a>
+    </td>
+    <td class="desc">
+     返回特定实例类型的活动 Subsystem。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SubsystemManager.GetSubsystemDescriptors.html">
+      GetSubsystemDescriptors
+     </a>
+    </td>
+    <td class="desc">
+     返回 SubsystemDescriptor（描述了可启用的额外功能）的列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SubsystemManager-reloadSubsytemsCompleted.html">
+      reloadSubsytemsCompleted
+     </a>
+    </td>
+    <td class="desc">
+     完成重新加载所有 XR SDK Provider 打包的子系统后，从 SubsystemManager 调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SubsystemManager-reloadSubsytemsStarted.html">
+      reloadSubsytemsStarted
+     </a>
+    </td>
+    <td class="desc">
+     在重新加载所有 XR SDK Provider 打包的子系统前，从 SubsystemManager 调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

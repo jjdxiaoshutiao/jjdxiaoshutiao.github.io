@@ -1,0 +1,158 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   CollectImportedDependenciesAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.AssetImporters
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此方法属性可指定哪些方法对导入的资源声明依赖关系。方法有
+   <a href="AssetDatabase.html">
+    AssetDatabase
+   </a>
+   在导入过程中调用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   AssetDatabase 在导入依赖资源之前导入方法通过此属性声明的依赖关系。只要依赖关系资源更改，它还会重新导入该依赖关系资源。使用此经过声明的依赖关系可以在
+   <a href="AssetPostprocessor.html">
+    AssetPostprocessor
+   </a>
+   回调中安全加载依赖关系。
+   <br/>
+   <br/>
+   此示例说明如何声明由
+   <a href="ModelImporter.html">
+    ModelImporter
+   </a>
+   导入的两个预制件之间的依赖关系以及如何在 AssetPostprocessor 中使用这两个预制件。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Experimental.AssetImporters;
+using UnityEngine;<br/><br/>public class ProceduralParentPostprocessor : <a href="AssetPostprocessor.html">AssetPostprocessor</a>
+{
+    private const string s_DependentPath = "Assets/ProceduralPrefab.fbx";
+    private const string s_DependencyPath = "Assets/DependencyPrefab.fbx";<br/><br/>    [CollectImportedDependencies(typeof(<a href="ModelImporter.html">ModelImporter</a>), 1)]
+    public static string[] CollectImportedDependenciesForModelImporter(string assetPath)
+    {
+        if (assetPath.Equals(s_DependentPath))
+            return new[] { s_DependencyPath };<br/><br/>        return null;
+    }<br/><br/>    void OnPostprocessMeshHierarchy(<a href="GameObject.html">GameObject</a> root)
+    {
+        if (root.name == "ProceduralPrefabRoot")
+        {
+            // Add a new child game object
+            var go = <a href="AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>(s_DependencyPath) as <a href="GameObject.html">GameObject</a>;
+            <a href="Object.Instantiate.html">Object.Instantiate</a>(go, root.transform, true);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意：
+   </strong>
+   该属性仅对
+   <a href="AssetPostprocessor.html">
+    AssetPostprocessor
+   </a>
+   回调支持原生导入器类型：
+   <a href="ModelImporter.html">
+    ModelImporter
+   </a>
+   、
+   <a href="TextureImporter.html">
+    TextureImporter
+   </a>
+   、
+   <a href="AudioImporter.html">
+    AudioImporter
+   </a>
+   和
+   <a href="SpeedTreeImporter.html">
+    SpeedTreeImporter
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.CollectImportedDependenciesAttribute-importerType.html">
+      importerType
+     </a>
+    </td>
+    <td class="desc">
+     为其声明导入依赖关系的 getter 的导入器类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.CollectImportedDependenciesAttribute-version.html">
+      version
+     </a>
+    </td>
+    <td class="desc">
+     导入依赖关系 getter 的版本。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.CollectImportedDependenciesAttribute-ctor.html">
+      CollectImportedDependenciesAttribute
+     </a>
+    </td>
+    <td class="desc">
+     使用 CollectImportedDependencies 属性可为导入的依赖关系声明 getter。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

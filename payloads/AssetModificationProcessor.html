@@ -1,0 +1,103 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssetModificationProcessor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AssetModificationProcessor 允许您保存在 Unity 内部编辑过的
+      序列化资源和场景。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此函数可防止 Unity 写入资源以与需要锁定文件的
+      Perforce 等 VCS 解决方案集成。
+   <br/>
+   <br/>
+   此函数可用作回调，用于确定资源的保存时间。然后，您可以执行
+      运行代码生成器等操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   消息
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetModificationProcessor.IsOpenForEdit.html">
+      IsOpenForEdit
+     </a>
+    </td>
+    <td class="desc">
+     当 Unity 检查资源以确定是否应禁用编辑器时，则会调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetModificationProcessor.OnWillCreateAsset.html">
+      OnWillCreateAsset
+     </a>
+    </td>
+    <td class="desc">
+     Unity 在即将创建未导入的资源（例如，.meta 文件）时调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetModificationProcessor.OnWillDeleteAsset.html">
+      OnWillDeleteAsset
+     </a>
+    </td>
+    <td class="desc">
+     当 Unity 即将从磁盘中删除资源时，则会调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetModificationProcessor.OnWillMoveAsset.html">
+      OnWillMoveAsset
+     </a>
+    </td>
+    <td class="desc">
+     Unity 即将在磁盘上移动资源时会调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetModificationProcessor.OnWillSaveAssets.html">
+      OnWillSaveAssets
+     </a>
+    </td>
+    <td class="desc">
+     Unity 即将向磁盘写入序列化资源或场景文件时会调用此方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

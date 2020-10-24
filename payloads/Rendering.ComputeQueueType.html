@@ -1,0 +1,76 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ComputeQueueType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述所需要的有关队列优先级和负载均衡的特征，通过
+   <a href="Graphics.ExecuteCommandBufferAsync.html">
+    Graphics.ExecuteCommandBufferAsync
+   </a>
+   后 [[ScriptableRenderContext.ExecuteCommandBufferAsync] 提交的命令缓冲区应发送到该队列。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ComputeQueueType.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     此队列类型适合计算任务支持或用作图形处理优化。发送给此队列的 CommandBuffers 应在单帧范围内完成，可能通过 GPUFence 与图形队列同步。默认队列类型的分发将以比图形队列任务更低的优先级执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ComputeQueueType.Background.html">
+      Background
+     </a>
+    </td>
+    <td class="desc">
+     背景队列类型应适合运行较长时间的任务，例如，运行一帧的大部分或几帧。背景队列的分发将以比 gfx 队列任务更低的优先级执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ComputeQueueType.Urgent.html">
+      Urgent
+     </a>
+    </td>
+    <td class="desc">
+     此队列类型适合需要尽快处理并且优先于图形队列的计算任务。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

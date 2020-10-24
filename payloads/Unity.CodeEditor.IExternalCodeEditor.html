@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IExternalCodeEditor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in Unity.CodeEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义将外部脚本编辑器集成到 UnityEditor 中的处理职责。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.Installations.html">
+      Installations
+     </a>
+    </td>
+    <td class="desc">
+     为编辑器提供此实例支持的已知和受支持编辑器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.Initialize.html">
+      Initialize
+     </a>
+    </td>
+    <td class="desc">
+     在 PreferenceWindow 中选择 IExternalCodeEditor 后，对该编辑器进行回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.OnGUI.html">
+      OnGUI
+     </a>
+    </td>
+    <td class="desc">
+     Unity 在填充 "Preferences/External Tools" 以允许代码编辑器生成必要的 GUI 时会调用此方法。例如，当创建参数字段来修改发送给代码编辑器的参数时。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.OpenProject.html">
+      OpenProject
+     </a>
+    </td>
+    <td class="desc">
+     外部代码编辑器需要处理该请求才能打开文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.SyncAll.html">
+      SyncAll
+     </a>
+    </td>
+    <td class="desc">
+     Unity 在初始化时调用此函数以同步项目。与 SyncIfNeeded 的不同之处在于，它不获取更改列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.SyncIfNeeded.html">
+      SyncIfNeeded
+     </a>
+    </td>
+    <td class="desc">
+     在 Unity 中更改资源时，面向当前所选 IExternalCodeEditor 实例的此方法会分析新的和更改的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.CodeEditor.IExternalCodeEditor.TryGetInstallationForPath.html">
+      TryGetInstallationForPath
+     </a>
+    </td>
+    <td class="desc">
+     Unity 存储所选编辑器的路径。通过在此方法被调用时返回 True，IExternalCodeEditor 实例可负责此路径。out 变量 installation 需要用 "External Tools" 代码编辑器列表中所示的路径和名称构造。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

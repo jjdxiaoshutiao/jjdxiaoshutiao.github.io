@@ -1,0 +1,631 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Input
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   访问输入系统的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用该类来读取
+   <a href="../Manual/ConventionalGameInput.html">
+    传统游戏输入
+   </a>
+   中设置的轴，以及访问移动设备上的多点触控/加速度计数据。
+   <br/>
+   <br/>
+   要读取轴，请将
+   <a href="Input.GetAxis.html">
+    Input.GetAxis
+   </a>
+   与以下默认轴之一配合使用：
+“Horizontal”和“Vertical”映射到游戏杆（
+   <code class="varname">
+    D
+   </code>
+   、
+   <code class="varname">
+    D
+   </code>
+   、
+   <code class="varname">
+    D
+   </code>
+   、
+   <code class="varname">
+    D
+   </code>
+   和箭头键）。
+“Mouse X”和“Mouse Y”映射到鼠标增量。
+“Fire1”、“Fire2”、“Fire3”映射到
+   <code class="varname">
+    Cmd
+   </code>
+   、
+   <code class="varname">
+    Cmd
+   </code>
+   、
+   <code class="varname">
+    Cmd
+   </code>
+   键和三个鼠标或游戏杆按钮。
+可以添加新输入轴。请参阅
+   <a href="../Manual/class-InputManager.html">
+    输入管理器
+   </a>
+   以了解相关信息。
+   <br/>
+   <br/>
+   若要使用输入来进行任何类型的移动行为，请使用
+   <a href="Input.GetAxis.html">
+    Input.GetAxis
+   </a>
+   。
+它为您提供平滑且可配置的输入 - 可以映射到键盘、游戏杆或鼠标。
+请将
+   <a href="Input.GetButton.html">
+    Input.GetButton
+   </a>
+   仅用于事件等操作。不要将它用于移动操作。
+   <a href="Input.GetAxis.html">
+    Input.GetAxis
+   </a>
+   将使脚本代码更简洁。
+   <br/>
+   <br/>
+   另请注意，执行
+   <code class="varname">
+    Update
+   </code>
+   前，不会重置
+   <a href="Input.html">
+    Input
+   </a>
+   标志。建议在
+   <code class="varname">
+    Update
+   </code>
+   循环中进行所有的
+   <a href="Input.html">
+    Input
+   </a>
+   调用。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="KeyCode.html">
+    KeyCode
+   </a>
+   ，其中列出了所有的按键、鼠标和游戏杆选项。
+   <br/>
+   <br/>
+   <strong>
+    移动设备：
+   </strong>
+   <br/>
+   <br/>
+   iOS 和 Android 设备能够跟踪多根手指同时触摸屏幕的操作。
+您可以通过访问
+   <a href="Input-touches.html">
+    Input.touches
+   </a>
+   属性数组来访问最后一帧期间每根手指触摸屏幕的状态数据。
+   <br/>
+   <br/>
+   设备移动时，其加速度计硬件将报告设备沿三维空间中的三个主轴的线性加速度变化。
+您可以使用该数据检测设备的当前方向（相对于地面）以及该方向上的任何即时更改。
+   <br/>
+   <br/>
+   硬件将沿每个轴的加速度直接报告为重力值。
+值 1.0 表示沿给定轴约 +1g 的荷载，值 -1.0 表示 -1g。
+当将设备竖直握住（主按钮位于底部）举到您正前方时，
+右侧为正 X 轴，上方为正 Y 轴，指向您的方向为正 Z 轴。
+   <br/>
+   <br/>
+   您可以读取
+   <a href="Input-acceleration.html">
+    Input.acceleration
+   </a>
+   属性来获取加速度计读数。
+也可以使用
+   <a href="Input-deviceOrientation.html">
+    Input.deviceOrientation
+   </a>
+   属性获取设备在三维空间中的方向的离散估值。
+如果您想在用户旋转设备（以不同方式把握设备时）时创建游戏行为，则检测方向变化将非常有用。
+   <br/>
+   <br/>
+   注意，每帧可以轮询加速度计硬件数次。
+要访问自上一帧以来的所有加速度计样本，可以读取
+   <a href="Input-accelerationEvents.html">
+    Input.accelerationEvents
+   </a>
+   属性数组。
+这在重建玩家动作、将加速度数据输入预测器或实现其他精确运动分析时非常有用。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (<a href="Input.GetButtonDown.html">Input.GetButtonDown</a>("Fire1"))
+        {
+            <a href="Debug.Log.html">Debug.Log</a>(<a href="Input-mousePosition.html">Input.mousePosition</a>);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   该组件涉及将 UI 纹理和图像绘制到屏幕的
+传统方法。应改用 UI 系统。此外，
+这与 IMGUI 系统无关。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Input-acceleration.html">
+      acceleration
+     </a>
+    </td>
+    <td class="desc">
+     最近测量的设备在三维空间中的线性加速度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-accelerationEventCount.html">
+      accelerationEventCount
+     </a>
+    </td>
+    <td class="desc">
+     上一帧期间进行的加速度测量的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-accelerationEvents.html">
+      accelerationEvents
+     </a>
+    </td>
+    <td class="desc">
+     返回上一帧期间进行的加速度测量的列表。（只读）（分配临时变量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-anyKey.html">
+      anyKey
+     </a>
+    </td>
+    <td class="desc">
+     当前是否有任何键或鼠标按钮处于按下状态？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-anyKeyDown.html">
+      anyKeyDown
+     </a>
+    </td>
+    <td class="desc">
+     在用户按任意键或鼠标按钮后的第一帧返回 true。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-backButtonLeavesApp.html">
+      backButtonLeavesApp
+     </a>
+    </td>
+    <td class="desc">
+     Back 按钮是否应该退出应用程序？仅适用于 Android、Windows Phone 或 Windows 平板电脑。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-compass.html">
+      compass
+     </a>
+    </td>
+    <td class="desc">
+     用于访问罗盘的属性（仅限手持设备）。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-compensateSensors.html">
+      compensateSensors
+     </a>
+    </td>
+    <td class="desc">
+     该属性控制是否应该对输入传感器补偿屏幕方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-compositionCursorPos.html">
+      compositionCursorPos
+     </a>
+    </td>
+    <td class="desc">
+     IME 用于打开窗口的当前文本输入位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-compositionString.html">
+      compositionString
+     </a>
+    </td>
+    <td class="desc">
+     用户键入的当前 IME 组合字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-deviceOrientation.html">
+      deviceOrientation
+     </a>
+    </td>
+    <td class="desc">
+     操作系统报告的设备的物理方向。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-gyro.html">
+      gyro
+     </a>
+    </td>
+    <td class="desc">
+     返回默认陀螺仪。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-imeCompositionMode.html">
+      imeCompositionMode
+     </a>
+    </td>
+    <td class="desc">
+     控制 IME 输入组合的启用和禁用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-imeIsSelected.html">
+      imeIsSelected
+     </a>
+    </td>
+    <td class="desc">
+     用户是否选择了 IME 键盘输入源？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-inputString.html">
+      inputString
+     </a>
+    </td>
+    <td class="desc">
+     返回该帧输入的键盘输入。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-location.html">
+      location
+     </a>
+    </td>
+    <td class="desc">
+     用于访问设备位置的属性（仅限手持设备）。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-mousePosition.html">
+      mousePosition
+     </a>
+    </td>
+    <td class="desc">
+     鼠标当前的像素坐标位置。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-mousePresent.html">
+      mousePresent
+     </a>
+    </td>
+    <td class="desc">
+     指示是否检测到鼠标设备。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-mouseScrollDelta.html">
+      mouseScrollDelta
+     </a>
+    </td>
+    <td class="desc">
+     当前的鼠标滚动增量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-multiTouchEnabled.html">
+      multiTouchEnabled
+     </a>
+    </td>
+    <td class="desc">
+     该属性指示系统是否处理多点触控。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-simulateMouseWithTouches.html">
+      simulateMouseWithTouches
+     </a>
+    </td>
+    <td class="desc">
+     启用/禁用通过触摸模拟鼠标操作。默认情况下，该选项已启用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-stylusTouchSupported.html">
+      stylusTouchSupported
+     </a>
+    </td>
+    <td class="desc">
+     当设备或平台支持 Stylus Touch 时，返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-touchCount.html">
+      touchCount
+     </a>
+    </td>
+    <td class="desc">
+     触摸次数。保证在整个帧期间不会更改。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-touches.html">
+      touches
+     </a>
+    </td>
+    <td class="desc">
+     返回表示上一帧中所有触摸状态的对象列表。（只读）（分配临时变量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-touchPressureSupported.html">
+      touchPressureSupported
+     </a>
+    </td>
+    <td class="desc">
+     供用户检查是否支持触摸压力的 bool 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input-touchSupported.html">
+      touchSupported
+     </a>
+    </td>
+    <td class="desc">
+     返回当前正在运行应用程序的设备是否支持触摸输入。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetAccelerationEvent.html">
+      GetAccelerationEvent
+     </a>
+    </td>
+    <td class="desc">
+     返回上一帧期间进行的特定加速度测量。（不分配临时变量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetAxis.html">
+      GetAxis
+     </a>
+    </td>
+    <td class="desc">
+     返回由 axisName 标识的虚拟轴的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetAxisRaw.html">
+      GetAxisRaw
+     </a>
+    </td>
+    <td class="desc">
+     返回由 axisName 标识的虚拟轴的值（未应用平滑过滤）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetButton.html">
+      GetButton
+     </a>
+    </td>
+    <td class="desc">
+     当按住 buttonName 标识的虚拟按钮时，返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetButtonDown.html">
+      GetButtonDown
+     </a>
+    </td>
+    <td class="desc">
+     在用户按下由 buttonName 标识的虚拟按钮的帧期间返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetButtonUp.html">
+      GetButtonUp
+     </a>
+    </td>
+    <td class="desc">
+     在用户释放由 buttonName 标识的虚拟按钮的第一帧返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetJoystickNames.html">
+      GetJoystickNames
+     </a>
+    </td>
+    <td class="desc">
+     获取与在输入管理器中配置的轴的索引对应的输入设备名称的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetKey.html">
+      GetKey
+     </a>
+    </td>
+    <td class="desc">
+     在用户按下 name 标识的键时返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetKeyDown.html">
+      GetKeyDown
+     </a>
+    </td>
+    <td class="desc">
+     在用户开始按下 name 标识的键的帧期间返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetKeyUp.html">
+      GetKeyUp
+     </a>
+    </td>
+    <td class="desc">
+     在用户释放 name 标识的键的帧期间返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetMouseButton.html">
+      GetMouseButton
+     </a>
+    </td>
+    <td class="desc">
+     返回是否按下了给定的鼠标按钮。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetMouseButtonDown.html">
+      GetMouseButtonDown
+     </a>
+    </td>
+    <td class="desc">
+     在用户按下给定鼠标按钮的帧期间返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetMouseButtonUp.html">
+      GetMouseButtonUp
+     </a>
+    </td>
+    <td class="desc">
+     在用户释放给定鼠标按钮的帧期间返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.GetTouch.html">
+      GetTouch
+     </a>
+    </td>
+    <td class="desc">
+     调用 Input.GetTouch 以获取 Touch 结构。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.IsJoystickPreconfigured.html">
+      IsJoystickPreconfigured
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 是否已预先配置某个特定的游戏杆模型。（仅限 Linux）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Input.ResetInputAxes.html">
+      ResetInputAxes
+     </a>
+    </td>
+    <td class="desc">
+     重置所有输入。调用 ResetInputAxes 后，所有轴和所有按钮都恢复为 0，并且持续一帧时长。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,575 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Vector3
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于表示 3D 向量和点。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 内部使用该结构传递 3D 位置和方向。
+此外，它还包含用于执行常见向量操作的函数。
+   <br/>
+   <br/>
+   除了下面列出的函数以外，也可以使用其他类操作向量和点。
+例如，对于旋转或变换向量和点来说，
+   <a href="Quaternion.html">
+    Quaternion
+   </a>
+   和
+   <a href="Matrix4x4.html">
+    Matrix4x4
+   </a>
+   类也很有用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-back.html">
+      back
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(0, 0, -1) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-down.html">
+      down
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(0, -1, 0) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-forward.html">
+      forward
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(0, 0, 1) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-left.html">
+      left
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(-1, 0, 0) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-negativeInfinity.html">
+      negativeInfinity
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-one.html">
+      one
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(1, 1, 1) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-positiveInfinity.html">
+      positiveInfinity
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-right.html">
+      right
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(1, 0, 0) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-up.html">
+      up
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(0, 1, 0) 的简便方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-zero.html">
+      zero
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 Vector3(0, 0, 0) 的简便方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-magnitude.html">
+      magnitude
+     </a>
+    </td>
+    <td class="desc">
+     返回该向量的长度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-normalized.html">
+      normalized
+     </a>
+    </td>
+    <td class="desc">
+     返回 magnitude 为 1 时的该向量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-sqrMagnitude.html">
+      sqrMagnitude
+     </a>
+    </td>
+    <td class="desc">
+     返回该向量的平方长度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Index_operator.html">
+      this[int]
+     </a>
+    </td>
+    <td class="desc">
+     分别使用 [0]、[1]、[2] 访问 x、y、z 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-x.html">
+      x
+     </a>
+    </td>
+    <td class="desc">
+     向量的 X 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-y.html">
+      y
+     </a>
+    </td>
+    <td class="desc">
+     向量的 Y 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-z.html">
+      z
+     </a>
+    </td>
+    <td class="desc">
+     向量的 Z 分量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-ctor.html">
+      Vector3
+     </a>
+    </td>
+    <td class="desc">
+     使用给定的 x、y、z 分量创建新向量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     如果给定向量与该向量完全相等，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Set.html">
+      Set
+     </a>
+    </td>
+    <td class="desc">
+     设置现有 Vector3 的 x、y 和 z 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     对于该向量，返回整齐格式化的字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Angle.html">
+      Angle
+     </a>
+    </td>
+    <td class="desc">
+     返回 from 与 to 之间的角度（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.ClampMagnitude.html">
+      ClampMagnitude
+     </a>
+    </td>
+    <td class="desc">
+     返回 vector 的副本，其大小被限制为 /maxLength/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Cross.html">
+      Cross
+     </a>
+    </td>
+    <td class="desc">
+     两个向量的叉积。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Distance.html">
+      Distance
+     </a>
+    </td>
+    <td class="desc">
+     返回 a 与 b 之间的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Dot.html">
+      Dot
+     </a>
+    </td>
+    <td class="desc">
+     两个向量的点积。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Lerp.html">
+      Lerp
+     </a>
+    </td>
+    <td class="desc">
+     在两个点之间进行线性插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.LerpUnclamped.html">
+      LerpUnclamped
+     </a>
+    </td>
+    <td class="desc">
+     在两个向量之间进行线性插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Max.html">
+      Max
+     </a>
+    </td>
+    <td class="desc">
+     返回由两个向量的最大分量组成的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Min.html">
+      Min
+     </a>
+    </td>
+    <td class="desc">
+     返回由两个向量的最小分量组成的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.MoveTowards.html">
+      MoveTowards
+     </a>
+    </td>
+    <td class="desc">
+     计算 current 指定的点与 target 指定的点之间的位置，移动距离不超过 maxDistanceDelta 指定的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Normalize.html">
+      Normalize
+     </a>
+    </td>
+    <td class="desc">
+     使该向量的 magnitude 为 1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.OrthoNormalize.html">
+      OrthoNormalize
+     </a>
+    </td>
+    <td class="desc">
+     将向量标准化并使它们彼此正交。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Project.html">
+      Project
+     </a>
+    </td>
+    <td class="desc">
+     将向量投影到另一个向量上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.ProjectOnPlane.html">
+      ProjectOnPlane
+     </a>
+    </td>
+    <td class="desc">
+     将向量投影到由法线定义的平面上（法线与该平面正交）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Reflect.html">
+      Reflect
+     </a>
+    </td>
+    <td class="desc">
+     从法线定义的平面反射一个向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.RotateTowards.html">
+      RotateTowards
+     </a>
+    </td>
+    <td class="desc">
+     将向量 current 朝 target 旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Scale.html">
+      Scale
+     </a>
+    </td>
+    <td class="desc">
+     将两个向量的分量相乘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.SignedAngle.html">
+      SignedAngle
+     </a>
+    </td>
+    <td class="desc">
+     返回 from 与 to 之间的有符号角度（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.Slerp.html">
+      Slerp
+     </a>
+    </td>
+    <td class="desc">
+     在两个向量之间进行球形插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.SlerpUnclamped.html">
+      SlerpUnclamped
+     </a>
+    </td>
+    <td class="desc">
+     在两个向量之间进行球形插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3.SmoothDamp.html">
+      SmoothDamp
+     </a>
+    </td>
+    <td class="desc">
+     随时间推移将一个向量逐渐改变为所需目标。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_subtract.html">
+      operator -
+     </a>
+    </td>
+    <td class="desc">
+     将一个向量减去另一个向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_ne.html">
+      operator !=
+     </a>
+    </td>
+    <td class="desc">
+     如果向量不同，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_multiply.html">
+      operator *
+     </a>
+    </td>
+    <td class="desc">
+     将向量乘以一个数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_divide.html">
+      operator /
+     </a>
+    </td>
+    <td class="desc">
+     将向量除以一个数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_add.html">
+      operator +
+     </a>
+    </td>
+    <td class="desc">
+     将两个向量相加。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Vector3-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     如果两个向量大致相等，则返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

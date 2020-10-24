@@ -1,0 +1,85 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   XRStats
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   XR 子系统的用时和其他统计信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   一些 XR SDK 提供对额外用时和其他统计信息的访问。游戏和应用程序可使用这些信息进行分析和动态性能调整。例如，在运行时修改
+   <a href="XR.XRSettings-eyeTextureResolutionScale.html">
+    XRSettings.eyeTextureResolutionScale
+   </a>
+   或
+   <a href="XR.XRSettings-renderViewportScale.html">
+    XRSettings.renderViewportScale
+   </a>
+   可以提高性能。此类公开了一组可由 SDK 选择性报告的信息。请务必使用任何方法的返回值来了解 SDK 是否正在报告数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRStats.TryGetDroppedFrameCount.html">
+      TryGetDroppedFrameCount
+     </a>
+    </td>
+    <td class="desc">
+     检索 XR SDK 报告的丢弃的帧数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRStats.TryGetFramePresentCount.html">
+      TryGetFramePresentCount
+     </a>
+    </td>
+    <td class="desc">
+     检索 XR SDK 报告的当前帧绘制到设备中的次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRStats.TryGetGPUTimeLastFrame.html">
+      TryGetGPUTimeLastFrame
+     </a>
+    </td>
+    <td class="desc">
+     检索 XR SDK 报告的 GPU 最后一帧花费的时间（以秒为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

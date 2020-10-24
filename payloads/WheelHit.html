@@ -1,0 +1,181 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WheelHit
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   车轮的接触信息，由
+   <a href="WheelCollider.html">
+    WheelCollider
+   </a>
+   报告。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="WheelCollider.html">
+    WheelCollider
+   </a>
+   的摩擦力是使用基于打滑的轮胎摩擦模型独立于
+物理引擎的其余部分计算的。这样可以实现更逼真的行为，
+但会导致车轮碰撞体忽略标准
+   <a href="PhysicMaterial.html">
+    PhysicMaterial
+   </a>
+   设置。
+   <br/>
+   <br/>
+   模拟不同地面材质的方法是查询
+   <a href="WheelCollider.html">
+    WheelCollider
+   </a>
+   以获取其碰撞
+信息（请参阅
+   <a href="WheelCollider.GetGroundHit.html">
+    WheelCollider.GetGroundHit
+   </a>
+   ）。通常，您获取车轮所碰撞的其他
+碰撞体，根据地面的物理材质修改车轮的
+   <a href="WheelCollider-forwardFriction.html">
+    WheelCollider.forwardFriction
+   </a>
+   和
+   <a href="WheelCollider-sidewaysFriction.html">
+    WheelCollider.sidewaysFriction
+   </a>
+   。
+   <br/>
+   <br/>
+   WheelHit 结构的其他成员通常用于信息查询目的或特殊
+效果。例如，如果
+   <a href="WheelHit-forwardSlip.html">
+    forwardSlip
+   </a>
+   或
+   <a href="WheelHit-sidewaysSlip.html">
+    sidewaysSlip
+   </a>
+   超出一定的阈值，可以播放
+“轮胎打滑”声音。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="WheelCollider.GetGroundHit.html">
+    WheelCollider.GetGroundHit
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-collider.html">
+      collider
+     </a>
+    </td>
+    <td class="desc">
+     车轮所撞击的其他 Collider。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-force.html">
+      force
+     </a>
+    </td>
+    <td class="desc">
+     施加到接触面的力的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-forwardDir.html">
+      forwardDir
+     </a>
+    </td>
+    <td class="desc">
+     车轮所指向的方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-forwardSlip.html">
+      forwardSlip
+     </a>
+    </td>
+    <td class="desc">
+     滚动方向的轮胎打滑。加速打滑为负数，制动打滑为正数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-normal.html">
+      normal
+     </a>
+    </td>
+    <td class="desc">
+     接触点处的法线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-point.html">
+      point
+     </a>
+    </td>
+    <td class="desc">
+     车轮与地面之间的接触点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-sidewaysDir.html">
+      sidewaysDir
+     </a>
+    </td>
+    <td class="desc">
+     车轮的侧向方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelHit-sidewaysSlip.html">
+      sidewaysSlip
+     </a>
+    </td>
+    <td class="desc">
+     侧向方向的轮胎打滑。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioCurveRendering
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   编辑器中音频工具使用的抗锯齿曲线渲染功能。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.DrawCurve.html">
+      DrawCurve
+     </a>
+    </td>
+    <td class="desc">
+     渲染曲线评估函数确定的细曲线。曲线的纯色由 curveColor 参数设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.DrawFilledCurve.html">
+      DrawFilledCurve
+     </a>
+    </td>
+    <td class="desc">
+     填充由提供的 AudioCurveAndColorEvaluator 评估的曲线与矩形底部之间的区域，沿边缘方向平缓渐变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.DrawMinMaxFilledCurve.html">
+      DrawMinMaxFilledCurve
+     </a>
+    </td>
+    <td class="desc">
+     填充由提供的 AudioMinMaxCurveAndColorEvaluator 评估的两条曲线之间的区域，沿边缘方向平缓渐变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.DrawSymmetricFilledCurve.html">
+      DrawSymmetricFilledCurve
+     </a>
+    </td>
+    <td class="desc">
+     填充由提供的 AudioCurveAndColorEvaluator 评估的曲线与其垂直镜像图像之间的区域，沿边缘方向平缓渐变。用于绘制音频信号的振幅图。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.AudioCurveAndColorEvaluator.html">
+      AudioCurveAndColorEvaluator
+     </a>
+    </td>
+    <td class="desc">
+     曲线评估函数，允许同时评估曲线 y 值以及该位置的曲线颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.AudioCurveEvaluator.html">
+      AudioCurveEvaluator
+     </a>
+    </td>
+    <td class="desc">
+     用于评估曲线 y 值以及指定位置的值的曲线评估函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioCurveRendering.AudioMinMaxCurveAndColorEvaluator.html">
+      AudioMinMaxCurveAndColorEvaluator
+     </a>
+    </td>
+    <td class="desc">
+     曲线评估函数，允许同时评估最小值和最大值曲线。返回的 minValue 和 maxValue 值应在 [-1; 1] 范围内，0 值对应于绘制的矩形的垂直中心。系统将禁止这些值超出此范围。此外，还会评估曲线在此位置的颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

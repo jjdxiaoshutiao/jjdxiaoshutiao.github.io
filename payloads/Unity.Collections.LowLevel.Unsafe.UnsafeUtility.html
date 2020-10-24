@@ -1,0 +1,322 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UnsafeUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Collections.LowLevel.Unsafe
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Unsafe Utility 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AddressOf.html">
+      AddressOf
+     </a>
+    </td>
+    <td class="desc">
+     此结构的内存地址。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AlignOf.html">
+      AlignOf
+     </a>
+    </td>
+    <td class="desc">
+     结构的最小对齐单位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.CopyObjectAddressToPtr.html">
+      CopyObjectAddressToPtr
+     </a>
+    </td>
+    <td class="desc">
+     分配对结构或固定类的对象引用。另请参阅：UnsafeUtility.PinGCObjectAndGetAddress。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.CopyPtrToStructure.html">
+      CopyPtrToStructure
+     </a>
+    </td>
+    <td class="desc">
+     从 ptr 向 output 复制 sizeof(T) 个字节。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.CopyStructureToPtr.html">
+      CopyStructureToPtr
+     </a>
+    </td>
+    <td class="desc">
+     从 input 向 ptr 复制 sizeof(T) 个字节。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.EnumToInt.html">
+      EnumToInt
+     </a>
+    </td>
+    <td class="desc">
+     返回枚举值的整数表示形式（不装箱）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.Free.html">
+      Free
+     </a>
+    </td>
+    <td class="desc">
+     可用内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.GetFieldOffset.html">
+      GetFieldOffset
+     </a>
+    </td>
+    <td class="desc">
+     返回字段相对于结构或其所在类的偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.IsBlittable.html">
+      IsBlittable
+     </a>
+    </td>
+    <td class="desc">
+     返回此结构是否可直接复制到本机结构中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.IsUnmanaged.html">
+      IsUnmanaged
+     </a>
+    </td>
+    <td class="desc">
+     返回结构或类型是否为非托管类型。非托管类型不包含托管字段，可以在内存中自由复制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.IsValidAllocator.html">
+      IsValidAllocator
+     </a>
+    </td>
+    <td class="desc">
+     如果分配器标签有效并且可用来分配或取消分配内存，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.IsValidNativeContainerElementType.html">
+      IsValidNativeContainerElementType
+     </a>
+    </td>
+    <td class="desc">
+     返回是否可以接受此类型作为原生容器中的元素类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.Malloc.html">
+      Malloc
+     </a>
+    </td>
+    <td class="desc">
+     分配内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemClear.html">
+      MemClear
+     </a>
+    </td>
+    <td class="desc">
+     清除内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemCmp.html">
+      MemCmp
+     </a>
+    </td>
+    <td class="desc">
+     通过将第一个给定内存缓冲区中的指定内存区域与第二个给定内存缓冲区中的相同区域进行比较，检查两个内存区域是否相同。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemCpy.html">
+      MemCpy
+     </a>
+    </td>
+    <td class="desc">
+     复制内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemCpyReplicate.html">
+      MemCpyReplicate
+     </a>
+    </td>
+    <td class="desc">
+     复制内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemCpyStride.html">
+      MemCpyStride
+     </a>
+    </td>
+    <td class="desc">
+     与 UnsafeUtility.MemCpy 类似，但可以通过 desinationStride 和 sourceStride 跳过字节。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemMove.html">
+      MemMove
+     </a>
+    </td>
+    <td class="desc">
+     移动内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemSet.html">
+      MemSet
+     </a>
+    </td>
+    <td class="desc">
+     将内存设置为指定值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.PinGCArrayAndGetDataAddress.html">
+      PinGCArrayAndGetDataAddress
+     </a>
+    </td>
+    <td class="desc">
+     保持对该对象的强 GC 引用并将其固定。保证对象在移动 GC 中的内存位置不会移动。返回数组第一个元素的地址。另请参阅：UnsafeUtility.ReleaseGCObject。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.PinGCObjectAndGetAddress.html">
+      PinGCObjectAndGetAddress
+     </a>
+    </td>
+    <td class="desc">
+     保持对该对象的强 GC 引用并将其固定。保证对象在移动 GC 中的内存位置不会移动。返回该对象的内存位置地址。另请参阅：UnsafeUtility.ReleaseGCObject。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ReadArrayElement.html">
+      ReadArrayElement
+     </a>
+    </td>
+    <td class="desc">
+     读取数组元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ReadArrayElementWithStride.html">
+      ReadArrayElementWithStride
+     </a>
+    </td>
+    <td class="desc">
+     使用步幅读取数组元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ReleaseGCObject.html">
+      ReleaseGCObject
+     </a>
+    </td>
+    <td class="desc">
+     释放之前由 UnsafeUtility.PinGCObjectAndGetAddress 获取的 GC 对象句柄。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.SizeOf.html">
+      SizeOf
+     </a>
+    </td>
+    <td class="desc">
+     结构的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.WriteArrayElement.html">
+      WriteArrayElement
+     </a>
+    </td>
+    <td class="desc">
+     写入数组元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.WriteArrayElementWithStride.html">
+      WriteArrayElementWithStride
+     </a>
+    </td>
+    <td class="desc">
+     使用步幅写入数组元素。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

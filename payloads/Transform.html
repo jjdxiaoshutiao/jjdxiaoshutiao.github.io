@@ -1,0 +1,787 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Transform
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Component.html">
+    Component
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   对象的位置、旋转和缩放。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   场景中的每个对象都有一个变换。
+它用于存储和操作对象的位置、旋转和缩放。
+每个变换都可以有一个父级，让您能够分层应用位置、旋转和缩放。这是“Hierarchy”面板中显示的层级视图。
+它们还支持枚举器，因此您可以使用以下方式遍历子项：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Moves all transform children 10 units upwards!
+    void Start()
+    {
+        foreach (<a href="Transform.html">Transform</a> child in transform)
+        {
+            child.position += <a href="Vector3-up.html">Vector3.up</a> * 10.0f;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="../Manual/class-Transform.html">
+    组件参考
+   </a>
+   、
+   <a href="Physics.html">
+    Physics
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Transform-childCount.html">
+      childCount
+     </a>
+    </td>
+    <td class="desc">
+     父变换具有的子项数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-eulerAngles.html">
+      eulerAngles
+     </a>
+    </td>
+    <td class="desc">
+     以欧拉角表示的旋转（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-forward.html">
+      forward
+     </a>
+    </td>
+    <td class="desc">
+     返回一个标准化矢量，它表示世界空间中变换的蓝轴。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-hasChanged.html">
+      hasChanged
+     </a>
+    </td>
+    <td class="desc">
+     自上次将标志设置为“false”以来，变换是否发生更改？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-hierarchyCapacity.html">
+      hierarchyCapacity
+     </a>
+    </td>
+    <td class="desc">
+     变换的层级视图数据结构的变换容量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-hierarchyCount.html">
+      hierarchyCount
+     </a>
+    </td>
+    <td class="desc">
+     变换的层级视图数据结构中变换的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-localEulerAngles.html">
+      localEulerAngles
+     </a>
+    </td>
+    <td class="desc">
+     以欧拉角表示的相对于父变换旋转的旋转（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-localPosition.html">
+      localPosition
+     </a>
+    </td>
+    <td class="desc">
+     相对于父变换的变换位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-localRotation.html">
+      localRotation
+     </a>
+    </td>
+    <td class="desc">
+     相对于父级变换旋转的变换旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-localScale.html">
+      localScale
+     </a>
+    </td>
+    <td class="desc">
+     相对于 GameObjects 父对象的变换缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-localToWorldMatrix.html">
+      localToWorldMatrix
+     </a>
+    </td>
+    <td class="desc">
+     将点从本地空间转换到世界空间的矩阵（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-lossyScale.html">
+      lossyScale
+     </a>
+    </td>
+    <td class="desc">
+     对象的全局缩放。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-parent.html">
+      parent
+     </a>
+    </td>
+    <td class="desc">
+     变换的父级。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     世界空间中的变换位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-right.html">
+      right
+     </a>
+    </td>
+    <td class="desc">
+     世界空间中变换的红轴。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-root.html">
+      root
+     </a>
+    </td>
+    <td class="desc">
+     返回层级视图中最顶层的变换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-rotation.html">
+      rotation
+     </a>
+    </td>
+    <td class="desc">
+     一个 Quaternion，用于存储变换在世界空间中的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-up.html">
+      up
+     </a>
+    </td>
+    <td class="desc">
+     世界空间中变换的绿轴。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform-worldToLocalMatrix.html">
+      worldToLocalMatrix
+     </a>
+    </td>
+    <td class="desc">
+     将点从世界空间转换到本地空间的矩阵（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Transform.DetachChildren.html">
+      DetachChildren
+     </a>
+    </td>
+    <td class="desc">
+     清除所有子项的父级。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.Find.html">
+      Find
+     </a>
+    </td>
+    <td class="desc">
+     按 n 查找子项，然后返回它。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.GetChild.html">
+      GetChild
+     </a>
+    </td>
+    <td class="desc">
+     按索引返回变换子项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.GetSiblingIndex.html">
+      GetSiblingIndex
+     </a>
+    </td>
+    <td class="desc">
+     获取同级索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.InverseTransformDirection.html">
+      InverseTransformDirection
+     </a>
+    </td>
+    <td class="desc">
+     将 direction 从世界空间变换到本地空间。与 Transform.TransformDirection 相反。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.InverseTransformPoint.html">
+      InverseTransformPoint
+     </a>
+    </td>
+    <td class="desc">
+     将 position 从世界空间变换到本地空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.InverseTransformVector.html">
+      InverseTransformVector
+     </a>
+    </td>
+    <td class="desc">
+     将 vector 从世界空间变换到本地空间。与 Transform.TransformVector 相反。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.IsChildOf.html">
+      IsChildOf
+     </a>
+    </td>
+    <td class="desc">
+     该变换是否为 parent 的子项？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.LookAt.html">
+      LookAt
+     </a>
+    </td>
+    <td class="desc">
+     旋转变换，使向前矢量指向 target 的当前位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.Rotate.html">
+      Rotate
+     </a>
+    </td>
+    <td class="desc">
+     使用 Transform.Rotate 以各种方式旋转 GameObjects。通常以欧拉角而不是四元数提供旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.RotateAround.html">
+      RotateAround
+     </a>
+    </td>
+    <td class="desc">
+     将变换围绕穿过世界坐标中的 point 的 axis 旋转 angle 度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.SetAsFirstSibling.html">
+      SetAsFirstSibling
+     </a>
+    </td>
+    <td class="desc">
+     将变换移动到本地变换列表的开头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.SetAsLastSibling.html">
+      SetAsLastSibling
+     </a>
+    </td>
+    <td class="desc">
+     将变换移动到本地变换列表的末尾。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.SetParent.html">
+      SetParent
+     </a>
+    </td>
+    <td class="desc">
+     设置变换的父级。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.SetPositionAndRotation.html">
+      SetPositionAndRotation
+     </a>
+    </td>
+    <td class="desc">
+     设置变换组件的世界空间位置和旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.SetSiblingIndex.html">
+      SetSiblingIndex
+     </a>
+    </td>
+    <td class="desc">
+     设置同级索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.TransformDirection.html">
+      TransformDirection
+     </a>
+    </td>
+    <td class="desc">
+     将 direction 从本地空间变换到世界空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.TransformPoint.html">
+      TransformPoint
+     </a>
+    </td>
+    <td class="desc">
+     将 position 从本地空间变换到世界空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.TransformVector.html">
+      TransformVector
+     </a>
+    </td>
+    <td class="desc">
+     将 vector 从本地空间变换到世界空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Transform.Translate.html">
+      Translate
+     </a>
+    </td>
+    <td class="desc">
+     根据 translation 的方向和距离移动变换。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

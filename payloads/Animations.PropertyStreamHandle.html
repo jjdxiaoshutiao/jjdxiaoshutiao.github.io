@@ -1,0 +1,214 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PropertyStreamHandle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Animations
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Animations.AnimationStream.html">
+    AnimationStream
+   </a>
+   中某个对象的
+   <a href="Component.html">
+    Component
+   </a>
+   属性的句柄。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Animations;<br/><br/>public struct PropertyStreamHandleJob : <a href="Animations.IAnimationJob.html">IAnimationJob</a>
+{
+    public <a href="Animations.PropertyStreamHandle.html">PropertyStreamHandle</a> handleR;
+    public <a href="Animations.PropertyStreamHandle.html">PropertyStreamHandle</a> handleG;
+    public <a href="Animations.PropertyStreamHandle.html">PropertyStreamHandle</a> handleB;
+    public <a href="Color.html">Color</a> color;<br/><br/>    public void ProcessRootMotion(<a href="Animations.AnimationStream.html">AnimationStream</a> stream)
+    {
+    }<br/><br/>    public void ProcessAnimation(<a href="Animations.AnimationStream.html">AnimationStream</a> stream)
+    {
+        // Set the new light color.
+        handleR.SetFloat(stream, color.r);
+        handleG.SetFloat(stream, color.g);
+        handleB.SetFloat(stream, color.b);
+    }
+}<br/><br/>[<a href="RequireComponent.html">RequireComponent</a>(typeof(<a href="Animator.html">Animator</a>))]
+[<a href="RequireComponent.html">RequireComponent</a>(typeof(<a href="Light.html">Light</a>))]
+public class PropertyStreamHandleExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public <a href="Color.html">Color</a> color = <a href="Color-white.html">Color.white</a>;<br/><br/>    <a href="Playables.PlayableGraph.html">PlayableGraph</a> m_Graph;
+    <a href="Animations.AnimationScriptPlayable.html">AnimationScriptPlayable</a> m_AnimationScriptPlayable;<br/><br/>    void Start()
+    {
+        var animator = GetComponent&lt;<a href="Animator.html">Animator</a>&gt;();<br/><br/>        m_Graph = <a href="Playables.PlayableGraph.Create.html">PlayableGraph.Create</a>("PropertyStreamHandleExample");
+        var output = <a href="Animations.AnimationPlayableOutput.Create.html">AnimationPlayableOutput.Create</a>(m_Graph, "output", animator);<br/><br/>        var animationJob = new PropertyStreamHandleJob();
+        animationJob.handleR = animator.BindStreamProperty(gameObject.transform, typeof(<a href="Light.html">Light</a>), "m_Color.r");
+        animationJob.handleG = animator.BindStreamProperty(gameObject.transform, typeof(<a href="Light.html">Light</a>), "m_Color.g");
+        animationJob.handleB = animator.BindStreamProperty(gameObject.transform, typeof(<a href="Light.html">Light</a>), "m_Color.b");
+        m_AnimationScriptPlayable = <a href="Animations.AnimationScriptPlayable.Create.html">AnimationScriptPlayable.Create</a>(m_Graph, animationJob);<br/><br/>        output.SetSourcePlayable(m_AnimationScriptPlayable);
+        m_Graph.Play();
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        var animationJob = m_AnimationScriptPlayable.GetJobData&lt;PropertyStreamHandleJob&gt;();
+        animationJob.color = color;
+        m_AnimationScriptPlayable.SetJobData(animationJob);
+    }<br/><br/>    void OnDisable()
+    {
+        m_Graph.Destroy();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Animations.AnimatorJobExtensions.BindStreamProperty.html">
+    AnimatorJobExtensions.BindStreamProperty
+   </a>
+   、
+   <a href="Animations.TransformStreamHandle.html">
+    TransformStreamHandle
+   </a>
+   、
+   <a href="Animations.PropertySceneHandle.html">
+    PropertySceneHandle
+   </a>
+   和
+   <a href="Animations.TransformSceneHandle.html">
+    TransformSceneHandle
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.GetBool.html">
+      GetBool
+     </a>
+    </td>
+    <td class="desc">
+     从一个流获取布尔属性值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     从一个流获取浮点属性值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.GetInt.html">
+      GetInt
+     </a>
+    </td>
+    <td class="desc">
+     从一个流获取整数属性值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.GetReadMask.html">
+      GetReadMask
+     </a>
+    </td>
+    <td class="desc">
+     获取属性的读取掩码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.IsResolved.html">
+      IsResolved
+     </a>
+    </td>
+    <td class="desc">
+     返回有关是否已解析句柄的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     返回有关句柄是否有效的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.Resolve.html">
+      Resolve
+     </a>
+    </td>
+    <td class="desc">
+     解析句柄。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.SetBool.html">
+      SetBool
+     </a>
+    </td>
+    <td class="desc">
+     将布尔属性值设置到一个流中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     将浮点属性值设置到一个流中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.PropertyStreamHandle.SetInt.html">
+      SetInt
+     </a>
+    </td>
+    <td class="desc">
+     将整数属性值设置到一个流中。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

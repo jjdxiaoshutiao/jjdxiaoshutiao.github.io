@@ -1,0 +1,113 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NavMeshBuildDebugSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   指定应在导航网格构建完成后将构建时生成的哪些临时数据保留在内存中。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可以在 Editor 中收集并显示使用
+   <a href="AI.NavMeshBuilder.html">
+    NavMeshBuilder
+   </a>
+   构建导航网格时所用的中间数据。当生成的导航网格形状与预期不符时，这有助于对各种问题进行诊断。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/NavMeshBuildDebug.png"/>
+   “使用调试选项构建导航网格后显示的输入几何体、区域、多边形网格细节和原始轮廓”
+   <br/>
+   <br/>
+   导航网格的计算过程包括以下几个连续步骤：\
+i. 将场景的地形和网格分解为三角形；\
+ii. 将输入三角形光栅化为 3D 体素表示形式并查找边缘；\
+iii. 将表面的体素细分为更简单的水平区域；\
+iv. 为每个区域寻找紧密贴合的轮廓；\
+v. 将轮廓简化为多边形；\
+vi. 根据组合起来的所有轮廓创建凸多边形网格；\
+vii. 将多边形网格细化为三角网格，使其更接近场景的原始几何体。
+   <br/>
+   <br/>
+   可使用调试功能分别捕获和显示每个阶段的结果，但系统通常会在导航网格构建完成后丢弃这些结果。
+   <br/>
+   <br/>
+   这些调试数据可能会相当大，具体取决于场景的合成情况。它们以压缩形式存储在内存中，但会在显示时解压。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   <br/>
+   1.Unity 不保存调试可视化内容 - 这些内容仅在 Unity 构建导航网格的会话期间提供。
+   <br/>
+   2.不会针对使用
+   <a href="../Manual/nav-BuildingNavMesh.html">
+    the legacy system
+   </a>
+   静态烘焙的导航网格或因出现
+   <a href="../Manual/nav-CreateNavMeshObstacle.html">
+    NavMesh Obstacles
+   </a>
+   而局部重新计算的任何补丁程序显示或收集调试数据。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="AI.NavMeshBuildSettings.html">
+    NavMeshBuildSettings
+   </a>
+   、
+   <a href="AI.NavMeshBuilder.BuildNavMeshData.html">
+    NavMeshBuilder.BuildNavMeshData
+   </a>
+   、
+   <a href="AI.NavMeshEditorHelpers.DrawBuildDebug.html">
+    NavMeshEditorHelpers.DrawBuildDebug
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugSettings-flags.html">
+      flags
+     </a>
+    </td>
+    <td class="desc">
+     指定构建导航网格时应收集哪些类型的调试数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

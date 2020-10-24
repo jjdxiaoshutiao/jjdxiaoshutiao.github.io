@@ -1,0 +1,72 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Method group is Obsolete
+   </b>
+   <br/>
+  </div>
+  <h1 class="heading inherit">
+   PreferenceItem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+     Obsolete
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   （已弃用：改用 SettingsProvider）您可以通过 PreferenceItem 属性向 Preferences 窗口中添加偏好设置部分。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   PreferenceItem 属性可将任何静态函数转换为 OnGUI 回调。只有静态函数可以使用 PreferenceItem 属性。默认情况下，所有当前的 PreferenceItems 都会包含在 Unified Settings 窗口中，但您将收到应当 SettingsProvider 属性的警告。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>
+public class ExampleScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Have we loaded the prefs yet
+    private static bool prefsLoaded = false;<br/><br/>    // The Preferences
+    public static bool boolPreference = false;<br/><br/>    // Add preferences section named "My Preferences" to the Preferences window
+    [PreferenceItem("My Preferences")]
+    public static void PreferencesGUI()
+    {
+        // Load the preferences
+        if (!prefsLoaded)
+        {
+            boolPreference = <a href="EditorPrefs.GetBool.html">EditorPrefs.GetBool</a>("BoolPreferenceKey", false);
+            prefsLoaded = true;
+        }<br/><br/>        // Preferences <a href="GUI.html">GUI</a>
+        boolPreference = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("Bool Preference", boolPreference);<br/><br/>        // Save the preferences
+        if (<a href="GUI-changed.html">GUI.changed</a>)
+            <a href="EditorPrefs.SetBool.html">EditorPrefs.SetBool</a>("BoolPreferenceKey", boolPreference);
+    }
+}
+</pre>
+ </div>
+</div>

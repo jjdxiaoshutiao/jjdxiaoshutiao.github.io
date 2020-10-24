@@ -1,0 +1,96 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   JointSpring
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   JointSpring 用于向
+   <a href="HingeJoint.html">
+    HingeJoint
+   </a>
+   和
+   <a href="PhysicMaterial.html">
+    PhysicMaterial
+   </a>
+   添加弹簧力。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        <a href="HingeJoint.html">HingeJoint</a> hinge = GetComponent&lt;<a href="HingeJoint.html">HingeJoint</a>&gt;();<br/><br/>        // Make the spring reach shoot for a 70 degree angle.
+        // This could be used to fire off a catapult.<br/><br/>        <a href="JointSpring.html">JointSpring</a> spring = hinge.spring;
+        spring.spring = 10;
+        spring.damper = 3;
+        spring.targetPosition = 70;
+        hinge.spring = spring;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="JointSpring-damper.html">
+      damper
+     </a>
+    </td>
+    <td class="desc">
+     用于抑制弹簧的阻尼力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointSpring-spring.html">
+      spring
+     </a>
+    </td>
+    <td class="desc">
+     用于达到目标位置的弹簧力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointSpring-targetPosition.html">
+      targetPosition
+     </a>
+    </td>
+    <td class="desc">
+     关节尝试达到的目标位置。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

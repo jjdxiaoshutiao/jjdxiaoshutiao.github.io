@@ -1,0 +1,167 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Method group is Obsolete
+   </b>
+   <br/>
+  </div>
+  <h1 class="heading inherit">
+   WWW
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="CustomYieldInstruction.html">
+    CustomYieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+     Obsolete
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于方便地访问网页。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这是一个用于检索 URL 内容的小型 utility 模块。
+   <br/>
+   <br/>
+   可以通过调用
+   <code class="mono">
+    WWW(url)
+   </code>
+   （返回一个新的 WWW 对象）在后台启动下载。
+   <br/>
+   <br/>
+   您可以检查
+   <code class="varname">
+    isDone
+   </code>
+   属性以查看下载是否完成，
+或通过 yield 方式自动等待下载对象（不阻塞游戏的其余部分）。
+   <br/>
+   <br/>
+   如果您需要从 Web 服务器获取一些数据来与游戏集成
+（例如，实现分数排行榜或基于某种原因需要回传信息），则可以使用该类。此外，该类还有一些其他功能，例如：
+使用从 Web 下载的图像创建纹理，
+流式传输和加载新的 Web 播放器数据文件。
+   <br/>
+   <br/>
+   WWW 类可用于向服务器发送 GET 和 POST 请求。WWW 类默认使用 GET；
+如果您提供了 postData 参数，则 WWW 类使用 POST。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="WWWForm.html">
+    WWWForm
+   </a>
+   - 一种为 postData 参数构建有效表单数据的方法。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   传递给 WWW 类的 URL 必须经过“%”转义处理。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   在 iPhone 上，支持
+   <strong>
+    http://
+   </strong>
+   ,、
+   <strong>
+    https://
+   </strong>
+   和
+   <strong>
+    file://
+   </strong>
+   协议。
+   <strong>
+    ftp://
+   </strong>
+   协议支持仅限于匿名下载。不支持其他协议。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   在 Windows 和 Windows 应用商店应用程序中使用文件协议访问本地文件时，必须指定
+   <strong>
+    file:///
+   </strong>
+   （带有三个斜杠）。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Get the latest webcam shot from outside "Friday's" in Times Square
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public string url = "http://images.earthcam.com/ec_metros/ourcams/fridays.jpg";
+    IEnumerator Start()
+    {
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            <a href="Renderer.html">Renderer</a> renderer = GetComponent&lt;<a href="Renderer.html">Renderer</a>&gt;();
+            renderer.material.mainTexture = www.texture;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="CustomYieldInstruction-keepWaiting.html">
+       keepWaiting
+      </a>
+     </td>
+     <td class="desc">
+      指示协同程序是否应保持暂停。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

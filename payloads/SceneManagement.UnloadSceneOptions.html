@@ -1,0 +1,63 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UnloadSceneOptions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   传递给 SceneManager.UnloadScene 的场景卸载选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.UnloadSceneOptions.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     在不使用任何特殊选项的情况下卸载场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.UnloadSceneOptions.UnloadAllEmbeddedSceneObjects.html">
+      UnloadAllEmbeddedSceneObjects
+     </a>
+    </td>
+    <td class="desc">
+     卸载从场景的序列化文件加载的所有对象。如果没有此标志，将仅卸载场景层级视图中的 GameObject 和组件。注意：在构建过程中动态创建的对象可以嵌入到场景的序列化文件中。在场景的后期处理器回调中创建和引用资源类型时，可能会发生这种情况。这些类型的一些示例包括纹理、网格和可编程对象。资源文件夹中的资源不会嵌入到场景的序列化文件中。
+注意：此标志不会卸载可由其他场景引用的资源。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

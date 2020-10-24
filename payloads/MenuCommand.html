@@ -1,0 +1,129 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MenuCommand
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于提取
+   <a href="MenuItem.html">
+    MenuItem
+   </a>
+   的上下文。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="MenuCommand.html">
+    MenuCommand
+   </a>
+   对象传递到使用
+   <a href="MenuItem.html">
+    MenuItem
+   </a>
+   属性
+               定义的自定义菜单项函数。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   菜单会添加到对象中，并且可通过在检视面板中右键单击来访问。
+脚本代码需要 CONTEXT 选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Add context menu named "Do Something" to context menu
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class Something : <a href="EditorWindow.html">EditorWindow</a>
+{
+    // Add menu item
+    [<a href="MenuItem.html">MenuItem</a>("CONTEXT/<a href="Rigidbody.html">Rigidbody</a>/Do Something")]
+    static void DoSomething(<a href="MenuCommand.html">MenuCommand</a> command)
+    {
+        <a href="Rigidbody.html">Rigidbody</a> body = (<a href="Rigidbody.html">Rigidbody</a>)command.context;
+        body.mass = 5;
+        <a href="Debug.Log.html">Debug.Log</a>("Changed <a href="Rigidbody.html">Rigidbody</a>'s Mass to " + body.mass + " from Context <a href="Menu.html">Menu</a>...");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="MenuItem.html">
+    MenuItem
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MenuCommand-context.html">
+      context
+     </a>
+    </td>
+    <td class="desc">
+     上下文是作为菜单命令目标的对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MenuCommand-userData.html">
+      userData
+     </a>
+    </td>
+    <td class="desc">
+     用于将自定义信息传递给菜单项的整数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MenuCommand-ctor.html">
+      MenuCommand
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 MenuCommand 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

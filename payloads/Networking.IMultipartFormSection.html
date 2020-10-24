@@ -1,0 +1,100 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IMultipartFormSection
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEngine.Networking
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于将数据组合到多部分表单中的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   为了让需要生成多部分表单数据的用户能够实现更精确的控制，同时使大多数用户无需参照
+   <a href="http://tools.ietf.org/html/rfc2388">
+    RFC 2388
+   </a>
+   ，Unity 提供了这个简单的接口，UnityWebRequest API 可使用该接口将复杂的数据序列化为正确格式的字节。
+   <br/>
+   <br/>
+   为方便起见，我们已将这两种常规类型的表单节封装到 IMultipartFormSection 的两个 stock 实现中。只需使用构造函数即可控制这两个 stock 实现。
+   <br/>
+   <br/>
+   通过 [UnityWebRequest.SerializeFormSections] 将 IMultipartFormSection 实现器转换为字节。
+   <br/>
+   <br/>
+   另请参阅：[MultipartFormDataSection]、[MultipartFormFileSection]。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.IMultipartFormSection-contentType.html">
+      contentType
+     </a>
+    </td>
+    <td class="desc">
+     返回要在此表单节的 Content-Type 标头中使用的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.IMultipartFormSection-fileName.html">
+      fileName
+     </a>
+    </td>
+    <td class="desc">
+     返回表示目标服务器上此节所需文件名的字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.IMultipartFormSection-sectionData.html">
+      sectionData
+     </a>
+    </td>
+    <td class="desc">
+     返回此节中包含的原始二进制数据。不得返回 null 或零长度数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.IMultipartFormSection-sectionName.html">
+      sectionName
+     </a>
+    </td>
+    <td class="desc">
+     返回此节的名称（如果有）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

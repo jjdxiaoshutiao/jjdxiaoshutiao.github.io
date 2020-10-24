@@ -1,0 +1,216 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Gizmos
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   辅助图标用于协助在 Scene 视图中进行视觉调试或设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   所有辅助图标绘图都必须在此脚本的
+   <a href="MonoBehaviour.OnDrawGizmos.html">
+    OnDrawGizmos
+   </a>
+   或
+   <a href="MonoBehaviour.OnDrawGizmosSelected.html">
+    OnDrawGizmosSelected
+   </a>
+   函数中进行。\
+每一帧都调用
+   <a href="MonoBehaviour.OnDrawGizmos.html">
+    OnDrawGizmos
+   </a>
+   。在
+   <a href="MonoBehaviour.OnDrawGizmos.html">
+    OnDrawGizmos
+   </a>
+   中渲染的所有辅助图标均可选择。
+仅在选择了附加此脚本的对象时才调用
+   <a href="MonoBehaviour.OnDrawGizmosSelected.html">
+    OnDrawGizmosSelected
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos-color.html">
+      color
+     </a>
+    </td>
+    <td class="desc">
+     为接下来绘制的辅助图标设置颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos-exposure.html">
+      exposure
+     </a>
+    </td>
+    <td class="desc">
+     设置包含 LightProbe 辅助图标的曝光校正的纹理。值从纹理中间的红色通道进行采样。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos-matrix.html">
+      matrix
+     </a>
+    </td>
+    <td class="desc">
+     设置 Unity Editor 用于绘制 Gizmos 的 Matrix4x4。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawCube.html">
+      DrawCube
+     </a>
+    </td>
+    <td class="desc">
+     使用 center 和 size 绘制一个实心盒体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawFrustum.html">
+      DrawFrustum
+     </a>
+    </td>
+    <td class="desc">
+     绘制一个摄像机视锥体，并且将当前设置的 Gizmos.matrix 用于其位置和旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawGUITexture.html">
+      DrawGUITexture
+     </a>
+    </td>
+    <td class="desc">
+     在该场景中绘制一个纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawIcon.html">
+      DrawIcon
+     </a>
+    </td>
+    <td class="desc">
+     在 Scene 视图中的某个位置绘制一个图标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawLine.html">
+      DrawLine
+     </a>
+    </td>
+    <td class="desc">
+     绘制一条从 from 开始到 to 的线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawMesh.html">
+      DrawMesh
+     </a>
+    </td>
+    <td class="desc">
+     绘制一个网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawRay.html">
+      DrawRay
+     </a>
+    </td>
+    <td class="desc">
+     绘制一条从 from 开始到 from + direction 的射线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawSphere.html">
+      DrawSphere
+     </a>
+    </td>
+    <td class="desc">
+     使用 center 和 radius 绘制一个实心球体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawWireCube.html">
+      DrawWireCube
+     </a>
+    </td>
+    <td class="desc">
+     使用 center 和 size 绘制一个线框盒体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawWireMesh.html">
+      DrawWireMesh
+     </a>
+    </td>
+    <td class="desc">
+     绘制一个线框网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gizmos.DrawWireSphere.html">
+      DrawWireSphere
+     </a>
+    </td>
+    <td class="desc">
+     使用 center 和 radius 绘制一个线框球体。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

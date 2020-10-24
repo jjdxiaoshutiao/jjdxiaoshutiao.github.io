@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HorizontalScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理
+   <a href="GUILayout.BeginHorizontal.html">
+    BeginHorizontal
+   </a>
+   /
+   <a href="GUILayout.EndHorizontal.html">
+    EndHorizontal
+   </a>
+   的可处置的 Helper 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在该元素内呈现的所有控件都将依次水平放置。
+   <code class="varname">
+    using
+   </code>
+   语句意味着不需要
+   <a href="GUILayout.BeginHorizontal.html">
+    BeginHorizontal
+   </a>
+   和
+   <a href="GUILayout.EndHorizontal.html">
+    EndHorizontal
+   </a>
+   。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/GUILayoutHorizontal.png"/>
+   \
+   <em>
+    水平布局。
+   </em>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        // Starts a horizontal group
+        using (var horizontalScope = new <a href="GUILayout.HorizontalScope.html">GUILayout.HorizontalScope</a>("box"))
+        {
+            <a href="GUILayout.Button.html">GUILayout.Button</a>("I'm the first button");
+            <a href="GUILayout.Button.html">GUILayout.Button</a>("I'm to the right");
+        }
+        // Now the group is ended.
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUILayout.HorizontalScope-ctor.html">
+      GUILayout.HorizontalScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 HorizontalScope 并开始相应的水平组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

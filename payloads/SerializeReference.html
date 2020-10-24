@@ -1,0 +1,114 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SerializeReference
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   指示 Unity 将字段序列化为引用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   除非字段类型派生自 [UnityEngine.Object]，否则 Unity 在序列化对象时会将所有字段都序列化为值类型。
+默认情况下，不支持多态字段，也无法在原生表示基于引用的拓扑，如图形。
+   <br/>
+   <br/>
+   建议从 ScriptableObject 派生字段类型，因为这样通常可以获得最佳性能。
+   <br/>
+   <br/>
+   但如果使用 ScriptableObjects 导致复杂程度无法接受，则用 [SerializeReference] 修饰字段可指示 Unity“按引用”而非“按值”序列化字段。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   <br/>
+   - 字段类型不能是用于序列化 UnityEngine.Object 的类型。
+   <br/>
+   - 字段类型可以是抽象的。
+   <br/>
+   - 字段类型可以是接口。
+   <br/>
+   - 用 [SerializeReference] 修饰的通用列表和数组字段将属性应用于列表/数组的元素，而非列表/数组实例本身。
+   <br/>
+   - UnityEngine.Object 实例之间不能共享引用的值。例如，两个 MonoBehaviours 不能共享按引用序列化的对象。请使用 ScriptableObjects 而非共享数据。
+   <br/>
+   - 字段值可以是 null。
+   <br/>
+   - 字段值不能是通用类型（扩大的类型）的特化表示。
+   <br/>
+   - 分配给字段的动态实例/对象的类型必须是 [Serializable] 类型。
+   <br/>
+   - 字段类型也支持“System.Object”、“List&lt;System.Object&gt;”或“System.Object[]”类型。
+   <br/>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System;
+using System.Collections.Generic;
+using UnityEngine;<br/><br/>public interface IShape {}<br/><br/>[<a href="Serializable.html">Serializable</a>]
+public class Cube : IShape
+{
+    public <a href="Vector3.html">Vector3</a> size;
+}<br/><br/>[<a href="Serializable.html">Serializable</a>]
+public class Thing
+{
+    public int weight;
+}<br/><br/>[<a href="ExecuteInEditMode.html">ExecuteInEditMode</a>]
+public class BuildingBlocks : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="SerializeReference.html">SerializeReference</a>]
+    public List&lt;IShape&gt; inventory;<br/><br/>    [<a href="SerializeReference.html">SerializeReference</a>]
+    public System.Object bin;<br/><br/>    [<a href="SerializeReference.html">SerializeReference</a>]
+    public List&lt;System.Object&gt; bins;<br/><br/>    void OnEnable()
+    {
+        if (inventory == null)
+        {
+            inventory = new List&lt;IShape&gt;()
+            {
+                new Cube() {size = new <a href="Vector3.html">Vector3</a>(1.0f, 1.0f, 1.0f)}
+            };
+            <a href="Debug.Log.html">Debug.Log</a>("Created list");
+        }
+        else
+            <a href="Debug.Log.html">Debug.Log</a>("Read list");<br/><br/>        if (bins == null)
+        {
+            // This is supported, the 'bins' serialized field is declared as holding a collection type.
+            bins = new List&lt;System.Object&gt;() { new Cube(), new Thing() };
+        }<br/><br/>        if (bin == null)
+        {
+            // !! DO NOT USE !!
+            // Although, this is syntaxically correct, it is NOT supported as a valid serialization construct because the 'bin' serialized field is declared as holding a single reference type.
+            bin = new List&lt;System.Object&gt;() { new Cube() };
+        }
+    }
+}
+</pre>
+ </div>
+</div>

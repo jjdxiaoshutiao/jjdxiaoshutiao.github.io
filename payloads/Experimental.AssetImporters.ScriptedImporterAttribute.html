@@ -1,0 +1,133 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   ScriptedImporterAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.AssetImporters
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于向 Unity 的资源导入管线注册派生自
+   <a href="Experimental.AssetImporters.ScriptedImporter.html">
+    ScriptedImporter
+   </a>
+   的自定义资源导入器的类属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEditor.Experimental.AssetImporters;<br/><br/>[<a href="Experimental.AssetImporters.ScriptedImporter.html">ScriptedImporter</a>(version: 1, ext: "sphere", AllowCaching = true)]
+public class SphereImporter : <a href="Experimental.AssetImporters.ScriptedImporter.html">ScriptedImporter</a>
+{
+    public override void OnImportAsset(<a href="Experimental.AssetImporters.AssetImportContext.html">AssetImportContext</a> ctx)
+    {
+        // ...
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute.AllowCaching.html">
+      AllowCaching
+     </a>
+    </td>
+    <td class="desc">
+     启用缓存服务器上传和下载。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute.AutoSelect.html">
+      AutoSelect
+     </a>
+    </td>
+    <td class="desc">
+     确定是否为指定的扩展名自动选择导入器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute-fileExtensions.html">
+      fileExtensions
+     </a>
+    </td>
+    <td class="desc">
+     脚本化导入器处理的文件扩展名列表，不带前导句点字符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute-importQueuePriority.html">
+      importQueuePriority
+     </a>
+    </td>
+    <td class="desc">
+     根据类型控制资源导入顺序。正值表示推迟源资源文件的处理，而负值则将它们放在导入过程比较靠前的部分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute-version.html">
+      version
+     </a>
+    </td>
+    <td class="desc">
+     导入器版本号，导入层用它来检测导入器新版本，并在发生此类事件时触发重新导入，从而应用对脚本化导入器的最新更改。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AssetImporters.ScriptedImporterAttribute-ctor.html">
+      ScriptedImporterAttribute
+     </a>
+    </td>
+    <td class="desc">
+     使用 ScriptedImporter 属性可向 Unity 的资源导入管线注册派生自 ScriptedImporter 的自定义资源导入器。最佳做法是每次脚本更改时递增脚本化导入器的版本号。这会强制重新导入用较低版本号导入的资源。如果 Unity Editor 设置“Auto-Update”设置为启用，在编辑器外部编辑并保存脚本会触发脚本和对应类型的所有资源的重新导入。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

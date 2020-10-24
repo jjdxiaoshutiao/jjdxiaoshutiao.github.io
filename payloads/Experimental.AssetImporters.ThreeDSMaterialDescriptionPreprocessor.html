@@ -1,0 +1,357 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   ThreeDSMaterialDescriptionPreprocessor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.AssetImporters
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="AssetPostprocessor.html">
+    AssetPostprocessor
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AssetPostProcessor.OnPreprocessMaterialDescription 的默认实现，此实现将从 .3DS 资源导入的材质描述转换为内部渲染管线材质。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor-assetImporter.html">
+       assetImporter
+      </a>
+     </td>
+     <td class="desc">
+      对资源导入器的引用。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor-assetPath.html">
+       assetPath
+      </a>
+     </td>
+     <td class="desc">
+      要导入的资源的路径名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor-context.html">
+       context
+      </a>
+     </td>
+     <td class="desc">
+      导入上下文。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.GetPostprocessOrder.html">
+       GetPostprocessOrder
+      </a>
+     </td>
+     <td class="desc">
+      覆盖导入器的处理顺序。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.GetVersion.html">
+       GetVersion
+      </a>
+     </td>
+     <td class="desc">
+      返回资源后处理器的版本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.LogError.html">
+       LogError
+      </a>
+     </td>
+     <td class="desc">
+      将导入错误消息记录到控制台。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.LogWarning.html">
+       LogWarning
+      </a>
+     </td>
+     <td class="desc">
+      将导入警告记录到控制台。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnAssignMaterialModel.html">
+       OnAssignMaterialModel
+      </a>
+     </td>
+     <td class="desc">
+      提供源材质。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessAllAssets.html">
+       OnPostprocessAllAssets
+      </a>
+     </td>
+     <td class="desc">
+      在完成任意数量的资源导入后（当资源进度条到达末尾时）调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessAnimation.html">
+       OnPostprocessAnimation
+      </a>
+     </td>
+     <td class="desc">
+      当 AnimationClip 已完成导入时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessAssetbundleNameChanged.html">
+       OnPostprocessAssetbundleNameChanged
+      </a>
+     </td>
+     <td class="desc">
+      将资源分配给其他资源捆绑包时调用的处理程序。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessAudio.html">
+       OnPostprocessAudio
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在音频剪辑完成导入时获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessCubemap.html">
+       OnPostprocessCubemap
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在立方体贴图纹理完成导入之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessGameObjectWithAnimatedUserProperties.html">
+       OnPostprocessGameObjectWithAnimatedUserProperties
+      </a>
+     </td>
+     <td class="desc">
+      当自定义属性的动画曲线已完成导入时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessGameObjectWithUserProperties.html">
+       OnPostprocessGameObjectWithUserProperties
+      </a>
+     </td>
+     <td class="desc">
+      为每个在导入文件中至少附加了一个用户属性的游戏对象调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessMaterial.html">
+       OnPostprocessMaterial
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在材质资源完成导入时获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessMeshHierarchy.html">
+       OnPostprocessMeshHierarchy
+      </a>
+     </td>
+     <td class="desc">
+      当变换层级视图已完成导入时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessModel.html">
+       OnPostprocessModel
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在模型完成导入时获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessSpeedTree.html">
+       OnPostprocessSpeedTree
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在 SpeedTree 资源完成导入时获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessSprites.html">
+       OnPostprocessSprites
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在精灵的纹理完成导入时获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPostprocessTexture.html">
+       OnPostprocessTexture
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在纹理刚完成导入之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessAnimation.html">
+       OnPreprocessAnimation
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在导入模型（.fbx、.mb 文件等）中的动画之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessAsset.html">
+       OnPreprocessAsset
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在导入所有资源之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessAudio.html">
+       OnPreprocessAudio
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在导入音频剪辑之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessMaterialDescription.html">
+       OnPreprocessMaterialDescription
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在材质从 Model Importer 导入时接收通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessModel.html">
+       OnPreprocessModel
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在导入模型（.fbx、.mb 文件等）之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessSpeedTree.html">
+       OnPreprocessSpeedTree
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在导入 SpeedTree 资源（.spm 文件）之前获取通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetPostprocessor.OnPreprocessTexture.html">
+       OnPreprocessTexture
+      </a>
+     </td>
+     <td class="desc">
+      将此函数添加到一个子类中，以在纹理导入器运行之前获取通知。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

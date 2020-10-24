@@ -1,0 +1,128 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WrapMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   确定在
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   或
+   <a href="AnimationCurve.html">
+    AnimationCurve
+   </a>
+   的关键帧范围外如何处理时间。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   动画系统用于特定动画的 WrapMode 是通过以下方式确定的：\
+您可以在剪辑的导入设置中设置
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   的 WrapMode。这是建议的 WrapMode 控制方式。\
+创建
+   <a href="AnimationState.html">
+    AnimationState
+   </a>
+   时，它从创建自己的
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   继承 WrapMode，不过您也可以从代码进行更改。\
+如果
+   <a href="AnimationState.html">
+    AnimationState
+   </a>
+   的 WrapMode 设置为 Default，动画系统将使用
+   <a href="Animation.html">
+    Animation
+   </a>
+   组件的 WrapMode。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WrapMode.Once.html">
+      Once
+     </a>
+    </td>
+    <td class="desc">
+     当时间到达动画剪辑末尾时，剪辑自动停止播放，时间重置到剪辑开始处。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WrapMode.Loop.html">
+      Loop
+     </a>
+    </td>
+    <td class="desc">
+     当时间到达动画剪辑末尾时，将从开始处继续。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WrapMode.PingPong.html">
+      PingPong
+     </a>
+    </td>
+    <td class="desc">
+     当时间到达动画剪辑末尾时，时间将在开始和末尾之间往返。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WrapMode.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     读取更高层级设置的默认重复模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WrapMode.ClampForever.html">
+      ClampForever
+     </a>
+    </td>
+    <td class="desc">
+     向后播放动画。到达末尾时，将继续播放上一帧，永远不会停止播放。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

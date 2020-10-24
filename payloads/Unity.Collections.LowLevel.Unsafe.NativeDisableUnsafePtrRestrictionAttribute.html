@@ -1,0 +1,46 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NativeDisableUnsafePtrRestrictionAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Collections.LowLevel.Unsafe
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   默认情况下，不允许在作业中使用不安全的指针，因为作业调试器无法保证竞争条件的自由行为。借助此属性，您可以显式禁用某作业的限制。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">struct MyJob : <a href="Unity.Jobs.IJob.html">IJob</a>
+{
+    [NativeDisableUnsafePtrRestriction]
+    int* myCustomPointer;<br/><br/>
+    void Execute()
+    {
+        ...
+    }
+}</pre>
+ </div>
+</div>

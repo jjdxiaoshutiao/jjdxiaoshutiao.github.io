@@ -1,0 +1,106 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Coroutine
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="YieldInstruction.html">
+    YieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="MonoBehaviour.StartCoroutine.html">
+    MonoBehaviour.StartCoroutine
+   </a>
+   返回 Coroutine。此类的实例仅用于引用这些协同程序，不具有任何暴露的属性或函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   协同程序是一个可以暂停执行 (yield) 的函数，直到给定的
+   <a href="YieldInstruction.html">
+    YieldInstruction
+   </a>
+   完成。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    IEnumerator WaitAndPrint()
+    {
+        // suspend execution for 5 seconds
+        yield return new <a href="WaitForSeconds.html">WaitForSeconds</a>(5);
+        print("WaitAndPrint " + <a href="Time-time.html">Time.time</a>);
+    }<br/><br/>    IEnumerator Start()
+    {
+        print("Starting " + <a href="Time-time.html">Time.time</a>);<br/><br/>        // Start function WaitAndPrint as a coroutine
+        yield return StartCoroutine("WaitAndPrint");
+        print("Done " + <a href="Time-time.html">Time.time</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   该示例显示常规的 Start：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>// In this example we show how to invoke a coroutine and execute
+// the function in parallel.  Start does not need IEnumerator.<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private IEnumerator coroutine;<br/><br/>    void Start()
+    {
+        // - After 0 seconds, prints "Starting 0.0 seconds"
+        // - After 0 seconds, prints "<a href="Coroutine.html">Coroutine</a> started"
+        // - After 2 seconds, prints "<a href="Coroutine.html">Coroutine</a> ended: 2.0 seconds"
+        print("Starting " + <a href="Time-time.html">Time.time</a> + " seconds");<br/><br/>        // Start function WaitAndPrint as a coroutine.<br/><br/>        coroutine = WaitAndPrint(2.0f);
+        StartCoroutine(coroutine);<br/><br/>        print("<a href="Coroutine.html">Coroutine</a> started");
+    }<br/><br/>    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        yield return new <a href="WaitForSeconds.html">WaitForSeconds</a>(waitTime);
+        print("<a href="Coroutine.html">Coroutine</a> ended: " + <a href="Time-time.html">Time.time</a> + " seconds");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

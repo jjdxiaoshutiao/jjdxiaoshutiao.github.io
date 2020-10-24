@@ -1,0 +1,360 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Event
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   UnityGUI 事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   事件与用户输入（按键、鼠标操作）相对应，或者是 UnityGUI 布局或渲染事件。
+   <br/>
+   <br/>
+   对于每个事件，在这些脚本中均调用
+   <a href="MonoBehaviour.OnGUI.html">
+    OnGUI
+   </a>
+   ；因此每帧可能多次调用 OnGUI。
+   <a href="Event-current.html">
+    Event.current
+   </a>
+   对应于 OnGUI 调用内的“当前”事件。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/GUIScriptingGuide.html">
+    GUI 脚本指南
+   </a>
+   、
+   <a href="EventType.html">
+    EventType
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Event-current.html">
+      current
+     </a>
+    </td>
+    <td class="desc">
+     将被立即处理的当前事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Event-alt.html">
+      alt
+     </a>
+    </td>
+    <td class="desc">
+     Alt/Option 键是否被按住？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-button.html">
+      button
+     </a>
+    </td>
+    <td class="desc">
+     已按下哪个鼠标键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-capsLock.html">
+      capsLock
+     </a>
+    </td>
+    <td class="desc">
+     是否打开了 Caps Lock？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-character.html">
+      character
+     </a>
+    </td>
+    <td class="desc">
+     键入的字符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-clickCount.html">
+      clickCount
+     </a>
+    </td>
+    <td class="desc">
+     已收到了多少次连续鼠标点击。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-command.html">
+      command
+     </a>
+    </td>
+    <td class="desc">
+     Command/Windows 键是否被按住？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-commandName.html">
+      commandName
+     </a>
+    </td>
+    <td class="desc">
+     ExecuteCommand 或 ValidateCommand 事件的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-control.html">
+      control
+     </a>
+    </td>
+    <td class="desc">
+     Control 键是否被按住？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-delta.html">
+      delta
+     </a>
+    </td>
+    <td class="desc">
+     与上次事件相比该鼠标的相对移动。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-displayIndex.html">
+      displayIndex
+     </a>
+    </td>
+    <td class="desc">
+     该事件所属的显示器的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-functionKey.html">
+      functionKey
+     </a>
+    </td>
+    <td class="desc">
+     当前按键是否是功能键？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-isKey.html">
+      isKey
+     </a>
+    </td>
+    <td class="desc">
+     该事件是否是键盘事件？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-isMouse.html">
+      isMouse
+     </a>
+    </td>
+    <td class="desc">
+     该事件是否是鼠标事件？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-keyCode.html">
+      keyCode
+     </a>
+    </td>
+    <td class="desc">
+     键盘事件的原始键代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-modifiers.html">
+      modifiers
+     </a>
+    </td>
+    <td class="desc">
+     哪些修改键被按住。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-mousePosition.html">
+      mousePosition
+     </a>
+    </td>
+    <td class="desc">
+     鼠标位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-numeric.html">
+      numeric
+     </a>
+    </td>
+    <td class="desc">
+     当前按键是否在数字键盘上？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-pointerType.html">
+      pointerType
+     </a>
+    </td>
+    <td class="desc">
+     创建事件的指针的类型（例如鼠标、触控屏幕、笔）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-pressure.html">
+      pressure
+     </a>
+    </td>
+    <td class="desc">
+     施加了多大的触笔压力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-shift.html">
+      shift
+     </a>
+    </td>
+    <td class="desc">
+     Shift 键是否被按住？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     事件的类型。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Event.GetTypeForControl.html">
+      GetTypeForControl
+     </a>
+    </td>
+    <td class="desc">
+     获取给定控件 ID 的已筛选事件类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event.Use.html">
+      Use
+     </a>
+    </td>
+    <td class="desc">
+     使用该事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Event.GetEventCount.html">
+      GetEventCount
+     </a>
+    </td>
+    <td class="desc">
+     返回存储在事件队列中的事件的当前数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event.KeyboardEvent.html">
+      KeyboardEvent
+     </a>
+    </td>
+    <td class="desc">
+     创建键盘事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Event.PopEvent.html">
+      PopEvent
+     </a>
+    </td>
+    <td class="desc">
+     从事件系统获取排队的下一个 [Event]。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

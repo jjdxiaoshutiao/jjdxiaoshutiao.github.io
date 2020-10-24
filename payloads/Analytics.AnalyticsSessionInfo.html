@@ -1,0 +1,210 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnalyticsSessionInfo
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Analytics
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供对当前游戏实例的 Analytics 会话信息的访问。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该类包含用于查找 Analytics 会话信息的静态方法。请注意，如果玩家重新安装游戏，则会重置累积的统计信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Analytics;
+using System;<br/><br/>public class NewBehaviourScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Start   " + <a href="Analytics.AnalyticsSessionInfo-userId.html">AnalyticsSessionInfo.userId</a> + " " + <a href="Analytics.AnalyticsSessionInfo-sessionState.html">AnalyticsSessionInfo.sessionState</a> + " " + <a href="Analytics.AnalyticsSessionInfo-sessionId.html">AnalyticsSessionInfo.sessionId</a> + " " + <a href="Analytics.AnalyticsSessionInfo-sessionElapsedTime.html">AnalyticsSessionInfo.sessionElapsedTime</a>);
+        <a href="Analytics.AnalyticsSessionInfo-sessionStateChanged.html">AnalyticsSessionInfo.sessionStateChanged</a> += OnSessionStateChanged;
+    }<br/><br/>    void OnSessionStateChanged(<a href="Analytics.AnalyticsSessionState.html">AnalyticsSessionState</a> sessionState, long sessionId, long sessionElapsedTime, bool sessionChanged)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Call    " + <a href="Analytics.AnalyticsSessionInfo-userId.html">AnalyticsSessionInfo.userId</a>  + " " + sessionState + " " + sessionId + " " + sessionElapsedTime + " " + sessionChanged);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-customDeviceId.html">
+      customDeviceId
+     </a>
+    </td>
+    <td class="desc">
+     报告当前自定义设备 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-customUserId.html">
+      customUserId
+     </a>
+    </td>
+    <td class="desc">
+     报告当前自定义用户 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-identityToken.html">
+      identityToken
+     </a>
+    </td>
+    <td class="desc">
+     Analytics 服务器根据 AnalyticsSessionInfo.userId 返回的当前用户身份令牌。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionCount.html">
+      sessionCount
+     </a>
+    </td>
+    <td class="desc">
+     自应用程序安装以来播放的会话数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionElapsedTime.html">
+      sessionElapsedTime
+     </a>
+    </td>
+    <td class="desc">
+     从当前游戏会话开始以来经过的时间（以毫秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionFirstRun.html">
+      sessionFirstRun
+     </a>
+    </td>
+    <td class="desc">
+     报告当前会话是否是自玩家安装游戏或应用程序以来的第一个会话。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionId.html">
+      sessionId
+     </a>
+    </td>
+    <td class="desc">
+     标识当前游戏或应用程序会话的随机唯一 GUID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionState.html">
+      sessionState
+     </a>
+    </td>
+    <td class="desc">
+     会话的当前状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-userId.html">
+      userId
+     </a>
+    </td>
+    <td class="desc">
+     唯一标识在游戏或应用程序同一实例上播放的会话的随机 GUID。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-identityTokenChanged.html">
+      identityTokenChanged
+     </a>
+    </td>
+    <td class="desc">
+     当服务器更新 AnalyticsSessionInfo.identityToken 时分发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo-sessionStateChanged.html">
+      sessionStateChanged
+     </a>
+    </td>
+    <td class="desc">
+     在 Analytics 会话状态更改时分发。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo.IdentityTokenChanged.html">
+      IdentityTokenChanged
+     </a>
+    </td>
+    <td class="desc">
+     定义用于处理 AnalyticsSettings.IdentityTokenChanged 事件的委托签名。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsSessionInfo.SessionStateChanged.html">
+      SessionStateChanged
+     </a>
+    </td>
+    <td class="desc">
+     在 Analytics 会话状态更改时分发。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TextureImporterRGBMMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="TextureImporter.html">
+    TextureImporter
+   </a>
+   中 HDR 纹理的 RGBM 编码模式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   HDR 纹理数据（即来自 .exr 或 .hdr 文件）可以由 Unity 编码为 RGBM 格式。此设置控制编码的完成方式。默认设置为“Auto”，这意味着在源数据为 HDR 时执行 RGBM 编码。
+   <br/>
+   <br/>
+   RGBM 编码将 [0;8] 范围打包到 [0;1] 中，并将乘数存储在 Alpha 通道中。最终值为 RGB*A*8。
+   <br/>
+   <br/>
+   另请参阅：TextureImporterSettings.rgbm。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextureImporterRGBMMode.Auto.html">
+      Auto
+     </a>
+    </td>
+    <td class="desc">
+     当源数据是 TextureImporter 中的 HDR 时，进行 RGBM 编码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureImporterRGBMMode.On.html">
+      On
+     </a>
+    </td>
+    <td class="desc">
+     在 TextureImporter 中执行 RGBM 编码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureImporterRGBMMode.Off.html">
+      Off
+     </a>
+    </td>
+    <td class="desc">
+     不在 TextureImporter 中执行 RGBM 编码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureImporterRGBMMode.Encoded.html">
+      Encoded
+     </a>
+    </td>
+    <td class="desc">
+     源纹理已在 TextureImporter 中进行 RGBM 编码。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

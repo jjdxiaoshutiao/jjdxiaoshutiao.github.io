@@ -1,0 +1,186 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InputDevice
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.XR
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义 XR 输入子系统中的输入设备。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   要获取输入功能或将触觉反馈输送到 XR 输入设备，请指定
+   <a href="XR.XRNode.html">
+    XRNode
+   </a>
+   作为目标。使用
+   <a href="XR.XRNode.LeftHand.html">
+    XRNode.LeftHand
+   </a>
+   和
+   <a href="XR.XRNode.RightHand.html">
+    XRNode.RightHand
+   </a>
+   可将触觉数据发送到左侧或右侧设备。可以将触觉数据作为脉冲发送，或作为通过触觉设备播放的原始字节缓冲区发送。可以随时停止触觉输出或查询设备的缓冲功能。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-characteristics.html">
+      characteristics
+     </a>
+    </td>
+    <td class="desc">
+     只读。用于描述 InputDevice 特征的枚举标志的位掩码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-isValid.html">
+      isValid
+     </a>
+    </td>
+    <td class="desc">
+     只读。如果设备当前是有效的输入设备，则为 true；否则为 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-manufacturer.html">
+      manufacturer
+     </a>
+    </td>
+    <td class="desc">
+     已连接的输入设备的制造商。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-name.html">
+      name
+     </a>
+    </td>
+    <td class="desc">
+     只读。XR 系统中的设备名称。这是平台为设备提供的唯一标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-serialNumber.html">
+      serialNumber
+     </a>
+    </td>
+    <td class="desc">
+     已连接输入设备的序列号。如果没有可用的序列号，则为空白。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice-subsystem.html">
+      subsystem
+     </a>
+    </td>
+    <td class="desc">
+     获取报告此 InputDevice 的 XRInputSubsystem。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.SendHapticBuffer.html">
+      SendHapticBuffer
+     </a>
+    </td>
+    <td class="desc">
+     向设备发送原始触觉数据缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.SendHapticImpulse.html">
+      SendHapticImpulse
+     </a>
+    </td>
+    <td class="desc">
+     向设备发送触觉脉冲。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.StopHaptics.html">
+      StopHaptics
+     </a>
+    </td>
+    <td class="desc">
+     停止设备的所有触觉播放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.TryGetFeatureUsages.html">
+      TryGetFeatureUsages
+     </a>
+    </td>
+    <td class="desc">
+     获取设备可用的所有输入功能用法的列表。例如，“Trigger”或“Device Position”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.TryGetFeatureValue.html">
+      TryGetFeatureValue
+     </a>
+    </td>
+    <td class="desc">
+     获取有关 Usage 参数所指定输入功能的信息。使用 time 参数的函数允许在特定时间点查询功能。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevice.TryGetHapticCapabilities.html">
+      TryGetHapticCapabilities
+     </a>
+    </td>
+    <td class="desc">
+     获取设备的触觉功能。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

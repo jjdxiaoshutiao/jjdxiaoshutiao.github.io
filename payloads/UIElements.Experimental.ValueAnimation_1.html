@@ -1,0 +1,257 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   ValueAnimation&lt;T0&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.UIElements.Experimental
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="UIElements.Experimental.IValueAnimation.html">
+    IValueAnimation
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   过渡动画的实现对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-autoRecycle.html">
+      autoRecycle
+     </a>
+    </td>
+    <td class="desc">
+     如果此动画对象在动画完成后将自动返回到实例池，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-durationMs.html">
+      durationMs
+     </a>
+    </td>
+    <td class="desc">
+     动画的持续时间（以毫秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-easingCurve.html">
+      easingCurve
+     </a>
+    </td>
+    <td class="desc">
+     与此动画相关的平滑功能。默认值为 Easing.OutQuad。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-from.html">
+      from
+     </a>
+    </td>
+    <td class="desc">
+     动画的起始值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-initialValue.html">
+      initialValue
+     </a>
+    </td>
+    <td class="desc">
+     当尚未设置 from 字段时，为了获取此动画的起始状态而调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-interpolator.html">
+      interpolator
+     </a>
+    </td>
+    <td class="desc">
+     值插值方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-isRunning.html">
+      isRunning
+     </a>
+    </td>
+    <td class="desc">
+     确定动画当前是否是激活的。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-onAnimationCompleted.html">
+      onAnimationCompleted
+     </a>
+    </td>
+    <td class="desc">
+     此动画完成时调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-to.html">
+      to
+     </a>
+    </td>
+    <td class="desc">
+     动画的结束值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-valueUpdated.html">
+      valueUpdated
+     </a>
+    </td>
+    <td class="desc">
+     每次进行值插值后调用的回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1-ctor.html">
+      ValueAnimation_1
+     </a>
+    </td>
+    <td class="desc">
+     构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.Ease.html">
+      Ease
+     </a>
+    </td>
+    <td class="desc">
+     设置缓动函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.KeepAlive.html">
+      KeepAlive
+     </a>
+    </td>
+    <td class="desc">
+     动画完成后，不将对象返回到实例池。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.OnCompleted.html">
+      OnCompleted
+     </a>
+    </td>
+    <td class="desc">
+     设置此动画完成时调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.Recycle.html">
+      Recycle
+     </a>
+    </td>
+    <td class="desc">
+     将此动画对象返回到其对象池。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.Start.html">
+      Start
+     </a>
+    </td>
+    <td class="desc">
+     使用对象的值启动动画。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     停止动画。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.Experimental.ValueAnimation_1.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 ValueAnimation 对象，或从其实例池中返回一个可用的对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

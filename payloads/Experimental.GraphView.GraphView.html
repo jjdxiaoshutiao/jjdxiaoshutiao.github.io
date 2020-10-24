@@ -1,0 +1,1377 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   GraphView
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.GraphView
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="UIElements.VisualElement.html">
+    UIElements.VisualElement
+   </a>
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="UIElements.IEventHandler.html">
+    IEventHandler
+   </a>
+   ,
+   <a class="cl" href="UIElements.IExperimentalFeatures.html">
+    IExperimentalFeatures
+   </a>
+   ,
+   <a class="cl" href="UIElements.IResolvedStyle.html">
+    IResolvedStyle
+   </a>
+   ,
+   <a class="cl" href="Experimental.GraphView.ISelection.html">
+    ISelection
+   </a>
+   ,
+   <a class="cl" href="UIElements.ITransform.html">
+    ITransform
+   </a>
+   ,
+   <a class="cl" href="UIElements.Experimental.ITransitionAnimations.html">
+    ITransitionAnimations
+   </a>
+   ,
+   <a class="cl" href="UIElements.IVisualElementScheduler.html">
+    IVisualElementScheduler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   主 GraphView 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-canPasteSerializedData.html">
+      canPasteSerializedData
+     </a>
+    </td>
+    <td class="desc">
+     询问序列化数据是否可以粘贴。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-contentViewContainer.html">
+      contentViewContainer
+     </a>
+    </td>
+    <td class="desc">
+     主内容容器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-deleteSelection.html">
+      deleteSelection
+     </a>
+    </td>
+    <td class="desc">
+     删除所选项回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-edges.html">
+      edges
+     </a>
+    </td>
+    <td class="desc">
+     图中的所有边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-elementResized.html">
+      elementResized
+     </a>
+    </td>
+    <td class="desc">
+     元素调整大小回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-elementsAddedToGroup.html">
+      elementsAddedToGroup
+     </a>
+    </td>
+    <td class="desc">
+     在将 GraphElements 添加到组时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-elementsInsertedToStackNode.html">
+      elementsInsertedToStackNode
+     </a>
+    </td>
+    <td class="desc">
+     在将 GraphElements 插入 StackNode 时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-elementsRemovedFromGroup.html">
+      elementsRemovedFromGroup
+     </a>
+    </td>
+    <td class="desc">
+     在从组中删除 GraphElements 时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-elementsRemovedFromStackNode.html">
+      elementsRemovedFromStackNode
+     </a>
+    </td>
+    <td class="desc">
+     在从 StackNode 中删除 GraphElements 时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-graphElements.html">
+      graphElements
+     </a>
+    </td>
+    <td class="desc">
+     图中的所有 GraphElements。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-graphViewChanged.html">
+      graphViewChanged
+     </a>
+    </td>
+    <td class="desc">
+     在图中发生特定更改时使用的回调。请参阅 GraphViewChange。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-groupTitleChanged.html">
+      groupTitleChanged
+     </a>
+    </td>
+    <td class="desc">
+     在组标题更改时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-isReframable.html">
+      isReframable
+     </a>
+    </td>
+    <td class="desc">
+     所选项是否可以重新构造。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-maxScale.html">
+      maxScale
+     </a>
+    </td>
+    <td class="desc">
+     最大缩放级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-minScale.html">
+      minScale
+     </a>
+    </td>
+    <td class="desc">
+     最小缩放级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-nodeCreationRequest.html">
+      nodeCreationRequest
+     </a>
+    </td>
+    <td class="desc">
+     在用户请求显示节点创建窗口时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-nodes.html">
+      nodes
+     </a>
+    </td>
+    <td class="desc">
+     当前图中的所有节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-ports.html">
+      ports
+     </a>
+    </td>
+    <td class="desc">
+     当前图中的所有端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-referenceScale.html">
+      referenceScale
+     </a>
+    </td>
+    <td class="desc">
+     参考缩放级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-scale.html">
+      scale
+     </a>
+    </td>
+    <td class="desc">
+     当前图的缩放级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-scaleStep.html">
+      scaleStep
+     </a>
+    </td>
+    <td class="desc">
+     缩放步骤。有关详细信息，请参阅 ContentZoomer.scaleStep。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-selection.html">
+      selection
+     </a>
+    </td>
+    <td class="desc">
+     图中所有当前已选择的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-serializeGraphElements.html">
+      serializeGraphElements
+     </a>
+    </td>
+    <td class="desc">
+     用于序列化图形元素以便实现复制/粘贴和其他操作的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-supportsWindowedBlackboard.html">
+      supportsWindowedBlackboard
+     </a>
+    </td>
+    <td class="desc">
+     如果此 GraphView 支持窗口化 Blackboard，则设置为 true。否则设置为 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-unserializeAndPaste.html">
+      unserializeAndPaste
+     </a>
+    </td>
+    <td class="desc">
+     用于取消序列化图形元素并将其添加到图中的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-viewport.html">
+      viewport
+     </a>
+    </td>
+    <td class="desc">
+     图形视口。这就是目前的情况。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-viewTransform.html">
+      viewTransform
+     </a>
+    </td>
+    <td class="desc">
+     图形的视图变换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-viewTransformChanged.html">
+      viewTransformChanged
+     </a>
+    </td>
+    <td class="desc">
+     视图变换更改回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView-zoomerMaxElementCountWithPixelCacheRegen.html">
+      zoomerMaxElementCountWithPixelCacheRegen
+     </a>
+    </td>
+    <td class="desc">
+     图中的元素数量。若超过该数量，缩放操控器将在您每次勾选时关闭像素缓存再生功能，以免性能下降。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.AddElement.html">
+      AddElement
+     </a>
+    </td>
+    <td class="desc">
+     添加新的 GraphElement。应使用这个而非 Add() 来添加 GraphElement。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.AddLayer.html">
+      AddLayer
+     </a>
+    </td>
+    <td class="desc">
+     为 GraphView 添加一个新层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.AddToSelection.html">
+      AddToSelection
+     </a>
+    </td>
+    <td class="desc">
+     向所选项添加元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.BuildContextualMenu.html">
+      BuildContextualMenu
+     </a>
+    </td>
+    <td class="desc">
+     向上下文菜单添加菜单项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.CalculateRectToFitAll.html">
+      CalculateRectToFitAll
+     </a>
+    </td>
+    <td class="desc">
+     计算矩形大小和位置以适应图中的所有元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.ClearSelection.html">
+      ClearSelection
+     </a>
+    </td>
+    <td class="desc">
+     清除所选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.DeleteElements.html">
+      DeleteElements
+     </a>
+    </td>
+    <td class="desc">
+     从图形视图中删除元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.DeleteSelection.html">
+      DeleteSelection
+     </a>
+    </td>
+    <td class="desc">
+     删除选择的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.FrameAll.html">
+      FrameAll
+     </a>
+    </td>
+    <td class="desc">
+     聚焦查看图中所有元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.FrameNext.html">
+      FrameNext
+     </a>
+    </td>
+    <td class="desc">
+     当前选择一个元素后，聚焦查看下一个元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.FrameOrigin.html">
+      FrameOrigin
+     </a>
+    </td>
+    <td class="desc">
+     聚焦查看图形原点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.FramePrev.html">
+      FramePrev
+     </a>
+    </td>
+    <td class="desc">
+     聚焦查看当前所选元素之前的上一个元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.FrameSelection.html">
+      FrameSelection
+     </a>
+    </td>
+    <td class="desc">
+     聚焦查看当前所选元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetBlackboard.html">
+      GetBlackboard
+     </a>
+    </td>
+    <td class="desc">
+     获取与此 GraphView 关联的 Blackboard。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetCompatiblePorts.html">
+      GetCompatiblePorts
+     </a>
+    </td>
+    <td class="desc">
+     获取与给定端口兼容的所有端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetEdgeByGuid.html">
+      GetEdgeByGuid
+     </a>
+    </td>
+    <td class="desc">
+     根据边缘 GUID 获取边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetElementByGuid.html">
+      GetElementByGuid
+     </a>
+    </td>
+    <td class="desc">
+     获取任何带有给定 GUID 的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetNodeByGuid.html">
+      GetNodeByGuid
+     </a>
+    </td>
+    <td class="desc">
+     获取带有给定 GUID 的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GetPortByGuid.html">
+      GetPortByGuid
+     </a>
+    </td>
+    <td class="desc">
+     根据端口 GUID 获取端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.ReleaseBlackboard.html">
+      ReleaseBlackboard
+     </a>
+    </td>
+    <td class="desc">
+     从此 GraphView 释放关联的 Blackboard。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.RemoveElement.html">
+      RemoveElement
+     </a>
+    </td>
+    <td class="desc">
+     从图中删除元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.RemoveFromSelection.html">
+      RemoveFromSelection
+     </a>
+    </td>
+    <td class="desc">
+     从所选项中删除元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.SetupZoom.html">
+      SetupZoom
+     </a>
+    </td>
+    <td class="desc">
+     设置缩放属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.UpdateViewTransform.html">
+      UpdateViewTransform
+     </a>
+    </td>
+    <td class="desc">
+     更新视口变换。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.CanPasteSerializedData.html">
+      CanPasteSerializedData
+     </a>
+    </td>
+    <td class="desc">
+     用于查看序列化数据是否可以粘贴的默认方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.DeleteSelectionOperation.html">
+      DeleteSelectionOperation
+     </a>
+    </td>
+    <td class="desc">
+     删除所选项的默认方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.SerializeGraphElements.html">
+      SerializeGraphElements
+     </a>
+    </td>
+    <td class="desc">
+     序列化图形元素的默认方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.UnserializeAndPasteOperation.html">
+      UnserializeAndPasteOperation
+     </a>
+    </td>
+    <td class="desc">
+     取消序列化并粘贴元素的默认方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.ValidateTransform.html">
+      ValidateTransform
+     </a>
+    </td>
+    <td class="desc">
+     验证视图变换。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.CalculateFrameTransform.html">
+      CalculateFrameTransform
+     </a>
+    </td>
+    <td class="desc">
+     根据缩放级别和窗口或父对象的大小计算视图变换。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.CanPasteSerializedDataDelegate.html">
+      CanPasteSerializedDataDelegate
+     </a>
+    </td>
+    <td class="desc">
+     用于查看序列化数据是否可以粘贴的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.DeleteSelectionDelegate.html">
+      DeleteSelectionDelegate
+     </a>
+    </td>
+    <td class="desc">
+     删除所选项的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.ElementResized.html">
+      ElementResized
+     </a>
+    </td>
+    <td class="desc">
+     元素调整大小委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.GraphViewChanged.html">
+      GraphViewChanged
+     </a>
+    </td>
+    <td class="desc">
+     用于指示 GraphView 中的更改（通常由操控器执行）的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.SerializeGraphElementsDelegate.html">
+      SerializeGraphElementsDelegate
+     </a>
+    </td>
+    <td class="desc">
+     用于序列化图形元素的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.UnserializeAndPasteDelegate.html">
+      UnserializeAndPasteDelegate
+     </a>
+    </td>
+    <td class="desc">
+     用于取消序列化并粘贴元素的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.GraphView.ViewTransformChanged.html">
+      ViewTransformChanged
+     </a>
+    </td>
+    <td class="desc">
+     视图变换更改（缩放）委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    静态变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-disabledUssClassName.html">
+       disabledUssClassName
+      </a>
+     </td>
+     <td class="desc">
+      本地禁用元素的 USS 类名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable-canGrabFocus.html">
+       canGrabFocus
+      </a>
+     </td>
+     <td class="desc">
+      如果元素可以获得焦点，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable-delegatesFocus.html">
+       delegatesFocus
+      </a>
+     </td>
+     <td class="desc">
+      元素是否应将焦点委托给其子项。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable-focusable.html">
+       focusable
+      </a>
+     </td>
+     <td class="desc">
+      如果元素可以获得焦点，则为 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable-focusController.html">
+       focusController
+      </a>
+     </td>
+     <td class="desc">
+      返回此元素的焦点控制器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable-tabIndex.html">
+       tabIndex
+      </a>
+     </td>
+     <td class="desc">
+      用于对焦点环中可获得焦点的元素排序的整数。必须大于或等于零。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-childCount.html">
+       childCount
+      </a>
+     </td>
+     <td class="desc">
+      此对象的 contentContainer 中的子元素数
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-contentContainer.html">
+       contentContainer
+      </a>
+     </td>
+     <td class="desc">
+      子元素通常添加到此元素中
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-customStyle.html">
+       customStyle
+      </a>
+     </td>
+     <td class="desc">
+      返回元素的自定义样式属性访问器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-enabledInHierarchy.html">
+       enabledInHierarchy
+      </a>
+     </td>
+     <td class="desc">
+      如果 VisualElement 是在它自己的层级视图中启用，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-enabledSelf.html">
+       enabledSelf
+      </a>
+     </td>
+     <td class="desc">
+      如果 VisualElement 是本地启用，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-experimental.html">
+       experimental
+      </a>
+     </td>
+     <td class="desc">
+      返回 UIElements 实验性接口。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-generateVisualContent.html">
+       generateVisualContent
+      </a>
+     </td>
+     <td class="desc">
+      在需要（重新）生成 VisualElement 可视内容时调用。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-hierarchy.html">
+       hierarchy
+      </a>
+     </td>
+     <td class="desc">
+      访问此元素物理层级视图
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-pickingMode.html">
+       pickingMode
+      </a>
+     </td>
+     <td class="desc">
+      确定在 mouseEvents 或 IPanel.Pick 查询期间是否可以选取此元素。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-resolvedStyle.html">
+       resolvedStyle
+      </a>
+     </td>
+     <td class="desc">
+      返回 VisualElement 解析的样式值。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-schedule.html">
+       schedule
+      </a>
+     </td>
+     <td class="desc">
+      检索此 VisualElement 的 IVisualElementScheduler
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-style.html">
+       style
+      </a>
+     </td>
+     <td class="desc">
+      引用此元素的样式对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-styleSheets.html">
+       styleSheets
+      </a>
+     </td>
+     <td class="desc">
+      返回一个 VisualElementStyleSheetSet，用于操作附加到此元素的样式表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Index_operator.html">
+       this[int]
+      </a>
+     </td>
+     <td class="desc">
+      访问此元素物理层级视图
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-tooltip.html">
+       tooltip
+      </a>
+     </td>
+     <td class="desc">
+      用户将元素悬停一小段时间后显示在信息框内的文本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-usageHints.html">
+       usageHints
+      </a>
+     </td>
+     <td class="desc">
+      提示值的组合，用于指定 VisualElement 的高级预期使用模式。
+仅当 VisualElement 尚未成为 Panel 的一部分时，才可以设置此属性。一旦成为 Panel 的一部分，此属性实际上会变为只读状态，尝试更改它将抛出异常。
+适当的 UsageHints 的规范会促使系统根据预期的使用模式更好地决定如何处理或加速某些操作。
+请注意，这些提示不影响行为或视觉效果，而只影响面板及其内部元素的总体性能。
+通常，建议始终考虑指定适当的 UsageHints，但请注意，在某些情况下（例如，由于目标平台的硬件限制），一些 UsageHints 可能会被内部忽略。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-userData.html">
+       userData
+      </a>
+     </td>
+     <td class="desc">
+      此属性可用于将特定于应用程序的用户数据与此 VisualElement 关联。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement-viewDataKey.html">
+       viewDataKey
+      </a>
+     </td>
+     <td class="desc">
+      用于查看数据持久性（即树展开状态、滚动位置、缩放级别）。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.HandleEvent.html">
+       HandleEvent
+      </a>
+     </td>
+     <td class="desc">
+      处理事件，通常是通过执行与事件关联的回调处理事件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.HasBubbleUpHandlers.html">
+       HasBubbleUpHandlers
+      </a>
+     </td>
+     <td class="desc">
+      如果事件传播 BubbleUp 阶段的事件处理程序已附加到此对象，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.HasTrickleDownHandlers.html">
+       HasTrickleDownHandlers
+      </a>
+     </td>
+     <td class="desc">
+      如果事件传播 TrickleDown 阶段的事件处理程序已附加到此对象，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.RegisterCallback.html">
+       RegisterCallback
+      </a>
+     </td>
+     <td class="desc">
+      向实例添加事件处理程序。如果已为同一阶段（TrickleDown 或 BubbleUp）注册了事件处理程序，则此方法没有效果。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.SendEvent.html">
+       SendEvent
+      </a>
+     </td>
+     <td class="desc">
+      将事件发送到事件处理程序。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.CallbackEventHandler.UnregisterCallback.html">
+       UnregisterCallback
+      </a>
+     </td>
+     <td class="desc">
+      从此实例删除回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable.Blur.html">
+       Blur
+      </a>
+     </td>
+     <td class="desc">
+      通知元素释放焦点。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Focusable.Focus.html">
+       Focus
+      </a>
+     </td>
+     <td class="desc">
+      尝试让此元素获得焦点。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Add.html">
+       Add
+      </a>
+     </td>
+     <td class="desc">
+      向此元素的 contentContainer 添加一个元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.BringToFront.html">
+       BringToFront
+      </a>
+     </td>
+     <td class="desc">
+      将此元素放到其父子列表的末尾。此元素将显示在所有重叠的同级元素前方。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Children.html">
+       Children
+      </a>
+     </td>
+     <td class="desc">
+      从元素的 contentContainer 返回元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Clear.html">
+       Clear
+      </a>
+     </td>
+     <td class="desc">
+      从此元素的 contentContainer 中删除所有子元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Contains.html">
+       Contains
+      </a>
+     </td>
+     <td class="desc">
+      如果元素是此 VisualElement 的直接子级，则返回 true
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.ElementAt.html">
+       ElementAt
+      </a>
+     </td>
+     <td class="desc">
+      检索相应位置的子元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.EnableInClassList.html">
+       EnableInClassList
+      </a>
+     </td>
+     <td class="desc">
+      启用或禁用具有给定名称的类。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.FindAncestorUserData.html">
+       FindAncestorUserData
+      </a>
+     </td>
+     <td class="desc">
+      向上搜索此 VisualElement 的层级视图并检索存储的 userData（如果找到）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.FindCommonAncestor.html">
+       FindCommonAncestor
+      </a>
+     </td>
+     <td class="desc">
+      查找 VisualTree 层级视图中两个 VisualElement 之间的最低共同上级
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.GetClasses.html">
+       GetClasses
+      </a>
+     </td>
+     <td class="desc">
+      获取此元素的类。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.GetFirstAncestorOfType.html">
+       GetFirstAncestorOfType
+      </a>
+     </td>
+     <td class="desc">
+      从此元素的父级开始向上访问层级视图，返回第一个此类型的 VisualElement
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.GetFirstOfType.html">
+       GetFirstOfType
+      </a>
+     </td>
+     <td class="desc">
+      从此元素开始向上访问层级视图，返回第一个此类型的 VisualElement
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.IndexOf.html">
+       IndexOf
+      </a>
+     </td>
+     <td class="desc">
+      检索指定的 VisualElement 的子索引。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Insert.html">
+       Insert
+      </a>
+     </td>
+     <td class="desc">
+      向此元素的 contentContainer 插入一个元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.MarkDirtyRepaint.html">
+       MarkDirtyRepaint
+      </a>
+     </td>
+     <td class="desc">
+      在下一帧触发 VisualElement 的重绘。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.PlaceBehind.html">
+       PlaceBehind
+      </a>
+     </td>
+     <td class="desc">
+      将此元素放在其父子列表中同级元素之前紧邻的位置。如果此元素和同级元素位置重叠，此元素将显示在其同级元素之后。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.PlaceInFront.html">
+       PlaceInFront
+      </a>
+     </td>
+     <td class="desc">
+      将此元素放在其父子列表中同级元素之后紧邻的位置。如果此元素和同级元素位置重叠，此元素将显示在其同级元素之前。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Remove.html">
+       Remove
+      </a>
+     </td>
+     <td class="desc">
+      从层级视图中删除此子级
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.RemoveAt.html">
+       RemoveAt
+      </a>
+     </td>
+     <td class="desc">
+      从此元素的 contentContainer 中删除位于此位置的子元素
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.RemoveFromHierarchy.html">
+       RemoveFromHierarchy
+      </a>
+     </td>
+     <td class="desc">
+      将此元素从其父层级视图中删除
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.SendEvent.html">
+       SendEvent
+      </a>
+     </td>
+     <td class="desc">
+      将事件发送到事件处理程序。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.SendToBack.html">
+       SendToBack
+      </a>
+     </td>
+     <td class="desc">
+      将此元素发送到其父子列表的开始处。此元素将显示在所有重叠的同级元素之后。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.SetEnabled.html">
+       SetEnabled
+      </a>
+     </td>
+     <td class="desc">
+      更改 VisualElement 启用状态。禁用的 VisualElement 不接收大多数事件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.Sort.html">
+       Sort
+      </a>
+     </td>
+     <td class="desc">
+      重新排序来自此 VisualElement contentContainer 的子元素。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.VisualElement.ToggleInClassList.html">
+       ToggleInClassList
+      </a>
+     </td>
+     <td class="desc">
+      在类列表中添加和删除给定类名之间切换。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

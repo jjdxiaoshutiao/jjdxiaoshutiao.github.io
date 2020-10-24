@@ -1,0 +1,103 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Subsystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="ISubsystem.html">
+    ISubsystem
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   子系统从给定子系统（示例、输入、环境和显示等）的
+   <a href="SubsystemDescriptor.html">
+    SubsystemDescriptor
+   </a>
+   中初始化，并提供与给定子系统交互的接口，直到它被销毁。创建子系统后，便可以启动或停止该子系统，以打开和关闭相应功能（以及保留性能）。子系统的基本类型仅展示此功能；此类被设计为派生类（能够展示更多特定于给定子系统的功能）的基类。
+   <br/>
+   <br/>
+   注意：从同一 SubsystemDescriptor 中初始化第二个子系统将返回对现有子系统的引用，因为目前只允许单个子系统提供商使用一个子系统。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Subsystem-running.html">
+      running
+     </a>
+    </td>
+    <td class="desc">
+     子系统是否在运行。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Subsystem.Destroy.html">
+      Destroy
+     </a>
+    </td>
+    <td class="desc">
+     销毁子系统的此实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Subsystem.Start.html">
+      Start
+     </a>
+    </td>
+    <td class="desc">
+     启动子系统的一个实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Subsystem.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     停止子系统的一个实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

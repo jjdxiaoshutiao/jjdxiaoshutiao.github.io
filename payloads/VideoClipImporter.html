@@ -1,0 +1,649 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   VideoClipImporter
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="AssetImporter.html">
+    AssetImporter
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   VideoClipImporter 允许您通过编辑器脚本修改
+   <a href="Video.VideoClip.html">
+    VideoClip
+   </a>
+   导入设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   请参阅
+   <a href="Video.VideoPlayer.html">
+    VideoPlayer
+   </a>
+   类文档中的
+   <strong>
+    Movie File Format Support Notes
+   </strong>
+   部分，了解受支持的电影文件格式并查看编码准则。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-defaultTargetSettings.html">
+      defaultTargetSettings
+     </a>
+    </td>
+    <td class="desc">
+     用于特定于平台的导入设置的默认值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-deinterlaceMode.html">
+      deinterlaceMode
+     </a>
+    </td>
+    <td class="desc">
+     图像在转码期间隔行扫描。这可以告知导入器如何解读源中的字段（如果有）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-flipHorizontal.html">
+      flipHorizontal
+     </a>
+    </td>
+    <td class="desc">
+     在导入过程中应用水平翻转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-flipVertical.html">
+      flipVertical
+     </a>
+    </td>
+    <td class="desc">
+     在导入过程中应用垂直翻转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-frameCount.html">
+      frameCount
+     </a>
+    </td>
+    <td class="desc">
+     剪辑中的帧数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-frameRate.html">
+      frameRate
+     </a>
+    </td>
+    <td class="desc">
+     剪辑的帧率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-importAudio.html">
+      importAudio
+     </a>
+    </td>
+    <td class="desc">
+     从源文件导入音频轨道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-isPlayingPreview.html">
+      isPlayingPreview
+     </a>
+    </td>
+    <td class="desc">
+     当前是否正在播放预览。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-keepAlpha.html">
+      keepAlpha
+     </a>
+    </td>
+    <td class="desc">
+     是否要在转码的剪辑中保留源中的 Alpha。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-outputFileSize.html">
+      outputFileSize
+     </a>
+    </td>
+    <td class="desc">
+     导入后的文件大小（以字节为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-pixelAspectRatioDenominator.html">
+      pixelAspectRatioDenominator
+     </a>
+    </td>
+    <td class="desc">
+     像素宽高比的分母（分子:分母）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-pixelAspectRatioNumerator.html">
+      pixelAspectRatioNumerator
+     </a>
+    </td>
+    <td class="desc">
+     像素宽高比的分子（分子:分母）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-sourceAudioTrackCount.html">
+      sourceAudioTrackCount
+     </a>
+    </td>
+    <td class="desc">
+     源文件中的音频轨道数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-sourceFileSize.html">
+      sourceFileSize
+     </a>
+    </td>
+    <td class="desc">
+     导入之前的文件大小（以字节为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-sourceHasAlpha.html">
+      sourceHasAlpha
+     </a>
+    </td>
+    <td class="desc">
+     如果源文件包含通道以实现每像素透明度，则为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-sRGBClip.html">
+      sRGBClip
+     </a>
+    </td>
+    <td class="desc">
+     导入的剪辑是否包含 sRGB 颜色数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter-transcodeSkipped.html">
+      transcodeSkipped
+     </a>
+    </td>
+    <td class="desc">
+     如果在导入过程中跳过了转码，则返回 true，否则返回 false。（只读）将 VideoImporterTargetSettings.enableTranscoding 设置为 true 时，在导入时执行的转码操作可能会花很长时间，最多需要多个小时，具体取决于源分辨率和内容时长。资源导入器的进度条中提供了可跳过此流程的选项。跳过此流程后，转码操作将改为提供资源的非转码版本。但是，导入器设置将保持不变，因此可检查此属性，看看是否与生成的工件存在不连贯的地方。如果在不停止转码流程或关闭转码的情况下重新导入，会导致此属性变成 false。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.ClearTargetSettings.html">
+      ClearTargetSettings
+     </a>
+    </td>
+    <td class="desc">
+     清除指定平台的特定于平台的导入设置，会导致平台使用默认设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     与另一个 VideoClipImporter 执行值比较。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetPreviewTexture.html">
+      GetPreviewTexture
+     </a>
+    </td>
+    <td class="desc">
+     返回包含已转码剪辑的当前帧的纹理。
+如果不在播放剪辑，则返回帧 0，如果正在播放剪辑，则返回当前时间的帧。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetResizeHeight.html">
+      GetResizeHeight
+     </a>
+    </td>
+    <td class="desc">
+     针对指定的调整大小模式获取调整大小操作生成的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetResizeModeName.html">
+      GetResizeModeName
+     </a>
+    </td>
+    <td class="desc">
+     针对指定的调整大小模式获取调整大小操作的完整名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetResizeWidth.html">
+      GetResizeWidth
+     </a>
+    </td>
+    <td class="desc">
+     针对指定的调整大小模式获取调整大小操作生成的宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetSourceAudioChannelCount.html">
+      GetSourceAudioChannelCount
+     </a>
+    </td>
+    <td class="desc">
+     指定源轨道中的音频声道数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetSourceAudioSampleRate.html">
+      GetSourceAudioSampleRate
+     </a>
+    </td>
+    <td class="desc">
+     指定音频轨道的采样率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.GetTargetSettings.html">
+      GetTargetSettings
+     </a>
+    </td>
+    <td class="desc">
+     返回指定平台的特定于平台的导入设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.PlayPreview.html">
+      PlayPreview
+     </a>
+    </td>
+    <td class="desc">
+     开始播放预览。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.SetTargetSettings.html">
+      SetTargetSettings
+     </a>
+    </td>
+    <td class="desc">
+     设置指定平台的特定于平台的导入设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VideoClipImporter.StopPreview.html">
+      StopPreview
+     </a>
+    </td>
+    <td class="desc">
+     停止播放预览。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleName.html">
+       assetBundleName
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleVariant.html">
+       assetBundleVariant
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetPath.html">
+       assetPath
+      </a>
+     </td>
+     <td class="desc">
+      此导入器的资源的路径名称。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-importSettingsMissing.html">
+       importSettingsMissing
+      </a>
+     </td>
+     <td class="desc">
+      如果导入的资源未随附任何元文件，则此值为 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-userData.html">
+       userData
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置任意用户数据。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.AddRemap.html">
+       AddRemap
+      </a>
+     </td>
+     <td class="desc">
+      将子资源从导入的资源（例如 FBX 文件）映射到同类型的外部资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetExternalObjectMap.html">
+       GetExternalObjectMap
+      </a>
+     </td>
+     <td class="desc">
+      获取 AssetImporter 使用的外部对象映射的副本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.RemoveRemap.html">
+       RemoveRemap
+      </a>
+     </td>
+     <td class="desc">
+      从外部对象的映射中删除项。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SaveAndReimport.html">
+       SaveAndReimport
+      </a>
+     </td>
+     <td class="desc">
+      如果资源导入器已标记为“脏”，则保存资源导入器设置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SetAssetBundleNameAndVariant.html">
+       SetAssetBundleNameAndVariant
+      </a>
+     </td>
+     <td class="desc">
+      设置 AssetBundle 名称和变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SupportsRemappedAssetType.html">
+       SupportsRemappedAssetType
+      </a>
+     </td>
+     <td class="desc">
+      检查 AssetImporter 是否支持重新映射给定的资源类型。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetAtPath.html">
+       GetAtPath
+      </a>
+     </td>
+     <td class="desc">
+      在 path 处检索资源的资源导入器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

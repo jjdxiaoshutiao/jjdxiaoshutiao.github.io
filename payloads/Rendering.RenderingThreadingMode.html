@@ -1,0 +1,129 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderingThreadingMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于应用程序实际渲染线程模式的选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   播放器设置
+   <a href="PlayerSettings.MTRendering.html">
+    PlayerSettings.MTRendering
+   </a>
+   、
+   <a href="PlayerSettings-graphicsJobs.html">
+    PlayerSettings.graphicsJobs
+   </a>
+   和
+   <a href="PlayerSettings-graphicsJobsMode.html">
+    PlayerSettings.graphicsJobsMode
+   </a>
+   的组合以及目标平台功能决定了 Unity 编辑器或独立平台启动过程中的渲染线程模式。启动之后，可以使用属性
+   <a href="SystemInfo-renderingThreadingMode.html">
+    SystemInfo.renderingThreadingMode
+   </a>
+   查询渲染线程模式。
+   <br/>
+   有关不同渲染线程模式的比较，请参阅教程页面
+   <a href="https://unity3d.com/learn/tutorials/topics/best-practices/multithreaded-rendering-graphics-jobs">
+    多线程渲染和图形作业
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.Direct.html">
+      Direct
+     </a>
+    </td>
+    <td class="desc">
+     使用 Direct 枚举直接从主线程渲染应用程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.SingleThreaded.html">
+      SingleThreaded
+     </a>
+    </td>
+    <td class="desc">
+     使用 SingleThreaded 进行内部调试。它仅使用单个线程模拟 RenderingThreadingMode.MultiThreaded。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.MultiThreaded.html">
+      MultiThreaded
+     </a>
+    </td>
+    <td class="desc">
+     通过主线程生成中间图形命令。渲染线程将它们转换为低级平台 API 图形命令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.LegacyJobified.html">
+      LegacyJobified
+     </a>
+    </td>
+    <td class="desc">
+     通过几个工作线程生成中间图形命令。单个渲染线程随后将它们转换为低级平台 API 图形命令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.NativeGraphicsJobs.html">
+      NativeGraphicsJobs
+     </a>
+    </td>
+    <td class="desc">
+     主线程生成中间图形命令。渲染线程将它们转换为低级平台 API 图形命令。渲染线程还可以将图形作业分发给几个工作线程。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderingThreadingMode.NativeGraphicsJobsWithoutRenderThread.html">
+      NativeGraphicsJobsWithoutRenderThread
+     </a>
+    </td>
+    <td class="desc">
+     通过几个工作线程生成中间图形命令，并将它们转换为低级平台 API 图形命令。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

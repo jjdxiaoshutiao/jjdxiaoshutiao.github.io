@@ -1,0 +1,139 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GraphicsFence
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理异步计算队列和图形队列上的任务之间的同步。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   并不是所有平台都支持图形栅栏。请参阅
+   <a href="SystemInfo-supportsGraphicsFence.html">
+    SystemInfo.supportsGraphicsFence
+   </a>
+   。
+   <br/>
+   <br/>
+   <a href="Rendering.GraphicsFence.html">
+    GraphicsFence
+   </a>
+   表示 GPU 处理过程中的一个点，位于某个特定计算着色器分发或绘制调用完成之后。可用于实现异步计算队列或图形队列上运行的任务之间的同步，方法是让一个或多个队列等待，直到通过给定栅栏。在使用异步计算时，这一点非常重要，因为提高 GPU 性能的关键在于各种任务可在图形队列和异步计算队列上同时运行。
+   <br/>
+   <br/>
+   对于两个 GPU 任务分别写入和读取同一资源的情况，不需要使用 GPUFence 进行同步。Unity 会自动处理这些资源依赖关系。
+   <br/>
+   <br/>
+   GPUFence 应通过
+   <a href="Graphics.CreateGraphicsFence.html">
+    Graphics.CreateGraphicsFence
+   </a>
+   或
+   <a href="Rendering.CommandBuffer.CreateGraphicsFence.html">
+    CommandBuffer.CreateGraphicsFence
+   </a>
+   创建。尝试使用尚未通过这些函数之一创建的 GraphicsFence 会导致异常。
+   <br/>
+   <br/>
+   使用 GraphicsFences 有可能产生循环依赖，执行时会使 GPU 死锁。Unity 会在编辑器中检测这类循环依赖关系，如果存在，会在调用
+   <a href="Graphics.CreateGraphicsFence.html">
+    Graphics.CreateGraphicsFence
+   </a>
+   、Graphics.WaitOnGraphicsFence、
+   <a href="Graphics.ExecuteCommandBuffer.html">
+    Graphics.ExecuteCommandBuffer
+   </a>
+   、
+   <a href="Graphics.ExecuteCommandBufferAsync.html">
+    Graphics.ExecuteCommandBufferAsync
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.ExecuteCommandBuffer.html">
+    ScriptableRenderContext.ExecuteCommandBuffer
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.ExecuteCommandBufferAsync.html">
+    ScriptableRenderContext.ExecuteCommandBufferAsync
+   </a>
+   后引发异常。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="SystemInfo-supportsGraphicsFence.html">
+    SystemInfo.supportsGraphicsFence
+   </a>
+   、
+   <a href="Graphics.CreateGraphicsFence.html">
+    Graphics.CreateGraphicsFence
+   </a>
+   、Graphics.WaitOnGraphicsFence、
+   <a href="Rendering.CommandBuffer.CreateGraphicsFence.html">
+    CommandBuffer.CreateGraphicsFence
+   </a>
+   、
+   <a href="Rendering.CommandBuffer.WaitOnAsyncGraphicsFence.html">
+    CommandBuffer.WaitOnAsyncGraphicsFence
+   </a>
+   、
+   <a href="Graphics.ExecuteCommandBuffer.html">
+    Graphics.ExecuteCommandBuffer
+   </a>
+   、
+   <a href="Graphics.ExecuteCommandBufferAsync.html">
+    Graphics.ExecuteCommandBufferAsync
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.ExecuteCommandBuffer.html">
+    ScriptableRenderContext.ExecuteCommandBuffer
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.ExecuteCommandBufferAsync.html">
+    ScriptableRenderContext.ExecuteCommandBufferAsync
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.GraphicsFence-passed.html">
+      passed
+     </a>
+    </td>
+    <td class="desc">
+     确定 GraphicsFence 是否已通过。允许 CPU 确定 GPU 是否已通过其处理过程中由 GraphicsFence 表示的点。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

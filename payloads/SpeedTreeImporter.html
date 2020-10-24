@@ -1,0 +1,635 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SpeedTreeImporter
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="AssetImporter.html">
+    AssetImporter
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于导入 SpeedTree 模型资源的 AssetImportor。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-windQualityNames.html">
+      windQualityNames
+     </a>
+    </td>
+    <td class="desc">
+     获取风质量值的名称字符串数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-alphaTestRef.html">
+      alphaTestRef
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置默认的 Alpha 测试参考值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-animateCrossFading.html">
+      animateCrossFading
+     </a>
+    </td>
+    <td class="desc">
+     指示是否应该为应用于最后一个网格 LOD 和公告牌的交叉淡入淡出 LOD 过渡生成动画。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-bestWindQuality.html">
+      bestWindQuality
+     </a>
+    </td>
+    <td class="desc">
+     返回此资源上可能实现的最佳风质量（在 SpeedTree Modeler 中配置）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-billboardTransitionCrossFadeWidth.html">
+      billboardTransitionCrossFadeWidth
+     </a>
+    </td>
+    <td class="desc">
+     最后一个 3D 网格 LOD 区域宽度的比例，用于交叉淡入淡出到公告牌树。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-castShadows.html">
+      castShadows
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用阴影投射的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-defaultBillboardShader.html">
+      defaultBillboardShader
+     </a>
+    </td>
+    <td class="desc">
+     返回活动渲染管线的默认 SpeedTree 公告牌着色器，如果资源为 SpeedTree v8 资源，则返回 /null/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-defaultShader.html">
+      defaultShader
+     </a>
+    </td>
+    <td class="desc">
+     返回活动渲染管线的默认 SpeedTree 着色器（根据资源版本，可以是 v7 或 v8）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-enableBump.html">
+      enableBump
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用法线贴图的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-enableHue.html">
+      enableHue
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用 Hue 变体效果的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-enableSmoothLODTransition.html">
+      enableSmoothLODTransition
+     </a>
+    </td>
+    <td class="desc">
+     启用平滑的 LOD 过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-enableSubsurface.html">
+      enableSubsurface
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用次表面效果（仅影响 SpeedTree v8 资源）的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-fadeOutWidth.html">
+      fadeOutWidth
+     </a>
+    </td>
+    <td class="desc">
+     公告牌 LOD 区域宽度的比例，用于淡出公告牌。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-hasBillboard.html">
+      hasBillboard
+     </a>
+    </td>
+    <td class="desc">
+     显示是否存在公告牌 LOD。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-hasImported.html">
+      hasImported
+     </a>
+    </td>
+    <td class="desc">
+     显示之前是否已导入 SPM 文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-hueVariation.html">
+      hueVariation
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置默认的 Hue 变体颜色和数量（以 Alpha 表示）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-isV8.html">
+      isV8
+     </a>
+    </td>
+    <td class="desc">
+     如果资源是 SpeedTree v8 资源，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter.LODHeights.html">
+      LODHeights
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置每个 LOD 屏幕高度值的浮点值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-mainColor.html">
+      mainColor
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置默认主色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-materialFolderPath.html">
+      materialFolderPath
+     </a>
+    </td>
+    <td class="desc">
+     返回将在其中放置生成的材质的文件夹路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-materialLocation.html">
+      materialLocation
+     </a>
+    </td>
+    <td class="desc">
+     材质导入位置选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-receiveShadows.html">
+      receiveShadows
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用阴影接受的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-scaleFactor.html">
+      scaleFactor
+     </a>
+    </td>
+    <td class="desc">
+     树模型的缩放程度（与 .spm 文件中的树模型相比）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-useLightProbes.html">
+      useLightProbes
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置用于为每个 LOD 启用光照探针光照的布尔值数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-windQualities.html">
+      windQualities
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置每个 LOD 上风质量的整数数组。这些值由 bestWindQuality 内部进行限制。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter-ctor.html">
+      SpeedTreeImporter
+     </a>
+    </td>
+    <td class="desc">
+     构造一个新的 SpeedTreeImporter 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter.GenerateMaterials.html">
+      GenerateMaterials
+     </a>
+    </td>
+    <td class="desc">
+     在 materialFolderPath 下生成所有必需材质。如果已启用版本控制，请先检查该文件夹。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpeedTreeImporter.SearchAndRemapMaterials.html">
+      SearchAndRemapMaterials
+     </a>
+    </td>
+    <td class="desc">
+     搜索项目中是否存在匹配的材质，然后使用这些材质而不是内部材质。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleName.html">
+       assetBundleName
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleVariant.html">
+       assetBundleVariant
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetPath.html">
+       assetPath
+      </a>
+     </td>
+     <td class="desc">
+      此导入器的资源的路径名称。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-importSettingsMissing.html">
+       importSettingsMissing
+      </a>
+     </td>
+     <td class="desc">
+      如果导入的资源未随附任何元文件，则此值为 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-userData.html">
+       userData
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置任意用户数据。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.AddRemap.html">
+       AddRemap
+      </a>
+     </td>
+     <td class="desc">
+      将子资源从导入的资源（例如 FBX 文件）映射到同类型的外部资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetExternalObjectMap.html">
+       GetExternalObjectMap
+      </a>
+     </td>
+     <td class="desc">
+      获取 AssetImporter 使用的外部对象映射的副本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.RemoveRemap.html">
+       RemoveRemap
+      </a>
+     </td>
+     <td class="desc">
+      从外部对象的映射中删除项。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SaveAndReimport.html">
+       SaveAndReimport
+      </a>
+     </td>
+     <td class="desc">
+      如果资源导入器已标记为“脏”，则保存资源导入器设置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SetAssetBundleNameAndVariant.html">
+       SetAssetBundleNameAndVariant
+      </a>
+     </td>
+     <td class="desc">
+      设置 AssetBundle 名称和变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SupportsRemappedAssetType.html">
+       SupportsRemappedAssetType
+      </a>
+     </td>
+     <td class="desc">
+      检查 AssetImporter 是否支持重新映射给定的资源类型。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetAtPath.html">
+       GetAtPath
+      </a>
+     </td>
+     <td class="desc">
+      在 path 处检索资源的资源导入器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

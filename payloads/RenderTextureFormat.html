@@ -1,0 +1,345 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderTextureFormat
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   的格式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   请注意，当前平台或 GPU 可能不支持特定渲染纹理格式。使用前请用
+   <a href="SystemInfo.SupportsRenderTextureFormat.html">
+    SystemInfo.SupportsRenderTextureFormat
+   </a>
+   检查。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="RenderTexture-format.html">
+    RenderTexture.format
+   </a>
+   、
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGB32.html">
+      ARGB32
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.Depth.html">
+      Depth
+     </a>
+    </td>
+    <td class="desc">
+     深度渲染纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGBHalf.html">
+      ARGBHalf
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.Shadowmap.html">
+      Shadowmap
+     </a>
+    </td>
+    <td class="desc">
+     原生阴影贴图渲染纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGB565.html">
+      RGB565
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGB4444.html">
+      ARGB4444
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 4 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGB1555.html">
+      ARGB1555
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，1 位用于 Alpha 通道，5 位用于 Red、Green 和 Blue 通道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     默认颜色渲染纹理格式：将根据 Frame Buffer 格式和 Platform 相应选择。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGB2101010.html">
+      ARGB2101010
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式。10 位用于颜色，2 位用于 Alpha 通道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.DefaultHDR.html">
+      DefaultHDR
+     </a>
+    </td>
+    <td class="desc">
+     默认 HDR 颜色渲染纹理格式：将根据 Frame Buffer 格式和 Platform 相应选择。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGB64.html">
+      ARGB64
+     </a>
+    </td>
+    <td class="desc">
+     四色渲染纹理格式，每通道 16 位，定点值、无符号标准化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGBFloat.html">
+      ARGBFloat
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGFloat.html">
+      RGFloat
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 渲染纹理格式，每通道 32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGHalf.html">
+      RGHalf
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 渲染纹理格式，每通道 16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RFloat.html">
+      RFloat
+     </a>
+    </td>
+    <td class="desc">
+     标量 (R) 渲染纹理格式，32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RHalf.html">
+      RHalf
+     </a>
+    </td>
+    <td class="desc">
+     标量 (R) 渲染纹理格式，16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.R8.html">
+      R8
+     </a>
+    </td>
+    <td class="desc">
+     单通道 (R) 渲染纹理格式，8 位整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.ARGBInt.html">
+      ARGBInt
+     </a>
+    </td>
+    <td class="desc">
+     四通道 (ARGB) 渲染纹理格式，每通道 32 位有符号整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGInt.html">
+      RGInt
+     </a>
+    </td>
+    <td class="desc">
+     双通道 (RG) 渲染纹理格式，每通道 32 位有符号整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RInt.html">
+      RInt
+     </a>
+    </td>
+    <td class="desc">
+     标量 (R) 渲染纹理格式，32 位有符号整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.BGRA32.html">
+      BGRA32
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGB111110Float.html">
+      RGB111110Float
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式。R 和 G 通道为 11 位浮点值，B 通道为 10 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RG32.html">
+      RG32
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 渲染纹理格式，每通道 16 位，定点值、无符号标准化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RGBAUShort.html">
+      RGBAUShort
+     </a>
+    </td>
+    <td class="desc">
+     四通道 (RGBA) 渲染纹理格式，每通道 16 位无符号整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.RG16.html">
+      RG16
+     </a>
+    </td>
+    <td class="desc">
+     双通道 (RG)渲染纹理格式，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.BGRA10101010_XR.html">
+      BGRA10101010_XR
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 10 位，扩展范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.BGR101010_XR.html">
+      BGR101010_XR
+     </a>
+    </td>
+    <td class="desc">
+     颜色渲染纹理格式，每通道 10 位，扩展范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureFormat.R16.html">
+      R16
+     </a>
+    </td>
+    <td class="desc">
+     单通道 (R) 渲染纹理格式，16 位整数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

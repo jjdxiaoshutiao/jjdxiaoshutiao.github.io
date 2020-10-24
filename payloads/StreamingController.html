@@ -1,0 +1,455 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   StreamingController
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Behaviour.html">
+    Behaviour
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   StreamingController 控制单个摄像机位置的串流设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   StreamingController 组件用于控制摄像机位置的纹理串流设置。
+此组件支持在
+   <a href="Camera.html">
+    Camera
+   </a>
+   变为启用状态之前预加载纹理。请参阅：
+   <a href="StreamingController.SetPreloading.html">
+    SetPreloading
+   </a>
+   <br/>
+   <br/>
+   必须启用并激活 QualitySettings.streamingMipmapsFeature 才能使此功能生效。
+   <br/>
+   <br/>
+   禁用此组件时，不会考虑将摄像机用于纹理串流。
+启用此组件时，如果启用了摄像机或 StreamingController 处于预加载状态，则会考虑将摄像机用于纹理串流。
+   <br/>
+   <br/>
+   Mipmap 偏差可以应用于纹理串流计算。有关详细信息，请参阅
+   <a href="StreamingController-streamingMipmapBias.html">
+    streamingMipmapBias
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/class-Camera.html">
+    camera component
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="StreamingController-streamingMipmapBias.html">
+      streamingMipmapBias
+     </a>
+    </td>
+    <td class="desc">
+     应用于（纹理串流系统为此摄像机可见的任何纹理选择的）Mipmap 级别的偏移。此偏移可以采用正值或负值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="StreamingController.CancelPreloading.html">
+      CancelPreloading
+     </a>
+    </td>
+    <td class="desc">
+     中止预加载。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="StreamingController.IsPreloading.html">
+      IsPreloading
+     </a>
+    </td>
+    <td class="desc">
+     用于确定 StreamingController 当前是否正在预加载纹理 Mipmap。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="StreamingController.SetPreloading.html">
+      SetPreloading
+     </a>
+    </td>
+    <td class="desc">
+     启动此摄像机的串流数据预加载。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-enabled.html">
+       enabled
+      </a>
+     </td>
+     <td class="desc">
+      启用的 Behaviour 可更新，禁用的 Behaviour 不可更新。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-isActiveAndEnabled.html">
+       isActiveAndEnabled
+      </a>
+     </td>
+     <td class="desc">
+      是否已激活并启用 Behaviour？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

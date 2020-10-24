@@ -1,0 +1,135 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   IOnPaint
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEditor.Experimental.TerrainAPI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此接口为地形绘制工具的 OnPaint 事件提供参数和实用函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnPaint.html">
+    TerrainPaintTool&lt;T0&gt;.OnPaint
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-brushSize.html">
+      brushSize
+     </a>
+    </td>
+    <td class="desc">
+     只读。采用地形单位的当前笔刷大小（相当于世界单位的大小）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-brushStrength.html">
+      brushStrength
+     </a>
+    </td>
+    <td class="desc">
+     只读。当前画笔强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-brushTexture.html">
+      brushTexture
+     </a>
+    </td>
+    <td class="desc">
+     只读。当前所选的画笔纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-hitValidTerrain.html">
+      hitValidTerrain
+     </a>
+    </td>
+    <td class="desc">
+     只读。如果鼠标位于有效的地形对象上方，则为 true；否则为 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-raycastHit.html">
+      raycastHit
+     </a>
+    </td>
+    <td class="desc">
+     只读。当前鼠标位置的射线投射结果。这在 hitValidTerrain 为 true 时有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint-uv.html">
+      uv
+     </a>
+    </td>
+    <td class="desc">
+     只读。激活的地形上的标准化位置（介于 0 和 1 之间）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.IOnPaint.Repaint.html">
+      Repaint
+     </a>
+    </td>
+    <td class="desc">
+     指示编辑器重绘工具 UI 和/或 Scene 视图。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

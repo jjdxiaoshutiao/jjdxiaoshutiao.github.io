@@ -1,0 +1,161 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SpherecastCommand
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此结构来设置在作业过程中异步执行的球体投射命令。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用此结构计划一批球体投射时，这些球体投射会以异步方式并行执行。每个球体投射的结果会写入结果缓冲区。由于结果是异步写入，因此在作业完成之前无法访问结果缓冲区。
+   <br/>
+   <br/>
+   命令缓冲区中索引 N 处的命令的结果会存储在结果缓冲区中索引 N 处。
+   <br/>
+   <br/>
+   另请参阅：Physics.Spherecast。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private void SpherecastExample()
+    {
+        // Perform a single sphere cast using <a href="SpherecastCommand.html">SpherecastCommand</a> and wait for it to complete
+        // Set up the command and result buffers
+        var results = new NativeArray&lt;<a href="RaycastHit.html">RaycastHit</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);
+        var commands = new NativeArray&lt;<a href="SpherecastCommand.html">SpherecastCommand</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);<br/><br/>        // Set the data of the first command
+        <a href="Vector3.html">Vector3</a> origin = <a href="Vector3-forward.html">Vector3.forward</a> * -10;
+        <a href="Vector3.html">Vector3</a> direction = <a href="Vector3-forward.html">Vector3.forward</a>;
+        float radius = 0.5f;<br/><br/>        commands[0] = new <a href="SpherecastCommand.html">SpherecastCommand</a>(origin, radius, direction);<br/><br/>        // Schedule the batch of sphere casts
+        var handle = <a href="SpherecastCommand.ScheduleBatch.html">SpherecastCommand.ScheduleBatch</a>(commands, results, 1, default(<a href="Unity.Jobs.JobHandle.html">JobHandle</a>));<br/><br/>        // Wait for the batch processing job to complete
+        handle.Complete();<br/><br/>        // Copy the result. If batchedHit.collider is null, there was no hit
+        <a href="RaycastHit.html">RaycastHit</a> batchedHit = results[0];<br/><br/>        // Dispose the buffers
+        results.Dispose();
+        commands.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-direction.html">
+      direction
+     </a>
+    </td>
+    <td class="desc">
+     球体投射的方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-distance.html">
+      distance
+     </a>
+    </td>
+    <td class="desc">
+     球体应检查碰撞的最大距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-layerMask.html">
+      layerMask
+     </a>
+    </td>
+    <td class="desc">
+     用于在投射球体时有选择地忽略碰撞体的 LayerMask。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-origin.html">
+      origin
+     </a>
+    </td>
+    <td class="desc">
+     球体投射在世界坐标系中的起点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-radius.html">
+      radius
+     </a>
+    </td>
+    <td class="desc">
+     投射球体的半径。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand-ctor.html">
+      SpherecastCommand
+     </a>
+    </td>
+    <td class="desc">
+     创建 SpherecastCommand。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpherecastCommand.ScheduleBatch.html">
+      ScheduleBatch
+     </a>
+    </td>
+    <td class="desc">
+     安排在一个作业中要执行的一批球体投射。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

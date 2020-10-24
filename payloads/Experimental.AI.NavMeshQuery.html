@@ -1,0 +1,283 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NavMeshQuery
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于在
+   <a href="Experimental.AI.NavMeshWorld.html">
+    NavMeshWorld
+   </a>
+   中执行导航操作的对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   与
+   <a href="AI.NavMesh.html">
+    NavMesh
+   </a>
+   相关结构中的操作相反，可以在作业（
+   <a href="Unity.Jobs.IJob.html">
+    IJob
+   </a>
+   、
+   <a href="Unity.Jobs.IJobParallelFor.html">
+    IJobParallelFor
+   </a>
+   ）内执行 NavMeshQuery 操作。
+   <br/>
+   <br/>
+   要获取导航网格上两个位置之间的路径，必须使用大于 0 的
+   <code class="varname">
+    pathNodePoolSize
+   </code>
+   值创建查询，并且需要按顺序调用以下方法：/BeginFindPath/、/UpdateFindPath/（必要时反复调用）、/EndFindPath/、/GetPathResult/。这些方法依赖于在 NavMeshQuery 中存储一些状态数据，但所有其他方法都不会更改对象的状态，并且可以随时调用。
+   <br/>
+   <br/>
+   在 Editor 中执行时，如果任何参数无效，则所有方法都会抛出异常。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   NavMeshQuery 的预期功能集还没有完全完成。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery-ctor.html">
+      NavMeshQuery
+     </a>
+    </td>
+    <td class="desc">
+     创建 NavMeshQuery 对象并分配内存以存储导航网格节点信息（如果需要）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.BeginFindPath.html">
+      BeginFindPath
+     </a>
+    </td>
+    <td class="desc">
+     在导航网格上的两个位置之间启动寻路操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.CreateLocation.html">
+      CreateLocation
+     </a>
+    </td>
+    <td class="desc">
+     `返回用户提供的位置和多边形的有效 NavMeshLocation。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     销毁 NavMeshQuery 并释放它使用的所有内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.EndFindPath.html">
+      EndFindPath
+     </a>
+    </td>
+    <td class="desc">
+     获取在成功的 NavMeshQuery.UpdateFindPath 操作期间计算的路径中的节点数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.GetAgentTypeIdForPolygon.html">
+      GetAgentTypeIdForPolygon
+     </a>
+    </td>
+    <td class="desc">
+     返回为导航网格烘焙的或已经配置链接的代理类型的标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.GetEdgesAndNeighbors.html">
+      GetEdgesAndNeighbors
+     </a>
+    </td>
+    <td class="desc">
+     获取给定 node 的顶点以及它连接到的所有导航节点的标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.GetPathResult.html">
+      GetPathResult
+     </a>
+    </td>
+    <td class="desc">
+     复制到提供的数组中，这是构成通过 NavMeshQuery 操作找到的路径的导航网格节点的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.GetPolygonType.html">
+      GetPolygonType
+     </a>
+    </td>
+    <td class="desc">
+     返回导航网格节点是多边形还是链接。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.GetPortalPoints.html">
+      GetPortalPoints
+     </a>
+    </td>
+    <td class="desc">
+     获取两个相邻导航网格节点共有线段的端点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果指定 PolygonId 引用的节点在导航网格中处于活动状态，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.MapLocation.html">
+      MapLocation
+     </a>
+    </td>
+    <td class="desc">
+     针对给定世界位置，找到导航网格上最近的点和 PolygonId。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.MoveLocation.html">
+      MoveLocation
+     </a>
+    </td>
+    <td class="desc">
+     将导航网格位置移动到另一个位置，且不会与表面失去接触。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.MoveLocations.html">
+      MoveLocations
+     </a>
+    </td>
+    <td class="desc">
+     将一系列导航网格位置移动到其他位置，且不会与表面失去接触。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.MoveLocationsInSameAreas.html">
+      MoveLocationsInSameAreas
+     </a>
+    </td>
+    <td class="desc">
+     将一系列导航网格位置移动到其他位置，且不会与表面失去接触，并为所有位置给定一个公共区域过滤器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.PolygonLocalToWorldMatrix.html">
+      PolygonLocalToWorldMatrix
+     </a>
+    </td>
+    <td class="desc">
+     返回包含指定导航网格节点 (Read Only) 的导航网格表面的变换矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.PolygonWorldToLocalMatrix.html">
+      PolygonWorldToLocalMatrix
+     </a>
+    </td>
+    <td class="desc">
+     返回包含指定导航网格节点 (Read Only) 的导航网格表面的反向变换矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.Raycast.html">
+      Raycast
+     </a>
+    </td>
+    <td class="desc">
+     在导航网格上的两点之间找出一条线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshQuery.UpdateFindPath.html">
+      UpdateFindPath
+     </a>
+    </td>
+    <td class="desc">
+     继续进行正在进行的路径搜索。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,189 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InputDeviceCharacteristics
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一组用于描述
+   <a href="XR.InputDevice.html">
+    InputDevice
+   </a>
+   特征的位标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   XR 系统将
+   <strong>
+    InputDeviceFlags
+   </strong>
+   成员组合到
+   <a href="XR.InputDevice-characteristics.html">
+    InputDevice.characteristics
+   </a>
+   位掩码中，用以描述输入设备的特征和功能。还可以将标志的按位组合从此枚举传递到
+   <a href="XR.InputDevices.GetDevicesWithCharacteristics.html">
+    InputDevices.GetDevicesWithCharacteristics
+   </a>
+   ，以获取具有特定特征的设备列表。例如，可使用以下语句来获取右手控制器：
+   <br/>
+   <br/>
+   <code class="mono">
+    (InputDeviceFlags.HeldInHand &amp; InputDeviceFlags.Right)
+   </code>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不指定任何标志的默认值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.HeadMounted.html">
+      HeadMounted
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 连接至头部。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.Camera.html">
+      Camera
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 具有摄像机和关联的摄像机跟踪信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.HeldInHand.html">
+      HeldInHand
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 握在用户手中。通常是跟踪的控制器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.HandTracking.html">
+      HandTracking
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 通过 Hand 输入功能提供手部跟踪信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.EyeTracking.html">
+      EyeTracking
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 通过 Eyes 输入功能提供眼睛跟踪信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.TrackedDevice.html">
+      TrackedDevice
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 可提供 3DOF 或 6DOF 跟踪数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.Controller.html">
+      Controller
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 是游戏控制器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.TrackingReference.html">
+      TrackingReference
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 是不移动的参考对象，用于定位和跟踪世界中的其他对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.Left.html">
+      Left
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 与用户的左侧关联。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.Right.html">
+      Right
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 与用户的右侧关联。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDeviceCharacteristics.Simulated6DOF.html">
+      Simulated6DOF
+     </a>
+    </td>
+    <td class="desc">
+     InputDevice 向软件报告近似的位置数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

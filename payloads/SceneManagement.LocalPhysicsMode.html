@@ -1,0 +1,123 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LocalPhysicsMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供 2D 和 3D 本地物理选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   默认情况下，创建或加载
+   <a href="SceneManagement.Scene.html">
+    Scene
+   </a>
+   时，添加到场景中游戏对象的任何 2D 或 3D 物理组件都将添加到默认物理场景中。然而，每个
+   <a href="SceneManagement.Scene.html">
+    Scene
+   </a>
+   都能够创建和拥有自己的（本地）2D 和/或 3D 物理场景。创建或加载场景时，可以使用此选项指定是否应创建 2D 和/或 3D 物理场景。
+   <br/>
+   <br/>
+   当
+   <a href="SceneManagement.Scene.html">
+    Scene
+   </a>
+   创建自己的 2D 和/或 3D 物理场景时，物理场景的生命周期与
+   <a href="SceneManagement.Scene.html">
+    Scene
+   </a>
+   相同，即如果销毁/卸载
+   <a href="SceneManagement.Scene.html">
+    Scene
+   </a>
+   ，那么也会销毁/卸载任何创建的物理场景。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="SceneManagement.CreateSceneParameters.html">
+    CreateSceneParameters
+   </a>
+   、
+   <a href="SceneManagement.LoadSceneParameters.html">
+    LoadSceneParameters
+   </a>
+   、
+   <a href="SceneManagement.SceneManager.CreateScene.html">
+    SceneManager.CreateScene
+   </a>
+   、
+   <a href="SceneManagement.SceneManager.LoadScene.html">
+    SceneManager.LoadScene
+   </a>
+   和
+   <a href="SceneManagement.SceneManager.LoadSceneAsync.html">
+    SceneManager.LoadSceneAsync
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.LocalPhysicsMode.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不会创建本地 2D 或 3D 物理场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.LocalPhysicsMode.Physics2D.html">
+      Physics2D
+     </a>
+    </td>
+    <td class="desc">
+     本地 2D 物理场景将由 Scene 创建并拥有。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.LocalPhysicsMode.Physics3D.html">
+      Physics3D
+     </a>
+    </td>
+    <td class="desc">
+     本地 3D 物理场景将由 Scene 创建并拥有。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,188 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   由脚本控制全局音频设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   设置扬声器输出和格式。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings-driverCapabilities.html">
+      driverCapabilities
+     </a>
+    </td>
+    <td class="desc">
+     返回当前音频驱动程序的扬声器模式功能。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings-dspTime.html">
+      dspTime
+     </a>
+    </td>
+    <td class="desc">
+     返回音频系统的当前时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings-outputSampleRate.html">
+      outputSampleRate
+     </a>
+    </td>
+    <td class="desc">
+     获取混合器的当前输出率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings-speakerMode.html">
+      speakerMode
+     </a>
+    </td>
+    <td class="desc">
+     获取当前的扬声器模式。默认为 2 声道立体声。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.GetConfiguration.html">
+      GetConfiguration
+     </a>
+    </td>
+    <td class="desc">
+     返回音频设备和系统的当前配置。然后，可以修改结构中的值并通过 AudioSettings.Reset 重新应用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.GetDSPBufferSize.html">
+      GetDSPBufferSize
+     </a>
+    </td>
+    <td class="desc">
+     获取混合器的缓冲区大小，以样本数为单位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.GetSpatializerPluginName.html">
+      GetSpatializerPluginName
+     </a>
+    </td>
+    <td class="desc">
+     返回在当前运行的平台上选择的空间音响的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.GetSpatializerPluginNames.html">
+      GetSpatializerPluginNames
+     </a>
+    </td>
+    <td class="desc">
+     返回一个数组，其中包含所有可用的空间音响插件的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.Reset.html">
+      Reset
+     </a>
+    </td>
+    <td class="desc">
+     执行设备配置更改。为响应该调用，将使用参数 deviceWasChanged=false 调用 AudioSettings.OnAudioConfigurationChanged 委托。无法保证可以使用指定的确切设置，但会尝试使用系统支持的最接近的匹配设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.SetSpatializerPluginName.html">
+      SetSpatializerPluginName
+     </a>
+    </td>
+    <td class="desc">
+     为所有平台组设置空间音响插件。如果传入 null 或空字符串，则清除现有的空间音响插件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.OnAudioConfigurationChanged.html">
+      OnAudioConfigurationChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当全局音频设置更改时调用的委托。全局音频设置更改可能由以下原因导致：AudioSettings.Reset 或外部因素更改（例如在系统控制面板中更改了采样率），或默认输出设备发生改变（例如，插入 HDMI 显示器或 USB 头戴式耳机时）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioSettings.AudioConfigurationChangeHandler.html">
+      AudioConfigurationChangeHandler
+     </a>
+    </td>
+    <td class="desc">
+     每当全局音频设置更改时调用的委托。全局音频设置更改可能由以下原因导致：AudioSettings.Reset 或外部设备更改（例如在系统控制面板中更改了采样率），或默认输出设备发生改变（例如，插入 HDMI 显示器或 USB 头戴式耳机时）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

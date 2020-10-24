@@ -1,0 +1,286 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AnimationWindow 使用
+   <a href="AnimationMode.html">
+    AnimationMode
+   </a>
+   来存储
+      由
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   播放修改的属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当退出
+   <a href="AnimationMode.html">
+    AnimationMode
+   </a>
+   时，所有属性都将
+      还原为其默认状态。动画属性也会在 Inspector 中突出显示。使用
+   <a href="AnimationMode.StartAnimationMode.html">
+    StartAnimationMode
+   </a>
+   进入动画模式。在动画模式中，
+      编辑器会着色以显示它正在动画化。属性可以通过
+   <a href="AnimationMode.SampleAnimationClip.html">
+    SampleAnimationClip
+   </a>
+   进行动画化。\
+\
+以下脚本示例显示了如何对游戏对象进行动画化。
+   <a href="AnimationMode.html">
+    AnimationMode
+   </a>
+   具有
+支持此功能的函数。演示可从“Examples/AnimationMode demo”
+菜单启动。此演示开始后，它需要在 Scene 窗口中选择一个游戏对象。
+（此示例要求不在 Game 视图中运行游戏。）选择
+游戏对象后，示例窗口将会更改。为所选游戏对象
+选择一个已创建的动画剪辑。在动画剪辑加载完成后，
+动画便可应用于游戏对象。单击 Animate 按钮，将滑动条添加到
+窗口。使用滑动条会将动画应用于所选的游戏对象。Lock
+按钮可防止动画应用于其他游戏对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class ExampleClass : <a href="EditorWindow.html">EditorWindow</a>
+{
+    protected <a href="GameObject.html">GameObject</a> go;
+    protected <a href="AnimationClip.html">AnimationClip</a> animationClip;
+    protected float time = 0.0f;
+    protected bool lockSelection = false;
+    protected bool animationMode = false;<br/><br/>    [<a href="MenuItem.html">MenuItem</a>("Examples/<a href="AnimationMode.html">AnimationMode</a> demo", false, 2000)]
+    public static void DoWindow()
+    {
+        var window = GetWindowWithRect&lt;ExampleClass&gt;(new <a href="Rect.html">Rect</a>(0, 0, 300, 80));
+        window.Show();
+    }<br/><br/>    // Has a <a href="GameObject.html">GameObject</a> been selection?
+    public void OnSelectionChange()
+    {
+        if (!lockSelection)
+        {
+            go = <a href="Selection-activeGameObject.html">Selection.activeGameObject</a>;
+            Repaint();
+        }
+    }<br/><br/>    // Main editor window
+    public void OnGUI()
+    {
+        // Wait for user to select a <a href="GameObject.html">GameObject</a>
+        if (go == null)
+        {
+            <a href="EditorGUILayout.HelpBox.html">EditorGUILayout.HelpBox</a>("Please select a <a href="GameObject.html">GameObject</a>", <a href="MessageType.Info.html">MessageType.Info</a>);
+            return;
+        }<br/><br/>        // Animate and Lock buttons.  Check if Animate has changed
+        <a href="GUILayout.BeginHorizontal.html">GUILayout.BeginHorizontal</a>();
+        <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();
+        <a href="GUILayout.Toggle.html">GUILayout.Toggle</a>(<a href="AnimationMode.InAnimationMode.html">AnimationMode.InAnimationMode</a>(), "Animate");
+        if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+            ToggleAnimationMode();<br/><br/>        <a href="GUILayout.FlexibleSpace.html">GUILayout.FlexibleSpace</a>();
+        lockSelection = <a href="GUILayout.Toggle.html">GUILayout.Toggle</a>(lockSelection, "Lock");
+        <a href="GUILayout.EndHorizontal.html">GUILayout.EndHorizontal</a>();<br/><br/>        // <a href="UIElements.Slider.html">Slider</a> to use when Animate has been ticked
+        <a href="EditorGUILayout.BeginVertical.html">EditorGUILayout.BeginVertical</a>();
+        animationClip = <a href="EditorGUILayout.ObjectField.html">EditorGUILayout.ObjectField</a>(animationClip, typeof(<a href="AnimationClip.html">AnimationClip</a>), false) as <a href="AnimationClip.html">AnimationClip</a>;
+        if (animationClip != null)
+        {
+            float startTime = 0.0f;
+            float stopTime  = animationClip.length;
+            time = <a href="EditorGUILayout.Slider.html">EditorGUILayout.Slider</a>(time, startTime, stopTime);
+        }
+        else if (<a href="AnimationMode.InAnimationMode.html">AnimationMode.InAnimationMode</a>())
+            <a href="AnimationMode.StopAnimationMode.html">AnimationMode.StopAnimationMode</a>();
+        <a href="EditorGUILayout.EndVertical.html">EditorGUILayout.EndVertical</a>();
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (go == null)
+            return;<br/><br/>        if (animationClip == null)
+            return;<br/><br/>        // There is a bug in <a href="AnimationMode.SampleAnimationClip.html">AnimationMode.SampleAnimationClip</a> which crashes
+        // Unity if there is no valid controller attached
+        <a href="Animator.html">Animator</a> animator = go.GetComponent&lt;<a href="Animator.html">Animator</a>&gt;();
+        if (animator != null &amp;amp;&amp;amp; animator.runtimeAnimatorController == null)
+            return;<br/><br/>        // Animate the <a href="GameObject.html">GameObject</a>
+        if (!<a href="EditorApplication-isPlaying.html">EditorApplication.isPlaying</a> &amp;amp;&amp;amp; <a href="AnimationMode.InAnimationMode.html">AnimationMode.InAnimationMode</a>())
+        {
+            <a href="AnimationMode.BeginSampling.html">AnimationMode.BeginSampling</a>();
+            <a href="AnimationMode.SampleAnimationClip.html">AnimationMode.SampleAnimationClip</a>(go, animationClip, time);
+            <a href="AnimationMode.EndSampling.html">AnimationMode.EndSampling</a>();<br/><br/>            <a href="SceneView.RepaintAll.html">SceneView.RepaintAll</a>();
+        }
+    }<br/><br/>    void ToggleAnimationMode()
+    {
+        if (<a href="AnimationMode.InAnimationMode.html">AnimationMode.InAnimationMode</a>())
+            <a href="AnimationMode.StopAnimationMode.html">AnimationMode.StopAnimationMode</a>();
+        else
+            <a href="AnimationMode.StartAnimationMode.html">AnimationMode.StartAnimationMode</a>();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode-animatedPropertyColor.html">
+      animatedPropertyColor
+     </a>
+    </td>
+    <td class="desc">
+     用于表明属性当前正在动画化的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode-candidatePropertyColor.html">
+      candidatePropertyColor
+     </a>
+    </td>
+    <td class="desc">
+     用于表明动画属性已被修改的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode-recordedPropertyColor.html">
+      recordedPropertyColor
+     </a>
+    </td>
+    <td class="desc">
+     用于表明动画属性会自动记录动画剪辑中的更改的颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.AddEditorCurveBinding.html">
+      AddEditorCurveBinding
+     </a>
+    </td>
+    <td class="desc">
+     将 EditorCurveBinding 定义的属性标记为当前正在动画化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.AddPropertyModification.html">
+      AddPropertyModification
+     </a>
+    </td>
+    <td class="desc">
+     将属性标记为当前正在动画化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.BeginSampling.html">
+      BeginSampling
+     </a>
+    </td>
+    <td class="desc">
+     初始化动画剪辑采样的开头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.EndSampling.html">
+      EndSampling
+     </a>
+    </td>
+    <td class="desc">
+     完成动画剪辑的采样。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.InAnimationMode.html">
+      InAnimationMode
+     </a>
+    </td>
+    <td class="desc">
+     当前是否处于 AnimationMode？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.IsPropertyAnimated.html">
+      IsPropertyAnimated
+     </a>
+    </td>
+    <td class="desc">
+     指定的属性当前是否处于动画模式且要进行动画化？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.SampleAnimationClip.html">
+      SampleAnimationClip
+     </a>
+    </td>
+    <td class="desc">
+     对对象上的 AnimationClip进行采样，并记录
+        AnimationMode 中任何经过修改的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.StartAnimationMode.html">
+      StartAnimationMode
+     </a>
+    </td>
+    <td class="desc">
+     启动动画模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationMode.StopAnimationMode.html">
+      StopAnimationMode
+     </a>
+    </td>
+    <td class="desc">
+     停止动画模式，还原在动画模式下动画化的所有属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

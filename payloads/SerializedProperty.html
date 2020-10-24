@@ -1,0 +1,758 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SerializedProperty
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SerializedProperty 和
+   <a href="SerializedObject.html">
+    SerializedObject
+   </a>
+   这两个类能够以完全通用的方式编辑对象上的属性（可自动处理撤销），同时还能调整预制件的 UI 样式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   SerializedProperty 将与
+   <a href="SerializedObject.html">
+    SerializedObject
+   </a>
+   和
+   <a href="Editor.html">
+    Editor
+   </a>
+   类结合使用。
+另请参阅：
+   <a href="SerializedObject.html">
+    SerializedObject
+   </a>
+   类、
+   <a href="Editor.html">
+    Editor
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class MyObject : <a href="ScriptableObject.html">ScriptableObject</a>
+{
+    public int myInt = 42;
+}<br/><br/>public class SerializedPropertyTest : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        MyObject obj = <a href="ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance</a>&lt;MyObject&gt;();
+        <a href="SerializedObject.html">SerializedObject</a> serializedObject = new UnityEditor.SerializedObject(obj);<br/><br/>        <a href="SerializedProperty.html">SerializedProperty</a> serializedPropertyMyInt = serializedObject.FindProperty("myInt");<br/><br/>        <a href="Debug.Log.html">Debug.Log</a>("myInt " + serializedPropertyMyInt.intValue);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-animationCurveValue.html">
+      animationCurveValue
+     </a>
+    </td>
+    <td class="desc">
+     动画曲线属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-arrayElementType.html">
+      arrayElementType
+     </a>
+    </td>
+    <td class="desc">
+     数组属性中元素的类型名称。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-arraySize.html">
+      arraySize
+     </a>
+    </td>
+    <td class="desc">
+     数组中的元素数。如果 SerializedObject 包含多个对象，将返回元素的最小数量。因此，始终可以循环访问 SerializedObject 并仅获取在所有对象中找到的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-boolValue.html">
+      boolValue
+     </a>
+    </td>
+    <td class="desc">
+     布尔值属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-boundsIntValue.html">
+      boundsIntValue
+     </a>
+    </td>
+    <td class="desc">
+     带有整数值属性的边界的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-boundsValue.html">
+      boundsValue
+     </a>
+    </td>
+    <td class="desc">
+     边界属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-colorValue.html">
+      colorValue
+     </a>
+    </td>
+    <td class="desc">
+     颜色属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-depth.html">
+      depth
+     </a>
+    </td>
+    <td class="desc">
+     属性的嵌套深度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-displayName.html">
+      displayName
+     </a>
+    </td>
+    <td class="desc">
+     属性的友好显示名称。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-doubleValue.html">
+      doubleValue
+     </a>
+    </td>
+    <td class="desc">
+     双精度浮点属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-editable.html">
+      editable
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否可编辑？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-enumDisplayNames.html">
+      enumDisplayNames
+     </a>
+    </td>
+    <td class="desc">
+     枚举属性的枚举的友好显示名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-enumNames.html">
+      enumNames
+     </a>
+    </td>
+    <td class="desc">
+     枚举属性的枚举的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-enumValueIndex.html">
+      enumValueIndex
+     </a>
+    </td>
+    <td class="desc">
+     枚举属性的枚举索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-exposedReferenceValue.html">
+      exposedReferenceValue
+     </a>
+    </td>
+    <td class="desc">
+     对场景中另一个对象的引用。系统将在包含 SerializedProperty 的 SerializedObject 的上下文中解析此引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-fixedBufferSize.html">
+      fixedBufferSize
+     </a>
+    </td>
+    <td class="desc">
+     固定缓冲区中的元素数量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-floatValue.html">
+      floatValue
+     </a>
+    </td>
+    <td class="desc">
+     浮点属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-hasChildren.html">
+      hasChildren
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否有子属性？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-hasMultipleDifferentValues.html">
+      hasMultipleDifferentValues
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否会因为多对象编辑而代表多个不同的值？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-hasVisibleChildren.html">
+      hasVisibleChildren
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否有可见的子属性？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-intValue.html">
+      intValue
+     </a>
+    </td>
+    <td class="desc">
+     整数属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-isArray.html">
+      isArray
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否为数组？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-isDefaultOverride.html">
+      isDefaultOverride
+     </a>
+    </td>
+    <td class="desc">
+     允许检查此属性是否为默认重载。预制件实例上的某些属性是默认重载。请参阅 PrefabUtility.IsDefaultOverride 以了解更多信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-isExpanded.html">
+      isExpanded
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否在检视面板中展开？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-isFixedBuffer.html">
+      isFixedBuffer
+     </a>
+    </td>
+    <td class="desc">
+     此属性是否为固定缓冲区？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-isInstantiatedPrefab.html">
+      isInstantiatedPrefab
+     </a>
+    </td>
+    <td class="desc">
+     属性是否为预制件实例的一部分？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-longValue.html">
+      longValue
+     </a>
+    </td>
+    <td class="desc">
+     长整型属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-managedReferenceFieldTypename.html">
+      managedReferenceFieldTypename
+     </a>
+    </td>
+    <td class="desc">
+     与托管引用字段完整类型字符串的值对应的字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-managedReferenceFullTypename.html">
+      managedReferenceFullTypename
+     </a>
+    </td>
+    <td class="desc">
+     与托管引用对象（动态）完整类型字符串的值对应的字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-managedReferenceValue.html">
+      managedReferenceValue
+     </a>
+    </td>
+    <td class="desc">
+     设置托管引用的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-name.html">
+      name
+     </a>
+    </td>
+    <td class="desc">
+     属性的名称。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-objectReferenceValue.html">
+      objectReferenceValue
+     </a>
+    </td>
+    <td class="desc">
+     对象引用属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-prefabOverride.html">
+      prefabOverride
+     </a>
+    </td>
+    <td class="desc">
+     允许检查属性的值是否被重载（即与其所属的预制件不同）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-propertyPath.html">
+      propertyPath
+     </a>
+    </td>
+    <td class="desc">
+     属性的完整路径。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-propertyType.html">
+      propertyType
+     </a>
+    </td>
+    <td class="desc">
+     此属性的类型（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-quaternionValue.html">
+      quaternionValue
+     </a>
+    </td>
+    <td class="desc">
+     四元数属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-rectIntValue.html">
+      rectIntValue
+     </a>
+    </td>
+    <td class="desc">
+     带有整数值属性的矩形的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-rectValue.html">
+      rectValue
+     </a>
+    </td>
+    <td class="desc">
+     矩形属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-serializedObject.html">
+      serializedObject
+     </a>
+    </td>
+    <td class="desc">
+     此属性所属的 SerializedObject（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-stringValue.html">
+      stringValue
+     </a>
+    </td>
+    <td class="desc">
+     字符串属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-tooltip.html">
+      tooltip
+     </a>
+    </td>
+    <td class="desc">
+     属性的工具提示。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     属性的类型名称。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-vector2IntValue.html">
+      vector2IntValue
+     </a>
+    </td>
+    <td class="desc">
+     2D 整数向量属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-vector2Value.html">
+      vector2Value
+     </a>
+    </td>
+    <td class="desc">
+     2D 向量属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-vector3IntValue.html">
+      vector3IntValue
+     </a>
+    </td>
+    <td class="desc">
+     3D 整数向量属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-vector3Value.html">
+      vector3Value
+     </a>
+    </td>
+    <td class="desc">
+     3D 向量属性的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty-vector4Value.html">
+      vector4Value
+     </a>
+    </td>
+    <td class="desc">
+     4D 向量属性的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.ClearArray.html">
+      ClearArray
+     </a>
+    </td>
+    <td class="desc">
+     从数组中删除所有元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.Copy.html">
+      Copy
+     </a>
+    </td>
+    <td class="desc">
+     返回 SerializedProperty 迭代器的副本（保留当前状态）。如果您想在继续迭代的同时保存当前属性的引用，则此方法很有用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.CountInProperty.html">
+      CountInProperty
+     </a>
+    </td>
+    <td class="desc">
+     计算此属性的可见子属性的数量，包括属性本身。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.CountRemaining.html">
+      CountRemaining
+     </a>
+    </td>
+    <td class="desc">
+     计算剩余可见属性的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.DeleteArrayElementAtIndex.html">
+      DeleteArrayElementAtIndex
+     </a>
+    </td>
+    <td class="desc">
+     删除数组中指定索引处的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.DeleteCommand.html">
+      DeleteCommand
+     </a>
+    </td>
+    <td class="desc">
+     删除已序列化的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.DuplicateCommand.html">
+      DuplicateCommand
+     </a>
+    </td>
+    <td class="desc">
+     复制已序列化的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.FindPropertyRelative.html">
+      FindPropertyRelative
+     </a>
+    </td>
+    <td class="desc">
+     从当前属性的相关路径检索 SerializedProperty。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.GetArrayElementAtIndex.html">
+      GetArrayElementAtIndex
+     </a>
+    </td>
+    <td class="desc">
+     返回数组中指定索引处的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.GetEndProperty.html">
+      GetEndProperty
+     </a>
+    </td>
+    <td class="desc">
+     检索定义此属性起始范围的 SerializedProperty。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.GetEnumerator.html">
+      GetEnumerator
+     </a>
+    </td>
+    <td class="desc">
+     检索可让您遍历序列化属性的当前嵌套内容的迭代器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.GetFixedBufferElementAtIndex.html">
+      GetFixedBufferElementAtIndex
+     </a>
+    </td>
+    <td class="desc">
+     返回固定缓冲区中指定索引处的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.InsertArrayElementAtIndex.html">
+      InsertArrayElementAtIndex
+     </a>
+    </td>
+    <td class="desc">
+     在数组中的指定索引处插入空元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.MoveArrayElement.html">
+      MoveArrayElement
+     </a>
+    </td>
+    <td class="desc">
+     将数组元素从 srcIndex 移到 dstIndex。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.Next.html">
+      Next
+     </a>
+    </td>
+    <td class="desc">
+     移至下一个属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.NextVisible.html">
+      NextVisible
+     </a>
+    </td>
+    <td class="desc">
+     移至下一个可见属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.Reset.html">
+      Reset
+     </a>
+    </td>
+    <td class="desc">
+     移至对象的第一个属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.DataEquals.html">
+      DataEquals
+     </a>
+    </td>
+    <td class="desc">
+     比较两个 SerializedProperties 的数据。此方法会忽略路径和 SerializedObjects。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SerializedProperty.EqualContents.html">
+      EqualContents
+     </a>
+    </td>
+    <td class="desc">
+     查看包含的序列化属性是否相等。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   OnDemandRendering
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用 OnDemandRendering 类可控制和查询有关与所有其他子系统（例如物理、输入或动画）无关的渲染速度的信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   下面是一些可能要降低帧率的示例情形：
+   <br/>
+   <strong>
+    1.
+   </strong>
+   菜单（例如，应用程序入口点或暂停菜单）：菜单往往是相对简单的场景，因此无需全速渲染。可以按较低帧率渲染菜单，以减少功耗并防止设备温度升高而导致 CPU 频率可能会受到限制。
+   <br/>
+   <strong>
+    2.
+   </strong>
+   基于回合的游戏（例如国际象棋）：玩家会花时间等待其他用户行棋或是考虑其下一步行棋。在低活动时间段中，可以降低帧率以防止不必要的功耗并延长电池续航时间。
+   <br/>
+   <strong>
+    3.
+   </strong>
+   内容在大多数时间内是静态的应用程序（如汽车 UI）。
+   <br/>
+   使用
+   <a href="https://docs.unity3d.com/Packages/com.unity.mobile.adaptiveperformance@latest/index.html">
+    自适应性能包
+   </a>
+   或只是想管理功耗和设备散热以尽可能延长电池续航时间并防止 CPU 受到限制时，调整渲染速度会特别有意义。
+   <br/>
+   注意：VR 应用程序不支持按需渲染。不渲染每帧会导致视觉效果与头部移动不同步，可能会增大晕动症风险。
+   <br/>
+   <br/>
+   如果在 Android 上将此功能与 Optimized Frame Pacing 一起使用，请注意以下事项：
+   <br/>
+   如果还使用 OpenGL ES，则 Optimized Frame Pacing 在帧率为 20、30 或 60 帧/秒时效果最好。若要确保以其中一个帧率进行渲染，请使用
+   <a href="Rendering.OnDemandRendering-effectiveRenderFrameRate.html">
+    OnDemandRendering.effectiveRenderFrameRate
+   </a>
+   。
+   <br/>
+   Vulkan 不那么严格，可使用更多数量的有效帧率。
+   <br/>
+   如果请求使用不兼容的帧率，则应用程序会以尽可能快的速度进行渲染。另请注意，太高的 renderFrameInterval 可能会导致应用程序无响应，因为渲染帧之间的时间太长。
+   <br/>
+   请注意事件执行：
+   <br/>
+   <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">
+    此页面
+   </a>
+   上的图描述每帧中的事件执行顺序。但是，在 Unity 不渲染（
+   <a href="Rendering.OnDemandRendering-willCurrentFrameRender.html">
+    OnDemandRendering.willCurrentFrameRender
+   </a>
+   为 false 时）的帧期间，特定于渲染的事件（包括用于场景渲染、辅助图标渲染、GUI 渲染和帧结束部分的事件）不会发生。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OnDemandRendering-effectiveRenderFrameRate.html">
+      effectiveRenderFrameRate
+     </a>
+    </td>
+    <td class="desc">
+     渲染的当前估计速率，以每秒帧数为单位，舍入为最接近的整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OnDemandRendering-renderFrameInterval.html">
+      renderFrameInterval
+     </a>
+    </td>
+    <td class="desc">
+     获取或设置当前帧率间隔。若要将渲染恢复为 Application.targetFrameRate 或 QualitySettings.vSyncCount 的值，请将此设置为 0 或 1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OnDemandRendering-willCurrentFrameRender.html">
+      willCurrentFrameRender
+     </a>
+    </td>
+    <td class="desc">
+     如果渲染当前帧，则为 True。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayerLoopSystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.LowLevel
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   由 Unity 中玩家循环更新的单个系统的表示形式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此结构表示玩家循环中的单个系统。系统可以是 Unity 的内置本机系统之一，您也可以使用 C# 新建自定义系统以添加到玩家循环中。只能通过调用
+   <a href="LowLevel.PlayerLoop.GetDefaultPlayerLoop.html">
+    PlayerLoop.GetDefaultPlayerLoop
+   </a>
+   来检索本机系统，且不应修改其参数。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LowLevel.PlayerLoopSystem-loopConditionFunction.html">
+      loopConditionFunction
+     </a>
+    </td>
+    <td class="desc">
+     本机引擎系统的循环条件。要获取此条件的有效值，您必须从 PlayerLoop.GetDefaultPlayerLoop 返回的其中一个 PlayerLoopSystem 进行复制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LowLevel.PlayerLoopSystem-subSystemList.html">
+      subSystemList
+     </a>
+    </td>
+    <td class="desc">
+     在玩家循环中作为此项的一部分运行的子系统列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LowLevel.PlayerLoopSystem-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     此属性用于标识该子系统所属的本机系统，或者获取要在性能分析器中显示的托管系统的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LowLevel.PlayerLoopSystem-updateDelegate.html">
+      updateDelegate
+     </a>
+    </td>
+    <td class="desc">
+     托管委托。您可以设置此项，以在玩家循环中创建新的 C# 入口点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LowLevel.PlayerLoopSystem-updateFunction.html">
+      updateFunction
+     </a>
+    </td>
+    <td class="desc">
+     本机引擎系统。要获取此条件的有效值，您必须从 PlayerLoop.GetDefaultPlayerLoop 返回的其中一个 PlayerLoopSystem 进行复制。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

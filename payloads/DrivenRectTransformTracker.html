@@ -1,0 +1,97 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DrivenRectTransformTracker
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   可设计一个组件来驱动 RectTransform。DrivenRectTransformTracker 结构用于指定其正在驱动的 RectTransform。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   驱动 RectTransform 意味着被驱动 RectTransform 的值由该组件控制。这些被驱动的值无法在 Inspector 中加以编辑（它们显示为已禁用）。此外在保存场景时也不会保存它们，这可防止不需要的场景文件更改。
+   <br/>
+   <br/>
+   无论何时该组件正在更改被驱动 RectTransform 的值，其都应首先调用 Clear 方法，然后使用 Add 方法来添加其正在驱动的所有 RectTransform。此外还应在该组件的 OnDisable 回调中调用 Clear 方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DrivenRectTransformTracker.Add.html">
+      Add
+     </a>
+    </td>
+    <td class="desc">
+     添加要驱动的 RectTransform。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrivenRectTransformTracker.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     清除正被驱动的 RectTransform 的列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DrivenRectTransformTracker.StartRecordingUndo.html">
+      StartRecordingUndo
+     </a>
+    </td>
+    <td class="desc">
+     继续记录被驱动 RectTransforms 的撤消操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrivenRectTransformTracker.StopRecordingUndo.html">
+      StopRecordingUndo
+     </a>
+    </td>
+    <td class="desc">
+     停止记录被驱动 RectTransforms 中的撤消操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

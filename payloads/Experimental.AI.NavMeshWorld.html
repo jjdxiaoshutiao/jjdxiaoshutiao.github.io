@@ -1,0 +1,111 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NavMeshWorld
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   将导航网格表面和链接组合起来，整个用来执行导航操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   操作针对一个世界初始化，仅能使用此世界中的导航网格，并且不知道任何其他 NavMeshWorld 的存在。
+   <br/>
+   <br/>
+   复制此对象仅会生成对相同导航网格数据的新引用，它不会复制内存中的数据。
+   <br/>
+   <br/>
+   <strong>
+    重要注意事项：
+   </strong>
+   目前仅能使用一个导航网格世界，并且可以通过
+   <a href="Experimental.AI.NavMeshWorld.GetDefaultWorld.html">
+    NavMeshWorld.GetDefaultWorld
+   </a>
+   方法获得对它的引用。未来将能够创建多个导航网格世界，并且它们中的任何两个将完全相互隔离。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Experimental.AI.NavMeshQuery.html">
+    NavMeshQuery
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshWorld.AddDependency.html">
+      AddDependency
+     </a>
+    </td>
+    <td class="desc">
+     告知导航网格世界停止任何更改，直到指定作业完成为止。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshWorld.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果 NavMeshWorld 已正确初始化，则返回 /true/。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshWorld.GetDefaultWorld.html">
+      GetDefaultWorld
+     </a>
+    </td>
+    <td class="desc">
+     返回对当前存在并在 Unity 中使用的单个 NavMeshWorld 的引用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

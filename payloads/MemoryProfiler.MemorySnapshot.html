@@ -1,0 +1,76 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MemorySnapshot
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.MemoryProfiler
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   MemorySnapshot 是一个用于帮助诊断内存使用情况的分析工具。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   MemorySnapshot 以及 UnityEditor.MemoryProfiler.* 中的所有类型都是实验性 API，未来很可能发生显著变化。目前，只有基于 il2cpp 的播放器能够提供内存快照。编辑器和基于单声道的播放器不会响应对新快照的请求。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MemoryProfiler.MemorySnapshot.RequestNewSnapshot.html">
+      RequestNewSnapshot
+     </a>
+    </td>
+    <td class="desc">
+     从性能分析器的当前连接目标请求新快照。内存快照受到 IL2CPP 和 Mono .NET 3.5/4.0 脚本后端的支持，但截至 2018.3 版本，.NET 3.5 已被弃用。
+\ \
+注意：每个快照包含每个已记录的托管对象的大约一个托管对象。从编辑器中创建的快照将包含所有先前快照中尚未进行垃圾回收的对象。因此，编辑器的重复快照可能呈指数级增长。如果您不再需要旧快照，则建议取消对它的所有引用，并在再次创建快照之前调用 GC.Collect()。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MemoryProfiler.MemorySnapshot.OnSnapshotReceived.html">
+      OnSnapshotReceived
+     </a>
+    </td>
+    <td class="desc">
+     当新内存快照通过性能分析器连接传入时将触发的事件。它的参数将是 PackedMemorySnapshot。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

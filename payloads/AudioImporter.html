@@ -1,0 +1,444 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioImporter
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="AssetImporter.html">
+    AssetImporter
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   音频导入器允许您从编辑器脚本修改
+   <a href="AudioClip.html">
+    AudioClip
+   </a>
+   导入设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此类中的设置与
+   <a href="../Manual/class-AudioClip.html">
+    Audio Import Settings
+   </a>
+   中显示的设置匹配。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter-ambisonic.html">
+      ambisonic
+     </a>
+    </td>
+    <td class="desc">
+     设置此标志后，系统会将音频剪辑当做立体混相声处理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter-defaultSampleSettings.html">
+      defaultSampleSettings
+     </a>
+    </td>
+    <td class="desc">
+     AudioClip 导入器的默认样本设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter-forceToMono.html">
+      forceToMono
+     </a>
+    </td>
+    <td class="desc">
+     将音频剪辑强制设置为单声道？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter-loadInBackground.html">
+      loadInBackground
+     </a>
+    </td>
+    <td class="desc">
+     对应于 AudioClip 检视面板中的“Load In Background”标志，当设置该标志时，将在不阻塞主线程的情况下延时加载剪辑。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter-preloadAudioData.html">
+      preloadAudioData
+     </a>
+    </td>
+    <td class="desc">
+     加载剪辑资源时预加载剪辑的音频数据。当该标志关闭时，脚本必须调用 AudioClip.LoadAudioData() 来在播放剪辑前加载数据。加载音频数据前，可以使用长度、声道和格式等属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter.ClearSampleSettingOverride.html">
+      ClearSampleSettingOverride
+     </a>
+    </td>
+    <td class="desc">
+     清除给定平台的采样设置覆盖值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter.ContainsSampleSettingsOverride.html">
+      ContainsSampleSettingsOverride
+     </a>
+    </td>
+    <td class="desc">
+     返回给定构建目标当前是否已覆盖采样设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter.GetOverrideSampleSettings.html">
+      GetOverrideSampleSettings
+     </a>
+    </td>
+    <td class="desc">
+     返回给定平台的当前覆盖设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioImporter.SetOverrideSampleSettings.html">
+      SetOverrideSampleSettings
+     </a>
+    </td>
+    <td class="desc">
+     为给定平台设置覆盖采样设置。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleName.html">
+       assetBundleName
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetBundleVariant.html">
+       assetBundleVariant
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 AssetBundle 变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-assetPath.html">
+       assetPath
+      </a>
+     </td>
+     <td class="desc">
+      此导入器的资源的路径名称。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-importSettingsMissing.html">
+       importSettingsMissing
+      </a>
+     </td>
+     <td class="desc">
+      如果导入的资源未随附任何元文件，则此值为 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter-userData.html">
+       userData
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置任意用户数据。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.AddRemap.html">
+       AddRemap
+      </a>
+     </td>
+     <td class="desc">
+      将子资源从导入的资源（例如 FBX 文件）映射到同类型的外部资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetExternalObjectMap.html">
+       GetExternalObjectMap
+      </a>
+     </td>
+     <td class="desc">
+      获取 AssetImporter 使用的外部对象映射的副本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.RemoveRemap.html">
+       RemoveRemap
+      </a>
+     </td>
+     <td class="desc">
+      从外部对象的映射中删除项。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SaveAndReimport.html">
+       SaveAndReimport
+      </a>
+     </td>
+     <td class="desc">
+      如果资源导入器已标记为“脏”，则保存资源导入器设置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SetAssetBundleNameAndVariant.html">
+       SetAssetBundleNameAndVariant
+      </a>
+     </td>
+     <td class="desc">
+      设置 AssetBundle 名称和变体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.SupportsRemappedAssetType.html">
+       SupportsRemappedAssetType
+      </a>
+     </td>
+     <td class="desc">
+      检查 AssetImporter 是否支持重新映射给定的资源类型。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="AssetImporter.GetAtPath.html">
+       GetAtPath
+      </a>
+     </td>
+     <td class="desc">
+      在 path 处检索资源的资源导入器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

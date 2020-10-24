@@ -1,0 +1,77 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RequireComponent
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   RequireComponent 属性自动将所需的组件添加为依赖项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   向 GameObject 添加使用 RequireComponent 的脚本时，会自动将需要的组件添加到 GameObject 中。
+这对避免设置错误非常有用。
+例如，脚本可能要求始终向同一 GameObject 添加 Rigidbody。
+使用 RequireComponent 可自动完成此工作，也就不会出现设置错误。
+请注意，RequireComponent 只在组件添加到 GameObject 中时检查是否缺少依赖项。GameObject 缺少新依赖项的现有组件实例将不会自动添加这些依赖项。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// PlayerScript requires the <a href="GameObject.html">GameObject</a> to have a <a href="Rigidbody.html">Rigidbody</a> component
+[<a href="RequireComponent.html">RequireComponent</a>(typeof(<a href="Rigidbody.html">Rigidbody</a>))]
+public class PlayerScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Rigidbody.html">Rigidbody</a> rb;<br/><br/>    void Start()
+    {
+        rb = GetComponent&lt;<a href="Rigidbody.html">Rigidbody</a>&gt;();
+    }<br/><br/>    void <a href="PlayerLoop.FixedUpdate.html">FixedUpdate</a>()
+    {
+        rb.AddForce(<a href="Vector3-up.html">Vector3.up</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RequireComponent-ctor.html">
+      RequireComponent
+     </a>
+    </td>
+    <td class="desc">
+     需要一个组件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

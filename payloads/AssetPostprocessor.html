@@ -1,0 +1,410 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssetPostprocessor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AssetPostprocessor 允许您挂接到导入管线并在导入资源前后运行脚本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在模型导入期间，系统将按以下顺序调用函数：
+   <br/>
+   -
+   <a href="AssetPostprocessor.OnPreprocessModel.html">
+    OnPreprocessModel
+   </a>
+   是在最开始时调用的，您可以覆盖在整个模型导入过程中使用的
+   <a href="ModelImporter.html">
+    ModelImporter
+   </a>
+   设置。
+   <br/>
+   - 导入网格和材质后，从导入的节点创建游戏对象层级视图。使用
+   <a href="AssetPostprocessor.OnPostprocessMeshHierarchy.html">
+    OnPostprocessMeshHierarchy
+   </a>
+   来更改层级视图。表示导入节点的每个游戏对象都被赋予相应的 MeshFilter、MeshRenderer 和 MeshCollider 组件。向 MeshRenderer 分配材质之前，系统会调用
+   <a href="AssetPostprocessor.OnAssignMaterialModel.html">
+    OnAssignMaterialModel
+   </a>
+   函数。
+   <br/>
+   - 在游戏对象初始化 MeshRenderer 之后且存在“userdata”时，系统会调用
+   <a href="AssetPostprocessor.OnPostprocessGameObjectWithUserProperties.html">
+    OnPostprocessGameObjectWithUserProperties
+   </a>
+   。这发生在生成子游戏对象之前。
+   <br/>
+   - 如果在先前的阶段中未禁用动画生成（请参阅
+   <a href="ModelImporter-generateAnimations.html">
+    ModelImporter.generateAnimations
+   </a>
+   ），则会生成带蒙皮的网格和动画。如果可能，系统还会创建化身并优化游戏对象层级。之后，系统将为根游戏对象调用
+   <a href="AssetPostprocessor.OnPostprocessModel.html">
+    OnPostprocessModel
+   </a>
+   。
+   <br/>
+   <br/>
+   系统会在 SpeedTree 资源（.spm 文件）上调用
+   <a href="AssetPostprocessor.OnPreprocessSpeedTree.html">
+    OnPreprocessSpeedTree
+   </a>
+   和
+   <a href="AssetPostprocessor.OnPostprocessSpeedTree.html">
+    OnPostprocessSpeedTree
+   </a>
+   ，与调用
+   <a href="AssetPostprocessor.OnPreprocessModel.html">
+    OnPreprocessModel
+   </a>
+   和
+   <a href="AssetPostprocessor.OnPostprocessModel.html">
+    OnPostprocessModel
+   </a>
+   的方式相同，区别在于
+   <a href="SpeedTreeImporter.html">
+    SpeedTreeImporter
+   </a>
+   类型是
+   <a href="AssetPostprocessor-assetImporter.html">
+    assetImporter
+   </a>
+   。
+   <br/>
+   <br/>
+   在制作流程中，AssetPostprocessor 应始终放置在项目中预先构建的 dll 中，而非脚本中。
+AssetPostprocessor 会更改导入的资源的输出，因此，如果其中一个脚本出现编译错误，就会导致资源以不同的方式导入。
+在制作流程中操作时，这是一个严重的问题。通过对 AssetPostprocessor 使用 dll，您可以确保在脚本出现编译错误时，也能够始终执行 AssetPostprocessor。
+通过此方法，您可以覆盖导入设置中的默认值，也可以修改纹理或网格之类的导入数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor-assetImporter.html">
+      assetImporter
+     </a>
+    </td>
+    <td class="desc">
+     对资源导入器的引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor-assetPath.html">
+      assetPath
+     </a>
+    </td>
+    <td class="desc">
+     要导入的资源的路径名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor-context.html">
+      context
+     </a>
+    </td>
+    <td class="desc">
+     导入上下文。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.GetPostprocessOrder.html">
+      GetPostprocessOrder
+     </a>
+    </td>
+    <td class="desc">
+     覆盖导入器的处理顺序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.GetVersion.html">
+      GetVersion
+     </a>
+    </td>
+    <td class="desc">
+     返回资源后处理器的版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.LogError.html">
+      LogError
+     </a>
+    </td>
+    <td class="desc">
+     将导入错误消息记录到控制台。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.LogWarning.html">
+      LogWarning
+     </a>
+    </td>
+    <td class="desc">
+     将导入警告记录到控制台。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   消息
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnAssignMaterialModel.html">
+      OnAssignMaterialModel
+     </a>
+    </td>
+    <td class="desc">
+     提供源材质。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessAllAssets.html">
+      OnPostprocessAllAssets
+     </a>
+    </td>
+    <td class="desc">
+     在完成任意数量的资源导入后（当资源进度条到达末尾时）调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessAnimation.html">
+      OnPostprocessAnimation
+     </a>
+    </td>
+    <td class="desc">
+     当 AnimationClip 已完成导入时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessAssetbundleNameChanged.html">
+      OnPostprocessAssetbundleNameChanged
+     </a>
+    </td>
+    <td class="desc">
+     将资源分配给其他资源捆绑包时调用的处理程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessAudio.html">
+      OnPostprocessAudio
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在音频剪辑完成导入时获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessCubemap.html">
+      OnPostprocessCubemap
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在立方体贴图纹理完成导入之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessGameObjectWithAnimatedUserProperties.html">
+      OnPostprocessGameObjectWithAnimatedUserProperties
+     </a>
+    </td>
+    <td class="desc">
+     当自定义属性的动画曲线已完成导入时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessGameObjectWithUserProperties.html">
+      OnPostprocessGameObjectWithUserProperties
+     </a>
+    </td>
+    <td class="desc">
+     为每个在导入文件中至少附加了一个用户属性的游戏对象调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessMaterial.html">
+      OnPostprocessMaterial
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在材质资源完成导入时获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessMeshHierarchy.html">
+      OnPostprocessMeshHierarchy
+     </a>
+    </td>
+    <td class="desc">
+     当变换层级视图已完成导入时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessModel.html">
+      OnPostprocessModel
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在模型完成导入时获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessSpeedTree.html">
+      OnPostprocessSpeedTree
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在 SpeedTree 资源完成导入时获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessSprites.html">
+      OnPostprocessSprites
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在精灵的纹理完成导入时获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPostprocessTexture.html">
+      OnPostprocessTexture
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在纹理刚完成导入之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessAnimation.html">
+      OnPreprocessAnimation
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在导入模型（.fbx、.mb 文件等）中的动画之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessAsset.html">
+      OnPreprocessAsset
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在导入所有资源之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessAudio.html">
+      OnPreprocessAudio
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在导入音频剪辑之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessMaterialDescription.html">
+      OnPreprocessMaterialDescription
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在材质从 Model Importer 导入时接收通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessModel.html">
+      OnPreprocessModel
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在导入模型（.fbx、.mb 文件等）之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessSpeedTree.html">
+      OnPreprocessSpeedTree
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在导入 SpeedTree 资源（.spm 文件）之前获取通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetPostprocessor.OnPreprocessTexture.html">
+      OnPreprocessTexture
+     </a>
+    </td>
+    <td class="desc">
+     将此函数添加到一个子类中，以在纹理导入器运行之前获取通知。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

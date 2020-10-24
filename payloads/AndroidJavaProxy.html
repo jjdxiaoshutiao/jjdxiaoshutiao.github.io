@@ -1,0 +1,154 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AndroidJavaProxy
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此类可用于实现任何 Java 接口。与代理对象中的接口匹配的任何 Java vm 方法调用都将自动传递给 c# 实现。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意
+   </strong>
+   ：此 API 可从自定义线程使用，但需要该线程首先附加到 JVM，请参阅
+   <a href="AndroidJNI.AttachCurrentThread.html">
+    AndroidJNI.AttachCurrentThread
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Opens an android date picker dialog and grabs the result using a callback.
+using UnityEngine;
+using System;<br/><br/>class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private static DateTime selectedDate = DateTime.Now;<br/><br/>    class DateCallback : <a href="AndroidJavaProxy.html">AndroidJavaProxy</a>
+    {
+        public DateCallback() : base("android.app.DatePickerDialog$OnDateSetListener") {}
+        void onDateSet(<a href="AndroidJavaObject.html">AndroidJavaObject</a> view, int year, int monthOfYear, int dayOfMonth)
+        {
+            selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
+        }
+    }<br/><br/>    void OnGUI()
+    {
+        if (<a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(15, 15, 450, 75), string.Format("{0:yyyy-MM-dd}", selectedDate)))
+        {
+            <a href="AndroidJavaClass.html">AndroidJavaClass</a> activity = new <a href="AndroidJavaClass.html">AndroidJavaClass</a>("com.unity3d.player.UnityPlayer").GetStatic&lt;<a href="AndroidJavaClass.html">AndroidJavaClass</a>&gt;("currentActivity");
+            activity.Call("runOnUiThread", new <a href="AndroidJavaRunnable.html">AndroidJavaRunnable</a>(() =&gt;
+            {
+                new <a href="AndroidJavaObject.html">AndroidJavaObject</a>("android.app.DatePickerDialog", activity, new DateCallback(), selectedDate.Year, selectedDate.Month - 1, selectedDate.Day).Call("show");
+            }));
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy-javaInterface.html">
+      javaInterface
+     </a>
+    </td>
+    <td class="desc">
+     代理实现的 Java 接口。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy-ctor.html">
+      AndroidJavaProxy
+     </a>
+    </td>
+    <td class="desc">
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy-equals.html">
+      equals
+     </a>
+    </td>
+    <td class="desc">
+     与 java.lang.Object equals() 方法等效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy-hashCode.html">
+      hashCode
+     </a>
+    </td>
+    <td class="desc">
+     与 java.lang.Object hashCode() 方法等效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy.Invoke.html">
+      Invoke
+     </a>
+    </td>
+    <td class="desc">
+     每次调用 Java 代理接口的方法时均由 Java vm 调用。可以重写此方法，以运行有关方法调用的特殊代码，或将实现保留原样，并保留默认行为，即查找与 Java 方法的签名匹配的 c# 方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AndroidJavaProxy-toString.html">
+      toString
+     </a>
+    </td>
+    <td class="desc">
+     与 java.lang.Object toString() 方法等效。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

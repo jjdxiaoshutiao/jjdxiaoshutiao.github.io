@@ -1,0 +1,173 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SphericalHarmonicsL2
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   高达二阶的球谐函数（3 个波段，9 个系数）。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   球谐函数 (SH) 表示各方向上的函数或信号，常在计算机图形中用于高效计算平滑光照。Unity 将它们用于
+   <a href="LightProbes.html">
+    LightProbes
+   </a>
+   和环境光照。
+   <br/>
+   <br/>
+   L2 球谐函数由 9 个系数（用于每个颜色通道）组成。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="RenderSettings-ambientMode.html">
+    RenderSettings.ambientMode
+   </a>
+   、
+   <a href="RenderSettings-ambientProbe.html">
+    RenderSettings.ambientProbe
+   </a>
+   、
+   <a href="LightProbes.html">
+    LightProbes
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2.Index_operator.html">
+      this[int,int]
+     </a>
+    </td>
+    <td class="desc">
+     访问各个 SH 系数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2.AddAmbientLight.html">
+      AddAmbientLight
+     </a>
+    </td>
+    <td class="desc">
+     将环境光照添加到探针数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2.AddDirectionalLight.html">
+      AddDirectionalLight
+     </a>
+    </td>
+    <td class="desc">
+     将方向光添加到探针数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     将 SH 探针清零。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2.Evaluate.html">
+      Evaluate
+     </a>
+    </td>
+    <td class="desc">
+     对每个给定方向计算球谐函数。第一个方向的结果写入 results 的第一个元素中，第二个方向的结果写入 results 的第二个元素中，依此类推。directions 和 results 的数组大小必须相符，并且 directions 必须标准化。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2-operator_ne.html">
+      operator !=
+     </a>
+    </td>
+    <td class="desc">
+     如果 SH 探针不同，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2-operator_multiply.html">
+      operator *
+     </a>
+    </td>
+    <td class="desc">
+     按给定系数缩放 SH。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2-operator_add.html">
+      operator +
+     </a>
+    </td>
+    <td class="desc">
+     添加两个 SH 探针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SphericalHarmonicsL2-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     如果 SH 探针相等，则返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

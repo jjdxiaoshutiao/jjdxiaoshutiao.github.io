@@ -1,0 +1,335 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NavMesh
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于访问烘焙导航网格的单例类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="AI.NavMesh.html">
+    NavMesh
+   </a>
+   是一个类，可用于执行空间查询（如寻路和步行性测试）、设置特定区域类型的寻路成本以及调整寻路和规避的整体行为。
+   <br/>
+   <br/>
+   为了使用空间查询，您需要先为场景烘焙导航网格。
+   <br/>
+   <br/>
+   另请参阅：\
+•
+   <a href="../Manual/nav-BuildingNavMesh.html">
+    构建导航网格
+   </a>
+   – 了解有关如何设置和烘焙导航网格的更多信息\
+•
+   <a href="../Manual/nav-AreasAndCosts.html">
+    区域和成本
+   </a>
+   – 了解如何使用不同的区域类型。\
+•
+   <a href="AI.NavMeshAgent.html">
+    NavMeshAgent
+   </a>
+   – 了解如何控制和移动导航网格代理。\
+•
+   <a href="AI.NavMeshObstacle.html">
+    NavMeshObstacle
+   </a>
+   – 了解如何使用脚本控制导航网格障碍物。\
+•
+   <a href="AI.OffMeshLink.html">
+    OffMeshLink
+   </a>
+   – 了解如何使用脚本控制网格外链接。\
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.AllAreas.html">
+      AllAreas
+     </a>
+    </td>
+    <td class="desc">
+     包含所有导航网格区域的区域遮罩常量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh-avoidancePredictionTime.html">
+      avoidancePredictionTime
+     </a>
+    </td>
+    <td class="desc">
+     描述代理在未来多久后预测碰撞，以便进行规避。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh-onPreUpdate.html">
+      onPreUpdate
+     </a>
+    </td>
+    <td class="desc">
+     设置一个要在执行帧更新期间且在导航网格更新之前调用的函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh-pathfindingIterationsPerFrame.html">
+      pathfindingIterationsPerFrame
+     </a>
+    </td>
+    <td class="desc">
+     异步寻路过程中每帧处理的最大节点数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.AddLink.html">
+      AddLink
+     </a>
+    </td>
+    <td class="desc">
+     向导航网格添加链接。此链接由 NavMeshLinkData 结构描述。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.AddNavMeshData.html">
+      AddNavMeshData
+     </a>
+    </td>
+    <td class="desc">
+     向游戏添加指定的导航网格数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.CalculatePath.html">
+      CalculatePath
+     </a>
+    </td>
+    <td class="desc">
+     计算两点之间的路径并存储生成的路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.CalculateTriangulation.html">
+      CalculateTriangulation
+     </a>
+    </td>
+    <td class="desc">
+     计算当前导航网格的三角形剖分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.CreateSettings.html">
+      CreateSettings
+     </a>
+    </td>
+    <td class="desc">
+     创建并返回可用于运行时导航网格构建操作的导航网格构建设置新条目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.FindClosestEdge.html">
+      FindClosestEdge
+     </a>
+    </td>
+    <td class="desc">
+     从导航网格上的一点找到最近的导航网格边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetAreaCost.html">
+      GetAreaCost
+     </a>
+    </td>
+    <td class="desc">
+     获取区域类型几何体的寻路成本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetAreaFromName.html">
+      GetAreaFromName
+     </a>
+    </td>
+    <td class="desc">
+     返回名为导航网格区域类型的区域索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetSettingsByID.html">
+      GetSettingsByID
+     </a>
+    </td>
+    <td class="desc">
+     返回导航网格构建设置的现有条目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetSettingsByIndex.html">
+      GetSettingsByIndex
+     </a>
+    </td>
+    <td class="desc">
+     按其有序索引返回导航网格构建设置的现有条目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetSettingsCount.html">
+      GetSettingsCount
+     </a>
+    </td>
+    <td class="desc">
+     返回已注册的导航网格构建设置的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.GetSettingsNameFromID.html">
+      GetSettingsNameFromID
+     </a>
+    </td>
+    <td class="desc">
+     返回与导航网格构建设置（与提供的代理类型 ID 匹配）关联的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.Raycast.html">
+      Raycast
+     </a>
+    </td>
+    <td class="desc">
+     在导航网格上的两点之间找出一条线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.RemoveAllNavMeshData.html">
+      RemoveAllNavMeshData
+     </a>
+    </td>
+    <td class="desc">
+     从游戏中删除所有导航网格表面和链接。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.RemoveLink.html">
+      RemoveLink
+     </a>
+    </td>
+    <td class="desc">
+     从导航网格中删除链接。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.RemoveNavMeshData.html">
+      RemoveNavMeshData
+     </a>
+    </td>
+    <td class="desc">
+     从游戏中删除指定的 NavMeshDataInstance，使其无法用于代理和查询。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.RemoveSettings.html">
+      RemoveSettings
+     </a>
+    </td>
+    <td class="desc">
+     删除与代理类型 ID 匹配的构建设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.SamplePosition.html">
+      SamplePosition
+     </a>
+    </td>
+    <td class="desc">
+     在指定范围内找到导航网格上最近的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.SetAreaCost.html">
+      SetAreaCost
+     </a>
+    </td>
+    <td class="desc">
+     设置所有代理上的区域类型几何体的寻路成本。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMesh.OnNavMeshPreUpdate.html">
+      OnNavMeshPreUpdate
+     </a>
+    </td>
+    <td class="desc">
+     一种委托，用于注册在导航网格系统更新之前调用的回调方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

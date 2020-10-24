@@ -1,0 +1,792 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Material
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   材质类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此类公开材质的所有属性，供您动画化这些属性。
+还可以使用它设置无法通过 Inspector 访问的自定义
+着色器属性（例如矩阵）。
+   <br/>
+   <br/>
+   若要获取对象使用的材质，请使用
+   <a href="Renderer-material.html">
+    Renderer.material
+   </a>
+   属性。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/Materials.html">
+    Materials
+   </a>
+   、
+   <a href="../Manual/Shaders.html">
+    Shaders
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Material-color.html">
+      color
+     </a>
+    </td>
+    <td class="desc">
+     材质的主色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-doubleSidedGI.html">
+      doubleSidedGI
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置是否为此材质启用双面全局光照设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-enableInstancing.html">
+      enableInstancing
+     </a>
+    </td>
+    <td class="desc">
+     获取和设置是否为此材质启用 GPU 实例化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-globalIlluminationFlags.html">
+      globalIlluminationFlags
+     </a>
+    </td>
+    <td class="desc">
+     定义材质应如何与光照贴图和光照探针交互。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-mainTexture.html">
+      mainTexture
+     </a>
+    </td>
+    <td class="desc">
+     主纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-mainTextureOffset.html">
+      mainTextureOffset
+     </a>
+    </td>
+    <td class="desc">
+     主纹理的偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-mainTextureScale.html">
+      mainTextureScale
+     </a>
+    </td>
+    <td class="desc">
+     主纹理的缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-passCount.html">
+      passCount
+     </a>
+    </td>
+    <td class="desc">
+     此材质中的通道数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-renderQueue.html">
+      renderQueue
+     </a>
+    </td>
+    <td class="desc">
+     此材质的渲染队列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-shader.html">
+      shader
+     </a>
+    </td>
+    <td class="desc">
+     材质使用的着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material-shaderKeywords.html">
+      shaderKeywords
+     </a>
+    </td>
+    <td class="desc">
+     此材质设置的附加着色器关键字。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Material-ctor.html">
+      Material
+     </a>
+    </td>
+    <td class="desc">
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Material.ComputeCRC.html">
+      ComputeCRC
+     </a>
+    </td>
+    <td class="desc">
+     从材质的内容计算 CRC 哈希值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.CopyPropertiesFromMaterial.html">
+      CopyPropertiesFromMaterial
+     </a>
+    </td>
+    <td class="desc">
+     将属性从其他材质复制到此材质中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.DisableKeyword.html">
+      DisableKeyword
+     </a>
+    </td>
+    <td class="desc">
+     取消设置着色器关键字。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.EnableKeyword.html">
+      EnableKeyword
+     </a>
+    </td>
+    <td class="desc">
+     设置此材质启用的着色器关键字。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.FindPass.html">
+      FindPass
+     </a>
+    </td>
+    <td class="desc">
+     返回通道 passName 的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetColor.html">
+      GetColor
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的颜色值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetColorArray.html">
+      GetColorArray
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的颜色数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetFloatArray.html">
+      GetFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的浮点数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetInt.html">
+      GetInt
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的整数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetMatrix.html">
+      GetMatrix
+     </a>
+    </td>
+    <td class="desc">
+     从着色器获取指定的矩阵值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetMatrixArray.html">
+      GetMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的矩阵数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetPassName.html">
+      GetPassName
+     </a>
+    </td>
+    <td class="desc">
+     返回索引 pass 处的着色器通道的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetShaderPassEnabled.html">
+      GetShaderPassEnabled
+     </a>
+    </td>
+    <td class="desc">
+     检查此材质上是否启用了给定的着色器通道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTag.html">
+      GetTag
+     </a>
+    </td>
+    <td class="desc">
+     获取材质着色器标记的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTexture.html">
+      GetTexture
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTextureOffset.html">
+      GetTextureOffset
+     </a>
+    </td>
+    <td class="desc">
+     获取纹理 propertyName 的位置偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTexturePropertyNameIDs.html">
+      GetTexturePropertyNameIDs
+     </a>
+    </td>
+    <td class="desc">
+     返回此材质上公开的所有纹理属性的名称 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTexturePropertyNames.html">
+      GetTexturePropertyNames
+     </a>
+    </td>
+    <td class="desc">
+     返回此材质上公开的所有纹理属性的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetTextureScale.html">
+      GetTextureScale
+     </a>
+    </td>
+    <td class="desc">
+     获取纹理 propertyName 的位置缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetVector.html">
+      GetVector
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的向量值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.GetVectorArray.html">
+      GetVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的向量数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.HasProperty.html">
+      HasProperty
+     </a>
+    </td>
+    <td class="desc">
+     检查材质的着色器是否具有给定名称的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.IsKeywordEnabled.html">
+      IsKeywordEnabled
+     </a>
+    </td>
+    <td class="desc">
+     此材质上是否启用了着色器关键字？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.Lerp.html">
+      Lerp
+     </a>
+    </td>
+    <td class="desc">
+     在两个材质之间对属性进行插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetBuffer.html">
+      SetBuffer
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的 ComputeBuffer 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetColor.html">
+      SetColor
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的颜色值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetColorArray.html">
+      SetColorArray
+     </a>
+    </td>
+    <td class="desc">
+     设置颜色数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetConstantBuffer.html">
+      SetConstantBuffer
+     </a>
+    </td>
+    <td class="desc">
+     将 ComputeBuffer 设置为材质的指定常量缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetFloatArray.html">
+      SetFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     设置浮点数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetInt.html">
+      SetInt
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的整数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetMatrix.html">
+      SetMatrix
+     </a>
+    </td>
+    <td class="desc">
+     为着色器设置指定的矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetMatrixArray.html">
+      SetMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     设置矩阵数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetOverrideTag.html">
+      SetOverrideTag
+     </a>
+    </td>
+    <td class="desc">
+     对材质设置重写标记/值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetPass.html">
+      SetPass
+     </a>
+    </td>
+    <td class="desc">
+     激活给定的 pass 以进行渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetShaderPassEnabled.html">
+      SetShaderPassEnabled
+     </a>
+    </td>
+    <td class="desc">
+     在每个材质级别上启用或禁用着色器通道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetTexture.html">
+      SetTexture
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetTextureOffset.html">
+      SetTextureOffset
+     </a>
+    </td>
+    <td class="desc">
+     设置纹理 propertyName 的位置偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetTextureScale.html">
+      SetTextureScale
+     </a>
+    </td>
+    <td class="desc">
+     设置纹理 propertyName 的位置缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetVector.html">
+      SetVector
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的向量值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Material.SetVectorArray.html">
+      SetVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     设置向量数组属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

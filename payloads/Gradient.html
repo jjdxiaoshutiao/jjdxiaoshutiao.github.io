@@ -1,0 +1,158 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Gradient
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   渐变，用于动画化颜色。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="GradientColorKey.html">
+    GradientColorKey
+   </a>
+   、
+   <a href="GradientAlphaKey.html">
+    GradientAlphaKey
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class ExampleScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Gradient.html">Gradient</a> gradient;
+    <a href="GradientColorKey.html">GradientColorKey</a>[] colorKey;
+    <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] alphaKey;<br/><br/>    void Start()
+    {
+        gradient = new <a href="Gradient.html">Gradient</a>();<br/><br/>        // Populate the color keys at the relative time 0 and 1 (0 and 100%)
+        colorKey = new <a href="GradientColorKey.html">GradientColorKey</a>[2];
+        colorKey[0].color = <a href="Color-red.html">Color.red</a>;
+        colorKey[0].time = 0.0f;
+        colorKey[1].color = <a href="Color-blue.html">Color.blue</a>;
+        colorKey[1].time = 1.0f;<br/><br/>        // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+        alphaKey = new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[2];
+        alphaKey[0].alpha = 1.0f;
+        alphaKey[0].time = 0.0f;
+        alphaKey[1].alpha = 0.0f;
+        alphaKey[1].time = 1.0f;<br/><br/>        gradient.SetKeys(colorKey, alphaKey);<br/><br/>        // What's the color at the relative time 0.25 (25 %) ?
+        <a href="Debug.Log.html">Debug.Log</a>(gradient.Evaluate(0.25f));
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   注意，Alpha 和颜色键将按时间值自动排序，并且确保始终至少有 2 个颜色键和 2 个 Alpha 键。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Gradient-alphaKeys.html">
+      alphaKeys
+     </a>
+    </td>
+    <td class="desc">
+     在渐变中定义的所有 Alpha 键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gradient-colorKeys.html">
+      colorKeys
+     </a>
+    </td>
+    <td class="desc">
+     在渐变中定义的所有颜色键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gradient-mode.html">
+      mode
+     </a>
+    </td>
+    <td class="desc">
+     控制计算渐变的方式。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Gradient-ctor.html">
+      Gradient
+     </a>
+    </td>
+    <td class="desc">
+     创建新的 Gradient 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Gradient.Evaluate.html">
+      Evaluate
+     </a>
+    </td>
+    <td class="desc">
+     计算给定时间处的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Gradient.SetKeys.html">
+      SetKeys
+     </a>
+    </td>
+    <td class="desc">
+     使用颜色键和 Alpha 键的数组设置渐变。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

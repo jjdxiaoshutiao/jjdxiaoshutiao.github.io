@@ -1,0 +1,137 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MediaEncoder
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Media
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   将图像和音频样本编码到音频或电影文件中。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   构造此类的实例会创建一个编码器，该编码器将创建一个具有指定轨道的音频、视频或音频/视频文件。
+   <br/>
+   <br/>
+   对每个轨道交替调用 AddFrame() 和 AddSamples() 方法，以便帧和样本保持对每个轨道进行均等填充。
+   <br/>
+   <br/>
+   将所有需要的帧和样本都添加到文件中后，调用 Dispose() 以正确结束每个轨道并关闭文件。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEditor.Media;
+using UnityEngine;
+using Unity.Collections;
+using System.IO;<br/><br/>public class <a href="Profiling.Recorder.html">Recorder</a>
+{
+    static public void RecordMovie()
+    {
+        var videoAttr = new <a href="Media.VideoTrackAttributes.html">VideoTrackAttributes</a>
+        {
+            frameRate = new <a href="Media.MediaRational.html">MediaRational</a>(50),
+            width = 320,
+            height = 200,
+            includeAlpha = false
+        };<br/><br/>        var audioAttr = new <a href="Media.AudioTrackAttributes.html">AudioTrackAttributes</a>
+        {
+            sampleRate = new <a href="Media.MediaRational.html">MediaRational</a>(48000),
+            channelCount = 2,
+            language = "fr"
+        };<br/><br/>        int sampleFramesPerVideoFrame = audioAttr.channelCount *
+            audioAttr.sampleRate.numerator / videoAttr.frameRate.numerator;<br/><br/>        var encodedFilePath = <a href="Path.Combine.html">Path.Combine</a>(Path.GetTempPath(), "my_movie.mp4");<br/><br/>        <a href="Texture2D.html">Texture2D</a> tex = new <a href="Texture2D.html">Texture2D</a>((int)videoAttr.width, (int)videoAttr.height, <a href="TextureFormat.RGBA32.html">TextureFormat.RGBA32</a>, false);<br/><br/>        using (var encoder = new <a href="Media.MediaEncoder.html">MediaEncoder</a>(encodedFilePath, videoAttr, audioAttr))
+        using (var audioBuffer = new NativeArray&lt;float&gt;(sampleFramesPerVideoFrame, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>))
+        {
+            for (int i = 0; i &lt; 100; ++i)
+            {
+                // Fill 'tex' with the video content to be encoded into the file for this frame.
+                // ...
+                encoder.AddFrame(tex);<br/><br/>                // Fill 'audioBuffer' with the audio content to be encoded into the file for this frame.
+                // ...
+                encoder.AddSamples(audioBuffer);
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Media.MediaEncoder-ctor.html">
+      MediaEncoder
+     </a>
+    </td>
+    <td class="desc">
+     创建一个具有各种轨道排列方式的新编码器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Media.MediaEncoder.AddFrame.html">
+      AddFrame
+     </a>
+    </td>
+    <td class="desc">
+     将帧附加到文件的视频轨道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Media.MediaEncoder.AddSamples.html">
+      AddSamples
+     </a>
+    </td>
+    <td class="desc">
+     将样本帧附加到指定的视频轨道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Media.MediaEncoder.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     完成写入所有轨道，并关闭正在写入的文件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

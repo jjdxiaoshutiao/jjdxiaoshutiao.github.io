@@ -1,0 +1,88 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IndexFormat
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   网格索引缓冲区数据的格式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   索引缓冲区可以是 16 位（一个网格中最多支持 65535 个顶点）或 32 位（最多支持 40 亿个顶点）。
+默认索引格式为 16 位，因为这种格式占用的内存和带宽较少。
+   <br/>
+   <br/>
+   请注意，不是所有平台上都能保证 GPU 支持 32 位索引；例如，
+采用 Mali-400 GPU 的 Android 设备就不支持这些索引。在此类平台上使用 32 位索引时，会记录警告消息，
+不会渲染网格。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Mesh-indexFormat.html">
+    Mesh.indexFormat
+   </a>
+   、
+   <a href="ModelImporter-indexFormat.html">
+    ModelImporter.indexFormat
+   </a>
+   、
+   <a href="Mesh.SetIndices.html">
+    Mesh.SetIndices
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.IndexFormat.UInt16.html">
+      UInt16
+     </a>
+    </td>
+    <td class="desc">
+     16 位网格索引缓冲区格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.IndexFormat.UInt32.html">
+      UInt32
+     </a>
+    </td>
+    <td class="desc">
+     32 位网格索引缓冲区格式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InitializeOnEnterPlayModeAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许在 Unity 进入运行模式时初始化编辑器类方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   用于在进入运行模式时重置 Editor 类中的静态字段，而不进行域重新加载。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>class MyAnotherClass
+{
+    static int s_MySimpleValue = 0;<br/><br/>    [InitializeOnEnterPlayMode]
+    static void OnEnterPlaymodeInEditor(<a href="EnterPlayModeOptions.html">EnterPlayModeOptions</a> options)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Entering <a href="PlayMode.html">PlayMode</a>");<br/><br/>        if (options.HasFlag(<a href="EnterPlayModeOptions.DisableDomainReload.html">EnterPlayModeOptions.DisableDomainReload</a>))
+            s_MySimpleValue = 0;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   或者在进入运行模式时执行任何其他逻辑。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>class MyClass
+{
+    static int s_MyValue = 0;<br/><br/>    static void MyClassPlaymodeSetup()
+    {
+        s_MyValue = 1000;
+        //...
+    }<br/><br/>    [InitializeOnEnterPlayMode]
+    static void OnEnterPlaymodeInEditor(<a href="EnterPlayModeOptions.html">EnterPlayModeOptions</a> options)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Entering <a href="PlayMode.html">PlayMode</a>");
+        MyClassPlaymodeSetup();
+    }
+}
+</pre>
+ </div>
+</div>

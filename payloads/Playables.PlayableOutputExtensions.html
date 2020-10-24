@@ -1,0 +1,205 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayableOutputExtensions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Playables
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   适用于实现
+   <a href="Playables.IPlayableOutput.html">
+    IPlayableOutput
+   </a>
+   的所有类型的扩展。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   扩展方法属于静态方法，可以像调用扩展类型上的实例方法那样调用它们。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Playables;<br/><br/>public class ExamplePlayableBehaviour : <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a>
+{
+    void Start()
+    {
+        <a href="Playables.PlayableGraph.html">PlayableGraph</a> graph = <a href="Playables.PlayableGraph.Create.html">PlayableGraph.Create</a>();
+        <a href="Playables.ScriptPlayableOutput.html">ScriptPlayableOutput</a> scriptOutput = <a href="Playables.ScriptPlayableOutput.Create.html">ScriptPlayableOutput.Create</a>(graph, "MyOutput");<br/><br/>        // Calling method PlayableExtensions.SetWeight on <a href="Playables.ScriptPlayableOutput.html">ScriptPlayableOutput</a> as if it was an instance method.
+        scriptOutput.SetWeight(10);<br/><br/>        // The line above is the same as calling directly <a href="Playables.PlayableExtensions.SetDuration.html">PlayableExtensions.SetDuration</a>, but it is more compact and readable.
+        <a href="Playables.PlayableOutputExtensions.SetWeight.html">PlayableOutputExtensions.SetWeight</a>(scriptOutput, 10);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.AddNotificationReceiver.html">
+      AddNotificationReceiver
+     </a>
+    </td>
+    <td class="desc">
+     注册一个监听通知的新接收方。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.GetNotificationReceivers.html">
+      GetNotificationReceivers
+     </a>
+    </td>
+    <td class="desc">
+     检索当前在输出上注册的通知接收方列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.GetSourceOutputPort.html">
+      GetSourceOutputPort
+     </a>
+    </td>
+    <td class="desc">
+     返回源可播放项的输出连接索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.GetSourcePlayable.html">
+      GetSourcePlayable
+     </a>
+    </td>
+    <td class="desc">
+     返回源可播放项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.GetUserData.html">
+      GetUserData
+     </a>
+    </td>
+    <td class="desc">
+     返回不透明的用户数据。这与 ProcessFrame 的最后一个参数值相同。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.GetWeight.html">
+      GetWeight
+     </a>
+    </td>
+    <td class="desc">
+     返回从 PlayableOutput 到源可播放项的连接的权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.IsOutputNull.html">
+      IsOutputNull
+     </a>
+    </td>
+    <td class="desc">
+     如果 PlayableOutput 为 null，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.IsOutputValid.html">
+      IsOutputValid
+     </a>
+    </td>
+    <td class="desc">
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.PushNotification.html">
+      PushNotification
+     </a>
+    </td>
+    <td class="desc">
+     对通过可播放系统发送的通知进行排队。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.RemoveNotificationReceiver.html">
+      RemoveNotificationReceiver
+     </a>
+    </td>
+    <td class="desc">
+     在输出上取消注册接收方。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.SetReferenceObject.html">
+      SetReferenceObject
+     </a>
+    </td>
+    <td class="desc">
+     将绑定的对象设置为新值。用于将输出关联到对象（如果是时间轴，则为跟踪资源）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.SetSourcePlayable.html">
+      SetSourcePlayable
+     </a>
+    </td>
+    <td class="desc">
+     设置哪个可播放项计算输出以及哪个子树索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.SetUserData.html">
+      SetUserData
+     </a>
+    </td>
+    <td class="desc">
+     设置不透明的用户数据。此相同数据将作为最后一个参数传递给 ProcessFrame。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableOutputExtensions.SetWeight.html">
+      SetWeight
+     </a>
+    </td>
+    <td class="desc">
+     设置从 PlayableOutput 到源可播放项的连接的权重。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

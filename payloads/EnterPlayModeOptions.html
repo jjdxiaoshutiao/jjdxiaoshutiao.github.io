@@ -1,0 +1,72 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EnterPlayModeOptions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在 Unity 编辑器中确定进入运行模式选项的标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EnterPlayModeOptions.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     进入运行模式后，可使 Unity 重新加载 .NET 应用程序域和整个场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EnterPlayModeOptions.DisableDomainReload.html">
+      DisableDomainReload
+     </a>
+    </td>
+    <td class="desc">
+     禁用域重新加载后，在进入运行模式时，不会重新加载脚本。因为无需销毁、创建和重新加载 .NET 应用程序域，所以可更快地切换到运行模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EnterPlayModeOptions.DisableSceneReload.html">
+      DisableSceneReload
+     </a>
+    </td>
+    <td class="desc">
+     禁用场景重新加载后，Unity 会重置场景状态，并在进入运行模式时模拟所有必要的后处理器调用，而不是重新加载整个场景。因为无需销毁、创建和唤醒所有场景对象并从磁盘序列化和反序列化场景，所以可更快地切换到运行模式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

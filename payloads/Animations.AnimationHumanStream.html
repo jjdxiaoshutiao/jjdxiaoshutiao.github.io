@@ -1,0 +1,470 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationHumanStream
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Animations
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从一个
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   传递到另一个的人形动画数据流。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   AnimationHumanStream 结构通过动画
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   结构（如
+   <a href="Animations.AnimationClipPlayable.html">
+    AnimationClipPlayable
+   </a>
+   和
+   <a href="Animations.AnimationMixerPlayable.html">
+    AnimationMixerPlayable
+   </a>
+   ）传递。与
+   <a href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   （如
+   <a href="Animations.AnimationScriptPlayable.html">
+    AnimationScriptPlayable
+   </a>
+   ）一起使用时，可以修改它们。
+   <br/>
+   <br/>
+   实现
+   <a href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   的 Playable 采用自定义 C# 作业，该作业必须实现
+   <a href="Animations.IAnimationJob.html">
+    IAnimationJob
+   </a>
+   ，然后在动画处理通道中将 AnimationHumanStream 传递给它的回调。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Animations.AnimationStream.html">
+    AnimationStream
+   </a>
+   、
+   <a href="Animations.AnimationStream-isHumanStream.html">
+    AnimationStream.isHumanStream
+   </a>
+   和 AnimationStream.AsHuman()。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-bodyLocalPosition.html">
+      bodyLocalPosition
+     </a>
+    </td>
+    <td class="desc">
+     身体质心相对于根的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-bodyLocalRotation.html">
+      bodyLocalRotation
+     </a>
+    </td>
+    <td class="desc">
+     身体质心相对于根的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-bodyPosition.html">
+      bodyPosition
+     </a>
+    </td>
+    <td class="desc">
+     身体质心在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-bodyRotation.html">
+      bodyRotation
+     </a>
+    </td>
+    <td class="desc">
+     身体质心在世界空间中的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-humanScale.html">
+      humanScale
+     </a>
+    </td>
+    <td class="desc">
+     Avatar 的缩放。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-isValid.html">
+      isValid
+     </a>
+    </td>
+    <td class="desc">
+     如果流有效，则返回 true；否则返回 false。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-leftFootHeight.html">
+      leftFootHeight
+     </a>
+    </td>
+    <td class="desc">
+     左脚离地高度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-leftFootVelocity.html">
+      leftFootVelocity
+     </a>
+    </td>
+    <td class="desc">
+     上一次计算帧中的左脚速度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-rightFootHeight.html">
+      rightFootHeight
+     </a>
+    </td>
+    <td class="desc">
+     右脚离地高度。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream-rightFootVelocity.html">
+      rightFootVelocity
+     </a>
+    </td>
+    <td class="desc">
+     上一次计算帧中的右脚速度。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalLocalPosition.html">
+      GetGoalLocalPosition
+     </a>
+    </td>
+    <td class="desc">
+     返回此反向动力学目标相对于根的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalLocalRotation.html">
+      GetGoalLocalRotation
+     </a>
+    </td>
+    <td class="desc">
+     返回此反向动力学目标相对于根的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalPosition.html">
+      GetGoalPosition
+     </a>
+    </td>
+    <td class="desc">
+     返回此反向动力学目标在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalPositionFromPose.html">
+      GetGoalPositionFromPose
+     </a>
+    </td>
+    <td class="desc">
+     返回从流当前姿势计算的此反向动力学目标在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalRotation.html">
+      GetGoalRotation
+     </a>
+    </td>
+    <td class="desc">
+     返回此反向动力学目标在世界空间中的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalRotationFromPose.html">
+      GetGoalRotationFromPose
+     </a>
+    </td>
+    <td class="desc">
+     返回从流当前姿势计算的此反向动力学目标在世界空间中的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalWeightPosition.html">
+      GetGoalWeightPosition
+     </a>
+    </td>
+    <td class="desc">
+     返回反向动力学目标的位置权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetGoalWeightRotation.html">
+      GetGoalWeightRotation
+     </a>
+    </td>
+    <td class="desc">
+     返回反向动力学目标的旋转权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetHintPosition.html">
+      GetHintPosition
+     </a>
+    </td>
+    <td class="desc">
+     返回此反向动力学提示在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetHintWeightPosition.html">
+      GetHintWeightPosition
+     </a>
+    </td>
+    <td class="desc">
+     返回反向动力学提示的位置权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.GetMuscle.html">
+      GetMuscle
+     </a>
+    </td>
+    <td class="desc">
+     返回肌肉值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.ResetToStancePose.html">
+      ResetToStancePose
+     </a>
+    </td>
+    <td class="desc">
+     将当前姿势重置为站立姿势（T 形姿势）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalLocalPosition.html">
+      SetGoalLocalPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置此反向动力学目标相对于根的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalLocalRotation.html">
+      SetGoalLocalRotation
+     </a>
+    </td>
+    <td class="desc">
+     设置此反向动力学目标相对于根的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalPosition.html">
+      SetGoalPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置此反向动力学目标在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalRotation.html">
+      SetGoalRotation
+     </a>
+    </td>
+    <td class="desc">
+     设置此反向动力学目标在世界空间中的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalWeightPosition.html">
+      SetGoalWeightPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置反向动力学目标的位置权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetGoalWeightRotation.html">
+      SetGoalWeightRotation
+     </a>
+    </td>
+    <td class="desc">
+     设置反向动力学目标的旋转权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetHintPosition.html">
+      SetHintPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置此反向动力学提示在世界空间中的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetHintWeightPosition.html">
+      SetHintWeightPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置反向动力学提示的位置权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetLookAtBodyWeight.html">
+      SetLookAtBodyWeight
+     </a>
+    </td>
+    <td class="desc">
+     设置 LookAt 身体权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetLookAtClampWeight.html">
+      SetLookAtClampWeight
+     </a>
+    </td>
+    <td class="desc">
+     设置 LookAt 钳制权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetLookAtEyesWeight.html">
+      SetLookAtEyesWeight
+     </a>
+    </td>
+    <td class="desc">
+     设置 LookAt 眼睛权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetLookAtHeadWeight.html">
+      SetLookAtHeadWeight
+     </a>
+    </td>
+    <td class="desc">
+     设置 LookAt 头部权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetLookAtPosition.html">
+      SetLookAtPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置世界空间中的 LookAt 位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SetMuscle.html">
+      SetMuscle
+     </a>
+    </td>
+    <td class="desc">
+     设置肌肉值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationHumanStream.SolveIK.html">
+      SolveIK
+     </a>
+    </td>
+    <td class="desc">
+     执行反向动力学解算器。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

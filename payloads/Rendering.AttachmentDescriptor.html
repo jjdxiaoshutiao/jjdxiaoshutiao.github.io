@@ -1,0 +1,191 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AttachmentDescriptor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   要附加到渲染通道的单个颜色或深度渲染表面的声明。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   AttachmentDescriptor 对象标识可用于 RenderPass 的单个颜色或深度渲染表面。请注意，AttachmentDescriptor 对象派生自 UnityEngine.Object，因此不会像正常 C# 对象一样进行垃圾收集。相反，它们仅在卸载场景或 Resources.UnloadUnusedAssets() 被调用时进行垃圾收集。因此，请勿针对每帧创建这些对象：相反，请在渲染类的构造函数中创建这些对象，然后针对每帧重复使用这些对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-clearColor.html">
+      clearColor
+     </a>
+    </td>
+    <td class="desc">
+     当前分配给此附件的清除颜色。默认为黑色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-clearDepth.html">
+      clearDepth
+     </a>
+    </td>
+    <td class="desc">
+     当前分配给此附件的深度清除值。默认值为 1.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-clearStencil.html">
+      clearStencil
+     </a>
+    </td>
+    <td class="desc">
+     当前分配给此附件的模板清除值。默认值为 0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-format.html">
+      format
+     </a>
+    </td>
+    <td class="desc">
+     附件的格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-graphicsFormat.html">
+      graphicsFormat
+     </a>
+    </td>
+    <td class="desc">
+     附件的 GraphicsFormat。用于取代格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-loadAction.html">
+      loadAction
+     </a>
+    </td>
+    <td class="desc">
+     渲染通道启动时要在附件上使用的加载操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-loadStoreTarget.html">
+      loadStoreTarget
+     </a>
+    </td>
+    <td class="desc">
+     要用作此 AttachmentDescriptor 的备份存储的表面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-resolveTarget.html">
+      resolveTarget
+     </a>
+    </td>
+    <td class="desc">
+     当使用此附件的渲染通道结束时，将 MSAA 表面解析到给定目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-storeAction.html">
+      storeAction
+     </a>
+    </td>
+    <td class="desc">
+     RenderPass 结束时要对附件使用的存储操作。仅当 ConfigureTarget 或 ConfigureResolveTarget 被调用时使用。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor-ctor.html">
+      AttachmentDescriptor
+     </a>
+    </td>
+    <td class="desc">
+     创建要用于 RenderPass 的 AttachmentDescriptor。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor.ConfigureClear.html">
+      ConfigureClear
+     </a>
+    </td>
+    <td class="desc">
+     渲染通道启动时，将此附件清除为给定的颜色或深度/模板值（具体取决于附件格式）。将 loadAction 更改为 RenderBufferLoadAction.Clear。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor.ConfigureResolveTarget.html">
+      ConfigureResolveTarget
+     </a>
+    </td>
+    <td class="desc">
+     当使用此附件的渲染通道结束时，将 MSAA 表面解析到给定目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AttachmentDescriptor.ConfigureTarget.html">
+      ConfigureTarget
+     </a>
+    </td>
+    <td class="desc">
+     将此 AttachmentDescriptor 绑定到给定目标表面。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

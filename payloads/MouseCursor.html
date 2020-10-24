@@ -1,0 +1,265 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MouseCursor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   与 EditorGUIUtility.AddCursorRect 结合使用的自定义鼠标光标形状。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//Create a folder and name it “<a href="Editor.html">Editor</a>” if this doesn’t already exist
+//Put this script in the folder<br/><br/>//This script creates a new menu (“Examples”) and a menu item (“Mouse <a href="Cursor.html">Cursor</a>”). Click on this option. This displays a small window that has a color box in it.
+//Hover over the colored box to cause an Orbit mouse cursor to appear.<br/><br/>
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class MouseCursorExample : <a href="EditorWindow.html">EditorWindow</a>
+{
+    [<a href="MenuItem.html">MenuItem</a>("Examples/MouseCursorRect Example")]
+    static void AddCursorRectExample()
+    {
+        MouseCursorExample window =
+            <a href="EditorWindow.GetWindowWithRect.html">EditorWindow.GetWindowWithRect</a>&lt;MouseCursorExample&gt;(new <a href="Rect.html">Rect</a>(0, 0, 180, 80));
+        window.Show();
+    }<br/><br/>    void OnGUI()
+    {
+        <a href="EditorGUI.DrawRect.html">EditorGUI.DrawRect</a>(new <a href="Rect.html">Rect</a>(10, 10, 160, 60), new <a href="Color.html">Color</a>(0.5f, 0.5f, 0.85f));
+        <a href="EditorGUI.DrawRect.html">EditorGUI.DrawRect</a>(new <a href="Rect.html">Rect</a>(20, 20, 140, 40), new <a href="Color.html">Color</a>(0.9f, 0.9f, 0.9f));
+        <a href="EditorGUIUtility.AddCursorRect.html">EditorGUIUtility.AddCursorRect</a>(new <a href="Rect.html">Rect</a>(20, 20, 140, 40), <a href="MouseCursor.Orbit.html">MouseCursor.Orbit</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Arrow.html">
+      Arrow
+     </a>
+    </td>
+    <td class="desc">
+     正常指针箭头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Text.html">
+      Text
+     </a>
+    </td>
+    <td class="desc">
+     文本光标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ResizeVertical.html">
+      ResizeVertical
+     </a>
+    </td>
+    <td class="desc">
+     垂直调整大小的箭头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ResizeHorizontal.html">
+      ResizeHorizontal
+     </a>
+    </td>
+    <td class="desc">
+     水平调整大小的箭头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Link.html">
+      Link
+     </a>
+    </td>
+    <td class="desc">
+     带有链接标示的箭头（用于分配指针）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.SlideArrow.html">
+      SlideArrow
+     </a>
+    </td>
+    <td class="desc">
+     带有小箭头的箭头，用于指示在数字字段处滑动。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ResizeUpRight.html">
+      ResizeUpRight
+     </a>
+    </td>
+    <td class="desc">
+     向右上方调整窗口边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ResizeUpLeft.html">
+      ResizeUpLeft
+     </a>
+    </td>
+    <td class="desc">
+     向左上方调整窗口边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.MoveArrow.html">
+      MoveArrow
+     </a>
+    </td>
+    <td class="desc">
+     旁边带有移动符号的箭头，用于场景视图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.RotateArrow.html">
+      RotateArrow
+     </a>
+    </td>
+    <td class="desc">
+     旁边带有旋转符号的箭头，用于场景视图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ScaleArrow.html">
+      ScaleArrow
+     </a>
+    </td>
+    <td class="desc">
+     旁边带有缩放符号的箭头，用于场景视图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ArrowPlus.html">
+      ArrowPlus
+     </a>
+    </td>
+    <td class="desc">
+     旁边带有加号的箭头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.ArrowMinus.html">
+      ArrowMinus
+     </a>
+    </td>
+    <td class="desc">
+     旁边带有减号的箭头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Pan.html">
+      Pan
+     </a>
+    </td>
+    <td class="desc">
+     带有拖动手形图标的光标，用于平移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Orbit.html">
+      Orbit
+     </a>
+    </td>
+    <td class="desc">
+     带有眼睛图标的光标，用于旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.Zoom.html">
+      Zoom
+     </a>
+    </td>
+    <td class="desc">
+     带有放大镜图标的光标，用于缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.FPS.html">
+      FPS
+     </a>
+    </td>
+    <td class="desc">
+     带有眼睛图标的光标和程式化箭头键，用于 FPS 导航。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.CustomCursor.html">
+      CustomCursor
+     </a>
+    </td>
+    <td class="desc">
+     当前用户定义的光标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.SplitResizeUpDown.html">
+      SplitResizeUpDown
+     </a>
+    </td>
+    <td class="desc">
+     上下调整大小的箭头，用于窗口分割。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MouseCursor.SplitResizeLeftRight.html">
+      SplitResizeLeftRight
+     </a>
+    </td>
+    <td class="desc">
+     左右调整大小的箭头，用于窗口分割。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

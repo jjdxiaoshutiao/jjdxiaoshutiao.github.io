@@ -1,0 +1,191 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WaitForEndOfFrame
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="YieldInstruction.html">
+    YieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   等待，直到该帧结束，在 Unity 渲染每一个摄像机和 GUI 之后，在屏幕上显示该帧之前。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可以用它将显示内容读取到纹理中，将其编码为图像文件（请参阅
+   <a href="Texture2D.ReadPixels.html">
+    Texture2D.ReadPixels
+   </a>
+   和
+   <a href="Texture2D.EncodeToPNG.html">
+    Texture2D.Texture2D
+   </a>
+   ），并将其存储在设备上。
+   <br/>
+   <br/>
+   从 Game 视图切换到 Scene 视图将导致
+   <a href="WaitForEndOfFrame.html">
+    WaitForEndOfFrame
+   </a>
+   冻结。它只在应用程序切换回 Game 视图时才会继续。只有当应用程序在 Unity 编辑器中运行时才会发生这种情况。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   在批处理模式下，不会在编辑器上调用此协程。如需了解更多详细信息，请参阅手册中的
+   <a href="../Manual/CommandLineArguments.html">
+    命令行参数
+   </a>
+   页面。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.IO;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Take a shot immediately
+    IEnumerator Start()
+    {
+        UploadPNG();
+        yield return null;
+    }<br/><br/>    IEnumerator UploadPNG()
+    {
+        // We should only read the screen buffer after rendering is complete
+        yield return new <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();<br/><br/>        // Create a texture the size of the screen, RGB24 format
+        int width = <a href="Screen-width.html">Screen.width</a>;
+        int height = <a href="Screen-height.html">Screen.height</a>;
+        <a href="Texture2D.html">Texture2D</a> tex = new <a href="Texture2D.html">Texture2D</a>(width, height, <a href="TextureFormat.RGB24.html">TextureFormat.RGB24</a>, false);<br/><br/>        // Read screen contents into the texture
+        tex.ReadPixels(new <a href="Rect.html">Rect</a>(0, 0, width, height), 0, 0);
+        tex.Apply();<br/><br/>        // Encode texture into PNG
+        byte[] bytes = tex.EncodeToPNG();
+        Destroy(tex);<br/><br/>        // For testing purposes, also write to a file in the project folder
+        // <a href="Windows.File.WriteAllBytes.html">File.WriteAllBytes</a>(<a href="Application-dataPath.html">Application.dataPath</a> + "/../SavedScreen.png", bytes);<br/><br/>
+        // Create a Web Form
+        <a href="WWWForm.html">WWWForm</a> form = new <a href="WWWForm.html">WWWForm</a>();
+        form.AddField("frameCount", Time.frameCount.ToString());
+        form.AddBinaryData("fileUpload", bytes);<br/><br/>        // Upload to a cgi script
+        var w = <a href="Networking.UnityWebRequest.Post.html">UnityWebRequest.Post</a>("http://localhost/cgi-bin/env.cgi?post", form);
+        yield return w.SendWebRequest();
+        if (w.isNetworkError || w.isHttpError)
+            print(w.error);
+        else
+            print("Finished Uploading Screenshot");
+        yield return null;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // A script that shows destination alpha channel in the game view.<br/><br/>    <a href="Material.html">Material</a> mat;<br/><br/>    void CreateMaterial()
+    {
+        // Unity has a built-in shader that is useful for drawing
+        // simple colored things. In this case, we just want to use
+        // a blend mode that inverts destination colors.
+        var shader = <a href="Shader.Find.html">Shader.Find</a>("Hidden/Internal-Colored");
+        mat = new <a href="Material.html">Material</a>(shader);
+        mat.hideFlags = <a href="HideFlags.HideAndDontSave.html">HideFlags.HideAndDontSave</a>;
+        // Set blend mode to show destination alpha channel.
+        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.DstAlpha);
+        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+        // Turn off backface culling, depth writes, depth test.
+        mat.SetInt("_Cull", (int)UnityEngine.Rendering.CullMode.Off);
+        mat.SetInt("_ZWrite", 0);
+        mat.SetInt("_ZTest", (int)UnityEngine.Rendering.CompareFunction.Always);
+    }<br/><br/>    public IEnumerator Start()
+    {
+        CreateMaterial();
+        while (true)
+        {
+            // Wait until all rendering + UI is done.
+            yield return new <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();
+            // Draw a quad that shows alpha channel.
+            <a href="GL.PushMatrix.html">GL.PushMatrix</a>();
+            <a href="GL.LoadOrtho.html">GL.LoadOrtho</a>();
+            mat.SetPass(0);
+            <a href="GL.Begin.html">GL.Begin</a>(<a href="GL.QUADS.html">GL.QUADS</a>);
+            <a href="GL.Vertex3.html">GL.Vertex3</a>(0, 0, 0);
+            <a href="GL.Vertex3.html">GL.Vertex3</a>(1, 0, 0);
+            <a href="GL.Vertex3.html">GL.Vertex3</a>(1, 1, 0);
+            <a href="GL.Vertex3.html">GL.Vertex3</a>(0, 1, 0);
+            <a href="GL.End.html">GL.End</a>();
+            <a href="GL.PopMatrix.html">GL.PopMatrix</a>();
+        }
+        yield return null;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="AsyncOperation.html">
+    AsyncOperation
+   </a>
+   、
+   <a href="WaitForSeconds.html">
+    WaitForSeconds
+   </a>
+   、
+   <a href="WaitForFixedUpdate.html">
+    WaitForFixedUpdate
+   </a>
+   、
+   <a href="WaitForSecondsRealtime.html">
+    WaitForSecondsRealtime
+   </a>
+   、
+   <a href="WaitUntil.html">
+    WaitUntil
+   </a>
+   、
+   <a href="WaitWhile.html">
+    WaitWhile
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

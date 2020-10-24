@@ -1,0 +1,163 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TerrainChangedFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   指示 OnTerrainChanged 回调中的地形更改类型。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用按位与运算可检测多个更改。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>[<a href="ExecuteInEditMode.html">ExecuteInEditMode</a>]
+public class DetectTerrainChanges : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnTerrainChanged(<a href="TerrainChangedFlags.html">TerrainChangedFlags</a> flags)
+    {
+        if ((flags &amp;amp; <a href="TerrainChangedFlags.Heightmap.html">TerrainChangedFlags.Heightmap</a>) != 0)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Heightmap changes");
+        }<br/><br/>        if ((flags &amp;amp; <a href="TerrainChangedFlags.DelayedHeightmapUpdate.html">TerrainChangedFlags.DelayedHeightmapUpdate</a>) != 0)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Heightmap painting");
+        }<br/><br/>        if ((flags &amp;amp; <a href="TerrainChangedFlags.TreeInstances.html">TerrainChangedFlags.TreeInstances</a>) != 0)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("<a href="Tree.html">Tree</a> changes");
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   以上示例说明如何使用 OnTerrainChanged 回调和 TerrainChangedFlags 枚举检测地形更改。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.Heightmap.html">
+      Heightmap
+     </a>
+    </td>
+    <td class="desc">
+     指示对高度贴图数据的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.TreeInstances.html">
+      TreeInstances
+     </a>
+    </td>
+    <td class="desc">
+     指示对树数据的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.DelayedHeightmapUpdate.html">
+      DelayedHeightmapUpdate
+     </a>
+    </td>
+    <td class="desc">
+     指示在不计算细节级别的情况下对高度贴图数据的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.FlushEverythingImmediately.html">
+      FlushEverythingImmediately
+     </a>
+    </td>
+    <td class="desc">
+     指示对地形进行了更改，并且此更改非常重大，以致于需要刷新和重新创建内部渲染数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.RemoveDirtyDetailsImmediately.html">
+      RemoveDirtyDetailsImmediately
+     </a>
+    </td>
+    <td class="desc">
+     指示对细节数据的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.HeightmapResolution.html">
+      HeightmapResolution
+     </a>
+    </td>
+    <td class="desc">
+     指示对高度贴图分辨率的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.Holes.html">
+      Holes
+     </a>
+    </td>
+    <td class="desc">
+     指示对地形孔洞数据的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.DelayedHolesUpdate.html">
+      DelayedHolesUpdate
+     </a>
+    </td>
+    <td class="desc">
+     指示对地形孔洞数据的更改，其中不包括 LOD 计算和树木/植被更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainChangedFlags.WillBeDestroyed.html">
+      WillBeDestroyed
+     </a>
+    </td>
+    <td class="desc">
+     指示即将销毁 TerrainData 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

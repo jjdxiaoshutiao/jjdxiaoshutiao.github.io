@@ -1,0 +1,70 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InteractionMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   调用 API 方法时使用的交互模式（用户模式或自动模式）。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 的一些 API 方法允许您指定“交互模式”为用户驱动的模式还是自动模式。这会影响 Unity 是否显示对话框，以及操作是否记录在撤消历史记录中。自动操作不记录撤消情况，也不显示对话框。用户操作记录在撤消历史记录中，并可通过对话框显示给用户。此设置只能用于那些接受 InteractionMode 参数的方法。
+   <br/>
+   <br/>
+   如果要创建执行编辑器操作的编辑器工具或自动化流程，这非常有用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="InteractionMode.AutomatedAction.html">
+      AutomatedAction
+     </a>
+    </td>
+    <td class="desc">
+     使用此设置可防止方法向用户显示对话框，并防止其记录到撤消历史记录中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="InteractionMode.UserAction.html">
+      UserAction
+     </a>
+    </td>
+    <td class="desc">
+     使用此设置可允许方法向用户显示对话框，并允许其记录到撤消历史记录中。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

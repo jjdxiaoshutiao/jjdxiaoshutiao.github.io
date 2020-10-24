@@ -1,0 +1,193 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GlobalObjectId
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   可为稳定的、项目全局的对象标识符提供 API 的结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   提供项目全局的对象 ID，以用于查找。
+   <br/>
+   <br/>
+   该 ID 持久存在，并且对给定的 Unity 对象唯一。
+   <br/>
+   <br/>
+   该 ID 的字符串表示格式为 "GlobalObjectId_V1-{i}-{a}-{l}-{p}"，其中：
+   <br/>
+   {i} 是用整数表示的标识符类型（0 = Null，1 = 已导入资源，2 = 场景对象，3 = 源资源）。
+   <br/>
+   {a} 为资源 GUID。
+   <br/>
+   {l} 为对象的本地文件 ID。
+   <br/>
+   {p} 为对象的预制件实例 ID。
+   <br/>
+   <br/>
+   默认的 null ID 为 "GlobalObjectId_V1-0-00000000000000000000000000000000-0-0"。
+   <br/>
+   <br/>
+   警告：
+   <br/>
+   - 场景 ID 是 GlobalObjectID 的一部分，在将对象移到新场景后，该 ID 将更改。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId-assetGUID.html">
+      assetGUID
+     </a>
+    </td>
+    <td class="desc">
+     对象所属资源的 GUID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId-identifierType.html">
+      identifierType
+     </a>
+    </td>
+    <td class="desc">
+     表示为整数的标识符类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId-targetObjectId.html">
+      targetObjectId
+     </a>
+    </td>
+    <td class="desc">
+     对象的本地文件 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId-targetPrefabId.html">
+      targetPrefabId
+     </a>
+    </td>
+    <td class="desc">
+     对象的预制件实例 ID。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     检查 GlobalObjectIds 之间的相等性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     获取 GlobalObjectId 的字符串表示。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.GetGlobalObjectIdSlow.html">
+      GetGlobalObjectIdSlow
+     </a>
+    </td>
+    <td class="desc">
+     将对象引用转换为 GlobalObjectId。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.GetGlobalObjectIdsSlow.html">
+      GetGlobalObjectIdsSlow
+     </a>
+    </td>
+    <td class="desc">
+     基于对象数组创建 GlobalObjectIds 的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.GlobalObjectIdentifiersToObjectsSlow.html">
+      GlobalObjectIdentifiersToObjectsSlow
+     </a>
+    </td>
+    <td class="desc">
+     基于 GlobalObjectIds 的数组创建对象数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.GlobalObjectIdentifierToObjectSlow.html">
+      GlobalObjectIdentifierToObjectSlow
+     </a>
+    </td>
+    <td class="desc">
+     将 GlobalObjectId 转换为对象引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GlobalObjectId.TryParse.html">
+      TryParse
+     </a>
+    </td>
+    <td class="desc">
+     将 GlobalObjectId 的字符串表示形式解析为 GlobalObjectId 结构。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

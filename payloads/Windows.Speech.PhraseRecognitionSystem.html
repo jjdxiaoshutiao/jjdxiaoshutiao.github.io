@@ -1,0 +1,154 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PhraseRecognitionSystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.Speech
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   短语识别系统负责管理短语识别器和向它们分发识别事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   为了使任何短语识别器都能够识别短语，PhraseRecognitionSystem 必须在运行中。启动短语识别将自动启动短语识别系统（如果它此前已停止运行）。
+   <br/>
+   <br/>
+   如果没有活动的听写识别器，短语识别系统就无法启动。
+   <br/>
+   <br/>
+   短语识别系统目前仅在 Windows 10 上可用。使用 PhraseRecognitionSystem.isSupported 属性确定运行应用程序的系统是否支持语音识别。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem-isSupported.html">
+      isSupported
+     </a>
+    </td>
+    <td class="desc">
+     返回运行应用程序的设备是否支持语音识别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.Status.html">
+      Status
+     </a>
+    </td>
+    <td class="desc">
+     返回短语识别系统的当前状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.Restart.html">
+      Restart
+     </a>
+    </td>
+    <td class="desc">
+     尝试重启短语识别系统。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.Shutdown.html">
+      Shutdown
+     </a>
+    </td>
+    <td class="desc">
+     关闭短语识别系统。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.OnError.html">
+      OnError
+     </a>
+    </td>
+    <td class="desc">
+     当短语识别系统发生错误时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.OnStatusChanged.html">
+      OnStatusChanged
+     </a>
+    </td>
+    <td class="desc">
+     当短语识别系统的状态更改时发生的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.ErrorDelegate.html">
+      ErrorDelegate
+     </a>
+    </td>
+    <td class="desc">
+     OnError 事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.PhraseRecognitionSystem.StatusDelegate.html">
+      StatusDelegate
+     </a>
+    </td>
+    <td class="desc">
+     OnStatusChanged 事件的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,157 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UnityEvent&lt;T0,T1,T2,T3&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Events
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Events.UnityEventBase.html">
+    Events.UnityEventBase
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Events.UnityEvent.html">
+    UnityEvent
+   </a>
+   的 four 参数版本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果想使用通用 UnityEvent 类型，您必须覆盖类类型。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Events;<br/><br/>
+[System.Serializable]
+public class MyIntEvent : <a href="Events.UnityEvent.html">UnityEvent</a>&lt;int, int, int, int&gt;
+{
+}<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public MyIntEvent m_MyEvent;<br/><br/>    void Start()
+    {
+        if (m_MyEvent == null)
+            m_MyEvent = new MyIntEvent();<br/><br/>        m_MyEvent.AddListener(<a href="Ping.html">Ping</a>);
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (<a href="Input-anyKeyDown.html">Input.anyKeyDown</a> &amp;amp;&amp;amp; m_MyEvent != null)
+        {
+            m_MyEvent.Invoke(5, 6, 7, 8);
+        }
+    }<br/><br/>    void <a href="Ping.html">Ping</a>(int i, int j, int k, int l)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("<a href="Ping.html">Ping</a>" + i + j + k + l);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.GetPersistentEventCount.html">
+       GetPersistentEventCount
+      </a>
+     </td>
+     <td class="desc">
+      获取已注册的持久性监听器的数量。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.GetPersistentMethodName.html">
+       GetPersistentMethodName
+      </a>
+     </td>
+     <td class="desc">
+      获取索引处的监听器的目标方法名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.GetPersistentTarget.html">
+       GetPersistentTarget
+      </a>
+     </td>
+     <td class="desc">
+      获取索引处的监听器的目标组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.RemoveAllListeners.html">
+       RemoveAllListeners
+      </a>
+     </td>
+     <td class="desc">
+      从事件中删除所有非持久性（即通过脚本创建的）监听器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.SetPersistentListenerState.html">
+       SetPersistentListenerState
+      </a>
+     </td>
+     <td class="desc">
+      修改持久性监听器的执行状态。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Events.UnityEventBase.GetValidMethodInfo.html">
+       GetValidMethodInfo
+      </a>
+     </td>
+     <td class="desc">
+      提供了对象、函数名称和参数类型列表；找到匹配的方法。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,156 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderGUI
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从中派生内容的抽象类，用于定义着色器属性的自定义 GUI 以及扩展材质预览。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   从此类派生以控制应该如何显示着色器属性。对于要使用此自定义 GUI 的着色器，请使用着色器中的“CustomEditor”属性。请注意，CustomEditor 也可以用于从 MaterialEditor 派生的类（搜索：自定义材质编辑器）。注意：只有 ShaderGUI 方法适用于 Substance 材质，因此这是着色器自定义 GUI 的推荐方法。
+请参阅
+   <a href="ShaderGUI.OnGUI.html">
+    ShaderGUI.OnGUI
+   </a>
+   、
+   <a href="ShaderGUI.OnMaterialPreviewGUI.html">
+    ShaderGUI.OnMaterialPreviewGUI
+   </a>
+   、
+   <a href="ShaderGUI.OnMaterialPreviewSettingsGUI.html">
+    ShaderGUI.OnMaterialPreviewSettingsGUI
+   </a>
+   。
+   <br/>
+   <br/>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections.Generic;
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using System.Linq;<br/><br/>public class CustomShaderGUI : <a href="ShaderGUI.html">ShaderGUI</a>
+{
+    override public void OnGUI(<a href="MaterialEditor.html">MaterialEditor</a> materialEditor, <a href="MaterialProperty.html">MaterialProperty</a>[] properties)
+    {
+        // render the shader properties using the default <a href="GUI.html">GUI</a>
+        base.OnGUI(materialEditor, properties);<br/><br/>        // get the current keywords from the material
+        <a href="Material.html">Material</a> targetMat = materialEditor.target as <a href="Material.html">Material</a>;
+        string[] keyWords = targetMat.shaderKeywords;<br/><br/>        // see if redify is set, then show a checkbox
+        bool redify = keyWords.Contains("REDIFY_ON");
+        <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();
+        redify = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("Redify material", redify);
+        if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+        {
+            // if the checkbox is changed, reset the shader keywords
+            var keywords = new List&lt;string&gt; { redify ? "REDIFY_ON" : "REDIFY_OFF" };
+            targetMat.shaderKeywords = keywords.ToArray();
+            <a href="EditorUtility.SetDirty.html">EditorUtility.SetDirty</a>(targetMat);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.AssignNewShaderToMaterial.html">
+      AssignNewShaderToMaterial
+     </a>
+    </td>
+    <td class="desc">
+     为某个材质选择新着色器时调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.OnClosed.html">
+      OnClosed
+     </a>
+    </td>
+    <td class="desc">
+     当 ShaderGUI 正在关闭时调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.OnGUI.html">
+      OnGUI
+     </a>
+    </td>
+    <td class="desc">
+     要定义自定义着色 GUI，请使用 materialEditor 的方法为properties 数组渲染控件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.OnMaterialPreviewGUI.html">
+      OnMaterialPreviewGUI
+     </a>
+    </td>
+    <td class="desc">
+     覆盖以扩展预览区域的渲染，或通过不调用 base.OnMaterialPreviewGUI 完全替代预览。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.OnMaterialPreviewSettingsGUI.html">
+      OnMaterialPreviewSettingsGUI
+     </a>
+    </td>
+    <td class="desc">
+     覆盖以扩展预览区域工具栏的功能，或通过不调用 base.OnMaterialPreviewSettingsGUI 完全替代工具栏。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderGUI.FindProperty.html">
+      FindProperty
+     </a>
+    </td>
+    <td class="desc">
+     查找着色器属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

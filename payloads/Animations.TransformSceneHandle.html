@@ -1,0 +1,197 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TransformSceneHandle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Animations
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于读取场景中对象的位置、旋转和缩放的句柄。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   TransformSceneHandle 是只读的。
+   <br/>
+   <br/>
+   TransformSceneHandle 是
+   <a href="Jobs.TransformAccess.html">
+    TransformAccess
+   </a>
+   上的安全句柄。用于创建此句柄的
+   <a href="Animator.html">
+    Animator
+   </a>
+   负责管理此句柄的有效性。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Animations;<br/><br/>public struct TransformSceneHandleJob : <a href="Animations.IAnimationJob.html">IAnimationJob</a>
+{
+    public <a href="Animations.TransformSceneHandle.html">TransformSceneHandle</a> handle;<br/><br/>    public void ProcessRootMotion(<a href="Animations.AnimationStream.html">AnimationStream</a> stream)
+    {
+        // Log the local position.
+        var position = handle.GetLocalPosition(stream);
+        <a href="Debug.LogFormat.html">Debug.LogFormat</a>("<a href="UIElements.Position.html">Position</a>: {0}", position);<br/><br/>        // Log the local rotation (converted from euler).
+        var rotation = handle.GetLocalRotation(stream);
+        <a href="Debug.LogFormat.html">Debug.LogFormat</a>("Rotation: {0}", rotation.eulerAngles);<br/><br/>        // Log the local scale.
+        var scale = handle.GetLocalScale(stream);
+        <a href="Debug.LogFormat.html">Debug.LogFormat</a>("Scale: {0}", scale);
+    }<br/><br/>    public void ProcessAnimation(<a href="Animations.AnimationStream.html">AnimationStream</a> stream)
+    {
+    }
+}<br/><br/>[<a href="RequireComponent.html">RequireComponent</a>(typeof(<a href="Animator.html">Animator</a>))]
+public class TransformSceneHandleExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public <a href="Transform.html">Transform</a> sceneTransform;<br/><br/>    <a href="Playables.PlayableGraph.html">PlayableGraph</a> m_Graph;
+    <a href="Animations.AnimationScriptPlayable.html">AnimationScriptPlayable</a> m_AnimationScriptPlayable;<br/><br/>    void Start()
+    {
+        if (sceneTransform == null)
+            return;<br/><br/>        var animator = GetComponent&lt;<a href="Animator.html">Animator</a>&gt;();<br/><br/>        m_Graph = <a href="Playables.PlayableGraph.Create.html">PlayableGraph.Create</a>("TransformSceneHandleExample");
+        var output = <a href="Animations.AnimationPlayableOutput.Create.html">AnimationPlayableOutput.Create</a>(m_Graph, "output", animator);<br/><br/>        var animationJob = new TransformSceneHandleJob();
+        animationJob.handle = animator.BindSceneTransform(sceneTransform);
+        m_AnimationScriptPlayable = <a href="Animations.AnimationScriptPlayable.Create.html">AnimationScriptPlayable.Create</a>(m_Graph, animationJob);<br/><br/>        output.SetSourcePlayable(m_AnimationScriptPlayable);
+        m_Graph.Play();
+    }<br/><br/>    void OnDisable()
+    {
+        if (sceneTransform == null)
+            return;<br/><br/>        m_Graph.Destroy();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Animations.AnimatorJobExtensions.BindSceneTransform.html">
+    AnimatorJobExtensions.BindSceneTransform
+   </a>
+   、
+   <a href="Animations.PropertySceneHandle.html">
+    PropertySceneHandle
+   </a>
+   、
+   <a href="Animations.PropertyStreamHandle.html">
+    PropertyStreamHandle
+   </a>
+   和
+   <a href="Animations.TransformStreamHandle.html">
+    TransformStreamHandle
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetGlobalTR.html">
+      GetGlobalTR
+     </a>
+    </td>
+    <td class="desc">
+     获取变换在世界空间中的位置和缩放旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetLocalPosition.html">
+      GetLocalPosition
+     </a>
+    </td>
+    <td class="desc">
+     获取相对于父对象的变换位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetLocalRotation.html">
+      GetLocalRotation
+     </a>
+    </td>
+    <td class="desc">
+     获取相对于父对象的变换旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetLocalScale.html">
+      GetLocalScale
+     </a>
+    </td>
+    <td class="desc">
+     获取相对于父对象的变换缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetLocalTRS.html">
+      GetLocalTRS
+     </a>
+    </td>
+    <td class="desc">
+     获取变换相对于父级的位置、旋转和缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetPosition.html">
+      GetPosition
+     </a>
+    </td>
+    <td class="desc">
+     获取世界坐标系中的变换位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.GetRotation.html">
+      GetRotation
+     </a>
+    </td>
+    <td class="desc">
+     获取世界坐标系中的变换旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.TransformSceneHandle.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     返回有关此句柄是否有效的信息。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

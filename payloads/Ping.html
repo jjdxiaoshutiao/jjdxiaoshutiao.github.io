@@ -1,0 +1,135 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Ping
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   对任何给定 IP 地址（以点表示法给定）执行 Ping 操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Ping 操作是异步的，可以使用
+   <a href="Ping-isDone.html">
+    Ping.isDone
+   </a>
+   轮询 ping 对象以获得状态。
+收到响应时，它处于
+   <a href="Ping-time.html">
+    Ping.time
+   </a>
+   。
+   <br/>
+   <br/>
+   <strong>
+    Windows 应用商店应用程序
+   </strong>
+   ：一种流套接字用于模仿 ping 功能，它会尝试使用端口 80 打开与指定 IP 地址之间的连接。为使此套接字正常工作，必须在 Package.appxmanifest 中启用 InternetClient 功能。
+   <br/>
+   <br/>
+   <strong>
+    Android
+   </strong>
+   ：如果可用，则 ICMP 套接字用于 ping 操作，否则 Unity 会生成子进程
+   <strong>
+    /system/bin/ping
+   </strong>
+   以用于 ping 操作。若要检查 ICMP 套接字是否可用，需要读取
+   <strong>
+    /proc/sys/net/ipv4/ping
+   </strong>
+   _
+   <strong>
+    group
+   </strong>
+   _
+   <strong>
+    range
+   </strong>
+   的内容。如果 ICMP 套接字可用，则此文件应包含对应
+   <strong>
+    0 2147483647
+   </strong>
+   的条目。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Ping-ip.html">
+      ip
+     </a>
+    </td>
+    <td class="desc">
+     ping 的 IP 目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Ping-isDone.html">
+      isDone
+     </a>
+    </td>
+    <td class="desc">
+     ping 功能是否已完成？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Ping-time.html">
+      time
+     </a>
+    </td>
+    <td class="desc">
+     在 isDone 返回 true 之后，此属性包含 ping 时间结果。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Ping-ctor.html">
+      Ping
+     </a>
+    </td>
+    <td class="desc">
+     对提供的目标 IP 地址执行 ping 操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

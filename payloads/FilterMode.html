@@ -1,0 +1,130 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   FilterMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   纹理的过滤模式。与
+   <a href="../Manual/Textures.html">
+    texture inspector
+   </a>
+   中的设置相对应。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Texture-filterMode.html">
+    Texture.filterMode
+   </a>
+   、
+   <a href="../Manual/Textures.html">
+    texture assets
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//This script changes the filter mode of your <a href="Texture.html">Texture</a> you attach when you press the space key in Play <a href="Scripting.GarbageCollector.Mode.html">Mode</a>. It switches between Point, Bilinear and Trilinear filter modes.
+//Attach this script to a <a href="GameObject.html">GameObject</a>
+//Click on the <a href="GameObject.html">GameObject</a> and attach a <a href="Texture.html">Texture</a> to the My <a href="Texture.html">Texture</a> field in the Inspector.
+//Apply the <a href="Texture.html">Texture</a> to GameObjects (click and drag the <a href="Texture.html">Texture</a> onto a <a href="GameObject.html">GameObject</a> in <a href="Editor.html">Editor</a> mode) in your <a href="SceneManagement.Scene.html">Scene</a> to see it change modes in-game.<br/><br/>using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    //Remember to assign a <a href="Texture.html">Texture</a> in the Inspector window to ensure this works
+    public <a href="Texture.html">Texture</a> m_MyTexture;<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        //Press the space key to switch between Filter Modes
+        if (<a href="Input.GetKeyDown.html">Input.GetKeyDown</a>(<a href="KeyCode.Space.html">KeyCode.Space</a>))
+        {
+            //<a href="PlayerSettings.Switch.html">Switch</a> the <a href="Texture.html">Texture</a>'s Filter <a href="Scripting.GarbageCollector.Mode.html">Mode</a>
+            m_MyTexture.filterMode = SwitchFilterModes();
+            //Output the current Filter <a href="Scripting.GarbageCollector.Mode.html">Mode</a> to the console
+            <a href="Debug.Log.html">Debug.Log</a>("Filter mode : " + m_MyTexture.filterMode);
+        }
+    }<br/><br/>    //<a href="PlayerSettings.Switch.html">Switch</a> between Filter Modes when the user clicks the <a href="UIElements.Button.html">Button</a>
+    <a href="FilterMode.html">FilterMode</a> SwitchFilterModes()
+    {
+        //<a href="PlayerSettings.Switch.html">Switch</a> the Filter <a href="Scripting.GarbageCollector.Mode.html">Mode</a> of the <a href="Texture.html">Texture</a> when user clicks the <a href="UIElements.Button.html">Button</a>
+        switch (m_MyTexture.filterMode)
+        {
+            //If the <a href="FilterMode.html">FilterMode</a> is currently Bilinear, switch it to Point on the <a href="UIElements.Button.html">Button</a> click
+            case <a href="FilterMode.Bilinear.html">FilterMode.Bilinear</a>:
+                m_MyTexture.filterMode = <a href="FilterMode.Point.html">FilterMode.Point</a>;
+                break;<br/><br/>            //If the <a href="FilterMode.html">FilterMode</a> is currently Point, switch it to Trilinear on the <a href="UIElements.Button.html">Button</a> click
+            case <a href="FilterMode.Point.html">FilterMode.Point</a>:
+                m_MyTexture.filterMode = <a href="FilterMode.Trilinear.html">FilterMode.Trilinear</a>;
+                break;<br/><br/>            //If the <a href="FilterMode.html">FilterMode</a> is currently Trilinear, switch it to Bilinear on the <a href="UIElements.Button.html">Button</a> click
+            case <a href="FilterMode.Trilinear.html">FilterMode.Trilinear</a>:
+                m_MyTexture.filterMode = <a href="FilterMode.Bilinear.html">FilterMode.Bilinear</a>;
+                break;
+        }
+        //Return the new <a href="Texture.html">Texture</a> <a href="FilterMode.html">FilterMode</a>
+        return m_MyTexture.filterMode;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="FilterMode.Point.html">
+      Point
+     </a>
+    </td>
+    <td class="desc">
+     Point 过滤 - 纹理像素在靠近时变为块状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FilterMode.Bilinear.html">
+      Bilinear
+     </a>
+    </td>
+    <td class="desc">
+     Bilinear 过滤 - 对纹理样本求平均值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FilterMode.Trilinear.html">
+      Trilinear
+     </a>
+    </td>
+    <td class="desc">
+     Trilinear 过滤 - 对纹理样本求平均值，并且对这些样本进行 Mipmap 级别间混合。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

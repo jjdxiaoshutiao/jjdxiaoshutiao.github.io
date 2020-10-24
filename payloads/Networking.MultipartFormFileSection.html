@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MultipartFormFileSection
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Networking.IMultipartFormSection.html">
+    IMultipartFormSection
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于通过 [IMultipartFormSection] API 将文件上载添加到多部分表单的 helper 对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此对象与 [MultipartFormDataSection] 对象非常相似，但所有构造函数另外还接受（且需要）一个
+   <code class="varname">
+    fileName
+   </code>
+   。如果您忽略
+   <code class="varname">
+    fileName
+   </code>
+   参数，此对象将提供默认文件名。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.MultipartFormFileSection-contentType.html">
+      contentType
+     </a>
+    </td>
+    <td class="desc">
+     返回该分区的 Content-Type 标头的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.MultipartFormFileSection-fileName.html">
+      fileName
+     </a>
+    </td>
+    <td class="desc">
+     返回表示目标服务器上此节所需文件名的字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.MultipartFormFileSection-sectionData.html">
+      sectionData
+     </a>
+    </td>
+    <td class="desc">
+     返回此节中包含的原始二进制数据。不得返回 null 或零长度数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.MultipartFormFileSection-sectionName.html">
+      sectionName
+     </a>
+    </td>
+    <td class="desc">
+     返回此节的名称（如果有）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.MultipartFormFileSection-ctor.html">
+      MultipartFormFileSection
+     </a>
+    </td>
+    <td class="desc">
+     包含一个已命名文件分区，该分区基于 data 中的原始字节且具有自定义 Content-Type 和文件名。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

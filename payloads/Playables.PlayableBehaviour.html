@@ -1,0 +1,221 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayableBehaviour
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Playables
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Playables.IPlayableBehaviour.html">
+    IPlayableBehaviour
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   PlayableBehaviour 是一个基类，所有自定义的可播放脚本均派生自该类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   PlayableBehaviour 可用于将用户定义的行为添加到
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   。
+   <br/>
+   <br/>
+   PlayableBehaviour 必须是
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   分支的一部分，该分支连接到输出以保持活动状态。
+   <br/>
+   <br/>
+   在以下示例中，两个
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   由两个
+   <a href="Animations.AnimationClipPlayable.html">
+    AnimationClipPlayable
+   </a>
+   （由
+   <a href="Animations.AnimationMixerPlayable.html">
+    AnimationMixerPlayable
+   </a>
+   混合）控制。自定义 BlenderPlayableBehaviour 修改了每一帧
+   <a href="Animations.AnimationMixerPlayable.html">
+    AnimationMixerPlayable
+   </a>
+   的输入权重。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.Playables;<br/><br/>public class BlenderPlayableBehaviour : <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a>
+{
+    public <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a> mixerPlayable;<br/><br/>    public override void PrepareFrame(<a href="Playables.Playable.html">Playable</a> playable, <a href="Playables.FrameData.html">FrameData</a> info)
+    {
+        float blend = <a href="Mathf.PingPong.html">Mathf.PingPong</a>((float)playable.GetTime(), 1.0f);<br/><br/>        mixerPlayable.SetInputWeight(0, blend);
+        mixerPlayable.SetInputWeight(1, 1.0f - blend);<br/><br/>        base.PrepareFrame(playable, info);
+    }
+}<br/><br/>public class PlayableBehaviourSample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Playables.PlayableGraph.html">PlayableGraph</a> m_Graph;
+    public <a href="AnimationClip.html">AnimationClip</a> clipA;
+    public <a href="AnimationClip.html">AnimationClip</a> clipB;<br/><br/>    // Use this for initialization
+    void Start()
+    {
+        // Create the <a href="Playables.PlayableGraph.html">PlayableGraph</a>.
+        m_Graph = <a href="Playables.PlayableGraph.Create.html">PlayableGraph.Create</a>();<br/><br/>        // Add an <a href="Animations.AnimationPlayableOutput.html">AnimationPlayableOutput</a> to the graph.
+        var animOutput = <a href="Animations.AnimationPlayableOutput.Create.html">AnimationPlayableOutput.Create</a>(m_Graph, "AnimationOutput", GetComponent&lt;<a href="Animator.html">Animator</a>&gt;());<br/><br/>        // Add an <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a> to the graph.
+        var mixerPlayable = <a href="Animations.AnimationMixerPlayable.Create.html">AnimationMixerPlayable.Create</a>(m_Graph, 2, false);<br/><br/>        // Add two <a href="Animations.AnimationClipPlayable.html">AnimationClipPlayable</a> to the graph.
+        var clipPlayableA = <a href="Animations.AnimationClipPlayable.Create.html">AnimationClipPlayable.Create</a>(m_Graph, clipA);
+        var clipPlayableB = <a href="Animations.AnimationClipPlayable.Create.html">AnimationClipPlayable.Create</a>(m_Graph, clipB);<br/><br/>        // Add a custom <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a> to the graph.
+        // This behavior will change the weights of the mixer dynamically.
+        var blenderPlayable = ScriptPlayable&lt;BlenderPlayableBehaviour&gt;.Create(m_Graph, 1);
+        blenderPlayable.GetBehaviour().mixerPlayable = mixerPlayable;<br/><br/>        // Create the topology, connect the <a href="Animations.AnimationClipPlayable.html">AnimationClipPlayable</a> to the
+        // <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a>.  Also add the BlenderPlayableBehaviour.
+        m_Graph.Connect(clipPlayableA, 0, mixerPlayable, 0);
+        m_Graph.Connect(clipPlayableB, 0, mixerPlayable, 1);
+        m_Graph.Connect(mixerPlayable, 0, blenderPlayable, 0);<br/><br/>        // Use the ScriptPlayable as the source for the <a href="Animations.AnimationPlayableOutput.html">AnimationPlayableOutput</a>.
+        // Since it's a ScriptPlayable, also set the source input port to make the
+        // passthrough to the <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a>.
+        animOutput.SetSourcePlayable(blenderPlayable);
+        animOutput.SetSourceInputPort(0);<br/><br/>        // Play the graph.
+        m_Graph.Play();
+    }<br/><br/>    private void OnDestroy()
+    {
+        // Destroy the graph once done with it.
+        m_Graph.Destroy();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnBehaviourPause.html">
+      OnBehaviourPause
+     </a>
+    </td>
+    <td class="desc">
+     出现以下某种情况之一时，将调用此方法：
+
+     遍历期间的有效播放状态更改为 PlayState.Paused。此状态由 FrameData.effectivePlayState 指示。
+     在可播放项播放状态为 Playing 时停止 PlayableGraph。此状态由 PlayableGraph.IsPlaying 返回的 true 结果指示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnBehaviourPlay.html">
+      OnBehaviourPlay
+     </a>
+    </td>
+    <td class="desc">
+     在 Playable 播放状态更改为 PlayState.Playing 时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnGraphStart.html">
+      OnGraphStart
+     </a>
+    </td>
+    <td class="desc">
+     在拥有此 PlayableBehaviour 的 PlayableGraph 启动时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnGraphStop.html">
+      OnGraphStop
+     </a>
+    </td>
+    <td class="desc">
+     在拥有此 PlayableBehaviour 的 PlayableGraph 停止时调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnPlayableCreate.html">
+      OnPlayableCreate
+     </a>
+    </td>
+    <td class="desc">
+     在拥有 PlayableBehaviour 的 Playable 创建后调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.OnPlayableDestroy.html">
+      OnPlayableDestroy
+     </a>
+    </td>
+    <td class="desc">
+     在拥有 PlayableBehaviour 的 Playable 销毁后调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.PrepareData.html">
+      PrepareData
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayableGraph 的 PrepareData 阶段调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.PrepareFrame.html">
+      PrepareFrame
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayableGraph 的 PrepareFrame 阶段调用此函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBehaviour.ProcessFrame.html">
+      ProcessFrame
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayableGraph 的 ProcessFrame 阶段调用此函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

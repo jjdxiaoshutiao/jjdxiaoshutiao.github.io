@@ -1,0 +1,468 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssetBundle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AssetBundle 允许您通过 UnityWebRequest 类流式传输其他资源，并在运行时实例化这些资源。AssetBundle 通过 BuildPipeline.BuildAssetBundle 创建。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   注意，不同平台的捆绑包互不兼容。为任何独立
+平台构建的捆绑包只能在该平台上加载。
+例如，为 iOS 构建的捆绑包不兼容 Android，反之亦然。其区别之一在于，
+捆绑包在不同的设备上使用不同的着色器及纹理。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Networking.UnityWebRequestAssetBundle.GetAssetBundle.html">
+    UnityWebRequestAssetBundle.GetAssetBundle
+   </a>
+   、
+   <a href="../Manual/LoadingResourcesatRuntime.html">
+    在运行时加载资源
+   </a>
+   、
+   <a href="BuildPipeline.BuildAssetBundle.html">
+    BuildPipeline.BuildAssetBundle
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;<br/><br/>public class SampleBehaviour : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    IEnumerator Start()
+    {
+        var uwr = <a href="Networking.UnityWebRequestAssetBundle.GetAssetBundle.html">UnityWebRequestAssetBundle.GetAssetBundle</a>("http://myserver/myBundle.unity3d");
+        yield return uwr.SendWebRequest();<br/><br/>        // Get an asset from the bundle and instantiate it.
+        <a href="AssetBundle.html">AssetBundle</a> bundle = <a href="Networking.DownloadHandlerAssetBundle.GetContent.html">DownloadHandlerAssetBundle.GetContent</a>(uwr);
+        var loadAsset = bundle.LoadAssetAsync&lt;<a href="GameObject.html">GameObject</a>&gt;("Assets/Players/MainPlayer.prefab");
+        yield return loadAsset;<br/><br/>        Instantiate(loadAsset.asset);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle-isStreamedSceneAssetBundle.html">
+      isStreamedSceneAssetBundle
+     </a>
+    </td>
+    <td class="desc">
+     如果 AssetBundle 为流式传输的场景 AssetBundle，则返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.Contains.html">
+      Contains
+     </a>
+    </td>
+    <td class="desc">
+     检查 AssetBundle 是否包含特定对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.GetAllAssetNames.html">
+      GetAllAssetNames
+     </a>
+    </td>
+    <td class="desc">
+     返回 AssetBundle 中的所有资源名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.GetAllScenePaths.html">
+      GetAllScenePaths
+     </a>
+    </td>
+    <td class="desc">
+     返回 AssetBundle 中的所有场景资源路径（*.unity 资源的路径）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAllAssets.html">
+      LoadAllAssets
+     </a>
+    </td>
+    <td class="desc">
+     加载资源捆绑包中继承自 type 的所有资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAllAssetsAsync.html">
+      LoadAllAssetsAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步加载资源捆绑包中的所有资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAsset.html">
+      LoadAsset
+     </a>
+    </td>
+    <td class="desc">
+     从捆绑包中加载名为 name 的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAssetAsync.html">
+      LoadAssetAsync
+     </a>
+    </td>
+    <td class="desc">
+     从捆绑包中异步加载名为 name 的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAssetWithSubAssets.html">
+      LoadAssetWithSubAssets
+     </a>
+    </td>
+    <td class="desc">
+     从捆绑包中加载名为 name 的资源和子资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadAssetWithSubAssetsAsync.html">
+      LoadAssetWithSubAssetsAsync
+     </a>
+    </td>
+    <td class="desc">
+     从捆绑包中异步加载资源，该资源具有名为 name 的子资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.Unload.html">
+      Unload
+     </a>
+    </td>
+    <td class="desc">
+     卸载 AssetBundle 释放其数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.GetAllLoadedAssetBundles.html">
+      GetAllLoadedAssetBundles
+     </a>
+    </td>
+    <td class="desc">
+     当您需要获取当前已加载的所有资源捆绑包的列表时，可以使用该函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromFile.html">
+      LoadFromFile
+     </a>
+    </td>
+    <td class="desc">
+     从磁盘上的文件同步加载 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromFileAsync.html">
+      LoadFromFileAsync
+     </a>
+    </td>
+    <td class="desc">
+     从磁盘上的文件异步加载 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromMemory.html">
+      LoadFromMemory
+     </a>
+    </td>
+    <td class="desc">
+     从内存区域同步创建 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromMemoryAsync.html">
+      LoadFromMemoryAsync
+     </a>
+    </td>
+    <td class="desc">
+     从内存区域异步创建 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromStream.html">
+      LoadFromStream
+     </a>
+    </td>
+    <td class="desc">
+     从托管 Stream 同步加载 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.LoadFromStreamAsync.html">
+      LoadFromStreamAsync
+     </a>
+    </td>
+    <td class="desc">
+     从托管 Stream 异步加载 AssetBundle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.RecompressAssetBundleAsync.html">
+      RecompressAssetBundleAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步将下载/存储的 AssetBundle 从一个 BuildCompression 再压缩为另一个。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetBundle.UnloadAllAssetBundles.html">
+      UnloadAllAssetBundles
+     </a>
+    </td>
+    <td class="desc">
+     卸载当前已加载的所有 AssetBundle。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

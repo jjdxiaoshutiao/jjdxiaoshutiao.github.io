@@ -1,0 +1,222 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DownloadHandler
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   管理和处理从远程服务器接收的 HTTP 响应体数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   DownloadHandler 对象是 helper 对象。附加到
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   后，它们会定义如何处理从远程服务器接收的 HTTP 响应体数据。通常，它们用于缓冲、流式传输和/或处理响应体。
+   <br/>
+   <br/>
+   DownloadHandler 是一个基类。可用的不同专门类将因使用场景而异。对于
+   <a href="Texture.html">
+    Texture
+   </a>
+   和
+   <a href="AssetBundle.html">
+    AssetBundle
+   </a>
+   下载，
+   <a href="Networking.DownloadHandlerBuffer.html">
+    DownloadHandlerBuffer
+   </a>
+   提供基本缓冲，而
+   <a href="Networking.DownloadHandlerTexture.html">
+    DownloadHandlerTexture
+   </a>
+   和
+   <a href="Networking.DownloadHandlerAssetBundle.html">
+    DownloadHandlerAssetBundle
+   </a>
+   提供了更高效的解决方案。
+   <br/>
+   <br/>
+   有关自定义用例，请参阅
+   <a href="Networking.DownloadHandlerScript.html">
+    DownloadHandlerScript
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   、
+   <a href="Networking.DownloadHandlerBuffer.html">
+    DownloadHandlerBuffer
+   </a>
+   、
+   <a href="Networking.DownloadHandlerTexture.html">
+    DownloadHandlerTexture
+   </a>
+   、
+   <a href="Networking.DownloadHandlerAudioClip.html">
+    DownloadHandlerAudioClip
+   </a>
+   、
+   <a href="Networking.DownloadHandlerAssetBundle.html">
+    DownloadHandlerAssetBundle
+   </a>
+   、
+   <a href="Networking.DownloadHandlerScript.html">
+    DownloadHandlerScript
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler-data.html">
+      data
+     </a>
+    </td>
+    <td class="desc">
+     返回从远程服务器下载的原始字节，或 null。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler-isDone.html">
+      isDone
+     </a>
+    </td>
+    <td class="desc">
+     如果此 DownloadHandler 的父 UnityWebRequest 已通知它已接收所有数据，且此 DownloadHandler 已完成所有必要的下载后处理操作，则返回 true。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler-text.html">
+      text
+     </a>
+    </td>
+    <td class="desc">
+     便捷属性。返回解释为 UTF8 字符串的 data 中的字节。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     表示不再使用此 DownloadHandler，并且应清理它使用的所有资源。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.CompleteContent.html">
+      CompleteContent
+     </a>
+    </td>
+    <td class="desc">
+     在从远程服务器接收所有数据后调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.GetData.html">
+      GetData
+     </a>
+    </td>
+    <td class="desc">
+     访问 data 属性时调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.GetProgress.html">
+      GetProgress
+     </a>
+    </td>
+    <td class="desc">
+     访问 UnityWebRequest.downloadProgress 时调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.GetText.html">
+      GetText
+     </a>
+    </td>
+    <td class="desc">
+     访问 text 属性时调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.ReceiveContentLengthHeader.html">
+      ReceiveContentLengthHeader
+     </a>
+    </td>
+    <td class="desc">
+     在收到 Content-Length 标头调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandler.ReceiveData.html">
+      ReceiveData
+     </a>
+    </td>
+    <td class="desc">
+     从远程服务器收到数据时调用的回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,177 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ClusterInput
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   接口，用于在 Unity Cluster 中读取和写入输入。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   ClusterInput 通过连接 VRPN 服务器可提供对 VRPN 设备的访问。它还可提供对可写入输入的访问。ClusterInput 管理的所有输入都将复制到集群中其余已连接的从属设备。使用 ClusterInput 与使用 Unity 中的传统输入系统非常像。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        // Buttons and <a href="Animations.Axis.html">Axis</a> provide a single value.
+        bool buttonValue = <a href="ClusterInput.GetButton.html">ClusterInput.GetButton</a>("button1");
+        float axisValue = <a href="ClusterInput.GetAxis.html">ClusterInput.GetAxis</a>("axis1");<br/><br/>        // A tracker provides 2 values, rotation and position.
+        <a href="Vector3.html">Vector3</a> position = <a href="ClusterInput.GetTrackerPosition.html">ClusterInput.GetTrackerPosition</a>("tracker1");
+        <a href="Quaternion.html">Quaternion</a> rotation = <a href="ClusterInput.GetTrackerRotation.html">ClusterInput.GetTrackerRotation</a>("tracker1");<br/><br/>        if (<a href="ClusterNetwork-isMasterOfCluster.html">ClusterNetwork.isMasterOfCluster</a>)
+        {
+            float axisValueCustom = MyCustomDevicePlugin.GetValue("myaxis");
+            <a href="ClusterInput.SetAxis.html">ClusterInput.SetAxis</a>("customAxis", axisValueCustom);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.AddInput.html">
+      AddInput
+     </a>
+    </td>
+    <td class="desc">
+     添加一个新的 VRPN 输入条目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.CheckConnectionToServer.html">
+      CheckConnectionToServer
+     </a>
+    </td>
+    <td class="desc">
+     检查设备与相连 VRPN 服务器的连接状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.EditInput.html">
+      EditInput
+     </a>
+    </td>
+    <td class="desc">
+     编辑通过 ClusterInput.AddInput 添加的输入条目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.GetAxis.html">
+      GetAxis
+     </a>
+    </td>
+    <td class="desc">
+     以连续 float 的形式返回轴值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.GetButton.html">
+      GetButton
+     </a>
+    </td>
+    <td class="desc">
+     返回按钮的二进制值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.GetTrackerPosition.html">
+      GetTrackerPosition
+     </a>
+    </td>
+    <td class="desc">
+     以 Vector3 的形式返回跟踪器的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.GetTrackerRotation.html">
+      GetTrackerRotation
+     </a>
+    </td>
+    <td class="desc">
+     以四元数的形式返回跟踪器的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.SetAxis.html">
+      SetAxis
+     </a>
+    </td>
+    <td class="desc">
+     设置此输入的轴值。仅对输入键入的 Custom 有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.SetButton.html">
+      SetButton
+     </a>
+    </td>
+    <td class="desc">
+     设置此输入的按钮值。仅对输入键入的 Custom 有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.SetTrackerPosition.html">
+      SetTrackerPosition
+     </a>
+    </td>
+    <td class="desc">
+     设置此输入的跟踪器位置。仅对输入键入的 Custom 有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ClusterInput.SetTrackerRotation.html">
+      SetTrackerRotation
+     </a>
+    </td>
+    <td class="desc">
+     设置此输入的跟踪器旋转。仅对输入键入的 Custom 有效。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

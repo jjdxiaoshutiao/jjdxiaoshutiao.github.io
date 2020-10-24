@@ -1,0 +1,179 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Collision
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述碰撞。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   碰撞信息会传递到
+   <a href="Collider.OnCollisionEnter.html">
+    Collider.OnCollisionEnter
+   </a>
+   、
+   <a href="Collider.OnCollisionStay.html">
+    Collider.OnCollisionStay
+   </a>
+   和
+   <a href="Collider.OnCollisionExit.html">
+    Collider.OnCollisionExit
+   </a>
+   事件。
+   <br/>
+   <br/>
+   <strong>
+    注意
+   </strong>
+   ：世界空间中的接触点。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="ContactPoint.html">
+    ContactPoint
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Collision-collider.html">
+      collider
+     </a>
+    </td>
+    <td class="desc">
+     我们撞击的 Collider（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-contactCount.html">
+      contactCount
+     </a>
+    </td>
+    <td class="desc">
+     获取此碰撞的接触点数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-contacts.html">
+      contacts
+     </a>
+    </td>
+    <td class="desc">
+     物理引擎生成的接触点。应避免使用它，因为它会产生内存垃圾。改用 GetContact 或 GetContacts。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-gameObject.html">
+      gameObject
+     </a>
+    </td>
+    <td class="desc">
+     您正在碰撞其碰撞体的 GameObject。（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-impulse.html">
+      impulse
+     </a>
+    </td>
+    <td class="desc">
+     为解析此碰撞而施加于该接触对的总冲量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-relativeVelocity.html">
+      relativeVelocity
+     </a>
+    </td>
+    <td class="desc">
+     这两个碰撞对象的相对线性速度（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-rigidbody.html">
+      rigidbody
+     </a>
+    </td>
+    <td class="desc">
+     我们撞击的 Rigidbody（只读）。如果我们撞击的对象未附加刚体，则这是 /null/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision-transform.html">
+      transform
+     </a>
+    </td>
+    <td class="desc">
+     我们撞击的对象的 Transform（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Collision.GetContact.html">
+      GetContact
+     </a>
+    </td>
+    <td class="desc">
+     获取位于指定 index 处的接触点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Collision.GetContacts.html">
+      GetContacts
+     </a>
+    </td>
+    <td class="desc">
+     检索该碰撞的所有接触点。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

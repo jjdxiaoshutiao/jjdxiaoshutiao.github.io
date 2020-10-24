@@ -1,0 +1,327 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Graphics
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Unity 绘图函数的原始接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这是访问 Unity 经过优化的网格绘图功能的高级快捷方式。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Graphics-activeColorBuffer.html">
+      activeColorBuffer
+     </a>
+    </td>
+    <td class="desc">
+     当前激活的颜色缓冲区。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics-activeColorGamut.html">
+      activeColorGamut
+     </a>
+    </td>
+    <td class="desc">
+     返回当前激活的色域。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics-activeDepthBuffer.html">
+      activeDepthBuffer
+     </a>
+    </td>
+    <td class="desc">
+     当前激活的深度/模板缓冲区。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics-activeTier.html">
+      activeTier
+     </a>
+    </td>
+    <td class="desc">
+     当前设备的 Graphics Tier 分类。
+更改该值会影响到任何后续加载的着色器。最初，该值是从正在使用的硬件自动检测的。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics-preserveFramebufferAlpha.html">
+      preserveFramebufferAlpha
+     </a>
+    </td>
+    <td class="desc">
+     如果在“Player Settings”中启用原生 UI 渲染（只读），则返回 True。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.Blit.html">
+      Blit
+     </a>
+    </td>
+    <td class="desc">
+     使用着色器将源纹理复制到目标渲染纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.BlitMultiTap.html">
+      BlitMultiTap
+     </a>
+    </td>
+    <td class="desc">
+     将源纹理复制到目标，用于多点着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.ClearRandomWriteTargets.html">
+      ClearRandomWriteTargets
+     </a>
+    </td>
+    <td class="desc">
+     为 Shader Model 4.5 级别的像素着色器清除随机写入目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.ConvertTexture.html">
+      ConvertTexture
+     </a>
+    </td>
+    <td class="desc">
+     该函数提供了在不同格式和尺寸的纹理之间进行转换的有效方式。
+目标纹理格式应处于未压缩状态，并且与支持的 RenderTextureFormat 相对应。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.CopyTexture.html">
+      CopyTexture
+     </a>
+    </td>
+    <td class="desc">
+     复制纹理内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.CreateAsyncGraphicsFence.html">
+      CreateAsyncGraphicsFence
+     </a>
+    </td>
+    <td class="desc">
+     用于调用 Graphics.CreateGraphicsFence 的快捷方式，将 GraphicsFenceType.AsyncQueueSynchronization 作为第一个参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.CreateGraphicsFence.html">
+      CreateGraphicsFence
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 GraphicsFence，其传递时机是此调用前，GPU 中完成的最后一个 Blit、Clear、Draw、Dispatch 或 Texture Copy 命令之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawMesh.html">
+      DrawMesh
+     </a>
+    </td>
+    <td class="desc">
+     绘制一个网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawMeshInstanced.html">
+      DrawMeshInstanced
+     </a>
+    </td>
+    <td class="desc">
+     使用 GPU 实例化多次绘制同一网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawMeshInstancedIndirect.html">
+      DrawMeshInstancedIndirect
+     </a>
+    </td>
+    <td class="desc">
+     使用 GPU 实例化多次绘制同一网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawMeshInstancedProcedural.html">
+      DrawMeshInstancedProcedural
+     </a>
+    </td>
+    <td class="desc">
+     使用 GPU 实例化可多次绘制同一网格。
+这与 Graphics.DrawMeshInstancedIndirect 相似，区别是当从脚本中了解实例数量时，使用此方法可直接提供数量，而不是通过 ComputeBuffer。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawMeshNow.html">
+      DrawMeshNow
+     </a>
+    </td>
+    <td class="desc">
+     立即绘制一个网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawProcedural.html">
+      DrawProcedural
+     </a>
+    </td>
+    <td class="desc">
+     在 GPU 上绘制程序化的几何形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawProceduralIndirect.html">
+      DrawProceduralIndirect
+     </a>
+    </td>
+    <td class="desc">
+     在 GPU 上绘制程序化的几何形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawProceduralIndirectNow.html">
+      DrawProceduralIndirectNow
+     </a>
+    </td>
+    <td class="desc">
+     在 GPU 上绘制程序化的几何形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawProceduralNow.html">
+      DrawProceduralNow
+     </a>
+    </td>
+    <td class="desc">
+     在 GPU 上绘制程序化的几何形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.DrawTexture.html">
+      DrawTexture
+     </a>
+    </td>
+    <td class="desc">
+     在屏幕坐标系中绘制纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.ExecuteCommandBuffer.html">
+      ExecuteCommandBuffer
+     </a>
+    </td>
+    <td class="desc">
+     执行命令缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.ExecuteCommandBufferAsync.html">
+      ExecuteCommandBufferAsync
+     </a>
+    </td>
+    <td class="desc">
+     对基于传入的 ComputeQueueType 参数选择的异步计算队列执行命令缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.SetRandomWriteTarget.html">
+      SetRandomWriteTarget
+     </a>
+    </td>
+    <td class="desc">
+     为 Shader Model 4.5 级别的像素着色器设置随机写入目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.SetRenderTarget.html">
+      SetRenderTarget
+     </a>
+    </td>
+    <td class="desc">
+     设置当前渲染目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Graphics.WaitOnAsyncGraphicsFence.html">
+      WaitOnAsyncGraphicsFence
+     </a>
+    </td>
+    <td class="desc">
+     指示 GPU 图形队列处理等待传递给定的 GraphicsFence。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

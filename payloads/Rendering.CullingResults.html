@@ -1,0 +1,237 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CullingResults
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   剔除结果（可见对象、光源、反射探针）。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在脚本化渲染循环中，渲染过程通常会对每个摄像机进行剔除 (
+   <a href="Rendering.ScriptableRenderContext.Cull.html">
+    ScriptableRenderContext.Cull
+   </a>
+   )，然后渲染可见对象 (
+   <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+    ScriptableRenderContext.DrawRenderers
+   </a>
+   ) 的子集并处理可见光源（
+   <a href="Rendering.CullingResults-visibleLights.html">
+    visibleLights
+   </a>
+   、
+   <a href="Rendering.CullingResults-visibleReflectionProbes.html">
+    visibleReflectionProbes
+   </a>
+   ）。
+   <br/>
+   <br/>
+   CullingResults 还提供了一些可辅助阴影渲染的函数（
+   <a href="Rendering.CullingResults.ComputeDirectionalShadowMatricesAndCullingPrimitives.html">
+    ComputeDirectionalShadowMatricesAndCullingPrimitives
+   </a>
+   、
+   <a href="Rendering.CullingResults.ComputeSpotShadowMatricesAndCullingPrimitives.html">
+    ComputeSpotShadowMatricesAndCullingPrimitives
+   </a>
+   、
+   <a href="Rendering.CullingResults.ComputePointShadowMatricesAndCullingPrimitives.html">
+    ComputePointShadowMatricesAndCullingPrimitives
+   </a>
+   ）。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-lightAndReflectionProbeIndexCount.html">
+      lightAndReflectionProbeIndexCount
+     </a>
+    </td>
+    <td class="desc">
+     获取每个对象的光源和反射探针的索引数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-lightIndexCount.html">
+      lightIndexCount
+     </a>
+    </td>
+    <td class="desc">
+     获取每个对象的光源索引数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-reflectionProbeIndexCount.html">
+      reflectionProbeIndexCount
+     </a>
+    </td>
+    <td class="desc">
+     获取每个对象的反射探针索引数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-visibleLights.html">
+      visibleLights
+     </a>
+    </td>
+    <td class="desc">
+     可见光源的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-visibleOffscreenVertexLights.html">
+      visibleOffscreenVertexLights
+     </a>
+    </td>
+    <td class="desc">
+     仍会影响可见场景顶点的屏幕外光源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults-visibleReflectionProbes.html">
+      visibleReflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     可见反射探针的数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.ComputeDirectionalShadowMatricesAndCullingPrimitives.html">
+      ComputeDirectionalShadowMatricesAndCullingPrimitives
+     </a>
+    </td>
+    <td class="desc">
+     计算方向光的视图和投影矩阵以及阴影分割数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.ComputePointShadowMatricesAndCullingPrimitives.html">
+      ComputePointShadowMatricesAndCullingPrimitives
+     </a>
+    </td>
+    <td class="desc">
+     计算点光源的视图和投影矩阵以及阴影分割数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.ComputeSpotShadowMatricesAndCullingPrimitives.html">
+      ComputeSpotShadowMatricesAndCullingPrimitives
+     </a>
+    </td>
+    <td class="desc">
+     计算聚光灯的视图和投影矩阵以及阴影分割数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.FillLightAndReflectionProbeIndices.html">
+      FillLightAndReflectionProbeIndices
+     </a>
+    </td>
+    <td class="desc">
+     使用每个对象的光源索引填充计算缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.GetLightIndexMap.html">
+      GetLightIndexMap
+     </a>
+    </td>
+    <td class="desc">
+     如果 RenderPipeline 对 VisibleLight 列表进行排序或以其他方式进行修改，则需要重新映射索引，以正确使用每个对象的光源列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.GetReflectionProbeIndexMap.html">
+      GetReflectionProbeIndexMap
+     </a>
+    </td>
+    <td class="desc">
+     如果 RenderPipeline 对 VisibleReflectionProbe 列表进行排序或以其他方式进行修改，则需要重新映射索引，以正确使用每个对象的反射探针列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.GetShadowCasterBounds.html">
+      GetShadowCasterBounds
+     </a>
+    </td>
+    <td class="desc">
+     返回封装了可见阴影投射物的包围盒。例如，这可用于动态调整级联范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.SetLightIndexMap.html">
+      SetLightIndexMap
+     </a>
+    </td>
+    <td class="desc">
+     如果 RenderPipeline 对 VisibleLight 列表进行排序或以其他方式进行修改，则需要重新映射索引，以正确使用每个对象的光源列表。
+如果数组的某个元素被设置为 -1，则与该元素对应的光源将被禁用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingResults.SetReflectionProbeIndexMap.html">
+      SetReflectionProbeIndexMap
+     </a>
+    </td>
+    <td class="desc">
+     如果 RenderPipeline 对 VisibleReflectionProbe 列表进行排序或以其他方式进行修改，则需要重新映射索引，以正确使用每个对象的反射探针列表。
+如果数组的某个元素被设置为 -1，则与该元素对应的反射探针将被禁用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

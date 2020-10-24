@@ -1,0 +1,123 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SpaceAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="PropertyAttribute.html">
+    PropertyAttribute
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此
+   <a href="PropertyAttribute.html">
+    PropertyAttribute
+   </a>
+   可在 Inspector 中添加一些间距。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   间距是通过
+   <a href="DecoratorDrawer.html">
+    DecoratorDrawer
+   </a>
+   完成的。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    int health = 0;
+    int maxHealth = 100;<br/><br/>    [<a href="Space.html">Space</a>(10)] // 10 pixels of spacing here.<br/><br/>    int shield = 0;
+    int maxShield = 0;
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpaceAttribute-height.html">
+      height
+     </a>
+    </td>
+    <td class="desc">
+     间距（以像素为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SpaceAttribute-ctor.html">
+      SpaceAttribute
+     </a>
+    </td>
+    <td class="desc">
+     使用此 DecoratorDrawer 可在 Inspector 中添加一些间距。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="PropertyAttribute-order.html">
+       order
+      </a>
+     </td>
+     <td class="desc">
+      可选字段，用于指定多个 DecorationDrawer 应采用的绘制顺序。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

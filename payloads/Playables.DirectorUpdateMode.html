@@ -1,0 +1,82 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DirectorUpdateMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义用于更新 Director 图的时间源。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.DirectorUpdateMode.DSPClock.html">
+      DSPClock
+     </a>
+    </td>
+    <td class="desc">
+     更新基于的是 DSP（数字声音处理）时钟。针对需要与音频同步的图使用此项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.DirectorUpdateMode.GameTime.html">
+      GameTime
+     </a>
+    </td>
+    <td class="desc">
+     更新基于的是 Time.time。针对需要在游戏上同同步的图以及游戏暂停时需要暂停的图使用此项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.DirectorUpdateMode.UnscaledGameTime.html">
+      UnscaledGameTime
+     </a>
+    </td>
+    <td class="desc">
+     更新基于的是 Time.unscaledTime。针对即使游戏暂停也需要更新的图使用此项。示例：即使游戏暂停也需要更新菜单转换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.DirectorUpdateMode.Manual.html">
+      Manual
+     </a>
+    </td>
+    <td class="desc">
+     更新模式为手动。您需要使用您自己的 deltaTime 手动调用 PlayableGraph.Evaluate。这对于与游戏其他部分完全断开连接的图非常有用。例如，本地化的子弹时间。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

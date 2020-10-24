@@ -1,0 +1,67 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PostProcessBuildAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Callbacks
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="CallbackOrderAttribute.html">
+    CallbackOrderAttribute
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   构建玩家后，将此属性添加至方法以接收通知。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// C# example:
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Callbacks;<br/><br/>public class MyBuildPostprocessor {
+    [<a href="Callbacks.PostProcessBuildAttribute.html">PostProcessBuildAttribute</a>(1)]
+    public static void OnPostprocessBuild(<a href="BuildTarget.html">BuildTarget</a> target, string pathToBuiltProject) {
+        <a href="Debug.Log.html">Debug.Log</a>( pathToBuiltProject );
+        }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   PostProcessBuildAttribute 具有提供回调中的顺序索引的选项，从 0 开始。如果您有多个 PostProcessBuildAttribute 回调并想以特定顺序调用它们，此选项将非常有用。系统将从零开始按顺序调用回调。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

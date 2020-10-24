@@ -1,0 +1,82 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioRenderer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于录制游戏的主输出或 AudioMixer 中的特定组。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioRenderer.GetSampleCountForCaptureFrame.html">
+      GetSampleCountForCaptureFrame
+     </a>
+    </td>
+    <td class="desc">
+     返回自上次调用 AudioRenderer.Render 以来可用的样本数。这取决于帧捕获率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioRenderer.Render.html">
+      Render
+     </a>
+    </td>
+    <td class="desc">
+     执行主输出以及通过 AudioRenderer.AddMixerGroupSink 注册的任何可选混合器组的录制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioRenderer.Start.html">
+      Start
+     </a>
+    </td>
+    <td class="desc">
+     进入音频录制模式。在此之后，Unity 将输出静音，直到调用 AudioRenderer.Stop。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioRenderer.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     退出音频录制模式。在此之后，将再次能够听到音频输出。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

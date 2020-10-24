@@ -1,0 +1,246 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Bounds
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示一个轴对齐的包围盒。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   轴对齐的包围盒（简称 AABB）是与坐标轴对齐并且完全包围
+某个对象的盒体。由于该盒体从不相对于这些轴旋转，因此仅通过其
+   <a href="Bounds-center.html">
+    center
+   </a>
+   和
+   <a href="Bounds-extents.html">
+    extents
+   </a>
+   或者通过
+   <a href="Bounds-min.html">
+    min
+   </a>
+   和
+   <a href="Bounds-max.html">
+    max
+   </a>
+   点便可对它进行定义。
+   <br/>
+   <br/>
+   <code class="varname">
+    Bounds
+   </code>
+   由
+   <a href="Collider-bounds.html">
+    Collider.bounds
+   </a>
+   、
+   <a href="Mesh-bounds.html">
+    Mesh.bounds
+   </a>
+   和
+   <a href="Renderer-bounds.html">
+    Renderer.bounds
+   </a>
+   使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     该包围盒的中心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-extents.html">
+      extents
+     </a>
+    </td>
+    <td class="desc">
+     该包围盒的范围。这始终是这些 Bounds 的 size 的一半。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-max.html">
+      max
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最大点。这始终等于 center+extents。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-min.html">
+      min
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最小点。这始终等于 center-extents。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的总大小。这始终是 extents 的两倍。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Bounds-ctor.html">
+      Bounds
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 Bounds。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.ClosestPoint.html">
+      ClosestPoint
+     </a>
+    </td>
+    <td class="desc">
+     该包围盒上最近的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.Contains.html">
+      Contains
+     </a>
+    </td>
+    <td class="desc">
+     point 是否包含在该包围盒中？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.Encapsulate.html">
+      Encapsulate
+     </a>
+    </td>
+    <td class="desc">
+     增大 Bounds，以便包含该 /point/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.Expand.html">
+      Expand
+     </a>
+    </td>
+    <td class="desc">
+     通过沿每一侧将边界的 size 增加 /amount/，扩展这些边界。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.IntersectRay.html">
+      IntersectRay
+     </a>
+    </td>
+    <td class="desc">
+     ray 是否与该包围盒交叠？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.Intersects.html">
+      Intersects
+     </a>
+    </td>
+    <td class="desc">
+     另一个包围盒是否与该包围盒交叠？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.SetMinMax.html">
+      SetMinMax
+     </a>
+    </td>
+    <td class="desc">
+     将这些边界设置为该盒体的 min 和 max 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.SqrDistance.html">
+      SqrDistance
+     </a>
+    </td>
+    <td class="desc">
+     该点与该包围盒之间的最小平方距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Bounds.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     对于这些边界，返回整齐格式化的字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

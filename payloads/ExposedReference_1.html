@@ -1,0 +1,152 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ExposedReference&lt;T0&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   创建一个值在运行时可加以解析的类型。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   ExposedReference 是一个泛型类型，可用于创建对场景对象的引用，以及通过使用上下文对象在运行时解析它们的实际值。
+   <a href="ScriptableObject.html">
+    ScriptableObject
+   </a>
+   或
+   <a href="Playables.PlayableAsset.html">
+    PlayableAsset
+   </a>
+   等资源可使用它来创建对场景对象的引用。
+   <br/>
+   <br/>
+   以下示例显示
+   <a href="Playables.PlayableAsset.html">
+    PlayableAsset
+   </a>
+   如何使用暴露的引用来创建对 Scene GameObject 的引用。
+这是一个使用 Timeline 的示例，因此您可能想要首先
+   <a href="../Manual/TimelineWorkflowCreatingAssetInstance.html">
+    set up your GameObject in Timeline
+   </a>
+   并
+   <a href="../Manual/TimelineWorkflowRecordingBasicAnimation.html">
+    make an animation with your GameObject
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//Put both of these scripts in your Project, then go to your Timeline, click the <strong>Add</strong> dropdown and choose <strong>Playable Track</strong>. Place this script on your Timeline as a <a href="Playables.Playable.html">Playable</a> Track
+//Click on the track and choose a <a href="GameObject.html">GameObject</a> from your <a href="SceneManagement.Scene.html">Scene</a> in the "My <a href="SceneManagement.Scene.html">Scene</a> Object" field. Also set the velocity.<br/><br/>using UnityEngine;
+using UnityEngine.Playables;<br/><br/>[System.Serializable]
+public class ExposedReferenceExample : <a href="Playables.PlayableAsset.html">PlayableAsset</a>
+{
+    //This allows you to use GameObjects in your <a href="SceneManagement.Scene.html">Scene</a>
+    public ExposedReference&lt;<a href="GameObject.html">GameObject</a>&gt; m_MySceneObject;
+    //This variable allows you to decide the velocity of your <a href="GameObject.html">GameObject</a>
+    public <a href="Vector3.html">Vector3</a> m_SceneObjectVelocity;<br/><br/>    public  override <a href="Playables.Playable.html">Playable</a> CreatePlayable(<a href="Playables.PlayableGraph.html">PlayableGraph</a> graph , <a href="GameObject.html">GameObject</a> myGameObject)
+    {
+        //Get access to the <a href="Playables.Playable.html">Playable</a> <a href="Behaviour.html">Behaviour</a> script
+        TestExample playableBehaviour = new TestExample();
+        //Resolve the exposed reference on the <a href="SceneManagement.Scene.html">Scene</a> <a href="GameObject.html">GameObject</a> by returning the table used by the graph
+        playableBehaviour.m_MySceneObject = m_MySceneObject.Resolve(graph.GetResolver());<br/><br/>        //Make the <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a> velocity variable the same as the variable you set
+        playableBehaviour.m_SceneObjectVelocity = m_SceneObjectVelocity;<br/><br/>        //Create a custom playable from this script using the Player <a href="Behaviour.html">Behaviour</a> script
+        return ScriptPlayable&lt;TestExample&gt;.Create(graph, playableBehaviour);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   将您 Project 中的下一个脚本放在与上述脚本相同的文件夹中。
+该脚本通过在 Playable Track 正在播放时移动 Scene GameObject 来更改时间轴的行为。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using  UnityEngine;
+using  UnityEngine.Playables;<br/><br/>public  class TestExample : <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a>
+{
+    public <a href="GameObject.html">GameObject</a> m_MySceneObject;
+    public <a href="Vector3.html">Vector3</a> m_SceneObjectVelocity;<br/><br/>    public override void PrepareFrame(<a href="Playables.Playable.html">Playable</a> playable, <a href="Playables.FrameData.html">FrameData</a> frameData)
+    {
+        //If the <a href="SceneManagement.Scene.html">Scene</a> <a href="GameObject.html">GameObject</a> exists, move it continuously until the <a href="Playables.Playable.html">Playable</a> pauses
+        if (m_MySceneObject != null)
+            //Move the <a href="GameObject.html">GameObject</a> using the velocity you set in your <a href="Playables.Playable.html">Playable</a> Track's inspector
+            m_MySceneObject.transform.Translate(m_SceneObjectVelocity);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ExposedReference_1-defaultValue.html">
+      defaultValue
+     </a>
+    </td>
+    <td class="desc">
+     默认值，以防无法解析该值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ExposedReference_1-exposedName.html">
+      exposedName
+     </a>
+    </td>
+    <td class="desc">
+     ExposedReference 的名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ExposedReference_1.Resolve.html">
+      Resolve
+     </a>
+    </td>
+    <td class="desc">
+     根据 ExposedPropertyResolver 上下文对象，通过解析此引用的值来获取该值。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

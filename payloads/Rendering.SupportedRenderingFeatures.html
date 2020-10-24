@@ -1,0 +1,244 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SupportedRenderingFeatures
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述给定渲染管线支持的渲染功能。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   启用渲染管线时，设置处于活动状态的受支持渲染功能。这将更改编辑器 UI 的状态，以反映所做的更改。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-active.html">
+      active
+     </a>
+    </td>
+    <td class="desc">
+     获取/设置 SupportedRenderingFeature。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-defaultMixedLightingModes.html">
+      defaultMixedLightingModes
+     </a>
+    </td>
+    <td class="desc">
+     如果用户之前选择的模式不再可用，则这是回退模式。请参阅 SupportedRenderingFeatures.mixedLightingModes。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-editableMaterialRenderQueue.html">
+      editableMaterialRenderQueue
+     </a>
+    </td>
+    <td class="desc">
+     确定可编程渲染管线是否将覆盖默认材质的渲染队列设置，如果为 true，则在 Inspector 中隐藏渲染队列属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-enlighten.html">
+      enlighten
+     </a>
+    </td>
+    <td class="desc">
+     确定是否支持 Enlighten。如果不支持，则除非项目升级自 2019.2 或更早版本，否则特定于 Enlighten 的设置不会出现在编辑器中（对于 Baked 和 Realtime GI）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-lightmapBakeTypes.html">
+      lightmapBakeTypes
+     </a>
+    </td>
+    <td class="desc">
+     受支持的烘焙类型。不受支持的类型将从 UI 中隐藏。请参阅 LightmapBakeType。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-lightmapsModes.html">
+      lightmapsModes
+     </a>
+    </td>
+    <td class="desc">
+     指定受支持的模式。至少一个。请参阅 LightmapsMode。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-lightProbeProxyVolumes.html">
+      lightProbeProxyVolumes
+     </a>
+    </td>
+    <td class="desc">
+     是否支持光照探针代理体？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-mixedLightingModes.html">
+      mixedLightingModes
+     </a>
+    </td>
+    <td class="desc">
+     指定受支持的 LightmapMixedBakeModes。如果支持多种模式，请定义 SupportedRenderingFeatures.defaultMixedLightingModes。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-motionVectors.html">
+      motionVectors
+     </a>
+    </td>
+    <td class="desc">
+     是否支持运动矢量？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-overridesEnvironmentLighting.html">
+      overridesEnvironmentLighting
+     </a>
+    </td>
+    <td class="desc">
+     确定渲染器是否将重载环境光照并且不再需要内置 UI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-overridesFog.html">
+      overridesFog
+     </a>
+    </td>
+    <td class="desc">
+     确定渲染器是否将重载 Lighting 面板中的雾效设置并且不再需要内置 UI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-overridesLODBias.html">
+      overridesLODBias
+     </a>
+    </td>
+    <td class="desc">
+     指定渲染器是否覆盖 Quality Settings 面板中的 LOD 偏差设置。如果是，则渲染器不需要内置 UI 来进行 LOD 偏差设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-overridesMaximumLODLevel.html">
+      overridesMaximumLODLevel
+     </a>
+    </td>
+    <td class="desc">
+     指定渲染器是否覆盖 Quality Settings 面板中的最大 LOD 级别设置。如果是，则渲染器不需要内置 UI 来进行最大 LOD 级别设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-overridesOtherLightingSettings.html">
+      overridesOtherLightingSettings
+     </a>
+    </td>
+    <td class="desc">
+     确定渲染器是否将重载 Lighting 面板中的光环和光晕设置并且不再需要内置 UI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-receiveShadows.html">
+      receiveShadows
+     </a>
+    </td>
+    <td class="desc">
+     渲染器能否支持接受阴影？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-reflectionProbeModes.html">
+      reflectionProbeModes
+     </a>
+    </td>
+    <td class="desc">
+     受支持反射探针的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-reflectionProbes.html">
+      reflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     是否支持反射探针？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-rendererPriority.html">
+      rendererPriority
+     </a>
+    </td>
+    <td class="desc">
+     确定渲染器是否支持渲染器优先级排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SupportedRenderingFeatures-terrainDetailUnsupported.html">
+      terrainDetailUnsupported
+     </a>
+    </td>
+    <td class="desc">
+     确定渲染器是否支持地形细节渲染。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

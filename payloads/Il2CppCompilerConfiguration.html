@@ -1,0 +1,72 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Il2CppCompilerConfiguration
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   编译 IL2CPP 生成的代码时使用的 C++ 编译器配置。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Il2CppCompilerConfiguration.Debug.html">
+      Debug
+     </a>
+    </td>
+    <td class="desc">
+     Debug 配置停用了所有优化，这使得代码构建速度更快，但运行速度变慢。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Il2CppCompilerConfiguration.Release.html">
+      Release
+     </a>
+    </td>
+    <td class="desc">
+     Release 配置启用了优化，因此编译后的代码运行速度更快，二进制文件大小变小，但编译时间变长。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Il2CppCompilerConfiguration.Master.html">
+      Master
+     </a>
+    </td>
+    <td class="desc">
+     Master 配置支持所有可能的优化，淋漓尽致发挥出全部的性能。例如，在使用 MSVC++ 编译器的平台上，此选项允许在链接时生成代码。使用此配置编译代码所需的时间比使用 Release 配置要长得多。如果构建时间的增加量在可接受范围，Unity 建议使用 Master 配置构建游戏的发布版本。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

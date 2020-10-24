@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SurfaceData
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.XR.WSA
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SurfaceData 是一种用于请求烘焙空间映射数据并在烘培后接收此数据的容器结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-bakeCollider.html">
+      bakeCollider
+     </a>
+    </td>
+    <td class="desc">
+     请求数据以烘培碰撞体数据时，将此字段设置为 true。如果在请求后接收烘培数据，将此字段设置为 true。将此字段设置为 true 时，还需要指定一个有效的 outputCollider。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-id.html">
+      id
+     </a>
+    </td>
+    <td class="desc">
+     这是要烘培的表面或已烘培且要返回给用户的表面的 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-outputAnchor.html">
+      outputAnchor
+     </a>
+    </td>
+    <td class="desc">
+     此 WorldAnchor 用于将表面锁定到相对于现实世界中的对象的位置。调用 RequestMeshAsync 以针对表面生成数据时，系统将在 WorldAnchor 中填入相关内容，并通过 SurfaceDataReadyDelegate 返回此 WorldAnchor。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-outputCollider.html">
+      outputCollider
+     </a>
+    </td>
+    <td class="desc">
+     通过 RequestMeshAsync 请求烘培表面数据时，此 MeshCollider 将接收系统准备的烘培物理网格。对于那些需要高级工作流的用户，系统将通过 SurfaceDataReadyDelegate 中返回此 MeshCollider。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-outputMesh.html">
+      outputMesh
+     </a>
+    </td>
+    <td class="desc">
+     请求烘培表面数据时，此 MeshFilter 将接收系统准备的烘培网格。对于那些需要高级工作流的用户，系统将通过 SurfaceDataReadyDelegate 中返回此 MeshFilter。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-trianglesPerCubicMeter.html">
+      trianglesPerCubicMeter
+     </a>
+    </td>
+    <td class="desc">
+     此值控制烘培网格数据的基本分辨率并通过 SurfaceDataReadyDelegate 返回。设备可使每立方米三角形的数量达到此值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceData-ctor.html">
+      SurfaceData
+     </a>
+    </td>
+    <td class="desc">
+     构造函数，可方便地填写 SurfaceData 结构。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

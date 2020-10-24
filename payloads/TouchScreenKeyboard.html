@@ -1,0 +1,236 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TouchScreenKeyboard
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   屏幕键盘的接口。仅支持原生 iPhone、Android 和 Windows 应用商店应用程序。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此接口可以显示不同类型的键盘：ASCII、
+数字、URL、Email 和其他。
+   <br/>
+   <br/>
+   显示的键盘可能会遮挡
+部分用户界面，在显示键盘时，
+需要确保不会遮挡用户界面
+部分。
+   <br/>
+   <br/>
+   <code class="mono">
+    TouchScreenKeyboard.visible
+   </code>
+   和
+   <code class="mono">
+    TouchScreenKeyboard.area
+   </code>
+   应
+用于确定键盘是否显示（激活）以及使用
+哪部分屏幕。
+   <br/>
+   <br/>
+   <strong>
+    通用 Windows 平台
+   </strong>
+   ：在通用 Windows 应用程序中，当未连接物理键盘时，支持使用触摸屏键盘。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-area.html">
+      area
+     </a>
+    </td>
+    <td class="desc">
+     返回被键盘覆盖的屏幕部分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-hideInput.html">
+      hideInput
+     </a>
+    </td>
+    <td class="desc">
+     当键盘在屏幕上时是否隐藏键盘上的文本输入字段？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-isInPlaceEditingAllowed.html">
+      isInPlaceEditingAllowed
+     </a>
+    </td>
+    <td class="desc">
+     检查当 TouchScreenKeyboard 打开时是否可以选择并修改输入字段中的文本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-isSupported.html">
+      isSupported
+     </a>
+    </td>
+    <td class="desc">
+     是否支持触摸屏幕键盘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-visible.html">
+      visible
+     </a>
+    </td>
+    <td class="desc">
+     只要屏幕上有完全可见的键盘，就返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-active.html">
+      active
+     </a>
+    </td>
+    <td class="desc">
+     键盘可见还是滑入屏幕位置？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-canGetSelection.html">
+      canGetSelection
+     </a>
+    </td>
+    <td class="desc">
+     指定 TouchScreenKeyboard 是否支持 selection 属性。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-canSetSelection.html">
+      canSetSelection
+     </a>
+    </td>
+    <td class="desc">
+     指定 TouchScreenKeyboard 是否支持 selection 属性。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-characterLimit.html">
+      characterLimit
+     </a>
+    </td>
+    <td class="desc">
+     键盘输入字段可以输入的字符数限制。0 = 无限。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-selection.html">
+      selection
+     </a>
+    </td>
+    <td class="desc">
+     获取或设置目前正在编辑的字符串中的所选文本的字符范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-status.html">
+      status
+     </a>
+    </td>
+    <td class="desc">
+     返回屏幕键盘的状态。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-targetDisplay.html">
+      targetDisplay
+     </a>
+    </td>
+    <td class="desc">
+     指定屏幕键盘将显示在哪个显示屏上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-text.html">
+      text
+     </a>
+    </td>
+    <td class="desc">
+     返回键盘的输入字段显示的文本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     返回键盘的 TouchScreenKeyboardType。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TouchScreenKeyboard.Open.html">
+      Open
+     </a>
+    </td>
+    <td class="desc">
+     在屏幕上打开操作系统提供的原生键盘。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

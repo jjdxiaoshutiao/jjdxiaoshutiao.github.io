@@ -1,0 +1,263 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SubMeshDescriptor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含有关
+   <a href="Mesh.html">
+    Mesh
+   </a>
+   的单个子网格的信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="Mesh.html">
+    Mesh
+   </a>
+   脚本 API 的简单用法涉及使用
+   <a href="Mesh-triangles.html">
+    Mesh.triangles
+   </a>
+   、
+   <a href="Mesh-vertices.html">
+    Mesh.vertices
+   </a>
+   等函数。
+   <br/>
+   <br/>
+   对于需要最大性能的高级用例，可以使用具有
+   <a href="Mesh.SetSubMesh.html">
+    Mesh.SetSubMesh
+   </a>
+   、
+   <a href="Mesh.SetIndexBufferParams.html">
+    Mesh.SetIndexBufferParams
+   </a>
+   和
+   <a href="Mesh.SetIndexBufferData.html">
+    Mesh.SetIndexBufferData
+   </a>
+   等函数的高级 API。通过此高级 API 可以访问主要适用于原始索引缓冲区、顶点缓冲区和网格子集数据的基础网格数据结构。
+   <br/>
+   <br/>
+   单个子网格表示使用一种材质的网格部分。许多网格只使用一种材质，但有些
+网格使用多种材质。子网格中的信息包括：
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-indexStart.html">
+    indexStart
+   </a>
+   - 子集的面索引数据所在的整个网格索引
+缓冲区内的起点。请参阅
+   <a href="Mesh.SetIndexBufferParams.html">
+    Mesh.SetIndexBufferParams
+   </a>
+   和
+   <a href="Mesh.SetIndexBufferData.html">
+    Mesh.SetIndexBufferData
+   </a>
+   。
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-indexCount.html">
+    indexCount
+   </a>
+   - 子网格的索引数量。例如，在具有三角形拓扑的网格中，每个三角形需要三个索引。
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-topology.html">
+    topology
+   </a>
+   - 子网格的拓扑，通常为
+   <a href="MeshTopology.Triangles.html">
+    MeshTopology.Triangles
+   </a>
+   。
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-baseVertex.html">
+    baseVertex
+   </a>
+   - 为计算最终的顶点索引而向索引缓冲区中的每个值添加的偏移。
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-bounds.html">
+    bounds
+   </a>
+   - 顶点在局部空间中的包围盒。
+   <br/>
+   -
+   <a href="Rendering.SubMeshDescriptor-firstVertex.html">
+    firstVertex
+   </a>
+   和
+   <a href="Rendering.SubMeshDescriptor-vertexCount.html">
+    vertexCount
+   </a>
+   - 子网格的索引缓冲区引用的顶点范围。
+   <br/>
+   <br/>
+   <a href="Rendering.SubMeshDescriptor-bounds.html">
+    bounds
+   </a>
+   、
+   <a href="Rendering.SubMeshDescriptor-firstVertex.html">
+    firstVertex
+   </a>
+   和
+   <a href="Rendering.SubMeshDescriptor-vertexCount.html">
+    vertexCount
+   </a>
+   值由
+   <a href="Mesh.SetSubMesh.html">
+    Mesh.SetSubMesh
+   </a>
+   自动计算，除非
+传递
+   <a href="Rendering.MeshUpdateFlags.DontRecalculateBounds.html">
+    MeshUpdateFlags.DontRecalculateBounds
+   </a>
+   标志。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Mesh.SetSubMesh.html">
+    Mesh.SetSubMesh
+   </a>
+   、
+   <a href="Mesh.GetSubMesh.html">
+    Mesh.GetSubMesh
+   </a>
+   、
+   <a href="Mesh.SetIndexBufferParams.html">
+    Mesh.SetIndexBufferParams
+   </a>
+   、
+   <a href="Mesh.SetIndexBufferData.html">
+    Mesh.SetIndexBufferData
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-baseVertex.html">
+      baseVertex
+     </a>
+    </td>
+    <td class="desc">
+     为计算最终的顶点索引而向索引缓冲区中的每个值添加的偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-bounds.html">
+      bounds
+     </a>
+    </td>
+    <td class="desc">
+     顶点在局部空间中的包围盒。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-firstVertex.html">
+      firstVertex
+     </a>
+    </td>
+    <td class="desc">
+     用于子网格的索引缓冲区中的第一个顶点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-indexCount.html">
+      indexCount
+     </a>
+    </td>
+    <td class="desc">
+     子网格面数据的索引数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-indexStart.html">
+      indexStart
+     </a>
+    </td>
+    <td class="desc">
+     面索引数据所在的整个网格索引缓冲区内的起点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-topology.html">
+      topology
+     </a>
+    </td>
+    <td class="desc">
+     子网格的面拓扑。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-vertexCount.html">
+      vertexCount
+     </a>
+    </td>
+    <td class="desc">
+     子网格的索引缓冲区所使用的顶点数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SubMeshDescriptor-ctor.html">
+      SubMeshDescriptor
+     </a>
+    </td>
+    <td class="desc">
+     创建子网格描述符。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

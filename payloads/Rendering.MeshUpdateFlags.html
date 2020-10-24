@@ -1,0 +1,138 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MeshUpdateFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   网格数据更新标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   某些高级
+   <a href="Mesh.html">
+    Mesh
+   </a>
+   函数（如
+   <a href="Mesh.SetVertexBufferData.html">
+    SetVertexBufferData
+   </a>
+   、
+   <a href="Mesh.SetIndexBufferData.html">
+    SetIndexBufferData
+   </a>
+   、
+   <a href="Mesh.SetSubMesh.html">
+    SetSubMesh
+   </a>
+   ）采用
+一个可选
+   <code class="varname">
+    flags
+   </code>
+   参数，用于控制这些函数的行为。具体而言，通过这些标志可以控制在网格数据更新时所发生的情况。
+   <br/>
+   <br/>
+   默认情况下，在使用这些方法时，Unity 会对提供的数据执行检查和验证（例如，检查索引数组是否具有越界值）。
+   <br/>
+   <br/>
+   通过这些标志可以选择省略部分或所有这些检查，以便提高性能。如果选择省略这些检查，则必须确保提供的数据有效。
+   <br/>
+   <br/>
+   可以使用逻辑 OR 运算符合并各个标志。例如：
+   <code class="mono">
+    MeshUpdateFlags.DontNotifyMeshUsers | MeshUpdateFlags.DontValidateIndices
+   </code>
+   。
+   <br/>
+   <br/>
+   有关从脚本向网格分配数据的较简单方法与较高级方法之间差异的信息，请参阅
+   <a href="Mesh.html">
+    Mesh
+   </a>
+   页面上的说明。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.MeshUpdateFlags.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     指示在更新网格数据时，Unity 应执行默认检查和验证。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.MeshUpdateFlags.DontValidateIndices.html">
+      DontValidateIndices
+     </a>
+    </td>
+    <td class="desc">
+     指示在使用 Mesh.SetIndexBufferData 修改网格数据时，Unity 不应检查索引值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.MeshUpdateFlags.DontResetBoneBounds.html">
+      DontResetBoneBounds
+     </a>
+    </td>
+    <td class="desc">
+     指示在使用 Mesh.SetVertexBufferData 或 Mesh.SetIndexBufferData 修改网格数据时，Unity 不应重置蒙皮网格骨骼边界。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.MeshUpdateFlags.DontNotifyMeshUsers.html">
+      DontNotifyMeshUsers
+     </a>
+    </td>
+    <td class="desc">
+     指示在修改网格数据时，Unity 不应向 Renderer 组件通知可能的 Mesh 边界更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.MeshUpdateFlags.DontRecalculateBounds.html">
+      DontRecalculateBounds
+     </a>
+    </td>
+    <td class="desc">
+     指示在使用 Mesh.SetSubMesh 设置网格数据时，Unity 不应重新计算边界。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

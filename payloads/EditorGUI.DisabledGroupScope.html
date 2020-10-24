@@ -1,0 +1,97 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DisabledGroupScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   创建一组可禁用的控件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果 Disabled 设置为 true，则将禁用组内的控件。
+如果为 false，则不会更改 Enabled/Disabled 状态。
+   <br/>
+   <br/>
+   该组不能用于启用最初以其他方式禁用的控件。
+这些组可以嵌套，如果子组本身已禁用或父组已禁用，
+则子组中的控件将被禁用。
+   <br/>
+   <br/>
+   注意：为了提高内存效率，应优先使用
+   <a href="EditorGUI.DisabledScope.html">
+    DisabledScope
+   </a>
+   结构，而非 EditorGUI.DisabledGroupScope 类。有关更多信息，请参阅
+   <a href="EditorGUI.DisabledScope.html">
+    DisabledScope
+   </a>
+   文档。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    bool canJump = false;
+    float jumpHeight = 0f;<br/><br/>    void Example()
+    {
+        canJump = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("Can Jump", canJump);<br/><br/>        // Disable the jumping height control if canJump is false:
+        <a href="EditorGUI.BeginDisabledGroup.html">EditorGUI.BeginDisabledGroup</a>(canJump == false);
+        jumpHeight = <a href="EditorGUILayout.FloatField.html">EditorGUILayout.FloatField</a>("Jump Height", jumpHeight);
+        <a href="EditorGUI.EndDisabledGroup.html">EditorGUI.EndDisabledGroup</a>();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   该组不能用于启用最初以其他方式禁用的控件。
+这些组可以嵌套，如果子组本身已禁用或父组已禁用，
+则子组中的控件将被禁用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.DisabledGroupScope-ctor.html">
+      EditorGUI.DisabledGroupScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 DisabledGroupScope 并开始相应的组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

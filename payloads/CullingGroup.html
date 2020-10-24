@@ -1,0 +1,203 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CullingGroup
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述应保持可见性和距离的一组包围球体。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     暂停剔除组执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup-onStateChanged.html">
+      onStateChanged
+     </a>
+    </td>
+    <td class="desc">
+     设置在球体的可见性和/或距离状态已改变时将调用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup-targetCamera.html">
+      targetCamera
+     </a>
+    </td>
+    <td class="desc">
+     将 CullingGroup 锁定到指定摄像机。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup-ctor.html">
+      CullingGroup
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 CullingGroup。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     立即清理 CullingGroup 使用的所有内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.EraseSwapBack.html">
+      EraseSwapBack
+     </a>
+    </td>
+    <td class="desc">
+     通过将最终球体移到给定包围球体上，擦除此包围球体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.GetDistance.html">
+      GetDistance
+     </a>
+    </td>
+    <td class="desc">
+     获取给定球体的当前距离带索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.IsVisible.html">
+      IsVisible
+     </a>
+    </td>
+    <td class="desc">
+     如果当前可从起作用的任何摄像机看到索引处的包围球体，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.QueryIndices.html">
+      QueryIndices
+     </a>
+    </td>
+    <td class="desc">
+     检索具有特定可见性和/或距离状态的球体的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.SetBoundingDistances.html">
+      SetBoundingDistances
+     </a>
+    </td>
+    <td class="desc">
+     设置该组应计算的“距离带”的包围距离，以及有关应如何处理属于每个距离带的球体的选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.SetBoundingSphereCount.html">
+      SetBoundingSphereCount
+     </a>
+    </td>
+    <td class="desc">
+     设置包围球体数组中实际正在使用的包围球体数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.SetBoundingSpheres.html">
+      SetBoundingSpheres
+     </a>
+    </td>
+    <td class="desc">
+     设置 CullingGroup 应为其计算剔除的包围球体定义的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.SetDistanceReferencePoint.html">
+      SetDistanceReferencePoint
+     </a>
+    </td>
+    <td class="desc">
+     设置在测量距离带时作为起点的参考点。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CullingGroup.StateChanged.html">
+      StateChanged
+     </a>
+    </td>
+    <td class="desc">
+     该委托用于在球体的距离或可见性状态已改变时接收回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

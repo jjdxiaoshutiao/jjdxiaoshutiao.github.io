@@ -1,0 +1,232 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ComputeBuffer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   GPU 数据缓冲区，主要与计算着色器结合使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="ComputeShader.html">
+    ComputeShader
+   </a>
+   程序通常需要向内存缓冲区读写任意数据。
+ComputeBuffer 类的作用正在于此 - 您可以从脚本代码创建和填充计算缓冲区，
+并在计算着色器或常规着色器中使用计算缓冲区。
+   <br/>
+   <br/>
+   在计算着色器中始终支持计算缓冲区。可使用
+   <a href="SystemInfo-supportsComputeShaders.html">
+    SystemInfo.supportsComputeShaders
+   </a>
+   运行时查询计算着色器支持情况。请参阅
+   <a href="../Manual/class-ComputeShader.html">
+    计算着色器
+   </a>
+   手册页，了解有关支持计算着色器的平台的更多信息。在常规图形着色器中，至少需要
+   <a href="../Manual/SL-ShaderCompileTargets.html">
+    shader model 4.5
+   </a>
+   才能支持计算缓冲区。
+   <br/>
+   <br/>
+   在着色器方面，具有默认
+   <a href="ComputeBufferType.html">
+    ComputeBufferType
+   </a>
+   的 ComputeBuffers 映射到 HLSL 中的
+   <code class="mono">
+    StructuredBuffer&lt;T&gt;
+   </code>
+   和
+   <code class="mono">
+    RWStructuredBuffer&lt;T&gt;
+   </code>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="ComputeShader.html">
+    ComputeShader
+   </a>
+   类、
+   <a href="Shader.SetGlobalBuffer.html">
+    Shader.SetGlobalBuffer
+   </a>
+   、
+   <a href="Material.SetBuffer.html">
+    Material.SetBuffer
+   </a>
+   、
+   <a href="../Manual/class-ComputeShader.html">
+    计算着色器
+   </a>
+   概述。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer-count.html">
+      count
+     </a>
+    </td>
+    <td class="desc">
+     缓冲区中元素的数量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer-name.html">
+      name
+     </a>
+    </td>
+    <td class="desc">
+     ComputeBuffer 的调试标签。凡受支持的位置，此名称都会显示在分析和帧调试器工具中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer-stride.html">
+      stride
+     </a>
+    </td>
+    <td class="desc">
+     缓冲区中一个元素的大小（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer-ctor.html">
+      ComputeBuffer
+     </a>
+    </td>
+    <td class="desc">
+     创建计算缓冲区。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.GetData.html">
+      GetData
+     </a>
+    </td>
+    <td class="desc">
+     将该缓冲区中的数据值读取到数组中。该数组只能使用 blittable 类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.GetNativeBufferPtr.html">
+      GetNativeBufferPtr
+     </a>
+    </td>
+    <td class="desc">
+     获取指向该缓冲区的原生（底层图形 API）指针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果该计算缓冲区有效，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.Release.html">
+      Release
+     </a>
+    </td>
+    <td class="desc">
+     释放计算缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.SetCounterValue.html">
+      SetCounterValue
+     </a>
+    </td>
+    <td class="desc">
+     设置附加/使用缓冲区的计数器值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.SetData.html">
+      SetData
+     </a>
+    </td>
+    <td class="desc">
+     使用数组中的值设置该缓冲区。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ComputeBuffer.CopyCount.html">
+      CopyCount
+     </a>
+    </td>
+    <td class="desc">
+     将附加/使用缓冲区的计数器值复制到另一个缓冲区。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

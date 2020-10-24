@@ -1,0 +1,203 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationCurve
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   保存可随时间评估的 Keyframes 的集合。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve-keys.html">
+      keys
+     </a>
+    </td>
+    <td class="desc">
+     动画曲线中定义的所有关键点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve-length.html">
+      length
+     </a>
+    </td>
+    <td class="desc">
+     曲线中的关键点数量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve-postWrapMode.html">
+      postWrapMode
+     </a>
+    </td>
+    <td class="desc">
+     最后一个关键帧之后的动画行为。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve-preWrapMode.html">
+      preWrapMode
+     </a>
+    </td>
+    <td class="desc">
+     第一个关键帧之前的动画行为。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.Index_operator.html">
+      this[int]
+     </a>
+    </td>
+    <td class="desc">
+     检索索引处的关键点。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve-ctor.html">
+      AnimationCurve
+     </a>
+    </td>
+    <td class="desc">
+     从任意数量的关键帧创建动画曲线。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.AddKey.html">
+      AddKey
+     </a>
+    </td>
+    <td class="desc">
+     将一个新关键点添加到曲线中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.Evaluate.html">
+      Evaluate
+     </a>
+    </td>
+    <td class="desc">
+     评估在 time 的曲线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.MoveKey.html">
+      MoveKey
+     </a>
+    </td>
+    <td class="desc">
+     移除 index 处的关键帧，然后插入关键点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.RemoveKey.html">
+      RemoveKey
+     </a>
+    </td>
+    <td class="desc">
+     移除一个关键点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.SmoothTangents.html">
+      SmoothTangents
+     </a>
+    </td>
+    <td class="desc">
+     在 index 处平滑关键帧的进和出切线。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.Constant.html">
+      Constant
+     </a>
+    </td>
+    <td class="desc">
+     创建一条在 timeStart 开始、在 timeEnd 结束且值为 value 的常量“曲线”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.EaseInOut.html">
+      EaseInOut
+     </a>
+    </td>
+    <td class="desc">
+     创建一条以 timeStart, valueStart 开始、在 timeEnd, valueEnd 结束的缓入缓出曲线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCurve.Linear.html">
+      Linear
+     </a>
+    </td>
+    <td class="desc">
+     以 timeStart, valueStart 开始、在 timeEnd, valueEnd 结束的直线。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

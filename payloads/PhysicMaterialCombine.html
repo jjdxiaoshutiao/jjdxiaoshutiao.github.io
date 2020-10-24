@@ -1,0 +1,104 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PhysicMaterialCombine
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述如何组合碰撞对象的物理材质。
+   <br/>
+   <br/>
+   摩擦力以及剩余反弹冲量会对称地应用于接触的两个碰撞体，因此每对重叠碰撞体必须具有单一的一组摩擦力和弹性设置。但是，可以将任意物理材质设置到任何碰撞体。出于该特定原因，可通过一种机制将对应于接触的每个碰撞体的两组不同属性组合成一组属性，以在解算器中使用。
+   <br/>
+   <br/>
+   通过将 Average、Maximum、Minimum 或 Multiply 指定为物理材质组合模式，可直接设置函数，该函数用于将对应于两个重叠碰撞体的设置组合成一组设置，可用于应用材质效果。
+   <br/>
+   <br/>
+   请注意，存在一种特殊情况，即两个重叠碰撞体的物理材质设置了不同的组合模式。在这种特殊情况下，将使用具有最高优先级的函数。优先级顺序如下：Average &lt; Minimum &lt; Multiply &lt; Maximum。例如，如果一种材质设置了 Average，但另一种材质设置了 Maximum，那么要使用的组合函数是 Maximum，因为它具有更高的优先级。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="PhysicMaterial-frictionCombine.html">
+    PhysicMaterial.frictionCombine
+   </a>
+   、
+   <a href="PhysicMaterial-bounceCombine.html">
+    PhysicMaterial.bounceCombine
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PhysicMaterialCombine.Average.html">
+      Average
+     </a>
+    </td>
+    <td class="desc">
+     对两个碰撞材质的摩擦力/反弹计算平均值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicMaterialCombine.Minimum.html">
+      Minimum
+     </a>
+    </td>
+    <td class="desc">
+     使用两个碰撞材质的较小摩擦力/反弹。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicMaterialCombine.Multiply.html">
+      Multiply
+     </a>
+    </td>
+    <td class="desc">
+     将两个碰撞材质的摩擦力/反弹相乘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicMaterialCombine.Maximum.html">
+      Maximum
+     </a>
+    </td>
+    <td class="desc">
+     使用两个碰撞材质的较大摩擦力/反弹。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,209 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Logger
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="ILogger.html">
+    ILogger
+   </a>
+   ,
+   <a class="cl" href="ILogHandler.html">
+    ILogHandler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   初始化 Logger 的新实例。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   创建新实例或使用默认
+   <a href="Debug-unityLogger.html">
+    Debug.unityLogger
+   </a>
+   。
+另请参阅：
+   <a href="ILogger.html">
+    ILogger
+   </a>
+   、
+   <a href="ILogHandler.html">
+    ILogHandler
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;
+using System.IO;
+using System;<br/><br/>public class MyLogHandler : <a href="ILogHandler.html">ILogHandler</a>
+{
+    public void LogFormat(<a href="LogType.html">LogType</a> logType, UnityEngine.Object context, string format, params object[] args)
+    {
+        Debug.unityLogger.logHandler.LogFormat(logType, context, format, args);
+    }<br/><br/>    public void LogException(Exception exception, UnityEngine.Object context)
+    {
+        Debug.unityLogger.LogException(exception, context);
+    }
+}<br/><br/>public class MyGameClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private static string kTAG = "MyGameTag";
+    private <a href="Logger.html">Logger</a> myLogger;<br/><br/>    void Start()
+    {
+        myLogger = new <a href="Logger.html">Logger</a>(new MyLogHandler());<br/><br/>        myLogger.Log(kTAG, "MyGameClass Start.");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Logger-filterLogType.html">
+      filterLogType
+     </a>
+    </td>
+    <td class="desc">
+     有选择地启用调试日志消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger-logEnabled.html">
+      logEnabled
+     </a>
+    </td>
+    <td class="desc">
+     运行时切换调试记录 [ON/OFF]。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger-logHandler.html">
+      logHandler
+     </a>
+    </td>
+    <td class="desc">
+     设置 Logger.ILogHandler。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Logger-ctor.html">
+      Logger
+     </a>
+    </td>
+    <td class="desc">
+     创建自定义 Logger。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Logger.IsLogTypeAllowed.html">
+      IsLogTypeAllowed
+     </a>
+    </td>
+    <td class="desc">
+     根据 LogType 检查是否启用了日志记录。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger.Log.html">
+      Log
+     </a>
+    </td>
+    <td class="desc">
+     使用默认记录器将 message 记录到 Unity 控制台。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger.LogError.html">
+      LogError
+     </a>
+    </td>
+    <td class="desc">
+     Logger.Log 的变体，用于记录错误消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger.LogException.html">
+      LogException
+     </a>
+    </td>
+    <td class="desc">
+     Logger.Log 的变体，用于记录异常消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger.LogFormat.html">
+      LogFormat
+     </a>
+    </td>
+    <td class="desc">
+     记录一条格式化的消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Logger.LogWarning.html">
+      LogWarning
+     </a>
+    </td>
+    <td class="desc">
+     记录警告消息的 Logger.Log 的变体。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

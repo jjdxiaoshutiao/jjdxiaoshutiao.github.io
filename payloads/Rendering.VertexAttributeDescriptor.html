@@ -1,0 +1,245 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   VertexAttributeDescriptor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   有关网格顶点的单个
+   <a href="Rendering.VertexAttribute.html">
+    VertexAttribute
+   </a>
+   的信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="Mesh.html">
+    Mesh
+   </a>
+   顶点数据包含不同的顶点属性。例如，顶点可以包括位置、法线、TexCoord0 和颜色。
+网格通常使用已知格式的数据布局，例如，位置通常是 3 分量浮点矢量 (
+   <a href="Vector3.html">
+    Vector3
+   </a>
+   )，
+不过也可以为网格指定非标准数据格式及其布局。
+   <br/>
+   <br/>
+   可以使用
+   <code class="varname">
+    VertexAttributeDescriptor
+   </code>
+   在
+   <a href="Mesh.SetVertexBufferParams.html">
+    Mesh.SetVertexBufferParams
+   </a>
+   中指定自定义网格数据布局。
+   <br/>
+   <br/>
+   顶点数据使用单独的“流”进行布局（每个流进入底层图形 API 中单独的顶点缓冲区）。
+虽然 Unity 支持多达 4 个顶点流，但大多数网格仅使用一个。当不需要处理某些顶点属性时，
+单独的流最为有用，例如，蒙皮网格通常使用两个顶点流（一个流包含所有蒙皮数据：
+位置、法线、切线；另一个流包含所有非蒙皮数据：颜色和纹理坐标）。
+   <br/>
+   <br/>
+   在每个流中，顶点属性按一个接一个的方式布局，顺序如下：
+   <a href="Rendering.VertexAttribute.Position.html">
+    VertexAttribute.Position
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.Normal.html">
+    VertexAttribute.Normal
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.Tangent.html">
+    VertexAttribute.Tangent
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.Color.html">
+    VertexAttribute.Color
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.TexCoord0.html">
+    VertexAttribute.TexCoord0
+   </a>
+   、
+...、
+   <a href="Rendering.VertexAttribute.TexCoord7.html">
+    VertexAttribute.TexCoord7
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.BlendWeight.html">
+    VertexAttribute.BlendWeight
+   </a>
+   、
+   <a href="Rendering.VertexAttribute.BlendIndices.html">
+    VertexAttribute.BlendIndices
+   </a>
+   。
+   <br/>
+   <br/>
+   并非所有
+   <a href="Rendering.VertexAttributeDescriptor-format.html">
+    format
+   </a>
+   和
+   <a href="Rendering.VertexAttributeDescriptor-dimension.html">
+    dimension
+   </a>
+   组合都有效。具体来说，顶点属性的数据大小
+必须是 4 字节的倍数。例如，尺寸为
+   <code class="mono">
+    3
+   </code>
+   的
+   <a href="Rendering.VertexAttributeFormat.Float16.html">
+    VertexAttributeFormat.Float16
+   </a>
+   格式
+是无效的。另请参阅：
+   <a href="SystemInfo.SupportsVertexAttributeFormat.html">
+    SystemInfo.SupportsVertexAttributeFormat
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">var mesh = new <a href="Mesh.html">Mesh</a>();
+// 使用以下内容指定顶点布局：
+// - 浮点位置，
+// - 具有两个分量的半精度 (FP16) 法线，
+// - 低精度 (UNorm8) 切线
+var layout = new[]
+{
+    new <a href="Rendering.VertexAttributeDescriptor.html">VertexAttributeDescriptor</a>(<a href="Rendering.VertexAttribute.Position.html">VertexAttribute.Position</a>, <a href="Rendering.VertexAttributeFormat.Float32.html">VertexAttributeFormat.Float32</a>, 3),
+    new <a href="Rendering.VertexAttributeDescriptor.html">VertexAttributeDescriptor</a>(<a href="Rendering.VertexAttribute.Normal.html">VertexAttribute.Normal</a>, <a href="Rendering.VertexAttributeFormat.Float16.html">VertexAttributeFormat.Float16</a>, 2),
+    new <a href="Rendering.VertexAttributeDescriptor.html">VertexAttributeDescriptor</a>(<a href="Rendering.VertexAttribute.Tangent.html">VertexAttribute.Tangent</a>, <a href="Rendering.VertexAttributeFormat.UNorm8.html">VertexAttributeFormat.UNorm8</a>, 4),
+};
+var vertexCount = 10;
+mesh.SetVertexBufferParams(vertexCount, layout);</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   匹配此顶点布局的 C# 结构（用于
+   <a href="Mesh.SetVertexBufferData.html">
+    Mesh.SetVertexBufferData
+   </a>
+   ）可能如下所示：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
+struct ExampleVertex
+{
+    public <a href="Vector3.html">Vector3</a> pos;
+    public ushort normalX, normalY;
+    public <a href="Color32.html">Color32</a> tangent;
+}</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Mesh.SetVertexBufferParams.html">
+    Mesh.SetVertexBufferParams
+   </a>
+   、
+   <a href="Mesh.SetVertexBufferData.html">
+    Mesh.SetVertexBufferData
+   </a>
+   、
+   <a href="Mesh.GetVertexAttributes.html">
+    Mesh.GetVertexAttributes
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.VertexAttributeDescriptor-attribute.html">
+      attribute
+     </a>
+    </td>
+    <td class="desc">
+     顶点属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.VertexAttributeDescriptor-dimension.html">
+      dimension
+     </a>
+    </td>
+    <td class="desc">
+     顶点属性的维度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.VertexAttributeDescriptor-format.html">
+      format
+     </a>
+    </td>
+    <td class="desc">
+     顶点属性的格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.VertexAttributeDescriptor-stream.html">
+      stream
+     </a>
+    </td>
+    <td class="desc">
+     属性应位于此顶点缓冲区流中。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.VertexAttributeDescriptor-ctor.html">
+      VertexAttributeDescriptor
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 VertexAttributeDescriptor 结构。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

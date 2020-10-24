@@ -1,0 +1,190 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NavMeshBuildSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   NavMeshBuildSettings 结构可用于指定一系列设置，这些设置描述了特定 agent 类型的尺寸和限制。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果游戏中的角色在高度、宽度或攀爬能力方面差别很大，您可能需要定义多个 NavMeshBuildSettings。
+   <br/>
+   <br/>
+   您还可以使用此结构设置体素和区块大小，从而控制构建过程中的精度和粒度。某些值是耦合关系，即有些值会基于其他值而受到限制。例如，如果
+   <a href="AI.NavMeshBuildSettings-agentClimb.html">
+    agentClimb
+   </a>
+   大于
+   <a href="AI.NavMeshBuildSettings-agentHeight.html">
+    agentHeight
+   </a>
+   ，则无效。
+若要诊断这些规则的违反情况，可以利用特殊方法
+   <a href="AI.NavMeshBuildSettings.ValidationReport.html">
+    ValidationReport
+   </a>
+   进行评估。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-agentClimb.html">
+      agentClimb
+     </a>
+    </td>
+    <td class="desc">
+     Agent 的最大垂直步长。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-agentHeight.html">
+      agentHeight
+     </a>
+    </td>
+    <td class="desc">
+     用于烘焙的 agent 高度（以世界单位表示）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-agentRadius.html">
+      agentRadius
+     </a>
+    </td>
+    <td class="desc">
+     用于烘焙的 agent 半径（以世界单位表示）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-agentSlope.html">
+      agentSlope
+     </a>
+    </td>
+    <td class="desc">
+     可行走的最大倾斜角（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-agentTypeID.html">
+      agentTypeID
+     </a>
+    </td>
+    <td class="desc">
+     将为其烘焙导航网格的 agent 类型 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-debug.html">
+      debug
+     </a>
+    </td>
+    <td class="desc">
+     构建期间用于收集调试数据的选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-minRegionArea.html">
+      minRegionArea
+     </a>
+    </td>
+    <td class="desc">
+     各个导航网格区域的近似最小面积。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-overrideTileSize.html">
+      overrideTileSize
+     </a>
+    </td>
+    <td class="desc">
+     启用覆盖默认区块大小的功能。另请参阅：tileSize。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-overrideVoxelSize.html">
+      overrideVoxelSize
+     </a>
+    </td>
+    <td class="desc">
+     启用覆盖默认体素大小的功能。另请参阅：voxelSize。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-tileSize.html">
+      tileSize
+     </a>
+    </td>
+    <td class="desc">
+     设置区块大小（以体素为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings-voxelSize.html">
+      voxelSize
+     </a>
+    </td>
+    <td class="desc">
+     设置体素大小（以世界长度为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSettings.ValidationReport.html">
+      ValidationReport
+     </a>
+    </td>
+    <td class="desc">
+     验证 NavMeshBuildSettings 的属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,726 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TextureFormat
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   通过脚本创建纹理时使用的格式。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        // Create a new alpha-only texture and assign it
+        // to the renderer's material
+        <a href="Texture2D.html">Texture2D</a> texture = new <a href="Texture2D.html">Texture2D</a>(128, 128, <a href="TextureFormat.Alpha8.html">TextureFormat.Alpha8</a>, false);
+        GetComponent&lt;<a href="Renderer.html">Renderer</a>&gt;().material.mainTexture = texture;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   注意，并非所有显卡都支持所有纹理格式。请使用
+   <a href="SystemInfo.SupportsTextureFormat.html">
+    SystemInfo.SupportsTextureFormat
+   </a>
+   进行检查。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Texture2D.html">
+    Texture2D
+   </a>
+   、
+   <a href="../Manual/Textures.html">
+    texture assets
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.Alpha8.html">
+      Alpha8
+     </a>
+    </td>
+    <td class="desc">
+     纯 Alpha 纹理格式，8 位整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ARGB4444.html">
+      ARGB4444
+     </a>
+    </td>
+    <td class="desc">
+     16 位/像素纹理格式。纹理存储具有 Alpha 通道的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGB24.html">
+      RGB24
+     </a>
+    </td>
+    <td class="desc">
+     颜色纹理格式，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGBA32.html">
+      RGBA32
+     </a>
+    </td>
+    <td class="desc">
+     具有 Alpha 纹理格式的颜色，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ARGB32.html">
+      ARGB32
+     </a>
+    </td>
+    <td class="desc">
+     具有 Alpha 纹理格式的颜色，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGB565.html">
+      RGB565
+     </a>
+    </td>
+    <td class="desc">
+     16 位颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.R16.html">
+      R16
+     </a>
+    </td>
+    <td class="desc">
+     单通道 (R) 纹理格式，16 位整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.DXT1.html">
+      DXT1
+     </a>
+    </td>
+    <td class="desc">
+     压缩颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.DXT5.html">
+      DXT5
+     </a>
+    </td>
+    <td class="desc">
+     具有 Alpha 通道纹理格式的压缩颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGBA4444.html">
+      RGBA4444
+     </a>
+    </td>
+    <td class="desc">
+     颜色和 Alpha 纹理格式，每通道 4 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.BGRA32.html">
+      BGRA32
+     </a>
+    </td>
+    <td class="desc">
+     具有 Alpha 纹理格式的颜色，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RHalf.html">
+      RHalf
+     </a>
+    </td>
+    <td class="desc">
+     标量 (R) 纹理格式，16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGHalf.html">
+      RGHalf
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 纹理格式，每通道 16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGBAHalf.html">
+      RGBAHalf
+     </a>
+    </td>
+    <td class="desc">
+     RGB 颜色和 Alpha 纹理格式，每通道 16 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RFloat.html">
+      RFloat
+     </a>
+    </td>
+    <td class="desc">
+     标量 (R) 纹理格式，32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGFloat.html">
+      RGFloat
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 纹理格式，每通道 32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGBAFloat.html">
+      RGBAFloat
+     </a>
+    </td>
+    <td class="desc">
+     RGB 颜色和 Alpha 纹理格式，每通道 32 位浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.YUY2.html">
+      YUY2
+     </a>
+    </td>
+    <td class="desc">
+     使用 YUV 颜色空间的格式，此格式通常用于视频编码或播放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RGB9e5Float.html">
+      RGB9e5Float
+     </a>
+    </td>
+    <td class="desc">
+     RGB HDR 格式，具有每通道 9 位尾数和 5 位共享指数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.BC4.html">
+      BC4
+     </a>
+    </td>
+    <td class="desc">
+     压缩单通道 (R) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.BC5.html">
+      BC5
+     </a>
+    </td>
+    <td class="desc">
+     压缩双通道 (RG) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.BC6H.html">
+      BC6H
+     </a>
+    </td>
+    <td class="desc">
+     HDR 压缩颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.BC7.html">
+      BC7
+     </a>
+    </td>
+    <td class="desc">
+     高品质压缩颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.DXT1Crunched.html">
+      DXT1Crunched
+     </a>
+    </td>
+    <td class="desc">
+     使用 Crunch 压缩的压缩颜色纹理格式，适用于较小的存储大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.DXT5Crunched.html">
+      DXT5Crunched
+     </a>
+    </td>
+    <td class="desc">
+     使用 Crunch 压缩的具有 Alpha 通道纹理格式的压缩颜色，适用于较小的存储大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.PVRTC_RGB2.html">
+      PVRTC_RGB2
+     </a>
+    </td>
+    <td class="desc">
+     PowerVR (iOS) 2 位/像素压缩颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.PVRTC_RGBA2.html">
+      PVRTC_RGBA2
+     </a>
+    </td>
+    <td class="desc">
+     PowerVR (iOS) 2 位/像素压缩，具有 Alpha 通道纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.PVRTC_RGB4.html">
+      PVRTC_RGB4
+     </a>
+    </td>
+    <td class="desc">
+     PowerVR (iOS) 4 位/像素压缩颜色纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.PVRTC_RGBA4.html">
+      PVRTC_RGBA4
+     </a>
+    </td>
+    <td class="desc">
+     PowerVR (iOS) 4 位/像素压缩，具有 Alpha 通道纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC_RGB4.html">
+      ETC_RGB4
+     </a>
+    </td>
+    <td class="desc">
+     ETC (GLES2.0) 4 位/像素压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.EAC_R.html">
+      EAC_R
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 / EAC (GL ES 3.0) 4 位/像素压缩无符号单通道纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.EAC_R_SIGNED.html">
+      EAC_R_SIGNED
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 / EAC (GL ES 3.0) 4 位/像素压缩有符号单通道纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.EAC_RG.html">
+      EAC_RG
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 / EAC (GL ES 3.0) 8 位/像素压缩无符号双通道 (RG) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.EAC_RG_SIGNED.html">
+      EAC_RG_SIGNED
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 / EAC (GL ES 3.0) 8 位/像素压缩有符号双通道 (RG) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC2_RGB.html">
+      ETC2_RGB
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 (GL ES 3.0) 4 位/像素压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC2_RGBA1.html">
+      ETC2_RGBA1
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 (GL ES 3.0) 4 位/像素 RGB+1 位 Alpha 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC2_RGBA8.html">
+      ETC2_RGBA8
+     </a>
+    </td>
+    <td class="desc">
+     ETC2 (GL ES 3.0) 8 位/像素压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_4x4.html">
+      ASTC_4x4
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（4x4 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_5x5.html">
+      ASTC_5x5
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（5x5 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_6x6.html">
+      ASTC_6x6
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（6x6 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_8x8.html">
+      ASTC_8x8
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（8x8 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_10x10.html">
+      ASTC_10x10
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（10x10 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_12x12.html">
+      ASTC_12x12
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（12x12 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.RG16.html">
+      RG16
+     </a>
+    </td>
+    <td class="desc">
+     双色 (RG) 纹理格式，每通道 8 位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.R8.html">
+      R8
+     </a>
+    </td>
+    <td class="desc">
+     单通道 (R) 纹理格式，8 位整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC_RGB4Crunched.html">
+      ETC_RGB4Crunched
+     </a>
+    </td>
+    <td class="desc">
+     使用 Crunch 压缩的压缩颜色纹理格式，适用于较小的存储大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ETC2_RGBA8Crunched.html">
+      ETC2_RGBA8Crunched
+     </a>
+    </td>
+    <td class="desc">
+     使用 Crunch 压缩的具有 Alpha 通道纹理格式的压缩颜色，适用于较小的存储大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_4x4.html">
+      ASTC_HDR_4x4
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（4x4 像素块，128 位）压缩 RGB(A) HDR 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_5x5.html">
+      ASTC_HDR_5x5
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（5x5 像素块，128 位）压缩 RGB(A) HDR 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_6x6.html">
+      ASTC_HDR_6x6
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（6x6 像素块，128 位）压缩 RGB(A) HDR 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_8x8.html">
+      ASTC_HDR_8x8
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（8x8 像素块，128 位）压缩 RGB(A) 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_10x10.html">
+      ASTC_HDR_10x10
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（10x10 像素块，128 位）压缩 RGB(A) HDR 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_HDR_12x12.html">
+      ASTC_HDR_12x12
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（12x12 像素块，128 位）压缩 RGB(A) HDR 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_4x4.html">
+      ASTC_RGB_4x4
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（4x4 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_5x5.html">
+      ASTC_RGB_5x5
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（5x5 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_6x6.html">
+      ASTC_RGB_6x6
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（6x6 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_8x8.html">
+      ASTC_RGB_8x8
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（8x8 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_10x10.html">
+      ASTC_RGB_10x10
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（10x10 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGB_12x12.html">
+      ASTC_RGB_12x12
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（12x12 像素块，128 位）压缩 RGB 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_4x4.html">
+      ASTC_RGBA_4x4
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（4x4 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_5x5.html">
+      ASTC_RGBA_5x5
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（5x5 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_6x6.html">
+      ASTC_RGBA_6x6
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（6x6 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_8x8.html">
+      ASTC_RGBA_8x8
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（8x8 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_10x10.html">
+      ASTC_RGBA_10x10
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（10x10 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextureFormat.ASTC_RGBA_12x12.html">
+      ASTC_RGBA_12x12
+     </a>
+    </td>
+    <td class="desc">
+     ASTC（12x12 像素块，128 位）压缩 RGBA 纹理格式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

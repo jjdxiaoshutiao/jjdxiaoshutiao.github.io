@@ -1,0 +1,162 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimatorJobExtensions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Animations
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于为
+   <a href="Animator.html">
+    Animator
+   </a>
+   和动画 C# 作业提供扩展方法的静态类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此类中的扩展方法可以直接在
+   <a href="Animator.html">
+    Animator
+   </a>
+   上使用。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.AddJobDependency.html">
+      AddJobDependency
+     </a>
+    </td>
+    <td class="desc">
+     在动画器作业和提供的作业句柄代表的作业之间创建依赖关系。要添加多个作业依赖关系，请为每个需要在动画器作业之前运行的作业调用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.BindCustomStreamProperty.html">
+      BindCustomStreamProperty
+     </a>
+    </td>
+    <td class="desc">
+     在 AnimationStream 中创建自定义属性，以将额外数据传递给图形中的下游动画作业。在 AnimationStream 中创建的自定义属性不存在于场景中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.BindSceneProperty.html">
+      BindSceneProperty
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 PropertySceneHandle，用于表示场景中 Transform 的 Component 属性上的新绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.BindSceneTransform.html">
+      BindSceneTransform
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 TransformSceneHandle，用于表示场景中 Animator 与 Transform 之间的新绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.BindStreamProperty.html">
+      BindStreamProperty
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 PropertyStreamHandle，用于表示已绑定到 Animator 的 Transform 的 Component 属性上的新绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.BindStreamTransform.html">
+      BindStreamTransform
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 TransformStreamHandle，用于表示已绑定到 Animator 的 Animator 与 Transform 之间的新绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.CloseAnimationStream.html">
+      CloseAnimationStream
+     </a>
+    </td>
+    <td class="desc">
+     关闭已使用 OpenAnimationStream 打开的流。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.OpenAnimationStream.html">
+      OpenAnimationStream
+     </a>
+    </td>
+    <td class="desc">
+     在 Animator 上打开一个新流。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.ResolveAllSceneHandles.html">
+      ResolveAllSceneHandles
+     </a>
+    </td>
+    <td class="desc">
+     在运行作业时，新创建的句柄总是在下次访问时延迟解析。为了在评估作业时避免出现 CPU 峰值，您可以手动解析主线程中的所有句柄。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorJobExtensions.ResolveAllStreamHandles.html">
+      ResolveAllStreamHandles
+     </a>
+    </td>
+    <td class="desc">
+     在运行作业时，新创建的句柄总是在下次访问时延迟解析。为了在评估作业时避免出现 CPU 峰值，您可以手动解析主线程中的所有句柄。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

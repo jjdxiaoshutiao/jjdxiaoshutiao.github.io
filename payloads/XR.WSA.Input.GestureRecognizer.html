@@ -1,0 +1,545 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GestureRecognizer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR.WSA.Input
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   带有用于识别用户手势的 API 的 Manager 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   GestureRecognizer 仅执行您请求的一组手势之间的最小消歧。例如，如果您仅请求点击，则用户可以在按住手指并持续任意时长，而且当用户释放手指时仍会发生点击。有关可用手势类型的更多详细信息，请参阅
+   <a href="XR.WSA.Input.GestureSettings.html">
+    GestureSettings
+   </a>
+   。
+   <br/>
+   <br/>
+   只有在调用 StartCapturingGestures 后，GestureRecognizer 才会接收事件。可以再次调用 StopCapturingGestures 来停止事件。这样便可按需激活和停用 GestureRecognizer，例如当用户注视移向并远离对象时。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer-ctor.html">
+      GestureRecognizer
+     </a>
+    </td>
+    <td class="desc">
+     创建 GestureRecognizer。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     处置手势识别器使用的资源。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.GestureError.html">
+      GestureError
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统出现警告或错误时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.GestureErrorEvent.html">
+      GestureErrorEvent
+     </a>
+    </td>
+    <td class="desc">
+     当 GestureRecognizer 发出警告或错误时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCanceled.html">
+      HoldCanceled
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已取消长按手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCanceledEvent.html">
+      HoldCanceledEvent
+     </a>
+    </td>
+    <td class="desc">
+     当用户用手或语音执行取消事件时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCompleted.html">
+      HoldCompleted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已完成长按手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCompletedEvent.html">
+      HoldCompletedEvent
+     </a>
+    </td>
+    <td class="desc">
+     当用户完成长按手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldStarted.html">
+      HoldStarted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已开始长按手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldStartedEvent.html">
+      HoldStartedEvent
+     </a>
+    </td>
+    <td class="desc">
+     当用户开始长按手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCanceled.html">
+      ManipulationCanceled
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已取消操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCanceledEvent.html">
+      ManipulationCanceledEvent
+     </a>
+    </td>
+    <td class="desc">
+     操作手势取消时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCompleted.html">
+      ManipulationCompleted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已完成操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCompletedEvent.html">
+      ManipulationCompletedEvent
+     </a>
+    </td>
+    <td class="desc">
+     操作手势完成时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationStarted.html">
+      ManipulationStarted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已开始操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationStartedEvent.html">
+      ManipulationStartedEvent
+     </a>
+    </td>
+    <td class="desc">
+     当交互变为操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationUpdated.html">
+      ManipulationUpdated
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已更新操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationUpdatedEvent.html">
+      ManipulationUpdatedEvent
+     </a>
+    </td>
+    <td class="desc">
+     由于手部移动而更新操作手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCanceled.html">
+      NavigationCanceled
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已取消导航手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCanceledEvent.html">
+      NavigationCanceledEvent
+     </a>
+    </td>
+    <td class="desc">
+     导航手势取消时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCompleted.html">
+      NavigationCompleted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到导航手势完成时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCompletedEvent.html">
+      NavigationCompletedEvent
+     </a>
+    </td>
+    <td class="desc">
+     导航手势完成时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationStarted.html">
+      NavigationStarted
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到用户已开始导航手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationStartedEvent.html">
+      NavigationStartedEvent
+     </a>
+    </td>
+    <td class="desc">
+     当交互变为导航手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationUpdated.html">
+      NavigationUpdated
+     </a>
+    </td>
+    <td class="desc">
+     当 Microsoft 手势识别系统识别到导航手势已更新时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationUpdatedEvent.html">
+      NavigationUpdatedEvent
+     </a>
+    </td>
+    <td class="desc">
+     由于手部或控制器移动而更新导航手势时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionEnded.html">
+      RecognitionEnded
+     </a>
+    </td>
+    <td class="desc">
+     当手势识别完成（由于手势完成或取消）时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionEndedEvent.html">
+      RecognitionEndedEvent
+     </a>
+    </td>
+    <td class="desc">
+     当手势识别完成（由于手势完成或取消）时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionStarted.html">
+      RecognitionStarted
+     </a>
+    </td>
+    <td class="desc">
+     手势识别开始时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionStartedEvent.html">
+      RecognitionStartedEvent
+     </a>
+    </td>
+    <td class="desc">
+     手势识别开始时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.Tapped.html">
+      Tapped
+     </a>
+    </td>
+    <td class="desc">
+     在 Microsoft 手势识别系统识别到用户已完成点击手势，并且已处理系统语音命令“Select”后触发。对于控制器，在按下主按钮后释放时会触发此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.TappedEvent.html">
+      TappedEvent
+     </a>
+    </td>
+    <td class="desc">
+     识别到点击手势时出现。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.GestureErrorDelegate.html">
+      GestureErrorDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示出现错误或警告的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCanceledEventDelegate.html">
+      HoldCanceledEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示取消事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldCompletedEventDelegate.html">
+      HoldCompletedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示长按已完成事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.HoldStartedEventDelegate.html">
+      HoldStartedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示长按已开始事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCanceledEventDelegate.html">
+      ManipulationCanceledEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示取消事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationCompletedEventDelegate.html">
+      ManipulationCompletedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示完成事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationStartedEventDelegate.html">
+      ManipulationStartedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示开始事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.ManipulationUpdatedEventDelegate.html">
+      ManipulationUpdatedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示更新事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCanceledEventDelegate.html">
+      NavigationCanceledEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示取消事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationCompletedEventDelegate.html">
+      NavigationCompletedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示完成事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationStartedEventDelegate.html">
+      NavigationStartedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示开始事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.NavigationUpdatedEventDelegate.html">
+      NavigationUpdatedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示更新事件的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionEndedEventDelegate.html">
+      RecognitionEndedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示手势事件已完成的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.RecognitionStartedEventDelegate.html">
+      RecognitionStartedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示手势事件已开始的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.Input.GestureRecognizer.TappedEventDelegate.html">
+      TappedEventDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示点击事件的回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

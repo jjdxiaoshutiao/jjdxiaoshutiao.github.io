@@ -1,0 +1,415 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DrawCameraMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Handles.DrawCamera.html">
+    Handles.DrawCamera
+   </a>
+   的绘制模式。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.UserDefined.html">
+      UserDefined
+     </a>
+    </td>
+    <td class="desc">
+     用户定义的自定义模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Normal.html">
+      Normal
+     </a>
+    </td>
+    <td class="desc">
+     像在游戏中那样绘制摄像机。这会使用摄像机的清除标记。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Textured.html">
+      Textured
+     </a>
+    </td>
+    <td class="desc">
+     使用选择线框绘制摄像机纹理，不进行背景清除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Wireframe.html">
+      Wireframe
+     </a>
+    </td>
+    <td class="desc">
+     在线框中绘制摄像机，不进行背景清除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.TexturedWire.html">
+      TexturedWire
+     </a>
+    </td>
+    <td class="desc">
+     绘制摄像机，其中所有对象都有线框且背景未清除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.ShadowCascades.html">
+      ShadowCascades
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为绘制方向光阴影贴图级联。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RenderPaths.html">
+      RenderPaths
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为绘制进行了颜色编码的渲染路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.AlphaChannel.html">
+      AlphaChannel
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示渲染的 Alpha 通道。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Overdraw.html">
+      Overdraw
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示场景过度绘制，颜色越亮则表示过度绘制越严重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Mipmaps.html">
+      Mipmaps
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示纹理分辨率，其中红色色调表示分辨率过高，而蓝色色调表示纹理大小可能过大。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.DeferredDiffuse.html">
+      DeferredDiffuse
+     </a>
+    </td>
+    <td class="desc">
+     绘制延迟着色 G 缓冲区的漫射颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.DeferredSpecular.html">
+      DeferredSpecular
+     </a>
+    </td>
+    <td class="desc">
+     绘制延迟着色 G 缓冲区的镜面反射颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.DeferredSmoothness.html">
+      DeferredSmoothness
+     </a>
+    </td>
+    <td class="desc">
+     绘制延迟着色 G 缓冲区的平滑度值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.DeferredNormal.html">
+      DeferredNormal
+     </a>
+    </td>
+    <td class="desc">
+     绘制延迟着色 G 缓冲区的世界空间法线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RealtimeCharting.html">
+      RealtimeCharting
+     </a>
+    </td>
+    <td class="desc">
+     使用不同颜色针对各个实时图表（UV 孤岛）绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Systems.html">
+      Systems
+     </a>
+    </td>
+    <td class="desc">
+     使用不同颜色为每个 GI 系统绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RealtimeAlbedo.html">
+      RealtimeAlbedo
+     </a>
+    </td>
+    <td class="desc">
+     仅使用实时 GI 反照率组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RealtimeEmissive.html">
+      RealtimeEmissive
+     </a>
+    </td>
+    <td class="desc">
+     仅使用实时 GI 发射组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RealtimeIndirect.html">
+      RealtimeIndirect
+     </a>
+    </td>
+    <td class="desc">
+     仅使用实时 GI 间接光绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.RealtimeDirectionality.html">
+      RealtimeDirectionality
+     </a>
+    </td>
+    <td class="desc">
+     仅使用实时 GI 方向组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedLightmap.html">
+      BakedLightmap
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙光照贴图绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.Clustering.html">
+      Clustering
+     </a>
+    </td>
+    <td class="desc">
+     使用不同颜色针对每个集群进行绘制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.LitClustering.html">
+      LitClustering
+     </a>
+    </td>
+    <td class="desc">
+     绘制光照集群。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.ValidateAlbedo.html">
+      ValidateAlbedo
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为绘制基于物理且经过反照率验证的渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.ValidateMetalSpecular.html">
+      ValidateMetalSpecular
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为绘制基于物理且经过金属或镜面反射验证的渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.ShadowMasks.html">
+      ShadowMasks
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示彩色阴影遮罩，将使用相同的颜色为光源辅助图标着色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.LightOverlap.html">
+      LightOverlap
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示红色静态光源；由于重叠的光源体积超过 4 个，这些光源会回退到“静态”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedAlbedo.html">
+      BakedAlbedo
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙反照率组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedEmissive.html">
+      BakedEmissive
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙发射组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedDirectionality.html">
+      BakedDirectionality
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙方向组件绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedTexelValidity.html">
+      BakedTexelValidity
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙纹理像素有效性绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedIndices.html">
+      BakedIndices
+     </a>
+    </td>
+    <td class="desc">
+     仅使用烘焙索引绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedCharting.html">
+      BakedCharting
+     </a>
+    </td>
+    <td class="desc">
+     针对各个烘焙图表（UV 孤岛），使用不同的颜色绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.SpriteMask.html">
+      SpriteMask
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为显示 SpriteMask 和 SpriteRenderer，并设置了 SpriteRenderer.maskInteraction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedUVOverlap.html">
+      BakedUVOverlap
+     </a>
+    </td>
+    <td class="desc">
+     使用突出显示的重叠光照贴图纹理像素绘制对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.TextureStreaming.html">
+      TextureStreaming
+     </a>
+    </td>
+    <td class="desc">
+     摄像机设置为在纹理串流调试模式下运行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DrawCameraMode.BakedLightmapCulling.html">
+      BakedLightmapCulling
+     </a>
+    </td>
+    <td class="desc">
+     使用突出显示的可见光照贴图纹理像素绘制对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

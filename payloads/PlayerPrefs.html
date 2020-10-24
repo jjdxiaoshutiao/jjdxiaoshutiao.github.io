@@ -1,0 +1,182 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayerPrefs
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在游戏会话之间存储和访问玩家偏好。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    Editor/独立平台
+   </strong>
+   <br/>
+   <br/>
+   On macOS PlayerPrefs are stored in ~/Library/Preferences folder,
+in a file named unity.[company name].[product name].plist, where company and product names are the names set up in Project Settings.
+The same .plist file is used for both Projects run in the Editor and
+standalone players.
+   <br/>
+   <br/>
+   在 Windows 上，PlayerPrefs 存储在
+HKCU\Software\[公司名称]\[产品名称] 项下的注册表中，其中公司和产品名称是
+在“Project Settings”中设置的名称。
+   <br/>
+   <br/>
+   在 Linux 上，PlayerPrefs 位于 ~/.config/unity3d/[公司名称]/[产品名称] 中，其中同样使用在“Project Settings”中指定的公司和产品名称。
+   <br/>
+   <br/>
+   在 Windows 应用商店应用程序中，PlayerPrefs 位于 %userprofile%\AppData\Local\Packages\[产品包 ID]&gt;\LocalState\playerprefs.dat 中
+   <br/>
+   <br/>
+   在 Windows Phone 8 上，PlayerPrefs 位于应用程序的本地文件夹中，另请参阅：
+   <a href="Windows.Directory-localFolder.html">
+    Directory.localFolder
+   </a>
+   <br/>
+   <br/>
+   在 Android 中，数据存储（持久保存）在设备上。数据保存在 SharedPreferences 中。C#/JavaScript、Android Java 和原生代码全都可以访问 PlayerPrefs 数据。PlayerPrefs 数据在物理存储在 /data/data/pkg-name/shared_prefs/pkg-name.xml 中。
+   <br/>
+   <br/>
+   在 WebGL 上，PlayerPrefs 使用浏览器的 IndexedDB API 进行存储。
+   <br/>
+   <br/>
+   在 iOS 上，PlayerPrefs 存储在
+/Library/Preferences/[Bundle ID].plist 中。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.DeleteAll.html">
+      DeleteAll
+     </a>
+    </td>
+    <td class="desc">
+     从偏好中删除所有键和值。请谨慎使用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.DeleteKey.html">
+      DeleteKey
+     </a>
+    </td>
+    <td class="desc">
+     从偏好中删除 key 及其对应值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     返回偏好设置文件中与 key 对应的值（如果存在）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.GetInt.html">
+      GetInt
+     </a>
+    </td>
+    <td class="desc">
+     返回偏好设置文件中与 key 对应的值（如果存在）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.GetString.html">
+      GetString
+     </a>
+    </td>
+    <td class="desc">
+     返回偏好设置文件中与 key 对应的值（如果存在）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.HasKey.html">
+      HasKey
+     </a>
+    </td>
+    <td class="desc">
+     如果 key 在偏好中存在，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.Save.html">
+      Save
+     </a>
+    </td>
+    <td class="desc">
+     将所有修改的偏好写入磁盘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     设置由 key 标识的偏好的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.SetInt.html">
+      SetInt
+     </a>
+    </td>
+    <td class="desc">
+     设置由 key 标识的偏好的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PlayerPrefs.SetString.html">
+      SetString
+     </a>
+    </td>
+    <td class="desc">
+     设置由 key 标识的偏好的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

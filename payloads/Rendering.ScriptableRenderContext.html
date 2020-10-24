@@ -1,0 +1,288 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ScriptableRenderContext
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义自定义渲染管线使用的状态和绘制命令。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   定义自定义
+   <a href="Rendering.RenderPipeline.html">
+    RenderPipeline
+   </a>
+   时，可使用 ScriptableRenderContext 向 GPU 调度和提交状态更新和绘制命令。
+   <br/>
+   <br/>
+   <a href="Rendering.RenderPipeline.Render.html">
+    RenderPipeline.Render
+   </a>
+   方法实现通常会针对每个摄像机剔除渲染管线不需要渲染的对象（请参阅
+   <a href="Rendering.CullingResults.html">
+    CullingResults
+   </a>
+   ），然后对
+   <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+    ScriptableRenderContext.DrawRenderers
+   </a>
+   发起一系列调用并混合
+   <a href="Rendering.ScriptableRenderContext.ExecuteCommandBuffer.html">
+    ScriptableRenderContext.ExecuteCommandBuffer
+   </a>
+   调用。这些调用会设置全局着色器属性、更改渲染目标、分发计算着色器和其他渲染任务。若要实际执行渲染循环，请调用
+   <a href="Rendering.ScriptableRenderContext.Submit.html">
+    ScriptableRenderContext.Submit
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rendering.RenderPipeline.html">
+    RenderPipeline
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.BeginRenderPass.html">
+      BeginRenderPass
+     </a>
+    </td>
+    <td class="desc">
+     调度新渲染通道的开头。在任何时候只能有一个渲染通道处于活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.BeginScopedRenderPass.html">
+      BeginScopedRenderPass
+     </a>
+    </td>
+    <td class="desc">
+     调度新渲染通道的开头。如果在 using 语句中调用此内容，则 Unity 会在退出 using 代码块时自动调用 EndRenderPass。在任何时候只能有一个渲染通道处于活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.BeginScopedSubPass.html">
+      BeginScopedSubPass
+     </a>
+    </td>
+    <td class="desc">
+     调度渲染通道中的新子通道的开头。如果在 using 语句调用此内容，则 Unity 会在退出 using 代码块时自动调用 EndSubPass。
+渲染通道永远不能独立存在，必须始终包含至少一个子通道。在任何时候只能有一个子通道处于活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.BeginSubPass.html">
+      BeginSubPass
+     </a>
+    </td>
+    <td class="desc">
+     调度渲染通道中的新子通道的开头。渲染通道永远不能独立存在，必须始终包含至少一个子通道。在任何时候只能有一个子通道处于活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.Cull.html">
+      Cull
+     </a>
+    </td>
+    <td class="desc">
+     基于通常从当前渲染的摄像机获取的 ScriptableCullingParameters 来执行剔除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.DrawGizmos.html">
+      DrawGizmos
+     </a>
+    </td>
+    <td class="desc">
+     为给定摄像机调度辅助图标的子集的绘制（在后期处理之前或之后）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+      DrawRenderers
+     </a>
+    </td>
+    <td class="desc">
+     调度可见 GameObjects 的子通道的开头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.DrawShadows.html">
+      DrawShadows
+     </a>
+    </td>
+    <td class="desc">
+     为单个光源调度阴影投射物的绘制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.DrawSkybox.html">
+      DrawSkybox
+     </a>
+    </td>
+    <td class="desc">
+     调度天空盒的绘制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.EndRenderPass.html">
+      EndRenderPass
+     </a>
+    </td>
+    <td class="desc">
+     调度当前活动渲染通道的结尾。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.EndSubPass.html">
+      EndSubPass
+     </a>
+    </td>
+    <td class="desc">
+     调度当前活动子通道的结尾。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.ExecuteCommandBuffer.html">
+      ExecuteCommandBuffer
+     </a>
+    </td>
+    <td class="desc">
+     调度自定义图形命令缓冲区的执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.ExecuteCommandBufferAsync.html">
+      ExecuteCommandBufferAsync
+     </a>
+    </td>
+    <td class="desc">
+     对异步计算队列调度命令缓冲区的执行。传入的 ComputeQueueType 会确定队列顺序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.InvokeOnRenderObjectCallback.html">
+      InvokeOnRenderObjectCallback
+     </a>
+    </td>
+    <td class="desc">
+     为 MonoBehaviour 脚本调度 OnRenderObject 回调的调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.SetupCameraProperties.html">
+      SetupCameraProperties
+     </a>
+    </td>
+    <td class="desc">
+     调度特定于摄像机的全局着色器变量的设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.StartMultiEye.html">
+      StartMultiEye
+     </a>
+    </td>
+    <td class="desc">
+     对 ScriptableRenderContext 调度立体渲染的精细开头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.StereoEndRender.html">
+      StereoEndRender
+     </a>
+    </td>
+    <td class="desc">
+     调度立体渲染在单个帧上的完成情况的通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.StopMultiEye.html">
+      StopMultiEye
+     </a>
+    </td>
+    <td class="desc">
+     对 ScriptableRenderContext 调度立体渲染的停止。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.Submit.html">
+      Submit
+     </a>
+    </td>
+    <td class="desc">
+     将所有调度命令都提交给渲染循环来执行。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableRenderContext.EmitWorldGeometryForSceneView.html">
+      EmitWorldGeometryForSceneView
+     </a>
+    </td>
+    <td class="desc">
+     将 UI 几何形状发射到 Scene 视图以进行渲染。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

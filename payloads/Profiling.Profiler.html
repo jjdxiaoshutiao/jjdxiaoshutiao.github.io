@@ -1,0 +1,342 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Profiler
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Profiling
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   通过脚本控制
+   <a href="../Manual/Profiler.html">
+    Profiler
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   您可以使用
+   <a href="Profiling.Profiler.BeginSample.html">
+    Profiler.BeginSample
+   </a>
+   和
+   <a href="Profiling.Profiler.EndSample.html">
+    Profiler.EndSample
+   </a>
+   在脚本中添加自定义性能分析器部分。
+   <br/>
+   <br/>
+   在独立平台上，您可以将所有性能分析信息保存到文件中，以便稍后进行检查。为此，您必须指定
+   <a href="Profiling.Profiler-logFile.html">
+    Profiler.logFile
+   </a>
+   并将
+   <a href="Profiling.Profiler-enabled.html">
+    Profiler.enabled
+   </a>
+   和
+   <a href="Profiling.Profiler-enableBinaryLog.html">
+    Profiler.enableBinaryLog
+   </a>
+   都设置为
+   <code class="mono">
+    true
+   </code>
+   。
+   <br/>
+   <br/>
+   由于使用性能分析器会对应用程序的性能产生负面影响，因此大多数性能分析器 API 功能仅在启用了“Development Build”时才可用。这意味着如果要在构建的应用程序中使用性能分析器 API 方法，则必须启用“Developer Build”。禁用“Development Build”会使您的应用程序运行更快，但会阻止您使用大多数性能分析器 API 方法。
+   <br/>
+   <br/>
+   例外情况是与内存使用相关的性能分析器 API 方法。由于 Unity 在运行时管理其大部分系统内存，可以在不降低性能的情况下提供该信息，因此即使未启用“Development Build”，这些方法也可用。这适用于几乎所有与内存相关的性能分析器 API 方法，但
+   <a href="Profiling.Profiler.GetAllocatedMemoryForGraphicsDriver.html">
+    Profiler.GetAllocatedMemoryForGraphicsDriver
+   </a>
+   和
+   <a href="Profiling.Profiler.GetRuntimeMemorySizeLong.html">
+    Profiler.GetRuntimeMemorySizeLong
+   </a>
+   <em>
+    除外
+   </em>
+   ，因为后两者需要额外的性能分析数据，而这些数据仅在开发版中提供。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-areaCount.html">
+      areaCount
+     </a>
+    </td>
+    <td class="desc">
+     您可以进行性能分析的性能分析器区域数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-enableAllocationCallstacks.html">
+      enableAllocationCallstacks
+     </a>
+    </td>
+    <td class="desc">
+     启用托管分配的调用栈的记录。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-enableBinaryLog.html">
+      enableBinaryLog
+     </a>
+    </td>
+    <td class="desc">
+     启用将性能分析数据记录到文件中的功能。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     启用性能分析器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-logFile.html">
+      logFile
+     </a>
+    </td>
+    <td class="desc">
+     指定写入性能分析数据时要使用的文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-maxUsedMemory.html">
+      maxUsedMemory
+     </a>
+    </td>
+    <td class="desc">
+     设置性能分析器用于缓冲数据的最大内存量。该属性以字节为单位来表示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler-usedHeapSizeLong.html">
+      usedHeapSizeLong
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 已分配的字节数。这不包括外部库或驱动程序分配的字节。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.AddFramesFromFile.html">
+      AddFramesFromFile
+     </a>
+    </td>
+    <td class="desc">
+     显示性能分析器中记录的性能分析数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.BeginSample.html">
+      BeginSample
+     </a>
+    </td>
+    <td class="desc">
+     开始使用自定义标签分析一段代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.BeginThreadProfiling.html">
+      BeginThreadProfiling
+     </a>
+    </td>
+    <td class="desc">
+     在调用此方法的线程上启用性能分析。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.EmitFrameMetaData.html">
+      EmitFrameMetaData
+     </a>
+    </td>
+    <td class="desc">
+     将与当前帧关联的元数据写入性能分析器流。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.EndSample.html">
+      EndSample
+     </a>
+    </td>
+    <td class="desc">
+     结束当前的性能分析样本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.EndThreadProfiling.html">
+      EndThreadProfiling
+     </a>
+    </td>
+    <td class="desc">
+     释放性能分析器用于线程的内部资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetAllocatedMemoryForGraphicsDriver.html">
+      GetAllocatedMemoryForGraphicsDriver
+     </a>
+    </td>
+    <td class="desc">
+     返回为图形驱动程序分配的内存大小（以字节为单位）。仅适用于开发版本的播放器和编辑器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetAreaEnabled.html">
+      GetAreaEnabled
+     </a>
+    </td>
+    <td class="desc">
+     返回的结果表明当前是否启用了某个给定的 ProfilerArea。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetMonoHeapSizeLong.html">
+      GetMonoHeapSizeLong
+     </a>
+    </td>
+    <td class="desc">
+     返回托管内存的预留空间大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetMonoUsedSizeLong.html">
+      GetMonoUsedSizeLong
+     </a>
+    </td>
+    <td class="desc">
+     活动对象和非收集对象的已分配托管内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetRuntimeMemorySizeLong.html">
+      GetRuntimeMemorySizeLong
+     </a>
+    </td>
+    <td class="desc">
+     收集 Unity 对象使用的本机内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetTempAllocatorSize.html">
+      GetTempAllocatorSize
+     </a>
+    </td>
+    <td class="desc">
+     返回临时分配器的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetTotalAllocatedMemoryLong.html">
+      GetTotalAllocatedMemoryLong
+     </a>
+    </td>
+    <td class="desc">
+     Unity 中的内部分配器分配的内存总量。Unity 在系统中预留了大型内存池。此函数将返回这些池中使用的内存量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetTotalReservedMemoryLong.html">
+      GetTotalReservedMemoryLong
+     </a>
+    </td>
+    <td class="desc">
+     Unity 预留的总内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.GetTotalUnusedReservedMemoryLong.html">
+      GetTotalUnusedReservedMemoryLong
+     </a>
+    </td>
+    <td class="desc">
+     当 Unity 需要分配内存时，Unity 会在池中分配内存以供使用。此函数返回这些池中未使用的内存量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.SetAreaEnabled.html">
+      SetAreaEnabled
+     </a>
+    </td>
+    <td class="desc">
+     启用或禁用某个给定的 ProfilerArea。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Profiler.SetTempAllocatorRequestedSize.html">
+      SetTempAllocatorRequestedSize
+     </a>
+    </td>
+    <td class="desc">
+     设置临时分配器的大小。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,886 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SystemInfo
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   访问系统和硬件信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用该类可以确定底层平台和硬件的功能。例如，您可以检查支持的
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   格式 (
+   <a href="SystemInfo.SupportsRenderTextureFormat.html">
+    SupportsRenderTextureFormat
+   </a>
+   )、可用的 CPU 线程数 (
+   <a href="SystemInfo-processorCount.html">
+    processorCount
+   </a>
+   ) 等。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-batteryLevel.html">
+      batteryLevel
+     </a>
+    </td>
+    <td class="desc">
+     当前的电池电量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-batteryStatus.html">
+      batteryStatus
+     </a>
+    </td>
+    <td class="desc">
+     返回设备电池的当前状态（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-copyTextureSupport.html">
+      copyTextureSupport
+     </a>
+    </td>
+    <td class="desc">
+     对各种 Graphics.CopyTexture 情况的支持（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-deviceModel.html">
+      deviceModel
+     </a>
+    </td>
+    <td class="desc">
+     设备的型号（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-deviceName.html">
+      deviceName
+     </a>
+    </td>
+    <td class="desc">
+     用户定义的设备名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-deviceType.html">
+      deviceType
+     </a>
+    </td>
+    <td class="desc">
+     返回运行该应用程序的设备的类型（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-deviceUniqueIdentifier.html">
+      deviceUniqueIdentifier
+     </a>
+    </td>
+    <td class="desc">
+     唯一设备标识符。保证对于每个设备都是唯一的（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceID.html">
+      graphicsDeviceID
+     </a>
+    </td>
+    <td class="desc">
+     图形设备的标识符代码（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceName.html">
+      graphicsDeviceName
+     </a>
+    </td>
+    <td class="desc">
+     图形设备的名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceType.html">
+      graphicsDeviceType
+     </a>
+    </td>
+    <td class="desc">
+     图形设备使用的图形 API 类型（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceVendor.html">
+      graphicsDeviceVendor
+     </a>
+    </td>
+    <td class="desc">
+     图形设备的供应商（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceVendorID.html">
+      graphicsDeviceVendorID
+     </a>
+    </td>
+    <td class="desc">
+     图形设备供应商的标识符代码（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsDeviceVersion.html">
+      graphicsDeviceVersion
+     </a>
+    </td>
+    <td class="desc">
+     图形设备使用的图形 API 类型和驱动程序版本（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsMemorySize.html">
+      graphicsMemorySize
+     </a>
+    </td>
+    <td class="desc">
+     具有的显存容量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsMultiThreaded.html">
+      graphicsMultiThreaded
+     </a>
+    </td>
+    <td class="desc">
+     图形设备是否使用多线程渲染？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsShaderLevel.html">
+      graphicsShaderLevel
+     </a>
+    </td>
+    <td class="desc">
+     图形设备着色器功能级别（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-graphicsUVStartsAtTop.html">
+      graphicsUVStartsAtTop
+     </a>
+    </td>
+    <td class="desc">
+     如果该平台的纹理 UV 坐标约定的 Y 坐标从图像顶部开始，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-hasDynamicUniformArrayIndexingInFragmentShaders.html">
+      hasDynamicUniformArrayIndexingInFragmentShaders
+     </a>
+    </td>
+    <td class="desc">
+     如果 GPU 原生支持对片元着色器中的 uniform 数组编制索引，并且无任何限制，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-hasHiddenSurfaceRemovalOnGPU.html">
+      hasHiddenSurfaceRemovalOnGPU
+     </a>
+    </td>
+    <td class="desc">
+     如果 GPU 支持删除隐藏的表面，则为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-hasMipMaxLevel.html">
+      hasMipMaxLevel
+     </a>
+    </td>
+    <td class="desc">
+     如果 GPU 支持部分 Mipmap 链，则返回 true（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsCompute.html">
+      maxComputeBufferInputsCompute
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在计算着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsDomain.html">
+      maxComputeBufferInputsDomain
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在域着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsFragment.html">
+      maxComputeBufferInputsFragment
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在片元着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsGeometry.html">
+      maxComputeBufferInputsGeometry
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在几何着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsHull.html">
+      maxComputeBufferInputsHull
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在外壳着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeBufferInputsVertex.html">
+      maxComputeBufferInputsVertex
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 在顶点着色器中同时支持进行读取的计算缓冲区数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeWorkGroupSize.html">
+      maxComputeWorkGroupSize
+     </a>
+    </td>
+    <td class="desc">
+     单个本地工作组中可以分发到计算着色器的最大调用总数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeWorkGroupSizeX.html">
+      maxComputeWorkGroupSizeX
+     </a>
+    </td>
+    <td class="desc">
+     计算着色器可以在 X 维度使用的最大工作组数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeWorkGroupSizeY.html">
+      maxComputeWorkGroupSizeY
+     </a>
+    </td>
+    <td class="desc">
+     计算着色器可以在 Y 维度使用的最大工作组数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxComputeWorkGroupSizeZ.html">
+      maxComputeWorkGroupSizeZ
+     </a>
+    </td>
+    <td class="desc">
+     计算着色器可以在 Z 维度使用的最大工作组数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxCubemapSize.html">
+      maxCubemapSize
+     </a>
+    </td>
+    <td class="desc">
+     最大立方体贴图纹理大小（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-maxTextureSize.html">
+      maxTextureSize
+     </a>
+    </td>
+    <td class="desc">
+     最大纹理大小（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-minConstantBufferOffsetAlignment.html">
+      minConstantBufferOffsetAlignment
+     </a>
+    </td>
+    <td class="desc">
+     使用 Shader.SetConstantBuffer 或 Material.SetConstantBuffer 绑定常量缓冲区时的最小缓冲区偏移（以字节为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-npotSupport.html">
+      npotSupport
+     </a>
+    </td>
+    <td class="desc">
+     GPU 提供何种 NPOT（大小并非 2 的幂）纹理支持？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-operatingSystem.html">
+      operatingSystem
+     </a>
+    </td>
+    <td class="desc">
+     包含版本的操作系统名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-operatingSystemFamily.html">
+      operatingSystemFamily
+     </a>
+    </td>
+    <td class="desc">
+     返回运行该游戏的操作系统系列（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-processorCount.html">
+      processorCount
+     </a>
+    </td>
+    <td class="desc">
+     具有的处理器数量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-processorFrequency.html">
+      processorFrequency
+     </a>
+    </td>
+    <td class="desc">
+     处理器频率，单位为 MHz（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-processorType.html">
+      processorType
+     </a>
+    </td>
+    <td class="desc">
+     处理器名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-renderingThreadingMode.html">
+      renderingThreadingMode
+     </a>
+    </td>
+    <td class="desc">
+     应用程序实际渲染线程模式（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportedRandomWriteTargetCount.html">
+      supportedRandomWriteTargetCount
+     </a>
+    </td>
+    <td class="desc">
+     Unity 同时支持的随机写入目标 (UAV) 的最大数量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportedRenderTargetCount.html">
+      supportedRenderTargetCount
+     </a>
+    </td>
+    <td class="desc">
+     支持多少个同时渲染目标 (MRT)？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supports2DArrayTextures.html">
+      supports2DArrayTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持 2D 数组纹理？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supports32bitsIndexBuffer.html">
+      supports32bitsIndexBuffer
+     </a>
+    </td>
+    <td class="desc">
+     是否支持 32 位索引缓冲区？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supports3DRenderTextures.html">
+      supports3DRenderTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持 3D（体积）RenderTextures？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supports3DTextures.html">
+      supports3DTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持 3D（体积）纹理？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsAccelerometer.html">
+      supportsAccelerometer
+     </a>
+    </td>
+    <td class="desc">
+     设备上是否有加速度计？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsAsyncCompute.html">
+      supportsAsyncCompute
+     </a>
+    </td>
+    <td class="desc">
+     当平台支持异步计算队列时，返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsAsyncGPUReadback.html">
+      supportsAsyncGPUReadback
+     </a>
+    </td>
+    <td class="desc">
+     如果 GPU 数据的异步回读可用于该设备，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsAudio.html">
+      supportsAudio
+     </a>
+    </td>
+    <td class="desc">
+     是否有可用于播放的音频设备？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsComputeShaders.html">
+      supportsComputeShaders
+     </a>
+    </td>
+    <td class="desc">
+     是否支持计算着色器？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsCubemapArrayTextures.html">
+      supportsCubemapArrayTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持立方体贴图数组纹理？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsGeometryShaders.html">
+      supportsGeometryShaders
+     </a>
+    </td>
+    <td class="desc">
+     是否支持几何着色器？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsGraphicsFence.html">
+      supportsGraphicsFence
+     </a>
+    </td>
+    <td class="desc">
+     如果平台支持 GraphicsFences，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsGyroscope.html">
+      supportsGyroscope
+     </a>
+    </td>
+    <td class="desc">
+     设备上是否有陀螺仪？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsHardwareQuadTopology.html">
+      supportsHardwareQuadTopology
+     </a>
+    </td>
+    <td class="desc">
+     硬件是否支持四边形拓扑？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsInstancing.html">
+      supportsInstancing
+     </a>
+    </td>
+    <td class="desc">
+     是否支持 GPU 绘制调用实例化？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsLocationService.html">
+      supportsLocationService
+     </a>
+    </td>
+    <td class="desc">
+     设备是否能够报告其位置？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsMipStreaming.html">
+      supportsMipStreaming
+     </a>
+    </td>
+    <td class="desc">
+     是否支持纹理 Mipmap 串流？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsMotionVectors.html">
+      supportsMotionVectors
+     </a>
+    </td>
+    <td class="desc">
+     该平台是否支持运动矢量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsMultisampleAutoResolve.html">
+      supportsMultisampleAutoResolve
+     </a>
+    </td>
+    <td class="desc">
+     如果自动解析了多重采样纹理，则返回 true
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsMultisampledTextures.html">
+      supportsMultisampledTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持多重采样纹理？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsRawShadowDepthSampling.html">
+      supportsRawShadowDepthSampling
+     </a>
+    </td>
+    <td class="desc">
+     是否支持从阴影贴图进行原始深度采样？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsRayTracing.html">
+      supportsRayTracing
+     </a>
+    </td>
+    <td class="desc">
+     检查当前配置是否支持光线追踪。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsSeparatedRenderTargetsBlend.html">
+      supportsSeparatedRenderTargetsBlend
+     </a>
+    </td>
+    <td class="desc">
+     如果在渲染到多个渲染目标时，平台支持不同的混合模式，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsSetConstantBuffer.html">
+      supportsSetConstantBuffer
+     </a>
+    </td>
+    <td class="desc">
+     当前渲染器是否支持直接绑定常量缓冲区？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsShadows.html">
+      supportsShadows
+     </a>
+    </td>
+    <td class="desc">
+     是否支持内置阴影？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsSparseTextures.html">
+      supportsSparseTextures
+     </a>
+    </td>
+    <td class="desc">
+     是否支持稀疏纹理？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsTessellationShaders.html">
+      supportsTessellationShaders
+     </a>
+    </td>
+    <td class="desc">
+     是否支持曲面细分着色器？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsTextureWrapMirrorOnce.html">
+      supportsTextureWrapMirrorOnce
+     </a>
+    </td>
+    <td class="desc">
+     如果支持“Mirror Once”纹理包裹模式，则返回 true。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-supportsVibration.html">
+      supportsVibration
+     </a>
+    </td>
+    <td class="desc">
+     设备是否能够通过振动为用户提供触觉反馈？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-systemMemorySize.html">
+      systemMemorySize
+     </a>
+    </td>
+    <td class="desc">
+     具有的系统内存容量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-unsupportedIdentifier.html">
+      unsupportedIdentifier
+     </a>
+    </td>
+    <td class="desc">
+     SystemInfo 字符串属性返回的当前平台不支持的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-usesLoadStoreActions.html">
+      usesLoadStoreActions
+     </a>
+    </td>
+    <td class="desc">
+     如果图形 API 考虑 RenderBufferLoadAction 和 RenderBufferStoreAction，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo-usesReversedZBuffer.html">
+      usesReversedZBuffer
+     </a>
+    </td>
+    <td class="desc">
+     如果当前平台使用反转深度缓冲区（在近平面处，值范围从 1 开始；在远平面处，值范围从 0 开始），则该属性为 true；如果是正常的深度缓冲区（0 为近，1 为远），则该属性为 false。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.GetCompatibleFormat.html">
+      GetCompatibleFormat
+     </a>
+    </td>
+    <td class="desc">
+     返回平台支持用于指定用途的格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.GetGraphicsFormat.html">
+      GetGraphicsFormat
+     </a>
+    </td>
+    <td class="desc">
+     返回与 DefaultFormat 关联的特定于平台的 GraphicsFormat。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.IsFormatSupported.html">
+      IsFormatSupported
+     </a>
+    </td>
+    <td class="desc">
+     验证指定的用途是否支持指定的图形格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.SupportsBlendingOnRenderTextureFormat.html">
+      SupportsBlendingOnRenderTextureFormat
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理格式是否支持混合？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.SupportsRenderTextureFormat.html">
+      SupportsRenderTextureFormat
+     </a>
+    </td>
+    <td class="desc">
+     是否支持渲染纹理格式？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.SupportsTextureFormat.html">
+      SupportsTextureFormat
+     </a>
+    </td>
+    <td class="desc">
+     设备是否支持该纹理格式？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SystemInfo.SupportsVertexAttributeFormat.html">
+      SupportsVertexAttributeFormat
+     </a>
+    </td>
+    <td class="desc">
+     指示此设备上是否支持顶点属性格式和尺寸的给定组合。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

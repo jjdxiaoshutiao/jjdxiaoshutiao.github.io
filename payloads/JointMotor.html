@@ -1,0 +1,103 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   JointMotor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   JointMotor 用于使关节机动化。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   例如，可以告知
+   <a href="HingeJoint.html">
+    HingeJoint
+   </a>
+   采用给定速度和力进行旋转。
+关节随后会尝试使用给定的最大力达到相应速度。\
+另请参阅：
+   <a href="HingeJoint.html">
+    HingeJoint
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        <a href="HingeJoint.html">HingeJoint</a> hinge = GetComponent&lt;<a href="HingeJoint.html">HingeJoint</a>&gt;();<br/><br/>        // Make the hinge motor rotate with 90 degrees per second and a strong force.
+        <a href="JointMotor.html">JointMotor</a> motor = hinge.motor;
+        motor.force = 100;
+        motor.targetVelocity = 90;
+        motor.freeSpin = false;
+        hinge.motor = motor;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="JointMotor-force.html">
+      force
+     </a>
+    </td>
+    <td class="desc">
+     电机会施加力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointMotor-freeSpin.html">
+      freeSpin
+     </a>
+    </td>
+    <td class="desc">
+     如果启用 /freeSpin/，则电机只加速，不减速。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointMotor-targetVelocity.html">
+      targetVelocity
+     </a>
+    </td>
+    <td class="desc">
+     电机会施加高达 force 的力来实现 /targetVelocity/。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

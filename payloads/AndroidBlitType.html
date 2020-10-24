@@ -1,0 +1,120 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AndroidBlitType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述如何在屏幕上显示内容的方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   选项如下所示：
+   <br/>
+   <br/>
+   使用
+   <strong>
+    Always
+   </strong>
+   在屏幕外渲染以及对后备缓冲区执行 blit 操作。
+使用
+   <strong>
+    Never
+   </strong>
+   直接渲染到后备缓冲区。
+使用
+   <strong>
+    Auto
+   </strong>
+   自动选择最合适的选项。
+   <br/>
+   <br/>
+   根据设备的不同，
+   <a href="AndroidBlitType.Never.html">
+    AndroidBlitType.Never
+   </a>
+   可能不支持在运行时切换 MSAA 设置或以非原生分辨率渲染。
+   <a href="AndroidBlitType.Never.html">
+    AndroidBlitType.Never
+   </a>
+   不提供 sRGB 后备缓冲区。线性渲染需要一个执行 sRGB 读/写转换的帧缓冲区（请参阅
+   <a href="RenderTexture-sRGB.html">
+    RenderTexture.sRGB
+   </a>
+   ），否则生成的图像通常显得太暗。因此，在使用线性渲染时，不建议使用
+   <a href="AndroidBlitType.Never.html">
+    AndroidBlitType.Never
+   </a>
+   。如果想使用
+   <a href="AndroidBlitType.Never.html">
+    AndroidBlitType.Never
+   </a>
+   进行线性渲染，尽管有这些信息，您仍然必须设置自己的 sRGB 渲染目标并处理针对后备缓冲区的 blit 操作。
+   <br/>
+   <br/>
+   使用 Vulkan 图形 API 时，将忽略 AndroidBlitType。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AndroidBlitType.Always.html">
+      Always
+     </a>
+    </td>
+    <td class="desc">
+     始终在屏幕外渲染并对后备缓冲区执行 blit 操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AndroidBlitType.Never.html">
+      Never
+     </a>
+    </td>
+    <td class="desc">
+     绝不在屏幕外渲染，也不对后备缓冲区执行 blit 操作。始终直接渲染到后备缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AndroidBlitType.Auto.html">
+      Auto
+     </a>
+    </td>
+    <td class="desc">
+     自动确定最适合绘制到屏幕的方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

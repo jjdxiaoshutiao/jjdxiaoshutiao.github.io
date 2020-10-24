@@ -1,0 +1,191 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ColliderDistance2D
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示两个
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   的间距或重叠。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="ColliderDistance2D.html">
+    ColliderDistance2D
+   </a>
+   主要定义每个
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   的外部上的点，以及两个这种点之间的
+   <a href="ColliderDistance2D-distance.html">
+    distance
+   </a>
+   。它们之间的
+   <a href="ColliderDistance2D-distance.html">
+    distance
+   </a>
+   可以是正数，表示
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   是分开的（未重叠），可以是零，表示它们接触（但未重叠），也可以是负数，表示它们重叠。
+   <br/>
+   <br/>
+   提供了
+   <a href="ColliderDistance2D-normal.html">
+    normal
+   </a>
+   ，这是一个从
+   <a href="ColliderDistance2D-pointB.html">
+    pointB
+   </a>
+   指向
+   <a href="ColliderDistance2D-pointA.html">
+    pointA
+   </a>
+   的标准化向量。当对
+   <a href="ColliderDistance2D-distance.html">
+    distance
+   </a>
+   进行缩放时，该向量提供一个可用于移动
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   以便使它们不再重叠（如果
+   <a href="ColliderDistance2D-distance.html">
+    distance
+   </a>
+   为负数）或使它们接触（如果
+   <a href="ColliderDistance2D-distance.html">
+    distance
+   </a>
+   为正数）的向量。
+   <br/>
+   <br/>
+   这种情况的常见用例是计算两个
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   之间的重叠，尤其是在附加到设置为
+   <a href="RigidbodyType2D.Kinematic.html">
+    RigidbodyType2D.Kinematic
+   </a>
+   的
+   <a href="Rigidbody2D.html">
+    Rigidbody2D
+   </a>
+   时。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Physics2D.Distance.html">
+    Physics2D.Distance
+   </a>
+   、
+   <a href="Collider2D.Distance.html">
+    Collider2D.Distance
+   </a>
+   和
+   <a href="Rigidbody2D.Distance.html">
+    Rigidbody2D.Distance
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-distance.html">
+      distance
+     </a>
+    </td>
+    <td class="desc">
+     获取两个碰撞体之间的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-isOverlapped.html">
+      isOverlapped
+     </a>
+    </td>
+    <td class="desc">
+     获取 distance 是否表示重叠。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-isValid.html">
+      isValid
+     </a>
+    </td>
+    <td class="desc">
+     检查距离是否有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-normal.html">
+      normal
+     </a>
+    </td>
+    <td class="desc">
+     从 pointB 指向 pointA 的标准化向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-pointA.html">
+      pointA
+     </a>
+    </td>
+    <td class="desc">
+     Collider2D 上的点，与 pointB 距离特定的 distance。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ColliderDistance2D-pointB.html">
+      pointB
+     </a>
+    </td>
+    <td class="desc">
+     Collider2D 上的点，与 pointA 距离特定的 distance。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

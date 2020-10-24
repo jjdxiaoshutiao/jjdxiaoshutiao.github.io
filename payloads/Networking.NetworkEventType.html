@@ -1,0 +1,93 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NetworkEventType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在调用 Networking.NetworkTransport.Receive 和 Networking.NetworkTransport.ReceiveFromHost 函数时返回的事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.NetworkEventType.DataEvent.html">
+      DataEvent
+     </a>
+    </td>
+    <td class="desc">
+     收到的数据事件。表明已收到数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.NetworkEventType.ConnectEvent.html">
+      ConnectEvent
+     </a>
+    </td>
+    <td class="desc">
+     收到的连接事件。表明已建立新连接。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.NetworkEventType.DisconnectEvent.html">
+      DisconnectEvent
+     </a>
+    </td>
+    <td class="desc">
+     收到的断开连接事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.NetworkEventType.Nothing.html">
+      Nothing
+     </a>
+    </td>
+    <td class="desc">
+     没有收到新事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.NetworkEventType.BroadcastEvent.html">
+      BroadcastEvent
+     </a>
+    </td>
+    <td class="desc">
+     收到的广播发现事件。
+要获得发送方连接信息以及发送方可能发送的问候消息，请调用 Networking.NetworkTransport.GetBroadcastConnectionInfo() 和 Networking.NetworkTransport.GetBroadcastConnectionMessage() 函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

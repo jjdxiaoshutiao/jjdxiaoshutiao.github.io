@@ -1,0 +1,79 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   QualityMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   这是一个枚举，用于描述 Light Probe Proxy Volume 组件使用的 Quality 选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="../Manual/LightProbes.html">
+    光照探针
+   </a>
+   、
+   <a href="LightProbeProxyVolume.html">
+    光照探针代理体
+   </a>
+   、
+   <a href="Rendering.SphericalHarmonicsL2.html">
+    球谐函数 (SH)
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightProbeProxyVolume.QualityMode.Low.html">
+      Low
+     </a>
+    </td>
+    <td class="desc">
+     该选项仅使用两个 SH 系数波段：L0 和 L1。这些系数从光照探针代理体 3D 纹理中采样得出的。通过使用此选项，不必更改每个渲染器的 L2 系数即可增加绘制调用批处理大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightProbeProxyVolume.QualityMode.Normal.html">
+      Normal
+     </a>
+    </td>
+    <td class="desc">
+     此选项将使用来自光照探针代理体 3D 纹理的 L0 和 L1 SH 系数。L2 系数对于每个渲染器是恒定的。通过强制提供 L2 系数，绘制调用批次可能会被破坏。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

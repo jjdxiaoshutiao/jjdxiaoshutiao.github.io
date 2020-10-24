@@ -1,0 +1,80 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UsageHints
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供一组值，用于描述特定
+   <a href="UIElements.VisualElement.html">
+    VisualElement
+   </a>
+   的目标使用模式。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.UsageHints.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     没有适用的特殊提示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.UsageHints.DynamicTransform.html">
+      DynamicTransform
+     </a>
+    </td>
+    <td class="desc">
+     标记经常更改其变换（即位置、旋转、缩放）的 VisualElement。
+指定时，此标志会提示系统为重复出现的变换更改优化 VisualElement 的渲染。VisualElement 的顶点变换将尽可能由 GPU 在目标平台上完成。
+请注意，此提示有效应用于的 VisualElements 数会受目标平台功能的限制。对于此类平台，建议仅对变换更改频率最高的 VisualElements 优先使用此提示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.UsageHints.GroupTransform.html">
+      GroupTransform
+     </a>
+    </td>
+    <td class="desc">
+     标记一个 VisualElement，其中托管许多应用了 DynamicTransform 的子项。
+此提示的一个常见用例是 VisualElement，它表示一个“viewport”，其中存在许多可以分别移动的 DynamicTransform VisualElements，此外，该“viewport”元素还经常改变其变换。但是，如果前面提及的 "viewport" 元素的内容基本为静态（非移动），那么在该元素中使用 DynamicTransform 提示已足够，而不必使用 GroupTransform。
+在内部，用 GroupTransform 提示的元素将强制单独的绘制批处理使用自己的世界变换值，但同时，无论何时 GroupTransform 元素中发生变换更改，它都将避免更改其所有后代的变换。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,137 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TextAreaAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="PropertyAttribute.html">
+    PropertyAttribute
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   属性，用于通过高度灵活且可滚动的区域编辑字符串。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   您可以指定 TextArea 的最小行数和最大行数，该字段将根据文本的大小进行扩展。如果文本大于可用区域，则会显示滚动条。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   最大行数指的是 TextArea 的最大大小。用户输入的行数没有最大值。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/TextAreaAttribute.png"/>
+   \
+   <em>
+    Inspector 中的文本区域。
+   </em>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class TextAreaExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [TextArea]
+    public string MyTextArea;
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextAreaAttribute-maxLines.html">
+      maxLines
+     </a>
+    </td>
+    <td class="desc">
+     文本区域在开始使用滚动条前可显示的最大行数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextAreaAttribute-minLines.html">
+      minLines
+     </a>
+    </td>
+    <td class="desc">
+     文本区域将使用的最小行数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextAreaAttribute-ctor.html">
+      TextAreaAttribute
+     </a>
+    </td>
+    <td class="desc">
+     属性，用于通过高度灵活且可滚动的区域编辑字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="PropertyAttribute-order.html">
+       order
+      </a>
+     </td>
+     <td class="desc">
+      可选字段，用于指定多个 DecorationDrawer 应采用的绘制顺序。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

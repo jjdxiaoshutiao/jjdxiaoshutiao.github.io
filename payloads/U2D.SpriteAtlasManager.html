@@ -1,0 +1,79 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SpriteAtlasManager
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.U2D
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在运行时管理
+   <a href="U2D.SpriteAtlas.html">
+    SpriteAtlas
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   加载
+   <a href="Sprite.html">
+    Sprite
+   </a>
+   时无需引用任何精灵图集，因此不会产生纹理。它将是不可见的，直到用户通过监听
+   <a href="U2D.SpriteAtlasManager-atlasRequested.html">
+    SpriteAtlasManager.atlasRequested
+   </a>
+   回调将图集注册到精灵。当被触发时，它将传入图集标记和一个将在图集对象中执行的 System.Action。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="U2D.SpriteAtlasManager-atlasRegistered.html">
+      atlasRegistered
+     </a>
+    </td>
+    <td class="desc">
+     通过调用 SpriteAtlasManager.atlasRequested 中的回调来注册 SpriteAtlas 时触发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="U2D.SpriteAtlasManager-atlasRequested.html">
+      atlasRequested
+     </a>
+    </td>
+    <td class="desc">
+     在任何 Sprite 绑定到 SpriteAtlas 但无法在运行时找到图集资源时触发。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,228 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NativeArray&lt;T0&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in Unity.Collections
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   NativeArray 会向托管代码显示本机内存缓冲区，从而可以在托管数组和本机数组之间共享数据，无需任何编组成本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在幕后，NativeArrays 提供的系统允许将它们安全地用于作业，并自动跟踪内存泄漏。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.IsCreated.html">
+      IsCreated
+     </a>
+    </td>
+    <td class="desc">
+     指示 NativeArray 有一个已分配的内存缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Length.html">
+      Length
+     </a>
+    </td>
+    <td class="desc">
+     NativeArray 中元素的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Index_operator.html">
+      this[int]
+     </a>
+    </td>
+    <td class="desc">
+     按索引访问 NativeArray 元素。请注意，结构是按值而非引用返回的。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1-ctor.html">
+      NativeArray_1
+     </a>
+    </td>
+    <td class="desc">
+     从现有元素数组创建新的 NativeArray。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.CopyFrom.html">
+      CopyFrom
+     </a>
+    </td>
+    <td class="desc">
+     从长度相同的另一个 NativeArray 或托管数组中复制所有元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.CopyTo.html">
+      CopyTo
+     </a>
+    </td>
+    <td class="desc">
+     将所有元素复制到长度相同的另一个 NativeArray 或托管数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     处置 NativeArray。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     与 NativeArray 进行比较。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.GetEnumerator.html">
+      GetEnumerator
+     </a>
+    </td>
+    <td class="desc">
+     获取枚举器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.GetHashCode.html">
+      GetHashCode
+     </a>
+    </td>
+    <td class="desc">
+     返回当前实例的哈希代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.GetSubArray.html">
+      GetSubArray
+     </a>
+    </td>
+    <td class="desc">
+     将视图返回到从指定索引开始的数组中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Reinterpret.html">
+      Reinterpret
+     </a>
+    </td>
+    <td class="desc">
+     将数组重新解释为具有不同的数据类型（类型双关）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.ReinterpretLoad.html">
+      ReinterpretLoad
+     </a>
+    </td>
+    <td class="desc">
+     从基础索引开始，将数据重新解释并加载为其他类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.ReinterpretStore.html">
+      ReinterpretStore
+     </a>
+    </td>
+    <td class="desc">
+     从基础索引开始，将数据重新解释并存储为其他类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.ToArray.html">
+      ToArray
+     </a>
+    </td>
+    <td class="desc">
+     将 NativeArray 转换为数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArray_1.Copy.html">
+      Copy
+     </a>
+    </td>
+    <td class="desc">
+     将一系列元素从源数组复制到目标数组，从源索引开始将它们复制到目标索引。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

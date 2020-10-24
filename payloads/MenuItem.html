@@ -1,0 +1,177 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MenuItem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   MenuItem 属性用于向主菜单和检视面板上下文菜单添加菜单项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该 MenuItem 属性能够将任何静态函数转变为菜单命令。仅静态函数可使用 MenuItem 属性。
+   <br/>
+   <br/>
+   要创建热键，您可以使用以下特殊字符：
+   <strong>
+    %
+   </strong>
+   （在 Windows 上为 ctrl，在 macOS 上为 cmd）、
+   <strong>
+    #
+   </strong>
+   (shift)、
+   <strong>
+    &amp;
+   </strong>
+   (alt)。如果不需要特殊的修改键组合，该键可以在下划线后给出。例如，要创建一个带有热键 shift-alt-g 的菜单，可以使用
+   <code class="tt">
+    “MyMenu/Do Something #&amp;g”
+   </code>
+   。要创建带有热键
+   <strong>
+    g
+   </strong>
+   而不按下修改键的菜单，则使用
+   <code class="tt">
+    “MyMenu/Do Something _g”
+   </code>
+   。
+   <br/>
+   <br/>
+   一些特殊的键盘键可支持作为热键，例如，“#LEFT”可映射到 shift-left。支持这一功能的键为：LEFT、RIGHT、UP、DOWN、F1 .. F12、HOME、END、PGUP 和 PGDN。
+   <br/>
+   <br/>
+   热键文本前必须有一个空格字符（
+   <code class="tt">
+    “MyMenu/Do_g”
+   </code>
+   不能被解释为热键，而
+   <code class="tt">
+    “MyMenu/Do _g”
+   </code>
+   则可以被解释为热键）。
+   <br/>
+   <br/>
+   将菜单项添加到“GameObject/”菜单，以在创建自定义游戏对象时，确保
+调用
+   <a href="GameObjectUtility.SetParentAndAlign.html">
+    GameObjectUtility.SetParentAndAlign
+   </a>
+   ，从而确保在发生上下文单击事件时，
+对新的游戏对象进行正确地重定父级（请参阅以下示例）。您的函数也应该调用
+   <a href="Undo.RegisterCreatedObjectUndo.html">
+    Undo.RegisterCreatedObjectUndo
+   </a>
+   ，以使创建操作可撤销并将
+   <a href="Selection-activeObject.html">
+    Selection.activeObject
+   </a>
+   设置到新创建的对象上。另请注意，为了将“GameObject/”中的菜单项
+传播到层级视图 Create 下拉菜单和层级视图上下文菜单，它必须与
+其他游戏对象创建菜单项归为一组。这可以通过将其优先级
+设为 10 来实现（请参阅以下示例）。请注意，对于“GameObject/Create Other”
+中没有明确优先级设置且支持旧版项目的 MenuItem 来说，接收到的优先级为 10 而非默认的 1000，
+我们建议使用比“Create Other”更具描述性的类别名称，并将优先级
+显式设置为 10。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;
+public class MenuTest : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Add a menu item named "Do Something" to MyMenu in the menu bar.
+    [<a href="MenuItem.html">MenuItem</a>("MyMenu/Do Something")]
+    static void DoSomething()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Doing Something...");
+    }<br/><br/>    // Validated menu item.
+    // Add a menu item named "Log Selected <a href="Transform.html">Transform</a> Name" to MyMenu in the menu bar.
+    // We use a second function to validate the menu item
+    // so it will only be enabled if we have a transform selected.
+    [<a href="MenuItem.html">MenuItem</a>("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name")]
+    static void LogSelectedTransformName()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Selected <a href="Transform.html">Transform</a> is on " + Selection.activeTransform.gameObject.name + ".");
+    }<br/><br/>    // Validate the menu item defined by the function above.
+    // The menu item will be disabled if this function returns false.
+    [<a href="MenuItem.html">MenuItem</a>("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name", true)]
+    static bool ValidateLogSelectedTransformName()
+    {
+        // Return false if no transform is selected.
+        return <a href="Selection-activeTransform.html">Selection.activeTransform</a> != null;
+    }<br/><br/>    // Add a menu item named "Do Something with a Shortcut Key" to MyMenu in the menu bar
+    // and give it a shortcut (ctrl-g on Windows, cmd-g on macOS).
+    [<a href="MenuItem.html">MenuItem</a>("MyMenu/Do Something with a Shortcut Key %g")]
+    static void DoSomethingWithAShortcutKey()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Doing something with a Shortcut Key...");
+    }<br/><br/>    // Add a menu item called "Double Mass" to a <a href="Rigidbody.html">Rigidbody</a>'s context menu.
+    [<a href="MenuItem.html">MenuItem</a>("CONTEXT/<a href="Rigidbody.html">Rigidbody</a>/Double Mass")]
+    static void DoubleMass(<a href="MenuCommand.html">MenuCommand</a> command)
+    {
+        <a href="Rigidbody.html">Rigidbody</a> body = (<a href="Rigidbody.html">Rigidbody</a>)command.context;
+        body.mass = body.mass * 2;
+        <a href="Debug.Log.html">Debug.Log</a>("Doubled <a href="Rigidbody.html">Rigidbody</a>'s Mass to " + body.mass + " from Context <a href="Menu.html">Menu</a>.");
+    }<br/><br/>    // Add a menu item to create custom GameObjects.
+    // Priority 1 ensures it is grouped with the other menu items of the same kind
+    // and propagated to the hierarchy dropdown and hierarchy context menus.
+    [<a href="MenuItem.html">MenuItem</a>("<a href="GameObject.html">GameObject</a>/MyCategory/Custom Game Object", false, 10)]
+    static void CreateCustomGameObject(<a href="MenuCommand.html">MenuCommand</a> menuCommand)
+    {
+        // Create a custom game object
+        <a href="GameObject.html">GameObject</a> go = new <a href="GameObject.html">GameObject</a>("Custom Game Object");
+        // Ensure it gets reparented if this was a context click (otherwise does nothing)
+        <a href="GameObjectUtility.SetParentAndAlign.html">GameObjectUtility.SetParentAndAlign</a>(go, menuCommand.context as <a href="GameObject.html">GameObject</a>);
+        // Register the creation in the undo system
+        <a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(go, "Create " + go.name);
+        <a href="Selection-activeObject.html">Selection.activeObject</a> = go;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MenuItem-ctor.html">
+      MenuItem
+     </a>
+    </td>
+    <td class="desc">
+     创建一个菜单项并在选中此菜单项后调用静态函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

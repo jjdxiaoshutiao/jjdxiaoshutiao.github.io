@@ -1,0 +1,134 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SerializeField
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   强制 Unity 对私有字段进行序列化。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当 Unity 对脚本进行序列化时，仅对公共字段进行序列化。
+如果还需要 Unity 对私有字段进行序列化，
+可以将 SerializeField 属性添加到这些字段。
+   <br/>
+   <br/>
+   Unity 将对所有脚本组件进行序列化，重新加载新程序集，
+并从序列化的版本重新创建脚本组件。此
+序列化是通过 Unity 内部序列化系统完成的；而不是通过
+.NET 的序列化功能来完成。
+   <br/>
+   <br/>
+   序列化系统可执行以下操作：
+   <br/>
+   <br/>
+   - 可序列化（可序列化类型的）公共非静态字段
+   <br/>
+   - 可序列化标记有
+   <a href="SerializeField.html">
+    SerializeField
+   </a>
+   属性的非公共非静态字段。
+   <br/>
+   - 不能序列化静态字段。
+   <br/>
+   - 不能序列化属性。
+   <br/>
+   <br/>
+   <br/>
+   <strong>
+    可序列化的类型
+   </strong>
+   <br/>
+   <br/>
+   Unity 可序列化以下类型的字段：
+   <br/>
+   <br/>
+   - 继承 UnityEngine.Object 的所有类，例如 GameObject、Component、MonoBehaviour、Texture2D、AnimationClip。
+   <br/>
+   - 所有基本数据类型，例如 int、string、float、bool。
+   <br/>
+   - 某些内置类型，例如 Vector2、Vector3、Vector4、Quaternion、Matrix4x4、Color、Rect、LayerMask。
+   <br/>
+   - 可序列化类型数组
+   <br/>
+   - 可序列化类型列表
+   <br/>
+   - 枚举
+   <br/>
+   - 结构
+   <br/>
+   <br/>
+   有关序列化的更多信息，请参阅
+   <a href="../Manual/script-Serialization.html">
+    脚本序列化
+   </a>
+   。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   如果在一个列表（或数组）中将一个元素放置两次，当此
+列表被序列化时，将获得该元素的两个副本，而不是获得两次新列表中的一个副本。
+   <br/>
+   <br/>
+   <strong>
+    注意
+   </strong>
+   ：如果要序列化自定义 Struct 字段，则必须为该 Struct 给定 [System.Serializable] 属性。
+   <br/>
+   <br/>
+   <strong>
+    提示：
+   </strong>
+   Unity 不会序列化 Dictionary，但您可以为键存储一个 List&lt;&gt;
+和为值存储一个 List&lt;&gt;，然后在
+Awake() 上将它们组合在非序列化字典中。这不能解决您需要修改字典
+并将其“保存”回时出现的问题，但在许多其他情况下，这是一个方便的技巧。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class SomePerson : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    //This field gets serialized because it is public.
+    public string firstName = "John";<br/><br/>    //This field does not get serialized because it is private.
+    private int age = 40;<br/><br/>    //This field gets serialized even though it is private
+    //because it has the <a href="SerializeField.html">SerializeField</a> attribute applied.
+    [<a href="SerializeField.html">SerializeField</a>]
+    private bool hasHealthPotion = true;<br/><br/>    void Start()
+    {
+        if (hasHealthPotion)
+            <a href="Debug.Log.html">Debug.Log</a>("Person's first name: " + firstName + " Person's age: " + age);
+    }
+}
+</pre>
+ </div>
+</div>

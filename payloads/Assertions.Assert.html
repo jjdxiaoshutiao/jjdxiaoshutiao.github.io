@@ -1,0 +1,169 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Assert
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Assertions
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Assert 类包含用于在代码中设置不变量的断言方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   所有方法调用均将按条件仅包含在开发版中，
+      除非显式指定。请参阅
+   <a href="BuildOptions.ForceEnableAssertions.html">
+    BuildOptions.ForceEnableAssertions
+   </a>
+   。
+      断言的包含由
+   <code class="varname">
+    UNITY_ASSERTIONS
+   </code>
+   定义控制。
+   <br/>
+   <br/>
+   默认情况下，只要断言失败，资源就抛出异常。
+        不过，可将 Assertions.Assert._raiseExceptions 设置为 false，这样 Unity 会改用
+   <a href="LogType.Assert.html">
+    LogType.Assert
+   </a>
+   记录消息。
+   <br/>
+   <br/>
+   如果调试器附加到项目（System.Diagnostics.Debugger.IsAttached 为 true），
+       将抛出
+   <a href="Assertions.AssertionException.html">
+    AssertionException
+   </a>
+   以暂停执行和
+        调用调试器。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Assertions;<br/><br/>public class AssertionExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public int health;
+    public <a href="GameObject.html">GameObject</a> go;<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        // You expect the health never to be equal to zero
+        <a href="Assertions.Assert.AreNotEqual.html">Assert.AreNotEqual</a>(0, health);<br/><br/>        // The referenced <a href="GameObject.html">GameObject</a> should be always (in every frame) be active
+        <a href="Assertions.Assert.IsTrue.html">Assert.IsTrue</a>(go.activeInHierarchy);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.AreApproximatelyEqual.html">
+      AreApproximatelyEqual
+     </a>
+    </td>
+    <td class="desc">
+     断言值近似相等。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.AreEqual.html">
+      AreEqual
+     </a>
+    </td>
+    <td class="desc">
+     断言值相等。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.AreNotApproximatelyEqual.html">
+      AreNotApproximatelyEqual
+     </a>
+    </td>
+    <td class="desc">
+     断言值近似不相等。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.AreNotEqual.html">
+      AreNotEqual
+     </a>
+    </td>
+    <td class="desc">
+     断言值不相等。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.IsFalse.html">
+      IsFalse
+     </a>
+    </td>
+    <td class="desc">
+     当条件不成立时，返回 /true/。否则，返回 /false/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.IsNotNull.html">
+      IsNotNull
+     </a>
+    </td>
+    <td class="desc">
+     断言值不为 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.IsNull.html">
+      IsNull
+     </a>
+    </td>
+    <td class="desc">
+     断言值为 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Assertions.Assert.IsTrue.html">
+      IsTrue
+     </a>
+    </td>
+    <td class="desc">
+     断言条件是 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

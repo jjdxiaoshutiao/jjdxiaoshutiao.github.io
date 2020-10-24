@@ -1,0 +1,76 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TypeFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   这是一个对类型描述信息（该类型是值类型还是数组类型，如果是数组类型，则还包括数组秩）进行编码的枚举。由
+   <a href="Profiling.Memory.Experimental.TypeDescriptionEntries-flags.html">
+    TypeDescriptionEntries.flags
+   </a>
+   返回。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.TypeFlags-kValueType.html">
+      kValueType
+     </a>
+    </td>
+    <td class="desc">
+     如果此值为值类型，则设置此属性。如果未设置，则类型为引用类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.TypeFlags-kArray.html">
+      kArray
+     </a>
+    </td>
+    <td class="desc">
+     如果此类型为数组，则设置此属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.TypeFlags-kArrayRankMask.html">
+      kArrayRankMask
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了 TypeFlags.kArray，则由此值进行掩码设置的枚举将返回数组的秩（1 表示一维数组，2 表示二维数组，依次类推）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

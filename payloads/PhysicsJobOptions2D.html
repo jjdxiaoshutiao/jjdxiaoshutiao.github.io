@@ -1,0 +1,238 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PhysicsJobOptions2D
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一组选项，用于控制在使用作业系统进行多线程物理模拟时物理系统的工作方式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   目前，多线程物理还是一项实验性功能。因此，公开了许多选项，让您能够进行在功能正式发布后可能无法实现的性能配置。
+   <br/>
+   <br/>
+   物理模拟在以下独立阶段中执行：
+   <br/>
+   <br/>
+   • 查找新接触点\
+• 接触碰撞\
+• 离散解算器（清除孤岛标志 &gt; 离散孤岛遍历 &gt; 离散孤岛解算器 &gt; 同步夹具 &gt; 查找新接触点）\
+• 连续解算器（清除孤岛标志 &gt; 连续孤岛遍历 &gt; 离散孤岛解算器 &gt; 同步夹具 &gt; 查找新接触点）\
+• 清除身体力\
+• 更新触发器接触点
+   <br/>
+   <br/>
+   这些阶段按上面给出的顺序执行。每个阶段都作为一个作业“任务”运行。每个任务执行一些子作业任务（上面括号中显示的内容）。执行作业时，物理模拟可以跨多个作业线程处理身体、接触点、关节等。您可以为每个线程分配任务，让其执行特定数量的项目，例如身体、接触点和关节。此处提供的许多选项让您能够控制分配给每个作业的最小项目数。增加最小项目数可能会减少所需的作业数。这是因为运行大量作业（每个作业仅处理少许项目）的效率通常不高。默认设置为作业平衡提供了不错的性能，但您也可以随意尝试其他设置。
+   <br/>
+   <br/>
+   此外，在运行模拟前，还将存储
+   <a href="Rigidbody2D.html">
+    Rigidbody2D
+   </a>
+   插值/外推姿势，以做好进行每帧插值/外推的准备。它们也使用作业系统执行，并在此处进行控制。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-clearBodyForcesPerJob.html">
+      clearBodyForcesPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要清除的最小实体数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-clearFlagsPerJob.html">
+      clearFlagsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要清除的最小标志数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-collideContactsPerJob.html">
+      collideContactsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要碰撞的最小接触数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-findNearestContactsPerJob.html">
+      findNearestContactsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要查找的最小最近接触数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-interpolationPosesPerJob.html">
+      interpolationPosesPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中进行插值的最小 Rigidbody2D 数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverBodiesPerJob.html">
+      islandSolverBodiesPerJob
+     </a>
+    </td>
+    <td class="desc">
+     执行孤岛解算时，控制在每个模拟作业中要解算的最小实体数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverBodyCostScale.html">
+      islandSolverBodyCostScale
+     </a>
+    </td>
+    <td class="desc">
+     在离散孤岛解算过程中缩放每个身体的成本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverContactCostScale.html">
+      islandSolverContactCostScale
+     </a>
+    </td>
+    <td class="desc">
+     在离散孤岛解算过程中缩放每个接触的成本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverContactsPerJob.html">
+      islandSolverContactsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     执行孤岛解算时，控制在每个模拟作业中要解算的最小接触数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverCostThreshold.html">
+      islandSolverCostThreshold
+     </a>
+    </td>
+    <td class="desc">
+     离散孤岛解算过程中，某个孤岛中所有身体、接触和关节的最小阈值成本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-islandSolverJointCostScale.html">
+      islandSolverJointCostScale
+     </a>
+    </td>
+    <td class="desc">
+     在离散孤岛解算过程中缩放每个关节的成本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-newContactsPerJob.html">
+      newContactsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要查找的最小新接触数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-syncContinuousFixturesPerJob.html">
+      syncContinuousFixturesPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业的连续孤岛解算过程中，要在粗筛阶段中同步的最小夹具数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-syncDiscreteFixturesPerJob.html">
+      syncDiscreteFixturesPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业的离散孤岛解算过程中，要在粗筛阶段中同步的最小夹具数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-updateTriggerContactsPerJob.html">
+      updateTriggerContactsPerJob
+     </a>
+    </td>
+    <td class="desc">
+     控制在每个模拟作业中要更新的最小触发器接触数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-useConsistencySorting.html">
+      useConsistencySorting
+     </a>
+    </td>
+    <td class="desc">
+     物理模拟是否应对多线程结果进行排序以保持处理顺序一致性？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PhysicsJobOptions2D-useMultithreading.html">
+      useMultithreading
+     </a>
+    </td>
+    <td class="desc">
+     物理模拟是否应使用多线程？
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

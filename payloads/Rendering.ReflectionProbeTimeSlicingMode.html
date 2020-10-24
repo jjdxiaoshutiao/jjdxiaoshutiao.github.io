@@ -1,0 +1,81 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ReflectionProbeTimeSlicingMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   当探针的
+   <a href="ReflectionProbe-refreshMode.html">
+    ReflectionProbe.refreshMode
+   </a>
+   设置为
+   <a href="Rendering.ReflectionProbeRefreshMode.EveryFrame.html">
+    ReflectionProbeRefreshMode.EveryFrame
+   </a>
+   时，此枚举指定 Unity 是应多帧更新探针的立方体贴图还是在一帧更新整个立方体贴图。
+更新探针的立方体贴图是一项高成本的操作。Unity 需要为立方体贴图的每个图面渲染整个场景，并执行特殊的模糊处理以便获得光泽反射。对帧率的影响非常明显。在这些更新期间，时间切片执行多帧渲染，有助于保持帧率更加一致。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeTimeSlicingMode.AllFacesAtOnce.html">
+      AllFacesAtOnce
+     </a>
+    </td>
+    <td class="desc">
+     通过先一次渲染所有图面，然后将剩余工作分散到接下来的 8 个帧，指示 Unity 使用时间切片。使用此选项时，更新探针将需要 9 帧。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeTimeSlicingMode.IndividualFaces.html">
+      IndividualFaces
+     </a>
+    </td>
+    <td class="desc">
+     指示 Unity 将每个图面的渲染分散到多帧。使用此选项时，更新立方体贴图将需要 14 帧。此选项大大减少了对帧率的影响，但可能会产生不正确的结果，特别是在光照条件在这 14 帧发生更改的场景中更是如此。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeTimeSlicingMode.NoTimeSlicing.html">
+      NoTimeSlicing
+     </a>
+    </td>
+    <td class="desc">
+     Unity 将在一帧渲染整个探针。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

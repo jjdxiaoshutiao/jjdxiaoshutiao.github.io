@@ -1,0 +1,216 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   LightDataGI
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.GlobalIllumination
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于将光照信息传递给光照烘焙后端的 interop 结构。有适用于 Directional、Point、Spot 和 Rectangle 光源的 helper 结构可正确初始化此结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-color.html">
+      color
+     </a>
+    </td>
+    <td class="desc">
+     光的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-coneAngle.html">
+      coneAngle
+     </a>
+    </td>
+    <td class="desc">
+     聚光灯的锥角。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-falloff.html">
+      falloff
+     </a>
+    </td>
+    <td class="desc">
+     要用于烘焙点光源和聚光灯的衰减模型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-indirectColor.html">
+      indirectColor
+     </a>
+    </td>
+    <td class="desc">
+     光的间接颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-innerConeAngle.html">
+      innerConeAngle
+     </a>
+    </td>
+    <td class="desc">
+     聚光灯的内锥角。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-instanceID.html">
+      instanceID
+     </a>
+    </td>
+    <td class="desc">
+     光源的 instanceID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-mode.html">
+      mode
+     </a>
+    </td>
+    <td class="desc">
+     光的光照贴图模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-orientation.html">
+      orientation
+     </a>
+    </td>
+    <td class="desc">
+     光的方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     光源的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-range.html">
+      range
+     </a>
+    </td>
+    <td class="desc">
+     光照范围。不用于方向光。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-shadow.html">
+      shadow
+     </a>
+    </td>
+    <td class="desc">
+     对于阴影投射光源，设置为 1，否则，设置为 0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-shape0.html">
+      shape0
+     </a>
+    </td>
+    <td class="desc">
+     点光源和聚光灯的光源球体半径或矩形光源的宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-shape1.html">
+      shape1
+     </a>
+    </td>
+    <td class="desc">
+     矩形光源的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     光源类型。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI.Init.html">
+      Init
+     </a>
+    </td>
+    <td class="desc">
+     使用来自给定光源类型的参数初始化结构。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GlobalIllumination.LightDataGI.InitNoBake.html">
+      InitNoBake
+     </a>
+    </td>
+    <td class="desc">
+     初始化光源以使烘焙后端忽略它。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

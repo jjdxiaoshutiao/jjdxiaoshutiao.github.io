@@ -1,0 +1,269 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DictationRecognizer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.Speech
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   DictationRecognizer 监听语音输入，并尝试确定说出的短语。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   用户可以注册和监听假设和短语完成事件。Start() 和 Stop() 方法分别用于启用和禁用听写识别。用完识别器后，必须使用 Dispose() 方法对它进行处置以释放它使用的资源。它将在垃圾收集期间自动释放这些资源，如果资源没有在这之前得到释放，将会产生额外的性能成本。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Windows.Speech;<br/><br/>public class DictationScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="SerializeField.html">SerializeField</a>]
+    private Text m_Hypotheses;<br/><br/>    [<a href="SerializeField.html">SerializeField</a>]
+    private Text m_Recognitions;<br/><br/>    private <a href="Windows.Speech.DictationRecognizer.html">DictationRecognizer</a> m_DictationRecognizer;<br/><br/>    void Start()
+    {
+        m_DictationRecognizer = new <a href="Windows.Speech.DictationRecognizer.html">DictationRecognizer</a>();<br/><br/>        m_DictationRecognizer.DictationResult += (text, confidence) =&gt;
+        {
+            <a href="Debug.LogFormat.html">Debug.LogFormat</a>("Dictation result: {0}", text);
+            m_Recognitions.text += text + "\n";
+        };<br/><br/>        m_DictationRecognizer.DictationHypothesis += (text) =&gt;
+        {
+            <a href="Debug.LogFormat.html">Debug.LogFormat</a>("Dictation hypothesis: {0}", text);
+            m_Hypotheses.text += text;
+        };<br/><br/>        m_DictationRecognizer.DictationComplete += (completionCause) =&gt;
+        {
+            if (completionCause != <a href="Windows.Speech.DictationCompletionCause.Complete.html">DictationCompletionCause.Complete</a>)
+                <a href="Debug.LogErrorFormat.html">Debug.LogErrorFormat</a>("Dictation completed unsuccessfully: {0}.", completionCause);
+        };<br/><br/>        m_DictationRecognizer.DictationError += (error, hresult) =&gt;
+        {
+            <a href="Debug.LogErrorFormat.html">Debug.LogErrorFormat</a>("Dictation error: {0}; HResult = {1}.", error, hresult);
+        };<br/><br/>        m_DictationRecognizer.Start();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   听写识别器目前仅在 Windows 10 上可用，并且要求在用户的语音隐私政策（Settings &gt; Privacy &gt; Speech，inking &amp; typing）中允许听写。如果听写未启用，DictationRecognizer 将会在
+   <a href="Windows.Speech.DictationRecognizer.Start.html">
+    Start
+   </a>
+   上失败。开发者可以通过提供
+   <a href="Windows.Speech.DictationRecognizer.DictationError.html">
+    DictationError
+   </a>
+   委托和测试 SPERR_SPEECH_PRIVACY_POLICY_NOT_ACCEPTED (0x80045509)，以特定于此应用程序的方式处理此故障。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.AutoSilenceTimeoutSeconds.html">
+      AutoSilenceTimeoutSeconds
+     </a>
+    </td>
+    <td class="desc">
+     由于缺乏音频输入，听写识别器会话结束前持续的时长（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.InitialSilenceTimeoutSeconds.html">
+      InitialSilenceTimeoutSeconds
+     </a>
+    </td>
+    <td class="desc">
+     由于缺乏音频输入，导致不能在当前会话中听过任何音频，听写识别器会话在结束之前持续的时长（以秒为单位）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.Status.html">
+      Status
+     </a>
+    </td>
+    <td class="desc">
+     指示听写识别器的状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer-ctor.html">
+      DictationRecognizer
+     </a>
+    </td>
+    <td class="desc">
+     使用指定的最小可信度和听写主题约束创建 DictationRecognizer。位于指定最低水平下的短语将被忽略。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     处理此听写识别器使用的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.Start.html">
+      Start
+     </a>
+    </td>
+    <td class="desc">
+     开启听写识别会话。听写识别只能在不运行 PhraseRecognitionSystem 时启动。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     结束听写识别会话。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationComplete.html">
+      DictationComplete
+     </a>
+    </td>
+    <td class="desc">
+     当识别器会话结束时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationError.html">
+      DictationError
+     </a>
+    </td>
+    <td class="desc">
+     当识别器会话发生错误时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationHypothesis.html">
+      DictationHypothesis
+     </a>
+    </td>
+    <td class="desc">
+     当识别器更改它对当前片元的假设时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationResult.html">
+      DictationResult
+     </a>
+    </td>
+    <td class="desc">
+     指示已采用指定可信度识别某个短语的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationCompletedDelegate.html">
+      DictationCompletedDelegate
+     </a>
+    </td>
+    <td class="desc">
+     DictationComplete 事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationErrorHandler.html">
+      DictationErrorHandler
+     </a>
+    </td>
+    <td class="desc">
+     DictationError 事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationHypothesisDelegate.html">
+      DictationHypothesisDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示假设更改事件的回调。您应注册 DictationHypothesis 事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.DictationRecognizer.DictationResultDelegate.html">
+      DictationResultDelegate
+     </a>
+    </td>
+    <td class="desc">
+     指示已采用指定可信度识别某个短语的回调。您应注册 DictationResult 事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

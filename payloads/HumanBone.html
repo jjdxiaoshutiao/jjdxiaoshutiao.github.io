@@ -1,0 +1,136 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HumanBone
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   模型中的骨骼与 Mecanim 人体解剖学中的概念骨骼之间的映射。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Mecanim 人体骨骼和模型中的骨骼名称随限制肌肉值（用于在动画期间限制骨骼的旋转）一并存储。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections.Generic;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        Dictionary&lt;string, string&gt; boneName = new System.Collections.Generic.Dictionary&lt;string, string&gt;();
+        boneName["Chest"] = "Bip001 Spine2";
+        boneName["Head"] = "Bip001 Head";
+        boneName["Hips"] = "Bip001 Pelvis";
+        boneName["LeftFoot"] = "Bip001 L Foot";
+        boneName["LeftHand"] = "Bip001 L <a href="XR.Hand.html">Hand</a>";
+        boneName["LeftLowerArm"] = "Bip001 L Forearm";
+        boneName["LeftLowerLeg"] = "Bip001 L Calf";
+        boneName["LeftShoulder"] = "Bip001 L Clavicle";
+        boneName["LeftUpperArm"] = "Bip001 L UpperArm";
+        boneName["LeftUpperLeg"] = "Bip001 L Thigh";
+        boneName["RightFoot"] = "Bip001 R Foot";
+        boneName["RightHand"] = "Bip001 R <a href="XR.Hand.html">Hand</a>";
+        boneName["RightLowerArm"] = "Bip001 R Forearm";
+        boneName["RightLowerLeg"] = "Bip001 R Calf";
+        boneName["RightShoulder"] = "Bip001 R Clavicle";
+        boneName["RightUpperArm"] = "Bip001 R UpperArm";
+        boneName["RightUpperLeg"] = "Bip001 R Thigh";
+        boneName["Spine"] = "Bip001 Spine1";
+        string[] humanName = <a href="HumanTrait.BoneName.html">HumanTrait.BoneName</a>;
+        <a href="HumanBone.html">HumanBone</a>[] humanBones = new <a href="HumanBone.html">HumanBone</a>[boneName.Count];
+        int j = 0;
+        int i = 0;
+        while (i &lt; humanName.Length)
+        {
+            if (boneName.ContainsKey(humanName[i]))
+            {
+                <a href="HumanBone.html">HumanBone</a> humanBone = new <a href="HumanBone.html">HumanBone</a>();
+                humanBone.humanName = humanName[i];
+                humanBone.boneName = boneName[humanName[i]];
+                humanBone.limit.useDefaultValues = true;
+                humanBones[j++] = humanBone;
+            }
+            i++;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="HumanDescription.html">
+    HumanDescription
+   </a>
+   、
+   <a href="AvatarBuilder.html">
+    AvatarBuilder
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="HumanBone-boneName.html">
+      boneName
+     </a>
+    </td>
+    <td class="desc">
+     Mecanim 人体骨骼所映射到的骨骼的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HumanBone-humanName.html">
+      humanName
+     </a>
+    </td>
+    <td class="desc">
+     模型中的骨骼所映射到的 Mecanim 人体骨骼的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HumanBone-limit.html">
+      limit
+     </a>
+    </td>
+    <td class="desc">
+     定义该骨骼对应肌肉的旋转限制。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

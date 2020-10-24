@@ -1,0 +1,67 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PreferBinarySerialization
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使 ScriptableObject 派生类型优先使用二进制序列化（不考虑项目的资源序列化模式）。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   对于包含大量数据的自定义资源类型，这非常有用。始终使它们存储为二进制可以提高读/写性能，以及在磁盘上生成更紧凑的表示。主要缺点是二进制资源文件不再人工可读，并且无法在版本控制软件中将其合并。
+   <br/>
+   <br/>
+   Unity 中的资源序列化对每个文件整体始终使用一致的序列化模式。因此，当资源文件包含多个资源时，强制特定资源使用二进制序列化可能无法始终满足。资源文件的序列化模式由该路径上的主资源控制。因此，在使用 AssetDabase.CreateAsset 和
+   <a href="AssetDatabase.AddObjectToAsset.html">
+    AssetDatabase.AddObjectToAsset
+   </a>
+   组合复杂资源时必须谨慎，以确保主资源是设置了此属性的对象。场景文件始终遵循在项目中配置的资源序列化模式，因而对于场景中嵌入的资源，会始终忽略 PreferBinarySerialization。
+   <br/>
+   <br/>
+   该属性只能应用于 ScriptableObject 派生类，对于所有其他类型，都会被忽略。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// Custom asset type that prefers binary serialization.
+//
+// Create a new asset file by going to "<a href="VersionControl.Asset.html">Asset</a>/Create/Custom Data".
+// If you open this new asset in a text editor, you can see how it
+// is not affected by changing the project asset serialization mode.
+//
+[CreateAssetMenu]
+[<a href="PreferBinarySerialization.html">PreferBinarySerialization</a>]
+public class CustomData : <a href="ScriptableObject.html">ScriptableObject</a>
+{
+    public float[] lotsOfFloatData = new[] { 1f, 2f, 3f };
+    public byte[] lotsOfByteData = new byte[] { 4, 5, 6 };
+}
+</pre>
+ </div>
+</div>

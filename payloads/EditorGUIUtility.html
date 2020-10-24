@@ -1,0 +1,600 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EditorGUIUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="GUIUtility.html">
+    GUIUtility
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="EditorGUI.html">
+    EditorGUI
+   </a>
+   的各种辅助程序。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-currentViewWidth.html">
+      currentViewWidth
+     </a>
+    </td>
+    <td class="desc">
+     当前 EditorWindow 或其他视图的 GUI 区域的宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-editingTextField.html">
+      editingTextField
+     </a>
+    </td>
+    <td class="desc">
+     文本字段是否正在编辑文本？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-fieldWidth.html">
+      fieldWidth
+     </a>
+    </td>
+    <td class="desc">
+     为 Editor GUI 控件字段保留的最小宽度（以像素为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-hierarchyMode.html">
+      hierarchyMode
+     </a>
+    </td>
+    <td class="desc">
+     Editor GUI 是否采用层次结构模式？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-isProSkin.html">
+      isProSkin
+     </a>
+    </td>
+    <td class="desc">
+     用户当前是否正在使用 pro 皮肤？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-labelWidth.html">
+      labelWidth
+     </a>
+    </td>
+    <td class="desc">
+     为 Editor GUI 控件标签保留的宽度（以像素为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-pixelsPerPoint.html">
+      pixelsPerPoint
+     </a>
+    </td>
+    <td class="desc">
+     当前视图的 GUI 点相对于屏幕像素的比例。该值是每个界面空间点的屏幕像素数。例如，Retina 显示屏上的 2.0。请注意，如果视图位于具有不同 UI 比例的显示器上，该值可能会因视图而异。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-singleLineHeight.html">
+      singleLineHeight
+     </a>
+    </td>
+    <td class="desc">
+     获取用于单个 Editor 控件（如单行 EditorGUI.TextField 或 EditorGUI.Popup）的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-standardVerticalSpacing.html">
+      standardVerticalSpacing
+     </a>
+    </td>
+    <td class="desc">
+     获取默认用于控件之间垂直间距的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-systemCopyBuffer.html">
+      systemCopyBuffer
+     </a>
+    </td>
+    <td class="desc">
+     系统复制缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-textFieldHasSelection.html">
+      textFieldHasSelection
+     </a>
+    </td>
+    <td class="desc">
+     如果文本字段当前已获得焦点并且其中的文本被选中，则为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-whiteTexture.html">
+      whiteTexture
+     </a>
+    </td>
+    <td class="desc">
+     获取白色纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility-wideMode.html">
+      wideMode
+     </a>
+    </td>
+    <td class="desc">
+     Editor GUI 当前是否处于宽模式？
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.AddCursorRect.html">
+      AddCursorRect
+     </a>
+    </td>
+    <td class="desc">
+     向控件添加自定义鼠标指针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.CommandEvent.html">
+      CommandEvent
+     </a>
+    </td>
+    <td class="desc">
+     创建可以发送到另一个窗口的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.DrawColorSwatch.html">
+      DrawColorSwatch
+     </a>
+    </td>
+    <td class="desc">
+     绘制颜色样本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.DrawCurveSwatch.html">
+      DrawCurveSwatch
+     </a>
+    </td>
+    <td class="desc">
+     绘制曲线样本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.DrawRegionSwatch.html">
+      DrawRegionSwatch
+     </a>
+    </td>
+    <td class="desc">
+     绘制在两条 SerializedProperty 曲线之间具有填充区域的样本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.FindTexture.html">
+      FindTexture
+     </a>
+    </td>
+    <td class="desc">
+     从源文件名中获取纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.GetBuiltinSkin.html">
+      GetBuiltinSkin
+     </a>
+    </td>
+    <td class="desc">
+     获取其中一个内置 GUI 皮肤，可以是按参数选择的游戏视图、检视面板或场景视图皮肤。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.GetFlowLayoutedRects.html">
+      GetFlowLayoutedRects
+     </a>
+    </td>
+    <td class="desc">
+     在给定区域中按从左到右、从上到下的方式布置字符串项的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.GetIconSize.html">
+      GetIconSize
+     </a>
+    </td>
+    <td class="desc">
+     获取已使用 SetIconSize 设置的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.GetObjectPickerControlID.html">
+      GetObjectPickerControlID
+     </a>
+    </td>
+    <td class="desc">
+     当前显示的 Object Picker 的 controlID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.GetObjectPickerObject.html">
+      GetObjectPickerObject
+     </a>
+    </td>
+    <td class="desc">
+     Object Picker 中当前选中的对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.HasObjectThumbnail.html">
+      HasObjectThumbnail
+     </a>
+    </td>
+    <td class="desc">
+     给定的类是否具有针对每个对象的缩略图？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.IconContent.html">
+      IconContent
+     </a>
+    </td>
+    <td class="desc">
+     从具有给定名称的 Unity 内置资源中获取 GUIContent。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.IsDisplayReferencedByCameras.html">
+      IsDisplayReferencedByCameras
+     </a>
+    </td>
+    <td class="desc">
+     检查是否有任何已启用的摄像机可以渲染到特定显示屏。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.Load.html">
+      Load
+     </a>
+    </td>
+    <td class="desc">
+     加载内置资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.LoadRequired.html">
+      LoadRequired
+     </a>
+    </td>
+    <td class="desc">
+     加载所需的内置资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.LookLikeControls.html">
+      LookLikeControls
+     </a>
+    </td>
+    <td class="desc">
+     使所有 EditorGUI 看起来像常规控件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.ObjectContent.html">
+      ObjectContent
+     </a>
+    </td>
+    <td class="desc">
+     返回具有某个 Object 的名称和图标的 GUIContent 对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.PingObject.html">
+      PingObject
+     </a>
+    </td>
+    <td class="desc">
+     在场景中对对象执行 Ping 操作，就像在检视面板中单击它一样。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.PixelsToPoints.html">
+      PixelsToPoints
+     </a>
+    </td>
+    <td class="desc">
+     从像素空间转换为点空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.PointsToPixels.html">
+      PointsToPixels
+     </a>
+    </td>
+    <td class="desc">
+     从点空间转换为像素空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.QueueGameViewInputEvent.html">
+      QueueGameViewInputEvent
+     </a>
+    </td>
+    <td class="desc">
+     将输入事件发送到游戏中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.SetIconSize.html">
+      SetIconSize
+     </a>
+    </td>
+    <td class="desc">
+     将渲染为 GUIContent 一部分的图标设置为以特定大小渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.ShowObjectPicker.html">
+      ShowObjectPicker
+     </a>
+    </td>
+    <td class="desc">
+     通过代码显示 Object Picker。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    静态变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility-hasModalWindow.html">
+       hasModalWindow
+      </a>
+     </td>
+     <td class="desc">
+      一个全局属性；如果正在显示 ModalWindow，则为 true，否则为 false。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility-hotControl.html">
+       hotControl
+      </a>
+     </td>
+     <td class="desc">
+      当前热控件的 controlID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility-keyboardControl.html">
+       keyboardControl
+      </a>
+     </td>
+     <td class="desc">
+      具有键盘焦点的控件的 controlID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility-systemCopyBuffer.html">
+       systemCopyBuffer
+      </a>
+     </td>
+     <td class="desc">
+      获取系统剪贴板的访问权限。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.AlignRectToDevice.html">
+       AlignRectToDevice
+      </a>
+     </td>
+     <td class="desc">
+      将本地空间矩形与像素网格对齐。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.ExitGUI.html">
+       ExitGUI
+      </a>
+     </td>
+     <td class="desc">
+      通过抛出 ExitGUIException 来将 GUI 置于这样一种状态：阻止所有后续即时模式 GUI 函数计算 GUI 循环的其余部分。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.GetControlID.html">
+       GetControlID
+      </a>
+     </td>
+     <td class="desc">
+      为控件获取一个唯一的 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.GetStateObject.html">
+       GetStateObject
+      </a>
+     </td>
+     <td class="desc">
+      从 controlID 获取状态对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.GUIToScreenPoint.html">
+       GUIToScreenPoint
+      </a>
+     </td>
+     <td class="desc">
+      将一个点从 GUI 位置转换为屏幕空间位置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.GUIToScreenRect.html">
+       GUIToScreenRect
+      </a>
+     </td>
+     <td class="desc">
+      将矩形从 GUI 位置转换到屏幕空间。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.QueryStateObject.html">
+       QueryStateObject
+      </a>
+     </td>
+     <td class="desc">
+      从 controlID 获取一个现有的状态对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.RotateAroundPivot.html">
+       RotateAroundPivot
+      </a>
+     </td>
+     <td class="desc">
+      让 GUI 围绕一个点旋转的 Helper 函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.ScaleAroundPivot.html">
+       ScaleAroundPivot
+      </a>
+     </td>
+     <td class="desc">
+      让 GUI 围绕一个点缩放的 Helper 函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.ScreenToGUIPoint.html">
+       ScreenToGUIPoint
+      </a>
+     </td>
+     <td class="desc">
+      将一个点从屏幕空间位置转换为 GUI 位置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="GUIUtility.ScreenToGUIRect.html">
+       ScreenToGUIRect
+      </a>
+     </td>
+     <td class="desc">
+      将矩形从屏幕空间转换到 GUI 位置。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

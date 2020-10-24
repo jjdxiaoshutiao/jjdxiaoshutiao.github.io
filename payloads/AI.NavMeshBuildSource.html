@@ -1,0 +1,138 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NavMeshBuildSource
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   导航网格构建器的输入是导航网格构建源列表。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   它们可以采用以下形状：网格、地形、盒体、球体或胶囊体。每种形状均通过 NavMeshBuildSource 结构描述。
+   <br/>
+   <br/>
+   您可以填充 NavMeshBuildSource 结构并将其添加到传递给烘焙函数的源列表，以此来指定构建源。或者，您也可以使用 collect API，通过可用的渲染网格或物理碰撞体快速创建导航网格构建源。请参阅
+   <a href="AI.NavMeshBuilder.CollectSources.html">
+    NavMeshBuilder.CollectSources
+   </a>
+   。
+   <br/>
+   <br/>
+   如果您在运行时使用此函数，系统将不会处理任何禁用读取/写入权限的网格，也不会将这些网格包含在最后的导航网格中。请参阅
+   <a href="Mesh-isReadable.html">
+    Mesh.isReadable
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.AI;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Make a build source for a box in local space
+    public <a href="AI.NavMeshBuildSource.html">NavMeshBuildSource</a> BoxSource10x10()
+    {
+        var src = new <a href="AI.NavMeshBuildSource.html">NavMeshBuildSource</a>();
+        src.transform = transform.localToWorldMatrix;
+        src.shape = <a href="AI.NavMeshBuildSourceShape.Box.html">NavMeshBuildSourceShape.Box</a>;
+        src.size = new <a href="Vector3.html">Vector3</a>(10.0f, 0.1f, 10.0f);
+        return src;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-area.html">
+      area
+     </a>
+    </td>
+    <td class="desc">
+     描述此对象的导航网格表面的区域类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-component.html">
+      component
+     </a>
+    </td>
+    <td class="desc">
+     指向拥有的组件（如果可用），否则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-shape.html">
+      shape
+     </a>
+    </td>
+    <td class="desc">
+     此源描述的形状类型。另请参阅：NavMeshBuildSourceShape。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     描述形状的尺寸。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-sourceObject.html">
+      sourceObject
+     </a>
+    </td>
+    <td class="desc">
+     描述针对输入源的网格和地形类型引用的对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildSource-transform.html">
+      transform
+     </a>
+    </td>
+    <td class="desc">
+     描述构建源的局部到世界的变换矩阵，即形状的位置、方向和缩放比例。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

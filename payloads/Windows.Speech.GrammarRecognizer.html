@@ -1,0 +1,187 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GrammarRecognizer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.Speech
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Windows.Speech.PhraseRecognizer.html">
+    Windows.Speech.PhraseRecognizer
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   GrammarRecognizer 是对 KeywordRecognizer 的补充。在许多情况下，开发者将会发现 KeywordRecognizer 能够满足他们的所有开发需求。然而，在一些情况下，更为复杂的语法将以磁盘上的 xml 文件的形式更好地表示。
+按照万维网联盟 (W3C) 语音识别语法规范 (SRGS) 版本 1.0 规定，GrammarRecognizer 使用可扩展标记语言 (XML) 元素和属性。这些 XML 元素和属性表示定义由语音识别引擎识别的单词或短语（命令）的规则结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如需详细了解此格式，请访问 http://www.w3.org
+   <code class="varname">
+    speech-grammar
+   </code>
+   speech-grammar/ 或 MSDN。
+   <br/>
+   <br/>
+   在任何给定的时间点可能有许多语法识别器同时处于活动状态，但是没有哪两个语法识别器可以使用相同的语法文件。
+   <br/>
+   <br/>
+   语法识别器目前仅在 Windows 10 上可用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.GrammarRecognizer.GrammarFilePath.html">
+      GrammarFilePath
+     </a>
+    </td>
+    <td class="desc">
+     返回创建语法识别器时提供的语法文件路径。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.GrammarRecognizer-ctor.html">
+      GrammarRecognizer
+     </a>
+    </td>
+    <td class="desc">
+     使用指定文件路径和最低可信度创建语法识别器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.IsRunning.html">
+       IsRunning
+      </a>
+     </td>
+     <td class="desc">
+      判断短语识别器是否在监听短语。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      处置短语识别器使用的资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Start.html">
+       Start
+      </a>
+     </td>
+     <td class="desc">
+      使短语识别器开始监听短语。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Stop.html">
+       Stop
+      </a>
+     </td>
+     <td class="desc">
+      使短语识别器停止监听短语。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    Events
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.OnPhraseRecognized.html">
+       OnPhraseRecognized
+      </a>
+     </td>
+     <td class="desc">
+      当短语识别器识别短语时触发的事件。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    委托
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.PhraseRecognizedDelegate.html">
+       PhraseRecognizedDelegate
+      </a>
+     </td>
+     <td class="desc">
+      OnPhraseRecognized 事件的委托。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

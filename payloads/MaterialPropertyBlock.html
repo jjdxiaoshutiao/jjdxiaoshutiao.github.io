@@ -1,0 +1,356 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MaterialPropertyBlock
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   要应用的材质值代码块。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   MaterialPropertyBlock 由
+   <a href="Graphics.DrawMesh.html">
+    Graphics.DrawMesh
+   </a>
+   和
+   <a href="Renderer.SetPropertyBlock.html">
+    Renderer.SetPropertyBlock
+   </a>
+   使用。在
+希望绘制具有相同材质，但属性
+略有不同的多个对象时可使用它。例如，如果
+要稍微更改绘制的每个网格的颜色。不支持更改渲染状态。
+   <br/>
+   <br/>
+   Unity 的地形引擎使用 MaterialPropertyBlock 绘制树；它们全都使用
+相同材质，但是每棵树具有不同的颜色、缩放和风力系数。
+   <br/>
+   <br/>
+   传递给
+   <a href="Graphics.DrawMesh.html">
+    Graphics.DrawMesh
+   </a>
+   或
+   <a href="Renderer.SetPropertyBlock.html">
+    Renderer.SetPropertyBlock
+   </a>
+   的代码块将被复制，因此使用它的最高效方式是
+创建一个代码块并将它重复用于所有 DrawMesh 调用。使用
+   <a href="MaterialPropertyBlock.SetFloat.html">
+    SetFloat
+   </a>
+   、
+   <a href="MaterialPropertyBlock.SetVector.html">
+    SetVector
+   </a>
+   、
+   <a href="MaterialPropertyBlock.SetColor.html">
+    SetColor
+   </a>
+   、
+   <a href="MaterialPropertyBlock.SetMatrix.html">
+    SetMatrix
+   </a>
+   、
+   <a href="MaterialPropertyBlock.SetTexture.html">
+    SetTexture
+   </a>
+   、
+   <a href="MaterialPropertyBlock.SetBuffer.html">
+    SetBuffer
+   </a>
+   可添加或替换值。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Graphics.DrawMesh.html">
+    Graphics.DrawMesh
+   </a>
+   、
+   <a href="Material.html">
+    Material
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock-isEmpty.html">
+      isEmpty
+     </a>
+    </td>
+    <td class="desc">
+     材质属性代码块是否为空？（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     清除材质属性值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.CopyProbeOcclusionArrayFrom.html">
+      CopyProbeOcclusionArrayFrom
+     </a>
+    </td>
+    <td class="desc">
+     此函数将整个源数组都复制到名为 unity_ProbesOcclusion 的 Vector4 属性数组中，用于实例化 Shadowmask 渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.CopySHCoefficientArraysFrom.html">
+      CopySHCoefficientArraysFrom
+     </a>
+    </td>
+    <td class="desc">
+     此函数将整个源数组都转换并复制到名为 unity_SHBb、unity_SHBb、unity_SHBb、unity_SHBb、unity_SHBb、unity_SHBb 和 unity_SHC 的 7 个 Vector4 属性数组中，用于实例化light probe渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetColor.html">
+      GetColor
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取浮点数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetFloatArray.html">
+      GetFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取浮点数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetInt.html">
+      GetInt
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetMatrix.html">
+      GetMatrix
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetMatrixArray.html">
+      GetMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取矩阵数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetTexture.html">
+      GetTexture
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetVector.html">
+      GetVector
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.GetVectorArray.html">
+      GetVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     从属性代码块获取向量数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetBuffer.html">
+      SetBuffer
+     </a>
+    </td>
+    <td class="desc">
+     设置 ComputeBuffer 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetColor.html">
+      SetColor
+     </a>
+    </td>
+    <td class="desc">
+     设置颜色属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetConstantBuffer.html">
+      SetConstantBuffer
+     </a>
+    </td>
+    <td class="desc">
+     将 ComputeBuffer 设置为 MaterialPropertyBlock 的指定常量缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     设置浮点属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetFloatArray.html">
+      SetFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     设置浮点数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetInt.html">
+      SetInt
+     </a>
+    </td>
+    <td class="desc">
+     向代码块添加属性。如果具有给定名称的整数属性已存在，则替换旧值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetMatrix.html">
+      SetMatrix
+     </a>
+    </td>
+    <td class="desc">
+     设置矩阵属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetMatrixArray.html">
+      SetMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     设置矩阵数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetTexture.html">
+      SetTexture
+     </a>
+    </td>
+    <td class="desc">
+     设置纹理属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetVector.html">
+      SetVector
+     </a>
+    </td>
+    <td class="desc">
+     设置向量属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MaterialPropertyBlock.SetVectorArray.html">
+      SetVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     设置向量数组属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

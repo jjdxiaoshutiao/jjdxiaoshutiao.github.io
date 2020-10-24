@@ -1,0 +1,481 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimatorStateMachine
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Animations
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   这是一种用于控制状态交互的图。每个状态引用一个运动。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-anyStatePosition.html">
+      anyStatePosition
+     </a>
+    </td>
+    <td class="desc">
+     AnyState 节点的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-anyStateTransitions.html">
+      anyStateTransitions
+     </a>
+    </td>
+    <td class="desc">
+     AnyState 过渡列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-behaviours.html">
+      behaviours
+     </a>
+    </td>
+    <td class="desc">
+     为此状态机分配的 Behaviour 列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-defaultState.html">
+      defaultState
+     </a>
+    </td>
+    <td class="desc">
+     状态机启动时将处于的状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-entryPosition.html">
+      entryPosition
+     </a>
+    </td>
+    <td class="desc">
+     进入节点的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-entryTransitions.html">
+      entryTransitions
+     </a>
+    </td>
+    <td class="desc">
+     状态机中的进入过渡列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-exitPosition.html">
+      exitPosition
+     </a>
+    </td>
+    <td class="desc">
+     退出节点的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-parentStateMachinePosition.html">
+      parentStateMachinePosition
+     </a>
+    </td>
+    <td class="desc">
+     父状态机节点的位置。只在分层状态机中有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-stateMachines.html">
+      stateMachines
+     </a>
+    </td>
+    <td class="desc">
+     子状态机列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine-states.html">
+      states
+     </a>
+    </td>
+    <td class="desc">
+     状态列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddAnyStateTransition.html">
+      AddAnyStateTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向指定状态或状态机添加一个 AnyState 过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddEntryTransition.html">
+      AddEntryTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向其父状态机退出添加一个转入过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddState.html">
+      AddState
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向该状态机添加状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddStateMachine.html">
+      AddStateMachine
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向该状态机添加一个状态机。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddStateMachineBehaviour.html">
+      AddStateMachineBehaviour
+     </a>
+    </td>
+    <td class="desc">
+     向 AnimatorStateMachine 添加类型为 stateMachineBehaviourType 的状态机行为类。C# 用户可以使用通用版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddStateMachineExitTransition.html">
+      AddStateMachineExitTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从源状态机向其父状态机的退出添加一个转出过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.AddStateMachineTransition.html">
+      AddStateMachineTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从源状态机向目标添加一个转出过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.GetStateMachineTransitions.html">
+      GetStateMachineTransitions
+     </a>
+    </td>
+    <td class="desc">
+     获取从给定状态机开始的所有转出状态机过渡的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.MakeUniqueStateMachineName.html">
+      MakeUniqueStateMachineName
+     </a>
+    </td>
+    <td class="desc">
+     指定父状态机上下文中的唯一状态机名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.MakeUniqueStateName.html">
+      MakeUniqueStateName
+     </a>
+    </td>
+    <td class="desc">
+     指定父状态机上下文中的唯一状态名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.RemoveAnyStateTransition.html">
+      RemoveAnyStateTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从状态机删除 AnyState 过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.RemoveEntryTransition.html">
+      RemoveEntryTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从状态机删除进入过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.RemoveState.html">
+      RemoveState
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从状态机删除状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.RemoveStateMachine.html">
+      RemoveStateMachine
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从父状态机删除状态机。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.RemoveStateMachineTransition.html">
+      RemoveStateMachineTransition
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从源状态机删除转出过渡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorStateMachine.SetStateMachineTransitions.html">
+      SetStateMachineTransitions
+     </a>
+    </td>
+    <td class="desc">
+     设置从给定状态机开始的所有转出状态机过渡的列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ReactorModel
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义 UNET 将如何处理网络 IO 操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.ReactorModel.SelectReactor.html">
+      SelectReactor
+     </a>
+    </td>
+    <td class="desc">
+     网络线程将睡眠至线程唤醒超时，或者套接字上发生接收事件。唤醒的线程将尝试从套接字读取最多 maxpoolsize 个数据包，并尝试更新准备发送的连接（通过固定唤醒超时率）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.ReactorModel.FixRateReactor.html">
+      FixRateReactor
+     </a>
+    </td>
+    <td class="desc">
+     网络线程将睡眠至线程唤醒超时，之后它将尝试接收最多 maxpoolsize 条消息，然后尝试为准备发送的连接执行发送操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

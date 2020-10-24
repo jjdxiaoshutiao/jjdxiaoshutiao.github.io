@@ -1,0 +1,942 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   VisualEffect
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.VFX
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Behaviour.html">
+    Behaviour
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在场景中引用
+   <a href="VFX.VisualEffectAsset.html">
+    VisualEffectAsset
+   </a>
+   实例的视觉效果类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-aliveParticleCount.html">
+      aliveParticleCount
+     </a>
+    </td>
+    <td class="desc">
+     返回视觉效果中所有存活粒子的总和。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-culled.html">
+      culled
+     </a>
+    </td>
+    <td class="desc">
+     使用此属性可确定视觉效果是否在任何摄像机中都不可见。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-initialEventID.html">
+      initialEventID
+     </a>
+    </td>
+    <td class="desc">
+     默认事件名称 ID。要获取此值，请在 VisualEffect 唤醒后或调用 VisualEffect.Reinit 后使用 Shader.PropertyID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-initialEventName.html">
+      initialEventName
+     </a>
+    </td>
+    <td class="desc">
+     默认事件名称。当 VisualEffect 唤醒或调用 VisualEffect.Reinit 时，Unity 会调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-pause.html">
+      pause
+     </a>
+    </td>
+    <td class="desc">
+     使用此属性可设置视觉效果的暂停状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-playRate.html">
+      playRate
+     </a>
+    </td>
+    <td class="desc">
+     一个乘数，Unity 在更新 VisualEffect 时将其应用于增量时间。默认值为 1.0f。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-resetSeedOnPlay.html">
+      resetSeedOnPlay
+     </a>
+    </td>
+    <td class="desc">
+     此属性控制每次调用 VisualEffect.Play 函数时视觉效果是否为随机数生成器生成新的种子。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-startSeed.html">
+      startSeed
+     </a>
+    </td>
+    <td class="desc">
+     用于内部随机数生成器的初始种子。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-visualEffectAsset.html">
+      visualEffectAsset
+     </a>
+    </td>
+    <td class="desc">
+     VisualEffect 使用的 VisualEffectAsset。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect-ctor.html">
+      VisualEffect
+     </a>
+    </td>
+    <td class="desc">
+     VisualEffect 构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.AdvanceOneFrame.html">
+      AdvanceOneFrame
+     </a>
+    </td>
+    <td class="desc">
+     如果 VisualEffect.pause 为 true，则该方法使用当前增量时间处理恰好一帧的下一个视觉效果更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.CreateVFXEventAttribute.html">
+      CreateVFXEventAttribute
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法创建新的 VFXEventAttribute。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetAnimationCurve.html">
+      GetAnimationCurve
+     </a>
+    </td>
+    <td class="desc">
+     获取指定动画曲线属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetBool.html">
+      GetBool
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 bool 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 float 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetGradient.html">
+      GetGradient
+     </a>
+    </td>
+    <td class="desc">
+     获取指定渐变属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetInt.html">
+      GetInt
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的公开整数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetMatrix4x4.html">
+      GetMatrix4x4
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 Matrix4x4 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetMesh.html">
+      GetMesh
+     </a>
+    </td>
+    <td class="desc">
+     获取指定网格属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetTexture.html">
+      GetTexture
+     </a>
+    </td>
+    <td class="desc">
+     获取指定纹理属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetTextureDimension.html">
+      GetTextureDimension
+     </a>
+    </td>
+    <td class="desc">
+     获取指定的公开纹理的预期纹理尺寸。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetUInt.html">
+      GetUInt
+     </a>
+    </td>
+    <td class="desc">
+     获取指定无符号整数属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetVector2.html">
+      GetVector2
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 Vector2 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetVector3.html">
+      GetVector3
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 Vector3 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.GetVector4.html">
+      GetVector4
+     </a>
+    </td>
+    <td class="desc">
+     获取指定 Vector4 属性的值
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasAnimationCurve.html">
+      HasAnimationCurve
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的动画曲线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasBool.html">
+      HasBool
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 bool 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasFloat.html">
+      HasFloat
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 float 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasGradient.html">
+      HasGradient
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的渐变属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasInt.html">
+      HasInt
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的整数属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasMatrix4x4.html">
+      HasMatrix4x4
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 Matrix4x4 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasMesh.html">
+      HasMesh
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的网格属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasTexture.html">
+      HasTexture
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的纹理属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasUInt.html">
+      HasUInt
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的无符号整数属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasVector2.html">
+      HasVector2
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 Vector2 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasVector3.html">
+      HasVector3
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 Vector3 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.HasVector4.html">
+      HasVector4
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可检查视觉效果是否可以覆盖具有所传入的名称的 Vector4 属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.Play.html">
+      Play
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法将播放事件发送到每个生成系统。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.Reinit.html">
+      Reinit
+     </a>
+    </td>
+    <td class="desc">
+     重新初始化视觉效果。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.ResetOverride.html">
+      ResetOverride
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法将覆盖状态设置为 false。这将还原视觉效果资源指定的默认值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SendEvent.html">
+      SendEvent
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法发送指定的自定义事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetAnimationCurve.html">
+      SetAnimationCurve
+     </a>
+    </td>
+    <td class="desc">
+     新的动画曲线值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetBool.html">
+      SetBool
+     </a>
+    </td>
+    <td class="desc">
+     新的 bool 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     新的浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetGradient.html">
+      SetGradient
+     </a>
+    </td>
+    <td class="desc">
+     新的渐变值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetInt.html">
+      SetInt
+     </a>
+    </td>
+    <td class="desc">
+     新的整数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetMatrix4x4.html">
+      SetMatrix4x4
+     </a>
+    </td>
+    <td class="desc">
+     新的 Matrix4x4 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetMesh.html">
+      SetMesh
+     </a>
+    </td>
+    <td class="desc">
+     新的网格值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetTexture.html">
+      SetTexture
+     </a>
+    </td>
+    <td class="desc">
+     新的纹理值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetUInt.html">
+      SetUInt
+     </a>
+    </td>
+    <td class="desc">
+     新的无符号整数值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetVector2.html">
+      SetVector2
+     </a>
+    </td>
+    <td class="desc">
+     新的 Vector2 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetVector3.html">
+      SetVector3
+     </a>
+    </td>
+    <td class="desc">
+     新的 Vector3 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.SetVector4.html">
+      SetVector4
+     </a>
+    </td>
+    <td class="desc">
+     新的 Vector4 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.Simulate.html">
+      Simulate
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可快进视觉效果，其原理是使用指定的增量时间对所有系统进行若干步数的模拟。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VFX.VisualEffect.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可将停止事件发送到所有生成系统。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-enabled.html">
+       enabled
+      </a>
+     </td>
+     <td class="desc">
+      启用的 Behaviour 可更新，禁用的 Behaviour 不可更新。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-isActiveAndEnabled.html">
+       isActiveAndEnabled
+      </a>
+     </td>
+     <td class="desc">
+      是否已激活并启用 Behaviour？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

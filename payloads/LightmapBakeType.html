@@ -1,0 +1,72 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightmapBakeType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   枚举，描述可以对光贡献的哪个部分进行烘焙。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightmapBakeType.Realtime.html">
+      Realtime
+     </a>
+    </td>
+    <td class="desc">
+     实时光源会投射运行时光源和阴影。它们可以在运行时更改位置、方向、颜色、亮度和许多其他属性。没有光照会烘焙到光照贴图或光照探针中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapBakeType.Baked.html">
+      Baked
+     </a>
+    </td>
+    <td class="desc">
+     烘焙光源在运行时期间无法以任何方式移动或更改。静态对象的所有光照都会烘焙到光照贴图中。动态对象的光照和阴影会烘焙到光照探针中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapBakeType.Mixed.html">
+      Mixed
+     </a>
+    </td>
+    <td class="desc">
+     通过混合光源可以基于使用的混合光照模式来混合实时和烘焙光源。这些光源在运行时无法移动，但是可以更改颜色和强度。颜色和强度的更改仅影响直接光照，因为间接光照会进行烘焙。如果使用 Subtractive 模式，则不会在运行时对静态对象计算颜色或强度的更改。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

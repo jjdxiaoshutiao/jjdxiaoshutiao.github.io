@@ -1,0 +1,130 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NativeMemoryRegionEntries
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Profiling.Memory.Experimental
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含本机内存区域数据的类，由
+   <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeMemoryRegions.html">
+    PackedMemorySnapshot.nativeMemoryRegions
+   </a>
+   返回。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-addressBase.html">
+      addressBase
+     </a>
+    </td>
+    <td class="desc">
+     包含内存区域地址的数组。包含子内存区域的非叶条目设置为 0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-addressSize.html">
+      addressSize
+     </a>
+    </td>
+    <td class="desc">
+     包含内存区域累计大小（以字节为单位，包括其所有子项）的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-firstAllocationIndex.html">
+      firstAllocationIndex
+     </a>
+    </td>
+    <td class="desc">
+     包含 PackedMemorySnapshot.nativeAllocations 数组索引（用于标识内存区域包含的第一个分配）的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-memoryRegionName.html">
+      memoryRegionName
+     </a>
+    </td>
+    <td class="desc">
+     包含内存区域名称的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-numAllocations.html">
+      numAllocations
+     </a>
+    </td>
+    <td class="desc">
+     这是一个数组，其中包含内存区域所含的分配（包括子项）数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries-parentIndex.html">
+      parentIndex
+     </a>
+    </td>
+    <td class="desc">
+     此内存区域的父级，由此条目数组中的索引引用。根内存区域包含父索引 -1。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeMemoryRegionEntries.GetNumEntries.html">
+      GetNumEntries
+     </a>
+    </td>
+    <td class="desc">
+     获取内存区域条目的数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

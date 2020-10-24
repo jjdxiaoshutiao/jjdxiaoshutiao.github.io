@@ -1,0 +1,78 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LODFadeMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   LOD 淡化模式。
+   <a href="LODFadeMode.None.html">
+    LODFadeMode.None
+   </a>
+   以外的模式会使 Unity 计算用于在两个相邻 LOD 之间进行混合/插值的混合系数，并将它传递给着色器。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LODFadeMode.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     指示 LOD 淡化已关闭。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LODFadeMode.CrossFade.html">
+      CrossFade
+     </a>
+    </td>
+    <td class="desc">
+     如果与摄像机之间的距离处于由每个 LOD 的 LOD.fadeTransitionWidth 指定的范围内，则在当前 LOD 与下一个 LOD 之间执行交叉淡入淡出样式混合。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LODFadeMode.SpeedTree.html">
+      SpeedTree
+     </a>
+    </td>
+    <td class="desc">
+     通过指定此模式，LODGroup 会执行 SpeedTree 样式 LOD 淡化方案：
+* 对于最后一个（最粗略）网格 LOD 以外的所有网格 LOD，淡化系数会计算为对象当前屏幕高度的百分比（与 LOD 的整个范围相比）。如果摄像机正好处于上一个 LOD 切出的位置处，则为 1，如果下一个 LOD 恰好即将切入，则为 0。
+* 对于最后一个网格 LOD 和公告牌 LOD，使用交叉淡入淡出模式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,272 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PrimitiveBoundsHandle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.IMGUI.Controls
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于在 Scene View 中编辑包围体积的复合手柄基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此类允许您显示最多包含六个控制手柄的形状，以便同时编辑包围体积的大小和中心。拖动任何一个控制手柄都将沿控制手柄的轴扩展体积。在拖动控制手柄时，从此类继承的所有类也会获得以下修改键：\
+\
+•
+   <strong>
+    Alt
+   </strong>
+   ：在单击控制手柄时将体积的
+   <a href="IMGUI.Controls.PrimitiveBoundsHandle-center.html">
+    center
+   </a>
+   固定到其位置，然后沿控制手柄的移动轴在两个方向上增加大小。\
+•
+   <strong>
+    Shift
+   </strong>
+   ：沿着所有启用的
+   <a href="IMGUI.Controls.PrimitiveBoundsHandle-axes.html">
+    axes
+   </a>
+   均匀缩放体积，使之与单击控制手柄时的大小成比例。\
+\
+此类的
+   <a href="IMGUI.Controls.PrimitiveBoundsHandle.DrawHandle.html">
+    DrawHandle
+   </a>
+   方法渲染的手柄受
+   <a href="Handles.html">
+    Handles
+   </a>
+   类（比如
+   <a href="Handles-matrix.html">
+    Handles.matrix
+   </a>
+   和
+   <a href="Handles-color.html">
+    Handles.color
+   </a>
+   ）的全局状态影响。\
+\
+另请参阅：
+   <a href="Editor.OnSceneGUI.html">
+    Editor.OnSceneGUI
+   </a>
+   、
+   <a href="Handles.SetCamera.html">
+    Handles.SetCamera
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-axes.html">
+      axes
+     </a>
+    </td>
+    <td class="desc">
+     指定哪些轴应显示控制手柄的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定手柄包围体积的中心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-handleColor.html">
+      handleColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定控制手柄的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-midpointHandleDrawFunction.html">
+      midpointHandleDrawFunction
+     </a>
+    </td>
+    <td class="desc">
+     显示控制手柄时使用的可选 CapFunction。如果未指定值，则默认为 Handles.DotHandleCap。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-midpointHandleSizeFunction.html">
+      midpointHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     用于指定中点控制手柄应该多大的 SizeFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-wireframeColor.html">
+      wireframeColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定线框形状的颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle-ctor.html">
+      PrimitiveBoundsHandle
+     </a>
+    </td>
+    <td class="desc">
+     创建 PrimitiveBoundsHandle 类的新实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.DrawHandle.html">
+      DrawHandle
+     </a>
+    </td>
+    <td class="desc">
+     使用实例的当前配置在当前手柄摄像机中显示此实例的函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.SetColor.html">
+      SetColor
+     </a>
+    </td>
+    <td class="desc">
+     将 handleColor 和 wireframeColor 设置为相同的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.DrawWireframe.html">
+      DrawWireframe
+     </a>
+    </td>
+    <td class="desc">
+     绘制此实例的线框形状。子类必须实现此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.GetSize.html">
+      GetSize
+     </a>
+    </td>
+    <td class="desc">
+     获取此实例包围体积的当前大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.IsAxisEnabled.html">
+      IsAxisEnabled
+     </a>
+    </td>
+    <td class="desc">
+     获取指示是否为当前实例启用了指定轴的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.OnHandleChanged.html">
+      OnHandleChanged
+     </a>
+    </td>
+    <td class="desc">
+     在控制手柄被拖到场景中时使用的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.SetSize.html">
+      SetSize
+     </a>
+    </td>
+    <td class="desc">
+     设置此实例包围体积的当前大小。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.PrimitiveBoundsHandle.DefaultMidpointHandleSizeFunction.html">
+      DefaultMidpointHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     返回一个固定屏幕空间尺寸的 SizeFunction。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

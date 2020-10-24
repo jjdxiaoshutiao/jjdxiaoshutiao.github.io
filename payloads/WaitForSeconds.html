@@ -1,0 +1,158 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WaitForSeconds
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="YieldInstruction.html">
+    YieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用缩放时间将协程执行暂停指定的秒数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   实际暂停时间等于给定时间除以
+   <a href="Time-timeScale.html">
+    Time.timeScale
+   </a>
+   。如果要使用未缩放时间进行等待，请参阅
+   <a href="WaitForSecondsRealtime.html">
+    WaitForSecondsRealtime
+   </a>
+   。在协程中，
+   <a href="WaitForSeconds.html">
+    WaitForSeconds
+   </a>
+   只能与
+   <code class="varname">
+    yield
+   </code>
+   语句结合使用。
+   <br/>
+   <br/>
+   有一些因素可能意味着实际等待的时间量与指定的时间量不完全一致。\
+   <strong>
+    1.
+   </strong>
+   在当前帧的
+   <code class="varname">
+    end
+   </code>
+   处开始等待。如果您在一个非常长的帧（例如，具有同步加载等阻止主线程的长时间操作的帧）上使用持续时间“t”启动
+   <a href="WaitForSeconds.html">
+    WaitForSeconds
+   </a>
+   ，协程将在帧结束后返回“t”秒，而不是取消后“t”秒。\
+   <strong>
+    2.
+   </strong>
+   允许协程在“t”秒后继续在第一帧上执行，不是确切的“t”秒之后。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class WaitForSecondsExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        //Start the coroutine we define below named ExampleCoroutine.
+        StartCoroutine(ExampleCoroutine());
+    }<br/><br/>    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        <a href="Debug.Log.html">Debug.Log</a>("Started <a href="Coroutine.html">Coroutine</a> at timestamp : " + <a href="Time-time.html">Time.time</a>);<br/><br/>        //yield on a new <a href="YieldInstruction.html">YieldInstruction</a> that waits for 5 seconds.
+        yield return new <a href="WaitForSeconds.html">WaitForSeconds</a>(5);<br/><br/>        //After we have waited 5 seconds print the time again.
+        <a href="Debug.Log.html">Debug.Log</a>("Finished <a href="Coroutine.html">Coroutine</a> at timestamp : " + <a href="Time-time.html">Time.time</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="MonoBehaviour.StartCoroutine.html">
+    MonoBehaviour.StartCoroutine
+   </a>
+   、
+   <a href="AsyncOperation.html">
+    AsyncOperation
+   </a>
+   、
+   <a href="WaitForEndOfFrame.html">
+    WaitForEndOfFrame
+   </a>
+   、
+   <a href="WaitForFixedUpdate.html">
+    WaitForFixedUpdate
+   </a>
+   、
+   <a href="WaitForSecondsRealtime.html">
+    WaitForSecondsRealtime
+   </a>
+   、
+   <a href="WaitUntil.html">
+    WaitUntil
+   </a>
+   、
+   <a href="WaitWhile.html">
+    WaitWhile
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WaitForSeconds-ctor.html">
+      WaitForSeconds
+     </a>
+    </td>
+    <td class="desc">
+     使用缩放时间将协程执行暂停指定的秒数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

@@ -1,0 +1,329 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Lightmapping
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许控制光照贴图作业。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   开始作业之前，可通过
+   <a href="LightmapEditorSettings.html">
+    LightmapEditorSettings
+   </a>
+   设置烘焙设置。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="LightmapEditorSettings.html">
+    LightmapEditorSettings
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-bakedGI.html">
+      bakedGI
+     </a>
+    </td>
+    <td class="desc">
+     是否已启用烘焙 GI？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-bounceBoost.html">
+      bounceBoost
+     </a>
+    </td>
+    <td class="desc">
+     提升反照率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-buildProgress.html">
+      buildProgress
+     </a>
+    </td>
+    <td class="desc">
+     返回当前的光照贴图构建进度；如果 Lightmapping.isRunning 为 false，则返回 0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-giWorkflowMode.html">
+      giWorkflowMode
+     </a>
+    </td>
+    <td class="desc">
+     使用的光照贴图烘焙工作流程模式。默认使用迭代模式，但您可切换至按需模式，该模式仅在用户按下烘焙按钮时进行烘焙。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-indirectOutputScale.html">
+      indirectOutputScale
+     </a>
+    </td>
+    <td class="desc">
+     间接光照的缩放值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-isRunning.html">
+      isRunning
+     </a>
+    </td>
+    <td class="desc">
+     烘焙作业运行时返回 true，否则返回 false（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-lightingDataAsset.html">
+      lightingDataAsset
+     </a>
+    </td>
+    <td class="desc">
+     活动场景使用的光照数据资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-realtimeGI.html">
+      realtimeGI
+     </a>
+    </td>
+    <td class="desc">
+     是否已启用实时 GI？
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.Bake.html">
+      Bake
+     </a>
+    </td>
+    <td class="desc">
+     开始一个同步烘焙作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.BakeAsync.html">
+      BakeAsync
+     </a>
+    </td>
+    <td class="desc">
+     开始异步烘焙作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.BakeMultipleScenes.html">
+      BakeMultipleScenes
+     </a>
+    </td>
+    <td class="desc">
+     烘焙一组场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.BakeReflectionProbe.html">
+      BakeReflectionProbe
+     </a>
+    </td>
+    <td class="desc">
+     开始针对探针的同步烘焙作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.Cancel.html">
+      Cancel
+     </a>
+    </td>
+    <td class="desc">
+     取消当前运行的异步烘焙作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     删除当前已加载场景的所有运行时数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.ClearDiskCache.html">
+      ClearDiskCache
+     </a>
+    </td>
+    <td class="desc">
+     清除光照贴图、反射探针以及默认反射使用的缓存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.ClearLightingDataAsset.html">
+      ClearLightingDataAsset
+     </a>
+    </td>
+    <td class="desc">
+     对于当前加载的场景，此方法将删除光照数据资源以及任何链接的光照贴图和反射探针资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.ForceStop.html">
+      ForceStop
+     </a>
+    </td>
+    <td class="desc">
+     强制渐进路径追踪器停止烘焙并使用实际计算的结果。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.GetTerrainGIChunks.html">
+      GetTerrainGIChunks
+     </a>
+    </td>
+    <td class="desc">
+     了解地形被分成了多少块以进行 GI 烘焙。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.Tetrahedralize.html">
+      Tetrahedralize
+     </a>
+    </td>
+    <td class="desc">
+     从使用 Delaunay 四面体化的位置计算四面体。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-bakeCompleted.html">
+      bakeCompleted
+     </a>
+    </td>
+    <td class="desc">
+     烘焙作业完成时调用的事件。仅在 Lightmapping.GIWorkflowMode.OnDemand 模式下调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-bakeStarted.html">
+      bakeStarted
+     </a>
+    </td>
+    <td class="desc">
+     烘焙开始时调用的事件。仅在 Lightmapping.GIWorkflowMode.OnDemand 模式下调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-lightingDataUpdated.html">
+      lightingDataUpdated
+     </a>
+    </td>
+    <td class="desc">
+     在 GI 备份过程中更新任何光照数据时调用的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping-started.html">
+      started
+     </a>
+    </td>
+    <td class="desc">
+     烘焙作业开始时调用的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.OnCompletedFunction.html">
+      OnCompletedFunction
+     </a>
+    </td>
+    <td class="desc">
+     Lightmapping.completed 回调使用的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Lightmapping.OnStartedFunction.html">
+      OnStartedFunction
+     </a>
+    </td>
+    <td class="desc">
+     Lightmapping.started 回调使用的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

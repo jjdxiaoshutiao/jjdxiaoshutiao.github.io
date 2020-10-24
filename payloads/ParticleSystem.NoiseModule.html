@@ -1,0 +1,358 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NoiseModule
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   粒子系统 NoiseModule 的脚本接口。
+   <br/>
+   <br/>
+   通过噪声模块可将湍流应用于粒子的移动。使用低品质设置可按计算方式创建高效的噪声，使用更高品质设置模拟更平滑、更丰富的噪声。还可以选择为每个轴单独定义噪声的行为。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="ParticleSystem.html">
+    ParticleSystem
+   </a>
+   、
+   <a href="ParticleSystem-noise.html">
+    ParticleSystem.noise
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-damping.html">
+      damping
+     </a>
+    </td>
+    <td class="desc">
+     较高频率噪声会按比例减小强度（如果启用）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     指定启用还是禁用 NoiseModule。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-frequency.html">
+      frequency
+     </a>
+    </td>
+    <td class="desc">
+     低值会产生柔和、平滑的噪声，而高值会产生快速变化的噪声。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-octaveCount.html">
+      octaveCount
+     </a>
+    </td>
+    <td class="desc">
+     进行合并以生成最终噪声的噪声层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-octaveMultiplier.html">
+      octaveMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     合并每个八度音阶时，按此量缩放强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-octaveScale.html">
+      octaveScale
+     </a>
+    </td>
+    <td class="desc">
+     合并每个八度音阶时，按此量放大。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-positionAmount.html">
+      positionAmount
+     </a>
+    </td>
+    <td class="desc">
+     噪声对粒子位置的影响程度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-quality.html">
+      quality
+     </a>
+    </td>
+    <td class="desc">
+     生成 1D、2D 或 3D 噪声。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remap.html">
+      remap
+     </a>
+    </td>
+    <td class="desc">
+     定义如何重新映射噪声值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapEnabled.html">
+      remapEnabled
+     </a>
+    </td>
+    <td class="desc">
+     启用最终噪声值的重新映射，从而使噪声值可以转换为不同值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapMultiplier.html">
+      remapMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     重新映射乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapX.html">
+      remapX
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时，如何在 x 轴上重新映射噪声值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapXMultiplier.html">
+      remapXMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     x 轴重新映射乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapY.html">
+      remapY
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时，如何在 y 轴上重新映射噪声值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapYMultiplier.html">
+      remapYMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     y 轴重新映射乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapZ.html">
+      remapZ
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时，如何在 z 轴上重新映射噪声值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-remapZMultiplier.html">
+      remapZMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     z 轴重新映射乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-rotationAmount.html">
+      rotationAmount
+     </a>
+    </td>
+    <td class="desc">
+     噪声对粒子旋转（以度/秒为单位）的影响程度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-scrollSpeed.html">
+      scrollSpeed
+     </a>
+    </td>
+    <td class="desc">
+     在粒子系统上滚动噪声贴图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-scrollSpeedMultiplier.html">
+      scrollSpeedMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     滚动速度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-separateAxes.html">
+      separateAxes
+     </a>
+    </td>
+    <td class="desc">
+     为每个轴单独控制噪声。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-sizeAmount.html">
+      sizeAmount
+     </a>
+    </td>
+    <td class="desc">
+     噪声对粒子大小的影响程度（用作每个粒子大小的乘数）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strength.html">
+      strength
+     </a>
+    </td>
+    <td class="desc">
+     整体噪声特效的强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthMultiplier.html">
+      strengthMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     强度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthX.html">
+      strengthX
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时 x 轴上的效果强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthXMultiplier.html">
+      strengthXMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     x 轴强度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthY.html">
+      strengthY
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时 y 轴上的特效强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthYMultiplier.html">
+      strengthYMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     y 轴强度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthZ.html">
+      strengthZ
+     </a>
+    </td>
+    <td class="desc">
+     定义在使用 ParticleSystem.NoiseModule.separateAxes 选项时 z 轴上的特效强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.NoiseModule-strengthZMultiplier.html">
+      strengthZMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     z 轴强度乘数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,184 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderCompilerPlatform
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于生成播放器数据着色器变体的着色器编译器。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在 Unity 中，
+   <a href="../Manual/SL-ShaderPrograms.html">
+    着色器程序
+   </a>
+   是用
+   <a href="../Manual/SL-ShadingLanguage.html">
+    HLSL
+   </a>
+   语言的一个变种编写的。
+   <br/>
+   <br/>
+   每个
+   <a href="../Manual/PlatformSpecific.html">
+    平台
+   </a>
+   都支持一个或多个图形 API。例如，Windows 支持 Vulkan 和 Direct3D 12。
+                            在构建独立平台播放器时，对于每个支持的图形 API，Unity 都要运行相应的着色器编译器，然后，编译器生成着色器变体并将着色器代码片段交叉编译为图形 API 原生支持的着色语言。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Build.IPreprocessShaders.OnProcessShader.html">
+    IPreprocessShaders.OnProcessShader
+   </a>
+   、
+   <a href="../Manual/SL-ShadingLanguage.html">
+    着色器语言
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     为非初始化变量提供合理的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.D3D.html">
+      D3D
+     </a>
+    </td>
+    <td class="desc">
+     在 Windows 平台上与 Direct3D 11 和 Direct3D 12 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.GLES20.html">
+      GLES20
+     </a>
+    </td>
+    <td class="desc">
+     在 Android、iOS、Windows 和 WebGL 平台上与 OpenGL ES 2.0 和 WebGL 1.0 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.GLES3x.html">
+      GLES3x
+     </a>
+    </td>
+    <td class="desc">
+     在 Android、iOS、Windows 和 WebGL 平台上与 OpenGL ES 3.x 和 WebGL 2.0 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.PS4.html">
+      PS4
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayStation 4 上使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.XboxOneD3D11.html">
+      XboxOneD3D11
+     </a>
+    </td>
+    <td class="desc">
+     在 XBox One 上与 Direct3D 11 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.Metal.html">
+      Metal
+     </a>
+    </td>
+    <td class="desc">
+     在 macOS、iOS 和 tvOS 平台上与 Metal 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.OpenGLCore.html">
+      OpenGLCore
+     </a>
+    </td>
+    <td class="desc">
+     在 macOS、Linux 和 Windows 平台上与 OpenGL Core 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.Vulkan.html">
+      Vulkan
+     </a>
+    </td>
+    <td class="desc">
+     在 Android、Linux 和 Windows 平台上与 Vulkan 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.Switch.html">
+      Switch
+     </a>
+    </td>
+    <td class="desc">
+     在 Nintendo Switch 上使用的编译器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderCompilerPlatform.XboxOneD3D12.html">
+      XboxOneD3D12
+     </a>
+    </td>
+    <td class="desc">
+     在 XBox One 上与 Direct3D 12 图形 API 一起使用的编译器。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

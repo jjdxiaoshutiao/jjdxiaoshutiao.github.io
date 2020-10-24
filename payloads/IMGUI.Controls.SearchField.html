@@ -1,0 +1,148 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SearchField
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.IMGUI.Controls
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SearchField 控件可创建文本字段，以便用户输入可用于搜索的文本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   它有两种 UI 样式：一种用于正常使用，一种用于工具栏。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField-autoSetFocusOnFindCommand.html">
+      autoSetFocusOnFindCommand
+     </a>
+    </td>
+    <td class="desc">
+     如果设置为 true，在用户按“Ctrl/Cmd + F”时，会将键盘焦点移动到搜索字段。默认设置为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField-searchFieldControlID.html">
+      searchFieldControlID
+     </a>
+    </td>
+    <td class="desc">
+     这是文本字段用于获取键盘焦点的 controlID。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField.HasFocus.html">
+      HasFocus
+     </a>
+    </td>
+    <td class="desc">
+     如果键盘焦点停留在搜索字段上，则此函数将返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField.OnGUI.html">
+      OnGUI
+     </a>
+    </td>
+    <td class="desc">
+     此函数会显示具有默认 UI 样式的搜索字段，并使用 GUILayout 类自动计算它会渲染的矩形的位置和大小。传递可选列表可指定额外的布局属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField.OnToolbarGUI.html">
+      OnToolbarGUI
+     </a>
+    </td>
+    <td class="desc">
+     此函数会显示具有工具栏 UI 样式的搜索字段，并使用 GUILayout 类自动计算它会渲染的矩形的位置和大小。传递可选列表可指定额外的布局属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField.SetFocus.html">
+      SetFocus
+     </a>
+    </td>
+    <td class="desc">
+     此函数会将键盘焦点移动到搜索字段，以便用户可以开始输入。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField-downOrUpArrowKeyPressed.html">
+      downOrUpArrowKeyPressed
+     </a>
+    </td>
+    <td class="desc">
+     当聚焦的搜索字段检测到用户按了向下键或向上键时，将分发此事件，而且该事件还可以用于将键盘焦点移动到其他控件，如 TreeView。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.SearchField.SearchFieldCallback.html">
+      SearchFieldCallback
+     </a>
+    </td>
+    <td class="desc">
+     这是 SearchField 事件的通用回调委托，不带有任何参数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

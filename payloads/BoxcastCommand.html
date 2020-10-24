@@ -1,0 +1,172 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BoxcastCommand
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此结构来设置要在作业过程中异步执行的盒体投射命令。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用此结构计划一批盒体投射时，这些盒体投射会以异步方式并行执行。每个盒体投射的结果会写入结果缓冲区。由于结果是异步写入，因此在作业完成之前无法访问结果缓冲区。
+   <br/>
+   <br/>
+   命令缓冲区中索引 N 处的命令的结果会存储在结果缓冲区中索引 N 处。
+   <br/>
+   <br/>
+   另请参阅：Physics.Boxcast。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private void BoxcastExample()
+    {
+        // Perform a single boxcast using <a href="BoxcastCommand.html">BoxcastCommand</a> and wait for it to complete
+        // Set up the command and result buffers
+        var results = new NativeArray&lt;<a href="RaycastHit.html">RaycastHit</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);
+        var commands = new NativeArray&lt;<a href="BoxcastCommand.html">BoxcastCommand</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);<br/><br/>        // Set the data of the first command
+        <a href="Vector3.html">Vector3</a> center = <a href="Vector3-zero.html">Vector3.zero</a>;
+        <a href="Vector2.html">Vector2</a> halfExtents = <a href="Vector3-one.html">Vector3.one</a> * 0.5f;
+        <a href="Quaternion.html">Quaternion</a> orientation = <a href="Quaternion-identity.html">Quaternion.identity</a>;
+        <a href="Vector3.html">Vector3</a> direction = <a href="Vector3-forward.html">Vector3.forward</a>;<br/><br/>        commands[0] = new <a href="BoxcastCommand.html">BoxcastCommand</a>(center, halfExtents, orientation, direction);<br/><br/>        // Schedule the batch of boxcasts
+        var handle = <a href="BoxcastCommand.ScheduleBatch.html">BoxcastCommand.ScheduleBatch</a>(commands, results, 1,  default(<a href="Unity.Jobs.JobHandle.html">JobHandle</a>));<br/><br/>        // Wait for the batch processing job to complete
+        handle.Complete();<br/><br/>        // Copy the result. If batchedHit.collider is null there was no hit
+        <a href="RaycastHit.html">RaycastHit</a> batchedHit = results[0];<br/><br/>        // Dispose the buffers
+        results.Dispose();
+        commands.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     盒体的中心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-direction.html">
+      direction
+     </a>
+    </td>
+    <td class="desc">
+     扫射盒体的方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-distance.html">
+      distance
+     </a>
+    </td>
+    <td class="desc">
+     扫射的最大距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-halfExtents.html">
+      halfExtents
+     </a>
+    </td>
+    <td class="desc">
+     盒体各个维度大小的一半。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-layerMask.html">
+      layerMask
+     </a>
+    </td>
+    <td class="desc">
+     用于在投射盒体时有选择地忽略碰撞体的 LayerMask。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-orientation.html">
+      orientation
+     </a>
+    </td>
+    <td class="desc">
+     盒体的旋转。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand-ctor.html">
+      BoxcastCommand
+     </a>
+    </td>
+    <td class="desc">
+     创建 BoxcastCommand。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoxcastCommand.ScheduleBatch.html">
+      ScheduleBatch
+     </a>
+    </td>
+    <td class="desc">
+     安排在一个作业中要执行的一批盒体投射。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

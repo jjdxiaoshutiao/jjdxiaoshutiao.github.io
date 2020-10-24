@@ -1,0 +1,308 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EditorBuildSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此类允许您通过脚本修改 Editor
+   <a href="../Manual/BuildSettings.html">
+    Build Settings
+   </a>
+   。请参阅
+   <a href="EditorBuildSettings-scenes.html">
+    EditorBuildSettings.scenes
+   </a>
+   ，查看如何使用此类的示例。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="EditorBuildSettingsScene.html">
+    EditorBuildSettingsScene
+   </a>
+   、
+   <a href="EditorBuildSettings-scenes.html">
+    EditorBuildSettings.scenes
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings-scenes.html">
+      scenes
+     </a>
+    </td>
+    <td class="desc">
+     应包含在构建中的场景列表。
+这与 Build Settings 窗口中显示的场景列表相同。您可以修改此列表，以设置应在构建中包含哪些场景。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings.AddConfigObject.html">
+      AddConfigObject
+     </a>
+    </td>
+    <td class="desc">
+     按名称存储对配置对象的引用。对象必须是项目中的资源，否则在重新启动编辑器或重新加载脚本时将不会保存该对象。为避免与其他包产生名称冲突，建议使用命名空间对名称加以限定，即"company.package.name"。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings.GetConfigObjectNames.html">
+      GetConfigObjectNames
+     </a>
+    </td>
+    <td class="desc">
+     返回一个字符串数组，其中包含所有已存储的配置对象引用的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings.RemoveConfigObject.html">
+      RemoveConfigObject
+     </a>
+    </td>
+    <td class="desc">
+     按名称删除配置对象引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings.TryGetConfigObject.html">
+      TryGetConfigObject
+     </a>
+    </td>
+    <td class="desc">
+     按名称检索配置对象引用。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorBuildSettings-sceneListChanged.html">
+      sceneListChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当设置 EditorBuildSettings.scenes 时调用的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PropertyName
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   将 string 表示为 int 以实现高效查找和比较。这可用于常用的 PropertyName。
+   <br/>
+   <br/>
+   在内部仅存储 int 来表示 string。PropertyName 可以从 string 进行创建，但是无法转换回 string。相同 string 始终产生表示该 string 的相同 int。因而，当您只需进行比较时，这在内存和速度方面都是非常高效的 string 表示。
+   <br/>
+   <br/>
+   PropertyName 可序列化。
+   <br/>
+   <br/>
+   实现 ToString() 的目的只是为了进行调试，它在 Editor 中返回“theName:3737”，在播放器中返回“Unknown:3737”。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName-ctor.html">
+      PropertyName
+     </a>
+    </td>
+    <td class="desc">
+     使用 string 初始化 PropertyName。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     确定此实例和指定对象（也必须是 PropertyName 对象）是否具有相同值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName.GetHashCode.html">
+      GetHashCode
+     </a>
+    </td>
+    <td class="desc">
+     返回此 PropertyName 的哈希代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     仅用于调试。在 Editor 中返回表示字符串的 string 值。
+在播放器中返回“UnityEngine.PropertyName”。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName.IsNullOrEmpty.html">
+      IsNullOrEmpty
+     </a>
+    </td>
+    <td class="desc">
+     指示指定 PropertyName 是否为空 string。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName-operator_ne.html">
+      operator !=
+     </a>
+    </td>
+    <td class="desc">
+     确定两个指定 PropertyName 是否具有不同 string 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     确定两个指定 PropertyName 是否具有相同 string 值。因为使用相同 string 值初始化的两个 PropertyName 始终具有相同索引，所以我们只需执行两个 int 的比较即可查明 string 值是否相等。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PropertyName-operator_string.html">
+      PropertyName
+     </a>
+    </td>
+    <td class="desc">
+     转换传入 PropertyName 的 string。另请参阅：PropertyName.ctor(System.String)。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,245 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssemblyBuilder
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Compilation
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   将 Assets 文件夹外的脚本编译到可在 Assets 文件夹内使用的托管程序集中。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   AssemblyBuilder 类使用与 Assets 文件夹内脚本相同的引用和 #define 指令，将 Assets 文件夹外的脚本编译到托管程序集中。如果您想构建脚本程序集，但不想存放在 Assets 文件夹中，则此功能非常有用。
+   <br/>
+   <br/>
+   请参阅
+   <a href="Compilation.AssemblyBuilder.Build.html">
+    AssemblyBuilder.Build
+   </a>
+   ，查看如何使用该类的示例。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-additionalDefines.html">
+      additionalDefines
+     </a>
+    </td>
+    <td class="desc">
+     传递给程序集编译的其他 #define 指令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-additionalReferences.html">
+      additionalReferences
+     </a>
+    </td>
+    <td class="desc">
+     传递给程序集编译的其他程序集引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-assemblyPath.html">
+      assemblyPath
+     </a>
+    </td>
+    <td class="desc">
+     要构建的程序集的输出路径。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-buildTarget.html">
+      buildTarget
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建的 BuildTarget。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-buildTargetGroup.html">
+      buildTargetGroup
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建的 BuildTargetGroup。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-compilerOptions.html">
+      compilerOptions
+     </a>
+    </td>
+    <td class="desc">
+     构建程序集时要使用的编译器选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-defaultDefines.html">
+      defaultDefines
+     </a>
+    </td>
+    <td class="desc">
+     编译程序集时使用的默认 define 指令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-defaultReferences.html">
+      defaultReferences
+     </a>
+    </td>
+    <td class="desc">
+     编译程序集时使用的默认引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-excludeReferences.html">
+      excludeReferences
+     </a>
+    </td>
+    <td class="desc">
+     编译程序集时要排除的引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-flags.html">
+      flags
+     </a>
+    </td>
+    <td class="desc">
+     用于控制程序集构建的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-referencesOptions.html">
+      referencesOptions
+     </a>
+    </td>
+    <td class="desc">
+     这些选项用于控制 Unity 在程序集构建过程中使用的引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-scriptPaths.html">
+      scriptPaths
+     </a>
+    </td>
+    <td class="desc">
+     用作程序集构建输入的脚本路径数组。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-status.html">
+      status
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建的当前状态。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-ctor.html">
+      AssemblyBuilder
+     </a>
+    </td>
+    <td class="desc">
+     AssemblyBuilder 构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder.Build.html">
+      Build
+     </a>
+    </td>
+    <td class="desc">
+     开始构建程序集。构建时，Unity 主窗口右下角的小进度图标将旋转，并且 EditorApplication.isCompiling 将返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-buildFinished.html">
+      buildFinished
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建完成时调用的主线程上的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.AssemblyBuilder-buildStarted.html">
+      buildStarted
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建开始时调用的主线程上的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

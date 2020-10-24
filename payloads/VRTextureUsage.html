@@ -1,0 +1,94 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   VRTextureUsage
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此枚举描述如何将
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   用作 VR 眼睛纹理。不必手动使用此枚举的值，它会使用
+   <a href="XR.XRSettings-eyeTextureDesc.html">
+    eyeTextureDesc
+   </a>
+   或其他返回
+   <a href="RenderTextureDescriptor.html">
+    RenderTextureDescriptor
+   </a>
+   的 VR 函数返回的值。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VRTextureUsage.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     此 RenderTexture 不是 VR 眼睛纹理。不会发生特殊渲染行为。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VRTextureUsage.OneEye.html">
+      OneEye
+     </a>
+    </td>
+    <td class="desc">
+     此纹理对应于立体显示屏上的一只眼睛。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VRTextureUsage.TwoEyes.html">
+      TwoEyes
+     </a>
+    </td>
+    <td class="desc">
+     此纹理对应于立体显示屏上的两只眼睛。在使用 Graphics.Blit 和其他渲染函数时，应考虑这一点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VRTextureUsage.DeviceSpecific.html">
+      DeviceSpecific
+     </a>
+    </td>
+    <td class="desc">
+     外部 XR 提供程序使用的纹理。提供程序负责定义纹理的布局和使用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

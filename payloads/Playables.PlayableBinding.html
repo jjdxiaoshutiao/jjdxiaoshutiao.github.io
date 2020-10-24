@@ -1,0 +1,127 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayableBinding
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Playables
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于保存有关 PlayableAsset 输出的信息的结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   PlayableAsset 使用 PlayableBinding 指定它支持的输出类型。
+   <br/>
+   <br/>
+   不要直接创建 PlayableBinding 对象。使用提供的内置方法创建相应的
+   <a href="Playables.PlayableOutput.html">
+    PlayableOutput
+   </a>
+   。例如，要为
+   <a href="Animations.AnimationPlayableOutput.html">
+    AnimationPlayableOutput
+   </a>
+   创建 PlayableBinding，请使用
+   <a href="Animations.AnimationPlayableBinding.Create.html">
+    AnimationPlayableBinding.Create
+   </a>
+   。要为
+   <a href="Playables.ScriptPlayableOutput.html">
+    ScriptPlayableOutput
+   </a>
+   创建 PlayableBinding，请使用
+   <a href="Playables.ScriptPlayableBinding.Create.html">
+    ScriptPlayableBinding.Create
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBinding.DefaultDuration.html">
+      DefaultDuration
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayableOutput 没有固定持续时间时采用的默认持续时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBinding.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     用于表示 PlayableAsset 没有任何绑定的常量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBinding-outputTargetType.html">
+      outputTargetType
+     </a>
+    </td>
+    <td class="desc">
+     此 PlayableBinding 的 PlayableOutput 所需的目标类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBinding-sourceObject.html">
+      sourceObject
+     </a>
+    </td>
+    <td class="desc">
+     对 UnityEngine.Object（充当此绑定的键）的引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableBinding-streamName.html">
+      streamName
+     </a>
+    </td>
+    <td class="desc">
+     输出流或输入流的名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

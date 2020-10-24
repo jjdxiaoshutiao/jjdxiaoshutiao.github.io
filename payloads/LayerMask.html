@@ -1,0 +1,293 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LayerMask
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   指定要在
+   <a href="Physics.Raycast.html">
+    Physics.Raycast
+   </a>
+   中使用的层。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   最多可以使用 Editor 支持的 32 个
+   <a href="LayerMask.html">
+    LayerMask
+   </a>
+   。这些
+   <code class="mono">
+    Layers
+   </code>
+   中的前 8 个由 Unity 指定；以下 24 个可由用户控制。
+   <br/>
+   <br/>
+   位掩码表示 32 层，并将它们定义为
+   <code class="mono">
+    true
+   </code>
+   或
+   <code class="mono">
+    false
+   </code>
+   。每个位掩码描述是否使用
+   <code class="mono">
+    Layer
+   </code>
+   。例如，位 5 可以设置为 1 (
+   <code class="mono">
+    true
+   </code>
+   )。这将允许使用内置的
+   <code class="mono">
+    Water
+   </code>
+   设置。
+   <br/>
+   <br/>
+   <code class="mono">
+    Edit &gt; Settings &gt; Tags and Layers
+   </code>
+   选项会显示 32 个位掩码的使用情况。每个
+   <code class="mono">
+    Layer
+   </code>
+   都会对应显示一个字符串设置。例如，
+   <code class="mono">
+    Built-in Layer 0
+   </code>
+   设置为
+   <code class="mono">
+    Default
+   </code>
+   ；
+   <code class="mono">
+    Built-in Layer 1
+   </code>
+   设置为
+   <code class="mono">
+    TransparentFX
+   </code>
+   。新命名的
+   <code class="mono">
+    Layer
+   </code>
+   将添加到位掩码层 8 之上。所选的
+   <code class="mono">
+    GameObject
+   </code>
+   将在 Inspector 右上方显示选择的
+   <code class="mono">
+    Layer
+   </code>
+   。以下示例将
+   <code class="mono">
+    User Layer 13
+   </code>
+   设置为“Wall”。这使得指定的
+   <code class="mono">
+    GameObject
+   </code>
+   被视为建筑物的一部分。
+   <br/>
+   <br/>
+   在下面的脚本示例中，
+   <a href="Physics.Raycast.html">
+    Physics.Raycast
+   </a>
+   将射线发送到世界中。
+   <a href="Camera-main.html">
+    Camera.main
+   </a>
+   可围绕 y 轴旋转并发出射线。三个
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   代表可以被发射出的射线击中的墙壁。每个
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   都会将
+   <a href="GameObject-label.html">
+    GameObject.label
+   </a>
+   设置为 "Wall"
+   <a href="LayerMask-layerMask.html">
+    layerMask
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// Fire a gun at 3 walls in the scene.
+//
+// The Raycast will be aimed in the range of -45 to 45 degrees. If the <a href="Ray.html">Ray</a> hits any of the
+// walls true will be returned . The three walls all have a Wall Layer attached.  The left
+// and right keys, and the space key, are all used to aim and fire.
+//
+// Quad floor based at (0, -0.5, 0), rotated in x by 90 degrees, scale (8, 8, 8).
+// ZCube wall at (0, 0.5, 6), scale (3, 2, 0.5).
+// LCube wall at (-3, 0, 3), scale (0.5, 1, 4).
+// RCube wall at (3, 1.5, 3), scale (1, 4, 4).<br/><br/>public class ExampleScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private float cameraRotation;<br/><br/>    void Start()
+    {
+        Camera.main.transform.position = new <a href="Vector3.html">Vector3</a>(0, 0.5f, 0);
+        cameraRotation = 0.0f;
+    }<br/><br/>    // Rotate the camera based on what the user wants to look at.
+    // Avoid rotating more than +/-45 degrees.
+    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (<a href="Input.GetKey.html">Input.GetKey</a>("left"))
+        {
+            cameraRotation -= 1f;
+            if (cameraRotation &lt; -45.0f)
+            {
+                cameraRotation = -45.0f;
+            }
+        }<br/><br/>        if (<a href="Input.GetKey.html">Input.GetKey</a>("right"))
+        {
+            cameraRotation += 1f;
+            if (cameraRotation &gt; 45.0f)
+            {
+                cameraRotation = 45.0f;
+            }
+        }<br/><br/>        // Rotate the camera
+        Camera.main.transform.localEulerAngles = new <a href="Vector3.html">Vector3</a>(0.0f, cameraRotation, 0.0f);
+    }<br/><br/>    void <a href="PlayerLoop.FixedUpdate.html">FixedUpdate</a>()
+    {
+        <a href="Transform.html">Transform</a> transform = Camera.main.transform;<br/><br/>        if (<a href="Input.GetKeyUp.html">Input.GetKeyUp</a>("space"))
+        {
+            // Check for a Wall.
+            <a href="LayerMask.html">LayerMask</a> mask = <a href="LayerMask.GetMask.html">LayerMask.GetMask</a>("Wall");<br/><br/>            // Check if a Wall is hit.
+            if (<a href="Physics.Raycast.html">Physics.Raycast</a>(transform.position, transform.forward, 20.0f, mask))
+            {
+                <a href="Debug.Log.html">Debug.Log</a>("Fired and hit a wall");
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意：
+   </strong>
+   <a href="LayerMask.html">
+    LayerMask
+   </a>
+   是位掩码。使用
+   <a href="LayerMask.GetMask.html">
+    LayerMask.GetMask
+   </a>
+   和
+   <a href="LayerMask.LayerToName.html">
+    LayerMask.LayerToName
+   </a>
+   可生成位掩码。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LayerMask-value.html">
+      value
+     </a>
+    </td>
+    <td class="desc">
+     将层遮罩值转换为整数值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LayerMask.GetMask.html">
+      GetMask
+     </a>
+    </td>
+    <td class="desc">
+     给定在 Tags and Layers manager 中由 Builtin 或 User Layer 定义的一组层名称，返回所有这些层名称的等效层遮罩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LayerMask.LayerToName.html">
+      LayerToName
+     </a>
+    </td>
+    <td class="desc">
+     给定层编号，返回在 Tags and Layers manager 中的 Builtin 或 User Layer 中定义的层的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LayerMask.NameToLayer.html">
+      NameToLayer
+     </a>
+    </td>
+    <td class="desc">
+     给定层名称，返回在 Tags and Layers manager 中由 Builtin 或 User Layer 定义的层索引。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LayerMask-operator_int.html">
+      LayerMask
+     </a>
+    </td>
+    <td class="desc">
+     将整数隐式转换为 LayerMask。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

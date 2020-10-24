@@ -1,0 +1,859 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Physics2D
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于 2D 物理的全局设置和 Helper 方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.AllLayers.html">
+      AllLayers
+     </a>
+    </td>
+    <td class="desc">
+     包括所有层的层遮罩常量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-alwaysShowColliders.html">
+      alwaysShowColliders
+     </a>
+    </td>
+    <td class="desc">
+     是否应始终显示碰撞体辅助图标（即使未选中时也显示）？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-angularSleepTolerance.html">
+      angularSleepTolerance
+     </a>
+    </td>
+    <td class="desc">
+     如果刚体的角速度高于该公差，将无法进入睡眠状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-autoSimulation.html">
+      autoSimulation
+     </a>
+    </td>
+    <td class="desc">
+     设置是否应该自动模拟物理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-autoSyncTransforms.html">
+      autoSyncTransforms
+     </a>
+    </td>
+    <td class="desc">
+     当 Transform 组件发生更改时，是否自动将变换更改与物理系统同步。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-baumgarteScale.html">
+      baumgarteScale
+     </a>
+    </td>
+    <td class="desc">
+     控制解析重叠速度的缩放因子。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-baumgarteTOIScale.html">
+      baumgarteTOIScale
+     </a>
+    </td>
+    <td class="desc">
+     控制解析 TOI 重叠速度的缩放因子。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-callbacksOnDisable.html">
+      callbacksOnDisable
+     </a>
+    </td>
+    <td class="desc">
+     用于控制 Collider2D 处于禁用状态时是否应调用相应的 OnCollisionExit2D 或 OnTriggerExit2D 回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-colliderAABBColor.html">
+      colliderAABBColor
+     </a>
+    </td>
+    <td class="desc">
+     设置辅助图标使用的颜色，以显示所有对齐 Collider 轴的包围盒 (AABB)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-colliderAsleepColor.html">
+      colliderAsleepColor
+     </a>
+    </td>
+    <td class="desc">
+     辅助图标显示所有睡眠碰撞体（当身体处于睡眠状态时，碰撞体也处于睡眠状态）所用的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-colliderAwakeColor.html">
+      colliderAwakeColor
+     </a>
+    </td>
+    <td class="desc">
+     辅助图标显示所有唤醒碰撞体（当身体处于唤醒状态时，碰撞体也处于唤醒状态）所用的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-colliderContactColor.html">
+      colliderContactColor
+     </a>
+    </td>
+    <td class="desc">
+     辅助图标显示所有碰撞体接触点所用的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-contactArrowScale.html">
+      contactArrowScale
+     </a>
+    </td>
+    <td class="desc">
+     碰撞体辅助图标使用的接触箭头的缩放。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-defaultContactOffset.html">
+      defaultContactOffset
+     </a>
+    </td>
+    <td class="desc">
+     新创建的碰撞体的默认接触偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-defaultPhysicsScene.html">
+      defaultPhysicsScene
+     </a>
+    </td>
+    <td class="desc">
+     Unity 启动时自动创建的 PhysicsScene2D。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.DefaultRaycastLayers.html">
+      DefaultRaycastLayers
+     </a>
+    </td>
+    <td class="desc">
+     层遮罩常量，包括默认情况下参与射线投射的所有层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-gravity.html">
+      gravity
+     </a>
+    </td>
+    <td class="desc">
+     重力产生的加速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.IgnoreRaycastLayer.html">
+      IgnoreRaycastLayer
+     </a>
+    </td>
+    <td class="desc">
+     忽略射线投射的默认层的层遮罩常量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-jobOptions.html">
+      jobOptions
+     </a>
+    </td>
+    <td class="desc">
+     一组选项，用于控制在使用作业系统进行多线程物理模拟时物理系统的工作方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-linearSleepTolerance.html">
+      linearSleepTolerance
+     </a>
+    </td>
+    <td class="desc">
+     如果刚体的线性速率高于该公差，将无法进入睡眠状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-maxAngularCorrection.html">
+      maxAngularCorrection
+     </a>
+    </td>
+    <td class="desc">
+     解算约束时使用的最大角位置校正。这有助于防止过冲。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-maxLinearCorrection.html">
+      maxLinearCorrection
+     </a>
+    </td>
+    <td class="desc">
+     解算约束时使用的最大线性位置校正。这有助于防止过冲。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-maxRotationSpeed.html">
+      maxRotationSpeed
+     </a>
+    </td>
+    <td class="desc">
+     每次物理更新时，刚体的最大角速度。增大该值可能会导致数值问题。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-maxTranslationSpeed.html">
+      maxTranslationSpeed
+     </a>
+    </td>
+    <td class="desc">
+     每次物理更新时，刚体的最大线性速度。增大该值可能会导致数值问题。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-positionIterations.html">
+      positionIterations
+     </a>
+    </td>
+    <td class="desc">
+     考虑对象位置时，物理解算器的迭代次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-queriesHitTriggers.html">
+      queriesHitTriggers
+     </a>
+    </td>
+    <td class="desc">
+     射线投射是否检测配置为触发器的碰撞体？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-queriesStartInColliders.html">
+      queriesStartInColliders
+     </a>
+    </td>
+    <td class="desc">
+     设置始于碰撞体内部的射线投射或线条投射是否检测这些碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-reuseCollisionCallbacks.html">
+      reuseCollisionCallbacks
+     </a>
+    </td>
+    <td class="desc">
+     确定垃圾回收器是否应仅对所有冲突回调重用一个 Collision2D 类型的实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-showColliderAABB.html">
+      showColliderAABB
+     </a>
+    </td>
+    <td class="desc">
+     碰撞体辅助图标是否应显示每个碰撞体的 AABB？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-showColliderContacts.html">
+      showColliderContacts
+     </a>
+    </td>
+    <td class="desc">
+     碰撞体辅助图标是否应显示每个碰撞体的当前接触点？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-showColliderSleep.html">
+      showColliderSleep
+     </a>
+    </td>
+    <td class="desc">
+     碰撞体辅助图标是否应显示每个碰撞体的睡眠状态？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-timeToSleep.html">
+      timeToSleep
+     </a>
+    </td>
+    <td class="desc">
+     刚体进入睡眠状态前必须保持静止的时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-velocityIterations.html">
+      velocityIterations
+     </a>
+    </td>
+    <td class="desc">
+     考虑对象速度时，物理解算器的迭代次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D-velocityThreshold.html">
+      velocityThreshold
+     </a>
+    </td>
+    <td class="desc">
+     将相对线性速度低于该阈值的任何碰撞都视为非弹性碰撞。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.BoxCast.html">
+      BoxCast
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射盒体，返回与盒体接触的第一个碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.BoxCastAll.html">
+      BoxCastAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射盒体，返回与盒体接触的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.BoxCastNonAlloc.html">
+      BoxCastNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中投射一个盒体，将与盒体接触的碰撞体返回到提供的结果数组中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CapsuleCast.html">
+      CapsuleCast
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射胶囊体，返回与胶囊体接触的第一个碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CapsuleCastAll.html">
+      CapsuleCastAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射胶囊体，返回与胶囊体接触的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CapsuleCastNonAlloc.html">
+      CapsuleCastNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中投射一个胶囊体，将与胶囊体接触的碰撞体返回到提供的结果数组中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CircleCast.html">
+      CircleCast
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射圆形，返回与圆形接触的第一个碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CircleCastAll.html">
+      CircleCastAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射圆形，返回与圆形接触的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.CircleCastNonAlloc.html">
+      CircleCastNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中投射一个圆形，将与圆形接触的碰撞体返回到提供的结果数组中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.ClosestPoint.html">
+      ClosestPoint
+     </a>
+    </td>
+    <td class="desc">
+     返回此 collider 周边上最接近指定 position 的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.Distance.html">
+      Distance
+     </a>
+    </td>
+    <td class="desc">
+     计算两个碰撞体之间的最小距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetContacts.html">
+      GetContacts
+     </a>
+    </td>
+    <td class="desc">
+     获取与 collider 接触的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetIgnoreCollision.html">
+      GetIgnoreCollision
+     </a>
+    </td>
+    <td class="desc">
+     检查碰撞检测系统是否忽略 collider1 与 collider2 之间的所有碰撞/触发器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetIgnoreLayerCollision.html">
+      GetIgnoreLayerCollision
+     </a>
+    </td>
+    <td class="desc">
+     检查是否忽略指定层之间的碰撞。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetLayerCollisionMask.html">
+      GetLayerCollisionMask
+     </a>
+    </td>
+    <td class="desc">
+     获取碰撞层遮罩，指示指定层可以与哪些层发生碰撞。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetRayIntersection.html">
+      GetRayIntersection
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射 3D 射线，返回射线路径上的第一个碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetRayIntersectionAll.html">
+      GetRayIntersectionAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射 3D 射线，返回射线路径上的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.GetRayIntersectionNonAlloc.html">
+      GetRayIntersectionNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射 3D 射线，返回射线路径上的碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.IgnoreCollision.html">
+      IgnoreCollision
+     </a>
+    </td>
+    <td class="desc">
+     使碰撞检测系统忽略 collider1 与 collider2 之间的所有碰撞/触发器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.IgnoreLayerCollision.html">
+      IgnoreLayerCollision
+     </a>
+    </td>
+    <td class="desc">
+     选择检测还是忽略指定层对之间的碰撞。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.IsTouching.html">
+      IsTouching
+     </a>
+    </td>
+    <td class="desc">
+     检查是否与经过的碰撞体接触。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.IsTouchingLayers.html">
+      IsTouchingLayers
+     </a>
+    </td>
+    <td class="desc">
+     检查 collider 是否正在接触指定 layerMask 上的任何碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.Linecast.html">
+      Linecast
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射线段。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.LinecastAll.html">
+      LinecastAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射线条。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.LinecastNonAlloc.html">
+      LinecastNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射线条。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapArea.html">
+      OverlapArea
+     </a>
+    </td>
+    <td class="desc">
+     检查某碰撞体是否位于一个矩形区域内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapAreaAll.html">
+      OverlapAreaAll
+     </a>
+    </td>
+    <td class="desc">
+     获取位于某个矩形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapAreaNonAlloc.html">
+      OverlapAreaNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     获取位于指定矩形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapBox.html">
+      OverlapBox
+     </a>
+    </td>
+    <td class="desc">
+     检查某碰撞体是否位于一个盒形区域内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapBoxAll.html">
+      OverlapBoxAll
+     </a>
+    </td>
+    <td class="desc">
+     获取位于指定盒形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapBoxNonAlloc.html">
+      OverlapBoxNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     获取位于指定盒形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCapsule.html">
+      OverlapCapsule
+     </a>
+    </td>
+    <td class="desc">
+     检查某碰撞体是否位于一个胶囊体区域内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCapsuleAll.html">
+      OverlapCapsuleAll
+     </a>
+    </td>
+    <td class="desc">
+     获取位于某胶囊体区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCapsuleNonAlloc.html">
+      OverlapCapsuleNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     获取位于某胶囊体区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCircle.html">
+      OverlapCircle
+     </a>
+    </td>
+    <td class="desc">
+     检查某碰撞体是否位于一个圆形区域内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCircleAll.html">
+      OverlapCircleAll
+     </a>
+    </td>
+    <td class="desc">
+     获取位于某圆形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCircleNonAlloc.html">
+      OverlapCircleNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     获取位于某圆形区域内的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapCollider.html">
+      OverlapCollider
+     </a>
+    </td>
+    <td class="desc">
+     获取与给定 collider 重叠的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapPoint.html">
+      OverlapPoint
+     </a>
+    </td>
+    <td class="desc">
+     检查碰撞体是否与空间中的某个点重叠。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapPointAll.html">
+      OverlapPointAll
+     </a>
+    </td>
+    <td class="desc">
+     获取与空间中的某个点重叠的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.OverlapPointNonAlloc.html">
+      OverlapPointNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     获取与空间中的某个点重叠的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.Raycast.html">
+      Raycast
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射射线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.RaycastAll.html">
+      RaycastAll
+     </a>
+    </td>
+    <td class="desc">
+     向场景中的碰撞体投射射线，返回与射线接触的所有碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.RaycastNonAlloc.html">
+      RaycastNonAlloc
+     </a>
+    </td>
+    <td class="desc">
+     向场景中投射一条射线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.SetLayerCollisionMask.html">
+      SetLayerCollisionMask
+     </a>
+    </td>
+    <td class="desc">
+     设置碰撞层遮罩，指示指定层可以与哪些层发生碰撞。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.Simulate.html">
+      Simulate
+     </a>
+    </td>
+    <td class="desc">
+     在场景中进行物理模拟。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Physics2D.SyncTransforms.html">
+      SyncTransforms
+     </a>
+    </td>
+    <td class="desc">
+     同步。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

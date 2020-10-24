@@ -1,0 +1,158 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WaitUntil
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="CustomYieldInstruction.html">
+    CustomYieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   暂停协程执行，直到提供的委托评估为 /true/。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在协程中，WaitUntil 只能与
+   <code class="varname">
+    yield
+   </code>
+   语句结合使用。
+   <br/>
+   <br/>
+   每帧都会执行提供的委托，在脚本
+   <a href="MonoBehaviour.Update.html">
+    MonoBehaviour.Update
+   </a>
+   之后
+   <a href="MonoBehaviour.LateUpdate.html">
+    MonoBehaviour.LateUpdate
+   </a>
+   之前执行。当委托最终评估为
+   <code class="varname">
+    true
+   </code>
+   时，协程将继续其执行。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="AsyncOperation.html">
+    AsyncOperation
+   </a>
+   、
+   <a href="WaitForEndOfFrame.html">
+    WaitForEndOfFrame
+   </a>
+   、
+   <a href="WaitForFixedUpdate.html">
+    WaitForFixedUpdate
+   </a>
+   、
+   <a href="WaitForSeconds.html">
+    WaitForSeconds
+   </a>
+   、
+   <a href="WaitForSecondsRealtime.html">
+    WaitForSecondsRealtime
+   </a>
+   、
+   <a href="WaitWhile.html">
+    WaitWhile
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class WaitUntilExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public int frame;<br/><br/>    void Start()
+    {
+        StartCoroutine(Example());
+    }<br/><br/>    IEnumerator Example()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Waiting for princess to be rescued...");
+        yield return new <a href="WaitUntil.html">WaitUntil</a>(() =&gt; frame &gt;= 10);
+        <a href="Debug.Log.html">Debug.Log</a>("Princess was rescued!");
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (frame &lt;= 10)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Frame: " + frame);
+            frame++;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WaitUntil-ctor.html">
+      WaitUntil
+     </a>
+    </td>
+    <td class="desc">
+     使用要评估的给定委托实例化一个 yield 指令。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="CustomYieldInstruction-keepWaiting.html">
+       keepWaiting
+      </a>
+     </td>
+     <td class="desc">
+      指示协同程序是否应保持暂停。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

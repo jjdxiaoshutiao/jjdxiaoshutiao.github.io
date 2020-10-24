@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   FormerlySerializedAsAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Serialization
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此属性重命名一个字段，同时不丢失其序列化的值。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   假设您有如下所示的类：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class MyClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public string myValue;
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   而您想要创建一个属性，以封装 myValue，同时不丢失已经分配给 MyClass 实例的任何数据。您可以通过使用以下属性来实现这一点：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Serialization;<br/><br/>public class MyClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [FormerlySerializedAs("myValue")]
+    string m_MyValue;
+    public string myValue
+    {
+        get { return m_MyValue; }
+        set { m_MyValue = value; }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Serialization.FormerlySerializedAsAttribute-oldName.html">
+      oldName
+     </a>
+    </td>
+    <td class="desc">
+     执行重命名操作之前字段的名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Serialization.FormerlySerializedAsAttribute-ctor.html">
+      FormerlySerializedAsAttribute
+     </a>
+    </td>
+    <td class="desc">
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

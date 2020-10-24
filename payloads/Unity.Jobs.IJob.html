@@ -1,0 +1,102 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IJob
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in Unity.Jobs
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   借助 IJob，您可以调度与其他作业和主线程并行运行的单个作业。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   调度作业时，将在工作线程中调用该作业的 Execute 方法。返回的 JobHandle 可用于确保作业已完成。它也可以作为依赖项传递给其他作业，从而确保作业在工作线程中逐个执行。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using Unity.Collections;
+using Unity.Jobs;<br/><br/>class ApplyVelocitySample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    struct VelocityJob : <a href="Unity.Jobs.IJob.html">IJob</a>
+    {
+        // Jobs declare all data that will be accessed in the job
+        // By declaring it as read only, multiple jobs are allowed to access the data in parallel
+        [ReadOnly]
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; velocity;<br/><br/>        // By default containers are assumed to be read &amp;amp; write
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; position;<br/><br/>        // Delta time must be copied to the job since jobs generally don't have concept of a frame.
+        // The main thread waits for the job on the same frame or the next frame, but the job should
+        // perform work in a deterministic and independent way when running on worker threads.
+        public float deltaTime;<br/><br/>        // The code actually running on the job
+        public void Execute()
+        {
+            // Move the positions based on delta time and velocity
+            for (var i = 0; i &lt; position.Length; i++)
+                position[i] = position[i] + velocity[i] * deltaTime;
+        }
+    }<br/><br/>    public void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        var position = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);<br/><br/>        var velocity = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);
+        for (var i = 0; i &lt; velocity.Length; i++)
+            velocity[i] = new <a href="Vector3.html">Vector3</a>(0, 10, 0);<br/><br/>
+        // Initialize the job data
+        var job = new VelocityJob()
+        {
+            deltaTime = <a href="Time-deltaTime.html">Time.deltaTime</a>,
+            position = position,
+            velocity = velocity
+        };<br/><br/>        // Schedule the job, returns the <a href="Unity.Jobs.JobHandle.html">JobHandle</a> which can be waited upon later on
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> jobHandle = job.Schedule();<br/><br/>        // Ensure the job has completed
+        // It is not recommended to Complete a job immediately,
+        // since that gives you no actual parallelism.
+        // You optimally want to schedule a job early in a frame and then wait for it later in the frame.
+        jobHandle.Complete();<br/><br/>        <a href="Debug.Log.html">Debug.Log</a>(job.position[0]);<br/><br/>        // Native arrays must be disposed manually
+        position.Dispose();
+        velocity.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.IJob.Execute.html">
+      Execute
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法以在工作线程中执行操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

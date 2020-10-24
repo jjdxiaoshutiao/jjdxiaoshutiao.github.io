@@ -1,0 +1,209 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Touch
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于描述触摸屏幕的手指状态的结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   设备可以跟踪很多关于触摸屏上的触摸操作的不同数据段，包括其 /phase/（即触摸是刚开始、已结束还是移动）、其位置以及触摸是一次接触还是多次点击。此外，设备还可以检查帧更新之间的触摸的连续性，因此可以跨帧报告一致的 ID 号并用它来确定特定手指的移动方式。
+   <br/>
+   <br/>
+   Unity 使用 Touch 结构存储与单次接触相关的数据，此结构由
+   <a href="Input.GetTouch.html">
+    Input.GetTouch
+   </a>
+   函数返回。每次帧更新都需要刷新 GetTouch 调用，以便从设备获取最新触摸信息，但可以使用
+   <a href="Touch-fingerId.html">
+    fingerId
+   </a>
+   属性标识帧之间的相同触摸操作。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Input.GetTouch.html">
+    Input.GetTouch
+   </a>
+   、
+   <a href="TouchPhase.html">
+    TouchPhase
+   </a>
+   枚举。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Touch-altitudeAngle.html">
+      altitudeAngle
+     </a>
+    </td>
+    <td class="desc">
+     0 弧度值指示触笔平行于表面，pi/2 指示垂直。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-azimuthAngle.html">
+      azimuthAngle
+     </a>
+    </td>
+    <td class="desc">
+     0 弧度值指示触笔指向沿着设备 X 轴方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-deltaPosition.html">
+      deltaPosition
+     </a>
+    </td>
+    <td class="desc">
+     自上次像素坐标更改以来的位置增量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-deltaTime.html">
+      deltaTime
+     </a>
+    </td>
+    <td class="desc">
+     自记录的 Touch 值上次更改以来经过的时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-fingerId.html">
+      fingerId
+     </a>
+    </td>
+    <td class="desc">
+     触摸的唯一索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-maximumPossiblePressure.html">
+      maximumPossiblePressure
+     </a>
+    </td>
+    <td class="desc">
+     平台的最大可能压力值。如果 Input.touchPressureSupported 返回 false，此属性的值将始终为 1.0f。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-phase.html">
+      phase
+     </a>
+    </td>
+    <td class="desc">
+     描述触摸阶段。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     触摸在屏幕空间中的位置（像素坐标）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-pressure.html">
+      pressure
+     </a>
+    </td>
+    <td class="desc">
+     当前应用于触摸的压力大小。1.0f 被视为平均触摸压力。如果 Input.touchPressureSupported 返回 false，此属性的值将始终为 1.0f。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-radius.html">
+      radius
+     </a>
+    </td>
+    <td class="desc">
+     触摸半径的估计值。加上 radiusVariance 可获得最大触摸大小，减去它可获得最小触摸大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-radiusVariance.html">
+      radiusVariance
+     </a>
+    </td>
+    <td class="desc">
+     此值确定触摸半径的精度。半径加上此值可获得最大触摸大小，减去它可获得最小触摸大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-rawPosition.html">
+      rawPosition
+     </a>
+    </td>
+    <td class="desc">
+     触摸触点在屏幕空间中的第一个位置（像素坐标）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-tapCount.html">
+      tapCount
+     </a>
+    </td>
+    <td class="desc">
+     点击次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Touch-type.html">
+      type
+     </a>
+    </td>
+    <td class="desc">
+     用于指示触摸是 Direct、Indirect（或远程）还是 Stylus 类型的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

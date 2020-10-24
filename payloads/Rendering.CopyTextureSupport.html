@@ -1,0 +1,160 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CopyTextureSupport
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   支持各种
+   <a href="Graphics.CopyTexture.html">
+    Graphics.CopyTexture
+   </a>
+   情况。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   大多数现代平台和图形 API 都支持相当灵活的纹理复制（例如，从
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   复制到
+   <a href="Cubemap.html">
+    Cubemap
+   </a>
+   图面）。但是，某些旧系统可能不支持某些纹理复制功能。
+此枚举指示对此功能的支持。在调用
+   <a href="Graphics.CopyTexture.html">
+    Graphics.CopyTexture
+   </a>
+   前可使用
+   <a href="SystemInfo-copyTextureSupport.html">
+    SystemInfo.copyTextureSupport
+   </a>
+   检查是否支持。
+   <br/>
+   <br/>
+   Direct3D11、DirectD12 和 PS4 平台通常支持灵活纹理复制（所有 CopyTextureSupport 标记都设置）。
+   <br/>
+   <br/>
+   从 OpenGL 4.3 开始的 OpenGL 支持灵活纹理复制；从 OpenGL ES 3.1 aep 开始的 OpenGL ES 支持灵活纹理复制；之前的版本上目前没有复制支持 (
+   <a href="Rendering.CopyTextureSupport.None.html">
+    CopyTextureSupport.None
+   </a>
+   )。
+   <br/>
+   <br/>
+   Direct3D9 系统具有有限的纹理复制支持（不能复制 3D 纹理，不能在
+纹理和渲染纹理之间复制）。
+   <br/>
+   <br/>
+   Metal 和 WebGL 目前没有纹理复制支持 (
+   <a href="Rendering.CopyTextureSupport.None.html">
+    CopyTextureSupport.None
+   </a>
+   )。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Graphics.CopyTexture.html">
+    Graphics.CopyTexture
+   </a>
+   、
+   <a href="SystemInfo-copyTextureSupport.html">
+    SystemInfo.copyTextureSupport
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不支持 Graphics.CopyTexture。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.Basic.html">
+      Basic
+     </a>
+    </td>
+    <td class="desc">
+     基本 Graphics.CopyTexture 支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.Copy3D.html">
+      Copy3D
+     </a>
+    </td>
+    <td class="desc">
+     Graphics.CopyTexture 中的 Texture3D 支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.DifferentTypes.html">
+      DifferentTypes
+     </a>
+    </td>
+    <td class="desc">
+     不同纹理类型之间的 Graphics.CopyTexture 支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.TextureToRT.html">
+      TextureToRT
+     </a>
+    </td>
+    <td class="desc">
+     Graphics.CopyTexture 中的 Texture 到 RenderTexture 复制支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CopyTextureSupport.RTToTexture.html">
+      RTToTexture
+     </a>
+    </td>
+    <td class="desc">
+     Graphics.CopyTexture 中的 RenderTexture 到 Texture 复制支持。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

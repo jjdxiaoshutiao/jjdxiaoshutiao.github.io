@@ -1,0 +1,117 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IJobParallelFor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in Unity.Jobs
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Parallel-for 作业允许对原生容器的每个元素或对于固定的迭代次数执行相同的独立操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   安排作业后，系统将针对多个并行工作线程调用作业的 Execute(int index) 方法。
+   <br/>
+   <br/>
+   对于从 0 到给定长度的每个索引，系统将分别执行一次 Execute(int index)。
+每个迭代必须独立于其他迭代（安全系统会为您强制执行此规则）。这些索引没有确定的顺序，而是在多个核心上并行执行。
+   <br/>
+   <br/>
+   Unity 会自动将工作拆分为不小于所提供 batchSize 的块，并根据工作线程数、数组长度和批次大小安排适当数量的作业。
+   <br/>
+   <br/>
+   批次大小通常应根据作业中执行的工作量来选择。简单作业（例如互相添加一些 Vector3）的批次大小应为 32 到 128。但是，如果执行的工作涉及十分高昂的成本，那么最好使用较小的批次大小；对于高成本工作，完全可以将批次大小设置为 1。IJobParallelFor 使用原子操作执行工作窃取。批次大小可能较小，但并不免费。
+   <br/>
+   <br/>
+   返回的 JobHandle 可用于确保作业已完成。它也可以作为依赖项传递给其他作业，从而确保作业在工作线程中逐个执行。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using Unity.Collections;
+using Unity.Jobs;<br/><br/>class ApplyVelocityParallelForSample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    struct VelocityJob : <a href="Unity.Jobs.IJobParallelFor.html">IJobParallelFor</a>
+    {
+        // Jobs declare all data that will be accessed in the job
+        // By declaring it as read only, multiple jobs are allowed to access the data in parallel
+        [ReadOnly]
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; velocity;<br/><br/>        // By default containers are assumed to be read &amp;amp; write
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; position;<br/><br/>        // Delta time must be copied to the job since jobs generally don't have concept of a frame.
+        // The main thread waits for the job same frame or next frame, but the job should do work deterministically
+        // independent on when the job happens to run on the worker threads.
+        public float deltaTime;<br/><br/>        // The code actually running on the job
+        public void Execute(int i)
+        {
+            // Move the positions based on delta time and velocity
+            position[i] = position[i] + velocity[i] * deltaTime;
+        }
+    }<br/><br/>    public void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        var position = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);<br/><br/>        var velocity = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);
+        for (var i = 0; i &lt; velocity.Length; i++)
+            velocity[i] = new <a href="Vector3.html">Vector3</a>(0, 10, 0);<br/><br/>        // Initialize the job data
+        var job = new VelocityJob()
+        {
+            deltaTime = <a href="Time-deltaTime.html">Time.deltaTime</a>,
+            position = position,
+            velocity = velocity
+        };<br/><br/>        // Schedule a parallel-for job. First parameter is how many for-each iterations to perform.
+        // The second parameter is the batch size,
+        // essentially the no-overhead innerloop that just invokes Execute(i) in a loop.
+        // When there is a lot of work in each iteration then a value of 1 can be sensible.
+        // When there is very little work values of 32 or 64 can make sense.
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> jobHandle = job.Schedule(position.Length, 64);<br/><br/>        // Ensure the job has completed.
+        // It is not recommended to Complete a job immediately,
+        // since that reduces the chance of having other jobs run in parallel with this one.
+        // You optimally want to schedule a job early in a frame and then wait for it later in the frame.
+        jobHandle.Complete();<br/><br/>        <a href="Debug.Log.html">Debug.Log</a>(job.position[0]);<br/><br/>        // Native arrays must be disposed manually.
+        position.Dispose();
+        velocity.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.IJobParallelFor.Execute.html">
+      Execute
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法以针对特定迭代索引执行工作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

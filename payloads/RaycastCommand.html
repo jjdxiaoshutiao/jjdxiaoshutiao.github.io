@@ -1,0 +1,169 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RaycastCommand
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于设置要在作业过程中异步执行的射线投射命令的结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用此结构计划一批射线投射时，它们会以异步方式并行执行。射线投射的结果会写入结果缓冲区。由于结果是异步写入，因此在作业完成之前无法访问结果缓冲区。
+   <br/>
+   <br/>
+   命令缓冲区中索引 N 处的命令的结果会存储在结果缓冲区中索引 N * maxHits 处。
+   <br/>
+   <br/>
+   如果 maxHits 大于命令的实际结果数，则结果缓冲区会包含一些未命中任何对象的无效结果。第一个无效结果通过为 null 的碰撞体进行标识。第二个以及随后的无效结果不会由射线投射命令写入，因此其碰撞体不保证为 null。遍历结果时，循环应在发现第一个无效结果时停止。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Physics.Raycast.html">
+    Physics.Raycast
+   </a>
+   、
+   <a href="Physics.RaycastAll.html">
+    Physics.RaycastAll
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private void RaycasExample()
+    {
+        // Perform a single raycast using <a href="RaycastCommand.html">RaycastCommand</a> and wait for it to complete
+        // Setup the command and result buffers
+        var results = new NativeArray&lt;<a href="RaycastHit.html">RaycastHit</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);<br/><br/>        var commands = new NativeArray&lt;<a href="RaycastCommand.html">RaycastCommand</a>&gt;(1, <a href="Unity.Collections.Allocator.Temp.html">Allocator.Temp</a>);<br/><br/>        // Set the data of the first command
+        <a href="Vector3.html">Vector3</a> origin = <a href="Vector3-forward.html">Vector3.forward</a> * -10;<br/><br/>        <a href="Vector3.html">Vector3</a> direction = <a href="Vector3-forward.html">Vector3.forward</a>;<br/><br/>        commands[0] = new <a href="RaycastCommand.html">RaycastCommand</a>(origin, direction);<br/><br/>        // Schedule the batch of raycasts
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> handle = <a href="RaycastCommand.ScheduleBatch.html">RaycastCommand.ScheduleBatch</a>(commands, results, 1, default(<a href="Unity.Jobs.JobHandle.html">JobHandle</a>));<br/><br/>        // Wait for the batch processing job to complete
+        handle.Complete();<br/><br/>        // Copy the result. If batchedHit.collider is null there was no hit
+        <a href="RaycastHit.html">RaycastHit</a> batchedHit = results[0];<br/><br/>        // Dispose the buffers
+        results.Dispose();
+        commands.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-direction.html">
+      direction
+     </a>
+    </td>
+    <td class="desc">
+     射线的方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-distance.html">
+      distance
+     </a>
+    </td>
+    <td class="desc">
+     射线应检查碰撞的最大距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-from.html">
+      from
+     </a>
+    </td>
+    <td class="desc">
+     射线在世界坐标系中的起点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-layerMask.html">
+      layerMask
+     </a>
+    </td>
+    <td class="desc">
+     用于在投射射线时有选择地忽略碰撞体的 LayerMask。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-maxHits.html">
+      maxHits
+     </a>
+    </td>
+    <td class="desc">
+     射线可以命中的最大碰撞体数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand-ctor.html">
+      RaycastCommand
+     </a>
+    </td>
+    <td class="desc">
+     创建 RaycastCommand。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RaycastCommand.ScheduleBatch.html">
+      ScheduleBatch
+     </a>
+    </td>
+    <td class="desc">
+     安排在一个作业中执行的一批射线投射。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

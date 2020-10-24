@@ -1,0 +1,70 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationCullingType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此 enum 控制动画组件的剔除。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   启用剔除时，如果 Unity 认为用户不会看到此动画的结果，其可能停止生成动画。
+如果您在视口外部生成动画，这可以为您节省一些性能，视口动画只有
+当用户能够实际看到正在生成的动画才有意义。当剔除了动画组件时，它
+不会执行任何操作：它不会更新动画状态，执行事件或者对动画进行采样。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCullingType.AlwaysAnimate.html">
+      AlwaysAnimate
+     </a>
+    </td>
+    <td class="desc">
+     禁用动画剔除 - 即使在屏幕外也为对象生成动画。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationCullingType.BasedOnRenderers.html">
+      BasedOnRenderers
+     </a>
+    </td>
+    <td class="desc">
+     未显示渲染器时，禁用动画。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

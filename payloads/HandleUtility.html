@@ -1,0 +1,384 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HandleUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   适用于场景视图样式 3D GUI 的 Helper 函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这些主要是帮助在 3D 场景空间和 2D GUI 之间进行转换的数学函数。这些函数可用于构造 Unity 编辑器本身，因此使用这些函数有利于确保您自己的 Handle GUI 与 Unity 的保持一致。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility-acceleration.html">
+      acceleration
+     </a>
+    </td>
+    <td class="desc">
+     获取用于拖动值的标准加速度（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility-niceMouseDelta.html">
+      niceMouseDelta
+     </a>
+    </td>
+    <td class="desc">
+     获取用于拖动浮点值的精密鼠标增量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility-niceMouseDeltaZoom.html">
+      niceMouseDeltaZoom
+     </a>
+    </td>
+    <td class="desc">
+     获取用于缩放的精密鼠标增量（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.AddControl.html">
+      AddControl
+     </a>
+    </td>
+    <td class="desc">
+     记录从手柄到测量点的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.AddDefaultControl.html">
+      AddDefaultControl
+     </a>
+    </td>
+    <td class="desc">
+     为默认控件添加 ID。如果没有其他控件可选，则选择此控件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.CalcLineTranslation.html">
+      CalcLineTranslation
+     </a>
+    </td>
+    <td class="desc">
+     将鼠标拖动映射到沿 3D 空间中一条直线的运动。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.ClosestPointToArc.html">
+      ClosestPointToArc
+     </a>
+    </td>
+    <td class="desc">
+     获取弧线（在 3D 空间中）上最接近当前鼠标位置的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.ClosestPointToDisc.html">
+      ClosestPointToDisc
+     </a>
+    </td>
+    <td class="desc">
+     获取圆盘（在 3D 空间中）上最接近当前鼠标位置的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.ClosestPointToPolyLine.html">
+      ClosestPointToPolyLine
+     </a>
+    </td>
+    <td class="desc">
+     获取折线（在 3D 空间中）上最接近当前鼠标位置的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistancePointBezier.html">
+      DistancePointBezier
+     </a>
+    </td>
+    <td class="desc">
+     计算点与贝塞尔曲线之间的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistancePointLine.html">
+      DistancePointLine
+     </a>
+    </td>
+    <td class="desc">
+     计算点与线之间的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistancePointToLine.html">
+      DistancePointToLine
+     </a>
+    </td>
+    <td class="desc">
+     从 2d 中的一个点 p 到由两个点 a 和 b 定义的一条直线的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistancePointToLineSegment.html">
+      DistancePointToLineSegment
+     </a>
+    </td>
+    <td class="desc">
+     从 2d 中的一个点 p 到由两个点 a 和 b 定义的线段的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToArc.html">
+      DistanceToArc
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到 3D 圆扇形的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToCircle.html">
+      DistanceToCircle
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到朝向摄像机的圆形的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToDisc.html">
+      DistanceToDisc
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到 3D 圆盘的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToLine.html">
+      DistanceToLine
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到直线的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToPolyLine.html">
+      DistanceToPolyLine
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到折线的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.DistanceToRectangle.html">
+      DistanceToRectangle
+     </a>
+    </td>
+    <td class="desc">
+     从鼠标指针到屏幕上一个矩形的像素距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.GetHandleSize.html">
+      GetHandleSize
+     </a>
+    </td>
+    <td class="desc">
+     获取给定位置处操控器手柄的世界空间大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.GUIPointToScreenPixelCoordinate.html">
+      GUIPointToScreenPixelCoordinate
+     </a>
+    </td>
+    <td class="desc">
+     将 2D GUI 位置转换为屏幕像素坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.GUIPointToWorldRay.html">
+      GUIPointToWorldRay
+     </a>
+    </td>
+    <td class="desc">
+     将 2D GUI 位置转换为世界空间射线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.PickGameObject.html">
+      PickGameObject
+     </a>
+    </td>
+    <td class="desc">
+     选择最接近指定位置的游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.PickRectObjects.html">
+      PickRectObjects
+     </a>
+    </td>
+    <td class="desc">
+     选择位于指定屏幕矩形内的游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.PointOnLineParameter.html">
+      PointOnLineParameter
+     </a>
+    </td>
+    <td class="desc">
+     返回给定线上 point 投影的参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.PopCamera.html">
+      PopCamera
+     </a>
+    </td>
+    <td class="desc">
+     检索所有摄像机设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.ProjectPointLine.html">
+      ProjectPointLine
+     </a>
+    </td>
+    <td class="desc">
+     将 point 投射到一条直线上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.PushCamera.html">
+      PushCamera
+     </a>
+    </td>
+    <td class="desc">
+     存储所有摄像机设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.RaySnap.html">
+      RaySnap
+     </a>
+    </td>
+    <td class="desc">
+     如果对象位于自身路径中，则向场景投射 /ray/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.Repaint.html">
+      Repaint
+     </a>
+    </td>
+    <td class="desc">
+     重新绘制当前视图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.WorldPointToSizedRect.html">
+      WorldPointToSizedRect
+     </a>
+    </td>
+    <td class="desc">
+     计算一个用于在 3D 空间中投影点附近显示 2D GUI 元素的矩形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.WorldToGUIPoint.html">
+      WorldToGUIPoint
+     </a>
+    </td>
+    <td class="desc">
+     将世界空间点转换为 2D GUI 位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HandleUtility.WorldToGUIPointWithDepth.html">
+      WorldToGUIPointWithDepth
+     </a>
+    </td>
+    <td class="desc">
+     将世界空间点转换为 2D GUI 位置。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

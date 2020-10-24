@@ -1,0 +1,316 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CameraEvent
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在摄像机的渲染中定义一个用来附加
+   <a href="Rendering.CommandBuffer.html">
+    CommandBuffer
+   </a>
+   对象的位置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过在摄像机渲染中的不同点添加所谓的“命令缓冲区”可以扩展 Unity 的渲染循环。例如，您可以添加一些自定义几何形状，以便在绘制天空盒后立即绘制。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rendering.CommandBuffer.html">
+    CommandBuffer
+   </a>
+   、
+   <a href="Rendering.LightEvent.html">
+    LightEvent
+   </a>
+   、
+   <a href="../Manual/GraphicsCommandBuffers.html">
+    command buffers overview
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeDepthTexture.html">
+      BeforeDepthTexture
+     </a>
+    </td>
+    <td class="desc">
+     在摄像机的深度纹理生成之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterDepthTexture.html">
+      AfterDepthTexture
+     </a>
+    </td>
+    <td class="desc">
+     在摄像机的深度纹理生成之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeDepthNormalsTexture.html">
+      BeforeDepthNormalsTexture
+     </a>
+    </td>
+    <td class="desc">
+     在摄像机的深度 + 法线纹理生成之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterDepthNormalsTexture.html">
+      AfterDepthNormalsTexture
+     </a>
+    </td>
+    <td class="desc">
+     在摄像机的深度 + 法线纹理生成之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeGBuffer.html">
+      BeforeGBuffer
+     </a>
+    </td>
+    <td class="desc">
+     在渲染延迟渲染 G 缓冲区之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterGBuffer.html">
+      AfterGBuffer
+     </a>
+    </td>
+    <td class="desc">
+     在渲染延迟渲染 G 缓冲区之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeLighting.html">
+      BeforeLighting
+     </a>
+    </td>
+    <td class="desc">
+     在延迟渲染中的光照通道之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterLighting.html">
+      AfterLighting
+     </a>
+    </td>
+    <td class="desc">
+     在延迟渲染中的光照通道之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeFinalPass.html">
+      BeforeFinalPass
+     </a>
+    </td>
+    <td class="desc">
+     在延迟光照中的最后一个几何形状通道之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterFinalPass.html">
+      AfterFinalPass
+     </a>
+    </td>
+    <td class="desc">
+     在延迟光照中的最后一个几何形状通道之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeForwardOpaque.html">
+      BeforeForwardOpaque
+     </a>
+    </td>
+    <td class="desc">
+     在前向渲染中的不透明对象之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterForwardOpaque.html">
+      AfterForwardOpaque
+     </a>
+    </td>
+    <td class="desc">
+     在前向渲染中的不透明对象之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeImageEffectsOpaque.html">
+      BeforeImageEffectsOpaque
+     </a>
+    </td>
+    <td class="desc">
+     在不透明对象和透明对象之间发生的图像特效之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterImageEffectsOpaque.html">
+      AfterImageEffectsOpaque
+     </a>
+    </td>
+    <td class="desc">
+     在不透明对象和透明对象之间发生的图像特效之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeSkybox.html">
+      BeforeSkybox
+     </a>
+    </td>
+    <td class="desc">
+     在绘制天空盒之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterSkybox.html">
+      AfterSkybox
+     </a>
+    </td>
+    <td class="desc">
+     在绘制天空盒之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeForwardAlpha.html">
+      BeforeForwardAlpha
+     </a>
+    </td>
+    <td class="desc">
+     在前向渲染中的透明对象之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterForwardAlpha.html">
+      AfterForwardAlpha
+     </a>
+    </td>
+    <td class="desc">
+     在前向渲染中的透明对象之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeImageEffects.html">
+      BeforeImageEffects
+     </a>
+    </td>
+    <td class="desc">
+     在图像特效之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterImageEffects.html">
+      AfterImageEffects
+     </a>
+    </td>
+    <td class="desc">
+     在图像特效之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterEverything.html">
+      AfterEverything
+     </a>
+    </td>
+    <td class="desc">
+     在摄像机完成所有渲染之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeReflections.html">
+      BeforeReflections
+     </a>
+    </td>
+    <td class="desc">
+     在延迟渲染中的反射通道之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterReflections.html">
+      AfterReflections
+     </a>
+    </td>
+    <td class="desc">
+     在延迟渲染中的反射通道之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.BeforeHaloAndLensFlares.html">
+      BeforeHaloAndLensFlares
+     </a>
+    </td>
+    <td class="desc">
+     在光环和镜头光晕之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CameraEvent.AfterHaloAndLensFlares.html">
+      AfterHaloAndLensFlares
+     </a>
+    </td>
+    <td class="desc">
+     在光环和镜头光晕之后。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

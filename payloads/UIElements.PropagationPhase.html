@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PropagationPhase
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   事件的传播阶段。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   &gt;当元素接收事件时，事件从面板根元素到目标元素传播。
+   <br/>
+   <br/>
+   在 TrickleDown 阶段中，事件从面板的根元素发送到目标元素的父级。
+   <br/>
+   <br/>
+   在 AtTarget 阶段中，事件发送到目标元素。
+   <br/>
+   <br/>
+   在 BubbleUp 阶段中，事件从目标元素的父级发送回面板的根元素。
+   <br/>
+   <br/>
+   在最后一个阶段（DefaultAction 阶段）中，事件重新发送到目标元素。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     事件未传播。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.TrickleDown.html">
+      TrickleDown
+     </a>
+    </td>
+    <td class="desc">
+     事件从面板的根元素发送到目标元素的父级。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.AtTarget.html">
+      AtTarget
+     </a>
+    </td>
+    <td class="desc">
+     事件发送到目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.DefaultActionAtTarget.html">
+      DefaultActionAtTarget
+     </a>
+    </td>
+    <td class="desc">
+     事件发送到目标元素，然后可以在目标阶段执行元素的默认操作。事件处理程序在此阶段不接收事件。而是对目标元素调用 ExecuteDefaultActionAtTarget。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.BubbleUp.html">
+      BubbleUp
+     </a>
+    </td>
+    <td class="desc">
+     事件从目标元素的父级发送回面板的根元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PropagationPhase.DefaultAction.html">
+      DefaultAction
+     </a>
+    </td>
+    <td class="desc">
+     事件发送到目标元素，然后可以执行元素的最终默认操作。事件处理程序在此阶段不接收事件。而是对目标元素调用 ExecuteDefaultAction。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

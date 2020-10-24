@@ -1,0 +1,57 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SharedBetweenAnimatorsAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SharedBetweenAnimatorsAttribute 是一个属性，它指定此 StateMachineBehaviour 仅应实例化一次，然后供所有 Animator 实例共享。此属性可减少每个控制器实例的内存占用量。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   由程序员选择哪个 StateMachineBehaviour 可使用此属性。注意，如果 StateMachineBehaviour 更改某个成员变量，则会影响使用它的其他所有 Animator 实例。
+另请参阅：
+   <a href="StateMachineBehaviour.html">
+    StateMachineBehaviour
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>[SharedBetweenAnimators]
+public class AttackBehaviour : <a href="StateMachineBehaviour.html">StateMachineBehaviour</a>
+{
+    public override void OnStateEnter(<a href="Animator.html">Animator</a> animator, <a href="AnimatorStateInfo.html">AnimatorStateInfo</a> stateInfo, int layerIndex)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("OnStateEnter");
+    }
+}
+</pre>
+ </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MonoOrStereoscopicEye
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   摄像机眼，对应于人的左眼或右眼（用于立体渲染），或不对应于眼睛（用于非立体渲染）。
+   <br/>
+   <br/>
+   单个摄像机可以在一帧中渲染左视图及右视图。因此，该枚举描述：1) 当
+   <a href="Camera-stereoActiveEye.html">
+    Camera.stereoActiveEye
+   </a>
+   在渲染回调（例如
+   <a href="Camera.OnRenderImage.html">
+    Camera.OnRenderImage
+   </a>
+   ）期间返回时，摄像机当前正在渲染的眼睛；2) 当传入函数时，指示要对哪个眼睛进行操作。
+   <br/>
+   <br/>
+   默认值为
+   <a href="Camera.MonoOrStereoscopicEye.Left.html">
+    Camera.MonoOrStereoscopicEye.Left
+   </a>
+   ，因此，如果启用了立体渲染，则在渲染之外调用时，某些方法或属性可能会返回
+   <a href="Camera.MonoOrStereoscopicEye.Left.html">
+    Camera.MonoOrStereoscopicEye.Left
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Camera.MonoOrStereoscopicEye.Left.html">
+      Left
+     </a>
+    </td>
+    <td class="desc">
+     对应于左眼立体渲染的摄像机眼。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Camera.MonoOrStereoscopicEye.Right.html">
+      Right
+     </a>
+    </td>
+    <td class="desc">
+     对应于右眼立体渲染的摄像机眼。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Camera.MonoOrStereoscopicEye.Mono.html">
+      Mono
+     </a>
+    </td>
+    <td class="desc">
+     对应于非立体渲染的摄像机眼。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

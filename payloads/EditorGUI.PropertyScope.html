@@ -1,0 +1,127 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PropertyScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   创建一个属性封装器，可用于使常规 GUI 控件与
+   <a href="SerializedProperty.html">
+    SerializedProperty
+   </a>
+   配合使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   大多数
+   <a href="EditorGUI.html">
+    EditorGUI
+   </a>
+   和
+   <a href="EditorGUILayout.html">
+    EditorGUILayout
+   </a>
+   GUI 控件已具有与 SerializedProperty 配合使用的重载。
+但是，对于不处理 SerializedProperty 的 GUI 控件，您可以按以下所示示例将它们封装到 BeginProperty 和 EndProperty 中。
+您也可以将其用于自己的自定义 GUI 控件。
+   <br/>
+   <br/>
+   如果在多对象编辑时属性值不同，BeginProperty 和 EndProperty 可自动处理默认标签、适用于预制件重载的加粗字体、还原为预制件右键单击菜单以及将
+   <a href="EditorGUI-showMixedValue.html">
+    showMixedValue
+   </a>
+   设为 true。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // A slider function that takes a <a href="SerializedProperty.html">SerializedProperty</a>
+    void <a href="UIElements.Slider.html">Slider</a>(<a href="Rect.html">Rect</a> position, <a href="SerializedProperty.html">SerializedProperty</a> prop, float leftValue, float rightValue, <a href="GUIContent.html">GUIContent</a> label)
+    {
+        using (var scope = new <a href="EditorGUI.PropertyScope.html">EditorGUI.PropertyScope</a>(position, label, prop))
+        {
+            label = scope.content;
+            <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();
+            var newValue = <a href="EditorGUI.Slider.html">EditorGUI.Slider</a>(position, label, prop.floatValue, leftValue, rightValue);
+            // Only assign the value back if it was actually changed by the user.
+            // Otherwise a single value will be assigned to all objects when multi-object editing,
+            // even when the user didn't touch the control.
+            if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+                prop.floatValue = newValue;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="EditorGUI.BeginProperty.html">
+    BeginProperty
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.PropertyScope-content.html">
+      content
+     </a>
+    </td>
+    <td class="desc">
+     用于控件的实际标签。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.PropertyScope-ctor.html">
+      EditorGUI.PropertyScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 PropertyScope 并开始相应的属性。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LazyLoadReference&lt;T0&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   资源文件中包含的对 UnityEngine.Object 的可序列化延迟引用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   允许一个资源引用另一个资源，但会将被引用资源的加载延迟到使用之时，而不是在反序列化引用对象时加载它。
+   <br/>
+   <br/>
+   <strong>
+    典型用例
+   </strong>
+   ：
+   <br/>
+   - 对于需要引用资源但从磁盘读取设置的导入器设置，无法加载被引用的资源，因为它们可能没有导入且尚无法访问。
+   <br/>
+   - 为缩短打开场景所需的时间，仅在编辑模式下加载初始设置或显示所需的资源。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   <br/>
+   - 与直接引用相比，延迟引用具有轻微的性能开销。
+   <br/>
+   - 在独立平台播放器中，当加载播放器或资源包时，将加载所有资源。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEditor.Experimental.AssetImporters;
+using UnityEngine;<br/><br/>[<a href="Experimental.AssetImporters.ScriptedImporter.html">ScriptedImporter</a>(1, "foo")]
+public class FooImporter : <a href="Experimental.AssetImporters.ScriptedImporter.html">ScriptedImporter</a>
+{
+    public LazyLoadReference&lt;<a href="Material.html">Material</a>&gt; m_DefaultMaterial;<br/><br/>    public override void OnImportAsset(<a href="Experimental.AssetImporters.AssetImportContext.html">AssetImportContext</a> ctx)
+    {
+        // At this point, 'm_DefaultMaterial' may refer to a material that has yet to be loaded into memory<br/><br/>        <a href="Material.html">Material</a> mat;
+        if (!m_DefaultMaterial.isSet) // 'isSet' Does not load the referenced material even if not in memory.
+        {
+            mat = new <a href="Material.html">Material</a>(<a href="Shader.Find.html">Shader.Find</a>("Transparent/Diffuse"));
+            ctx.AddObjectToAsset("mat", mat);
+        }
+        else
+        {
+            mat = m_DefaultMaterial.asset; // Will load referenced material if it is not already in memory.
+        }<br/><br/>        var obj = <a href="GameObject.CreatePrimitive.html">GameObject.CreatePrimitive</a>(<a href="PrimitiveType.Cube.html">PrimitiveType.Cube</a>);
+        obj.transform.GetComponent&lt;<a href="MeshRenderer.html">MeshRenderer</a>&gt;().material = mat;<br/><br/>        ctx.AddObjectToAsset("main", obj);
+        ctx.SetMainObject(obj);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LazyLoadReference_1-asset.html">
+      asset
+     </a>
+    </td>
+    <td class="desc">
+     对被引用资源的访问器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LazyLoadReference_1-isBroken.html">
+      isBroken
+     </a>
+    </td>
+    <td class="desc">
+     用于检查引用是否失效的便捷属性：引用不可用或不可加载的对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LazyLoadReference_1-isSet.html">
+      isSet
+     </a>
+    </td>
+    <td class="desc">
+     确定某个资源是不是目标，无论该资源是否可加载。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

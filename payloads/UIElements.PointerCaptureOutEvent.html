@@ -1,0 +1,384 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PointerCaptureOutEvent
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.UIElements
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="UIElements.PointerCaptureEventBase_1.html">
+    UIElements.PointerCaptureEventBase_1
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   当 VisualElement 释放指针时发送的事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.PointerCaptureOutEvent-ctor.html">
+      PointerCaptureOutEvent
+     </a>
+    </td>
+    <td class="desc">
+     构造函数。避免创建新事件实例。而应使用 GetPooled() 从可重用事件实例池中获取一个实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-bubbles.html">
+       bubbles
+      </a>
+     </td>
+     <td class="desc">
+      此事件类型是否在事件传播路径中冒泡。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-currentTarget.html">
+       currentTarget
+      </a>
+     </td>
+     <td class="desc">
+      事件的当前目标。这是 VisualElement，传播路径中目前正在为其执行事件处理程序。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-dispatch.html">
+       dispatch
+      </a>
+     </td>
+     <td class="desc">
+      是否正在将事件分发给视觉元素。正在分发的事件不能重新分发。如果需要以递归方式分发事件，建议应使用事件的副本。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-eventTypeId.html">
+       eventTypeId
+      </a>
+     </td>
+     <td class="desc">
+      获取此事件实例的类型 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-imguiEvent.html">
+       imguiEvent
+      </a>
+     </td>
+     <td class="desc">
+      此事件源代码中的 IMGUIEvent。源代码可为 null，因为不是所有事件都是由 IMGUI 生成的。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-isDefaultPrevented.html">
+       isDefaultPrevented
+      </a>
+     </td>
+     <td class="desc">
+      如果不应为此事件执行默认操作，则返回 true。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-isImmediatePropagationStopped.html">
+       isImmediatePropagationStopped
+      </a>
+     </td>
+     <td class="desc">
+      是否为此事件调用了 StopImmediatePropagation()。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-isPropagationStopped.html">
+       isPropagationStopped
+      </a>
+     </td>
+     <td class="desc">
+      是否为此事件调用了 StopPropagation()。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-originalMousePosition.html">
+       originalMousePosition
+      </a>
+     </td>
+     <td class="desc">
+      IMGUI 事件在转换为当前目标本地坐标之前的原始鼠标位置。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-pooled.html">
+       pooled
+      </a>
+     </td>
+     <td class="desc">
+      是否从事件池中分配了此事件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-propagationPhase.html">
+       propagationPhase
+      </a>
+     </td>
+     <td class="desc">
+      当前传播阶段。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-target.html">
+       target
+      </a>
+     </td>
+     <td class="desc">
+      收到此事件的目标视觉元素。与 currentTarget 不同，当事件沿传播路径发送给其他元素时，此目标不会更改。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-timestamp.html">
+       timestamp
+      </a>
+     </td>
+     <td class="desc">
+      事件的创建时间。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase-tricklesDown.html">
+       tricklesDown
+      </a>
+     </td>
+     <td class="desc">
+      此事件在 TrickleDown 阶段是否在事件传播路径中下降。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase_1-eventTypeId.html">
+       eventTypeId
+      </a>
+     </td>
+     <td class="desc">
+      获取此事件实例的类型 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.PointerCaptureEventBase_1-pointerId.html">
+       pointerId
+      </a>
+     </td>
+     <td class="desc">
+      标识发送事件的指针。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.PointerCaptureEventBase_1-relatedTarget.html">
+       relatedTarget
+      </a>
+     </td>
+     <td class="desc">
+      对于 PointerCaptureEvent 和 MouseCaptureEvent，返回失去指针捕获的 VisualElement（如果有）。对于 PointerCaptureOutEvent 和 MouseCaptureOutEvent，返回捕获指针的 VisualElement。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      IDisposable 实现。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.PreventDefault.html">
+       PreventDefault
+      </a>
+     </td>
+     <td class="desc">
+      是否阻止对此事件执行默认操作。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.StopImmediatePropagation.html">
+       StopImmediatePropagation
+      </a>
+     </td>
+     <td class="desc">
+      立即停止事件的传播。事件将不会沿着传播路径发送给其他元素。此方法会阻止其他事件处理程序在当前目标上执行。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.StopPropagation.html">
+       StopPropagation
+      </a>
+     </td>
+     <td class="desc">
+      停止传播此事件。事件将不会沿着传播路径发送给其他元素。此方法不会阻止其他事件处理程序在当前目标上执行。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase_1.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      IDispose 实现。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    受保护的函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.Init.html">
+       Init
+      </a>
+     </td>
+     <td class="desc">
+      将所有事件成员重置为其初始值。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase_1.Init.html">
+       Init
+      </a>
+     </td>
+     <td class="desc">
+      将所有事件成员重置为其初始值。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.PointerCaptureEventBase_1.Init.html">
+       Init
+      </a>
+     </td>
+     <td class="desc">
+      将事件成员重置为其初始值。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase.RegisterEventType.html">
+       RegisterEventType
+      </a>
+     </td>
+     <td class="desc">
+      将事件类注册到事件类型系统。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase_1.GetPooled.html">
+       GetPooled
+      </a>
+     </td>
+     <td class="desc">
+      从事件池中获取一个事件。请使用此函数而不是创建新事件。需要将使用此方法获取的事件释放回池中。可以使用 `Dispose()` 进行释放。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.EventBase_1.TypeId.html">
+       TypeId
+      </a>
+     </td>
+     <td class="desc">
+      获取事件类的类型 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.PointerCaptureEventBase_1.GetPooled.html">
+       GetPooled
+      </a>
+     </td>
+     <td class="desc">
+      从事件池获取事件并用给定值初始化。请使用此函数而不是创建新事件。需要将使用此方法获取的事件释放回池中。可以使用 `Dispose()` 进行释放。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

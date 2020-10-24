@@ -1,0 +1,579 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Provider
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.VersionControl
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此类提供对版本控制 API 的访问。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   请注意，版本控制窗口会在每个版本控制操作之后刷新。这意味着，在多个资源中循环并对每个资源执行单独操作（例如签出）的速度慢于传递包含所有资源的
+   <a href="VersionControl.AssetList.html">
+    AssetList
+   </a>
+   并对它执行一次版本控制操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections.Generic;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.VersionControl;
+using UnityEngine;<br/><br/>public class EditorScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="MenuItem.html">MenuItem</a>("VC/Checkout")]
+    public static void TestCheckout()
+    {
+        <a href="VersionControl.AssetList.html">AssetList</a> assets = new <a href="VersionControl.AssetList.html">AssetList</a>();
+        assets.Add(new <a href="VersionControl.Asset.html">Asset</a>("Assets/"));<br/><br/>        <a href="VersionControl.Task.html">Task</a> t = <a href="VersionControl.Provider.Checkout.html">Provider.Checkout</a>(assets, <a href="VersionControl.CheckoutMode.Both.html">CheckoutMode.Both</a>);
+        t.Wait();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请注意，提供程序操作仅执行 VCS 命令，而不自动刷新版本控制窗口。若要更新此窗口，请使用
+   <a href="VersionControl.Task.SetCompletionAction.html">
+    Task.SetCompletionAction
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections.Generic;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.VersionControl;
+using UnityEngine;<br/><br/>public class EditorScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="MenuItem.html">MenuItem</a>("VC/ChangeSetMove")]
+    static void ChangeSetMove()
+    {
+        <a href="VersionControl.AssetList.html">AssetList</a> assets = new <a href="VersionControl.AssetList.html">AssetList</a>();
+        assets.Add(<a href="VersionControl.Provider.GetAssetByPath.html">Provider.GetAssetByPath</a>("Assets/testMaterial.mat"));
+        <a href="VersionControl.Task.html">Task</a> task = <a href="VersionControl.Provider.ChangeSetMove.html">Provider.ChangeSetMove</a>(assets, "ChangeSetID");
+        task.SetCompletionAction(<a href="VersionControl.CompletionAction.UpdatePendingWindow.html">CompletionAction.UpdatePendingWindow</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-activeTask.html">
+      activeTask
+     </a>
+    </td>
+    <td class="desc">
+     获取当前正在执行的任务。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     如果已启用版本控制提供程序并找到有效的 Unity Pro 许可证，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-isActive.html">
+      isActive
+     </a>
+    </td>
+    <td class="desc">
+     如果已正确选择和配置版本控制插件，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-offlineReason.html">
+      offlineReason
+     </a>
+    </td>
+    <td class="desc">
+     返回版本控制提供程序的离线原因（如果离线）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-onlineState.html">
+      onlineState
+     </a>
+    </td>
+    <td class="desc">
+     返回版本控制提供程序的在线状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-preCheckoutCallback.html">
+      preCheckoutCallback
+     </a>
+    </td>
+    <td class="desc">
+     在版本控制签出操作之前要调用的用户提供的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-preSubmitCallback.html">
+      preSubmitCallback
+     </a>
+    </td>
+    <td class="desc">
+     在版本控制提交操作之前要调用的用户提供的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider-requiresNetwork.html">
+      requiresNetwork
+     </a>
+    </td>
+    <td class="desc">
+     如果当前选择的版本控制插件执行任何操作时需要网络连接，则为 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Add.html">
+      Add
+     </a>
+    </td>
+    <td class="desc">
+     向版本控制添加资源或资源列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.AddIsValid.html">
+      AddIsValid
+     </a>
+    </td>
+    <td class="desc">
+     给定资源列表，如果 Add 是要执行的有效任务，则此函数返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ChangeSetDescription.html">
+      ChangeSetDescription
+     </a>
+    </td>
+    <td class="desc">
+     给定仅包含变更集 ID 的变更集，此方法将启动用于查询变更集相关描述的任务。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ChangeSetMove.html">
+      ChangeSetMove
+     </a>
+    </td>
+    <td class="desc">
+     将资源或资源列表从其当前的变更集移动到新的变更集。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ChangeSets.html">
+      ChangeSets
+     </a>
+    </td>
+    <td class="desc">
+     获取当前用户所拥有的待处理变更集列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ChangeSetStatus.html">
+      ChangeSetStatus
+     </a>
+    </td>
+    <td class="desc">
+     检索属于变更集的资源列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Checkout.html">
+      Checkout
+     </a>
+    </td>
+    <td class="desc">
+     从版本控制系统中签出资源或资源列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.CheckoutIsValid.html">
+      CheckoutIsValid
+     </a>
+    </td>
+    <td class="desc">
+     给定资源或资源列表，如果 Checkout 是要执行的有效任务，则此函数返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ClearCache.html">
+      ClearCache
+     </a>
+    </td>
+    <td class="desc">
+     此方法将使所有资源的缓存状态信息无效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Delete.html">
+      Delete
+     </a>
+    </td>
+    <td class="desc">
+     此方法将启动一个任务，用于从磁盘和版本控制系统中删除一个或多个资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.DeleteChangeSets.html">
+      DeleteChangeSets
+     </a>
+    </td>
+    <td class="desc">
+     启动要尝试删除给定变更集的任务。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.DeleteChangeSetsIsValid.html">
+      DeleteChangeSetsIsValid
+     </a>
+    </td>
+    <td class="desc">
+     测试删除变更集是否是要执行的有效任务。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.DiffHead.html">
+      DiffHead
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于显示给定资源与其最新版本之间的差异。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.DiffIsValid.html">
+      DiffIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果启动 Diff 任务是有效操作，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetActiveConfigFields.html">
+      GetActiveConfigFields
+     </a>
+    </td>
+    <td class="desc">
+     返回当前活动版本控制插件的配置字段。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetActivePlugin.html">
+      GetActivePlugin
+     </a>
+    </td>
+    <td class="desc">
+     获取当前用户所选的版本控制插件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetAssetByGUID.html">
+      GetAssetByGUID
+     </a>
+    </td>
+    <td class="desc">
+     返回有关资源的版本控制信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetAssetByPath.html">
+      GetAssetByPath
+     </a>
+    </td>
+    <td class="desc">
+     返回有关资源的版本控制信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetAssetListFromSelection.html">
+      GetAssetListFromSelection
+     </a>
+    </td>
+    <td class="desc">
+     返回有关当前所选资源的版本控制信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetLatest.html">
+      GetLatest
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于从版本控制服务器获取资源的最新版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.GetLatestIsValid.html">
+      GetLatestIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果获取资源的最新版本是有效操作，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Incoming.html">
+      Incoming
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于在版本控制服务器中查询是否有传入的更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.IncomingChangeSetAssets.html">
+      IncomingChangeSetAssets
+     </a>
+    </td>
+    <td class="desc">
+     给定传入的变更集，此方法将启动一个任务，用于在版本控制服务器中查询其资源是否属于变更集的一部分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.IsOpenForEdit.html">
+      IsOpenForEdit
+     </a>
+    </td>
+    <td class="desc">
+     如果资源可以进行编辑，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Lock.html">
+      Lock
+     </a>
+    </td>
+    <td class="desc">
+     尝试锁定资源，以便以独占方式编辑资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.LockIsValid.html">
+      LockIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果任务可以执行，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Merge.html">
+      Merge
+     </a>
+    </td>
+    <td class="desc">
+     此方法将启动一个合并任务，用于处理冲突资源的合并。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Move.html">
+      Move
+     </a>
+    </td>
+    <td class="desc">
+     使用版本控制插件将资源从一个路径移动到另一个路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Resolve.html">
+      Resolve
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于解决版本控制中的冲突资源问题。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.ResolveIsValid.html">
+      ResolveIsValid
+     </a>
+    </td>
+    <td class="desc">
+     测试列表中所有资源的冲突问题是否都可以解决。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Revert.html">
+      Revert
+     </a>
+    </td>
+    <td class="desc">
+     通过取消自上次同步之后所做的所有更改，还原指定的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.RevertIsValid.html">
+      RevertIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果 Revert 是要执行的有效任务，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Status.html">
+      Status
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于从版本控制系统获取最新状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.Submit.html">
+      Submit
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于将资源提交到版本控制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.SubmitIsValid.html">
+      SubmitIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果提交资源是有效操作，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.UnlockIsValid.html">
+      UnlockIsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果锁定资源是有效操作，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.UpdateSettings.html">
+      UpdateSettings
+     </a>
+    </td>
+    <td class="desc">
+     启动一个任务，用于将版本控制设置发送到版本控制系统。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.PreCheckoutCallback.html">
+      PreCheckoutCallback
+     </a>
+    </td>
+    <td class="desc">
+     在版本控制签出之前要调用的用户提供的回调的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Provider.PreSubmitCallback.html">
+      PreSubmitCallback
+     </a>
+    </td>
+    <td class="desc">
+     在版本控制提交之前要调用的用户提供的回调的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

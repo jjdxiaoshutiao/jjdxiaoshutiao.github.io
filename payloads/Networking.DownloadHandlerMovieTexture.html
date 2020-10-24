@@ -1,0 +1,191 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Method group is Obsolete
+   </b>
+   <br/>
+  </div>
+  <h1 class="heading inherit">
+   DownloadHandlerMovieTexture
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Networking.DownloadHandler.html">
+    Networking.DownloadHandler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+     Obsolete
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   MovieTexture 已删除。请改用
+   <a href="Video.VideoPlayer.html">
+    VideoPlayer
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   一个用于从下载的字节创建 MovieTexture 的特化
+   <a href="Networking.DownloadHandler.html">
+    DownloadHandler
+   </a>
+   。
+此类仅适用于支持 MovieTexture 的平台。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-data.html">
+       data
+      </a>
+     </td>
+     <td class="desc">
+      返回从远程服务器下载的原始字节，或 null。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-isDone.html">
+       isDone
+      </a>
+     </td>
+     <td class="desc">
+      如果此 DownloadHandler 的父 UnityWebRequest 已通知它已接收所有数据，且此 DownloadHandler 已完成所有必要的下载后处理操作，则返回 true。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-text.html">
+       text
+      </a>
+     </td>
+     <td class="desc">
+      便捷属性。返回解释为 UTF8 字符串的 data 中的字节。（只读）
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      表示不再使用此 DownloadHandler，并且应清理它使用的所有资源。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    受保护的函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.CompleteContent.html">
+       CompleteContent
+      </a>
+     </td>
+     <td class="desc">
+      在从远程服务器接收所有数据后调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.GetData.html">
+       GetData
+      </a>
+     </td>
+     <td class="desc">
+      访问 data 属性时调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.GetProgress.html">
+       GetProgress
+      </a>
+     </td>
+     <td class="desc">
+      访问 UnityWebRequest.downloadProgress 时调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.GetText.html">
+       GetText
+      </a>
+     </td>
+     <td class="desc">
+      访问 text 属性时调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.ReceiveContentLengthHeader.html">
+       ReceiveContentLengthHeader
+      </a>
+     </td>
+     <td class="desc">
+      在收到 Content-Length 标头调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.ReceiveData.html">
+       ReceiveData
+      </a>
+     </td>
+     <td class="desc">
+      从远程服务器收到数据时调用的回调。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,417 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BlendOp
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   混合运算。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   用于组合像素着色器和渲染目标的混合运算。在运行时可以通过 Material.SetInt() 传递，从而更改混合运算。
+   <br/>
+   <br/>
+   请注意，只有在 Gamma（非 sRGB）颜色空间中，在 DirectX 11.1 运行时上运行的 DX11.1 硬件上才支持逻辑运算符。
+   <br/>
+   <br/>
+   只有在支持 GL_KHR_blend_equation_advanced 或 GL_NV_blend_equation_advanced 的硬件上才支持高级 OpenGL 混合运算，并且可能需要使用
+   <a href="GL.RenderTargetBarrier.html">
+    GL.RenderTargetBarrier
+   </a>
+   。此外，用于高级混合运算的着色器在着色器代码中必须有 UNITY_REQUIRE_ADVANDED_BLEND(mode) 声明，其中，mode 是一种混合运算或“all_equations”，以便支持所有高级混合运算（有关其他值，请参阅 KHR_blend_equation_advanced 规范）。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Add.html">
+      Add
+     </a>
+    </td>
+    <td class="desc">
+     Add (s + d).
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Subtract.html">
+      Subtract
+     </a>
+    </td>
+    <td class="desc">
+     Subtract。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.ReverseSubtract.html">
+      ReverseSubtract
+     </a>
+    </td>
+    <td class="desc">
+     逆向减。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Min.html">
+      Min
+     </a>
+    </td>
+    <td class="desc">
+     Min。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Max.html">
+      Max
+     </a>
+    </td>
+    <td class="desc">
+     Max。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalClear.html">
+      LogicalClear
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 Clear (0)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalSet.html">
+      LogicalSet
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 SET (1)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalCopy.html">
+      LogicalCopy
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 Copy (s)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalCopyInverted.html">
+      LogicalCopyInverted
+     </a>
+    </td>
+    <td class="desc">
+     逻辑反转 Copy (!s)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalNoop.html">
+      LogicalNoop
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 No-op (d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalInvert.html">
+      LogicalInvert
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 Inverse (!d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalAnd.html">
+      LogicalAnd
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 AND (s &amp; d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalNand.html">
+      LogicalNand
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 NAND !(s &amp; d)。仅限 D3D11.1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalOr.html">
+      LogicalOr
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 OR (s | d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalNor.html">
+      LogicalNor
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 NOR !(s | d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalXor.html">
+      LogicalXor
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 XOR (s XOR d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalEquivalence.html">
+      LogicalEquivalence
+     </a>
+    </td>
+    <td class="desc">
+     逻辑 Equivalence !(s XOR d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalAndReverse.html">
+      LogicalAndReverse
+     </a>
+    </td>
+    <td class="desc">
+     逻辑逆 AND (s &amp; !d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalAndInverted.html">
+      LogicalAndInverted
+     </a>
+    </td>
+    <td class="desc">
+     逻辑反转 AND (!s &amp; d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalOrReverse.html">
+      LogicalOrReverse
+     </a>
+    </td>
+    <td class="desc">
+     逻辑逆 OR (s | !d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.LogicalOrInverted.html">
+      LogicalOrInverted
+     </a>
+    </td>
+    <td class="desc">
+     逻辑反转 OR (!s | d)（仅限 D3D11.1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Multiply.html">
+      Multiply
+     </a>
+    </td>
+    <td class="desc">
+     Multiply（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Screen.html">
+      Screen
+     </a>
+    </td>
+    <td class="desc">
+     Screen（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Overlay.html">
+      Overlay
+     </a>
+    </td>
+    <td class="desc">
+     Overlay（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Darken.html">
+      Darken
+     </a>
+    </td>
+    <td class="desc">
+     Darken（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Lighten.html">
+      Lighten
+     </a>
+    </td>
+    <td class="desc">
+     Lighten（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.ColorDodge.html">
+      ColorDodge
+     </a>
+    </td>
+    <td class="desc">
+     Color dodge（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.ColorBurn.html">
+      ColorBurn
+     </a>
+    </td>
+    <td class="desc">
+     Color burn（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.HardLight.html">
+      HardLight
+     </a>
+    </td>
+    <td class="desc">
+     Hard light（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.SoftLight.html">
+      SoftLight
+     </a>
+    </td>
+    <td class="desc">
+     Soft light（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Difference.html">
+      Difference
+     </a>
+    </td>
+    <td class="desc">
+     Difference（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.Exclusion.html">
+      Exclusion
+     </a>
+    </td>
+    <td class="desc">
+     Exclusion（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.HSLHue.html">
+      HSLHue
+     </a>
+    </td>
+    <td class="desc">
+     HSL Hue（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.HSLSaturation.html">
+      HSLSaturation
+     </a>
+    </td>
+    <td class="desc">
+     HSL saturation（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.HSLColor.html">
+      HSLColor
+     </a>
+    </td>
+    <td class="desc">
+     HSL color（高级 OpenGL 混合）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BlendOp.HSLLuminosity.html">
+      HSLLuminosity
+     </a>
+    </td>
+    <td class="desc">
+     HSL luminosity（高级 OpenGL 混合）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

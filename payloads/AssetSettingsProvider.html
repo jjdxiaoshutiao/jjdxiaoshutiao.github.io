@@ -1,0 +1,434 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssetSettingsProvider
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="SettingsProvider.html">
+    SettingsProvider
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   AssetSettingsProvider 是
+   <a href="SettingsProvider.html">
+    SettingsProvider
+   </a>
+   类的一种特化表示，可将旧版设置转换为统一设置 (Unified Settings)。旧版设置包括使用 Inspector 自行修改的任何设置，例如 ProjectSettings 文件夹下的 *.asset 文件。在后台，AssetSettingsProvider 为特定的资源创建
+   <a href="Editor.html">
+    Editor
+   </a>
+   ，并通过封装
+   <a href="Editor.OnInspectorGUI.html">
+    Editor.OnInspectorGUI
+   </a>
+   函数为 Settings 窗口构建 UI。
+   <br/>
+   <br/>
+   在内部，我们使用此类来封装现有设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;<br/><br/>// Create a new type of <a href="CameraEditor.Settings.html">Settings</a> <a href="VersionControl.Asset.html">Asset</a>.
+class MyCustomSettings : <a href="ScriptableObject.html">ScriptableObject</a>
+{
+    public const string k_MyCustomSettingsPath = "Assets/<a href="Editor.html">Editor</a>/MyCustomSettings.asset";<br/><br/>    [<a href="SerializeField.html">SerializeField</a>]
+    private int m_Number;<br/><br/>    [<a href="SerializeField.html">SerializeField</a>]
+    private string m_SomeString;<br/><br/>    internal static <a href="SerializedObject.html">SerializedObject</a> GetSettings()
+    {
+        var settings = <a href="AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>&lt;MyCustomSettings&gt;(k_MyCustomSettingsPath);
+        if (settings == null)
+        {
+            settings = <a href="ScriptableObject.CreateInstance.html">ScriptableObject.CreateInstance</a>&lt;MyCustomSettings&gt;();
+            settings.m_Number = 42;
+            settings.m_SomeString = "The answer to the universe";
+            <a href="AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>(settings, k_MyCustomSettingsPath);
+        }<br/><br/>        return new <a href="SerializedObject.html">SerializedObject</a>(settings);
+    }
+}<br/><br/>[<a href="CustomEditor.html">CustomEditor</a>(typeof(MyCustomSettings))]
+class MyCustomSettingsEditor : <a href="Editor.html">Editor</a>
+{
+    // Nothing to do, this uses the Generic <a href="Editor.html">Editor</a> to display MyCustomSettings properties
+}<br/><br/>class AssetSettingsProviderRegister
+{
+    [<a href="SettingsProvider.html">SettingsProvider</a>]
+    public static <a href="SettingsProvider.html">SettingsProvider</a> CreateFromFilePath()
+    {
+        // Create an <a href="AssetSettingsProvider.html">AssetSettingsProvider</a> from a file path:
+        var provider = <a href="AssetSettingsProvider.CreateProviderFromAssetPath.html">AssetSettingsProvider.CreateProviderFromAssetPath</a>("Project/AssetSettings/FromFile", MyCustomSettings.k_MyCustomSettingsPath);<br/><br/>        // Register keywords from the properties of MyCustomSettings
+        provider.keywords = <a href="SettingsProvider.GetSearchKeywordsFromSerializedObject.html">SettingsProvider.GetSearchKeywordsFromSerializedObject</a>(new <a href="SerializedObject.html">SerializedObject</a>(<a href="AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>(MyCustomSettings.k_MyCustomSettingsPath)));
+        return provider;
+    }<br/><br/>    [<a href="SettingsProvider.html">SettingsProvider</a>]
+    public static <a href="SettingsProvider.html">SettingsProvider</a> CreateFromSettingsObject()
+    {
+        // Create an <a href="AssetSettingsProvider.html">AssetSettingsProvider</a> from a settings object (UnityEngine.Object):
+        var settingsObj = <a href="AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>&lt;UnityEngine.Object&gt;(MyCustomSettings.k_MyCustomSettingsPath);
+        var provider = <a href="AssetSettingsProvider.CreateProviderFromObject.html">AssetSettingsProvider.CreateProviderFromObject</a>("Project/AssetSettings/FromObject", settingsObj);<br/><br/>        // Register keywords from the properties of MyCustomSettings
+        provider.keywords = <a href="SettingsProvider.GetSearchKeywordsFromSerializedObject.html">SettingsProvider.GetSearchKeywordsFromSerializedObject</a>(new <a href="SerializedObject.html">SerializedObject</a>(settingsObj));
+        return provider;
+    }<br/><br/>    [<a href="SettingsProvider.html">SettingsProvider</a>]
+    public static <a href="SettingsProvider.html">SettingsProvider</a> CreateFromSettingsFromFunctor()
+    {
+        // Create an <a href="AssetSettingsProvider.html">AssetSettingsProvider</a> from a functor that must return a UnityEngine.Object:
+        var provider = new <a href="AssetSettingsProvider.html">AssetSettingsProvider</a>("Project/AssetSettings/FromFunctor", () =&gt; <a href="Editor.CreateEditor.html">Editor.CreateEditor</a>(<a href="AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>&lt;UnityEngine.Object&gt;(MyCustomSettings.k_MyCustomSettingsPath)));<br/><br/>        // Register keywords from the properties of MyCustomSettings
+        provider.keywords = <a href="SettingsProvider.GetSearchKeywordsFromSerializedObject.html">SettingsProvider.GetSearchKeywordsFromSerializedObject</a>(new <a href="SerializedObject.html">SerializedObject</a>(<a href="AssetDatabase.LoadAllAssetsAtPath.html">AssetDatabase.LoadAllAssetsAtPath</a>(MyCustomSettings.k_MyCustomSettingsPath)));
+        return provider;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider-settingsEditor.html">
+      settingsEditor
+     </a>
+    </td>
+    <td class="desc">
+     编辑器提供 UI 来修改设置。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider-ctor.html">
+      AssetSettingsProvider
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 AssetSettingsProvider，以便可以封装旧版设置（即先前在 Inspector 中显示的设置）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.OnActivate.html">
+      OnActivate
+     </a>
+    </td>
+    <td class="desc">
+     覆盖此 AssetSettingsProvider 的 SettingsProvider.OnActivate。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.OnDeactivate.html">
+      OnDeactivate
+     </a>
+    </td>
+    <td class="desc">
+     覆盖此 AssetSettingsProvider 的 SettingsProvider.OnDeactivate。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.OnFooterBarGUI.html">
+      OnFooterBarGUI
+     </a>
+    </td>
+    <td class="desc">
+     覆盖此 AssetSettingsProvider 的 SettingsProvider.OnFooterBarGUI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.OnGUI.html">
+      OnGUI
+     </a>
+    </td>
+    <td class="desc">
+     覆盖此 AssetSettingsProvider 的 SettingsProvider.OnGUI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.OnTitleBarGUI.html">
+      OnTitleBarGUI
+     </a>
+    </td>
+    <td class="desc">
+     覆盖此 AssetSettingsProvider 的 SettingsProvider.OnTitleBarGUI。这将绘制包含“add to preset”和“help”按钮的按钮栏。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.CreateProviderFromAssetPath.html">
+      CreateProviderFromAssetPath
+     </a>
+    </td>
+    <td class="desc">
+     从资源路径创建 AssetSettingsProvider。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.CreateProviderFromObject.html">
+      CreateProviderFromObject
+     </a>
+    </td>
+    <td class="desc">
+     从设置对象创建 AssetSettingsProvider。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssetSettingsProvider.CreateProviderFromResourcePath.html">
+      CreateProviderFromResourcePath
+     </a>
+    </td>
+    <td class="desc">
+     从资源的资源路径创建 AssetSettingsProvider。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-activateHandler.html">
+       activateHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.OnActivate。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-deactivateHandler.html">
+       deactivateHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.OnDeactivate。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-footerBarGuiHandler.html">
+       footerBarGuiHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.OnFooterBarGUI。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-guiHandler.html">
+       guiHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.OnGUI。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-hasSearchInterestHandler.html">
+       hasSearchInterestHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.HasSearchInterest。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-inspectorUpdateHandler.html">
+       inspectorUpdateHandler
+      </a>
+     </td>
+     <td class="desc">
+      重写 SettingsProvider.OnInspectorUpdate。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-keywords.html">
+       keywords
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置关键字列表，以便将这些关键字与用户正在搜索的内容进行比较。当用户在 Settings 窗口的搜索框中输入值时，SettingsProvider.HasSearchInterest 会尝试将这些关键字与此列表进行匹配。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-label.html">
+       label
+      </a>
+     </td>
+     <td class="desc">
+      获取或设置 SettingsProvider 在 Settings 窗口中的显示名称。如果未设置，Settings 窗口将改用 SettingsProvider.settingsPath 的最后一个标记。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-scope.html">
+       scope
+      </a>
+     </td>
+     <td class="desc">
+      获取 SettingsProvider 的范围。该范围确定 SettingsProvider 显示在 Preferences 窗口 (SettingsScope.User) 中还是显示在 Settings 窗口 (SettingsScope.Project) 中。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-settingsPath.html">
+       settingsPath
+      </a>
+     </td>
+     <td class="desc">
+      获取用于将 SettingsProvider 放置在 Settings 窗口的树视图中的路径。该路径在所有其他设置路径中应该具有唯一性，并且应该将“/”用作分隔符。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider-titleBarGuiHandler.html">
+       titleBarGuiHandler
+      </a>
+     </td>
+     <td class="desc">
+      重载 SettingsProvider.OnTitleBarGUI。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.HasSearchInterest.html">
+       HasSearchInterest
+      </a>
+     </td>
+     <td class="desc">
+      检查用户在 Settings 窗口搜索框中键入内容时是否应显示 SettingsProvider。SettingsProvider 尝试将搜索词（甚至搜索词一部分）与任何 SettingsProvider.keywords 匹配。该搜索不区分大小写。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.OnInspectorUpdate.html">
+       OnInspectorUpdate
+      </a>
+     </td>
+     <td class="desc">
+      OnInspectorUpdate 以每秒 10 帧的速度调用，以便检视面板有机会进行更新。有关更多详细信息，请参阅 EditorWindow.OnInspectorUpdate。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.Repaint.html">
+       Repaint
+      </a>
+     </td>
+     <td class="desc">
+      请求 SettingsWindow 以进行重绘。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.GetSearchKeywordsFromGUIContentProperties.html">
+       GetSearchKeywordsFromGUIContentProperties
+      </a>
+     </td>
+     <td class="desc">
+      从特定类型的所有公共静态成员中提取搜索关键字。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.GetSearchKeywordsFromPath.html">
+       GetSearchKeywordsFromPath
+      </a>
+     </td>
+     <td class="desc">
+      从特定路径中资源的序列化属性提取搜索关键字。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SettingsProvider.GetSearchKeywordsFromSerializedObject.html">
+       GetSearchKeywordsFromSerializedObject
+      </a>
+     </td>
+     <td class="desc">
+      从 SerializedObject 的序列化属性提取搜索关键字。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

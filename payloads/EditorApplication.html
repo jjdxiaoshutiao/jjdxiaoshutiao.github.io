@@ -1,0 +1,473 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EditorApplication
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   主应用程序类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-applicationContentsPath.html">
+      applicationContentsPath
+     </a>
+    </td>
+    <td class="desc">
+     Unity 编辑器 contents 文件夹的路径。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-applicationPath.html">
+      applicationPath
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 编辑器应用程序的路径。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-contextualPropertyMenu.html">
+      contextualPropertyMenu
+     </a>
+    </td>
+    <td class="desc">
+     每当用户上下文单击 Inspector 中的属性时引发的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-delayCall.html">
+      delayCall
+     </a>
+    </td>
+    <td class="desc">
+     在所有检视面板更新之后调用一次的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-hierarchyWindowItemOnGUI.html">
+      hierarchyWindowItemOnGUI
+     </a>
+    </td>
+    <td class="desc">
+     Hierarchy 窗口中每个可见列表项的 OnGUI 事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isCompiling.html">
+      isCompiling
+     </a>
+    </td>
+    <td class="desc">
+     编辑器当前是否正在编译脚本？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isPaused.html">
+      isPaused
+     </a>
+    </td>
+    <td class="desc">
+     编辑器当前是否已暂停？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isPlaying.html">
+      isPlaying
+     </a>
+    </td>
+    <td class="desc">
+     编辑器当前是否处于播放模式？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isPlayingOrWillChangePlaymode.html">
+      isPlayingOrWillChangePlaymode
+     </a>
+    </td>
+    <td class="desc">
+     编辑器当前是处于播放模式，还是即将切换到该模式？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isRemoteConnected.html">
+      isRemoteConnected
+     </a>
+    </td>
+    <td class="desc">
+     编辑器当前是否已连接到 Unity Remote 4 客户端应用程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isTemporaryProject.html">
+      isTemporaryProject
+     </a>
+    </td>
+    <td class="desc">
+     如果当前项目是作为临时项目创建的，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-isUpdating.html">
+      isUpdating
+     </a>
+    </td>
+    <td class="desc">
+     如果编辑器当前正在刷新 AssetDatabase，则为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-modifierKeysChanged.html">
+      modifierKeysChanged
+     </a>
+    </td>
+    <td class="desc">
+     已更改的键盘修改键的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-projectWindowItemOnGUI.html">
+      projectWindowItemOnGUI
+     </a>
+    </td>
+    <td class="desc">
+     Project 窗口中每个可见列表项的 OnGUI 事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-searchChanged.html">
+      searchChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当窗口的搜索框的内容发生更改时引发的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-timeSinceStartup.html">
+      timeSinceStartup
+     </a>
+    </td>
+    <td class="desc">
+     自编辑器启动以来经过的时间。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-update.html">
+      update
+     </a>
+    </td>
+    <td class="desc">
+     通用更新的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.Beep.html">
+      Beep
+     </a>
+    </td>
+    <td class="desc">
+     播放系统哔哔声。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.DirtyHierarchyWindowSorting.html">
+      DirtyHierarchyWindowSorting
+     </a>
+    </td>
+    <td class="desc">
+     将层级视图排序方法设置为“脏”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.EnterPlaymode.html">
+      EnterPlaymode
+     </a>
+    </td>
+    <td class="desc">
+     将编辑器切换为运行模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.ExecuteMenuItem.html">
+      ExecuteMenuItem
+     </a>
+    </td>
+    <td class="desc">
+     调用指定路径中的菜单项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.Exit.html">
+      Exit
+     </a>
+    </td>
+    <td class="desc">
+     退出 Unity 编辑器应用程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.ExitPlaymode.html">
+      ExitPlaymode
+     </a>
+    </td>
+    <td class="desc">
+     将编辑器切换为编辑模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.LockReloadAssemblies.html">
+      LockReloadAssemblies
+     </a>
+    </td>
+    <td class="desc">
+     防止在不方便时加载程序集。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.OpenProject.html">
+      OpenProject
+     </a>
+    </td>
+    <td class="desc">
+     打开另一个项目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.QueuePlayerLoopUpdate.html">
+      QueuePlayerLoopUpdate
+     </a>
+    </td>
+    <td class="desc">
+     通常情况下，当场景被修改后，编辑器中将发生播放器循环更新。无论场景是否已被修改，此方法都允许您对播放器循环更新进行排队。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.RepaintHierarchyWindow.html">
+      RepaintHierarchyWindow
+     </a>
+    </td>
+    <td class="desc">
+     可用于确保重绘 Hierarchy 窗口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.RepaintProjectWindow.html">
+      RepaintProjectWindow
+     </a>
+    </td>
+    <td class="desc">
+     可用于确保重绘 Project 窗口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.SetTemporaryProjectKeepPath.html">
+      SetTemporaryProjectKeepPath
+     </a>
+    </td>
+    <td class="desc">
+     设置 Unity 在关闭当前的临时项目时应在哪个路径存储该项目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.Step.html">
+      Step
+     </a>
+    </td>
+    <td class="desc">
+     执行单帧步骤。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.UnlockReloadAssemblies.html">
+      UnlockReloadAssemblies
+     </a>
+    </td>
+    <td class="desc">
+     必须在 LockReloadAssemblies 之后调用，以重新启用程序集的加载过程。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-hierarchyChanged.html">
+      hierarchyChanged
+     </a>
+    </td>
+    <td class="desc">
+     当层级视图中的对象或对象组发生更改时引发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-pauseStateChanged.html">
+      pauseStateChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当编辑器的暂停状态发生更改时引发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-playModeStateChanged.html">
+      playModeStateChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当编辑器的播放模式状态发生更改时引发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-projectChanged.html">
+      projectChanged
+     </a>
+    </td>
+    <td class="desc">
+     每当项目的状态发生更改时引发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-quitting.html">
+      quitting
+     </a>
+    </td>
+    <td class="desc">
+     当编辑器应用程序退出时，Unity 会引发此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication-wantsToQuit.html">
+      wantsToQuit
+     </a>
+    </td>
+    <td class="desc">
+     当编辑器应用程序想要退出时，Unity 会引发此事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.CallbackFunction.html">
+      CallbackFunction
+     </a>
+    </td>
+    <td class="desc">
+     要从 EditorApplication 回调中调用的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.HierarchyWindowItemCallback.html">
+      HierarchyWindowItemCallback
+     </a>
+    </td>
+    <td class="desc">
+     要在每个 OnGUI 事件上为 Hierarchy 窗口中的每个可见列表项调用的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.ProjectWindowItemCallback.html">
+      ProjectWindowItemCallback
+     </a>
+    </td>
+    <td class="desc">
+     要在每个 OnGUI 事件上为 Project 窗口中的每个可见列表项调用的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorApplication.SerializedPropertyCallbackFunction.html">
+      SerializedPropertyCallbackFunction
+     </a>
+    </td>
+    <td class="desc">
+     要从 EditorApplication 上下文检视面板回调中调用的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

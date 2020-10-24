@@ -1,0 +1,345 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderVariantCollection
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   ShaderVariantCollection 记录每个着色器中实际使用的着色器变体。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这用于着色器预加载（“warmup”），以便游戏能够确保在启动时（或在关卡加载时间）加载“实际需要”的
+着色器变体，以避免稍后在游戏中出现着色器编译相关的暂时性中断。
+   <br/>
+   <br/>
+   在 Unity 中，许多着色器内部具有多个“变体”，用于涵盖不同的光照模式、光照贴图、阴影等。这些变体由着色器通道类型和一组着色器关键字加以识别。请参阅
+   <a href="ShaderVariantCollection.ShaderVariant.html">
+    ShaderVariant
+   </a>
+   。
+   <br/>
+   <br/>
+   ShaderVariantCollection 的典型用法是从编辑器（在 Graphics Settings 下）记录在播放会话期间使用的着色器变体，将它们另存为资源，然后将它们添加到预加载着色器列表（也在 Graphics Settings 中）。此外，您还可以对 ShaderVariantCollection 对象手动调用
+   <a href="ShaderVariantCollection.WarmUp.html">
+    WarmUp
+   </a>
+   。
+   <br/>
+   <br/>
+   ShaderVariantCollection 一般替代旧
+   <a href="Shader.WarmupAllShaders.html">
+    Shader.WarmupAllShaders
+   </a>
+   函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection-isWarmedUp.html">
+      isWarmedUp
+     </a>
+    </td>
+    <td class="desc">
+     此 ShaderVariantCollection 是否已预热？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection-shaderCount.html">
+      shaderCount
+     </a>
+    </td>
+    <td class="desc">
+     此集合中的着色器数量（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection-variantCount.html">
+      variantCount
+     </a>
+    </td>
+    <td class="desc">
+     此集合中的总变体数量（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection-ctor.html">
+      ShaderVariantCollection
+     </a>
+    </td>
+    <td class="desc">
+     创建新的空着色器变体集合。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection.Add.html">
+      Add
+     </a>
+    </td>
+    <td class="desc">
+     向集合中添加新的着色器变体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     从集合中移除所有着色器变体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection.Contains.html">
+      Contains
+     </a>
+    </td>
+    <td class="desc">
+     检测某个着色器变体是否在集合中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection.Remove.html">
+      Remove
+     </a>
+    </td>
+    <td class="desc">
+     从集合添加着色器变体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderVariantCollection.WarmUp.html">
+      WarmUp
+     </a>
+    </td>
+    <td class="desc">
+     将着色器完全加载到 ShaderVariantCollection 中。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

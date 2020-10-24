@@ -1,0 +1,222 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Time
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从 Unity 获取时间信息的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Time-captureDeltaTime.html">
+      captureDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     减慢游戏播放时间，以便在帧之间保存屏幕截图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-captureFramerate.html">
+      captureFramerate
+     </a>
+    </td>
+    <td class="desc">
+     Time.captureDeltaTime 的倒数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-deltaTime.html">
+      deltaTime
+     </a>
+    </td>
+    <td class="desc">
+     完成上一帧所用的时间（以秒为单位）（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-fixedDeltaTime.html">
+      fixedDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     执行物理和其他固定帧率更新（如 MonoBehaviour 的 FixedUpdate）的时间间隔（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-fixedTime.html">
+      fixedTime
+     </a>
+    </td>
+    <td class="desc">
+     最近一次 FixedUpdate 已启动的时间（只读）。此为自游戏启动以来的时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-fixedUnscaledDeltaTime.html">
+      fixedUnscaledDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     从上一个固定帧到当前固定帧的独立于 timeScale 的时间间隔（以秒为单位）（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-fixedUnscaledTime.html">
+      fixedUnscaledTime
+     </a>
+    </td>
+    <td class="desc">
+     最近一次 FixedUpdate 已启动的独立于 TimeScale 的时间（只读）。此为自游戏启动以来的时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-frameCount.html">
+      frameCount
+     </a>
+    </td>
+    <td class="desc">
+     已经过的总帧数（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-inFixedTimeStep.html">
+      inFixedTimeStep
+     </a>
+    </td>
+    <td class="desc">
+     如果在固定时间步长回调（如 MonoBehaviour 的 FixedUpdate）内调用，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-maximumDeltaTime.html">
+      maximumDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     帧可以耗用的最长时间。物理和其他固定帧率更新（如 MonoBehaviour 的 FixedUpdate）将仅在每帧的该持续时间内执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-maximumParticleDeltaTime.html">
+      maximumParticleDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     帧可以在粒子更新上耗用的最长时间。如果帧耗用的时间超过该值，则将更新拆分为多个较小的更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-realtimeSinceStartup.html">
+      realtimeSinceStartup
+     </a>
+    </td>
+    <td class="desc">
+     游戏开始以来的实际时间（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-smoothDeltaTime.html">
+      smoothDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     经过平滑处理的 Time.deltaTime（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-time.html">
+      time
+     </a>
+    </td>
+    <td class="desc">
+     该帧开始的时间（只读）。此为自游戏启动以来的时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-timeScale.html">
+      timeScale
+     </a>
+    </td>
+    <td class="desc">
+     时间流逝的标度。可用于慢动作效果。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-timeSinceLevelLoad.html">
+      timeSinceLevelLoad
+     </a>
+    </td>
+    <td class="desc">
+     该帧开始以来的时间（只读）。此为自加载上一个关卡以来的时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-unscaledDeltaTime.html">
+      unscaledDeltaTime
+     </a>
+    </td>
+    <td class="desc">
+     从上一帧到当前帧的独立于 timeScale 的时间间隔（以秒为单位）（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Time-unscaledTime.html">
+      unscaledTime
+     </a>
+    </td>
+    <td class="desc">
+     该帧的独立于 timeScale 的时间（只读）。此为自游戏启动以来的时间（以秒为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

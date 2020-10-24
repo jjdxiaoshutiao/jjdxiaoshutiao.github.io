@@ -1,0 +1,204 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GenericMenu
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   GenericMenu 允许您创建自定义上下文菜单和下拉菜单。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   下面的示例打开了一个带有按钮的编辑器窗口。单击该按钮可显示上下文菜单，您可以通过该菜单更改应用于窗口中 GUI 的颜色。将示例的内容复制到名为 GenericMenuExample.cs 的脚本中，然后将其置于您项目中的 Editor 文件夹内。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/GenericMenu.png"/>
+   .
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class GenericMenuExample : <a href="EditorWindow.html">EditorWindow</a>
+{
+    // open the window from the menu item Example -&gt; <a href="GUI.html">GUI</a> <a href="Color.html">Color</a>
+    [<a href="MenuItem.html">MenuItem</a>("Example/<a href="GUI.html">GUI</a> <a href="Color.html">Color</a>")]
+    static void Init()
+    {
+        <a href="EditorWindow.html">EditorWindow</a> window = GetWindow&lt;GenericMenuExample&gt;();
+        window.position = new <a href="Rect.html">Rect</a>(50f, 50f, 200f, 24f);
+        window.Show();
+    }<br/><br/>    // serialize field on window so its value will be saved when Unity recompiles
+    [<a href="SerializeField.html">SerializeField</a>]
+    <a href="Color.html">Color</a> m_Color = <a href="Color-white.html">Color.white</a>;<br/><br/>    void OnEnable()
+    {
+        titleContent = new <a href="GUIContent.html">GUIContent</a>("<a href="GUI.html">GUI</a> <a href="Color.html">Color</a>");
+    }<br/><br/>    // a method to simplify adding menu items
+    void AddMenuItemForColor(<a href="GenericMenu.html">GenericMenu</a> menu, string menuPath, <a href="Color.html">Color</a> color)
+    {
+        // the menu item is marked as selected if it matches the current value of m_Color
+        menu.AddItem(new <a href="GUIContent.html">GUIContent</a>(menuPath), m_Color.Equals(color), OnColorSelected, color);
+    }<br/><br/>    // the <a href="GenericMenu.MenuFunction2.html">GenericMenu.MenuFunction2</a> event handler for when a menu item is selected
+    void OnColorSelected(object color)
+    {
+        m_Color = (<a href="Color.html">Color</a>)color;
+    }<br/><br/>    void OnGUI()
+    {
+        // set the <a href="GUI.html">GUI</a> to use the color stored in m_Color
+        <a href="GUI-color.html">GUI.color</a> = m_Color;<br/><br/>        // display the <a href="GenericMenu.html">GenericMenu</a> when pressing a button
+        if (<a href="GUILayout.Button.html">GUILayout.Button</a>("Select <a href="GUI.html">GUI</a> <a href="Color.html">Color</a>"))
+        {
+            // create the menu and add items to it
+            <a href="GenericMenu.html">GenericMenu</a> menu = new <a href="GenericMenu.html">GenericMenu</a>();<br/><br/>            // forward slashes nest menu items under submenus
+            AddMenuItemForColor(menu, "RGB/Red", <a href="Color-red.html">Color.red</a>);
+            AddMenuItemForColor(menu, "RGB/Green", <a href="Color-green.html">Color.green</a>);
+            AddMenuItemForColor(menu, "RGB/Blue", <a href="Color-blue.html">Color.blue</a>);<br/><br/>            // an empty string will create a separator at the top level
+            menu.AddSeparator("");<br/><br/>            AddMenuItemForColor(menu, "CMYK/Cyan", <a href="Color-cyan.html">Color.cyan</a>);
+            AddMenuItemForColor(menu, "CMYK/Yellow", <a href="Color-yellow.html">Color.yellow</a>);
+            AddMenuItemForColor(menu, "CMYK/Magenta", <a href="Color-magenta.html">Color.magenta</a>);
+            // a trailing slash will nest a separator in a submenu
+            menu.AddSeparator("CMYK/");
+            AddMenuItemForColor(menu, "CMYK/Black", <a href="Color-black.html">Color.black</a>);<br/><br/>            menu.AddSeparator("");<br/><br/>            AddMenuItemForColor(menu, "White", <a href="Color-white.html">Color.white</a>);<br/><br/>            // display the menu
+            menu.ShowAsContext();
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu-allowDuplicateNames.html">
+      allowDuplicateNames
+     </a>
+    </td>
+    <td class="desc">
+     允许菜单具有多个同名的菜单项。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.AddDisabledItem.html">
+      AddDisabledItem
+     </a>
+    </td>
+    <td class="desc">
+     向菜单添加已禁用的项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.AddItem.html">
+      AddItem
+     </a>
+    </td>
+    <td class="desc">
+     向菜单添加一个项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.AddSeparator.html">
+      AddSeparator
+     </a>
+    </td>
+    <td class="desc">
+     向菜单添加一个分隔符项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.DropDown.html">
+      DropDown
+     </a>
+    </td>
+    <td class="desc">
+     在给定屏幕矩形中显示菜单。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.GetItemCount.html">
+      GetItemCount
+     </a>
+    </td>
+    <td class="desc">
+     获取菜单中的项数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.ShowAsContext.html">
+      ShowAsContext
+     </a>
+    </td>
+    <td class="desc">
+     右键单击时在鼠标下显示菜单。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.MenuFunction.html">
+      MenuFunction
+     </a>
+    </td>
+    <td class="desc">
+     回调函数，菜单项选中时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GenericMenu.MenuFunction2.html">
+      MenuFunction2
+     </a>
+    </td>
+    <td class="desc">
+     带有用户数据的回调函数，菜单项选中时调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

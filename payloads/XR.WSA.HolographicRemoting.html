@@ -1,0 +1,80 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HolographicRemoting
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR.WSA
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   全息远程处理 (Holographic Remoting) 接口允许您将应用程序连接到远程全息设备，并在应用程序和该设备之间流式传输数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Connnect to remote holographic device<br/><br/>using System.Collections;
+using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.WSA;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    private string IP;<br/><br/>    private bool connected;<br/><br/>    public void Connect()
+    {
+        if (<a href="XR.WSA.HolographicRemoting.ConnectionState.html">HolographicRemoting.ConnectionState</a> != <a href="XR.WSA.HolographicStreamerConnectionState.Connected.html">HolographicStreamerConnectionState.Connected</a>)
+        {
+            HolographicRemoting.Connect(IP);
+        }
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (!connected &amp;amp;&amp;amp; <a href="XR.WSA.HolographicRemoting.ConnectionState.html">HolographicRemoting.ConnectionState</a> == <a href="XR.WSA.HolographicStreamerConnectionState.Connected.html">HolographicStreamerConnectionState.Connected</a>)
+        {
+            connected = true;<br/><br/>            StartCoroutine(LoadDevice("WindowsMR"));
+        }
+    }<br/><br/>    IEnumerator LoadDevice(string newDevice)
+    {
+        <a href="XR.XRSettings.LoadDeviceByName.html">XRSettings.LoadDeviceByName</a>(newDevice);
+        yield return null;
+        <a href="XR.XRSettings-enabled.html">XRSettings.enabled</a> = true;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.HolographicRemoting.ConnectionState.html">
+      ConnectionState
+     </a>
+    </td>
+    <td class="desc">
+     应用程序是否正在显示受保护的内容。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

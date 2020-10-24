@@ -1,0 +1,66 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CommandBufferExecutionFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   标志，用于描述命令缓冲区执行方式的意图。通过
+   <a href="Rendering.CommandBuffer.SetExecutionFlags.html">
+    CommandBuffer.SetExecutionFlags
+   </a>
+   设置这些标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CommandBufferExecutionFlags.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     如果未指定标志，则命令缓冲区被视为对所有执行方式都有效。这是新命令缓冲区的默认设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CommandBufferExecutionFlags.AsyncCompute.html">
+      AsyncCompute
+     </a>
+    </td>
+    <td class="desc">
+     如果向命令缓冲区添加不兼容的命令，标志用于异步计算执行的命令缓冲区将抛出异常。请参阅 ScriptableRenderContext.ExecuteCommandBufferAsync 和 Graphics.ExecuteCommandBufferAsync。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

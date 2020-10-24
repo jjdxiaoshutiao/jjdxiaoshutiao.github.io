@@ -1,0 +1,75 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   StaticBatchingUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   StaticBatchingUtility 可使对象准备好利用 Unity 的静态批处理。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此步骤可用作性能优化，从而使引擎能够显著减少绘制调用的次数，
+但使渲染几何体的数量保持不变。
+   <br/>
+   <br/>
+   通过调用其中一个 Combine 方法，您将创建一个包含组合几何体的内部网格，
+每个原始游戏对象都将存在于场景中，并将单独剔除。
+由于可单独剔除游戏对象，因此能够在运行时渲染相同数量的几何体，
+就像无批处理时那样，这与在建模工具中组合几何体不同。在建模工具中组合几何体
+无法高效剔除，并且会极大增加被渲染的几何体数量。
+   <br/>
+   <br/>
+   注意，已在 Editor 中标记为“Static”的对象无需调用 Combine 方法。在 Build Player 步骤中，
+它们将自动为静态批处理做好准备。
+   <br/>
+   <br/>
+   <strong>
+    重要信息：
+   </strong>
+   只能对具有相同材质的对象进行批处理，因此尽可能多地共享纹理/材质非常有用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="StaticBatchingUtility.Combine.html">
+      Combine
+     </a>
+    </td>
+    <td class="desc">
+     StaticBatchingUtility.Combine 会使 staticBatchRoot 的所有子项均做好进行静态批处理的准备。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

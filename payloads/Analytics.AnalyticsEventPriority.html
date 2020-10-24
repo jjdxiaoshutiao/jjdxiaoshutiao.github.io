@@ -1,0 +1,132 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnalyticsEventPriority
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Analytics 事件优先级。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.FlushQueueFlag.html">
+      FlushQueueFlag
+     </a>
+    </td>
+    <td class="desc">
+     内存队列中的所有当前或之前的事件都立即保存到文件系统，分发程序服务使事件可供发送到服务器。它将事件添加到分发队列底部，使它们可供发送到服务器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.CacheImmediatelyFlag.html">
+      CacheImmediatelyFlag
+     </a>
+    </td>
+    <td class="desc">
+     内存队列中的所有当前或之前的事件都立即保存到文件系统。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.AllowInStopModeFlag.html">
+      AllowInStopModeFlag
+     </a>
+    </td>
+    <td class="desc">
+     使用此标志可在停止状态下发送事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.SendImmediateFlag.html">
+      SendImmediateFlag
+     </a>
+    </td>
+    <td class="desc">
+     当分发到服务器时，带有此标志的事件的优先级比其他事件的优先级高。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.NormalPriorityEvent.html">
+      NormalPriorityEvent
+     </a>
+    </td>
+    <td class="desc">
+     此优先级在内存中对事件排队。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.NormalPriorityEvent_WithCaching.html">
+      NormalPriorityEvent_WithCaching
+     </a>
+    </td>
+    <td class="desc">
+     此优先级在内存中对事件排队，将它们立即写入到文件系统。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.HighPriorityEvent.html">
+      HighPriorityEvent
+     </a>
+    </td>
+    <td class="desc">
+     内存队列中的所有当前或之前的事件都立即保存到文件系统。它将事件添加到分发队列底部，使它们可供发送到服务器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.HighPriorityEvent_InStopMode.html">
+      HighPriorityEvent_InStopMode
+     </a>
+    </td>
+    <td class="desc">
+     此优先级允许在停止状态下发送事件，并使内存队列中的所有当前或之前的事件都立即保存到文件系统。它将事件添加到分发队列底部，使它们可供发送到服务器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Analytics.AnalyticsEventPriority.HighestPriorityEvent.html">
+      HighestPriorityEvent
+     </a>
+    </td>
+    <td class="desc">
+     此优先级类似于 AnalyticsEventPriority.HighPriorityEvent，只是这些事件获得的优先级高于分发队列中的其他事件。它将事件添加到分发队列顶部，使它们可供发送到服务器。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

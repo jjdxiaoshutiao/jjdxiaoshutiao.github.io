@@ -1,0 +1,128 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DeviceType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="SystemInfo-deviceType.html">
+    SystemInfo.deviceType
+   </a>
+   的枚举，表示设备类型的粗略分组。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    通用 Windows 平台
+   </strong>
+   ：平板电脑被视为台式机，因此系统只会对 Windows Phone 和物联网系列设备返回
+   <a href="DeviceType.Handheld.html">
+    DeviceType.Handheld
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//Attach this script to a <a href="GameObject.html">GameObject</a>
+//This script checks what device type the <a href="Application.html">Application</a> is running on and outputs this to the console<br/><br/>using UnityEngine;<br/><br/>public class DeviceTypeExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    //This is the Text for the <a href="UIElements.Label.html">Label</a> at the top of the screen
+    string m_DeviceType;<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+//Output the device type to the console window
+        <a href="Debug.Log.html">Debug.Log</a>("Device type : " + m_DeviceType);<br/><br/>        //Check if the device running this is a console
+        if (<a href="SystemInfo-deviceType.html">SystemInfo.deviceType</a> == <a href="DeviceType.Console.html">DeviceType.Console</a>)
+        {
+            //Change the text of the label
+            m_DeviceType = "Console";
+        }<br/><br/>        //Check if the device running this is a desktop
+        if (<a href="SystemInfo-deviceType.html">SystemInfo.deviceType</a> == <a href="DeviceType.Desktop.html">DeviceType.Desktop</a>)
+        {
+            m_DeviceType = "Desktop";
+        }<br/><br/>        //Check if the device running this is a handheld
+        if (<a href="SystemInfo-deviceType.html">SystemInfo.deviceType</a> == <a href="DeviceType.Handheld.html">DeviceType.Handheld</a>)
+        {
+            m_DeviceType = "<a href="Handheld.html">Handheld</a>";
+        }<br/><br/>        //Check if the device running this is unknown
+        if (<a href="SystemInfo-deviceType.html">SystemInfo.deviceType</a> == <a href="DeviceType.Unknown.html">DeviceType.Unknown</a>)
+        {
+            m_DeviceType = "Unknown";
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DeviceType.Unknown.html">
+      Unknown
+     </a>
+    </td>
+    <td class="desc">
+     设备类型未知。在实际情况下不会看到此属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DeviceType.Handheld.html">
+      Handheld
+     </a>
+    </td>
+    <td class="desc">
+     手持设备，例如手机或平板电脑。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DeviceType.Console.html">
+      Console
+     </a>
+    </td>
+    <td class="desc">
+     静止的游戏主机。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DeviceType.Desktop.html">
+      Desktop
+     </a>
+    </td>
+    <td class="desc">
+     台式机或笔记本电脑。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

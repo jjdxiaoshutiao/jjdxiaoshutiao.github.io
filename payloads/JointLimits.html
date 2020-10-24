@@ -1,0 +1,122 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   JointLimits
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   JointLimits 由
+   <a href="HingeJoint.html">
+    HingeJoint
+   </a>
+   用于限制关节角度。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="HingeJoint.html">
+    HingeJoint
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        // Set the hinge limits for a door.
+        <a href="HingeJoint.html">HingeJoint</a> hinge = GetComponent&lt;<a href="HingeJoint.html">HingeJoint</a>&gt;();<br/><br/>        <a href="JointLimits.html">JointLimits</a> limits = hinge.limits;
+        limits.min = 0;
+        limits.max = 90;
+        limits.bounciness = 0;
+        limits.bounceMinVelocity = 0;
+        hinge.limits = limits;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="JointLimits-bounceMinVelocity.html">
+      bounceMinVelocity
+     </a>
+    </td>
+    <td class="desc">
+     导致关节反弹的最小冲击速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointLimits-bounciness.html">
+      bounciness
+     </a>
+    </td>
+    <td class="desc">
+     确定关节达到其限制时的反弹大小。也称为还原。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointLimits-contactDistance.html">
+      contactDistance
+     </a>
+    </td>
+    <td class="desc">
+     处于限制值内的距离，在该距离上解算器会将限制视为活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointLimits-max.html">
+      max
+     </a>
+    </td>
+    <td class="desc">
+     关节的角度上限（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="JointLimits-min.html">
+      min
+     </a>
+    </td>
+    <td class="desc">
+     关节的角度下限（以度为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

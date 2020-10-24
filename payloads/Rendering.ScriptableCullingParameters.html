@@ -1,0 +1,373 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ScriptableCullingParameters
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于配置可编程渲染管线中的剔除操作的参数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过调用
+   <a href="Camera.TryGetCullingParameters.html">
+    Camera.TryGetCullingParameters
+   </a>
+   来获取 ScriptableCullingParameters 结构。
+   <br/>
+   <br/>
+   请注意，可以在内置渲染管线中从摄像机获取和查看 ScriptableCullingParameters 结构；但是，更改值没有效果。
+   <br/>
+   <br/>
+   以下可编程渲染管线代码说明如何使用
+   <a href="Camera.TryGetCullingParameters.html">
+    Camera.TryGetCullingParameters
+   </a>
+   从摄像机获取 ScriptableCullingParameters 结构，配置该结构，然后将该结构传递给
+   <a href="Rendering.ScriptableRenderContext.Cull.html">
+    ScriptableRenderContext.Cull
+   </a>
+   以获取
+   <a href="Rendering.CullingResults.html">
+    CullingResults
+   </a>
+   结构。随后可以将
+   <a href="Rendering.CullingResults.html">
+    CullingResults
+   </a>
+   结构用于调用
+   <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+    ScriptableRenderContext.DrawRenderers
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">using UnityEngine;
+using UnityEngine;
+using UnityEngine.Rendering;<br/><br/>public class ExampleRenderPipelineInstance : <a href="Rendering.RenderPipeline.html">RenderPipeline</a>
+{
+    public ExampleRenderPipelineInstance() {
+    }<br/><br/>    protected override void Render(<a href="Rendering.ScriptableRenderContext.html">ScriptableRenderContext</a> context, <a href="Camera.html">Camera</a>[] cameras) {
+        // Get the culling parameters from the desired <a href="Camera.html">Camera</a>
+        if (cameras[0].TryGetCullingParameters(out var cullingParameters)) {
+            
+            // Change culling parameters to configure the culling operation
+            cullingParameters.cullingOptions &amp;amp;= ~ <a href="Rendering.CullingOptions.OcclusionCull.html">CullingOptions.OcclusionCull</a>;
+            cullingParameters.isOrthographic = false;<br/><br/>            // Schedule the cull operation
+            <a href="Rendering.CullingResults.html">CullingResults</a> cullingResults = context.Cull(ref cullingParameters);<br/><br/>            // Place code that schedules drawing operations using the <a href="Rendering.CullingResults.html">CullingResults</a> struct here
+            // See <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">ScriptableRenderContext.DrawRenderers</a> for details and examples
+            // …<br/><br/>            // Execute all of the scheduled operations, in order
+            context.Submit();
+        }
+    }
+}</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Camera.TryGetCullingParameters.html">
+    Camera.TryGetCullingParameters
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.Cull.html">
+    ScriptableRenderContext.Cull
+   </a>
+   、
+   <a href="Rendering.CullingResults.html">
+    CullingResults
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+    ScriptableRenderContext.DrawRenderers
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingJobsLowerLimit.html">
+      cullingJobsLowerLimit
+     </a>
+    </td>
+    <td class="desc">
+     值 ScriptableCullingParameters.maximumPortalCullingJobs 的下限。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingJobsUpperLimit.html">
+      cullingJobsUpperLimit
+     </a>
+    </td>
+    <td class="desc">
+     值 ScriptableCullingParameters.maximumPortalCullingJobs 的上限。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-layerCount.html">
+      layerCount
+     </a>
+    </td>
+    <td class="desc">
+     可用层的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-maximumCullingPlaneCount.html">
+      maximumCullingPlaneCount
+     </a>
+    </td>
+    <td class="desc">
+     可以指定的剔除平面的最大数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-accurateOcclusionThreshold.html">
+      accurateOcclusionThreshold
+     </a>
+    </td>
+    <td class="desc">
+     此参数可确定遮挡剔除的查询距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cameraProperties.html">
+      cameraProperties
+     </a>
+    </td>
+    <td class="desc">
+     用于剔除的摄像机属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingMask.html">
+      cullingMask
+     </a>
+    </td>
+    <td class="desc">
+     剔除操作的遮罩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingMatrix.html">
+      cullingMatrix
+     </a>
+    </td>
+    <td class="desc">
+     剔除操作的矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingOptions.html">
+      cullingOptions
+     </a>
+    </td>
+    <td class="desc">
+     用于在可编程渲染管线中配置剔除操作的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-cullingPlaneCount.html">
+      cullingPlaneCount
+     </a>
+    </td>
+    <td class="desc">
+     要使用的剔除平面数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-isOrthographic.html">
+      isOrthographic
+     </a>
+    </td>
+    <td class="desc">
+     剔除正视图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-lodParameters.html">
+      lodParameters
+     </a>
+    </td>
+    <td class="desc">
+     用于剔除的 LODParameter。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-maximumPortalCullingJobs.html">
+      maximumPortalCullingJobs
+     </a>
+    </td>
+    <td class="desc">
+     此参数控制有多少活动作业参与遮挡剔除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-maximumVisibleLights.html">
+      maximumVisibleLights
+     </a>
+    </td>
+    <td class="desc">
+     此参数控制允许多少光线可见。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-origin.html">
+      origin
+     </a>
+    </td>
+    <td class="desc">
+     剔除原点的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-reflectionProbeSortingCriteria.html">
+      reflectionProbeSortingCriteria
+     </a>
+    </td>
+    <td class="desc">
+     剔除的反射探针排序选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-shadowDistance.html">
+      shadowDistance
+     </a>
+    </td>
+    <td class="desc">
+     用于剔除的阴影距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-stereoProjectionMatrix.html">
+      stereoProjectionMatrix
+     </a>
+    </td>
+    <td class="desc">
+     为单通道立体剔除生成的投影矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-stereoSeparationDistance.html">
+      stereoSeparationDistance
+     </a>
+    </td>
+    <td class="desc">
+     虚拟眼睛之间的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters-stereoViewMatrix.html">
+      stereoViewMatrix
+     </a>
+    </td>
+    <td class="desc">
+     为单通道立体剔除生成的视图矩阵。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters.GetCullingPlane.html">
+      GetCullingPlane
+     </a>
+    </td>
+    <td class="desc">
+     在指定索引处获取剔除平面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters.GetLayerCullingDistance.html">
+      GetLayerCullingDistance
+     </a>
+    </td>
+    <td class="desc">
+     获取特定层的剔除的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters.SetCullingPlane.html">
+      SetCullingPlane
+     </a>
+    </td>
+    <td class="desc">
+     在指定索引处设置剔除平面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ScriptableCullingParameters.SetLayerCullingDistance.html">
+      SetLayerCullingDistance
+     </a>
+    </td>
+    <td class="desc">
+     设置特定层的剔除的距离。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

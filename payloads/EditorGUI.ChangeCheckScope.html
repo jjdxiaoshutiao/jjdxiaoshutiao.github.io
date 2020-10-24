@@ -1,0 +1,107 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ChangeCheckScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   检查代码块中是否有任何控件被更改。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当需要检查
+   <a href="GUI-changed.html">
+    GUI.changed
+   </a>
+   是否在代码块中设置为 true 时，
+请按如下方式将代码封装在 ChangeCheckScope 中：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>class ExampleClass
+{
+    void ExampleMethod()
+    {
+        using (var check = new <a href="EditorGUI.ChangeCheckScope.html">EditorGUI.ChangeCheckScope</a>())
+        {
+            // Block of code with controls
+            // that may set <a href="GUI-changed.html">GUI.changed</a> to true<br/><br/>            if (check.changed)
+            {
+                // Code to execute if <a href="GUI-changed.html">GUI.changed</a>
+                // was set to true inside the block of code above.
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="EditorGUI.BeginChangeCheck.html">
+    EditorGUI.BeginChangeCheck
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.ChangeCheckScope-changed.html">
+      changed
+     </a>
+    </td>
+    <td class="desc">
+     如果 GUI.changed 已设置为 true，则为 true；否则为 false。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.ChangeCheckScope-ctor.html">
+      EditorGUI.ChangeCheckScope
+     </a>
+    </td>
+    <td class="desc">
+     开始一个 ChangeCheckScope。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

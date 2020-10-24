@@ -1,0 +1,188 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BatchRendererGroup
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   批次的组。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   表示多个批次的容器，这些批次共享相同的剔除方法。
+另请参阅：
+   <a href="Rendering.BatchRendererGroup.OnPerformCulling.html">
+    OnPerformCulling
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup-ctor.html">
+      BatchRendererGroup
+     </a>
+    </td>
+    <td class="desc">
+     创建新的 BatchRendererGroup。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.AddBatch.html">
+      AddBatch
+     </a>
+    </td>
+    <td class="desc">
+     向组添加一个新批次。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     删除组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.GetBatchMatrices.html">
+      GetBatchMatrices
+     </a>
+    </td>
+    <td class="desc">
+     获取与一个批次关联的矩阵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.GetBatchMatrixArray.html">
+      GetBatchMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     获取给定批次的实例化矢量属性的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.GetBatchScalarArray.html">
+      GetBatchScalarArray
+     </a>
+    </td>
+    <td class="desc">
+     获取给定批次的实例化浮点属性的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.GetBatchVectorArray.html">
+      GetBatchVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     获取给定批次的实例化矢量属性的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.GetNumBatches.html">
+      GetNumBatches
+     </a>
+    </td>
+    <td class="desc">
+     获取添加到组的批次的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.RemoveBatch.html">
+      RemoveBatch
+     </a>
+    </td>
+    <td class="desc">
+     从组中删除批次。
+                    注意：考虑到性能，删除通过 emplace_back() 完成，这样是以数组的最后索引直接替换被删除的批次索引，可以减小大小。
+                    如果要保存自己的批次索引数组，必须重新生成或者像 RemoveBatch 那样应用相同的 emplace_back() 机制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.SetBatchBounds.html">
+      SetBatchBounds
+     </a>
+    </td>
+    <td class="desc">
+     设置批次的包围盒。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.SetInstancingData.html">
+      SetInstancingData
+     </a>
+    </td>
+    <td class="desc">
+     更新批次。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BatchRendererGroup.OnPerformCulling.html">
+      OnPerformCulling
+     </a>
+    </td>
+    <td class="desc">
+     剔除回调函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

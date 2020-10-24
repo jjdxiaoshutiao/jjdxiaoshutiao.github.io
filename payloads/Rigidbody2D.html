@@ -1,0 +1,875 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Rigidbody2D
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Component.html">
+    Component
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于 2D 精灵的刚体物理组件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Rigidbody2D 类提供与 Rigidbody 类基本相同的功能，两者的区别在于：Rigidbody2D 用于 2D 环境，Rigidbody 用于 3D 环境。向精灵添加 Rigidbody2D 组件后，其运动将受到物理引擎的控制。这意味着精灵将受到重力的影响，并且可以在脚本中使用力对其进行控制。通过添加适当的碰撞体组件，精灵还能响应与其他精灵的碰撞。这种行为完全来自 Unity 的物理系统；您只需提供极少量的代码，就能实现令人印象深刻和逼真的物理行为，并提供没有显式编码到游戏中的“自发的”游戏玩法。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rigidbody.html">
+    Rigidbody
+   </a>
+   类、
+   <a href="SpriteRenderer.html">
+    SpriteRenderer
+   </a>
+   类、
+   <a href="Collider2D.html">
+    Collider2D
+   </a>
+   类、
+   <a href="Joint2D.html">
+    Joint2D
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-angularDrag.html">
+      angularDrag
+     </a>
+    </td>
+    <td class="desc">
+     角阻力系数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-angularVelocity.html">
+      angularVelocity
+     </a>
+    </td>
+    <td class="desc">
+     角速度（以度/秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-attachedColliderCount.html">
+      attachedColliderCount
+     </a>
+    </td>
+    <td class="desc">
+     返回附加到该 Rigidbody2D 的 Collider2D 的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-bodyType.html">
+      bodyType
+     </a>
+    </td>
+    <td class="desc">
+     Rigidbody2D 的物理行为类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-centerOfMass.html">
+      centerOfMass
+     </a>
+    </td>
+    <td class="desc">
+     刚体在本地空间中的质心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-collisionDetectionMode.html">
+      collisionDetectionMode
+     </a>
+    </td>
+    <td class="desc">
+     物理引擎用于检查两个对象是否发生碰撞的方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-constraints.html">
+      constraints
+     </a>
+    </td>
+    <td class="desc">
+     控制该 Rigidbody2D 的模拟自由度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-drag.html">
+      drag
+     </a>
+    </td>
+    <td class="desc">
+     阻力系数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-freezeRotation.html">
+      freezeRotation
+     </a>
+    </td>
+    <td class="desc">
+     控制物理是否会更改对象的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-gravityScale.html">
+      gravityScale
+     </a>
+    </td>
+    <td class="desc">
+     该对象受重力影响的程度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-inertia.html">
+      inertia
+     </a>
+    </td>
+    <td class="desc">
+     刚体的转动惯量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-interpolation.html">
+      interpolation
+     </a>
+    </td>
+    <td class="desc">
+     在更新之间使用的物理插值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-isKinematic.html">
+      isKinematic
+     </a>
+    </td>
+    <td class="desc">
+     该刚体是否应该脱离物理控制？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-mass.html">
+      mass
+     </a>
+    </td>
+    <td class="desc">
+     刚体的质量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     刚体的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-rotation.html">
+      rotation
+     </a>
+    </td>
+    <td class="desc">
+     刚体的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-sharedMaterial.html">
+      sharedMaterial
+     </a>
+    </td>
+    <td class="desc">
+     应用于附加到该 Rigidbody2D 的所有 Collider2D 的 PhysicsMaterial2D。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-simulated.html">
+      simulated
+     </a>
+    </td>
+    <td class="desc">
+     指示物理系统是否应模拟刚体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-sleepMode.html">
+      sleepMode
+     </a>
+    </td>
+    <td class="desc">
+     刚体最初处于的睡眠状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-useAutoMass.html">
+      useAutoMass
+     </a>
+    </td>
+    <td class="desc">
+     是否应根据附加碰撞体的 [[Collider2D.density]] 自动计算总刚体 mass？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-useFullKinematicContacts.html">
+      useFullKinematicContacts
+     </a>
+    </td>
+    <td class="desc">
+     是否允许运动/运动和运动/静态碰撞？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-velocity.html">
+      velocity
+     </a>
+    </td>
+    <td class="desc">
+     刚体的线性速度，采用单位/秒形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D-worldCenterOfMass.html">
+      worldCenterOfMass
+     </a>
+    </td>
+    <td class="desc">
+     获取刚体在全局空间中的质心。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.AddForce.html">
+      AddForce
+     </a>
+    </td>
+    <td class="desc">
+     对刚体施加力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.AddForceAtPosition.html">
+      AddForceAtPosition
+     </a>
+    </td>
+    <td class="desc">
+     在空间中的给定位置施加力。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.AddRelativeForce.html">
+      AddRelativeForce
+     </a>
+    </td>
+    <td class="desc">
+     向 rigidbody2D 添加力（相对于其坐标系）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.AddTorque.html">
+      AddTorque
+     </a>
+    </td>
+    <td class="desc">
+     在刚体的质心处施加扭矩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.Cast.html">
+      Cast
+     </a>
+    </td>
+    <td class="desc">
+     附加到 Rigidbody2D 的所有 Collider2D 形状都将投射到场景中 - 从每个碰撞体的位置开始，忽略附加到同一个 Rigidbody2D 的碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.ClosestPoint.html">
+      ClosestPoint
+     </a>
+    </td>
+    <td class="desc">
+     返回附加到此刚体的所有已启用碰撞体周边上最接近指定 position 的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.Distance.html">
+      Distance
+     </a>
+    </td>
+    <td class="desc">
+     计算 collider 到附加到该 Rigidbody2D 的所有 Collider2D 的最小距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetAttachedColliders.html">
+      GetAttachedColliders
+     </a>
+    </td>
+    <td class="desc">
+     返回附加到该 Rigidbody2D 的所有 Collider2D。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetContacts.html">
+      GetContacts
+     </a>
+    </td>
+    <td class="desc">
+     获取附加到该刚体的所有碰撞体的所有接触点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetPoint.html">
+      GetPoint
+     </a>
+    </td>
+    <td class="desc">
+     根据位于刚体全局空间中的点 /point/，获取本地空间点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetPointVelocity.html">
+      GetPointVelocity
+     </a>
+    </td>
+    <td class="desc">
+     点 /Point/（全局空间）处刚体的速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetRelativePoint.html">
+      GetRelativePoint
+     </a>
+    </td>
+    <td class="desc">
+     根据位于刚体本地空间中的点 /relativePoint/，获取全局空间点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetRelativePointVelocity.html">
+      GetRelativePointVelocity
+     </a>
+    </td>
+    <td class="desc">
+     点 /Point/（本地空间）处刚体的速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetRelativeVector.html">
+      GetRelativeVector
+     </a>
+    </td>
+    <td class="desc">
+     根据位于刚体本地空间中的向量 /relativeVector/，获取全局空间向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.GetVector.html">
+      GetVector
+     </a>
+    </td>
+    <td class="desc">
+     根据位于刚体全局空间中的向量 /vector/，获取本地空间向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.IsAwake.html">
+      IsAwake
+     </a>
+    </td>
+    <td class="desc">
+     刚体是否处于“唤醒”状态？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.IsSleeping.html">
+      IsSleeping
+     </a>
+    </td>
+    <td class="desc">
+     刚体是否处于“睡眠”状态？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.IsTouching.html">
+      IsTouching
+     </a>
+    </td>
+    <td class="desc">
+     检查 collider 是否正在接触附加到该刚体的任何碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.IsTouchingLayers.html">
+      IsTouchingLayers
+     </a>
+    </td>
+    <td class="desc">
+     检查附加到该刚体的任何碰撞体是否正在接触指定 layerMask 上的任何碰撞体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.MovePosition.html">
+      MovePosition
+     </a>
+    </td>
+    <td class="desc">
+     将刚体移动到 /position/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.MoveRotation.html">
+      MoveRotation
+     </a>
+    </td>
+    <td class="desc">
+     将刚体旋转到 /angle/（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.OverlapCollider.html">
+      OverlapCollider
+     </a>
+    </td>
+    <td class="desc">
+     获取与附加到该 Rigidbody2D 的所有碰撞体重叠的所有碰撞体的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.OverlapPoint.html">
+      OverlapPoint
+     </a>
+    </td>
+    <td class="desc">
+     检查是否有任何 Rigidbody2D 碰撞体与空间中的某个点重叠。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.SetRotation.html">
+      SetRotation
+     </a>
+    </td>
+    <td class="desc">
+     将 Rigidbody2D 的旋转设置为 /angle/（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.Sleep.html">
+      Sleep
+     </a>
+    </td>
+    <td class="desc">
+     使刚体进入“睡眠”状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rigidbody2D.WakeUp.html">
+      WakeUp
+     </a>
+    </td>
+    <td class="desc">
+     禁用刚体的“睡眠”状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InitializeOnLoadMethodAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许在 Unity 加载时初始化编辑器类方法，无需用户操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>class MyClass
+{
+    [InitializeOnLoadMethod]
+    static void OnProjectLoadedInEditor()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Project loaded in Unity <a href="Editor.html">Editor</a>");
+    }
+}
+</pre>
+ </div>
+</div>

@@ -1,0 +1,178 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ProfilerMarker
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in Unity.Profiling
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于分析任意代码块的性能标记。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用
+   <em>
+    ProfilerMarker
+   </em>
+   标记 Profiler 的脚本代码块。\
+由标记生成的信息显示在
+   <a href="../Manual/ProfilerCPU.html">
+    CPU Profiler
+   </a>
+   中，也可以使用
+   <a href="Profiling.Recorder.html">
+    Recorder
+   </a>
+   捕获。在开发期间（在 Editor 和 Development Player 中），这有助于获得游戏代码的不同部分的性能概况并识别性能问题。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Profiling;<br/><br/>public class MySystemClass
+{
+    static <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a> s_PreparePerfMarker = new <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a>("MySystem.Prepare");
+    static <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a> s_SimulatePerfMarker = new <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a>("MySystem.Simulate");<br/><br/>    public void UpdateLogic()
+    {
+        s_PreparePerfMarker.Begin();
+        // ...
+        s_PreparePerfMarker.End();<br/><br/>        using (s_SimulatePerfMarker.Auto())
+        {
+            // ...
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   <em>
+    ProfilerMarker
+   </em>
+   表示指定的性能分析器句柄，是分析代码的最有效方法。可将其用于作业化的代码。\
+方法
+   <a href="Unity.Profiling.ProfilerMarker.Begin.html">
+    Begin
+   </a>
+   和
+   <a href="Unity.Profiling.ProfilerMarker.End.html">
+    End
+   </a>
+   标记了 ConditionalAttribute。它们是按条件编译的，因此在非开发版（发行版）中的开销为零。
+   <br/>
+   <br/>
+   当 Profiler 收集检测数据时，
+   <em>
+    ProfilerMarker
+   </em>
+   有助于减少开销和传输的数据量。
+   <a href="Profiling.Profiler.BeginSample.html">
+    Profiler.BeginSample
+   </a>
+   将完整字符串传输到数据流，而
+   <a href="Unity.Profiling.ProfilerMarker.Begin.html">
+    ProfilerMarker.Begin
+   </a>
+   和
+   <a href="Profiling.CustomSampler.Begin.html">
+    CustomSampler.Begin
+   </a>
+   仅传输标记的整数标识符。
+   <br/>
+   <br/>
+   另外
+   <a href="Unity.Profiling.ProfilerMarker.End.html">
+    ProfilerMarker.End
+   </a>
+   向
+   <a href="Profiling.Recorder.html">
+    Recorder
+   </a>
+   提供上下文信息，因此可以在播放器中跟踪标记代码的时序。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Profiling.Recorder.html">
+    Recorder
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Profiling.ProfilerMarker-ctor.html">
+      ProfilerMarker
+     </a>
+    </td>
+    <td class="desc">
+     为代码检测构造一个新的性能标记。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Profiling.ProfilerMarker.Auto.html">
+      Auto
+     </a>
+    </td>
+    <td class="desc">
+     为作用域 using 块创建一个 helper 结构。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Profiling.ProfilerMarker.Begin.html">
+      Begin
+     </a>
+    </td>
+    <td class="desc">
+     开始分析标有此 ProfilerMarker 实例所定义的自定义名称的一段代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Profiling.ProfilerMarker.End.html">
+      End
+     </a>
+    </td>
+    <td class="desc">
+     结束分析标有此 ProfilerMarker 实例所定义的自定义名称的一段代码。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

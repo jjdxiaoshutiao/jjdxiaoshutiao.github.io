@@ -1,0 +1,296 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TextGenerator
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   类，可用于生成用于渲染的文本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   缓存顶点、字符信息和行信息，以便节省内存。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public <a href="Font.html">Font</a> font;
+    void Start()
+    {
+        <a href="TextGenerationSettings.html">TextGenerationSettings</a> settings = new <a href="TextGenerationSettings.html">TextGenerationSettings</a>();
+        settings.textAnchor = <a href="TextAnchor.MiddleCenter.html">TextAnchor.MiddleCenter</a>;
+        settings.color = <a href="Color-red.html">Color.red</a>;
+        settings.generationExtents = new <a href="Vector2.html">Vector2</a>(500.0F, 200.0F);
+        settings.pivot = <a href="Vector2-zero.html">Vector2.zero</a>;
+        settings.richText = true;
+        settings.font = font;
+        settings.fontSize = 32;
+        settings.fontStyle = <a href="FontStyle.Normal.html">FontStyle.Normal</a>;
+        settings.verticalOverflow = <a href="VerticalWrapMode.Overflow.html">VerticalWrapMode.Overflow</a>;
+        <a href="TextGenerator.html">TextGenerator</a> generator = new <a href="TextGenerator.html">TextGenerator</a>();
+        generator.Populate("I am a string", settings);
+        <a href="Debug.Log.html">Debug.Log</a>("I generated: " + generator.vertexCount + " verts!");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-characterCount.html">
+      characterCount
+     </a>
+    </td>
+    <td class="desc">
+     已生成的字符的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-characterCountVisible.html">
+      characterCountVisible
+     </a>
+    </td>
+    <td class="desc">
+     已生成并包含在可见行中的字符的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-characters.html">
+      characters
+     </a>
+    </td>
+    <td class="desc">
+     生成的字符的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-fontSizeUsedForBestFit.html">
+      fontSizeUsedForBestFit
+     </a>
+    </td>
+    <td class="desc">
+     使用最佳匹配模式时找到的字体大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-lineCount.html">
+      lineCount
+     </a>
+    </td>
+    <td class="desc">
+     生成的文本行的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-lines.html">
+      lines
+     </a>
+    </td>
+    <td class="desc">
+     有关生成的每个文本行的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-rectExtents.html">
+      rectExtents
+     </a>
+    </td>
+    <td class="desc">
+     采用矩形格式的已生成文本的范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-vertexCount.html">
+      vertexCount
+     </a>
+    </td>
+    <td class="desc">
+     生成的顶点的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-verts.html">
+      verts
+     </a>
+    </td>
+    <td class="desc">
+     生成的顶点的数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator-ctor.html">
+      TextGenerator
+     </a>
+    </td>
+    <td class="desc">
+     创建 TextGenerator。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetCharacters.html">
+      GetCharacters
+     </a>
+    </td>
+    <td class="desc">
+     使用 UICharInfo 填充给定列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetCharactersArray.html">
+      GetCharactersArray
+     </a>
+    </td>
+    <td class="desc">
+     返回当前 UICharInfo。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetLines.html">
+      GetLines
+     </a>
+    </td>
+    <td class="desc">
+     使用 UILineInfo 填充给定列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetLinesArray.html">
+      GetLinesArray
+     </a>
+    </td>
+    <td class="desc">
+     返回当前 UILineInfo。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetPreferredHeight.html">
+      GetPreferredHeight
+     </a>
+    </td>
+    <td class="desc">
+     根据字符串和设置，返回将容纳此文本的容器的首选高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetPreferredWidth.html">
+      GetPreferredWidth
+     </a>
+    </td>
+    <td class="desc">
+     根据字符串和设置，返回将容纳此文本的容器的首选宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetVertices.html">
+      GetVertices
+     </a>
+    </td>
+    <td class="desc">
+     使用生成的顶点填充给定列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.GetVerticesArray.html">
+      GetVerticesArray
+     </a>
+    </td>
+    <td class="desc">
+     返回当前 UIVertex 数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.Invalidate.html">
+      Invalidate
+     </a>
+    </td>
+    <td class="desc">
+     将文本生成器标记为无效。这样，下次调用 Populate 时将强制进行完整文本生成。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.Populate.html">
+      Populate
+     </a>
+    </td>
+    <td class="desc">
+     将使用给定设置为给定字符串生成顶点和其他数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextGenerator.PopulateWithErrors.html">
+      PopulateWithErrors
+     </a>
+    </td>
+    <td class="desc">
+     将使用给定设置为给定字符串生成顶点和其他数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

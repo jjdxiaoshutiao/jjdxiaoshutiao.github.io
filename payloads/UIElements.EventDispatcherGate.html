@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EventDispatcherGate
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.UIElements
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   门用于控制调度程序处理事件的时间。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   以下是一个使用门的示例：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+public class MyElement : <a href="UIElements.VisualElement.html">VisualElement</a>
+{
+    void Foo()
+    {
+        using (new <a href="UIElements.EventDispatcherGate.html">EventDispatcherGate</a>(dispatcher))
+        {
+            // do something that sends events
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   当门被实例化时，它会自动关闭，使调度程序将其收到的事件存储在队列中。在
+   <code class="mono">
+    using
+   </code>
+   块的结尾，将调用
+   <a href="UIElements.EventDispatcherGate.Dispose.html">
+    Dispose
+   </a>
+   ，进而触发门的打开。当调度程序上的所有门都打开时，将处理存储在队列中的事件。处理事件队列时关闭门并不会阻止处理过程。而是会创建一个新队列来存储新事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.EventDispatcherGate-ctor.html">
+      EventDispatcherGate
+     </a>
+    </td>
+    <td class="desc">
+     构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.EventDispatcherGate.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     IDisposable.Dispose 实现。打开门。如果所有门都打开，将处理队列中的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

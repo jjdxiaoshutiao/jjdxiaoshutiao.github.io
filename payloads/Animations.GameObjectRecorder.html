@@ -1,0 +1,407 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GameObjectRecorder
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Animations
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在运行场景时记录
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   的变化属性并将信息保存在
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   中。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该类将绑定
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   属性，在属性值在运行场景中发生变化时记录相应的值，并将结果保存在
+   <a href="AnimationClip.html">
+    AnimationClip
+   </a>
+   中。记录的游戏对象在类中称为
+   <a href="Animations.GameObjectRecorder-root.html">
+    root
+   </a>
+   ，您也可以绑定
+   <a href="Animations.GameObjectRecorder-root.html">
+    root
+   </a>
+   任何子项的属性。
+   <br/>
+   <br/>
+   请参阅以下代码示例，了解如何实现该类以及如何设置要记录的内容。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEditor.Animations;<br/><br/>public class RecordTransformHierarchy : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public <a href="AnimationClip.html">AnimationClip</a> clip;<br/><br/>    private <a href="Animations.GameObjectRecorder.html">GameObjectRecorder</a> m_Recorder;<br/><br/>    void Start()
+    {
+        // Create recorder and record the script <a href="GameObject.html">GameObject</a>.
+        m_Recorder = new <a href="Animations.GameObjectRecorder.html">GameObjectRecorder</a>(gameObject);<br/><br/>        // Bind all the Transforms on the <a href="GameObject.html">GameObject</a> and all its children.
+        m_Recorder.BindComponentsOfType&lt;<a href="Transform.html">Transform</a>&gt;(gameObject, true);
+    }<br/><br/>    void LateUpdate()
+    {
+        if (clip == null)
+            return;<br/><br/>        // Take a snapshot and record all the bindings values for this frame.
+        m_Recorder.TakeSnapshot(<a href="Time-deltaTime.html">Time.deltaTime</a>);
+    }<br/><br/>    void OnDisable()
+    {
+        if (clip == null)
+            return;<br/><br/>        if (m_Recorder.isRecording)
+        {
+            // Save the recorded session to the clip.
+            m_Recorder.SaveToClip(clip);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder-currentTime.html">
+      currentTime
+     </a>
+    </td>
+    <td class="desc">
+     返回录制的当前时间。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder-isRecording.html">
+      isRecording
+     </a>
+    </td>
+    <td class="desc">
+     录制器进行录制时，返回 true。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder-root.html">
+      root
+     </a>
+    </td>
+    <td class="desc">
+     动画层级视图的 GameObject 根。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder-ctor.html">
+      GameObjectRecorder
+     </a>
+    </td>
+    <td class="desc">
+     创建新的游戏对象录制器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.Bind.html">
+      Bind
+     </a>
+    </td>
+    <td class="desc">
+     根据 EditorCurveBinding 的定义绑定游戏对象的属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.BindAll.html">
+      BindAll
+     </a>
+    </td>
+    <td class="desc">
+     为 target 的所有属性添加绑定；如果 recursive 为 /true/，也要为 target 子项的所有属性添加绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.BindComponent.html">
+      BindComponent
+     </a>
+    </td>
+    <td class="desc">
+     为 component 的所有属性添加绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.BindComponentsOfType.html">
+      BindComponentsOfType
+     </a>
+    </td>
+    <td class="desc">
+     为 target 中的首个 T 类型组件的所有属性添加绑定；如果 recursive 为 true ，也要为 target 子项的所有属性添加绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.GetBindings.html">
+      GetBindings
+     </a>
+    </td>
+    <td class="desc">
+     返回添加到录制器的所有绑定的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.ResetRecording.html">
+      ResetRecording
+     </a>
+    </td>
+    <td class="desc">
+     重置记录。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.SaveToClip.html">
+      SaveToClip
+     </a>
+    </td>
+    <td class="desc">
+     将录制的动画保存到目标剪辑中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.GameObjectRecorder.TakeSnapshot.html">
+      TakeSnapshot
+     </a>
+    </td>
+    <td class="desc">
+     按 dt 秒时间转发动画，然后记录添加的绑定值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

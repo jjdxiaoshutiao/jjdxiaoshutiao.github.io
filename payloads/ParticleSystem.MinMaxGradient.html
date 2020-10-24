@@ -1,0 +1,288 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MinMaxGradient
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   MinMaxGradient 包含两个
+   <a href="Gradient.html">
+    Gradient
+   </a>
+   ，并基于
+   <a href="ParticleSystem.MinMaxGradient-mode.html">
+    ParticleSystem.MinMaxGradient.mode
+   </a>
+   返回一个
+   <a href="Color.html">
+    Color
+   </a>
+   。根据模式，返回的颜色可能是随机的。
+选择了需要渐变的
+   <a href="ParticleSystemGradientMode.html">
+    ParticleSystemGradientMode
+   </a>
+   的之后，可通过 ParticleSystem Inspector 编辑渐变。某些模式不需要渐变，只需要颜色。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="ParticleSystem.html">
+    ParticleSystem
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// This example shows setting a constant color value.
+public class ConstantColorExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="ParticleSystem.html">ParticleSystem</a> myParticleSystem;
+    <a href="ParticleSystem.ColorOverLifetimeModule.html">ParticleSystem.ColorOverLifetimeModule</a> colorModule;<br/><br/>    void Start()
+    {
+        // Get the system and the color module.
+        myParticleSystem = GetComponent&lt;<a href="ParticleSystem.html">ParticleSystem</a>&gt;();
+        colorModule = myParticleSystem.colorOverLifetime;<br/><br/>        GetValue();
+        SetValue();
+    }<br/><br/>    void GetValue()
+    {
+        print("The constant color is " + colorModule.color.color);
+    }<br/><br/>    void SetValue()
+    {
+        colorModule.color = <a href="Color-red.html">Color.red</a>;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// This example shows using 2 colors to drive the color over lifetime.
+public class TwoConstantColorsExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="ParticleSystem.html">ParticleSystem</a> myParticleSystem;
+    <a href="ParticleSystem.ColorOverLifetimeModule.html">ParticleSystem.ColorOverLifetimeModule</a> colorModule;<br/><br/>    void Start()
+    {
+        // Get the system and the color module.
+        myParticleSystem = GetComponent&lt;<a href="ParticleSystem.html">ParticleSystem</a>&gt;();
+        colorModule = myParticleSystem.colorOverLifetime;<br/><br/>        GetValue();
+        SetValue();
+    }<br/><br/>    void GetValue()
+    {
+        print(string.Format("The constant values are: min {0} max {1}.", colorModule.color.colorMin, colorModule.color.colorMax));
+    }<br/><br/>    void SetValue()
+    {
+        colorModule.color = new <a href="ParticleSystem.MinMaxGradient.html">ParticleSystem.MinMaxGradient</a>(<a href="Color-green.html">Color.green</a>, <a href="Color-red.html">Color.red</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// This example shows using a gradient to drive the color over lifetime.
+public class GradientColorExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="ParticleSystem.html">ParticleSystem</a> myParticleSystem;
+    <a href="ParticleSystem.ColorOverLifetimeModule.html">ParticleSystem.ColorOverLifetimeModule</a> colorModule;
+    <a href="Gradient.html">Gradient</a> ourGradient;<br/><br/>    void Start()
+    {
+        // Get the system and the color module.
+        myParticleSystem = GetComponent&lt;<a href="ParticleSystem.html">ParticleSystem</a>&gt;();
+        colorModule = myParticleSystem.colorOverLifetime;<br/><br/>        // A simple 2 color gradient with a fixed alpha of 1.0f.
+        float alpha = 1.0f;
+        ourGradient = new <a href="Gradient.html">Gradient</a>();
+        ourGradient.SetKeys(
+            new <a href="GradientColorKey.html">GradientColorKey</a>[] { new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-green.html">Color.green</a>, 0.0f), new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-red.html">Color.red</a>, 1.0f) },
+            new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] { new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 0.0f), new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 1.0f) }
+            );<br/><br/>        // Apply the gradient.
+        colorModule.color = ourGradient;<br/><br/>        // In 5 seconds we will modify the gradient.
+        Invoke("ModifyGradient", 5.0f);
+    }<br/><br/>    void ModifyGradient()
+    {
+        // Reduce the alpha
+        float alpha = 0.5f;
+        ourGradient.SetKeys(
+            new <a href="GradientColorKey.html">GradientColorKey</a>[] { new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-green.html">Color.green</a>, 0.0f), new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-red.html">Color.red</a>, 1.0f) },
+            new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] { new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 0.0f), new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 1.0f) }
+            );<br/><br/>        // Apply the changed gradient.
+        colorModule.color = ourGradient;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>// This example shows using 2 gradients to drive the color over lifetime.
+public class TwoGradientColorExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="ParticleSystem.html">ParticleSystem</a> myParticleSystem;
+    <a href="ParticleSystem.ColorOverLifetimeModule.html">ParticleSystem.ColorOverLifetimeModule</a> colorModule;<br/><br/>    <a href="Gradient.html">Gradient</a> ourGradientMin;
+    <a href="Gradient.html">Gradient</a> ourGradientMax;<br/><br/>    void Start()
+    {
+        // Get the system and the emission module.
+        myParticleSystem = GetComponent&lt;<a href="ParticleSystem.html">ParticleSystem</a>&gt;();
+        colorModule = myParticleSystem.colorOverLifetime;<br/><br/>        // A simple 2 color gradient with a fixed alpha of 1.0f.
+        float alpha1 = 1.0f;
+        ourGradientMin = new <a href="Gradient.html">Gradient</a>();
+        ourGradientMin.SetKeys(
+            new <a href="GradientColorKey.html">GradientColorKey</a>[] { new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-green.html">Color.green</a>, 0.0f), new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-red.html">Color.red</a>, 1.0f) },
+            new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] { new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha1, 0.0f), new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha1, 1.0f) }
+            );<br/><br/>        // A simple 2 color gradient with a fixed alpha of 0.0f.
+        float alpha2 = 0.0f;
+        ourGradientMax = new <a href="Gradient.html">Gradient</a>();
+        ourGradientMax.SetKeys(
+            new <a href="GradientColorKey.html">GradientColorKey</a>[] { new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-green.html">Color.green</a>, 0.0f), new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-red.html">Color.red</a>, 1.0f) },
+            new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] { new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha2, 0.0f), new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha2, 1.0f) }
+            );<br/><br/>        // Apply the gradients.
+        colorModule.color = new <a href="ParticleSystem.MinMaxGradient.html">ParticleSystem.MinMaxGradient</a>(ourGradientMin, ourGradientMax);<br/><br/>        // In 5 seconds we will modify the gradient.
+        Invoke("ModifyGradient", 5.0f);
+    }<br/><br/>    void ModifyGradient()
+    {
+        // Reduce the alpha
+        float alpha = 0.5f;
+        ourGradientMin.SetKeys(
+            new <a href="GradientColorKey.html">GradientColorKey</a>[] { new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-green.html">Color.green</a>, 0.0f), new <a href="GradientColorKey.html">GradientColorKey</a>(<a href="Color-red.html">Color.red</a>, 1.0f) },
+            new <a href="GradientAlphaKey.html">GradientAlphaKey</a>[] { new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 0.0f), new <a href="GradientAlphaKey.html">GradientAlphaKey</a>(alpha, 1.0f) }
+            );<br/><br/>        // Apply the changed gradients.
+        colorModule.color = new <a href="ParticleSystem.MinMaxGradient.html">ParticleSystem.MinMaxGradient</a>(ourGradientMin, ourGradientMax);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-color.html">
+      color
+     </a>
+    </td>
+    <td class="desc">
+     设置常量颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-colorMax.html">
+      colorMax
+     </a>
+    </td>
+    <td class="desc">
+     为上限设置常量颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-colorMin.html">
+      colorMin
+     </a>
+    </td>
+    <td class="desc">
+     为下限设置常量颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-gradient.html">
+      gradient
+     </a>
+    </td>
+    <td class="desc">
+     设置渐变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-gradientMax.html">
+      gradientMax
+     </a>
+    </td>
+    <td class="desc">
+     为上限设置渐变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-gradientMin.html">
+      gradientMin
+     </a>
+    </td>
+    <td class="desc">
+     为下限设置渐变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-mode.html">
+      mode
+     </a>
+    </td>
+    <td class="desc">
+     设置模式，最小值-最大值渐变使用该模式计算颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient-ctor.html">
+      ParticleSystem.MinMaxGradient
+     </a>
+    </td>
+    <td class="desc">
+     用于整个渐变的单个常量颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.MinMaxGradient.Evaluate.html">
+      Evaluate
+     </a>
+    </td>
+    <td class="desc">
+     手动查询渐变以基于所处模式计算颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,573 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightEditor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Editor.html">
+    Editor
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于在 Unity 编辑器中选择
+   <a href="Light.html">
+    Light
+   </a>
+   后渲染光源编辑器的类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightEditor-settings.html">
+      settings
+     </a>
+    </td>
+    <td class="desc">
+     可用于渲染自定义 LightEditor 的设置 helper。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightEditor.OnInspectorGUI.html">
+      OnInspectorGUI
+     </a>
+    </td>
+    <td class="desc">
+     请参阅 Editor.OnInspectorGUI。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightEditor.OnDestroy.html">
+      OnDestroy
+     </a>
+    </td>
+    <td class="desc">
+     请参阅 ScriptableObject.OnDestroy。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightEditor.OnEnable.html">
+      OnEnable
+     </a>
+    </td>
+    <td class="desc">
+     请参阅 ScriptableObject.OnEnable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightEditor.OnSceneGUI.html">
+      OnSceneGUI
+     </a>
+    </td>
+    <td class="desc">
+     请参阅 Editor.OnSceneGUI。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Editor-serializedObject.html">
+       serializedObject
+      </a>
+     </td>
+     <td class="desc">
+      表示正在检查的一个或多个对象的 SerializedObject。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor-target.html">
+       target
+      </a>
+     </td>
+     <td class="desc">
+      所检查的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor-targets.html">
+       targets
+      </a>
+     </td>
+     <td class="desc">
+      正在检查的所有对象的数组。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Editor.CreateInspectorGUI.html">
+       CreateInspectorGUI
+      </a>
+     </td>
+     <td class="desc">
+      实现此方法以创建自定义 UIElements 检视面板。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.DrawDefaultInspector.html">
+       DrawDefaultInspector
+      </a>
+     </td>
+     <td class="desc">
+      绘制内置检视面板。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.DrawHeader.html">
+       DrawHeader
+      </a>
+     </td>
+     <td class="desc">
+      调用此函数以绘制编辑器标头。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.DrawPreview.html">
+       DrawPreview
+      </a>
+     </td>
+     <td class="desc">
+      预览绘制的第一个入口点。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.GetInfoString.html">
+       GetInfoString
+      </a>
+     </td>
+     <td class="desc">
+      实现此方法以在资源预览上显示资源信息。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.GetPreviewTitle.html">
+       GetPreviewTitle
+      </a>
+     </td>
+     <td class="desc">
+      如果要更改 Preview 区域的标签，可重载此方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.HasPreviewGUI.html">
+       HasPreviewGUI
+      </a>
+     </td>
+     <td class="desc">
+      如果实现 OnPreviewGUI，可在子类中重载此方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.OnInteractivePreviewGUI.html">
+       OnInteractivePreviewGUI
+      </a>
+     </td>
+     <td class="desc">
+      实现此方法可创建您自己的交互式自定义预览。交互式自定义预览用于检视面板和对象选择器的预览区域。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.OnPreviewGUI.html">
+       OnPreviewGUI
+      </a>
+     </td>
+     <td class="desc">
+      实现此方法可为检视面板、主编辑器标头和对象选择器的预览区域创建自己的自定义预览。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.OnPreviewSettings.html">
+       OnPreviewSettings
+      </a>
+     </td>
+     <td class="desc">
+      如果要在预览标头中显示自定义控件，可重载此方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.RenderStaticPreview.html">
+       RenderStaticPreview
+      </a>
+     </td>
+     <td class="desc">
+      如果要渲染静态预览，可重载此方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.Repaint.html">
+       Repaint
+      </a>
+     </td>
+     <td class="desc">
+      重新绘制显示此编辑器的任意检视面板。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.RequiresConstantRepaint.html">
+       RequiresConstantRepaint
+      </a>
+     </td>
+     <td class="desc">
+      检查此编辑器在其当前状态下是否需要不断重绘。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.UseDefaultMargins.html">
+       UseDefaultMargins
+      </a>
+     </td>
+     <td class="desc">
+      如果您不想使用默认边距，可在子类中重载此方法以返回 false。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    受保护的函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Editor.ShouldHideOpenButton.html">
+       ShouldHideOpenButton
+      </a>
+     </td>
+     <td class="desc">
+      返回检视面板中“open”按钮的可见性设置。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Editor.CreateCachedEditor.html">
+       CreateCachedEditor
+      </a>
+     </td>
+     <td class="desc">
+      返回时，previousEditor 是 targetObject 或 targetObjects 的编辑器。如果该编辑器已经在跟踪对象，则函数会返回，否则该函数会销毁之前的编辑器并创建一个新编辑器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.CreateCachedEditorWithContext.html">
+       CreateCachedEditorWithContext
+      </a>
+     </td>
+     <td class="desc">
+      使用上下文对象创建缓存的编辑器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.CreateEditor.html">
+       CreateEditor
+      </a>
+     </td>
+     <td class="desc">
+      为 targetObject 或 targetObjects 创建自定义编辑器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.CreateEditorWithContext.html">
+       CreateEditorWithContext
+      </a>
+     </td>
+     <td class="desc">
+      使用上下文对象为 targetObject 或 targetObjects 创建自定义编辑器。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Editor.DrawFoldoutInspector.html">
+       DrawFoldoutInspector
+      </a>
+     </td>
+     <td class="desc">
+      为 target 绘制带有折叠标头的检视面板 GUI。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.CreateInstance.html">
+       CreateInstance
+      </a>
+     </td>
+     <td class="desc">
+      创建脚本化对象的实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.Awake.html">
+       Awake
+      </a>
+     </td>
+     <td class="desc">
+      当 ScriptableObject 脚本启动时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDisable.html">
+       OnDisable
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象超出范围时调用此函数。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    Events
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Editor-finishedDefaultHeaderGUI.html">
+       finishedDefaultHeaderGUI
+      </a>
+     </td>
+     <td class="desc">
+      在绘制默认标题项之后，在绘制 Inspector 窗口的标题时引发的事件。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

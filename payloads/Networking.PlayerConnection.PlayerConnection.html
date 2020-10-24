@@ -1,0 +1,421 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayerConnection
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking.PlayerConnection
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="ScriptableObject.html">
+    ScriptableObject
+   </a>
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Networking.PlayerConnection.IEditorPlayerConnection.html">
+    IEditorPlayerConnection
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于处理从 Player 到 Editor 的网络连接。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   设置事件以连接到 Editor 并向其发送数据。
+   <br/>
+   <br/>
+   这只能用于从 MonoBehaviour、Object 或 ScriptableObject 继承的类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection-instance.html">
+      instance
+     </a>
+    </td>
+    <td class="desc">
+     返回 PlayerConnection 的单一实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection-isConnected.html">
+      isConnected
+     </a>
+    </td>
+    <td class="desc">
+     当编辑器连接到播放器时，返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.BlockUntilRecvMsg.html">
+      BlockUntilRecvMsg
+     </a>
+    </td>
+    <td class="desc">
+     阻止调用线程，直至收到具有指定 messageId 的消息或指定的超时时间结束。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.DisconnectAll.html">
+      DisconnectAll
+     </a>
+    </td>
+    <td class="desc">
+     这会断开所有活动连接。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.Register.html">
+      Register
+     </a>
+    </td>
+    <td class="desc">
+     为特定消息 ID 注册监听器，并在 Editor 收到该消息时执行 Action。
+此 ID 必须与发送自 EditorConnection.Send() 的消息的 ID 相同。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.RegisterConnection.html">
+      RegisterConnection
+     </a>
+    </td>
+    <td class="desc">
+     注册一个回调，在 Editor 连接到 Player 时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.RegisterDisconnection.html">
+      RegisterDisconnection
+     </a>
+    </td>
+    <td class="desc">
+     注册一个回调，在 Editor 断开连接时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.Send.html">
+      Send
+     </a>
+    </td>
+    <td class="desc">
+     将数据发送到 Editor。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.TrySend.html">
+      TrySend
+     </a>
+    </td>
+    <td class="desc">
+     尝试将数据发送到编辑器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.Unregister.html">
+      Unregister
+     </a>
+    </td>
+    <td class="desc">
+     取消注册消息监听器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.UnregisterConnection.html">
+      UnregisterConnection
+     </a>
+    </td>
+    <td class="desc">
+     取消注册连接回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.PlayerConnection.PlayerConnection.UnregisterDisconnection.html">
+      UnregisterDisconnection
+     </a>
+    </td>
+    <td class="desc">
+     取消注册断开连接回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.CreateInstance.html">
+       CreateInstance
+      </a>
+     </td>
+     <td class="desc">
+      创建脚本化对象的实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.Awake.html">
+       Awake
+      </a>
+     </td>
+     <td class="desc">
+      当 ScriptableObject 脚本启动时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDestroy.html">
+       OnDestroy
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象将销毁时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDisable.html">
+       OnDisable
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象超出范围时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnEnable.html">
+       OnEnable
+      </a>
+     </td>
+     <td class="desc">
+      当对象加载时调用此函数。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

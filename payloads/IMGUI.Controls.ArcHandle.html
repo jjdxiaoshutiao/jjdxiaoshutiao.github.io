@@ -1,0 +1,357 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ArcHandle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.IMGUI.Controls
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于在场景视图中编辑角度和半径的复合手柄类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <img src="../StaticFiles/ScriptRefImages/ArcHandle.png"/>
+   <em>
+    场景视图中的 ArcHandle。
+   </em>
+   \
+\
+该类允许您显示用于编辑圆弧角度和半径的控制手柄。圆弧源自
+   <a href="Vector3-forward.html">
+    Vector3.forward
+   </a>
+   ，乘以
+   <a href="IMGUI.Controls.ArcHandle-radius.html">
+    radius
+   </a>
+   并围绕
+   <a href="Vector3-up.html">
+    Vector3.up
+   </a>
+   旋转。由该类的
+   <a href="IMGUI.Controls.ArcHandle.DrawHandle.html">
+    DrawHandle
+   </a>
+   方法渲染的手柄受
+   <a href="Handles.html">
+    Handles
+   </a>
+   类（例如
+   <a href="Handles-matrix.html">
+    Handles.matrix
+   </a>
+   和
+   <a href="Handles-color.html">
+    Handles.color
+   </a>
+   ）中的全局状态影响。\
+\
+以下组件通过角度和力属性定义对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class ProjectileExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public float elevationAngle { get { return m_ElevationAngle; } set { m_ElevationAngle = value; } }
+    [<a href="SerializeField.html">SerializeField</a>]
+    float m_ElevationAngle = 45f;<br/><br/>    public float impulse { get { return m_Impulse; } set { m_Impulse = value; } }
+    [<a href="SerializeField.html">SerializeField</a>]
+    float m_Impulse = 20f;<br/><br/>    public <a href="Vector3.html">Vector3</a> facingDirection
+    {
+        get
+        {
+            <a href="Vector3.html">Vector3</a> result = transform.forward;
+            result.y = 0f;
+            return result.sqrMagnitude == 0f ? <a href="Vector3-forward.html">Vector3.forward</a> : result.normalized;
+        }
+    }<br/><br/>    protected virtual void Start()
+    {
+        <a href="GameObject.html">GameObject</a> ball = <a href="GameObject.CreatePrimitive.html">GameObject.CreatePrimitive</a>(<a href="PrimitiveType.Sphere.html">PrimitiveType.Sphere</a>);<br/><br/>        <a href="Vector3.html">Vector3</a> direction = facingDirection;
+        direction = <a href="Quaternion.AngleAxis.html">Quaternion.AngleAxis</a>(elevationAngle, <a href="Vector3.Cross.html">Vector3.Cross</a>(direction, <a href="Vector3-up.html">Vector3.up</a>)) * direction;
+        ball.AddComponent&lt;<a href="Rigidbody.html">Rigidbody</a>&gt;().AddForce(direction  * impulse, <a href="ForceMode.Impulse.html">ForceMode.Impulse</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   以下自定义编辑器示例允许您在场景视图中编辑此组件的仰角和力属性，其中力由手柄的半径表示。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.IMGUI.Controls;
+using UnityEngine;<br/><br/>[<a href="CustomEditor.html">CustomEditor</a>(typeof(ProjectileExample))]
+public class ProjectileExampleEditor : <a href="Editor.html">Editor</a>
+{
+    <a href="IMGUI.Controls.ArcHandle.html">ArcHandle</a> m_ArcHandle = new <a href="IMGUI.Controls.ArcHandle.html">ArcHandle</a>();<br/><br/>    protected virtual void OnEnable()
+    {
+        // arc handle has no radius handle by default
+        m_ArcHandle.SetColorWithRadiusHandle(<a href="Color-white.html">Color.white</a>, 0.1f);
+    }<br/><br/>    // the OnSceneGUI callback uses the <a href="SceneManagement.Scene.html">Scene</a> view camera for drawing handles by default
+    protected virtual void OnSceneGUI()
+    {
+        ProjectileExample projectileExample = (ProjectileExample)target;<br/><br/>        // copy the target object's data to the handle
+        m_ArcHandle.angle = projectileExample.elevationAngle;
+        m_ArcHandle.radius = projectileExample.impulse;<br/><br/>        // set the handle matrix so that angle extends upward from target's facing direction along ground
+        <a href="Vector3.html">Vector3</a> handleDirection = projectileExample.facingDirection;
+        <a href="Vector3.html">Vector3</a> handleNormal = <a href="Vector3.Cross.html">Vector3.Cross</a>(handleDirection, <a href="Vector3-up.html">Vector3.up</a>);
+        <a href="Matrix4x4.html">Matrix4x4</a> handleMatrix = <a href="Matrix4x4.TRS.html">Matrix4x4.TRS</a>(
+            projectileExample.transform.position,
+            <a href="Quaternion.LookRotation.html">Quaternion.LookRotation</a>(handleDirection, handleNormal),
+            <a href="Vector3-one.html">Vector3.one</a>
+        );<br/><br/>        using (new <a href="Handles.DrawingScope.html">Handles.DrawingScope</a>(handleMatrix))
+        {
+            // draw the handle
+            <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();
+            m_ArcHandle.DrawHandle();
+            if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+            {
+                // record the target object before setting new values so changes can be undone/redone
+                <a href="Undo.RecordObject.html">Undo.RecordObject</a>(projectileExample, "Change Projectile Properties");<br/><br/>                // copy the handle's updated data back to the target object
+                projectileExample.elevationAngle = m_ArcHandle.angle;
+                projectileExample.impulse = m_ArcHandle.radius;
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Editor.OnSceneGUI.html">
+    Editor.OnSceneGUI
+   </a>
+   、
+   <a href="Handles.SetCamera.html">
+    Handles.SetCamera
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-angle.html">
+      angle
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定手柄圆弧的角度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-angleHandleColor.html">
+      angleHandleColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定角度控制手柄的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-angleHandleDrawFunction.html">
+      angleHandleDrawFunction
+     </a>
+    </td>
+    <td class="desc">
+     要在显示角度控制手柄时使用的 CapFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-angleHandleSizeFunction.html">
+      angleHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     用于指定角度控制手柄应该多大的 SizeFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-fillColor.html">
+      fillColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定圆弧形状的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-radius.html">
+      radius
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定手柄圆弧的半径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-radiusHandleColor.html">
+      radiusHandleColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定半径控制手柄的颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-radiusHandleDrawFunction.html">
+      radiusHandleDrawFunction
+     </a>
+    </td>
+    <td class="desc">
+     要在显示半径控制手柄时使用的 CapFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-radiusHandleSizeFunction.html">
+      radiusHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     用于指定角度控制手柄应该多大的 SizeFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-wireframeColor.html">
+      wireframeColor
+     </a>
+    </td>
+    <td class="desc">
+     返回或指定沿圆弧外侧曲线的颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle-ctor.html">
+      ArcHandle
+     </a>
+    </td>
+    <td class="desc">
+     创建 ArcHandle 类的新实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.DrawHandle.html">
+      DrawHandle
+     </a>
+    </td>
+    <td class="desc">
+     使用实例的当前配置在当前手柄摄像机中显示此实例的函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.SetColorWithoutRadiusHandle.html">
+      SetColorWithoutRadiusHandle
+     </a>
+    </td>
+    <td class="desc">
+     将 angleHandleColor、wireframeColor 和 fillColor 设置为相同的值，其中 fillColor 将具有指定的 Alpha 值。radiusHandleColor 将被设置为 Color.clear，且半径手柄将被禁用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.SetColorWithRadiusHandle.html">
+      SetColorWithRadiusHandle
+     </a>
+    </td>
+    <td class="desc">
+     将 angleHandleColor、radiusHandleColor、wireframeColor 和 fillColor 设置为相同的值，其中 fillColor 将具有指定的 Alpha 值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.DefaultAngleHandleDrawFunction.html">
+      DefaultAngleHandleDrawFunction
+     </a>
+    </td>
+    <td class="desc">
+     可绘制一条以 Handles.CylinderHandleCap 终止的线的 CapFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.DefaultAngleHandleSizeFunction.html">
+      DefaultAngleHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     返回一个固定屏幕空间尺寸的 SizeFunction。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.ArcHandle.DefaultRadiusHandleSizeFunction.html">
+      DefaultRadiusHandleSizeFunction
+     </a>
+    </td>
+    <td class="desc">
+     返回一个固定屏幕空间尺寸的 SizeFunction。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

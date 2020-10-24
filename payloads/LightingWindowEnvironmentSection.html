@@ -1,0 +1,113 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightingWindowEnvironmentSection
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   覆盖光照窗口环境部分的 Inspector 的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅
+   <a href="Rendering.ScriptableRenderPipelineExtensionAttribute.html">
+    ScriptableRenderPipelineExtensionAttribute
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Rendering;
+using UnityEngine;
+using UnityEngine.Rendering;<br/><br/>[ScriptableRenderPipelineExtension(typeof(CustomSRPAsset))]
+class CustomEnvironmentSection : <a href="LightingWindowEnvironmentSection.html">LightingWindowEnvironmentSection</a>
+{
+    public override void OnInspectorGUI()
+    {
+        // The following will be displayed instead of the Environment section in the LightingWindow
+        <a href="EditorGUILayout.LabelField.html">EditorGUILayout.LabelField</a>("My Custom Environment Section !!");
+    }
+}<br/><br/>
+//Below is a custom empty render pipeline only here for explaining the filtering in ScriptableRenderPipelineExtension<br/><br/>class CustomSRP : <a href="Rendering.RenderPipeline.html">RenderPipeline</a>
+{
+    protected override void Render(<a href="Rendering.ScriptableRenderContext.html">ScriptableRenderContext</a> context, <a href="Camera.html">Camera</a>[] cameras)
+    { /* My custom rendering algorythme */}
+}<br/><br/>class CustomSRPAsset : <a href="Rendering.RenderPipelineAsset.html">RenderPipelineAsset</a>
+{
+    protected override <a href="Rendering.RenderPipeline.html">RenderPipeline</a> CreatePipeline()
+    {
+        return new CustomSRP();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   在该示例中，当 CustomSRP 正在使用时，将覆盖光照窗口的环境部分。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightingWindowEnvironmentSection.OnDisable.html">
+      OnDisable
+     </a>
+    </td>
+    <td class="desc">
+     当不再使用此 Inspector 覆盖时，将调用 OnDisable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightingWindowEnvironmentSection.OnEnable.html">
+      OnEnable
+     </a>
+    </td>
+    <td class="desc">
+     当使用此 Inspector 覆盖时，将调用 OnEnable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightingWindowEnvironmentSection.OnInspectorGUI.html">
+      OnInspectorGUI
+     </a>
+    </td>
+    <td class="desc">
+     绘制光照窗口中的环境部分时调用的回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

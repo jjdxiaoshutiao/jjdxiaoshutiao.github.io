@@ -1,0 +1,109 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   FadeGroupScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   开始一个可隐藏/显示的组，并且过渡将生成动画。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.AnimatedValues;
+using UnityEngine.Events;<br/><br/>public class MyWindow : <a href="EditorWindow.html">EditorWindow</a>
+{
+    <a href="AnimatedValues.AnimBool.html">AnimBool</a> m_ShowExtraFields;
+    string m_String;
+    <a href="Color.html">Color</a> m_Color = <a href="Color-white.html">Color.white</a>;
+    int m_Number = 0;<br/><br/>    [<a href="MenuItem.html">MenuItem</a>("Window/My Window")]
+    static void Init()
+    {
+        MyWindow window = (MyWindow)<a href="EditorWindow.GetWindow.html">EditorWindow.GetWindow</a>(typeof(MyWindow));
+        window.Show();
+    }<br/><br/>    void OnEnable()
+    {
+        m_ShowExtraFields = new <a href="AnimatedValues.AnimBool.html">AnimBool</a>(true);
+        m_ShowExtraFields.valueChanged.AddListener(new <a href="Events.UnityAction.html">UnityAction</a>(base.Repaint));
+    }<br/><br/>    void OnGUI()
+    {
+        m_ShowExtraFields.target = <a href="EditorGUILayout.ToggleLeft.html">EditorGUILayout.ToggleLeft</a>("Show extra fields", m_ShowExtraFields.target);<br/><br/>        //Extra block that can be toggled on and off.
+        using (var group = new <a href="EditorGUILayout.FadeGroupScope.html">EditorGUILayout.FadeGroupScope</a>(m_ShowExtraFields.faded))
+        {
+            if (group.visible)
+            {
+                <a href="EditorGUI-indentLevel.html">EditorGUI.indentLevel</a>++;
+                <a href="EditorGUILayout.PrefixLabel.html">EditorGUILayout.PrefixLabel</a>("<a href="Color.html">Color</a>");
+                m_Color = <a href="EditorGUILayout.ColorField.html">EditorGUILayout.ColorField</a>(m_Color);
+                <a href="EditorGUILayout.PrefixLabel.html">EditorGUILayout.PrefixLabel</a>("Text");
+                m_String = <a href="EditorGUILayout.TextField.html">EditorGUILayout.TextField</a>(m_String);
+                <a href="EditorGUILayout.PrefixLabel.html">EditorGUILayout.PrefixLabel</a>("Number");
+                m_Number = <a href="EditorGUILayout.IntSlider.html">EditorGUILayout.IntSlider</a>(m_Number, 0, 10);
+                <a href="EditorGUI-indentLevel.html">EditorGUI.indentLevel</a>--;
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUILayout.FadeGroupScope-visible.html">
+      visible
+     </a>
+    </td>
+    <td class="desc">
+     组是否可见。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUILayout.FadeGroupScope-ctor.html">
+      EditorGUILayout.FadeGroupScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 FadeGroupScope 并开始相应的组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

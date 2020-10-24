@@ -1,0 +1,172 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ToggleGroupScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   开始一个垂直组，带有可一次性启用或禁用所有控件的开关。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="EditorGUILayout.BeginToggleGroup.html">
+    BeginToggleGroup
+   </a>
+   。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/Aligner.png"/>
+   <br/>
+   <em>
+    所选游戏对象的对齐位置/旋转/缩放。
+   </em>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// C# Example
+// Simple script that lets you align GameObjects
+// position/rotation/scale wise with the selected active transform<br/><br/>using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class Aligner : <a href="EditorWindow.html">EditorWindow</a>
+{
+    bool[] pos = new bool[3] { true, true, true };
+    bool[] rot = new bool[3] { true, true, true };
+    bool[] scale = new bool[3] { true, true, true };<br/><br/>    bool posGroupEnabled = true;
+    bool rotGroupEnabled = true;
+    bool scaleGroupEnabled = false;<br/><br/>    void OnGUI()
+    {
+        using (var posGroup = new <a href="EditorGUILayout.ToggleGroupScope.html">EditorGUILayout.ToggleGroupScope</a>("<a href="UIElements.Align.html">Align</a> position", posGroupEnabled))
+        {
+            posGroupEnabled = posGroup.enabled;
+            pos[0] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("x", pos[0]);
+            pos[1] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("y", pos[1]);
+            pos[2] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("z", pos[2]);
+        }<br/><br/>        using (var rotGroup = new <a href="EditorGUILayout.ToggleGroupScope.html">EditorGUILayout.ToggleGroupScope</a>("<a href="UIElements.Align.html">Align</a> rotation", rotGroupEnabled))
+        {
+            rotGroupEnabled = rotGroup.enabled;
+            rot[0] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("x", rot[0]);
+            rot[1] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("y", rot[1]);
+            rot[2] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("z", rot[2]);
+        }<br/><br/>        using (var scaleGroup = new <a href="EditorGUILayout.ToggleGroupScope.html">EditorGUILayout.ToggleGroupScope</a>("<a href="UIElements.Align.html">Align</a> scale", scaleGroupEnabled))
+        {
+            scaleGroupEnabled = scaleGroup.enabled;
+            scale[0] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("x", scale[0]);
+            scale[1] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("y", scale[1]);
+            scale[2] = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("z", scale[2]);
+        }<br/><br/>        <a href="GUILayout.Space.html">GUILayout.Space</a>(30);
+        if (<a href="GUILayout.Button.html">GUILayout.Button</a>("<a href="UIElements.Align.html">Align</a>!"))
+            <a href="UIElements.Align.html">Align</a>();
+    }<br/><br/>    void <a href="UIElements.Align.html">Align</a>()
+    {
+        <a href="Transform.html">Transform</a>[] transforms = <a href="Selection-transforms.html">Selection.transforms</a>;
+        <a href="Transform.html">Transform</a> activeTransform = <a href="Selection-activeTransform.html">Selection.activeTransform</a>;
+        if (transforms.Length &lt; 2)
+        {
+            <a href="Debug.LogWarning.html">Debug.LogWarning</a>("Aligner: select at least two objects.");
+            return;
+        }
+        for (int i = 0; i &lt; transforms.Length; i++)
+        {
+            if (posGroupEnabled)
+            {
+                <a href="Vector3.html">Vector3</a> newPos;
+                newPos.x = pos[0] ?
+                    activeTransform.position.x : transforms[i].position.x;
+                newPos.y = pos[1] ?
+                    activeTransform.position.y : transforms[i].position.y;
+                newPos.z = pos[2] ?
+                    activeTransform.position.z : transforms[i].position.z;
+                transforms[i].position = newPos;
+            }
+            if (rotGroupEnabled)
+            {
+                <a href="Vector3.html">Vector3</a> newRot;
+                newRot.x = rot[0] ?
+                    activeTransform.rotation.eulerAngles.x : transforms[i].rotation.eulerAngles.x;
+                newRot.y = rot[1] ?
+                    activeTransform.rotation.eulerAngles.y : transforms[i].rotation.eulerAngles.y;
+                newRot.z = rot[2] ?
+                    activeTransform.rotation.eulerAngles.z : transforms[i].rotation.eulerAngles.z;
+                transforms[i].rotation = <a href="Quaternion.Euler.html">Quaternion.Euler</a>(newRot);
+            }
+            if (scaleGroupEnabled)
+            {
+                <a href="Vector3.html">Vector3</a> newScale;
+                newScale.x = scale[0] ?
+                    activeTransform.localScale.x : transforms[i].localScale.x;
+                newScale.y = scale[1] ?
+                    activeTransform.localScale.y : transforms[i].localScale.y;
+                newScale.z = scale[2] ?
+                    activeTransform.localScale.z : transforms[i].localScale.z;
+                transforms[i].localScale = newScale;
+            }
+        }
+    }<br/><br/>    [<a href="MenuItem.html">MenuItem</a>("Examples/<a href="UIElements.Position.html">Position</a>-Rotation-Scale Aligner")]
+    static void Init()
+    {
+        Aligner window = (Aligner)<a href="EditorWindow.GetWindow.html">EditorWindow.GetWindow</a>(typeof(Aligner));
+        window.Show();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUILayout.ToggleGroupScope-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     用户所选的启用状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUILayout.ToggleGroupScope-ctor.html">
+      EditorGUILayout.ToggleGroupScope
+     </a>
+    </td>
+    <td class="desc">
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

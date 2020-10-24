@@ -1,0 +1,163 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   XRMeshSubsystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="IntegratedSubsystem.html">
+    IntegratedSubsystem
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许外部系统为 Unity 提供动态网格。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   XRMeshSubsystem 使外部系统能够为 Unity 提供动态网格。为了在执行期间不阻塞主线程，网格在后台线程上处理（包括物理烘焙）。这对于在运行时期间提供动态网格非常有用，例如空间感知 AR 设备。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRMeshSubsystem-meshDensity.html">
+      meshDensity
+     </a>
+    </td>
+    <td class="desc">
+     调用此函数可请求更改生成的网格的密度。Unity 给出的密度级别为 0.0 到 1.0 范围内的值，如何将此值映射到其实现由提供程序决定。
+设置此值不保证立即更改当前已创建的任何网格的密度，可能仅更改新的或更新的网格的密度。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRMeshSubsystem.GenerateMeshAsync.html">
+      GenerateMeshAsync
+     </a>
+    </td>
+    <td class="desc">
+     请求生成具有 MeshId meshId 的网格。生成完成时，Unity 会调用 /onMeshGenerationComplete/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRMeshSubsystem.SetBoundingVolume.html">
+      SetBoundingVolume
+     </a>
+    </td>
+    <td class="desc">
+     设置包围体来限制 Unity 生成和跟踪网格的空间。包围体是一个以 origin 为中心并按照 extents 中的定义在每个维度上延伸的轴对齐的包围盒 (AABB)。度量单位取决于提供程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRMeshSubsystem.TryGetMeshInfos.html">
+      TryGetMeshInfos
+     </a>
+    </td>
+    <td class="desc">
+     获取系统当前跟踪的每个网格的相关信息。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem-running.html">
+       running
+      </a>
+     </td>
+     <td class="desc">
+      子系统是否在运行。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      销毁子系统的此实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Start.html">
+       Start
+      </a>
+     </td>
+     <td class="desc">
+      启动子系统的一个实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Stop.html">
+       Stop
+      </a>
+     </td>
+     <td class="desc">
+      停止子系统的一个实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

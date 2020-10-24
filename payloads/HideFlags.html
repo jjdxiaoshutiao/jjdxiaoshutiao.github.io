@@ -1,0 +1,162 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HideFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   位掩码，用于控制对象的销毁、保存和在 Inspector 中的可见性。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="HideFlags.HideAndDontSave.html">
+    HideFlags.HideAndDontSave
+   </a>
+   、SA.Object.hideFlags。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Creates a material that is explicitly created &amp;amp; destroyed by the component.
+    // <a href="Resources.UnloadUnusedAssets.html">Resources.UnloadUnusedAssets</a> will not unload it, and it will not be editable by the inspector.
+    private <a href="Material.html">Material</a> ownedMaterial;
+    void OnEnable()
+    {
+        ownedMaterial = new <a href="Material.html">Material</a>(<a href="Shader.Find.html">Shader.Find</a>("Diffuse"));
+        ownedMaterial.hideFlags = <a href="HideFlags.HideAndDontSave.html">HideFlags.HideAndDontSave</a>;
+        GetComponent&lt;<a href="Renderer.html">Renderer</a>&gt;().sharedMaterial = ownedMaterial;
+    }<br/><br/>    // Objects created as hide and don't save must be explicitly destroyed by the owner of the object.
+    void OnDisable()
+    {
+        DestroyImmediate(ownedMaterial);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     一个普通的可见对象。此为默认值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.HideInHierarchy.html">
+      HideInHierarchy
+     </a>
+    </td>
+    <td class="desc">
+     该对象不会显示在层级视图中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.HideInInspector.html">
+      HideInInspector
+     </a>
+    </td>
+    <td class="desc">
+     无法在 Inspector 中查看它。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.DontSaveInEditor.html">
+      DontSaveInEditor
+     </a>
+    </td>
+    <td class="desc">
+     该对象不保存到 Editor 中的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.NotEditable.html">
+      NotEditable
+     </a>
+    </td>
+    <td class="desc">
+     无法在 Inspector 中编辑该对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.DontSaveInBuild.html">
+      DontSaveInBuild
+     </a>
+    </td>
+    <td class="desc">
+     构建播放器时不保存该对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.DontUnloadUnusedAsset.html">
+      DontUnloadUnusedAsset
+     </a>
+    </td>
+    <td class="desc">
+     Resources.UnloadUnusedAssets 不会卸载该对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.DontSave.html">
+      DontSave
+     </a>
+    </td>
+    <td class="desc">
+     该对象不保存到场景。加载新场景时，也不会销毁它。它是 HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor | HideFlags.DontUnloadUnusedAsset 的快捷方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HideFlags.HideAndDontSave.html">
+      HideAndDontSave
+     </a>
+    </td>
+    <td class="desc">
+     该 GameObject 不显示在层级视图中、不保存到场景、也不会被 Resources.UnloadUnusedAssets 卸载。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

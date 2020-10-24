@@ -1,0 +1,665 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HierarchyFrameDataView
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Profiling
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供对特定帧和线程的性能分析器数据的访问。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用
+   <em>
+    HierarchyFrameDataView
+   </em>
+   可获取结构为层级视图的性能分析器样本。
+   <br/>
+   例如，这可用于
+   <a href="../Manual/ProfilerCPU.html">
+    CPU 使用率性能分析器
+   </a>
+   的
+   <strong>
+    Hierachy mode
+   </strong>
+   。
+   <br/>
+   <br/>
+   <em>
+    HierarchyFrameDataView
+   </em>
+   通过时间和内存信息汇总数据。每个层级视图项都包含其子项的累积数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System;
+using System.Collections.Generic;
+using UnityEditor.Profiling;
+using UnityEditorInternal;<br/><br/>public class Example
+{
+    List&lt;int&gt; parentsCacheList = new List&lt;int&gt;();
+    List&lt;int&gt; childrenCacheList = new List&lt;int&gt;();<br/><br/>    public void ProcessFrameData(int frame)
+    {
+        using (var frameData = ProfilerDriver.GetHierarchyFrameDataView(frame, 0, <a href="Profiling.HierarchyFrameDataView.ViewModes.Default.html">HierarchyFrameDataView.ViewModes.Default</a>, <a href="Profiling.HierarchyFrameDataView-columnGcMemory.html">HierarchyFrameDataView.columnGcMemory</a>, false))
+        {
+            int rootId = frameData.GetRootItemID();
+            frameData.GetItemDescendantsThatHaveChildren(rootId, parentsCacheList);
+            foreach (int parentId in parentsCacheList)
+            {
+                frameData.GetItemChildren(parentId, childrenCacheList);
+                // Process further records
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnCalls.html">
+      columnCalls
+     </a>
+    </td>
+    <td class="desc">
+     调用列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnDontSort.html">
+      columnDontSort
+     </a>
+    </td>
+    <td class="desc">
+     指示是否禁用排序的列标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnGcMemory.html">
+      columnGcMemory
+     </a>
+    </td>
+    <td class="desc">
+     GC 分配列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnName.html">
+      columnName
+     </a>
+    </td>
+    <td class="desc">
+     性能分析器样本名称列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnObjectName.html">
+      columnObjectName
+     </a>
+    </td>
+    <td class="desc">
+     对象名称列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnSelfPercent.html">
+      columnSelfPercent
+     </a>
+    </td>
+    <td class="desc">
+     CPU 在调用本身中花费的时间百分比。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnSelfTime.html">
+      columnSelfTime
+     </a>
+    </td>
+    <td class="desc">
+     CPU 在调用本身中花费的时间量。该时间量以毫秒为单位进行表示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnStartTime.html">
+      columnStartTime
+     </a>
+    </td>
+    <td class="desc">
+     调用的开始时间（以毫秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnTotalPercent.html">
+      columnTotalPercent
+     </a>
+    </td>
+    <td class="desc">
+     CPU 在调用层级中花费的时间百分比。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnTotalTime.html">
+      columnTotalTime
+     </a>
+    </td>
+    <td class="desc">
+     CPU 在调用层级中花费的时间量。该时间量以毫秒为单位进行表示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-columnWarningCount.html">
+      columnWarningCount
+     </a>
+    </td>
+    <td class="desc">
+     对于性能是次优的代码执行路径中的样本量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-invalidSampleId.html">
+      invalidSampleId
+     </a>
+    </td>
+    <td class="desc">
+     无效项的索引。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-frameFps.html">
+      frameFps
+     </a>
+    </td>
+    <td class="desc">
+     帧的当前每秒帧数 (fps)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-frameGpuTimeMs.html">
+      frameGpuTimeMs
+     </a>
+    </td>
+    <td class="desc">
+     GPU 帧时间量（以毫秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-frameIndex.html">
+      frameIndex
+     </a>
+    </td>
+    <td class="desc">
+     HierarchyFrameDataView 的帧索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-frameTimeMs.html">
+      frameTimeMs
+     </a>
+    </td>
+    <td class="desc">
+     CPU 帧时间量（以毫秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-sortColumn.html">
+      sortColumn
+     </a>
+    </td>
+    <td class="desc">
+     定义排序列的列标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-sortColumnAscending.html">
+      sortColumnAscending
+     </a>
+    </td>
+    <td class="desc">
+     排序顺序是升序 (true) 还是降序 (false)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-threadGroupName.html">
+      threadGroupName
+     </a>
+    </td>
+    <td class="desc">
+     线程所属的组的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-threadId.html">
+      threadId
+     </a>
+    </td>
+    <td class="desc">
+     与线程关联的持久标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-threadIndex.html">
+      threadIndex
+     </a>
+    </td>
+    <td class="desc">
+     当前帧中的线程的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-threadName.html">
+      threadName
+     </a>
+    </td>
+    <td class="desc">
+     线程的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-valid.html">
+      valid
+     </a>
+    </td>
+    <td class="desc">
+     在线程的帧数据已经过处理并准备好进行获取之后，为 True。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView-viewMode.html">
+      viewMode
+     </a>
+    </td>
+    <td class="desc">
+     定义如何汇总数据的视图模式。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetFrameMetaData.html">
+      GetFrameMetaData
+     </a>
+    </td>
+    <td class="desc">
+     获取与帧关联的元数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetFrameMetaDataCount.html">
+      GetFrameMetaDataCount
+     </a>
+    </td>
+    <td class="desc">
+     获取帧中每个 ID 和标签 对的元数据块总数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemAncestors.html">
+      GetItemAncestors
+     </a>
+    </td>
+    <td class="desc">
+     获取层级视图项祖先的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemCallstack.html">
+      GetItemCallstack
+     </a>
+    </td>
+    <td class="desc">
+     获取与指定层级视图项关联的调用栈。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemChildren.html">
+      GetItemChildren
+     </a>
+    </td>
+    <td class="desc">
+     获取层级视图项的子项的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemColumnData.html">
+      GetItemColumnData
+     </a>
+    </td>
+    <td class="desc">
+     返回与列关联的层级视图项值的字符串表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemColumnDataAsDouble.html">
+      GetItemColumnDataAsDouble
+     </a>
+    </td>
+    <td class="desc">
+     返回与列关联的层级视图项值的双精度值表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemColumnDataAsFloat.html">
+      GetItemColumnDataAsFloat
+     </a>
+    </td>
+    <td class="desc">
+     返回与列关联的层级视图项值的浮点值表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemColumnDataAsSingle.html">
+      GetItemColumnDataAsSingle
+     </a>
+    </td>
+    <td class="desc">
+     返回与列关联的层级视图项值的浮点值表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemDepth.html">
+      GetItemDepth
+     </a>
+    </td>
+    <td class="desc">
+     返回项的层级视图级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemDescendantsThatHaveChildren.html">
+      GetItemDescendantsThatHaveChildren
+     </a>
+    </td>
+    <td class="desc">
+     用于获取具有其他子项的层级视图项后代的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemInstanceID.html">
+      GetItemInstanceID
+     </a>
+    </td>
+    <td class="desc">
+     返回与样本关联的 UnityEngine.Object 的 InstanceID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMarkerFlags.html">
+      GetItemMarkerFlags
+     </a>
+    </td>
+    <td class="desc">
+     用于获取标记的用途标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMarkerID.html">
+      GetItemMarkerID
+     </a>
+    </td>
+    <td class="desc">
+     返回唯一标识样本名称的性能分析器标记。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMarkerIDPath.html">
+      GetItemMarkerIDPath
+     </a>
+    </td>
+    <td class="desc">
+     用于获取所有层级视图项父项的标记的标识符列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMergedSampleCallstack.html">
+      GetItemMergedSampleCallstack
+     </a>
+    </td>
+    <td class="desc">
+     获取与指定层级视图项关联的调用栈。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMergedSamplesColumnData.html">
+      GetItemMergedSamplesColumnData
+     </a>
+    </td>
+    <td class="desc">
+     用于获取层级视图项的合并样本的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMergedSamplesColumnDataAsFloats.html">
+      GetItemMergedSamplesColumnDataAsFloats
+     </a>
+    </td>
+    <td class="desc">
+     获取特定层级视图项的合并样本。合并样本通过 outValues 参数，作为浮点值列表返回。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMergedSamplesCount.html">
+      GetItemMergedSamplesCount
+     </a>
+    </td>
+    <td class="desc">
+     返回层级视图项所表示的合并样本数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMergedSamplesInstanceID.html">
+      GetItemMergedSamplesInstanceID
+     </a>
+    </td>
+    <td class="desc">
+     获取与层级视图项对应的合并样本的 instanceID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMetadata.html">
+      GetItemMetadata
+     </a>
+    </td>
+    <td class="desc">
+     返回层级视图项元数据值的字符串表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMetadataAsFloat.html">
+      GetItemMetadataAsFloat
+     </a>
+    </td>
+    <td class="desc">
+     返回层级视图项元数据值的浮点值表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMetadataAsLong.html">
+      GetItemMetadataAsLong
+     </a>
+    </td>
+    <td class="desc">
+     返回层级视图项元数据值的长整型表示形式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemMetadataCount.html">
+      GetItemMetadataCount
+     </a>
+    </td>
+    <td class="desc">
+     返回与层级视图项关联的元数据数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemName.html">
+      GetItemName
+     </a>
+    </td>
+    <td class="desc">
+     获取与项关联的样本名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetItemPath.html">
+      GetItemPath
+     </a>
+    </td>
+    <td class="desc">
+     获取字符串形式的层级视图项路径。每个级别由正斜杠（“/”）分隔。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.GetRootItemID.html">
+      GetRootItemID
+     </a>
+    </td>
+    <td class="desc">
+     获取根树项的标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.HasItemChildren.html">
+      HasItemChildren
+     </a>
+    </td>
+    <td class="desc">
+     检查树项是否具有子项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.ResolveItemCallstack.html">
+      ResolveItemCallstack
+     </a>
+    </td>
+    <td class="desc">
+     获取与指定层级视图项关联的调用栈。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.ResolveItemMergedSampleCallstack.html">
+      ResolveItemMergedSampleCallstack
+     </a>
+    </td>
+    <td class="desc">
+     获取与特定项样本关联的调用栈。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.ResolveMethodInfo.html">
+      ResolveMethodInfo
+     </a>
+    </td>
+    <td class="desc">
+     返回指定方法地址的方法名称和位置信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.HierarchyFrameDataView.Sort.html">
+      Sort
+     </a>
+    </td>
+    <td class="desc">
+     对层级视图排序。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

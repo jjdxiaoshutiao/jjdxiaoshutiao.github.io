@@ -1,0 +1,136 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   InputDevices
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一个用于访问 XR 输入子系统中的设备的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   要将触觉反馈输送到 XR 输入设备，请指定
+   <a href="XR.XRNode.html">
+    XRNode
+   </a>
+   作为目标。此接口使用 XRNode 提供对输入设备的访问。例如，使用
+   <a href="XR.XRNode.LeftHand.html">
+    XRNode.LeftHand
+   </a>
+   和
+   <a href="XR.XRNode.RightHand.html">
+    XRNode.RightHand
+   </a>
+   访问左侧或右侧设备。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices.GetDeviceAtXRNode.html">
+      GetDeviceAtXRNode
+     </a>
+    </td>
+    <td class="desc">
+     获取位于给定 XRNode 端点的输入设备。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices.GetDevices.html">
+      GetDevices
+     </a>
+    </td>
+    <td class="desc">
+     获取可供 XR 输入子系统使用的活动输入设备的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices.GetDevicesAtXRNode.html">
+      GetDevicesAtXRNode
+     </a>
+    </td>
+    <td class="desc">
+     获取在给定 XRNode 终端可供 XR 输入子系统使用的活动输入设备的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices.GetDevicesWithCharacteristics.html">
+      GetDevicesWithCharacteristics
+     </a>
+    </td>
+    <td class="desc">
+     获取与指定 InputDeviceCharacteristics 匹配的活动 XR 输入设备的列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices-deviceConfigChanged.html">
+      deviceConfigChanged
+     </a>
+    </td>
+    <td class="desc">
+     定义委托，用于在 InputDevice 的配置更改时注册事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices-deviceConnected.html">
+      deviceConnected
+     </a>
+    </td>
+    <td class="desc">
+     定义委托，用于在连接 InputDevice 时注册事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.InputDevices-deviceDisconnected.html">
+      deviceDisconnected
+     </a>
+    </td>
+    <td class="desc">
+     定义委托，用于在 InputDevice 断开连接时注册事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

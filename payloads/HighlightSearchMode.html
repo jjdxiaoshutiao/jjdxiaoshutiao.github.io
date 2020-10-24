@@ -1,0 +1,162 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HighlightSearchMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于指定如何查找要在编辑器中突出显示的给定元素。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   让我们考虑一些在 Transform 组件中突出显示 Scale 控件的各种方法。
+   <br/>
+   <br/>
+   使用
+   <a href="HighlightSearchMode.PrefixLabel.html">
+    HighlightSearchMode.PrefixLabel
+   </a>
+   模式，您可以将标签文本“Scale”指定为标识符，以突出显示整个 Scale 控件，并且包含标签和所有具有三个数字的字段。如果只要突出显示 Scale 控件的 X 组件，则无法使用此模式。由于 X 组件的标签文本只是“X”，因此如果您尝试使用此模式，就会获得 Position 空间的 X 组件。
+   <a href="HighlightSearchMode.PrefixLabel.html">
+    HighlightSearchMode.PrefixLabel
+   </a>
+   模式适合使用
+   <a href="EditorGUI.PrefixLabel.html">
+    EditorGUI.PrefixLabel
+   </a>
+   或
+   <a href="EditorGUI.HandlePrefixLabel.html">
+    EditorGUI.HandlePrefixLabel
+   </a>
+   的任何控件。
+   <br/>
+   <br/>
+   如果使用
+   <a href="HighlightSearchMode.Content.html">
+    HighlightSearchMode.Content
+   </a>
+   模式搜索文本“Scale”，则只突出显示标签本身。此模式可以突出显示对应于单个
+   <a href="GUIStyle.Draw.html">
+    GUIStyle.Draw
+   </a>
+   调用的内容，因此无法突出显示复合控件。这对于突出显示按钮非常有用。
+   <br/>
+   <br/>
+   <a href="HighlightSearchMode.Identifier.html">
+    HighlightSearchMode.Identifier
+   </a>
+   模式使用
+   <a href="Highlighter.HighlightIdentifier.html">
+    Highlighter.HighlightIdentifier
+   </a>
+   函数搜索显式标记为可突出显示的矩形。例如，对于使用
+   <a href="SerializedProperty.html">
+    SerializedProperty
+   </a>
+   系统的所有控件而言，可以通过将
+   <a href="SerializedProperty-propertyPath.html">
+    SerializedProperty.propertyPath
+   </a>
+   用作标识符完成此操作。这意味着，您可以通过使用此模式搜索“m_LocalScale.x”来突出显示 Scale 控件的 X 组件。
+   <br/>
+   <br/>
+   <a href="HighlightSearchMode.Auto.html">
+    HighlightSearchMode.Auto
+   </a>
+   模式使用上述所有模式进行搜索，而且适用于大多数情况。使用此模式搜索“Scale”将突出显示整个 Scale 控件，而不只是标签，这是因为先命中 PrefixLabel 处理，然后再调用标签的
+   <a href="GUIStyle.Draw.html">
+    GUIStyle.Draw
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Highlighter.html">
+    Highlighter
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="HighlightSearchMode.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不突出显示任何内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HighlightSearchMode.Auto.html">
+      Auto
+     </a>
+    </td>
+    <td class="desc">
+     突出显示使用上述任一搜索模式找到的第一个元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HighlightSearchMode.Identifier.html">
+      Identifier
+     </a>
+    </td>
+    <td class="desc">
+     突出显示具有给定标识符文本的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HighlightSearchMode.PrefixLabel.html">
+      PrefixLabel
+     </a>
+    </td>
+    <td class="desc">
+     突出显示将自身标签文本作为标识符的整个编辑器控件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="HighlightSearchMode.Content.html">
+      Content
+     </a>
+    </td>
+    <td class="desc">
+     突出显示包含文本且将文本用作标识符的元素。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

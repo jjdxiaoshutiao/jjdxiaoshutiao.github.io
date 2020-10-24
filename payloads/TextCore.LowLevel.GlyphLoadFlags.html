@@ -1,0 +1,142 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GlyphLoadFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从字体加载字形时由 FontEngine 使用的各种选项（标志）。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_DEFAULT.html">
+      LOAD_DEFAULT
+     </a>
+    </td>
+    <td class="desc">
+     加载当前字体大小的字形指标和位图表示（如果可用）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_SCALE.html">
+      LOAD_NO_SCALE
+     </a>
+    </td>
+    <td class="desc">
+     以默认字体单位加载字形而不缩放。此标志表示 LOAD_NO_HINTING 和 LOAD_NO_BITMAP 并取消设置 LOAD_RENDER。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_HINTING.html">
+      LOAD_NO_HINTING
+     </a>
+    </td>
+    <td class="desc">
+     加载字形而不提示 (hinting)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_RENDER.html">
+      LOAD_RENDER
+     </a>
+    </td>
+    <td class="desc">
+     加载字形指标并使用字形的 8 位或抗锯齿图像渲染轮廓。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_BITMAP.html">
+      LOAD_NO_BITMAP
+     </a>
+    </td>
+    <td class="desc">
+     加载字形并忽略嵌入式位图删除线 (strike)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_FORCE_AUTOHINT.html">
+      LOAD_FORCE_AUTOHINT
+     </a>
+    </td>
+    <td class="desc">
+     使用自动 hinter 而不是字体的原生 hinter 加载字形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_MONOCHROME.html">
+      LOAD_MONOCHROME
+     </a>
+    </td>
+    <td class="desc">
+     加载字形指标并使用 1 位单色渲染轮廓。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_NO_AUTOHINT.html">
+      LOAD_NO_AUTOHINT
+     </a>
+    </td>
+    <td class="desc">
+     使用字体的原生 hinter 加载字形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_COMPUTE_METRICS.html">
+      LOAD_COMPUTE_METRICS
+     </a>
+    </td>
+    <td class="desc">
+     加载字形指标而不使用“hdmx”表。此标志主要用于验证字体数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TextCore.LowLevel.GlyphLoadFlags.LOAD_BITMAP_METRICS_ONLY.html">
+      LOAD_BITMAP_METRICS_ONLY
+     </a>
+    </td>
+    <td class="desc">
+     加载字形指标而不分配和加载位图数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,282 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TextureSheetAnimationModule
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   粒子系统 TextureSheetAnimationModule 的脚本接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过此模块可以向粒子纹理添加动画。这通过创作翻页纹理来实现，这些纹理类似于下面这样：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/ParticleFlipbook.png"/>
+   <br/>
+   <br/>
+   每个编号区域都表示动画的一帧，必须在纹理中均匀分布。
+在下面选择变量可查看脚本示例。您可能要在粒子系统上将此纹理与每个示例一起使用，以查看该模块的工作方式。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="ParticleSystem.html">
+    ParticleSystem
+   </a>
+   、
+   <a href="ParticleSystem-textureSheetAnimation.html">
+    ParticleSystem.textureSheetAnimation
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-animation.html">
+      animation
+     </a>
+    </td>
+    <td class="desc">
+     指定动画类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-cycleCount.html">
+      cycleCount
+     </a>
+    </td>
+    <td class="desc">
+     指定动画在粒子生命周期内的循环次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     指定启用还是禁用 TextureSheetAnimationModule。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-fps.html">
+      fps
+     </a>
+    </td>
+    <td class="desc">
+     控制动画的播放速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-frameOverTime.html">
+      frameOverTime
+     </a>
+    </td>
+    <td class="desc">
+     曲线，用于控制要播放的纹理帧动画的帧。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-frameOverTimeMultiplier.html">
+      frameOverTimeMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     随时间变化的帧乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-mode.html">
+      mode
+     </a>
+    </td>
+    <td class="desc">
+     选择动画纹理信息是来自单个纹理上的帧网格，还是来自精灵对象的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-numTilesX.html">
+      numTilesX
+     </a>
+    </td>
+    <td class="desc">
+     定义纹理在 x 轴上的平铺。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-numTilesY.html">
+      numTilesY
+     </a>
+    </td>
+    <td class="desc">
+     定义纹理在 y 轴上的平铺。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-rowIndex.html">
+      rowIndex
+     </a>
+    </td>
+    <td class="desc">
+     显式选择要使用的纹理帧行。当 ParticleSystem.TextureSheetAnimationModule.rowMode 设置为 Custom 时，系统使用此属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-rowMode.html">
+      rowMode
+     </a>
+    </td>
+    <td class="desc">
+     选择粒子如何选择要使用的纹理帧动画行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-speedRange.html">
+      speedRange
+     </a>
+    </td>
+    <td class="desc">
+     指定粒子速度如何映射到动画帧。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-spriteCount.html">
+      spriteCount
+     </a>
+    </td>
+    <td class="desc">
+     精灵总数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-startFrame.html">
+      startFrame
+     </a>
+    </td>
+    <td class="desc">
+     为纹理帧动画定义随机初始帧。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-startFrameMultiplier.html">
+      startFrameMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     起始帧乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-timeMode.html">
+      timeMode
+     </a>
+    </td>
+    <td class="desc">
+     选择系统回放是基于将曲线映射到每个粒子的生命周期，通过使用粒子速度，还是回放仅使用恒定的每秒帧数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule-uvChannelMask.html">
+      uvChannelMask
+     </a>
+    </td>
+    <td class="desc">
+     选择将接收纹理动画的 UV 通道。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule.AddSprite.html">
+      AddSprite
+     </a>
+    </td>
+    <td class="desc">
+     添加新精灵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule.GetSprite.html">
+      GetSprite
+     </a>
+    </td>
+    <td class="desc">
+     获取指定索引处的精灵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule.RemoveSprite.html">
+      RemoveSprite
+     </a>
+    </td>
+    <td class="desc">
+     从数组给定索引处删除精灵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.TextureSheetAnimationModule.SetSprite.html">
+      SetSprite
+     </a>
+    </td>
+    <td class="desc">
+     设置给定索引处的精灵。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

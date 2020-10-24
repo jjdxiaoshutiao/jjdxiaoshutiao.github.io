@@ -1,0 +1,771 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WheelCollider
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Collider.html">
+    Collider
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一种用于车轮的特殊碰撞体。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   车轮碰撞体用于对车轮进行建模。它模拟弹簧和阻尼悬架设置，
+并使用基于滑动的轮胎摩擦模型计算车轮的接触力。
+   <br/>
+   <br/>
+   <a href="通过从-center向下穿过本地.html">
+    通过从.center向下穿过本地
+   </a>
+   Y 轴
+进行射线投射来执行车轮的碰撞检测。
+   <a href="车轮具有-radius.html">
+    车轮具有.radius
+   </a>
+   ，并且可向下延伸
+   <a href="WheelCollider-suspensionDistance.html">
+    suspensionDistance
+   </a>
+   的长度。
+   <br/>
+   <br/>
+   使用
+   <a href="WheelCollider-motorTorque.html">
+    motorTorque
+   </a>
+   、
+   <a href="WheelCollider-brakeTorque.html">
+    brakeTorque
+   </a>
+   和
+   <a href="WheelCollider-steerAngle.html">
+    steerAngle
+   </a>
+   属性对车轮进行控制。
+   <br/>
+   <br/>
+   车轮碰撞体使用基于滑动的摩擦模型计算摩擦力
+（独立于物理引擎的其余部分）。这样可以实现更逼真的行为，
+但会导致车轮碰撞体忽略标准
+   <a href="PhysicMaterial.html">
+    PhysicMaterial
+   </a>
+   设置。不同道路材质的模拟
+是通过更改
+   <a href="WheelCollider-forwardFriction.html">
+    forwardFriction
+   </a>
+   和
+   <a href="WheelCollider-sidewaysFriction.html">
+    sidewaysFriction
+   </a>
+   实现的，
+这些更改基于车轮所碰撞的材质。另请参阅：
+   <a href="WheelCollider.GetGroundHit.html">
+    GetGroundHit
+   </a>
+   和
+   <a href="WheelFrictionCurve.html">
+    WheelFrictionCurve
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-brakeTorque.html">
+      brakeTorque
+     </a>
+    </td>
+    <td class="desc">
+     制动扭矩以牛顿米表示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     在该对象本地空间中测量的车轮中心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-forceAppPointDistance.html">
+      forceAppPointDistance
+     </a>
+    </td>
+    <td class="desc">
+     从静止车轮的底部测量的悬架和轮胎力的作用点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-forwardFriction.html">
+      forwardFriction
+     </a>
+    </td>
+    <td class="desc">
+     车轮前进方向上的轮胎摩擦属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-isGrounded.html">
+      isGrounded
+     </a>
+    </td>
+    <td class="desc">
+     指示车轮当前是否与某物发生碰撞。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-mass.html">
+      mass
+     </a>
+    </td>
+    <td class="desc">
+     车轮的质量（以千克为单位）。必须大于零。典型值的取值范围为 (20,80)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-motorTorque.html">
+      motorTorque
+     </a>
+    </td>
+    <td class="desc">
+     轮轴上的电机扭矩（以牛顿米表示）。根据方向，可以为正值或负值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-radius.html">
+      radius
+     </a>
+    </td>
+    <td class="desc">
+     车轮的半径（在本地空间测量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-rpm.html">
+      rpm
+     </a>
+    </td>
+    <td class="desc">
+     当前轮轴转速（以每分钟转数为单位）。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-sidewaysFriction.html">
+      sidewaysFriction
+     </a>
+    </td>
+    <td class="desc">
+     车轮侧向的轮胎摩擦属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-sprungMass.html">
+      sprungMass
+     </a>
+    </td>
+    <td class="desc">
+     该 WheelCollider 支撑的质量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-steerAngle.html">
+      steerAngle
+     </a>
+    </td>
+    <td class="desc">
+     转向角度（以度为单位），始终围绕本地 Y 轴。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-suspensionDistance.html">
+      suspensionDistance
+     </a>
+    </td>
+    <td class="desc">
+     车轮悬架的最大延伸距离（在本地空间中测量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-suspensionSpring.html">
+      suspensionSpring
+     </a>
+    </td>
+    <td class="desc">
+     车轮悬架的参数。悬架尝试通过施加线性力和阻尼力来到达目标位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider-wheelDampingRate.html">
+      wheelDampingRate
+     </a>
+    </td>
+    <td class="desc">
+     车轮的阻尼率。必须大于零。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider.ConfigureVehicleSubsteps.html">
+      ConfigureVehicleSubsteps
+     </a>
+    </td>
+    <td class="desc">
+     配置车辆子步进参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider.GetGroundHit.html">
+      GetGroundHit
+     </a>
+    </td>
+    <td class="desc">
+     获取车轮的地面碰撞数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelCollider.GetWorldPose.html">
+      GetWorldPose
+     </a>
+    </td>
+    <td class="desc">
+     获取车轮的世界空间姿态 - 考虑地面接触、悬架限制、转向角度和旋转角度（以度为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Collider-attachedRigidbody.html">
+       attachedRigidbody
+      </a>
+     </td>
+     <td class="desc">
+      碰撞体附加到的刚体。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-bounds.html">
+       bounds
+      </a>
+     </td>
+     <td class="desc">
+      碰撞体的世界空间包围体积（只读）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-contactOffset.html">
+       contactOffset
+      </a>
+     </td>
+     <td class="desc">
+      该碰撞体的接触偏移值。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-enabled.html">
+       enabled
+      </a>
+     </td>
+     <td class="desc">
+      启用的 Collider 将与其他 Collider 碰撞，禁用的 Collider 不会这样。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-isTrigger.html">
+       isTrigger
+      </a>
+     </td>
+     <td class="desc">
+      碰撞体是不是触发器？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-material.html">
+       material
+      </a>
+     </td>
+     <td class="desc">
+      碰撞体使用的材质。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider-sharedMaterial.html">
+       sharedMaterial
+      </a>
+     </td>
+     <td class="desc">
+      该碰撞体的共享物理材质。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Collider.ClosestPoint.html">
+       ClosestPoint
+      </a>
+     </td>
+     <td class="desc">
+      返回碰撞体上最接近给定位置的一个点。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.ClosestPointOnBounds.html">
+       ClosestPointOnBounds
+      </a>
+     </td>
+     <td class="desc">
+      与附加碰撞体的包围盒最接近的点。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.Raycast.html">
+       Raycast
+      </a>
+     </td>
+     <td class="desc">
+      投射除这一个外忽略其他所有 Colliders 的 Ray。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnCollisionEnter.html">
+       OnCollisionEnter
+      </a>
+     </td>
+     <td class="desc">
+      当该碰撞体/刚体已开始接触另一个刚体/碰撞体时，调用 OnCollisionEnter。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnCollisionExit.html">
+       OnCollisionExit
+      </a>
+     </td>
+     <td class="desc">
+      当该碰撞体/刚体已停止接触另一个刚体/碰撞体时，调用 OnCollisionExit。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnCollisionStay.html">
+       OnCollisionStay
+      </a>
+     </td>
+     <td class="desc">
+      对应正在接触刚体/碰撞体的每一个碰撞体/刚体，每帧调用一次 OnCollisionStay。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnTriggerEnter.html">
+       OnTriggerEnter
+      </a>
+     </td>
+     <td class="desc">
+      GameObject 与另一个 GameObject 碰撞时，Unity 会调用 OnTriggerEnter。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnTriggerExit.html">
+       OnTriggerExit
+      </a>
+     </td>
+     <td class="desc">
+      当 Collider other 已停止接触该触发器时调用 OnTriggerExit。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Collider.OnTriggerStay.html">
+       OnTriggerStay
+      </a>
+     </td>
+     <td class="desc">
+      对于正在接触该触发器的每个其他 Collider，“几乎”所有帧都调用 OnTriggerStay。此函数位于物理计时器上，因此它不必运行每个帧。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

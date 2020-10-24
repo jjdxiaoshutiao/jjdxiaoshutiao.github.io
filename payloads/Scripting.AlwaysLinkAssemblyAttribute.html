@@ -1,0 +1,76 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AlwaysLinkAssemblyAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Scripting
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   确保在托管代码剥离期间始终处理程序集。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用 [程序集：UnityEngine.Scripting.AlwaysLinkAssembly] 属性可强制 UnityLinker 处理程序集（无论程序集是否被构建中包含的另一个程序集引用）。
+   <br/>
+   <br/>
+   在包含一个或多个方法的包或预编译程序集上将此属性与
+   <code class="mono">
+    [RuntimeInitializeOnLoadMethod]
+   </code>
+   属性结合使用，但后者可能不包含在为项目构建的任何场景中直接或间接使用的类型。
+   <br/>
+   <br/>
+   请注意，此属性仅指示 UnityLinker 处理程序集。如果没有代码元素与程序集的根标记规则匹配，UnityLinker 仍会从构建中删除程序集。
+   <br/>
+   <br/>
+   只能在程序集上定义
+   <code class="mono">
+    [AlwaysLinkAssembly]
+   </code>
+   属性。在任何编译到程序集的 C# 文件中声明该属性，在命名空间声明之外进行。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/ManagedCodeStripping.html">
+    Managed Code Stripping
+   </a>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Scripting;<br/><br/>[assembly: AlwaysLinkAssembly]<br/><br/>namespace Example
+{
+    public class Foo
+    {
+        [RuntimeInitializeOnLoadMethod]
+        public void Initialize() {}
+    }
+}
+</pre>
+ </div>
+</div>

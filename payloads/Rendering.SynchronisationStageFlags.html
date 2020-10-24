@@ -1,0 +1,87 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SynchronisationStageFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述可以设置和等待 GraphicsFence 的 GPU 处理的各个阶段。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可以组合枚举值；例如，使用 SynchronisationStageFlags.VertexProcessing | SynchronisationStageFlags.ComputeProcessing 标志创建的 GraphicsFence 将在所有之前的绘制调用完成顶点着色器且所有之前的计算着色器调度完成后完成。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SynchronisationStageFlags.VertexProcessing.html">
+      VertexProcessing
+     </a>
+    </td>
+    <td class="desc">
+     GPU 中顶点处理的所有方面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SynchronisationStageFlags.PixelProcessing.html">
+      PixelProcessing
+     </a>
+    </td>
+    <td class="desc">
+     GPU 中像素处理的所有方面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SynchronisationStageFlags.ComputeProcessing.html">
+      ComputeProcessing
+     </a>
+    </td>
+    <td class="desc">
+     所有计算着色器调度操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SynchronisationStageFlags.AllGPUOperations.html">
+      AllGPUOperations
+     </a>
+    </td>
+    <td class="desc">
+     所有之前的 GPU 操作（顶点、像素和计算）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

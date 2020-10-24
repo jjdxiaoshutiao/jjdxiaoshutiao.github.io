@@ -1,0 +1,221 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   Dragger
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.GraphView
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="UIElements.MouseManipulator.html">
+    UIElements.MouseManipulator
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于使用鼠标拖动元素的基本操控器。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger-clampToParentEdges.html">
+      clampToParentEdges
+     </a>
+    </td>
+    <td class="desc">
+     如果为 true，它将不允许拖动的元素退出父元素的边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger-panSpeed.html">
+      panSpeed
+     </a>
+    </td>
+    <td class="desc">
+     当元素被拖动到图的边缘附近时，会发生平移。这可以控制平移速度。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger-ctor.html">
+      Dragger
+     </a>
+    </td>
+    <td class="desc">
+     Dragger 构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.CalculatePosition.html">
+      CalculatePosition
+     </a>
+    </td>
+    <td class="desc">
+     计算拖动的元素的新位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.OnMouseDown.html">
+      OnMouseDown
+     </a>
+    </td>
+    <td class="desc">
+     在发生鼠标按下事件时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.OnMouseMove.html">
+      OnMouseMove
+     </a>
+    </td>
+    <td class="desc">
+     发生鼠标移动事件时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.OnMouseUp.html">
+      OnMouseUp
+     </a>
+    </td>
+    <td class="desc">
+     发生鼠标松开事件时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.RegisterCallbacksOnTarget.html">
+      RegisterCallbacksOnTarget
+     </a>
+    </td>
+    <td class="desc">
+     调用以在目标元素上注册单击事件回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.GraphView.Dragger.UnregisterCallbacksFromTarget.html">
+      UnregisterCallbacksFromTarget
+     </a>
+    </td>
+    <td class="desc">
+     调用以从目标元素取消注册单击事件回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.Manipulator-target.html">
+       target
+      </a>
+     </td>
+     <td class="desc">
+      被操作的 VisualElement。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.MouseManipulator-activators.html">
+       activators
+      </a>
+     </td>
+     <td class="desc">
+      Activationfilters 列表。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    受保护的函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.MouseManipulator.CanStartManipulation.html">
+       CanStartManipulation
+      </a>
+     </td>
+     <td class="desc">
+      检查 MouseEvent 是否匹配所有 MouseActivationFilters 要求。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="UIElements.MouseManipulator.CanStopManipulation.html">
+       CanStopManipulation
+      </a>
+     </td>
+     <td class="desc">
+      检查 MouseEvent 是否与该 Manipulator 有关。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

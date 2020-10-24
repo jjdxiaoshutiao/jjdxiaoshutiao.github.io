@@ -1,0 +1,79 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IPackerPolicy
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEditor.Sprites
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于打包 policy 接口的精灵。提供自定义实现，用于控制哪些精灵应进入哪些图集。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Sprites.IPackerPolicy.AllowSequentialPacking.html">
+      AllowSequentialPacking
+     </a>
+    </td>
+    <td class="desc">
+     指定是否启用图集标签的按顺序处理。如果启用，则逐个处理精灵打包标签，以减少内存使用量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Sprites.IPackerPolicy.GetVersion.html">
+      GetVersion
+     </a>
+    </td>
+    <td class="desc">
+     返回 policy 的版本。Sprite Packer 需要知道图集分组逻辑是否已变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprites.IPackerPolicy.OnGroupAtlases.html">
+      OnGroupAtlases
+     </a>
+    </td>
+    <td class="desc">
+     在此处实现自定义图集分组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

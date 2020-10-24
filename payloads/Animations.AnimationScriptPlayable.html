@@ -1,0 +1,149 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationScriptPlayable
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Animations
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   ,
+   <a class="cl" href="Playables.IPlayable.html">
+    IPlayable
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一个可以运行自定义多线程动画作业的
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此可播放项 (Playable) 允许创建一个自定义 C# 作业，该作业将在
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   中的动画处理通道中提供对
+   <a href="Animations.AnimationStream.html">
+    AnimationStream
+   </a>
+   的读写访问权限。该 C# 作业必须实现
+   <a href="Animations.IAnimationJob.html">
+    IAnimationJob
+   </a>
+   接口。
+   <br/>
+   <br/>
+   注意：您可以将
+   <a href="Playables.PlayableExtensions.html">
+    PlayableExtensions
+   </a>
+   方法与 AnimationScriptPlayable 对象结合使用。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Animations.IAnimationJob.html">
+    IAnimationJob
+   </a>
+   和
+   <a href="Animations.AnimationScriptPlayable.Create.html">
+    AnimationScriptPlayable.Create
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationScriptPlayable.GetJobData.html">
+      GetJobData
+     </a>
+    </td>
+    <td class="desc">
+     获取可播放项中包含的作业数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationScriptPlayable.GetProcessInputs.html">
+      GetProcessInputs
+     </a>
+    </td>
+    <td class="desc">
+     返回有关是否处理可播放项输入的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationScriptPlayable.SetJobData.html">
+      SetJobData
+     </a>
+    </td>
+    <td class="desc">
+     在可播放项中设置新的作业数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationScriptPlayable.SetProcessInputs.html">
+      SetProcessInputs
+     </a>
+    </td>
+    <td class="desc">
+     设置是否处理输入的新值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationScriptPlayable.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     在 PlayableGraph 中创建 AnimationScriptPlayable。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

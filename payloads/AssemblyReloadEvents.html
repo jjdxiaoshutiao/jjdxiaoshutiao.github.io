@@ -1,0 +1,106 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AssemblyReloadEvents
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此类含有适用于程序集重载事件的事件分发程序。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;<br/><br/>public class MyWindow : <a href="EditorWindow.html">EditorWindow</a>
+{
+    [<a href="MenuItem.html">MenuItem</a>("Test/Show My Window")]
+    static void Init()
+    {
+        GetWindow&lt;MyWindow&gt;();
+    }<br/><br/>    void OnEnable()
+    {
+        <a href="AssemblyReloadEvents-beforeAssemblyReload.html">AssemblyReloadEvents.beforeAssemblyReload</a> += OnBeforeAssemblyReload;
+        <a href="AssemblyReloadEvents-afterAssemblyReload.html">AssemblyReloadEvents.afterAssemblyReload</a> += OnAfterAssemblyReload;
+    }<br/><br/>    void OnDisable()
+    {
+        <a href="AssemblyReloadEvents-beforeAssemblyReload.html">AssemblyReloadEvents.beforeAssemblyReload</a> -= OnBeforeAssemblyReload;
+        <a href="AssemblyReloadEvents-afterAssemblyReload.html">AssemblyReloadEvents.afterAssemblyReload</a> -= OnAfterAssemblyReload;
+    }<br/><br/>    public void OnBeforeAssemblyReload()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Before <a href="Compilation.Assembly.html">Assembly</a> Reload");
+    }<br/><br/>    public void OnAfterAssemblyReload()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("After <a href="Compilation.Assembly.html">Assembly</a> Reload");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssemblyReloadEvents-afterAssemblyReload.html">
+      afterAssemblyReload
+     </a>
+    </td>
+    <td class="desc">
+     Unity 重新加载所有程序集后，会分发该事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AssemblyReloadEvents-beforeAssemblyReload.html">
+      beforeAssemblyReload
+     </a>
+    </td>
+    <td class="desc">
+     Unity 重新加载所有程序集之前，会分发该事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AssemblyReloadEvents.AssemblyReloadCallback.html">
+      AssemblyReloadCallback
+     </a>
+    </td>
+    <td class="desc">
+     用于程序集重载事件的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

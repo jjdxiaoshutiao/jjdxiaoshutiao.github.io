@@ -1,0 +1,197 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   BrushTransform
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.TerrainAPI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示画笔 UV 空间与目标 XY 空间（通常这是地形本地对象空间）之间的线性 2D 变换。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   BrushTransform 表示具有缩放、旋转和倾斜的矩形画笔。
+假设画笔位于画笔 UV 空间的 [0,1] 范围内。
+   <br/>
+   <br/>
+   变换及其逆向形式表示如下：\
+   <code class="mono">
+    xy = u * BrushTransform.brushU + v * BrushTransform.brushV + BrushTransform.brushOrigin
+   </code>
+   \
+   <code class="mono">
+    uv = x * BrushTransform.targetX + y * BrushTransform.targetY + BrushTransform.targetOrigin
+   </code>
+   \
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-brushOrigin.html">
+      brushOrigin
+     </a>
+    </td>
+    <td class="desc">
+     （只读）XY 空间中的画笔 UV 原点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-brushU.html">
+      brushU
+     </a>
+    </td>
+    <td class="desc">
+     （只读）XY 空间中的画笔 U 矢量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-brushV.html">
+      brushV
+     </a>
+    </td>
+    <td class="desc">
+     （只读）XY 空间中的画笔 V 矢量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-targetOrigin.html">
+      targetOrigin
+     </a>
+    </td>
+    <td class="desc">
+     （只读）画笔 UV 空间中的目标 XY 原点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-targetX.html">
+      targetX
+     </a>
+    </td>
+    <td class="desc">
+     （只读）画笔 UV 空间中的目标 X 矢量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-targetY.html">
+      targetY
+     </a>
+    </td>
+    <td class="desc">
+     （只读）画笔 UV 空间中的目标 Y 矢量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform-ctor.html">
+      BrushTransform
+     </a>
+    </td>
+    <td class="desc">
+     创建 BrushTransform。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform.FromBrushUV.html">
+      FromBrushUV
+     </a>
+    </td>
+    <td class="desc">
+     应用变换以将画笔 UV 坐标转换为目标 XY 空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform.GetBrushXYBounds.html">
+      GetBrushXYBounds
+     </a>
+    </td>
+    <td class="desc">
+     获取目标 XY 空间中的画笔轴对齐包围矩形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform.ToBrushUV.html">
+      ToBrushUV
+     </a>
+    </td>
+    <td class="desc">
+     应用变换以将目标 XY 坐标转换为画笔 UV 空间。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.BrushTransform.FromRect.html">
+      FromRect
+     </a>
+    </td>
+    <td class="desc">
+     从矩形创建轴对齐的 BrushTransform。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

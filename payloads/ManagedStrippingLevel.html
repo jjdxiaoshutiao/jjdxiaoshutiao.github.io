@@ -1,0 +1,97 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ManagedStrippingLevel
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   定义 Unity 剥离未使用的托管 (C#) 代码时的激进程度。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当 Unity 构建游戏或应用程序时，它可以从项目中使用的托管动态链接库中剥离未使用的代码。剥离代码可以使生成的可执行文件显著减小，但有时可能会错误地删除实际在使用的代码。ManagedStrippingLevel 枚举定义了一些选项，因此可以指定 Unity 删除未使用的代码时应采取的激进程度。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="PlayerSettings.GetManagedStrippingLevel.html">
+    PlayerSettings.GetManagedStrippingLevel
+   </a>
+   、
+   <a href="PlayerSettings.SetManagedStrippingLevel.html">
+    PlayerSettings.SetManagedStrippingLevel
+   </a>
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ManagedStrippingLevel.Disabled.html">
+      Disabled
+     </a>
+    </td>
+    <td class="desc">
+     不要剥离任何代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ManagedStrippingLevel.Low.html">
+      Low
+     </a>
+    </td>
+    <td class="desc">
+     删除无法访问的托管代码以减少构建大小和 Mono/IL2CPP 构建时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ManagedStrippingLevel.Medium.html">
+      Medium
+     </a>
+    </td>
+    <td class="desc">
+     使用比 Low 更大胆的模式运行 UnityLinker。这将在 Low 可实现的范围的基础上进一步减小代码大小。然而，这种进一步的缩减可能伴随着取舍。可能的副作用包括需要维护一个自定义的 link.xml 文件，并且某些反射代码路径的行为可能会不同。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ManagedStrippingLevel.High.html">
+      High
+     </a>
+    </td>
+    <td class="desc">
+     UnityLinker 将尽可能进行剥离。这将在 Medium 可实现的范围的基础上进一步减小代码大小。然而，这种进一步的缩减可能伴随着取舍。可能的副作用可能包括某些方法的托管代码调试可能不再有效。可能需要维护一个自定义的 link.xml 文件，以及某些反射代码路径的行为可能会不同。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

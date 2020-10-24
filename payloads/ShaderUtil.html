@@ -1,0 +1,409 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderUtil
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   可帮助从编辑器与着色器配合使用的 Utility 函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil-allowAsyncCompilation.html">
+      allowAsyncCompilation
+     </a>
+    </td>
+    <td class="desc">
+     为 true 时，允许在当前调用站点中使用异步着色器编译。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil-anythingCompiling.html">
+      anythingCompiling
+     </a>
+    </td>
+    <td class="desc">
+     为 true 时，编译器在查询时异步编译一些着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil-hardwareSupportsRectRenderTexture.html">
+      hardwareSupportsRectRenderTexture
+     </a>
+    </td>
+    <td class="desc">
+     当前硬件是否支持渲染纹理。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.ClearCachedData.html">
+      ClearCachedData
+     </a>
+    </td>
+    <td class="desc">
+     清除为给定着色器生成的所有内部缓存数据（如错误和编译信息）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.ClearShaderMessages.html">
+      ClearShaderMessages
+     </a>
+    </td>
+    <td class="desc">
+     清除给定着色器的编译时间消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.CompilePass.html">
+      CompilePass
+     </a>
+    </td>
+    <td class="desc">
+     请求编辑器编译给定材质的特定通道所需的着色器变体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetAllShaderInfo.html">
+      GetAllShaderInfo
+     </a>
+    </td>
+    <td class="desc">
+     返回所有可用着色器的 ShaderInfo 数组，包括内置着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetCallableShaderCount.html">
+      GetCallableShaderCount
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中定义的可调用着色器数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetCallableShaderName.html">
+      GetCallableShaderName
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中用户定义的可调用着色器的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetCallableShaderParamSize.html">
+      GetCallableShaderParamSize
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中用户定义的可调用着色器的参数大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetComputeShaderMessageCount.html">
+      GetComputeShaderMessageCount
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 着色器编译器为给定 ComputeShader 生成的错误和警告数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetComputeShaderMessages.html">
+      GetComputeShaderMessages
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 着色器编译器为给定 ComputeShader 生成的每个错误和警告。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetMissShaderCount.html">
+      GetMissShaderCount
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中定义的未命中着色器数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetMissShaderName.html">
+      GetMissShaderName
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中用户定义的未命中着色器的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetMissShaderRayPayloadSize.html">
+      GetMissShaderRayPayloadSize
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中用户定义的未命中着色器的光线有效负载大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetPropertyCount.html">
+      GetPropertyCount
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器中的属性数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetPropertyDescription.html">
+      GetPropertyDescription
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器的 propertyIdx 索引处的着色器属性的描述。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetPropertyName.html">
+      GetPropertyName
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器的 propertyIdx 索引处的着色器属性的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetPropertyType.html">
+      GetPropertyType
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器的 propertyIdx 索引处的着色器属性的 ShaderProperyType。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetRangeLimits.html">
+      GetRangeLimits
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器的 propertyIdx 索引处的范围属性的限制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetRayGenerationShaderCount.html">
+      GetRayGenerationShaderCount
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中定义的光线生成着色器数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetRayGenerationShaderName.html">
+      GetRayGenerationShaderName
+     </a>
+    </td>
+    <td class="desc">
+     返回给定 RayTracingShader 中用户定义的光线生成着色器的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetRayTracingShaderMessageCount.html">
+      GetRayTracingShaderMessageCount
+     </a>
+    </td>
+    <td class="desc">
+     返回着色器编译器为给定 RayTracingShader 生成的错误和警告数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetRayTracingShaderMessages.html">
+      GetRayTracingShaderMessages
+     </a>
+    </td>
+    <td class="desc">
+     返回着色器编译器为给定 RayTracingShader 生成的每个错误和警告。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetShaderData.html">
+      GetShaderData
+     </a>
+    </td>
+    <td class="desc">
+     获取特定着色器的着色器数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetShaderMessageCount.html">
+      GetShaderMessageCount
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 着色器编译器为给定 Shader 生成的错误和警告数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetShaderMessages.html">
+      GetShaderMessages
+     </a>
+    </td>
+    <td class="desc">
+     返回 Unity 着色器编译器为给定 Shader 生成的每个错误和警告。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.GetTexDim.html">
+      GetTexDim
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器属性的纹理尺寸。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.IsPassCompiled.html">
+      IsPassCompiled
+     </a>
+    </td>
+    <td class="desc">
+     检查材质中给定通道的着色器变体是否已编译。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.IsShaderPropertyHidden.html">
+      IsShaderPropertyHidden
+     </a>
+    </td>
+    <td class="desc">
+     着色器的 propertyIdx 索引处的着色器属性是否隐藏？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.IsShaderPropertyNonModifiableTexureProperty.html">
+      IsShaderPropertyNonModifiableTexureProperty
+     </a>
+    </td>
+    <td class="desc">
+     着色器的 propertyIdx 索引处的着色器属性是否为 NonModifiableTextureProperty？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.RegisterShader.html">
+      RegisterShader
+     </a>
+    </td>
+    <td class="desc">
+     注册用户创建的着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.RestoreAsyncCompilation.html">
+      RestoreAsyncCompilation
+     </a>
+    </td>
+    <td class="desc">
+     在此 CommandBuffer 范围中恢复以前的着色器编译模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.SetAsyncCompilation.html">
+      SetAsyncCompilation
+     </a>
+    </td>
+    <td class="desc">
+     在 CommandBuffer 中添加着色器编译模式命令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.ShaderHasError.html">
+      ShaderHasError
+     </a>
+    </td>
+    <td class="desc">
+     如果给定 Shader 生成任何错误，则返回 true。忽略警告。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShaderUtil.UpdateShaderAsset.html">
+      UpdateShaderAsset
+     </a>
+    </td>
+    <td class="desc">
+     将指定着色器中的现有源代码替换为提供的字符串中的源代码。该重写提供一个布尔值，指定是否应重新编译着色器。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

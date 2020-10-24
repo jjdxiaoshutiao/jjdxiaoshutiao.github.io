@@ -1,0 +1,533 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioReverbFilter
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Behaviour.html">
+    Behaviour
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Audio Reverb Filter 将获取音频剪辑并对其进行失真处理以创建自定义的混响效果。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="../Manual/class-AudioReverbFilter.html">
+    Audio Reverb Filter
+   </a>
+   信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-decayHFRatio.html">
+      decayHFRatio
+     </a>
+    </td>
+    <td class="desc">
+     衰减高频比率：高频到低频衰减时间比率。范围从 0.1 到 2.0。默认值为 0.5。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-decayTime.html">
+      decayTime
+     </a>
+    </td>
+    <td class="desc">
+     低频下的混响衰减时间，以秒为单位。范围从 0.1 到 20.0。默认值为 1.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-density.html">
+      density
+     </a>
+    </td>
+    <td class="desc">
+     混响密度（模态密度），以百分比为单位。范围从 0.0 到 100.0。默认值为 100.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-diffusion.html">
+      diffusion
+     </a>
+    </td>
+    <td class="desc">
+     混响扩散（回声密度），以百分比为单位。范围从 0.0 到 100.0。默认值为 100.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-dryLevel.html">
+      dryLevel
+     </a>
+    </td>
+    <td class="desc">
+     输出中的干信号的混合等级，以 mB 为单位。范围从 -10000.0 到 0.0。默认值为 0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-hfReference.html">
+      hfReference
+     </a>
+    </td>
+    <td class="desc">
+     参考高频，以 Hz 为单位。范围从 1000.0 到 20000.0。默认值为 5000.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-lfReference.html">
+      lfReference
+     </a>
+    </td>
+    <td class="desc">
+     参考低频，以 Hz 为单位。范围从 20.0 到 1000.0。默认值为 250.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-reflectionsDelay.html">
+      reflectionsDelay
+     </a>
+    </td>
+    <td class="desc">
+     相对于房间效果的晚期混响等级，以 mB 为单位。范围从 -10000.0 到 2000.0。默认值为 0.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-reflectionsLevel.html">
+      reflectionsLevel
+     </a>
+    </td>
+    <td class="desc">
+     相对于房间效果的早期反射等级，以 mB 为单位。范围从 -10000.0 到 1000.0。默认值为 -10000.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-reverbDelay.html">
+      reverbDelay
+     </a>
+    </td>
+    <td class="desc">
+     相对于第一次反射的晚期混响延时时间，以秒为单位。范围从 0.0 到 0.1。默认值为 0.04。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-reverbLevel.html">
+      reverbLevel
+     </a>
+    </td>
+    <td class="desc">
+     相对于房间效果的晚期混响等级，以 mB 为单位。范围从 -10000.0 到 2000.0。默认值为 0.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-reverbPreset.html">
+      reverbPreset
+     </a>
+    </td>
+    <td class="desc">
+     设置/获取混响预设属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-room.html">
+      room
+     </a>
+    </td>
+    <td class="desc">
+     低频下的房间效果等级，以 mB 为单位。范围从 -10000.0 到 0.0。默认值为 0.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-roomHF.html">
+      roomHF
+     </a>
+    </td>
+    <td class="desc">
+     房间效果高频等级混响低频等级，以 mB 为单位。范围从 -10000.0 到 0.0。默认值为 0.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioReverbFilter-roomLF.html">
+      roomLF
+     </a>
+    </td>
+    <td class="desc">
+     房间效果低频等级，以 mB 为单位。范围从 -10000.0 到 0.0。默认值为 0.0。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-enabled.html">
+       enabled
+      </a>
+     </td>
+     <td class="desc">
+      启用的 Behaviour 可更新，禁用的 Behaviour 不可更新。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Behaviour-isActiveAndEnabled.html">
+       isActiveAndEnabled
+      </a>
+     </td>
+     <td class="desc">
+      是否已激活并启用 Behaviour？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-gameObject.html">
+       gameObject
+      </a>
+     </td>
+     <td class="desc">
+      此组件附加到的游戏对象。始终将组件附加到游戏对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-tag.html">
+       tag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象的标签。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component-transform.html">
+       transform
+      </a>
+     </td>
+     <td class="desc">
+      附加到此 GameObject 的 Transform。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Component.BroadcastMessage.html">
+       BroadcastMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.CompareTag.html">
+       CompareTag
+      </a>
+     </td>
+     <td class="desc">
+      此游戏对象是否使用 tag 进行了标记？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponent.html">
+       GetComponent
+      </a>
+     </td>
+     <td class="desc">
+      如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInChildren.html">
+       GetComponentInChildren
+      </a>
+     </td>
+     <td class="desc">
+      使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentInParent.html">
+       GetComponentInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponents.html">
+       GetComponents
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInChildren.html">
+       GetComponentsInChildren
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何子项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.GetComponentsInParent.html">
+       GetComponentsInParent
+      </a>
+     </td>
+     <td class="desc">
+      返回 GameObject 或其任何父项中类型为 type 的所有组件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessage.html">
+       SendMessage
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.SendMessageUpwards.html">
+       SendMessageUpwards
+      </a>
+     </td>
+     <td class="desc">
+      调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Component.TryGetComponent.html">
+       TryGetComponent
+      </a>
+     </td>
+     <td class="desc">
+      获取指定类型的组件（如果存在）。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

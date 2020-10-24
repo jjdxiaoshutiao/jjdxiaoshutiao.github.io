@@ -1,0 +1,414 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Quaternion
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   四元数用于表示旋转。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   它们结构紧凑，不受万向锁影响，可以轻松插值。
+Unity 内部使用四元数来表示所有旋转。
+   <br/>
+   <br/>
+   它们基于复数，不容易理解。
+您几乎不会有机会访问或修改单个四元数分量（x、y、z、w）；
+大多数情况下，您只需要获取现有旋转（例如，来自
+   <a href="Transform.html">
+    Transform
+   </a>
+   ），然后使用它们构造新的旋转
+（例如，在两个旋转之间平滑插值）。
+您绝大多数时间使用的四元数函数为：
+   <a href="Quaternion.LookRotation.html">
+    Quaternion.LookRotation
+   </a>
+   、
+   <a href="Quaternion.Angle.html">
+    Quaternion.Angle
+   </a>
+   、
+   <a href="Quaternion.Euler.html">
+    Quaternion.Euler
+   </a>
+   、
+   <a href="Quaternion.Slerp.html">
+    Quaternion.Slerp
+   </a>
+   、
+   <a href="Quaternion.FromToRotation.html">
+    Quaternion.FromToRotation
+   </a>
+   和
+   <a href="Quaternion-identity.html">
+    Quaternion.identity
+   </a>
+   。（其他函数仅用于一些十分奇特的用例。）
+   <br/>
+   <br/>
+   您可以使用 Quaternion.operator * 对旋转进行旋转，或对向量进行旋转。
+   <br/>
+   <br/>
+   注意，Unity 使用的是标准化的四元数。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-identity.html">
+      identity
+     </a>
+    </td>
+    <td class="desc">
+     单位旋转（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-eulerAngles.html">
+      eulerAngles
+     </a>
+    </td>
+    <td class="desc">
+     返回或设置旋转的欧拉角表示。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-normalized.html">
+      normalized
+     </a>
+    </td>
+    <td class="desc">
+     返回该四元数，并且量值为 1（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Index_operator.html">
+      this[int]
+     </a>
+    </td>
+    <td class="desc">
+     分别使用 [0]、[1]、[2]、[3] 访问 x、y、z、w 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-w.html">
+      w
+     </a>
+    </td>
+    <td class="desc">
+     四元数的 w 分量。请勿直接修改四元数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-x.html">
+      x
+     </a>
+    </td>
+    <td class="desc">
+     四元数的 X 分量。除非您十分了解四元数，否则不要直接进行此种修改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-y.html">
+      y
+     </a>
+    </td>
+    <td class="desc">
+     四元数的 Y 分量。除非您十分了解四元数，否则不要直接进行此种修改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-z.html">
+      z
+     </a>
+    </td>
+    <td class="desc">
+     四元数的 Z 分量。除非您十分了解四元数，否则不要直接进行此种修改。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-ctor.html">
+      Quaternion
+     </a>
+    </td>
+    <td class="desc">
+     使用给定的 x、y、z、w 分量构造新的四元数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Set.html">
+      Set
+     </a>
+    </td>
+    <td class="desc">
+     设置现有四元数的 x、y、z 和 w 分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.SetFromToRotation.html">
+      SetFromToRotation
+     </a>
+    </td>
+    <td class="desc">
+     创建一个从 fromDirection 旋转到 toDirection 的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.SetLookRotation.html">
+      SetLookRotation
+     </a>
+    </td>
+    <td class="desc">
+     使用指定的 forward 和 upwards 方向创建旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.ToAngleAxis.html">
+      ToAngleAxis
+     </a>
+    </td>
+    <td class="desc">
+     将旋转转换为“角-轴”表示形式（角度以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     返回该四元数的整齐格式化的字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Angle.html">
+      Angle
+     </a>
+    </td>
+    <td class="desc">
+     返回两个旋转 a 和 b 之间的角度（以度为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.AngleAxis.html">
+      AngleAxis
+     </a>
+    </td>
+    <td class="desc">
+     创建一个围绕 axis 旋转 angle 度的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Dot.html">
+      Dot
+     </a>
+    </td>
+    <td class="desc">
+     两个旋转之间的点积。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Euler.html">
+      Euler
+     </a>
+    </td>
+    <td class="desc">
+     返回一个旋转，它围绕 z 轴旋转 z 度、围绕 x 轴旋转 x 度、围绕 y 轴旋转 y 度（按该顺序应用）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.FromToRotation.html">
+      FromToRotation
+     </a>
+    </td>
+    <td class="desc">
+     创建一个从 fromDirection 旋转到 toDirection 的旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Inverse.html">
+      Inverse
+     </a>
+    </td>
+    <td class="desc">
+     返回 rotation 的反转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Lerp.html">
+      Lerp
+     </a>
+    </td>
+    <td class="desc">
+     在 a 和 b 之间插入 t，然后对结果进行标准化处理。参数 t 被限制在 [0, 1] 范围内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.LerpUnclamped.html">
+      LerpUnclamped
+     </a>
+    </td>
+    <td class="desc">
+     在 a 和 b 之间插入 t，然后对结果进行标准化处理。参数 t 不受限制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.LookRotation.html">
+      LookRotation
+     </a>
+    </td>
+    <td class="desc">
+     使用指定的 forward 和 upwards 方向创建旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Normalize.html">
+      Normalize
+     </a>
+    </td>
+    <td class="desc">
+     将此四元数转换为 1，方向相同，但量值为 1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.RotateTowards.html">
+      RotateTowards
+     </a>
+    </td>
+    <td class="desc">
+     将旋转 from 向 to 旋转。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.Slerp.html">
+      Slerp
+     </a>
+    </td>
+    <td class="desc">
+     在四元数 a 与 b 之间按比率 t 进行球形插值。参数 t 限制在范围 [0, 1] 内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion.SlerpUnclamped.html">
+      SlerpUnclamped
+     </a>
+    </td>
+    <td class="desc">
+     在 a 和 b 之间以球形方式插入 t。参数 t 不受限制。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-operator_multiply.html">
+      operator *
+     </a>
+    </td>
+    <td class="desc">
+     将旋转 lhs 和 rhs 组合到一起。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Quaternion-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     两个四元数是否相等？
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

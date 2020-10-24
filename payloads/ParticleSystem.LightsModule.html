@@ -1,0 +1,186 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightsModule
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   访问 ParticleSystem 光源模块。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过此模块可将实时光源附加到一部分粒子。
+   <br/>
+   <br/>
+   光源模块是一种简单而强大的模块，使粒子可以方便地将光投射到其环境上。光源可以从它们所附加到的粒子继承属性（如颜色和大小）。支持点光源和聚光灯，包括阴影投射和灯光遮罩。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public <a href="Light.html">Light</a> myLight;<br/><br/>    void Start()
+    {
+        <a href="ParticleSystem.html">ParticleSystem</a> ps = GetComponent&lt;<a href="ParticleSystem.html">ParticleSystem</a>&gt;();
+        var lights = ps.lights;
+        lights.enabled = true;
+        lights.ratio = 0.5f;
+        lights.light = myLight;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-alphaAffectsIntensity.html">
+      alphaAffectsIntensity
+     </a>
+    </td>
+    <td class="desc">
+     切换在计算最终光强度时，系统是否将粒子 Alpha 乘以光强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     指定启用还是禁用 LightsModule。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-intensity.html">
+      intensity
+     </a>
+    </td>
+    <td class="desc">
+     定义一条曲线，以将自定义强度缩放应用于粒子光源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-intensityMultiplier.html">
+      intensityMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     强度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-light.html">
+      light
+     </a>
+    </td>
+    <td class="desc">
+     选择要作为粒子光源基础的光源预制件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-maxLights.html">
+      maxLights
+     </a>
+    </td>
+    <td class="desc">
+     对此模块可以创建的光源数设置限制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-range.html">
+      range
+     </a>
+    </td>
+    <td class="desc">
+     定义一条曲线，以将自定义范围缩放应用于粒子光源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-rangeMultiplier.html">
+      rangeMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     范围乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-ratio.html">
+      ratio
+     </a>
+    </td>
+    <td class="desc">
+     选择将接收动态光源的粒子比例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-sizeAffectsRange.html">
+      sizeAffectsRange
+     </a>
+    </td>
+    <td class="desc">
+     切换系统是否将粒子大小乘以光源范围，以确定最终光源范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-useParticleColor.html">
+      useParticleColor
+     </a>
+    </td>
+    <td class="desc">
+     切换粒子光源是否将其颜色乘以粒子颜色。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ParticleSystem.LightsModule-useRandomDistribution.html">
+      useRandomDistribution
+     </a>
+    </td>
+    <td class="desc">
+     基于 ParticleSystem.LightsModule.ratio 随机将光源分配给新粒子。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

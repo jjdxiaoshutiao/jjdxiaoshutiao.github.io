@@ -1,0 +1,185 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ObjectPreview
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   创建自定义预览时要从中派生的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   您可以使用从
+   <a href="ObjectPreview.html">
+    ObjectPreview
+   </a>
+   中派生的 CustomPreview 属性指定预览类型。
+在以下小示例中，您会看到正在检查的对象的名称。预览窗口将显示在 Inspector 窗口底部。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>[CustomPreview(typeof(<a href="GameObject.html">GameObject</a>))]
+public class MyPreview : <a href="ObjectPreview.html">ObjectPreview</a>
+{
+    public override bool HasPreviewGUI()
+    {
+        return true;
+    }<br/><br/>    public override void OnPreviewGUI(<a href="Rect.html">Rect</a> r, <a href="GUIStyle.html">GUIStyle</a> background)
+    {
+        <a href="GUI.Label.html">GUI.Label</a>(r, target.name + " is being previewed");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview-target.html">
+      target
+     </a>
+    </td>
+    <td class="desc">
+     当前正在预览的对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.DrawPreview.html">
+      DrawPreview
+     </a>
+    </td>
+    <td class="desc">
+     这是预览绘制的第一个入口点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.GetInfoString.html">
+      GetInfoString
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法以在对象预览上显示对象信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.GetPreviewTitle.html">
+      GetPreviewTitle
+     </a>
+    </td>
+    <td class="desc">
+     如果要更改 Preview 区域的标签，可重载此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.HasPreviewGUI.html">
+      HasPreviewGUI
+     </a>
+    </td>
+    <td class="desc">
+     能否在当前状态下预览此组件？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.Initialize.html">
+      Initialize
+     </a>
+    </td>
+    <td class="desc">
+     在使用正在预览的对象创建预览时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.MoveNextTarget.html">
+      MoveNextTarget
+     </a>
+    </td>
+    <td class="desc">
+     调用以循环访问目标，预览多个目标时将使用此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.OnInteractivePreviewGUI.html">
+      OnInteractivePreviewGUI
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法可创建您自己的交互式自定义预览。交互式自定义预览用于检视面板和对象选择器的预览区域。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.OnPreviewGUI.html">
+      OnPreviewGUI
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法可为检视面板、主编辑器标头和对象选择器的预览区域创建您自己的自定义预览。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.OnPreviewSettings.html">
+      OnPreviewSettings
+     </a>
+    </td>
+    <td class="desc">
+     如果要在预览标头中显示自定义控件，可重载此方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ObjectPreview.ResetTarget.html">
+      ResetTarget
+     </a>
+    </td>
+    <td class="desc">
+     调用以在循环访问目标之前将其重置。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

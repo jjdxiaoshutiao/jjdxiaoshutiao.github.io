@@ -1,0 +1,116 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightBakingOutput
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   结构，描述给定光源的全局光照烘焙结果。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   下面的示例说明如何检查光源的烘焙状态和更改其活动状态。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class LightBakingOutputExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void TurnOffLight(<a href="Light.html">Light</a> light)
+    {
+        if (light.bakingOutput.isBaked &amp;amp;&amp;amp; light.bakingOutput.lightmapBakeType != <a href="LightmapBakeType.Realtime.html">LightmapBakeType.Realtime</a>)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("<a href="Light.html">Light</a> got some contribution statically baked, it cannot be turned off at runtime.");
+        }
+        else
+        {
+            light.enabled = false;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightBakingOutput-isBaked.html">
+      isBaked
+     </a>
+    </td>
+    <td class="desc">
+     光贡献是否已存储在光照贴图和/或光照探针中？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightBakingOutput-lightmapBakeType.html">
+      lightmapBakeType
+     </a>
+    </td>
+    <td class="desc">
+     此属性描述对光贡献的哪个部分进行了烘焙。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightBakingOutput-mixedLightingMode.html">
+      mixedLightingMode
+     </a>
+    </td>
+    <td class="desc">
+     对于 LightmapBakeType.Mixed 光源，描述用于对光源进行烘焙的混合模式，否则不相关。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightBakingOutput-occlusionMaskChannel.html">
+      occlusionMaskChannel
+     </a>
+    </td>
+    <td class="desc">
+     对于 LightmapBakeType.Mixed 光源，包含要使用的遮挡遮罩通道的索引（如果有），否则为 -1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightBakingOutput-probeOcclusionLightIndex.html">
+      probeOcclusionLightIndex
+     </a>
+    </td>
+    <td class="desc">
+     对于 LightmapBakeType.Mixed 光源，包含从遮挡探针视角看到的光源的索引（如果有），否则为 -1。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

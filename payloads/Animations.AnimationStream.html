@@ -1,0 +1,226 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationStream
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Animations
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从一个
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   传递到另一个的动画数据流。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   AnimationStream 结构通过动画
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   结构（如
+   <a href="Animations.AnimationClipPlayable.html">
+    AnimationClipPlayable
+   </a>
+   和
+   <a href="Animations.AnimationMixerPlayable.html">
+    AnimationMixerPlayable
+   </a>
+   ）传递。与
+   <a href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   （如
+   <a href="Animations.AnimationScriptPlayable.html">
+    AnimationScriptPlayable
+   </a>
+   ）一起使用时，可以修改它们。
+   <br/>
+   <br/>
+   实现
+   <a href="Animations.IAnimationJobPlayable.html">
+    IAnimationJobPlayable
+   </a>
+   的 Playable 采用自定义 C# 作业，该作业必须实现
+   <a href="Animations.IAnimationJob.html">
+    IAnimationJob
+   </a>
+   ，然后在动画处理通道中将 AnimationStream 传递给它的回调。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Animations.IAnimationJob.html">
+    IAnimationJob
+   </a>
+   、
+   <a href="Animations.AnimationScriptPlayable.html">
+    AnimationScriptPlayable
+   </a>
+   、
+   <a href="Animations.TransformStreamHandle.html">
+    TransformStreamHandle
+   </a>
+   、
+   <a href="Animations.PropertyStreamHandle.html">
+    PropertyStreamHandle
+   </a>
+   、
+   <a href="Animations.TransformSceneHandle.html">
+    TransformSceneHandle
+   </a>
+   和
+   <a href="Animations.PropertySceneHandle.html">
+    PropertySceneHandle
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-angularVelocity.html">
+      angularVelocity
+     </a>
+    </td>
+    <td class="desc">
+     获取或设置计算帧的 Avatar 角速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-deltaTime.html">
+      deltaTime
+     </a>
+    </td>
+    <td class="desc">
+     获取计算帧的增量时间。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-inputStreamCount.html">
+      inputStreamCount
+     </a>
+    </td>
+    <td class="desc">
+     获取输入流的数量。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-isHumanStream.html">
+      isHumanStream
+     </a>
+    </td>
+    <td class="desc">
+     如果流来自人形 Avatar，则返回 true；否则返回 false。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-isValid.html">
+      isValid
+     </a>
+    </td>
+    <td class="desc">
+     如果流有效，则返回 true；否则返回 false。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-rootMotionPosition.html">
+      rootMotionPosition
+     </a>
+    </td>
+    <td class="desc">
+     获取计算帧的根运动位置。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-rootMotionRotation.html">
+      rootMotionRotation
+     </a>
+    </td>
+    <td class="desc">
+     获取计算帧的根运动旋转。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream-velocity.html">
+      velocity
+     </a>
+    </td>
+    <td class="desc">
+     获取或设置计算帧的 Avatar 速度。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream.AsHuman.html">
+      AsHuman
+     </a>
+    </td>
+    <td class="desc">
+     获取相同的流，但作为 AnimationHumanStream。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream.GetInputStream.html">
+      GetInputStream
+     </a>
+    </td>
+    <td class="desc">
+     获取位于 index 处的可播放项输入的 AnimationStream。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimationStream.GetInputWeight.html">
+      GetInputWeight
+     </a>
+    </td>
+    <td class="desc">
+     获取在特定输入索引处连接的 Playable 的权重。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

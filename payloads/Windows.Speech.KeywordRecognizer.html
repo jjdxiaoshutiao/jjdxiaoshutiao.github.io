@@ -1,0 +1,205 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   KeywordRecognizer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.Speech
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Windows.Speech.PhraseRecognizer.html">
+    Windows.Speech.PhraseRecognizer
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   KeywordRecognizer 监听语音输入，并尝试将说出的短语与注册关键字列表匹配。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在任何给定的时间点可能有许多关键字识别器同时处于活动状态，但是没有哪两个关键字识别器监听同一个关键字。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System;
+using System.Text;
+using UnityEngine;
+using UnityEngine.Windows.Speech;<br/><br/>public class KeywordScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="SerializeField.html">SerializeField</a>]
+    private string[] m_Keywords;<br/><br/>    private <a href="Windows.Speech.KeywordRecognizer.html">KeywordRecognizer</a> m_Recognizer;<br/><br/>    void Start()
+    {
+        m_Recognizer = new <a href="Windows.Speech.KeywordRecognizer.html">KeywordRecognizer</a>(m_Keywords);
+        m_Recognizer.OnPhraseRecognized += OnPhraseRecognized;
+        m_Recognizer.Start();
+    }<br/><br/>    private void OnPhraseRecognized(<a href="Windows.Speech.PhraseRecognizedEventArgs.html">PhraseRecognizedEventArgs</a> args)
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.AppendFormat("{0} ({1}){2}", args.text, args.confidence, Environment.NewLine);
+        builder.AppendFormat("\tTimestamp: {0}{1}", args.phraseStartTime, Environment.NewLine);
+        builder.AppendFormat("\tDuration: {0} seconds{1}", args.phraseDuration.TotalSeconds, Environment.NewLine);
+        <a href="Debug.Log.html">Debug.Log</a>(builder.ToString());
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   关键字识别器目前仅在 Windows 10 上可用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.KeywordRecognizer.Keywords.html">
+      Keywords
+     </a>
+    </td>
+    <td class="desc">
+     返回创建关键字识别器时提供的关键字列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.Speech.KeywordRecognizer-ctor.html">
+      KeywordRecognizer
+     </a>
+    </td>
+    <td class="desc">
+     创建以指定的最低可信度监听指定关键字的 KeywordRecognizer。位于指定最低水平下的短语将被忽略。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.IsRunning.html">
+       IsRunning
+      </a>
+     </td>
+     <td class="desc">
+      判断短语识别器是否在监听短语。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      处置短语识别器使用的资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Start.html">
+       Start
+      </a>
+     </td>
+     <td class="desc">
+      使短语识别器开始监听短语。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.Stop.html">
+       Stop
+      </a>
+     </td>
+     <td class="desc">
+      使短语识别器停止监听短语。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    Events
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.OnPhraseRecognized.html">
+       OnPhraseRecognized
+      </a>
+     </td>
+     <td class="desc">
+      当短语识别器识别短语时触发的事件。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    委托
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Windows.Speech.PhraseRecognizer.PhraseRecognizedDelegate.html">
+       PhraseRecognizedDelegate
+      </a>
+     </td>
+     <td class="desc">
+      OnPhraseRecognized 事件的委托。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

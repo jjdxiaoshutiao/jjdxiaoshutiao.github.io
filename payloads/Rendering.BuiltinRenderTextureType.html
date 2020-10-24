@@ -1,0 +1,279 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BuiltinRenderTextureType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   摄像机渲染期间生成的内置临时渲染纹理。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当摄像机渲染场景时，在某些情况下，这一过程会生成临时渲染纹理（例如深度纹理、延迟 G 缓冲区等）。此枚举指示这些临时渲染纹理。
+   <br/>
+   <br/>
+   在
+   <a href="Rendering.CommandBuffer.html">
+    CommandBuffer
+   </a>
+   的某些函数中，BuiltinRenderTextureType 可用作
+   <a href="Rendering.RenderTargetIdentifier.html">
+    RenderTargetIdentifier
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rendering.CommandBuffer.html">
+    CommandBuffer
+   </a>
+   、
+   <a href="Rendering.RenderTargetIdentifier.html">
+    RenderTargetIdentifier
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.PropertyName.html">
+      PropertyName
+     </a>
+    </td>
+    <td class="desc">
+     全局设置的属性名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.BufferPtr.html">
+      BufferPtr
+     </a>
+    </td>
+    <td class="desc">
+     要使用的原始 RenderBuffer 指针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.RenderTexture.html">
+      RenderTexture
+     </a>
+    </td>
+    <td class="desc">
+     给定 RenderTexture。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.CurrentActive.html">
+      CurrentActive
+     </a>
+    </td>
+    <td class="desc">
+     当前激活的渲染目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.CameraTarget.html">
+      CameraTarget
+     </a>
+    </td>
+    <td class="desc">
+     当前渲染摄像机的目标纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.Depth.html">
+      Depth
+     </a>
+    </td>
+    <td class="desc">
+     摄像机的深度纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.DepthNormals.html">
+      DepthNormals
+     </a>
+    </td>
+    <td class="desc">
+     摄像机的深度 + 法线纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.ResolvedDepth.html">
+      ResolvedDepth
+     </a>
+    </td>
+    <td class="desc">
+     从延迟解析的深度缓冲。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.PrepassNormalsSpec.html">
+      PrepassNormalsSpec
+     </a>
+    </td>
+    <td class="desc">
+     延迟光照（法线 + 镜面反射）G 缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.PrepassLight.html">
+      PrepassLight
+     </a>
+    </td>
+    <td class="desc">
+     延迟光照缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.PrepassLightSpec.html">
+      PrepassLightSpec
+     </a>
+    </td>
+    <td class="desc">
+     延迟光照 HDR 镜面反射光缓冲区（仅限 Xbox 360）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer0.html">
+      GBuffer0
+     </a>
+    </td>
+    <td class="desc">
+     延迟着色 G 缓冲区 #0（通常为漫射颜色）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer1.html">
+      GBuffer1
+     </a>
+    </td>
+    <td class="desc">
+     延迟着色 G 缓冲区 #1（通常为镜面反射 + 粗糙度）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer2.html">
+      GBuffer2
+     </a>
+    </td>
+    <td class="desc">
+     延迟着色 G 缓冲区 #2（通常为法线）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer3.html">
+      GBuffer3
+     </a>
+    </td>
+    <td class="desc">
+     延迟着色 G 缓冲区 #3（通常为发射/光照）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.Reflections.html">
+      Reflections
+     </a>
+    </td>
+    <td class="desc">
+     从默认反射和反射探针收集的反射。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.MotionVectors.html">
+      MotionVectors
+     </a>
+    </td>
+    <td class="desc">
+     摄像机启用运动矢量时生成的运动矢量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer4.html">
+      GBuffer4
+     </a>
+    </td>
+    <td class="desc">
+     延迟着色 G 缓冲区 #4（如果有，通常为静态光源的遮挡遮罩）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer5.html">
+      GBuffer5
+     </a>
+    </td>
+    <td class="desc">
+     G 缓冲区 #5 可用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer6.html">
+      GBuffer6
+     </a>
+    </td>
+    <td class="desc">
+     G 缓冲区 #6 可用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.BuiltinRenderTextureType.GBuffer7.html">
+      GBuffer7
+     </a>
+    </td>
+    <td class="desc">
+     G 缓冲区 #7 可用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

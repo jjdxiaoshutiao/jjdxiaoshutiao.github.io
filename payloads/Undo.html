@@ -1,0 +1,390 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Undo
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   让您可以针对要执行更改的特定对象注册撤销操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   撤销系统可以在撤销堆栈中存储增量更改。
+   <br/>
+   <br/>
+   系统会根据事件自动将多个撤销操作组合在一起，例如，根据鼠标按下事件拆分撤销组。分组后的撤销操作将作为单个撤销操作出现和使用。要手动控制分组方法，请使用
+   <a href="Undo.IncrementCurrentGroup.html">
+    Undo.IncrementCurrentGroup
+   </a>
+   。
+   <br/>
+   <br/>
+   默认情况下，系统将按照不同类型操作的硬编码顺序，从属于该组的各项操作中选择 UI 中显示的名称。要手动设置名称，请使用
+   <a href="Undo.SetCurrentGroupName.html">
+    Undo.SetCurrentGroupName
+   </a>
+   。
+   <br/>
+   <br/>
+   撤销操作会存储每个属性或每个对象的状态。这样，如论场景的大小如何，它们都可以正确缩放。
+   <br/>
+   <br/>
+   最重要的几项操作如下所述：
+   <br/>
+   <br/>
+   修改单个属性：\
+   <code class="mono">
+    Undo.RecordObject (myGameObject.transform, "Zero Transform Position");
+   </code>
+   \
+   <code class="mono">
+    myGameObject.transform.position = Vector3.zero;
+   </code>
+   <br/>
+   <br/>
+   添加组件：\
+   <code class="mono">
+    Undo.AddComponent&lt;RigidBody&gt;(myGameObject);
+   </code>
+   <br/>
+   <br/>
+   创建新的游戏对象：\
+   <code class="mono">
+    var go = new GameObject();
+   </code>
+   \
+   <code class="mono">
+    Undo.RegisterCreatedObjectUndo (go, "Created go");
+   </code>
+   <br/>
+   <br/>
+   销毁游戏对象或组件：\
+   <code class="mono">
+    Undo.DestroyObjectImmediate (myGameObject);
+   </code>
+   <br/>
+   <br/>
+   更改变换组件的父子化：\
+   <code class="mono">
+    Undo.SetTransformParent (myGameObject.transform, newTransformParent, "Set new parent");
+   </code>
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Undo-postprocessModifications.html">
+      postprocessModifications
+     </a>
+    </td>
+    <td class="desc">
+     每当创建一组新的属性修改时，将触发此回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo-undoRedoPerformed.html">
+      undoRedoPerformed
+     </a>
+    </td>
+    <td class="desc">
+     执行撤销或重做后触发的回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo-willFlushUndoRecord.html">
+      willFlushUndoRecord
+     </a>
+    </td>
+    <td class="desc">
+     在撤销系统执行刷新之前调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Undo.AddComponent.html">
+      AddComponent
+     </a>
+    </td>
+    <td class="desc">
+     向游戏对象添加组件并针对这一操作注册撤销操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.ClearAll.html">
+      ClearAll
+     </a>
+    </td>
+    <td class="desc">
+     分别从撤销堆栈和重做堆栈中删除所有撤销和重做操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.ClearUndo.html">
+      ClearUndo
+     </a>
+    </td>
+    <td class="desc">
+     从撤销堆栈中删除使用 Undo.RegisterCompleteObjectUndo 注册的标识符对象的所有撤销操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.CollapseUndoOperations.html">
+      CollapseUndoOperations
+     </a>
+    </td>
+    <td class="desc">
+     将组索引之下的所有撤销操作折叠到一个步骤中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.DestroyObjectImmediate.html">
+      DestroyObjectImmediate
+     </a>
+    </td>
+    <td class="desc">
+     销毁对象并记录撤销操作，以便能够重新创建该对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.FlushUndoRecordObjects.html">
+      FlushUndoRecordObjects
+     </a>
+    </td>
+    <td class="desc">
+     确保使用 RecordObject 或 ::ref:RecordObjects 记录的对象被注册为可撤销的操作。在大多数情况下，不需要调用 FlushUndoRecordObjects，因为在释放按下的鼠标和通常标志着操作结束的某些其他事件之后，这一操作会自动完成。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.GetCurrentGroup.html">
+      GetCurrentGroup
+     </a>
+    </td>
+    <td class="desc">
+     Unity 根据当前的组索引自动对撤销操作进行分组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.GetCurrentGroupName.html">
+      GetCurrentGroupName
+     </a>
+    </td>
+    <td class="desc">
+     获取将在 UI 中显示的当前撤销组的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.IncrementCurrentGroup.html">
+      IncrementCurrentGroup
+     </a>
+    </td>
+    <td class="desc">
+     Unity 根据当前的组索引自动对撤销操作进行分组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.MoveGameObjectToScene.html">
+      MoveGameObjectToScene
+     </a>
+    </td>
+    <td class="desc">
+     将游戏对象从当前场景移动到新场景中。
+要求游戏对象必须位于当前场景的根目录下。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.PerformRedo.html">
+      PerformRedo
+     </a>
+    </td>
+    <td class="desc">
+     执行重做操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.PerformUndo.html">
+      PerformUndo
+     </a>
+    </td>
+    <td class="desc">
+     执行撤销操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RecordObject.html">
+      RecordObject
+     </a>
+    </td>
+    <td class="desc">
+     记录执行 RecordObject 函数之后对对象所做的任何更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RecordObjects.html">
+      RecordObjects
+     </a>
+    </td>
+    <td class="desc">
+     将多个可撤销对象记录到单个调用中。这与多次调用 Undo.RecordObject 的效果相同。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RegisterCompleteObjectUndo.html">
+      RegisterCompleteObjectUndo
+     </a>
+    </td>
+    <td class="desc">
+     将对象状态存储在撤销堆栈上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RegisterCreatedObjectUndo.html">
+      RegisterCreatedObjectUndo
+     </a>
+    </td>
+    <td class="desc">
+     针对新创建的对象注册撤销操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RegisterFullObjectHierarchyUndo.html">
+      RegisterFullObjectHierarchyUndo
+     </a>
+    </td>
+    <td class="desc">
+     将某个层级视图中所有对象的状态复制到撤销堆栈上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RevertAllDownToGroup.html">
+      RevertAllDownToGroup
+     </a>
+    </td>
+    <td class="desc">
+     执行组索引之下的所有撤销操作，但在过程中不会存储重做操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.RevertAllInCurrentGroup.html">
+      RevertAllInCurrentGroup
+     </a>
+    </td>
+    <td class="desc">
+     执行最后一次撤销操作，但不记录重做操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.SetCurrentGroupName.html">
+      SetCurrentGroupName
+     </a>
+    </td>
+    <td class="desc">
+     设置当前撤销组的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.SetTransformParent.html">
+      SetTransformParent
+     </a>
+    </td>
+    <td class="desc">
+     将变换组件的父项设置为新的父项，并记录撤销操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Undo.PostprocessModifications.html">
+      PostprocessModifications
+     </a>
+    </td>
+    <td class="desc">
+     postprocessModifications 的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.UndoRedoCallback.html">
+      UndoRedoCallback
+     </a>
+    </td>
+    <td class="desc">
+     undoRedoPerformed 的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Undo.WillFlushUndoRecord.html">
+      WillFlushUndoRecord
+     </a>
+    </td>
+    <td class="desc">
+     willFlushUndoRecord 的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,303 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   PackedMemorySnapshot
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Profiling.Memory.Experimental
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   PackedMemorySnapshot 是播放器通过性能分析器连接发送的内存快照的紧凑表示。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-captureFlags.html">
+      captureFlags
+     </a>
+    </td>
+    <td class="desc">
+     与返回的内存快照中存在的字段对应的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-connections.html">
+      connections
+     </a>
+    </td>
+    <td class="desc">
+     连接是 from,to 对数组，描述各方之间的依存关系。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-fieldDescriptions.html">
+      fieldDescriptions
+     </a>
+    </td>
+    <td class="desc">
+     字段描述阵列，由类型描述条目按数组索引进行引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-filePath.html">
+      filePath
+     </a>
+    </td>
+    <td class="desc">
+     内存快照文件的路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-gcHandles.html">
+      gcHandles
+     </a>
+    </td>
+    <td class="desc">
+     memorysnapshot 中使用的所有 GC 句柄。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-managedHeapSections.html">
+      managedHeapSections
+     </a>
+    </td>
+    <td class="desc">
+     实际托管堆内存区段的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-managedStacks.html">
+      managedStacks
+     </a>
+    </td>
+    <td class="desc">
+     内存快照托管堆栈数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-metadata.html">
+      metadata
+     </a>
+    </td>
+    <td class="desc">
+     在内存快照捕获期间收集的元数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeAllocations.html">
+      nativeAllocations
+     </a>
+    </td>
+    <td class="desc">
+     用 C++ 捕获的本机分配数据数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeAllocationSites.html">
+      nativeAllocationSites
+     </a>
+    </td>
+    <td class="desc">
+     用 C++ 捕获的本机分配站点数据数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeCallstackSymbols.html">
+      nativeCallstackSymbols
+     </a>
+    </td>
+    <td class="desc">
+     由本机分配站点数据使用的调用栈符号数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeMemoryLabels.html">
+      nativeMemoryLabels
+     </a>
+    </td>
+    <td class="desc">
+     由本机分配站点数据使用的内存标签数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeMemoryRegions.html">
+      nativeMemoryRegions
+     </a>
+    </td>
+    <td class="desc">
+     包含本机分配的本机内存区域数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeObjects.html">
+      nativeObjects
+     </a>
+    </td>
+    <td class="desc">
+     创建快照时加载的所有本机 C++ 对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeRootReferences.html">
+      nativeRootReferences
+     </a>
+    </td>
+    <td class="desc">
+     表示本机分配数据所有权的本机根引用数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-nativeTypes.html">
+      nativeTypes
+     </a>
+    </td>
+    <td class="desc">
+     对进行性能分析的播放器了解的所有 C++ unity 类型的描述。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-recordDate.html">
+      recordDate
+     </a>
+    </td>
+    <td class="desc">
+     记录快照的时间和日期。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-typeDescriptions.html">
+      typeDescriptions
+     </a>
+    </td>
+    <td class="desc">
+     标识此字段所属类型的 PackedMemorySnapshot.typeDescriptions 索引阵列。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-version.html">
+      version
+     </a>
+    </td>
+    <td class="desc">
+     当前快照格式版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot-virtualMachineInformation.html">
+      virtualMachineInformation
+     </a>
+    </td>
+    <td class="desc">
+     有关在播放器内运行并执行托管代码的虚拟机的信息。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     处置现有的 PackedMemorySnapshot 对象并关闭文件阅读器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot.Convert.html">
+      Convert
+     </a>
+    </td>
+    <td class="desc">
+     将指定的旧格式 PackedMemorySnapshot 对象转换为新格式 PackedMemorySnapshot 对象，并将其写入指定的写入路径位置和文件名。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot.Load.html">
+      Load
+     </a>
+    </td>
+    <td class="desc">
+     从给定的文件路径加载内存快照。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.PackedMemorySnapshot.Save.html">
+      Save
+     </a>
+    </td>
+    <td class="desc">
+     将内存快照文件复制到给定的文件路径。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

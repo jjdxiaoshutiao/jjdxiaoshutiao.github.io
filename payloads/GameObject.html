@@ -1,0 +1,510 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GameObject
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Unity 场景中所有实体的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意：
+   </strong>
+   <a href="GameObject.html">
+    GameObject
+   </a>
+   类中的很多变量已被删除。例如，
+      要访问 csharp 中的 GameObject.renderer，请改用 GetComponent&lt;Renderer&gt;()。
+   <br/>
+   <br/>
+   另请参阅：Component。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-activeInHierarchy.html">
+      activeInHierarchy
+     </a>
+    </td>
+    <td class="desc">
+     定义 GameObject 在 Scene 中是否处于活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-activeSelf.html">
+      activeSelf
+     </a>
+    </td>
+    <td class="desc">
+     此 GameObject 的本地活动状态。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-isStatic.html">
+      isStatic
+     </a>
+    </td>
+    <td class="desc">
+     获取并设置 GameObject 的 StaticEditorFlags。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-layer.html">
+      layer
+     </a>
+    </td>
+    <td class="desc">
+     该游戏对象所在的层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-scene.html">
+      scene
+     </a>
+    </td>
+    <td class="desc">
+     该 GameObject 所属的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-sceneCullingMask.html">
+      sceneCullingMask
+     </a>
+    </td>
+    <td class="desc">
+     Unity 用于确定在哪个场景中渲染该 GameObject 的场景剔除遮罩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-tag.html">
+      tag
+     </a>
+    </td>
+    <td class="desc">
+     此游戏对象的标签。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-transform.html">
+      transform
+     </a>
+    </td>
+    <td class="desc">
+     附加到此 GameObject 的 Transform。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GameObject-ctor.html">
+      GameObject
+     </a>
+    </td>
+    <td class="desc">
+     创建一个名为 name 的新游戏对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.AddComponent.html">
+      AddComponent
+     </a>
+    </td>
+    <td class="desc">
+     将名为 className 的组件类添加到该游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.BroadcastMessage.html">
+      BroadcastMessage
+     </a>
+    </td>
+    <td class="desc">
+     调用此游戏对象或其任何子项中的每个 MonoBehaviour 上名为 methodName 的方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.CompareTag.html">
+      CompareTag
+     </a>
+    </td>
+    <td class="desc">
+     此游戏对象是否使用 tag 进行了标记？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponent.html">
+      GetComponent
+     </a>
+    </td>
+    <td class="desc">
+     如果游戏对象附加了类型为 type 的组件，则将其返回，否则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponentInChildren.html">
+      GetComponentInChildren
+     </a>
+    </td>
+    <td class="desc">
+     使用深度首次搜索返回 GameObject 或其任何子项中类型为 type 的组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponentInParent.html">
+      GetComponentInParent
+     </a>
+    </td>
+    <td class="desc">
+     获取 GameObject 或其任何父项中 Type type 的组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponents.html">
+      GetComponents
+     </a>
+    </td>
+    <td class="desc">
+     返回 GameObject 中类型为 type 的所有组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponentsInChildren.html">
+      GetComponentsInChildren
+     </a>
+    </td>
+    <td class="desc">
+     返回 GameObject 或其任何子项中类型为 type 的所有组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.GetComponentsInParent.html">
+      GetComponentsInParent
+     </a>
+    </td>
+    <td class="desc">
+     返回 GameObject 或其任何父项中类型为 type 的所有组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.SendMessage.html">
+      SendMessage
+     </a>
+    </td>
+    <td class="desc">
+     调用此游戏对象中的每个 MonoBehaviour 上名为 methodName 的方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.SendMessageUpwards.html">
+      SendMessageUpwards
+     </a>
+    </td>
+    <td class="desc">
+     调用此游戏对象中的每个 MonoBehaviour 上或此行为的每个父级上名为 methodName 的方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.SetActive.html">
+      SetActive
+     </a>
+    </td>
+    <td class="desc">
+     根据给定的值 true 或 /false/，激活/停用 GameObject。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.TryGetComponent.html">
+      TryGetComponent
+     </a>
+    </td>
+    <td class="desc">
+     获取指定类型的组件（如果存在）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.CreatePrimitive.html">
+      CreatePrimitive
+     </a>
+    </td>
+    <td class="desc">
+     创建一个具有原始网格渲染器和相应碰撞体的游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.Find.html">
+      Find
+     </a>
+    </td>
+    <td class="desc">
+     按 name 查找 GameObject，然后返回它。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.FindGameObjectsWithTag.html">
+      FindGameObjectsWithTag
+     </a>
+    </td>
+    <td class="desc">
+     返回标签为 tag 的活动 GameObjects 的数组。如果未找到任何 GameObject，则返回空数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GameObject.FindWithTag.html">
+      FindWithTag
+     </a>
+    </td>
+    <td class="desc">
+     返回一个标记为 tag 的活动 GameObject。如果未找到 GameObject，则返回 null。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

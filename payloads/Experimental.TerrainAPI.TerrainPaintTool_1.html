@@ -1,0 +1,391 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   TerrainPaintTool&lt;T0&gt;
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.TerrainAPI
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="ScriptableObject.html">
+    ScriptableObject
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   地形绘制工具的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可以从此类派生来实现您自己的地形绘制工具。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine.Experimental.TerrainAPI;<br/><br/>namespace UnityEditor.Experimental.TerrainAPI
+{
+    public class MyPaintHeightTool : TerrainPaintTool&lt;MyPaintHeightTool&gt;
+    {
+        <a href="Material.html">Material</a> m_Material = null;
+        <a href="Material.html">Material</a> GetPaintMaterial()
+        {
+            if (m_Material == null)
+                m_Material = new <a href="Material.html">Material</a>(<a href="Shader.Find.html">Shader.Find</a>("Hidden/<a href="Terrain.html">Terrain</a>/PaintHeight"));
+            return m_Material;
+        }<br/><br/>        public override string GetName()
+        {
+            return "My Paint Height <a href="Tool.html">Tool</a>";
+        }<br/><br/>        public override string GetDesc()
+        {
+            return "Left click to raise.\n\nHold shift and left click to lower.";
+        }<br/><br/>        public override void OnSceneGUI(<a href="Terrain.html">Terrain</a> terrain, <a href="Experimental.TerrainAPI.IOnSceneGUI.html">IOnSceneGUI</a> editContext)
+        {
+            <a href="Experimental.TerrainAPI.TerrainPaintUtilityEditor.ShowDefaultPreviewBrush.html">TerrainPaintUtilityEditor.ShowDefaultPreviewBrush</a>(terrain, editContext.brushTexture, editContext.brushSize);
+        }<br/><br/>        public override bool OnPaint(<a href="Terrain.html">Terrain</a> terrain, <a href="Experimental.TerrainAPI.IOnPaint.html">IOnPaint</a> editContext)
+        {
+            <a href="Material.html">Material</a> mat = <a href="Experimental.TerrainAPI.TerrainPaintUtility.GetBuiltinPaintMaterial.html">TerrainPaintUtility.GetBuiltinPaintMaterial</a>();<br/><br/>            float rotationDegrees = 0.0f;
+            <a href="Experimental.TerrainAPI.BrushTransform.html">BrushTransform</a> brushXform = <a href="Experimental.TerrainAPI.TerrainPaintUtility.CalculateBrushTransform.html">TerrainPaintUtility.CalculateBrushTransform</a>(terrain, editContext.uv, editContext.brushSize, rotationDegrees);
+            <a href="Experimental.TerrainAPI.PaintContext.html">PaintContext</a> paintContext = <a href="Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap.html">TerrainPaintUtility.BeginPaintHeightmap</a>(terrain, brushXform.GetBrushXYBounds());<br/><br/>            // apply brush
+            <a href="Vector4.html">Vector4</a> brushParams = new <a href="Vector4.html">Vector4</a>(editContext.brushStrength * 0.01f, 0.0f, 0.0f, 0.0f);
+            mat.SetTexture("_BrushTex", editContext.brushTexture);
+            mat.SetVector("_BrushParams", brushParams);
+            <a href="Experimental.TerrainAPI.TerrainPaintUtility.SetupTerrainToolMaterialProperties.html">TerrainPaintUtility.SetupTerrainToolMaterialProperties</a>(paintContext, brushXform, mat);<br/><br/>            <a href="Graphics.Blit.html">Graphics.Blit</a>(paintContext.sourceRenderTexture, paintContext.destinationRenderTexture, mat, (int)<a href="Experimental.TerrainAPI.TerrainPaintUtility.BuiltinPaintMaterialPasses.RaiseLowerHeight.html">TerrainPaintUtility.BuiltinPaintMaterialPasses.RaiseLowerHeight</a>);<br/><br/>            <a href="Experimental.TerrainAPI.TerrainPaintUtility.EndPaintHeightmap.html">TerrainPaintUtility.EndPaintHeightmap</a>(paintContext, "<a href="Terrain.html">Terrain</a> Paint - MyPaintHeightTool");
+            return false;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.GetDesc.html">
+      GetDesc
+     </a>
+    </td>
+    <td class="desc">
+     检索自定义地形工具的描述。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.GetName.html">
+      GetName
+     </a>
+    </td>
+    <td class="desc">
+     检索自定义地形工具的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnDisable.html">
+      OnDisable
+     </a>
+    </td>
+    <td class="desc">
+     在销毁工具时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnEnable.html">
+      OnEnable
+     </a>
+    </td>
+    <td class="desc">
+     在创建工具时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnEnterToolMode.html">
+      OnEnterToolMode
+     </a>
+    </td>
+    <td class="desc">
+     在激活工具时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnExitToolMode.html">
+      OnExitToolMode
+     </a>
+    </td>
+    <td class="desc">
+     在工具变为非活动状态时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnInspectorGUI.html">
+      OnInspectorGUI
+     </a>
+    </td>
+    <td class="desc">
+     自定义地形工具 OnInspectorGUI 回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnPaint.html">
+      OnPaint
+     </a>
+    </td>
+    <td class="desc">
+     自定义地形工具绘制回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.TerrainAPI.TerrainPaintTool_1.OnSceneGUI.html">
+      OnSceneGUI
+     </a>
+    </td>
+    <td class="desc">
+     自定义地形工具 OnSceneGUI 回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.CreateInstance.html">
+       CreateInstance
+      </a>
+     </td>
+     <td class="desc">
+      创建脚本化对象的实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.Awake.html">
+       Awake
+      </a>
+     </td>
+     <td class="desc">
+      当 ScriptableObject 脚本启动时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDestroy.html">
+       OnDestroy
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象将销毁时调用此函数。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,130 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RuntimeInitializeOnLoadMethodAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Scripting.PreserveAttribute.html">
+    Scripting.PreserveAttribute
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许在运行时加载游戏时不通过用户操作
+      初始化一个运行时类方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   游戏加载后，将调用标记为
+   <code class="mono">
+    [RuntimeInitializeOnLoadMethod]
+   </code>
+   的
+      方法。这是在调用
+   <code class="mono">
+    Awake
+   </code>
+   方法后进行的。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   标记为
+   <code class="mono">
+    [RuntimeInitializeOnLoadMethod]
+   </code>
+   的方法的执行顺序是不确定的。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Create a non-<a href="MonoBehaviour.html">MonoBehaviour</a> class which displays
+// messages when a game is loaded.
+using UnityEngine;<br/><br/>class MyClass
+{
+    [RuntimeInitializeOnLoadMethod]
+    static void OnRuntimeMethodLoad()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("After <a href="SceneManagement.Scene.html">Scene</a> is loaded and game is running");
+    }<br/><br/>    [RuntimeInitializeOnLoadMethod]
+    static void OnSecondRuntimeMethodLoad()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("SecondMethod After <a href="SceneManagement.Scene.html">Scene</a> is loaded and game is running.");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RuntimeInitializeOnLoadMethodAttribute-loadType.html">
+      loadType
+     </a>
+    </td>
+    <td class="desc">
+     设置 RuntimeInitializeOnLoadMethod 类型。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RuntimeInitializeOnLoadMethodAttribute-ctor.html">
+      RuntimeInitializeOnLoadMethodAttribute
+     </a>
+    </td>
+    <td class="desc">
+     创建加载场景时使用的运行时类。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

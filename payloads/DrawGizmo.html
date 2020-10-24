@@ -1,0 +1,94 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DrawGizmo
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   DrawGizmo 属性可用于为任意
+   <a href="Component.html">
+    Component
+   </a>
+   提供辅助图标渲染器。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   渲染器函数必须是静态的，并且采用两个参数：一个是
+绘制辅助图标所面向的对象，另一个是
+   <a href="GizmoType.html">
+    GizmoType
+   </a>
+   参数，表示绘制辅助图标时所处的上下文。
+   <br/>
+   <br/>
+   渲染器函数可在任何类中定义，包括编辑器脚本。因此，
+        您可以将辅助图标绘制代码与组件脚本分离，从而
+        使其不会包含在构建中。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="GizmoType.html">
+    GizmoType
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class MyScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+}<br/><br/>// The icon has to be stored in Assets/<a href="Gizmos.html">Gizmos</a><br/><br/>public class MyScriptGizmoDrawer
+{
+    [<a href="DrawGizmo.html">DrawGizmo</a>(<a href="GizmoType.Selected.html">GizmoType.Selected</a> | <a href="GizmoType.Active.html">GizmoType.Active</a>)]
+    static void DrawGizmoForMyScript(MyScript scr, <a href="GizmoType.html">GizmoType</a> gizmoType)
+    {
+        <a href="Vector3.html">Vector3</a> position = scr.transform.position;<br/><br/>        if (<a href="Vector3.Distance.html">Vector3.Distance</a>(position, Camera.current.transform.position) &gt; 10f)
+            <a href="Gizmos.DrawIcon.html">Gizmos.DrawIcon</a>(position, "MyScript Gizmo.tiff");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DrawGizmo-ctor.html">
+      DrawGizmo
+     </a>
+    </td>
+    <td class="desc">
+     定义应调用辅助图标以进行绘制的情况。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

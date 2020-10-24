@@ -1,0 +1,226 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SceneManager
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.SceneManagement
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   运行时的场景管理。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager-sceneCount.html">
+      sceneCount
+     </a>
+    </td>
+    <td class="desc">
+     当前加载的场景总数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager-sceneCountInBuildSettings.html">
+      sceneCountInBuildSettings
+     </a>
+    </td>
+    <td class="desc">
+     Build Settings 中的场景数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.CreateScene.html">
+      CreateScene
+     </a>
+    </td>
+    <td class="desc">
+     在运行时使用给定名称创建一个新的空场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.GetActiveScene.html">
+      GetActiveScene
+     </a>
+    </td>
+    <td class="desc">
+     获取当前活动的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.GetSceneAt.html">
+      GetSceneAt
+     </a>
+    </td>
+    <td class="desc">
+     获取 SceneManager 的已加载场景列表中索引处的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.GetSceneByBuildIndex.html">
+      GetSceneByBuildIndex
+     </a>
+    </td>
+    <td class="desc">
+     从构建索引中获取场景结构。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.GetSceneByName.html">
+      GetSceneByName
+     </a>
+    </td>
+    <td class="desc">
+     搜索已加载的场景，查找包含给定名称的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.GetSceneByPath.html">
+      GetSceneByPath
+     </a>
+    </td>
+    <td class="desc">
+     搜索所有已加载的场景，查找具有给定资源路径的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.LoadScene.html">
+      LoadScene
+     </a>
+    </td>
+    <td class="desc">
+     按照 Build Settings 中的名称或索引加载场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.LoadSceneAsync.html">
+      LoadSceneAsync
+     </a>
+    </td>
+    <td class="desc">
+     在后台异步加载场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.MergeScenes.html">
+      MergeScenes
+     </a>
+    </td>
+    <td class="desc">
+     这会将源场景合并到 destinationScene 中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.MoveGameObjectToScene.html">
+      MoveGameObjectToScene
+     </a>
+    </td>
+    <td class="desc">
+     将游戏对象从当前场景移至新场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.SetActiveScene.html">
+      SetActiveScene
+     </a>
+    </td>
+    <td class="desc">
+     将场景设置为活动状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager.UnloadSceneAsync.html">
+      UnloadSceneAsync
+     </a>
+    </td>
+    <td class="desc">
+     销毁所有与给定场景关联的游戏对象，并将场景从 SceneManager 中移除。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager-activeSceneChanged.html">
+      activeSceneChanged
+     </a>
+    </td>
+    <td class="desc">
+     订阅此事件可在活动场景发生变化时收到通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager-sceneLoaded.html">
+      sceneLoaded
+     </a>
+    </td>
+    <td class="desc">
+     向此事件添加委托，以在加载场景时收到通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.SceneManager-sceneUnloaded.html">
+      sceneUnloaded
+     </a>
+    </td>
+    <td class="desc">
+     向此事件添加委托以在卸载场景时收到通知。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,259 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IShortcutManager
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEditor.ShortcutManagement
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示配置快捷方式系统的特定实例的管理器。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该管理器会维护可以使用
+   <a href="ShortcutManagement.IShortcutManager.GetAvailableProfiles.html">
+    GetAvailableProfiles
+   </a>
+   获取的
+   <em>
+    可用
+   </em>
+   配置文件的列表。某些方法要求传递的配置文件 ID 在调用时可供使用。使用
+   <a href="ShortcutManagement.IShortcutManager.CreateProfile.html">
+    CreateProfile
+   </a>
+   创建新配置文件会使配置文件可供使用，而使用
+   <a href="ShortcutManagement.IShortcutManager.DeleteProfile.html">
+    DeleteProfile
+   </a>
+   删除配置文件会使配置文件不再可用。
+   <br/>
+   <br/>
+   它还维护对
+   <em>
+    活动
+   </em>
+   配置文件的引用 (
+   <a href="ShortcutManagement.IShortcutManager-activeProfileId.html">
+    activeProfileId
+   </a>
+   )，它基于活动配置文件的快捷方式覆盖确定活动绑定。
+   <a href="ShortcutManagement.IShortcutManager.RebindShortcut.html">
+    RebindShortcut
+   </a>
+   和
+   <a href="ShortcutManagement.IShortcutManager.ClearShortcutOverride.html">
+    ClearShortcutOverride
+   </a>
+   要求活动配置文件不是
+   <em>
+    只读
+   </em>
+   （即，
+   <a href="ShortcutManagement.IShortcutManager.IsProfileReadOnly.html">
+    IsProfileReadOnly
+   </a>
+   对于
+   <a href="ShortcutManagement.IShortcutManager-activeProfileId.html">
+    activeProfileId
+   </a>
+   返回
+   <code class="mono">
+    false
+   </code>
+   ），因为这两个方法会修改活动配置文件。
+   <br/>
+   <br/>
+   最后，它会维护可以使用
+   <a href="ShortcutManagement.IShortcutManager.GetAvailableShortcuts.html">
+    GetAvailableShortcuts
+   </a>
+   获取的可用快捷方式的列表。采用快捷方式 ID 的所有方法要求该快捷方式可用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager-activeProfileId.html">
+      activeProfileId
+     </a>
+    </td>
+    <td class="desc">
+     获取或设置当前活动配置文件的 ID。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.ClearShortcutOverride.html">
+      ClearShortcutOverride
+     </a>
+    </td>
+    <td class="desc">
+     从活动配置文件中清除具有给定快捷方式 ID 的快捷方式的绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.CreateProfile.html">
+      CreateProfile
+     </a>
+    </td>
+    <td class="desc">
+     使用给定配置文件 ID 创建新的配置文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.DeleteProfile.html">
+      DeleteProfile
+     </a>
+    </td>
+    <td class="desc">
+     删除具有给定配置文件 ID 的配置文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.GetAvailableProfileIds.html">
+      GetAvailableProfileIds
+     </a>
+    </td>
+    <td class="desc">
+     返回所有可用配置文件 ID 的枚举。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.GetAvailableShortcutIds.html">
+      GetAvailableShortcutIds
+     </a>
+    </td>
+    <td class="desc">
+     返回所有可用快捷方式 ID 的枚举。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.GetShortcutBinding.html">
+      GetShortcutBinding
+     </a>
+    </td>
+    <td class="desc">
+     返回给定快捷方式 ID 的活动绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.IsProfileIdValid.html">
+      IsProfileIdValid
+     </a>
+    </td>
+    <td class="desc">
+     检查配置文件 ID 是否有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.IsProfileReadOnly.html">
+      IsProfileReadOnly
+     </a>
+    </td>
+    <td class="desc">
+     给定配置文件 ID 的配置文件是否为只读？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.IsShortcutOverridden.html">
+      IsShortcutOverridden
+     </a>
+    </td>
+    <td class="desc">
+     活动配置文件是否覆盖给定快捷方式 ID 的绑定？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.RebindShortcut.html">
+      RebindShortcut
+     </a>
+    </td>
+    <td class="desc">
+     将给定快捷方式 ID 的快捷方式重新绑定到活动配置文件中的给定绑定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager.RenameProfile.html">
+      RenameProfile
+     </a>
+    </td>
+    <td class="desc">
+     重命名配置文件的 ID。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager-activeProfileChanged.html">
+      activeProfileChanged
+     </a>
+    </td>
+    <td class="desc">
+     在活动配置文件的 ID 更改时引发。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ShortcutManagement.IShortcutManager-shortcutBindingChanged.html">
+      shortcutBindingChanged
+     </a>
+    </td>
+    <td class="desc">
+     当快捷方式覆盖在活动配置文件中更改时引发。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

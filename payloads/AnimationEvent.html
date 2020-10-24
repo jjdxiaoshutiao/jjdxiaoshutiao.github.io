@@ -1,0 +1,260 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimationEvent
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   作为播放动画的一部分，AnimationEvent 可用于调用类似于 SendMessage 的脚本函数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   动画事件支持零个或一个参数的函数。
+该参数可以是浮点、int、字符串、对象引用或 AnimationEvent。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// <a href="Animation.html">Animation</a> <a href="Event.html">Event</a> example
+// Small example that can be called on each specified frame.
+// The code is executed once per animation loop.<br/><br/>using UnityEngine;
+using System.Collections;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public void PrintEvent()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("PrintEvent");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   下面是一个更详细的示例，演示了
+创建动画的更复杂方式。在该脚本示例中，通过访问
+   <code class="mono">
+    Animator
+   </code>
+   组件从中获得了一个
+   <code class="mono">
+    Clip
+   </code>
+   。（该剪辑是在 Animation
+ 窗口中设置的。）该剪辑持续 2 秒钟。然后创建了一个
+   <code class="mono">
+    AnimationEvent
+   </code>
+   ，并且设置了参数。参数中包括
+将处理此事件的函数
+   <code class="mono">
+    PrintEvent()
+   </code>
+   。然后此事件
+被添加到该剪辑。这一切都发生在
+   <code class="mono">
+    Start()
+   </code>
+   中。启动了该游戏后，
+在 1.3 秒后调用此事件，然后每 2 秒钟重复此事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Add an <a href="Animation.html">Animation</a> <a href="Event.html">Event</a> to a <a href="GameObject.html">GameObject</a> that has an <a href="Animator.html">Animator</a>
+using UnityEngine;
+using System.Collections;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public void Start()
+    {
+        // existing components on the <a href="GameObject.html">GameObject</a>
+        <a href="AnimationClip.html">AnimationClip</a> clip;
+        <a href="Animator.html">Animator</a> anim;<br/><br/>        // new event created
+        <a href="AnimationEvent.html">AnimationEvent</a> evt;
+        evt = new <a href="AnimationEvent.html">AnimationEvent</a>();<br/><br/>        // put some parameters on the <a href="AnimationEvent.html">AnimationEvent</a>
+        //  - call the function called PrintEvent()
+        //  - the animation on this object lasts 2 seconds
+        //    and the new animation created here is
+        //    set up to happen 1.3s into the animation
+        evt.intParameter = 12345;
+        evt.time = 1.3f;
+        evt.functionName = "PrintEvent";<br/><br/>        // get the animation clip and add the <a href="AnimationEvent.html">AnimationEvent</a>
+        anim = GetComponent&lt;<a href="Animator.html">Animator</a>&gt;();
+        clip = anim.runtimeAnimatorController.animationClips[0];
+        clip.AddEvent(evt);
+    }<br/><br/>    // the function to be called as an event
+    public void PrintEvent(int i)
+    {
+        print("PrintEvent: " + i + " called at: " + <a href="Time-time.html">Time.time</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-animationState.html">
+      animationState
+     </a>
+    </td>
+    <td class="desc">
+     触发了此事件的动画状态（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-animatorClipInfo.html">
+      animatorClipInfo
+     </a>
+    </td>
+    <td class="desc">
+     与此事件相关的动画器剪辑信息（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-animatorStateInfo.html">
+      animatorStateInfo
+     </a>
+    </td>
+    <td class="desc">
+     与此事件相关的动画器状态信息（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-floatParameter.html">
+      floatParameter
+     </a>
+    </td>
+    <td class="desc">
+     浮点参数，保存在事件中并将发送到函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-functionName.html">
+      functionName
+     </a>
+    </td>
+    <td class="desc">
+     将调用的函数的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-intParameter.html">
+      intParameter
+     </a>
+    </td>
+    <td class="desc">
+     Int 参数，保存在事件中并将发送函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-isFiredByAnimator.html">
+      isFiredByAnimator
+     </a>
+    </td>
+    <td class="desc">
+     如果动画器组件已触发了该动画事件，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-isFiredByLegacy.html">
+      isFiredByLegacy
+     </a>
+    </td>
+    <td class="desc">
+     如果动画组件已触发了该动画事件，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-messageOptions.html">
+      messageOptions
+     </a>
+    </td>
+    <td class="desc">
+     函数调用选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-objectReferenceParameter.html">
+      objectReferenceParameter
+     </a>
+    </td>
+    <td class="desc">
+     对象引用参数，保存在事件中并将发送到函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-stringParameter.html">
+      stringParameter
+     </a>
+    </td>
+    <td class="desc">
+     字符串参数，保存在事件中并将发送到函数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-time.html">
+      time
+     </a>
+    </td>
+    <td class="desc">
+     将触发该事件的时间。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimationEvent-ctor.html">
+      AnimationEvent
+     </a>
+    </td>
+    <td class="desc">
+     创建新动画事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,182 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AsyncGPUReadbackRequest
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示 GPU 资源的异步请求。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用
+   <a href="Rendering.AsyncGPUReadback.Request.html">
+    AsyncGPUReadback.Request
+   </a>
+   检索 GPU 资源的异步请求。
+每帧自动更新待处理请求。只有成功完成的单个帧才能访问结果，然后在下一帧中处理此请求。
+常见用途是在每一帧（或在协同程序中）查询
+   <a href="Rendering.AsyncGPUReadbackRequest-done.html">
+    AsyncGPUReadbackRequest.done
+   </a>
+   ，然后在
+   <a href="Rendering.AsyncGPUReadbackRequest-hasError.html">
+    AsyncGPUReadbackRequest.hasError
+   </a>
+   为 false 时调用
+   <a href="Rendering.AsyncGPUReadbackRequest.GetData.html">
+    AsyncGPUReadbackRequest.GetData
+   </a>
+   。
+您无需管理请求生命周期，因为这是在内部进行管理。已处理的请求将导致
+   <a href="Rendering.AsyncGPUReadbackRequest-hasError.html">
+    AsyncGPUReadbackRequest.hasError
+   </a>
+   属性为 true。
+另请参阅：
+   <a href="Rendering.AsyncGPUReadback.html">
+    AsyncGPUReadback
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-depth.html">
+      depth
+     </a>
+    </td>
+    <td class="desc">
+     从 ComputeBuffer 读取数据时，深度为 1，否则，属性将从纹理中获取所请求深度的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-done.html">
+      done
+     </a>
+    </td>
+    <td class="desc">
+     检查请求是否已被处理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-hasError.html">
+      hasError
+     </a>
+    </td>
+    <td class="desc">
+     如果请求出现错误，则此属性为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-height.html">
+      height
+     </a>
+    </td>
+    <td class="desc">
+     从 ComputeBuffer 读取数据时，高度为 1，否则，属性将从纹理中获取所请求高度的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-layerCount.html">
+      layerCount
+     </a>
+    </td>
+    <td class="desc">
+     当前请求中的层数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-layerDataSize.html">
+      layerDataSize
+     </a>
+    </td>
+    <td class="desc">
+     一层回读数据的大小（以字节为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest-width.html">
+      width
+     </a>
+    </td>
+    <td class="desc">
+     请求的 GPU 数据的宽度。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest.GetData.html">
+      GetData
+     </a>
+    </td>
+    <td class="desc">
+     获取成功请求的数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest.Update.html">
+      Update
+     </a>
+    </td>
+    <td class="desc">
+     触发请求的更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.AsyncGPUReadbackRequest.WaitForCompletion.html">
+      WaitForCompletion
+     </a>
+    </td>
+    <td class="desc">
+     等待请求完成。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

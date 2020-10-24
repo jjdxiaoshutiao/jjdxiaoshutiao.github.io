@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SurfaceObserver
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR.WSA
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SurfaceObserver 是 Unity 中适用于空间映射功能的主 API 门户。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   用户应创建一个 SurfaceObserver，调用 Update 以生成 SurfaceChanged 事件，并针对所需的那些表面调用 GetMeshAsync，完成此对象后，调用 Dispose。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceObserver-ctor.html">
+      SurfaceObserver
+     </a>
+    </td>
+    <td class="desc">
+     SurfaceObserver 的基本构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceObserver.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     不再需要 SurfaceObserver 时，调用 Dispose。这将确保对此对象进行相应的清除，但不影响 RequestMeshAsync 返回的任何网格、组件或对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceObserver.SurfaceChangedDelegate.html">
+      SurfaceChangedDelegate
+     </a>
+    </td>
+    <td class="desc">
+     SurfaceChangedDelegate 用于处理在 SurfaceObserver 上调用 Update 时生成的 SurfaceChanged 事件。应用程序可使用 bounds、changeType 和 updateTime 针对一组已知表面选择性地生成网格数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.SurfaceObserver.SurfaceDataReadyDelegate.html">
+      SurfaceDataReadyDelegate
+     </a>
+    </td>
+    <td class="desc">
+     SurfaceDataReadyDelegate 用于处理引擎完全生成网格时生成的事件。系统通过 GetMeshAsync 请求网格生成事件，并可能需要许多帧才能完全生成网格。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

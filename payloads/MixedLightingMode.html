@@ -1,0 +1,119 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MixedLightingMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述用于混合光源的光照模式的枚举。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   与每种模式关联的烘焙数据汇总：
+   <br/>
+   <br/>
+   <strong>
+    IndirectOnly
+   </strong>
+   \
+光照贴图\
+- 直接：否
+   <br/>
+   - 遮挡：否\
+光照探针\
+- 直接：否
+   <br/>
+   - 遮挡：否
+   <br/>
+   <br/>
+   <strong>
+    Shadowmask
+   </strong>
+   \
+光照贴图\
+- 直接：否
+   <br/>
+   - 遮挡：是\
+光照探针\
+- 直接：否
+   <br/>
+   - 遮挡：是
+   <br/>
+   <br/>
+   <strong>
+    Subtractive
+   </strong>
+   \
+光照贴图\
+- 直接：是
+   <br/>
+   - 遮挡：否\
+光照探针\
+- 直接：否
+   <br/>
+   - 遮挡：是。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="MixedLightingMode.IndirectOnly.html">
+      IndirectOnly
+     </a>
+    </td>
+    <td class="desc">
+     混合光源提供实时直射光照，而间接光源则被烘焙到光照贴图和光照探针中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MixedLightingMode.Shadowmask.html">
+      Shadowmask
+     </a>
+    </td>
+    <td class="desc">
+     混合光源提供实时直射光照。间接光照会烘焙到光照贴图和光照探针中。将为烘焙阴影生成阴影遮罩和光照探针遮挡。可在 Quality Settings 面板中设置运行时使用的阴影遮罩模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="MixedLightingMode.Subtractive.html">
+      Subtractive
+     </a>
+    </td>
+    <td class="desc">
+     混合光源可为静态对象提供烘焙的直射和间接光照。动态对象接收实时直射光照，并使用场景中的主方向光在静态对象上投射阴影。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

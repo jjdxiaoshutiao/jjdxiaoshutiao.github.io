@@ -1,0 +1,54 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NativeDisableContainerSafetyRestrictionAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Collections.LowLevel.Unsafe
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   默认情况下，原生容器会由安全系统进行跟踪，以避免竞争条件。安全系统内部封装了最佳实践，并从一开始就捕获了许多竞争条件错误。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   但有时，您需要指明不符合安全系统的作业和数据访问。借助此属性，您可以针对具体容器显式禁用安全系统。这为您提供了完全控制权限，但这也意味着，如果您在作业运行时对某个 NativeArray 执行 Dispose() 操作，安全系统将完全无法为您提供任何错误消息。在这种情况下，Unity 很可能会崩溃。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.Jobs;<br/><br/>struct MyJob : <a href="Unity.Jobs.IJob.html">IJob</a>
+{
+    [NativeDisableContainerSafetyRestriction]
+    NativeArray&lt;int&gt; unsafeArrayAccess;<br/><br/>    public void Execute()
+    {
+        //...
+    }
+}
+</pre>
+ </div>
+</div>

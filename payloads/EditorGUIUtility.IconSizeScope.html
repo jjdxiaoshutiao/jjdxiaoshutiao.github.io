@@ -1,0 +1,99 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IconSizeScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理
+   <a href="EditorGUIUtility.GetIconSize.html">
+    GetIconSize
+   </a>
+   /
+   <a href="EditorGUIUtility.SetIconSize.html">
+    SetIconSize
+   </a>
+   的可处置的作用域 Helper 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   将此作用域中渲染成
+   <a href="GUIContent.html">
+    GUIContent
+   </a>
+   部分的图标设置为按特定大小进行渲染。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="EditorGUIUtility.GetIconSize.html">
+    GetIconSize
+   </a>
+   。
+另请参阅：
+   <a href="EditorGUIUtility.SetIconSize.html">
+    SetIconSize
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void ExampleMethod()
+    {
+        var myIconSize = new <a href="Vector2.html">Vector2</a>(16, 16);
+        using (new <a href="EditorGUIUtility.IconSizeScope.html">EditorGUIUtility.IconSizeScope</a>(myIconSize))
+        {
+            // Block of code that may render icons as part of <a href="GUIContent.html">GUIContent</a>
+            // Icons rendered here will use myIconSize
+        }
+        // Code here now reverts to original icon size
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUIUtility.IconSizeScope-ctor.html">
+      EditorGUIUtility.IconSizeScope
+     </a>
+    </td>
+    <td class="desc">
+     开始一个 IconSizeScope。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,251 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderTextureDescriptor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此结构包含创建 RenderTexture 需要的所有信息。可以复制、缓存和重用来轻松创建全部共享相同属性的 RenderTexture。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-autoGenerateMips.html">
+      autoGenerateMips
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了该标志，则自动生成多级渐进纹理级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-bindMS.html">
+      bindMS
+     </a>
+    </td>
+    <td class="desc">
+     如果为 true 且 msaaSamples 大于 1，则默认不解析渲染纹理。如果需要将渲染纹理绑定为着色器中的多采样纹理，请使用此属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-depthBufferBits.html">
+      depthBufferBits
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理深度缓冲区的精度（以位为单位，支持 0、16、24/32 位）。另请参阅：RenderTexture.depth。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-dimension.html">
+      dimension
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理的维度（类型）。另请参阅：RenderTexture.dimension。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-enableRandomWrite.html">
+      enableRandomWrite
+     </a>
+    </td>
+    <td class="desc">
+     在 Shader Model 5.0 级别着色器上启用随机访问写入该渲染纹理。另请参阅：RenderTexture.enableRandomWrite。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-flags.html">
+      flags
+     </a>
+    </td>
+    <td class="desc">
+     一组 RenderTextureCreationFlags，控制纹理的创建方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-graphicsFormat.html">
+      graphicsFormat
+     </a>
+    </td>
+    <td class="desc">
+     RenderTexture 的颜色格式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-height.html">
+      height
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理的高度（以像素为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-memoryless.html">
+      memoryless
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理无记忆模式属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-mipCount.html">
+      mipCount
+     </a>
+    </td>
+    <td class="desc">
+     用户定义的 Mipmap 数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-msaaSamples.html">
+      msaaSamples
+     </a>
+    </td>
+    <td class="desc">
+     RenderTexture 的多采样抗锯齿级别。另请参阅：RenderTexture.antiAliasing。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-shadowSamplingMode.html">
+      shadowSamplingMode
+     </a>
+    </td>
+    <td class="desc">
+     确定当 RenderTexture 用作阴影贴图时的采样方式。另请参阅：ShadowSamplingMode，以了解更多详细信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-sRGB.html">
+      sRGB
+     </a>
+    </td>
+    <td class="desc">
+     此标志会使渲染纹理使用 sRGB 读/写转换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-stencilFormat.html">
+      stencilFormat
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理中封装的模板数据的格式。指定此属性将为渲染纹理创建一个模板元素并设置其格式。
+这允许将模板数据作为纹理绑定到支持它的平台的所有着色器类型。
+此属性未指定模板缓冲区格式，格式受 RenderTexture.depth 中指定的深度缓冲区格式的约束。目前，大多数平台仅支持 /R8_UInt/（DirectX11、DirectX12），而 PS4 还支持 /R8_UNorm/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-useDynamicScale.html">
+      useDynamicScale
+     </a>
+    </td>
+    <td class="desc">
+     设置为 true 可在此渲染纹理上启用动态分辨率缩放。另请参阅：RenderTexture.useDynamicScale。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-useMipMap.html">
+      useMipMap
+     </a>
+    </td>
+    <td class="desc">
+     如果设置该标志，则渲染纹理具有多级渐进纹理。另请参阅：RenderTexture.useMipMap。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-volumeDepth.html">
+      volumeDepth
+     </a>
+    </td>
+    <td class="desc">
+     3D 渲染纹理的体积范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-vrUsage.html">
+      vrUsage
+     </a>
+    </td>
+    <td class="desc">
+     如果该 RenderTexture 是在立体渲染中使用的 VR 眼睛纹理，则该属性决定将进行哪些特殊渲染（如果有）。不必手动设置此属性，它会使用 eyeTextureDesc 或其他返回 RenderTextureDescriptor 的 VR 函数返回的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-width.html">
+      width
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理的宽度（以像素为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureDescriptor-ctor.html">
+      RenderTextureDescriptor
+     </a>
+    </td>
+    <td class="desc">
+     使用默认值或特定宽度、高度和格式创建 RenderTextureDescriptor。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

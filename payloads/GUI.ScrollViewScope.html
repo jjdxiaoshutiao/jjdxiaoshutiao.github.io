@@ -1,0 +1,124 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ScrollViewScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理
+   <a href="GUI.BeginScrollView.html">
+    BeginScrollView
+   </a>
+   /
+   <a href="GUI.EndScrollView.html">
+    EndScrollView
+   </a>
+   的可处置的 Helper 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="GUI.BeginScrollView.html">
+    BeginScrollView
+   </a>
+   在构造时调用，
+   <a href="GUI.EndScrollView.html">
+    EndScrollView
+   </a>
+   在处置实例时调用。
+使用放置在其侧面的滚动条，滚动视图能够在屏幕上的一个较小区域内显示更大的区域。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // The position of the scrolling viewport
+    public <a href="Vector2.html">Vector2</a> scrollPosition = <a href="Vector2-zero.html">Vector2.zero</a>;
+    void OnGUI()
+    {
+        // An absolute-positioned example: We make a scrollview that has a really large client
+        // rect and put it in a small rect on the screen.
+        using (var scrollScope = new <a href="GUI.ScrollViewScope.html">GUI.ScrollViewScope</a>(new <a href="Rect.html">Rect</a>(10, 300, 100, 100), scrollPosition, new <a href="Rect.html">Rect</a>(0, 0, 220, 200)))
+        {
+            scrollPosition = scrollScope.scrollPosition;<br/><br/>            // Make four buttons - one in each corner. The coordinate system is defined
+            // by the last parameter to the ScrollScope constructor.
+            <a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(0, 0, 100, 20), "Top-left");
+            <a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(120, 0, 100, 20), "Top-right");
+            <a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(0, 180, 100, 20), "Bottom-left");
+            <a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(120, 180, 100, 20), "Bottom-right");
+        }
+        // Now the scroll view is ended.
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUI.ScrollViewScope-handleScrollWheel.html">
+      handleScrollWheel
+     </a>
+    </td>
+    <td class="desc">
+     该滚动视图是否应处理滚轮事件。（默认值：true）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUI.ScrollViewScope-scrollPosition.html">
+      scrollPosition
+     </a>
+    </td>
+    <td class="desc">
+     修改后的 scrollPosition。将其反馈到您传入的变量中，如示例所示。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUI.ScrollViewScope-ctor.html">
+      GUI.ScrollViewScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 ScrollViewScope 并开始相应的滚动视图。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

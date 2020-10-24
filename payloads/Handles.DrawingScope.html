@@ -1,0 +1,142 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DrawingScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于自动设置和恢复
+   <a href="Handles-color.html">
+    Handles.color
+   </a>
+   和/或
+   <a href="Handles-matrix.html">
+    Handles.matrix
+   </a>
+   的可处置 Helper 结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此结构允许您暂时设置代码块内的
+   <a href="Handles-color.html">
+    Handles.color
+   </a>
+   和/或
+   <a href="Handles-matrix.html">
+    Handles.matrix
+   </a>
+   的值，并在退出作用域时自动将它们恢复为之前的值。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;<br/><br/>// a custom editor that draws a labeled circle around the selected <a href="MeshRenderer.html">MeshRenderer</a> in the scene view
+[<a href="CustomEditor.html">CustomEditor</a>(typeof(<a href="MeshRenderer.html">MeshRenderer</a>))]
+public class MeshRendererEditor : <a href="Editor.html">Editor</a>
+{
+    protected virtual void OnSceneGUI()
+    {
+        <a href="MeshRenderer.html">MeshRenderer</a> meshRenderer = (<a href="MeshRenderer.html">MeshRenderer</a>)target;<br/><br/>        // get an orientation pointing from the selected object to the camera
+        <a href="Vector3.html">Vector3</a> cameraToTarget = Camera.current.transform.position - meshRenderer.transform.position;
+        <a href="Quaternion.html">Quaternion</a> billboardOrientation = <a href="Quaternion.LookRotation.html">Quaternion.LookRotation</a>(cameraToTarget, Camera.current.transform.up);<br/><br/>        // set the handle matrix to the target's position, oriented facing the camera
+        <a href="Matrix4x4.html">Matrix4x4</a> matrix = <a href="Matrix4x4.TRS.html">Matrix4x4.TRS</a>(meshRenderer.transform.position, billboardOrientation, <a href="Vector3-one.html">Vector3.one</a>);
+        using (new <a href="Handles.DrawingScope.html">Handles.DrawingScope</a>(<a href="Color-magenta.html">Color.magenta</a>, matrix))
+        {
+            // draw a magenta circle around the selected object with a label at the top
+            <a href="Vector3.html">Vector3</a> size = meshRenderer.bounds.size;
+            float radius = <a href="Mathf.Max.html">Mathf.Max</a>(size.x, size.y, size.z);
+            <a href="Handles.DrawWireArc.html">Handles.DrawWireArc</a>(<a href="Vector3-zero.html">Vector3.zero</a>, <a href="Vector3-forward.html">Vector3.forward</a>, <a href="Vector3-right.html">Vector3.right</a>, 360f, radius);
+            <a href="Handles.Label.html">Handles.Label</a>(<a href="Vector3-up.html">Vector3.up</a> * radius, meshRenderer.name);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Handles.DrawingScope-originalColor.html">
+      originalColor
+     </a>
+    </td>
+    <td class="desc">
+     创建此 DrawingScope 时的 Handles.color 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Handles.DrawingScope-originalMatrix.html">
+      originalMatrix
+     </a>
+    </td>
+    <td class="desc">
+     创建此 DrawingScope 时的 Handles.matrix 值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Handles.DrawingScope-ctor.html">
+      Handles.DrawingScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 DrawingScope 并将 Handles.color 和/或 Handles.matrix 设置为指定的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Handles.DrawingScope.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     在退出作用域时，自动将 Handles.color 和 Handles.matrix 恢复为进入作用域之前的值。您无需手动调用此方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

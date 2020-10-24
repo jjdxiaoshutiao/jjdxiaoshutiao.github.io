@@ -1,0 +1,252 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderRequirements
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   某个特定着色器所需的着色器功能。功能即位标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     无着色器要求。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.BaseShaders.html">
+      BaseShaders
+     </a>
+    </td>
+    <td class="desc">
+     表示需要基本着色器功能、Shader Model 2.0 级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Interpolators10.html">
+      Interpolators10
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器必须具有 10 个插值器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Interpolators32.html">
+      Interpolators32
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器必须具有 32 个插值器
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.MRT4.html">
+      MRT4
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器必须具有多个渲染目标（至少 4 个），以便支持最多可以输出 4 个值的片元着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.MRT8.html">
+      MRT8
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器必须具有多个渲染目标（至少 8 个），以便支持最多可以输出 4 个值的片元着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Derivatives.html">
+      Derivatives
+     </a>
+    </td>
+    <td class="desc">
+     表示片元着色器中需要偏导 (ddx/ddy) 指令支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.SampleLOD.html">
+      SampleLOD
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器需要在具有显式 Mipmap 级别的片元着色器中支持纹理采样。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.FragCoord.html">
+      FragCoord
+     </a>
+    </td>
+    <td class="desc">
+     表示片元着色器中需要像素位置 (SV_Position) 输入支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Interpolators15Integers.html">
+      Interpolators15Integers
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器必须总共具有 15 个整数和插值器。Unity 将它们捆绑在一起，因为 GPU/API 极不可能只具有其中的一部分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Texture2DArray.html">
+      Texture2DArray
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器需要 2D 数组纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Instancing.html">
+      Instancing
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器必须支持 SV_InstanceID 着色器输入。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Geometry.html">
+      Geometry
+     </a>
+    </td>
+    <td class="desc">
+     表示需要几何着色器支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.CubeArray.html">
+      CubeArray
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器需要立方体贴图数组支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.Compute.html">
+      Compute
+     </a>
+    </td>
+    <td class="desc">
+     表示需要计算着色器支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.RandomWrite.html">
+      RandomWrite
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器需要具有随机写入纹理 (UAV) 支持。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.TessellationCompute.html">
+      TessellationCompute
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器需要支持使用计算着色器进行控制点处理的曲面细分。Metal 图形 API 需要此功能才能支持曲面细分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.TessellationShaders.html">
+      TessellationShaders
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器需要支持使用外壳和域着色器阶段的曲面细分。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.SparseTexelResident.html">
+      SparseTexelResident
+     </a>
+    </td>
+    <td class="desc">
+     指示着色器需要支持稀疏纹理以及用于返回驻留信息的采样指令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.FramebufferFetch.html">
+      FramebufferFetch
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器必须支持帧缓冲提取（这是具有输入+输出片元着色器颜色参数的能力）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderRequirements.MSAATextureSamples.html">
+      MSAATextureSamples
+     </a>
+    </td>
+    <td class="desc">
+     表示着色器需要具有 MSAA 纹理样本的访问权限。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

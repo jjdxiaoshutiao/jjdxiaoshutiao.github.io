@@ -1,0 +1,99 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TrackingOriginModeFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此枚举提供
+   <a href="XR.InputDevice.html">
+    InputDevice
+   </a>
+   跟踪的 0,0,0 点所在位置的上下文。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   每个
+   <a href="XR.XRInputSubsystem.html">
+    XRInputSubsystem
+   </a>
+   都有单个原点可用于所有报告的
+   <a href="XR.InputDevice.html">
+    InputDevice
+   </a>
+   。原点可以相对于真实世界对象（如物理跟踪设备）或虚拟对象（如用户绘制的包围区域的中心）。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.TrackingOriginModeFlags.Unknown.html">
+      Unknown
+     </a>
+    </td>
+    <td class="desc">
+     当 XRInputSubsystem 无法设置其跟踪原点或无跟踪时，TrackingOriginModeFlags.Unknown 进行枚举。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.TrackingOriginModeFlags.Device.html">
+      Device
+     </a>
+    </td>
+    <td class="desc">
+     如果设置为 TrackingOriginModeFlags.Device，XRInputSubsystem 参考特定 InputDevice 的第一个已知位置跟踪所有 InputDevice。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.TrackingOriginModeFlags.Floor.html">
+      Floor
+     </a>
+    </td>
+    <td class="desc">
+     如果设置为 TrackingOriginModeFlags.Floor，XRInputSubsystem 参考地板上的点跟踪所有 InputDevice。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.TrackingOriginModeFlags.TrackingReference.html">
+      TrackingReference
+     </a>
+    </td>
+    <td class="desc">
+     如果设置为 TrackingOriginModeFlags.TrackingReference，XRInputSubsystem 参考已设置 InputDeviceCharacteristics.TrackingReference 标志的 InputDevice 跟踪所有 InputDevice。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

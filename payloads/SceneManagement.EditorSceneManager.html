@@ -1,0 +1,740 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EditorSceneManager
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.SceneManagement
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="SceneManagement.SceneManager.html">
+    SceneManagement.SceneManager
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   编辑器中的场景管理。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.DefaultSceneCullingMask.html">
+      DefaultSceneCullingMask
+     </a>
+    </td>
+    <td class="desc">
+     所有摄像机绘制的场景剔除遮罩。
+默认情况下，所有场景均从该剔除遮罩开始。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-loadedSceneCount.html">
+      loadedSceneCount
+     </a>
+    </td>
+    <td class="desc">
+     已加载的场景的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-playModeStartScene.html">
+      playModeStartScene
+     </a>
+    </td>
+    <td class="desc">
+     启动播放模式时加载此场景资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-preventCrossSceneReferences.html">
+      preventCrossSceneReferences
+     </a>
+    </td>
+    <td class="desc">
+     控制是否允许在编辑器中使用跨场景引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-previewSceneCount.html">
+      previewSceneCount
+     </a>
+    </td>
+    <td class="desc">
+     当前活动预览场景的数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.CalculateAvailableSceneCullingMask.html">
+      CalculateAvailableSceneCullingMask
+     </a>
+    </td>
+    <td class="desc">
+     遍历所有场景，查找所有场景剔除遮罩的并集中最小的未使用位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.ClosePreviewScene.html">
+      ClosePreviewScene
+     </a>
+    </td>
+    <td class="desc">
+     关闭 NewPreviewScene 创建的预览场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.CloseScene.html">
+      CloseScene
+     </a>
+    </td>
+    <td class="desc">
+     关闭场景。如果 removeScene 标志为 true，则关闭的场景还将从 EditorSceneManager 中删除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.DetectCrossSceneReferences.html">
+      DetectCrossSceneReferences
+     </a>
+    </td>
+    <td class="desc">
+     在场景中检测跨场景引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.EnsureUntitledSceneHasBeenSaved.html">
+      EnsureUntitledSceneHasBeenSaved
+     </a>
+    </td>
+    <td class="desc">
+     如果当前的场景管理器设置中存在一个 Untitled 场景，则显示一个保存对话框。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.GetSceneCullingMask.html">
+      GetSceneCullingMask
+     </a>
+    </td>
+    <td class="desc">
+     返回在给定场景中设置的剔除遮罩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.GetSceneManagerSetup.html">
+      GetSceneManagerSetup
+     </a>
+    </td>
+    <td class="desc">
+     返回场景管理器的当前设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.IsPreviewScene.html">
+      IsPreviewScene
+     </a>
+    </td>
+    <td class="desc">
+     该场景是否是预览场景？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.IsPreviewSceneObject.html">
+      IsPreviewSceneObject
+     </a>
+    </td>
+    <td class="desc">
+     此对象是否是预览场景的一部分？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.LoadSceneAsyncInPlayMode.html">
+      LoadSceneAsyncInPlayMode
+     </a>
+    </td>
+    <td class="desc">
+     此方法允许在编辑器中的播放模式期间加载场景，而不需要将场景包含在 Build Settings 的场景列表中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.LoadSceneInPlayMode.html">
+      LoadSceneInPlayMode
+     </a>
+    </td>
+    <td class="desc">
+     此方法允许在编辑器中的播放模式期间加载场景，而不需要将场景包含在 Build Settings 的场景列表中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.MarkAllScenesDirty.html">
+      MarkAllScenesDirty
+     </a>
+    </td>
+    <td class="desc">
+     将所有已加载场景标记为已修改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.MarkSceneDirty.html">
+      MarkSceneDirty
+     </a>
+    </td>
+    <td class="desc">
+     将指定场景标记为已修改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.MoveSceneAfter.html">
+      MoveSceneAfter
+     </a>
+    </td>
+    <td class="desc">
+     允许您对 Hierarchy 窗口中当前打开的场景进行重新排序。将源场景移动到目标场景之后。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.MoveSceneBefore.html">
+      MoveSceneBefore
+     </a>
+    </td>
+    <td class="desc">
+     允许您对 Hierarchy 窗口中当前打开的场景进行重新排序。将源场景移动到目标场景之前。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.NewPreviewScene.html">
+      NewPreviewScene
+     </a>
+    </td>
+    <td class="desc">
+     创建新的预览场景。添加到预览场景中的所有对象都将只能在该场景进行渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.NewScene.html">
+      NewScene
+     </a>
+    </td>
+    <td class="desc">
+     创建新场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.OpenScene.html">
+      OpenScene
+     </a>
+    </td>
+    <td class="desc">
+     在编辑器中打开场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.RestoreSceneManagerSetup.html">
+      RestoreSceneManagerSetup
+     </a>
+    </td>
+    <td class="desc">
+     恢复场景管理器的设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo.html">
+      SaveCurrentModifiedScenesIfUserWantsTo
+     </a>
+    </td>
+    <td class="desc">
+     询问您是否要保存修改后的一个或多个场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SaveModifiedScenesIfUserWantsTo.html">
+      SaveModifiedScenesIfUserWantsTo
+     </a>
+    </td>
+    <td class="desc">
+     询问是否应保存修改后的输入场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SaveOpenScenes.html">
+      SaveOpenScenes
+     </a>
+    </td>
+    <td class="desc">
+     保存所有打开的场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SaveScene.html">
+      SaveScene
+     </a>
+    </td>
+    <td class="desc">
+     保存场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SaveScenes.html">
+      SaveScenes
+     </a>
+    </td>
+    <td class="desc">
+     保存场景列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SetSceneCullingMask.html">
+      SetSceneCullingMask
+     </a>
+    </td>
+    <td class="desc">
+     将此场景中的剔除遮罩设置为该值。
+摄像机将仅渲染场景中在剔除遮罩中设置了相同位的对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-activeSceneChangedInEditMode.html">
+      activeSceneChangedInEditMode
+     </a>
+    </td>
+    <td class="desc">
+     订阅此事件可在编辑器中的编辑模式下改变活动场景时收到通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-newSceneCreated.html">
+      newSceneCreated
+     </a>
+    </td>
+    <td class="desc">
+     在创建新场景后，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneClosed.html">
+      sceneClosed
+     </a>
+    </td>
+    <td class="desc">
+     在编辑器中关闭场景后，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneClosing.html">
+      sceneClosing
+     </a>
+    </td>
+    <td class="desc">
+     在您已请求关闭一个打开的场景之后且在关闭此场景之前，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneDirtied.html">
+      sceneDirtied
+     </a>
+    </td>
+    <td class="desc">
+     在编辑器中修改场景后调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneOpened.html">
+      sceneOpened
+     </a>
+    </td>
+    <td class="desc">
+     在编辑器中已打开场景后，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneOpening.html">
+      sceneOpening
+     </a>
+    </td>
+    <td class="desc">
+     在打开现有场景之前，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneSaved.html">
+      sceneSaved
+     </a>
+    </td>
+    <td class="desc">
+     在保存场景后，调用此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager-sceneSaving.html">
+      sceneSaving
+     </a>
+    </td>
+    <td class="desc">
+     在您已请求保存场景之后且在磁盘上保存此场景之前，调用此事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.NewSceneCreatedCallback.html">
+      NewSceneCreatedCallback
+     </a>
+    </td>
+    <td class="desc">
+     创建新场景后，调用已添加到 newSceneCreated 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneClosedCallback.html">
+      SceneClosedCallback
+     </a>
+    </td>
+    <td class="desc">
+     关闭场景后，立即调用已添加到 sceneClosed 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneClosingCallback.html">
+      SceneClosingCallback
+     </a>
+    </td>
+    <td class="desc">
+     关闭场景之前，立即调用已添加到 sceneClosing 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneDirtiedCallback.html">
+      SceneDirtiedCallback
+     </a>
+    </td>
+    <td class="desc">
+     场景从未修改变为已修改后，调用已添加到 sceneDirtied 事件中的此类型回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneOpenedCallback.html">
+      SceneOpenedCallback
+     </a>
+    </td>
+    <td class="desc">
+     打开场景后，调用已添加到 sceneOpened 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneOpeningCallback.html">
+      SceneOpeningCallback
+     </a>
+    </td>
+    <td class="desc">
+     打开场景之前，立即调用已添加到 sceneOpening 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneSavedCallback.html">
+      SceneSavedCallback
+     </a>
+    </td>
+    <td class="desc">
+     保存场景后，调用已添加到 sceneSaved 事件中的此类回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.EditorSceneManager.SceneSavingCallback.html">
+      SceneSavingCallback
+     </a>
+    </td>
+    <td class="desc">
+     保存场景之前，立即调用已添加到 sceneSaving 事件中的此类回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    静态变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager-sceneCount.html">
+       sceneCount
+      </a>
+     </td>
+     <td class="desc">
+      当前加载的场景总数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager-sceneCountInBuildSettings.html">
+       sceneCountInBuildSettings
+      </a>
+     </td>
+     <td class="desc">
+      Build Settings 中的场景数量。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.CreateScene.html">
+       CreateScene
+      </a>
+     </td>
+     <td class="desc">
+      在运行时使用给定名称创建一个新的空场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.GetActiveScene.html">
+       GetActiveScene
+      </a>
+     </td>
+     <td class="desc">
+      获取当前活动的场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.GetSceneAt.html">
+       GetSceneAt
+      </a>
+     </td>
+     <td class="desc">
+      获取 SceneManager 的已加载场景列表中索引处的场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.GetSceneByBuildIndex.html">
+       GetSceneByBuildIndex
+      </a>
+     </td>
+     <td class="desc">
+      从构建索引中获取场景结构。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.GetSceneByName.html">
+       GetSceneByName
+      </a>
+     </td>
+     <td class="desc">
+      搜索已加载的场景，查找包含给定名称的场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.GetSceneByPath.html">
+       GetSceneByPath
+      </a>
+     </td>
+     <td class="desc">
+      搜索所有已加载的场景，查找具有给定资源路径的场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.LoadScene.html">
+       LoadScene
+      </a>
+     </td>
+     <td class="desc">
+      按照 Build Settings 中的名称或索引加载场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.LoadSceneAsync.html">
+       LoadSceneAsync
+      </a>
+     </td>
+     <td class="desc">
+      在后台异步加载场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.MergeScenes.html">
+       MergeScenes
+      </a>
+     </td>
+     <td class="desc">
+      这会将源场景合并到 destinationScene 中。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.MoveGameObjectToScene.html">
+       MoveGameObjectToScene
+      </a>
+     </td>
+     <td class="desc">
+      将游戏对象从当前场景移至新场景。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.SetActiveScene.html">
+       SetActiveScene
+      </a>
+     </td>
+     <td class="desc">
+      将场景设置为活动状态。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager.UnloadSceneAsync.html">
+       UnloadSceneAsync
+      </a>
+     </td>
+     <td class="desc">
+      销毁所有与给定场景关联的游戏对象，并将场景从 SceneManager 中移除。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    Events
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager-activeSceneChanged.html">
+       activeSceneChanged
+      </a>
+     </td>
+     <td class="desc">
+      订阅此事件可在活动场景发生变化时收到通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager-sceneLoaded.html">
+       sceneLoaded
+      </a>
+     </td>
+     <td class="desc">
+      向此事件添加委托，以在加载场景时收到通知。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="SceneManagement.SceneManager-sceneUnloaded.html">
+       sceneUnloaded
+      </a>
+     </td>
+     <td class="desc">
+      向此事件添加委托以在卸载场景时收到通知。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

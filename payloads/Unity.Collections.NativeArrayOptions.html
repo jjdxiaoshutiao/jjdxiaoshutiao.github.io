@@ -1,0 +1,68 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NativeArrayOptions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   借助 NativeArrayOptions，您可以控制内存是应该在分配时清除还是保留未初始化。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   NativeArrayOptions.ClearMemory 是默认选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArrayOptions.UninitializedMemory.html">
+      UninitializedMemory
+     </a>
+    </td>
+    <td class="desc">
+     未初始化的内存可以提高性能，但会导致数组元素内容不被定义。
+在性能敏感的代码中，如果在创建整个数组后立即向其写入数据且未先读取任何元素，那么合理的做法是使用 NativeArrayOptions.Uninitialized。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Collections.NativeArrayOptions.ClearMemory.html">
+      ClearMemory
+     </a>
+    </td>
+    <td class="desc">
+     在分配时清除 NativeArray 内存。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

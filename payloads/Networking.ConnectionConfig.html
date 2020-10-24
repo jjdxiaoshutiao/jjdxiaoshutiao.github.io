@@ -1,0 +1,85 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Method group is Obsolete
+   </b>
+   <br/>
+  </div>
+  <h1 class="heading inherit">
+   ConnectionConfig
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+     Obsolete
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此类定义两个对等方之间的连接的参数，此定义包含各种超时和大小以及通道配置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此类的实例可用于配置 NetworkServer 和 NetworkClient 类。这样，ConnectionConfig 中的设置便可应用到这些对象所拥有的 NetworkConnection 的传输层连接。
+   <br/>
+   <br/>
+   NetworkManager 有一个 ConnectionConfig 对象，可用于配置该对象创建的服务器和客户端。
+   <br/>
+   <br/>
+   网络系统的高级组件使用的默认通道连接配置为：
+* 通道 0 - 经过排序的可靠通道
+* 通道 1 - 不可靠通道。
+   <br/>
+   <br/>
+   在 Editor 中，可以使用适用于 NetworkManager 的 Inspector UI 修改此 ConnectionConfig 实例的一些属性。
+   <br/>
+   <br/>
+   重要信息：ConnectionConfig 的一些参数应与所连接对等方的参数完全相同。如果它们不相同，则在尝试建立连接时会收到 CRCMismatch 错误。
+   <br/>
+   <br/>
+   这些参数为：
+   <br/>
+   - PacketSize
+   <br/>
+   - FragmentSize
+   <br/>
+   - ResendTimeout
+   <br/>
+   - DisconnectTimeout
+   <br/>
+   - ConnectTimeout
+   <br/>
+   - PingTimeout
+   <br/>
+   - ReducedPingTimeout
+   <br/>
+   - AllCostTimeout
+   <br/>
+   - IsAckLong
+   <br/>
+   - UsePlatformSpecificProtocols。
+   <br/>
+  </p>
+ </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TypeCache
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供从加载到 Unity 域的程序集中进行快速类型提取的方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用
+   <em>
+    TypeCache
+   </em>
+   可访问属性和派生的类型信息。此缓存允许从原生缓存数据中利用任意编辑器代码。
+   <br/>
+   <br/>
+   常见用例是在构建或扩展 Unity 编辑器时提取用特定属性标记的类型或用于扩展或实现特定类型的类。
+在当前域中迭代类型的操作通常很慢，速度与类型数成线性关系。
+   <br/>
+   <br/>
+   为加速类型提取，编辑器在原生侧构建一个加速表，其中包含有关类型属性和派生类的信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using System;
+using System.Collections.Generic;
+using System.Linq;<br/><br/>public class VolumeComponent {}<br/><br/>public class Example
+{
+    static List&lt;Type&gt; s_VolumeComponents;
+    static Example()
+    {
+        s_VolumeComponents = <a href="TypeCache.GetTypesDerivedFrom.html">TypeCache.GetTypesDerivedFrom</a>&lt;VolumeComponent&gt;().ToList();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TypeCache.GetMethodsWithAttribute.html">
+      GetMethodsWithAttribute
+     </a>
+    </td>
+    <td class="desc">
+     获取用 T 属性标记的方法的集合。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TypeCache.GetTypesDerivedFrom.html">
+      GetTypesDerivedFrom
+     </a>
+    </td>
+    <td class="desc">
+     获取从 T 类型派生的类型的集合。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TypeCache.GetTypesWithAttribute.html">
+      GetTypesWithAttribute
+     </a>
+    </td>
+    <td class="desc">
+     获取用 T 属性标记的类型的集合。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

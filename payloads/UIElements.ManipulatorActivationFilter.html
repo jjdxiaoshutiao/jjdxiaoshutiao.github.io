@@ -1,0 +1,104 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ManipulatorActivationFilter
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.UIElements
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   供操控器用于根据其要求匹配事件。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;
+using UnityEngine.UIElements;<br/><br/>public class ClickableTest
+{
+    public void CreateClickable()
+    {
+        var clickable = new <a href="UIElements.Clickable.html">Clickable</a>(() =&gt; { <a href="Debug.Log.html">Debug.Log</a>("Clicked!"); });
+        clickable.activators.Add(new <a href="UIElements.ManipulatorActivationFilter.html">ManipulatorActivationFilter</a> { button = <a href="UIElements.MouseButton.LeftMouse.html">MouseButton.LeftMouse</a> });
+        clickable.activators.Add(new <a href="UIElements.ManipulatorActivationFilter.html">ManipulatorActivationFilter</a> { button = <a href="UIElements.MouseButton.RightMouse.html">MouseButton.RightMouse</a>, clickCount = 2, modifiers = <a href="EventModifiers.Control.html">EventModifiers.Control</a> });
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.ManipulatorActivationFilter-button.html">
+      button
+     </a>
+    </td>
+    <td class="desc">
+     用于激活操作的按钮。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.ManipulatorActivationFilter-clickCount.html">
+      clickCount
+     </a>
+    </td>
+    <td class="desc">
+     激活操控器所需的鼠标单击次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.ManipulatorActivationFilter-modifiers.html">
+      modifiers
+     </a>
+    </td>
+    <td class="desc">
+     激活操作所需的任意修改键（即，Ctrl、Alt 等）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.ManipulatorActivationFilter.Matches.html">
+      Matches
+     </a>
+    </td>
+    <td class="desc">
+     如果当前鼠标事件满足激活要求，则返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PreserveAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Scripting
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   PreserveAttribute 可防止字节码剥离移除类、方法、字段或属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当您创建编译版本时，Unity 将尝试从项目中剥离未使用的代码。这有利于获取小型编译版本。但有时，即使某些代码看起来未曾使用，您也不希望将其剥离。这种情况有可能会发生，如使用反射来调用一个方法或者实例化某个类的对象时。
+您可以将 [Preserve] 属性应用于类、方法、字段以及属性。除了使用 PreserveAttribute 之外，您也可以使用 link.xml 文件的传统方法来告知链接器不要移除某些代码。PreserveAttribute 和 link.xml 适用于 Mono 和 IL2CPP 脚本后端。
+   <br/>
+   <br/>
+   有关[Preserve] and link.xml see
+   <a href="../Manual/ManagedCodeStripping.html">
+    托管代码剥离
+   </a>
+   的更多详细信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;
+using System.Reflection;
+using UnityEngine.Scripting;<br/><br/>public class NewBehaviourScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        ReflectionExample.InvokeBoinkByReflection();
+    }
+}<br/><br/>public class ReflectionExample
+{
+    static public void InvokeBoinkByReflection()
+    {
+        typeof(ReflectionExample).GetMethod("Boink", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, null);
+    }<br/><br/>    // No other code directly references the Boink method, so when when stripping is enabled,
+    // it will be removed unless the [Preserve] attribute is applied.
+    [Preserve]
+    static void Boink()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Boink");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   对于不希望依赖 UnityEngine.dll 的第三方库来说，也可以定义它们自己的 PreserveAttribute。代码剥离器也会遵守这一规则；此外，如果有任何属性具有确切的名称"PreserveAtribute"，则代码剥离器不会剥离应用了此类属性的代码，无论此类属性的命名空间或程序集如何。
+  </p>
+ </div>
+</div>

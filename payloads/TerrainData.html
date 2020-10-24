@@ -1,0 +1,896 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TerrainData
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   TerrainData 类负责存储高度贴图、细节网格位置、树实例和地形纹理 Alpha 贴图。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="Terrain.html">
+    Terrain
+   </a>
+   组件链接到地形数据并渲染它。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.AlphamapTextureName.html">
+      AlphamapTextureName
+     </a>
+    </td>
+    <td class="desc">
+     地形 Alpha 贴图纹理的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.HolesTextureName.html">
+      HolesTextureName
+     </a>
+    </td>
+    <td class="desc">
+     地形孔洞纹理的名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapHeight.html">
+      alphamapHeight
+     </a>
+    </td>
+    <td class="desc">
+     Alpha 贴图的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapLayers.html">
+      alphamapLayers
+     </a>
+    </td>
+    <td class="desc">
+     Alpha 贴图的图层数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapResolution.html">
+      alphamapResolution
+     </a>
+    </td>
+    <td class="desc">
+     Alpha 贴图的分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapTextureCount.html">
+      alphamapTextureCount
+     </a>
+    </td>
+    <td class="desc">
+     返回 Alpha 贴图纹理的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapTextures.html">
+      alphamapTextures
+     </a>
+    </td>
+    <td class="desc">
+     地形使用的 Alpha 贴图纹理。供 Terrain Inspector 用于实现撤销操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-alphamapWidth.html">
+      alphamapWidth
+     </a>
+    </td>
+    <td class="desc">
+     Alpha 贴图的宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-baseMapResolution.html">
+      baseMapResolution
+     </a>
+    </td>
+    <td class="desc">
+     用于在地形上渲染远处斑块的底图的分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-bounds.html">
+      bounds
+     </a>
+    </td>
+    <td class="desc">
+     TerrainData 对象的本地包围盒。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailHeight.html">
+      detailHeight
+     </a>
+    </td>
+    <td class="desc">
+     TerrainData 的细节高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailPatchCount.html">
+      detailPatchCount
+     </a>
+    </td>
+    <td class="desc">
+     沿地形区块边缘的面片数。此属性在经过平方后生成面片网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailPrototypes.html">
+      detailPrototypes
+     </a>
+    </td>
+    <td class="desc">
+     包含地形具有的细节纹理/网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailResolution.html">
+      detailResolution
+     </a>
+    </td>
+    <td class="desc">
+     TerrainData 的细节分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailResolutionPerPatch.html">
+      detailResolutionPerPatch
+     </a>
+    </td>
+    <td class="desc">
+     每个斑块的细节分辨率。较大的值将减少细节对象使用的批次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-detailWidth.html">
+      detailWidth
+     </a>
+    </td>
+    <td class="desc">
+     TerrainData 的细节宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-enableHolesTextureCompression.html">
+      enableHolesTextureCompression
+     </a>
+    </td>
+    <td class="desc">
+     启用地形孔洞纹理压缩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-heightmapResolution.html">
+      heightmapResolution
+     </a>
+    </td>
+    <td class="desc">
+     高度贴图的分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-heightmapScale.html">
+      heightmapScale
+     </a>
+    </td>
+    <td class="desc">
+     每个高度贴图样本的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-heightmapTexture.html">
+      heightmapTexture
+     </a>
+    </td>
+    <td class="desc">
+     返回高度贴图纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-holesResolution.html">
+      holesResolution
+     </a>
+    </td>
+    <td class="desc">
+     返回数据和纹理的地形孔洞分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-holesTexture.html">
+      holesTexture
+     </a>
+    </td>
+    <td class="desc">
+     返回地形孔洞纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     地形的总大小（世界单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-terrainLayers.html">
+      terrainLayers
+     </a>
+    </td>
+    <td class="desc">
+     检索当前地形使用的地形层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-treeInstanceCount.html">
+      treeInstanceCount
+     </a>
+    </td>
+    <td class="desc">
+     返回树实例的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-treeInstances.html">
+      treeInstances
+     </a>
+    </td>
+    <td class="desc">
+     包含当前放置在地形中的树。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-treePrototypes.html">
+      treePrototypes
+     </a>
+    </td>
+    <td class="desc">
+     可在 Inspector 中使用的树原型的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-wavingGrassAmount.html">
+      wavingGrassAmount
+     </a>
+    </td>
+    <td class="desc">
+     地形中摇摆的草的数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-wavingGrassSpeed.html">
+      wavingGrassSpeed
+     </a>
+    </td>
+    <td class="desc">
+     摇摆草的速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-wavingGrassStrength.html">
+      wavingGrassStrength
+     </a>
+    </td>
+    <td class="desc">
+     地形中摇摆的草的强度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData-wavingGrassTint.html">
+      wavingGrassTint
+     </a>
+    </td>
+    <td class="desc">
+     地形具有的摇摆的草的颜色。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.CopyActiveRenderTextureToHeightmap.html">
+      CopyActiveRenderTextureToHeightmap
+     </a>
+    </td>
+    <td class="desc">
+     将活动 RenderTexture 的指定部分复制到地形高度贴图纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.CopyActiveRenderTextureToTexture.html">
+      CopyActiveRenderTextureToTexture
+     </a>
+    </td>
+    <td class="desc">
+     将活动 RenderTexture 的指定部分复制到地形纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.DirtyHeightmapRegion.html">
+      DirtyHeightmapRegion
+     </a>
+    </td>
+    <td class="desc">
+     将高度贴图的指定部分标记为“脏”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.DirtyTextureRegion.html">
+      DirtyTextureRegion
+     </a>
+    </td>
+    <td class="desc">
+     将地形纹理的指定部分标记为“脏”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetAlphamaps.html">
+      GetAlphamaps
+     </a>
+    </td>
+    <td class="desc">
+     返回位置 x、y 处给定宽度和高度的 Alpha 贴图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetAlphamapTexture.html">
+      GetAlphamapTexture
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的 Alpha 贴图纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetDetailLayer.html">
+      GetDetailLayer
+     </a>
+    </td>
+    <td class="desc">
+     返回特定位置中细节对象密度的二维数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetHeight.html">
+      GetHeight
+     </a>
+    </td>
+    <td class="desc">
+     获取某个点 (x,y) 处的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetHeights.html">
+      GetHeights
+     </a>
+    </td>
+    <td class="desc">
+     获取一个高度贴图样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetHoles.html">
+      GetHoles
+     </a>
+    </td>
+    <td class="desc">
+     获取地形孔洞样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetInterpolatedHeight.html">
+      GetInterpolatedHeight
+     </a>
+    </td>
+    <td class="desc">
+     获取点 (x,y) 处的插值高度。x 和 y 坐标钳制到 [0, 1] 内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetInterpolatedHeights.html">
+      GetInterpolatedHeights
+     </a>
+    </td>
+    <td class="desc">
+     使用标准化 x,y 坐标获取地形高度值的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetInterpolatedNormal.html">
+      GetInterpolatedNormal
+     </a>
+    </td>
+    <td class="desc">
+     获取给定位置处的插值法线。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetMaximumHeightError.html">
+      GetMaximumHeightError
+     </a>
+    </td>
+    <td class="desc">
+     返回每个可渲染地形面片的曲面细分最大高度误差值数组。可以修改返回的数组并将其传递给 OverrideMaximumHeightError。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetPatchMinMaxHeights.html">
+      GetPatchMinMaxHeights
+     </a>
+    </td>
+    <td class="desc">
+     返回地形中所有可渲染面片的最小/最大高度值数组。可以修改返回的数组，然后将其传递给 OverrideMinMaxPatchHeights。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetSteepness.html">
+      GetSteepness
+     </a>
+    </td>
+    <td class="desc">
+     获取点 (x,y) 处的地形梯度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetSupportedLayers.html">
+      GetSupportedLayers
+     </a>
+    </td>
+    <td class="desc">
+     返回区域中所有支持的细节层索引的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.GetTreeInstance.html">
+      GetTreeInstance
+     </a>
+    </td>
+    <td class="desc">
+     获取指定索引处的树实例。该函数不创建整个树实例数组，因此可当作更快版本的 treeInstances[index] 使用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.IsHole.html">
+      IsHole
+     </a>
+    </td>
+    <td class="desc">
+     获取 x,y 处的特定点是否为孔洞。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.OverrideMaximumHeightError.html">
+      OverrideMaximumHeightError
+     </a>
+    </td>
+    <td class="desc">
+     使用用户提供的值重写最大曲面细分高度误差。请注意，重写的值会在地形分辨率更改时重置，而在通过脚本绘制或更改地形高度贴图时保持不变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.OverrideMinMaxPatchHeights.html">
+      OverrideMinMaxPatchHeights
+     </a>
+    </td>
+    <td class="desc">
+     重写每个可渲染地形面片的最小和最大面片高度。请注意，重写的值会在地形分辨率更改时重置，而在通过脚本绘制或更改地形高度贴图时保持不变。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.RefreshPrototypes.html">
+      RefreshPrototypes
+     </a>
+    </td>
+    <td class="desc">
+     重新加载 TerrainData 对象中可用原型（即细节网格资源）的所有值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetAlphamaps.html">
+      SetAlphamaps
+     </a>
+    </td>
+    <td class="desc">
+     在给定贴图区域中分配所有泼溅值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetBaseMapDirty.html">
+      SetBaseMapDirty
+     </a>
+    </td>
+    <td class="desc">
+     将地形数据标记为脏以触发地形基础贴图纹理的更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetDetailLayer.html">
+      SetDetailLayer
+     </a>
+    </td>
+    <td class="desc">
+     设置细节层密度贴图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetDetailResolution.html">
+      SetDetailResolution
+     </a>
+    </td>
+    <td class="desc">
+     设置细节贴图的分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetHeights.html">
+      SetHeights
+     </a>
+    </td>
+    <td class="desc">
+     设置一个高度贴图样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetHeightsDelayLOD.html">
+      SetHeightsDelayLOD
+     </a>
+    </td>
+    <td class="desc">
+     设置一个高度贴图样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetHoles.html">
+      SetHoles
+     </a>
+    </td>
+    <td class="desc">
+     设置地形孔洞样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetHolesDelayLOD.html">
+      SetHolesDelayLOD
+     </a>
+    </td>
+    <td class="desc">
+     设置地形孔洞样本数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetTerrainLayersRegisterUndo.html">
+      SetTerrainLayersRegisterUndo
+     </a>
+    </td>
+    <td class="desc">
+     此函数设置 terrainLayers 属性，此外，将操作注册到编辑器的撤销堆栈。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetTreeInstance.html">
+      SetTreeInstance
+     </a>
+    </td>
+    <td class="desc">
+     使用新参数在指定索引处设置树实例。但是，无法更改 TreeInstance.prototypeIndex 和 TreeInstance.position。如果更改它们，则该方法会抛出 ArgumentException。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SetTreeInstances.html">
+      SetTreeInstances
+     </a>
+    </td>
+    <td class="desc">
+     设置树实例数组，可以选择将树贴靠到地形高度贴图的表面上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SyncHeightmap.html">
+      SyncHeightmap
+     </a>
+    </td>
+    <td class="desc">
+     执行按以前的 CopyActiveRenderTextureToHeightmap 和 DirtyHeightmapRegion 调用排队的同步，这可使用于曲面细分的高度数据和 LOD 数据保持最新状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="TerrainData.SyncTexture.html">
+      SyncTexture
+     </a>
+    </td>
+    <td class="desc">
+     执行按以前的 CopyActiveRenderTextureToTexture 和 DirtyTextureRegion 调用排队的同步，这可使地形纹理的 CPU 数据保持最新状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

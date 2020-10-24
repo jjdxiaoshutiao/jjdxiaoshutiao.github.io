@@ -1,0 +1,408 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightmapEditorSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   有关烘焙的各种设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可通过
+   <a href="Lightmapping.html">
+    Lightmapping
+   </a>
+   类来启动烘焙。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Lightmapping.html">
+    Lightmapping
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-aoExponentDirect.html">
+      aoExponentDirect
+     </a>
+    </td>
+    <td class="desc">
+     直接光照的环境光遮挡 (AO)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-aoExponentIndirect.html">
+      aoExponentIndirect
+     </a>
+    </td>
+    <td class="desc">
+     间接光照的环境光遮挡 (AO)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-aoMaxDistance.html">
+      aoMaxDistance
+     </a>
+    </td>
+    <td class="desc">
+     超过此距离后，光线被认为未被遮挡。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-bakeResolution.html">
+      bakeResolution
+     </a>
+    </td>
+    <td class="desc">
+     以每世界单位的纹理像素为单位指定烘焙光照贴图的分辨率。指定更高的分辨率会显著增加烘焙光照贴图所需的时间。默认值是每世界单位一个纹理像素。最小值为 0.0001。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-bounces.html">
+      bounces
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图为间接光计算的最大反弹次数。默认值为 2。范围为 0 到 4。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-denoiserTypeAO.html">
+      denoiserTypeAO
+     </a>
+    </td>
+    <td class="desc">
+     应用到光照贴图的环境光遮挡的降噪类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-denoiserTypeDirect.html">
+      denoiserTypeDirect
+     </a>
+    </td>
+    <td class="desc">
+     应用到光照贴图的直射光的降噪类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-denoiserTypeIndirect.html">
+      denoiserTypeIndirect
+     </a>
+    </td>
+    <td class="desc">
+     应用到光照贴图的间接光的降噪类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-directSampleCount.html">
+      directSampleCount
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图用于直接光照计算的样本数。默认值为 32。范围为 1 到 131072。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-enableAmbientOcclusion.html">
+      enableAmbientOcclusion
+     </a>
+    </td>
+    <td class="desc">
+     启用烘焙环境光遮挡 (AO)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-environmentSampleCount.html">
+      environmentSampleCount
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图用于直接环境光照计算的样本数。默认值为 256。范围为 8 到 131072。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-exportTrainingData.html">
+      exportTrainingData
+     </a>
+    </td>
+    <td class="desc">
+     导出项目文件夹中当前烘焙的训练数据。仅使用渐进 CPU。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringAtrousPositionSigmaAO.html">
+      filteringAtrousPositionSigmaAO
+     </a>
+    </td>
+    <td class="desc">
+     指定一个阈值，渐进光照贴图在使用 A-Trous 过滤器时使用此阈值来过滤光照贴图中存储的环境光遮挡。默认值为 1。值范围为 0 到 2。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringAtrousPositionSigmaDirect.html">
+      filteringAtrousPositionSigmaDirect
+     </a>
+    </td>
+    <td class="desc">
+     指定一个阈值，渐进光照贴图在使用 A-Trous 过滤器时使用此阈值来过滤光照贴图中存储的直射光。默认值为 0.5。值范围为 0 到 2。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringAtrousPositionSigmaIndirect.html">
+      filteringAtrousPositionSigmaIndirect
+     </a>
+    </td>
+    <td class="desc">
+     指定一个阈值，渐进光照贴图在使用 A-Trous 过滤器时使用此阈值来过滤光照贴图中存储的间接光。默认值为 2。值范围为 0 到 2。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringGaussRadiusAO.html">
+      filteringGaussRadiusAO
+     </a>
+    </td>
+    <td class="desc">
+     指定一个半径，渐进光照贴图在使用高斯过滤器时使用此半径来过滤光照贴图中的环境光遮挡。默认值为 2。值范围为 0 到 5。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringGaussRadiusDirect.html">
+      filteringGaussRadiusDirect
+     </a>
+    </td>
+    <td class="desc">
+     指定一个半径，渐进光照贴图在使用高斯过滤器时使用此半径来过滤光照贴图中存储的直射光。默认值为 1。值范围为 0 到 5。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringGaussRadiusIndirect.html">
+      filteringGaussRadiusIndirect
+     </a>
+    </td>
+    <td class="desc">
+     指定一个半径，渐进光照贴图在使用高斯过滤器时使用此半径来过滤光照贴图中存储的间接光。默认值为 5。值范围为 0 到 5。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filteringMode.html">
+      filteringMode
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图用于减少烘焙光照贴图中的噪点的方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filterTypeAO.html">
+      filterTypeAO
+     </a>
+    </td>
+    <td class="desc">
+     为环境光遮挡目标配置一个过滤器内核。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filterTypeDirect.html">
+      filterTypeDirect
+     </a>
+    </td>
+    <td class="desc">
+     为直射光目标配置一个过滤器内核。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-filterTypeIndirect.html">
+      filterTypeIndirect
+     </a>
+    </td>
+    <td class="desc">
+     为间接光目标配置一个过滤器内核。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-indirectSampleCount.html">
+      indirectSampleCount
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图用于间接光照计算的样本数。默认值为 512。范围为 8 到 131072。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-lightmapper.html">
+      lightmapper
+     </a>
+    </td>
+    <td class="desc">
+     确定用于烘焙光照贴图的后端。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-lightmapsMode.html">
+      lightmapsMode
+     </a>
+    </td>
+    <td class="desc">
+     NonDirectional 或 CombinedDirectional 光照贴图渲染模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-lightProbeSampleCountMultiplier.html">
+      lightProbeSampleCountMultiplier
+     </a>
+    </td>
+    <td class="desc">
+     指定用于相对于光照贴图纹理像素的光照探测器的样本数。默认值为 4。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-maxAtlasSize.html">
+      maxAtlasSize
+     </a>
+    </td>
+    <td class="desc">
+     单个光照贴图纹理的最大大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-mixedBakeMode.html">
+      mixedBakeMode
+     </a>
+    </td>
+    <td class="desc">
+     表示用于烘焙 LightmapBakeType.Mixed 光源的混合模式，与实时和烘焙光源无关。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-padding.html">
+      padding
+     </a>
+    </td>
+    <td class="desc">
+     形状之间的纹理像素隔离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-prioritizeView.html">
+      prioritizeView
+     </a>
+    </td>
+    <td class="desc">
+     指定渐进光照贴图是否应优先考虑 Scene 视图中的烘焙纹理像素。默认值为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-realtimeResolution.html">
+      realtimeResolution
+     </a>
+    </td>
+    <td class="desc">
+     以每世界单位的纹理像素为单位的光照贴图分辨率。如果启用，则定义实时 GI 的分辨率。如果启用了烘焙 GI，则定义用于间接光照的分辨率。分辨率越高，烘焙花费的时间越长。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-reflectionCubemapCompression.html">
+      reflectionCubemapCompression
+     </a>
+    </td>
+    <td class="desc">
+     确定 Unity 将如何压缩烘焙反射立方体贴图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-sampling.html">
+      sampling
+     </a>
+    </td>
+    <td class="desc">
+     确定在采用渐进光照贴图程序时要用于烘焙光照贴图的采样策略。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-textureCompression.html">
+      textureCompression
+     </a>
+    </td>
+    <td class="desc">
+     是否在生成的光照贴图上使用纹理压缩。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapEditorSettings-trainingDataDestination.html">
+      trainingDataDestination
+     </a>
+    </td>
+    <td class="desc">
+     控制已导出纹理的目标文件夹的名称。例如，"mySetup/30samples" 将位于项目文件夹中。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

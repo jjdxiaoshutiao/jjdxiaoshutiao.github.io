@@ -1,0 +1,203 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Recorder
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Profiling
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   录制特定采样器生成的性能分析数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   录制器会累积帧期间每个 Begin/End 对所用的时间。
+启用后，它会对采样器生成的 Begin 和 End 样本之间的增量时间求和。
+使用
+   <a href="Profiling.Recorder-elapsedNanoseconds.html">
+    elapsedNanoseconds
+   </a>
+   可获取前一帧的累积时间。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Profiling;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Profiling.Recorder.html">Recorder</a> behaviourUpdateRecorder;
+    void Start()
+    {
+        behaviourUpdateRecorder = <a href="Profiling.Recorder.Get.html">Recorder.Get</a>("BehaviourUpdate");
+        behaviourUpdateRecorder.enabled = true;
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (behaviourUpdateRecorder.isValid)
+            <a href="Debug.Log.html">Debug.Log</a>("BehaviourUpdate time: " + behaviourUpdateRecorder.elapsedNanoseconds);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意
+   </strong>
+   ：
+无论性能分析器状态如何，录制器都会收集数据。启用录制器后，每次按采样器时都会累积数据。
+这些信息等同于您在
+   <a href="../Manual/ProfilerCPU.html">
+    Profiler Window
+   </a>
+   的 Hierarchy 视图中看到的信息。
+   <br/>
+   <br/>
+   目前，采样器仅在 Editor 和 Development Player 中可用。使用
+   <a href="Profiling.Recorder-isValid.html">
+    Recorder.isValid
+   </a>
+   可验证录制器能否收集数据。
+   <br/>
+   <br/>
+   录制器仅支持内部静态性能分析器标签以及
+   <a href="Profiling.CustomSampler.html">
+    CustomSampler
+   </a>
+   生成的标签。
+不支持脚本方法调用生成的动态内部标签以及
+   <a href="Profiling.Profiler.BeginSample.html">
+    Profiler.BeginSample
+   </a>
+   生成的标签。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Profiling.Sampler.html">
+    Sampler
+   </a>
+   、
+   <a href="Profiling.Recorder-isValid.html">
+    Recorder.isValid
+   </a>
+   、
+   <a href="Profiling.Recorder-elapsedNanoseconds.html">
+    Recorder.elapsedNanoseconds
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder-elapsedNanoseconds.html">
+      elapsedNanoseconds
+     </a>
+    </td>
+    <td class="desc">
+     前一帧的 Begin/End 对的累积时间（以纳秒为单位）。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder-enabled.html">
+      enabled
+     </a>
+    </td>
+    <td class="desc">
+     启用录制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder-isValid.html">
+      isValid
+     </a>
+    </td>
+    <td class="desc">
+     如果录制器有效且可收集数据，则返回 true。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder-sampleBlockCount.html">
+      sampleBlockCount
+     </a>
+    </td>
+    <td class="desc">
+     在前一帧中调用 Begin/End 对的次数。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder.CollectFromAllThreads.html">
+      CollectFromAllThreads
+     </a>
+    </td>
+    <td class="desc">
+     将录制器配置为从所有线程收集样本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder.FilterToCurrentThread.html">
+      FilterToCurrentThread
+     </a>
+    </td>
+    <td class="desc">
+     将录制器配置为仅从当前线程收集数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Recorder.Get.html">
+      Get
+     </a>
+    </td>
+    <td class="desc">
+     使用此函数可获取特定性能分析器标签的录制器。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

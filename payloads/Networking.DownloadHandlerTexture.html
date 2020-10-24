@@ -1,0 +1,248 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DownloadHandlerTexture
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Networking.DownloadHandler.html">
+    Networking.DownloadHandler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   专用于下载要用作
+   <a href="Texture.html">
+    Texture
+   </a>
+   对象的图像的
+   <a href="Networking.DownloadHandler.html">
+    DownloadHandler
+   </a>
+   子类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   DownloadHandlerTexture 会将收到的数据存储在预分配的 Unity
+   <a href="Texture.html">
+    Texture
+   </a>
+   对象中。该对象已经过优化，可从 Web 服务器下载图像，还可在工作线程上对图像进行解压缩和解码。
+   <br/>
+   <br/>
+   如果您的用例需要通过 HTTP 下载图像并在 Unity 中将其用作纹理，强烈建议您使用此类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandlerTexture-texture.html">
+      texture
+     </a>
+    </td>
+    <td class="desc">
+     返回下载的 Texture 或 null。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandlerTexture-ctor.html">
+      DownloadHandlerTexture
+     </a>
+    </td>
+    <td class="desc">
+     默认构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandlerTexture.GetData.html">
+      GetData
+     </a>
+    </td>
+    <td class="desc">
+     由 DownloadHandler.data 调用。返回原始字节形式的所下载图像数据的副本。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.DownloadHandlerTexture.GetContent.html">
+      GetContent
+     </a>
+    </td>
+    <td class="desc">
+     返回下载的 Texture 或 null。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-data.html">
+       data
+      </a>
+     </td>
+     <td class="desc">
+      返回从远程服务器下载的原始字节，或 null。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-isDone.html">
+       isDone
+      </a>
+     </td>
+     <td class="desc">
+      如果此 DownloadHandler 的父 UnityWebRequest 已通知它已接收所有数据，且此 DownloadHandler 已完成所有必要的下载后处理操作，则返回 true。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler-text.html">
+       text
+      </a>
+     </td>
+     <td class="desc">
+      便捷属性。返回解释为 UTF8 字符串的 data 中的字节。（只读）
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      表示不再使用此 DownloadHandler，并且应清理它使用的所有资源。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    受保护的函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.CompleteContent.html">
+       CompleteContent
+      </a>
+     </td>
+     <td class="desc">
+      在从远程服务器接收所有数据后调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.GetProgress.html">
+       GetProgress
+      </a>
+     </td>
+     <td class="desc">
+      访问 UnityWebRequest.downloadProgress 时调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.GetText.html">
+       GetText
+      </a>
+     </td>
+     <td class="desc">
+      访问 text 属性时调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.ReceiveContentLengthHeader.html">
+       ReceiveContentLengthHeader
+      </a>
+     </td>
+     <td class="desc">
+      在收到 Content-Length 标头调用的回调。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.DownloadHandler.ReceiveData.html">
+       ReceiveData
+      </a>
+     </td>
+     <td class="desc">
+      从远程服务器收到数据时调用的回调。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

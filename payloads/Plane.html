@@ -1,0 +1,214 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Plane
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   平面在 3D 空间中的表示。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   平面是无限大的平坦表面，存在于 3D 空间中，将空间划分为两半（称为
+   <em>
+    半空间
+   </em>
+   ）。可方便地确定特定点处于两个半空间的哪一个中，以及确定该点与平面相距多远。墙壁、地板和其他平坦表面在游戏中十分常见，因此平面有时可用于包含这些对象的数学计算。此外，在某些情况下真实表面并不存在，但是假设存在一个表面会十分有用。例如在运动中，球门线或边线通常被假设为延伸到空中，从而实际上定义了一个平面。
+   <br/>
+   <br/>
+   当平面穿过世界空间中的 &lt;0,0,0&gt; 点时，只需通过确定其朝向的法线矢量即可定义。如果您想象从侧面看着平面，则很容易明白。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/PlaneNormalOrigin.png"/>
+   <br/>
+   <br/>
+   请注意，法线矢量源自哪一侧十分重要，因为它用于标识某个点所处的半空间（即，处于平面的正或“法线”侧，或是另一侧）。当平面不穿过 &lt;0,0,0&gt; 时，可以通过法线矢量以及相对于 &lt;0,0,0&gt; 的距离进行定义。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/PlaneNormalOffset.png"/>
+   <br/>
+   <br/>
+   平面还可以通过位于平面中的三角形的三个顶点来定义。在这种情况下，如果在您看着正面朝上的三角形时，角点呈顺时针顺序，则法线矢量指向您。
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/Plane3Points.png"/>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Plane-distance.html">
+      distance
+     </a>
+    </td>
+    <td class="desc">
+     从原点到平面的距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane-flipped.html">
+      flipped
+     </a>
+    </td>
+    <td class="desc">
+     返回朝向相反方向的平面副本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane-normal.html">
+      normal
+     </a>
+    </td>
+    <td class="desc">
+     平面的法线矢量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Plane-ctor.html">
+      Plane
+     </a>
+    </td>
+    <td class="desc">
+     创建平面。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Plane.ClosestPointOnPlane.html">
+      ClosestPointOnPlane
+     </a>
+    </td>
+    <td class="desc">
+     对于给定 /point/，返回平面上的最近点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.Flip.html">
+      Flip
+     </a>
+    </td>
+    <td class="desc">
+     使平面朝向相反方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.GetDistanceToPoint.html">
+      GetDistanceToPoint
+     </a>
+    </td>
+    <td class="desc">
+     返回从平面到点的带符号距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.GetSide.html">
+      GetSide
+     </a>
+    </td>
+    <td class="desc">
+     点是否处于平面的正向侧？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.Raycast.html">
+      Raycast
+     </a>
+    </td>
+    <td class="desc">
+     使射线与平面相交。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.SameSide.html">
+      SameSide
+     </a>
+    </td>
+    <td class="desc">
+     两个点是否处于平面的相同侧？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.Set3Points.html">
+      Set3Points
+     </a>
+    </td>
+    <td class="desc">
+     使用位于其中的三个点设置平面。在您向下看着平面的上表面时，这些点呈顺时针顺序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.SetNormalAndPosition.html">
+      SetNormalAndPosition
+     </a>
+    </td>
+    <td class="desc">
+     使用位于其中的一个点设置平面，该点沿着法线以便确定其方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Plane.Translate.html">
+      Translate
+     </a>
+    </td>
+    <td class="desc">
+     返回按给定 translation 在空间中移动的给定平面副本。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,126 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ExecuteInEditMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使脚本的所有实例都在编辑模式下执行。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   默认情况下，仅在播放模式下执行 MonoBehaviours。通过添加此属性，MonoBehaviour 的任何实例都将在编辑器处于编辑模式时执行其回调函数。
+   <br/>
+   <br/>
+   此属性正在逐步被淘汰，因为它不考虑预制件模式。如果在预制件模式下编辑一个带有 MonoBehaviour 并启用了此属性的预制件，然后进入播放模式，则编辑器将退出预制件模式，以防止由仅用于播放模式的逻辑引起的预制件意外修改。
+   <br/>
+   <br/>
+   要指示 MonoBehaviour 正确考虑了预制件模式并且在播放模式期间以预制件模式打开是安全的，可以使用属性
+   <a href="ExecuteAlways.html">
+    ExecuteAlways
+   </a>
+   取代此处的属性。
+   <br/>
+   <br/>
+   以下函数不像它们在播放模式下那样被不断调用。
+   <br/>
+   -
+   <a href="MonoBehaviour.Update.html">
+    Update
+   </a>
+   is only called when something in the Scene changed.
+   <br/>
+   -
+   <a href="MonoBehaviour.OnGUI.html">
+    OnGUI
+   </a>
+   is called when the Game View receives a non-editor-only
+   <a href="Event.html">
+    Event
+   </a>
+   that it does not use (e.g.,
+   <a href="EventType.ScrollWheel.html">
+    EventType.ScrollWheel
+   </a>
+   ) and does not forward to the Editor's keyboard shortcut system (e.g.,
+   <a href="EventType.KeyDown.html">
+    EventType.KeyDown
+   </a>
+   ,
+   <a href="EventType.KeyUp.html">
+    EventType.KeyUp
+   </a>
+   ). Events forwarded to the Game View are enqueued and are not guaranteed to be processed immediately.
+   <br/>
+   -
+   <a href="MonoBehaviour.OnRenderObject.html">
+    OnRenderObject
+   </a>
+   and the other rendering callback functions are called on every repaint of the Scene View or Game View.
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="ExecuteAlways.html">
+    ExecuteAlways
+   </a>
+   、
+   <a href="Application.IsPlaying.html">
+    Application.IsPlaying
+   </a>
+   、
+   <a href="MonoBehaviour-runInEditMode.html">
+    runInEditMode
+   </a>
+   、
+   <a href="EditorApplication.QueuePlayerLoopUpdate.html">
+    EditorApplication.QueuePlayerLoopUpdate
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// The PrintAwake script is placed on a <a href="GameObject.html">GameObject</a>.  The Awake function is
+// called when the <a href="GameObject.html">GameObject</a> is started at runtime.  The script is also
+// called by the <a href="Editor.html">Editor</a>.  An example is when the <a href="SceneManagement.Scene.html">Scene</a> is changed to a
+// different <a href="SceneManagement.Scene.html">Scene</a> in the Project window.
+// The <a href="PlayerLoop.Update.html">Update</a>() function is called, for example, when the <a href="GameObject.html">GameObject</a> transform
+// position is changed in the <a href="Editor.html">Editor</a>.<br/><br/>using UnityEngine;<br/><br/>[<a href="ExecuteInEditMode.html">ExecuteInEditMode</a>]
+public class PrintAwake : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Awake()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("<a href="Editor.html">Editor</a> causes this Awake");
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("<a href="Editor.html">Editor</a> causes this <a href="PlayerLoop.Update.html">Update</a>");
+    }
+}
+</pre>
+ </div>
+</div>

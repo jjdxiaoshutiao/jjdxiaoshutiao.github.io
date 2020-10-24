@@ -1,0 +1,309 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimatorTransition
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Animations
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Animations.AnimatorTransitionBase.html">
+    Animations.AnimatorTransitionBase
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   过渡定义了状态机在何时以何种方式从一种状态切换为另一种状态。AnimatorTransition 始终源自 StateMachine 或 StateMachine 入口。它们不定义计时参数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当所有过渡条件都满足时，过渡就会发生。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorTransition-ctor.html">
+      AnimatorTransition
+     </a>
+    </td>
+    <td class="desc">
+     创建新的 Animator 过渡。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-conditions.html">
+       conditions
+      </a>
+     </td>
+     <td class="desc">
+      过渡发生需要满足的 AnimatorCondition 条件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-destinationState.html">
+       destinationState
+      </a>
+     </td>
+     <td class="desc">
+      过渡的目标状态。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-destinationStateMachine.html">
+       destinationStateMachine
+      </a>
+     </td>
+     <td class="desc">
+      过渡的目标状态机。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-isExit.html">
+       isExit
+      </a>
+     </td>
+     <td class="desc">
+      作为当前状态机退出的过渡目标。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-mute.html">
+       mute
+      </a>
+     </td>
+     <td class="desc">
+      关闭过渡。过渡永远不会发生。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase-solo.html">
+       solo
+      </a>
+     </td>
+     <td class="desc">
+      关闭源状态的所有其他过渡。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase.AddCondition.html">
+       AddCondition
+      </a>
+     </td>
+     <td class="desc">
+      Utility 函数，用于添加一个过渡条件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Animations.AnimatorTransitionBase.RemoveCondition.html">
+       RemoveCondition
+      </a>
+     </td>
+     <td class="desc">
+      Utility 函数，用于删除过渡条件。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

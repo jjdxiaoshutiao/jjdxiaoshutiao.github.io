@@ -1,0 +1,739 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Shader
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于所有渲染的着色器脚本。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   大多数高级渲染是通过
+   <a href="Material.html">
+    Material
+   </a>
+   类控制的。着色器类主要
+用于检查着色器是否能够在用户的硬件（
+   <a href="Shader-isSupported.html">
+    isSupported
+   </a>
+   属性）上运行，从而设置
+全局着色器属性和关键字，以及按名称（
+   <a href="Shader.Find.html">
+    Find
+   </a>
+   方法）查找着色器。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Material.html">
+    Material
+   </a>
+   类、
+   <a href="../Manual/Materials.html">
+    Materials
+   </a>
+   、
+   <a href="../Manual/Shaders.html">
+    ShaderLab documentation
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Shader-globalMaximumLOD.html">
+      globalMaximumLOD
+     </a>
+    </td>
+    <td class="desc">
+     所有着色器的着色器细节级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader-globalRenderPipeline.html">
+      globalRenderPipeline
+     </a>
+    </td>
+    <td class="desc">
+     当前正在使用的渲染管线。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Shader-isSupported.html">
+      isSupported
+     </a>
+    </td>
+    <td class="desc">
+     该着色器能否在最终用户显卡上运行？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader-maximumLOD.html">
+      maximumLOD
+     </a>
+    </td>
+    <td class="desc">
+     此着色器的着色器细节级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader-passCount.html">
+      passCount
+     </a>
+    </td>
+    <td class="desc">
+     返回活动 SubShader 上的着色器通道数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader-renderQueue.html">
+      renderQueue
+     </a>
+    </td>
+    <td class="desc">
+     此着色器的渲染队列。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Shader.FindPassTagValue.html">
+      FindPassTagValue
+     </a>
+    </td>
+    <td class="desc">
+     在着色器的活动 SubShader 中搜索由 tagName 指定的通道标签，并返回该标签的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.FindPropertyIndex.html">
+      FindPropertyIndex
+     </a>
+    </td>
+    <td class="desc">
+     按名称查找着色器属性的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetDependency.html">
+      GetDependency
+     </a>
+    </td>
+    <td class="desc">
+     返回依赖关系着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyAttributes.html">
+      GetPropertyAttributes
+     </a>
+    </td>
+    <td class="desc">
+     返回一个字符串数组，其中包含位于指定索引处的着色器属性的特性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyCount.html">
+      GetPropertyCount
+     </a>
+    </td>
+    <td class="desc">
+     返回此着色器中的属性数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyDefaultFloatValue.html">
+      GetPropertyDefaultFloatValue
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的默认浮点值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyDefaultVectorValue.html">
+      GetPropertyDefaultVectorValue
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的默认 Vector4 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyDescription.html">
+      GetPropertyDescription
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的描述字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyFlags.html">
+      GetPropertyFlags
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的 ShaderPropertyFlags。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyName.html">
+      GetPropertyName
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyNameId.html">
+      GetPropertyNameId
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的着色器属性的 nameId。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyRangeLimits.html">
+      GetPropertyRangeLimits
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的 Range 属性的下限和上限。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyTextureDefaultName.html">
+      GetPropertyTextureDefaultName
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的 Texture 着色器属性的默认纹理名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyTextureDimension.html">
+      GetPropertyTextureDimension
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的 Texture 着色器属性的 TextureDimension。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetPropertyType.html">
+      GetPropertyType
+     </a>
+    </td>
+    <td class="desc">
+     返回指定索引处的属性的 ShaderPropertyType。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Shader.DisableKeyword.html">
+      DisableKeyword
+     </a>
+    </td>
+    <td class="desc">
+     取消设置全局着色器关键字。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.EnableKeyword.html">
+      EnableKeyword
+     </a>
+    </td>
+    <td class="desc">
+     设置全局着色器关键字。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.Find.html">
+      Find
+     </a>
+    </td>
+    <td class="desc">
+     查找具有给定 name 的着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalColor.html">
+      GetGlobalColor
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalColor 为所有着色器设置的全局颜色属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalFloat.html">
+      GetGlobalFloat
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalFloat 为所有着色器设置的全局浮点属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalFloatArray.html">
+      GetGlobalFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalFloatArray 为所有着色器设置的全局浮点数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalInt.html">
+      GetGlobalInt
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalInt 为所有着色器设置的全局整数属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalMatrix.html">
+      GetGlobalMatrix
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalMatrix 为所有着色器设置的全局矩阵属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalMatrixArray.html">
+      GetGlobalMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalMatrixArray 为所有着色器设置的全局矩阵数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalTexture.html">
+      GetGlobalTexture
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalTexture 为所有着色器设置的全局纹理属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalVector.html">
+      GetGlobalVector
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalVector 为所有着色器设置的全局向量属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.GetGlobalVectorArray.html">
+      GetGlobalVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     获取先前用 SetGlobalVectorArray 为所有着色器设置的全局向量数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.IsKeywordEnabled.html">
+      IsKeywordEnabled
+     </a>
+    </td>
+    <td class="desc">
+     是否启用了全局着色器关键字？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.PropertyToID.html">
+      PropertyToID
+     </a>
+    </td>
+    <td class="desc">
+     获取着色器属性名称的唯一标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalBuffer.html">
+      SetGlobalBuffer
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局计算缓冲区属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalColor.html">
+      SetGlobalColor
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局颜色属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalConstantBuffer.html">
+      SetGlobalConstantBuffer
+     </a>
+    </td>
+    <td class="desc">
+     将 ComputeBuffer 设置为材质的指定常量缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalFloat.html">
+      SetGlobalFloat
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局浮点属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalFloatArray.html">
+      SetGlobalFloatArray
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局浮点数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalInt.html">
+      SetGlobalInt
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局整数属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalMatrix.html">
+      SetGlobalMatrix
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局矩阵属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalMatrixArray.html">
+      SetGlobalMatrixArray
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局矩阵数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalTexture.html">
+      SetGlobalTexture
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局纹理属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalVector.html">
+      SetGlobalVector
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局向量属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.SetGlobalVectorArray.html">
+      SetGlobalVectorArray
+     </a>
+    </td>
+    <td class="desc">
+     为所有着色器设置全局向量数组属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Shader.WarmupAllShaders.html">
+      WarmupAllShaders
+     </a>
+    </td>
+    <td class="desc">
+     完全加载所有着色器，以防未来性能中断。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

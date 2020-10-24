@@ -1,0 +1,145 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderTextureReadWrite
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="RenderTexture.html">
+    RenderTexture
+   </a>
+   的颜色空间转换模式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用 Gamma
+   <a href="../Manual/LinearLighting.html">
+    color space
+   </a>
+   时，不进行任何类型的转换，因此不使用此设置。
+   <br/>
+   <br/>
+   使用 Linear 颜色空间时，默认情况下，认为非 HDR 渲染纹理
+包含 sRGB 数据（即“常规颜色”），片元着色器输出线性颜色值。
+因此，默认情况下，当渲染到纹理时，片元着色器颜色值转换为 sRGB；
+在着色器中采样纹理时，sRGB 颜色转换为线性值。
+这是
+   <a href="RenderTextureReadWrite-sRGB.html">
+    sRGB
+   </a>
+   读写模式；使用线性颜色空间时，
+   <a href="RenderTextureReadWrite.Default.html">
+    Default
+   </a>
+   模式匹配。
+对渲染纹理设置此模式时，
+   <a href="RenderTexture-sRGB.html">
+    RenderTexture.sRGB
+   </a>
+   将返回 true。
+   <br/>
+   <br/>
+   但是，如果渲染纹理将包含非颜色数据（法线、速度和其他自定义值），
+则不需要进行 Linear&lt;-&gt;sRGB 转换。这是
+   <a href="RenderTextureReadWrite.Linear.html">
+    Linear
+   </a>
+   读写模式。
+对渲染纹理设置此模式时，
+   <a href="RenderTexture-sRGB.html">
+    RenderTexture.sRGB
+   </a>
+   将返回 false。
+   <br/>
+   <br/>
+   请注意，有些
+   <a href="RenderTextureFormat.html">
+    render texture formats
+   </a>
+   始终被视为包含“线性”数据，
+无论采用什么读写设置，都不会对它们执行 sRGB 转换。这适用于
+所有“HDR”（浮点）格式和 Depth 或 Shadowmap 等其他格式。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/LinearLighting.html">
+    Linear Color Space
+   </a>
+   、
+   <a href="RenderTexture-sRGB.html">
+    RenderTexture.sRGB
+   </a>
+   、
+   <a href="PlayerSettings-colorSpace.html">
+    PlayerSettings.colorSpace
+   </a>
+   、
+   <a href="GL-sRGBWrite.html">
+    GL.sRGBWrite
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureReadWrite.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     基于项目设置的默认颜色空间转换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureReadWrite.Linear.html">
+      Linear
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理包含线性（非颜色）数据，不对其执行颜色转换。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureReadWrite-sRGB.html">
+      sRGB
+     </a>
+    </td>
+    <td class="desc">
+     渲染纹理包含 sRGB（颜色）数据，对其执行 Linear&lt;-&gt;sRGB 转换。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

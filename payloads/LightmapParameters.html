@@ -1,0 +1,384 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LightmapParameters
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   影响光照贴图和实时 GI 计算的参数集合。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-antiAliasingSamples.html">
+      antiAliasingSamples
+     </a>
+    </td>
+    <td class="desc">
+     对纹理像素进行超级采样以减少锯齿的最大次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters.AOAntiAliasingSamples.html">
+      AOAntiAliasingSamples
+     </a>
+    </td>
+    <td class="desc">
+     对纹理像素进行超级采样以减少 AO 中锯齿的最大次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters.AOQuality.html">
+      AOQuality
+     </a>
+    </td>
+    <td class="desc">
+     要在计算环境光遮蔽时投射的光线数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-backFaceTolerance.html">
+      backFaceTolerance
+     </a>
+    </td>
+    <td class="desc">
+     必须照射到正面才会被视为可用的射线原点发射光线的百分比。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-bakedLightmapTag.html">
+      bakedLightmapTag
+     </a>
+    </td>
+    <td class="desc">
+     BakedLightmapTag 是一个整数，可影响对烘焙光照贴图的分配。即使其他烘焙参数相同，系统也保证不会将具有不同 bakedLightmapTag 值的对象分配给同一光照贴图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-blurRadius.html">
+      blurRadius
+     </a>
+    </td>
+    <td class="desc">
+     用于模糊烘焙直射光的后处理过滤器的半径（以纹理像素为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-clusterResolution.html">
+      clusterResolution
+     </a>
+    </td>
+    <td class="desc">
+     控制 Enlighten 存储以及可转移输入光源的分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-directLightQuality.html">
+      directLightQuality
+     </a>
+    </td>
+    <td class="desc">
+     用于某个区域内光源的光线数量。允许准确的柔和阴影。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-irradianceBudget.html">
+      irradianceBudget
+     </a>
+    </td>
+    <td class="desc">
+     用于实时 GI 纹理像素的数据量。指定纹理像素具有的场景的详细视图。较小的值意味着光照平均值较大。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-irradianceQuality.html">
+      irradianceQuality
+     </a>
+    </td>
+    <td class="desc">
+     要在计算辐照度形状因子时投射的光线数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-isTransparent.html">
+      isTransparent
+     </a>
+    </td>
+    <td class="desc">
+     如果启用此属性，在 GlobalIllumination 光照计算期间，对象显示将为透明。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-limitLightmapCount.html">
+      limitLightmapCount
+     </a>
+    </td>
+    <td class="desc">
+     如果启用，同享相同光照贴图参数的对象将打包到 LightmapParameters.maxLightmapCount 光照贴图中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-maxLightmapCount.html">
+      maxLightmapCount
+     </a>
+    </td>
+    <td class="desc">
+     将为共享相同光照贴图参数的对象创建的光照贴图的最大数目。如果 LightmapParameters.limitLightmapCount 为 false，则忽略此属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-modellingTolerance.html">
+      modellingTolerance
+     </a>
+    </td>
+    <td class="desc">
+     GI 可忽略的间隙的最大大小（像素大小的乘数）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-resolution.html">
+      resolution
+     </a>
+    </td>
+    <td class="desc">
+     用于实时光照贴图的每米纹理像素分辨率。此值乘以 LightmapEditorSettings.resolution。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-stitchEdges.html">
+      stitchEdges
+     </a>
+    </td>
+    <td class="desc">
+     是否应将成对的边缘缝合在一起。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="LightmapParameters-systemTag.html">
+      systemTag
+     </a>
+    </td>
+    <td class="desc">
+     System Tag 是一个整数标识符。即使所有其他参数都相同，您也可以使用该标识符强制某个对象进入另一个 Enlighten 系统。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

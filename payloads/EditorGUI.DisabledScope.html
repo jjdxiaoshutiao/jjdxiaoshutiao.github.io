@@ -1,0 +1,86 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DisabledScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   创建一组可禁用的控件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果 Disabled 设置为 true，则将禁用组内的控件。
+如果为 false，则不会更改 Enabled/Disabled 状态。
+   <br/>
+   <br/>
+   该组不能用于启用最初以其他方式禁用的控件。
+这些组可以嵌套，如果子组本身已禁用或父组已禁用，
+则子组中的控件将被禁用。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>class ExampleClass
+{
+    bool canJump = false;
+    float jumpHeight = 0f;<br/><br/>    void Example()
+    {
+        canJump = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("Can Jump", canJump);<br/><br/>        // Disable the jumping height control if canJump is false:
+        using (new <a href="EditorGUI.DisabledScope.html">EditorGUI.DisabledScope</a>(canJump == false))
+        {
+            jumpHeight = <a href="EditorGUILayout.FloatField.html">EditorGUILayout.FloatField</a>("Jump Height", jumpHeight);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   该组不能用于启用最初以其他方式禁用的控件。
+这些组可以嵌套，如果子组本身已禁用或父组已禁用，
+则子组中的控件将被禁用。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorGUI.DisabledScope-ctor.html">
+      EditorGUI.DisabledScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 DisabledScope 并开始相应的组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

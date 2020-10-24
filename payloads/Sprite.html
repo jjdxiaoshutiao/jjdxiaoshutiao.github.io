@@ -1,0 +1,467 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Sprite
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示在 2D 游戏中使用的精灵对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <em>
+    精灵
+   </em>
+   是一种 2D 图形对象，用于 2D 游戏中的角色、道具、飞弹和其他游戏元素。图形是从位图图像
+   <a href="Texture2D.html">
+    Texture2D
+   </a>
+   获取的。Sprite 类主要标识应该用于特定精灵的图像部分。然后，GameObject 上的 SpriteRenderer 组件可以使用该信息来实际显示图形。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="SpriteRenderer.html">
+    SpriteRenderer
+   </a>
+   类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-associatedAlphaSplitTexture.html">
+      associatedAlphaSplitTexture
+     </a>
+    </td>
+    <td class="desc">
+     返回包含源纹理的 Alpha 通道的纹理。对于源代码中具有 Alpha 通道、需要使用 ETC1 等技术进行压缩的精灵，Unity 在底层为其生成该纹理。如果源精灵没有关联的 Alpha 纹理，则返回 NULL。如果精灵尚未设置为使用 ETC1 压缩，就会出现这种情况。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-border.html">
+      border
+     </a>
+    </td>
+    <td class="desc">
+     返回精灵的边框大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-bounds.html">
+      bounds
+     </a>
+    </td>
+    <td class="desc">
+     精灵的 Bounds，由精灵的中心和范围（采用世界空间单位）指定。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-packed.html">
+      packed
+     </a>
+    </td>
+    <td class="desc">
+     如果该精灵打包在图集中，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-packingMode.html">
+      packingMode
+     </a>
+    </td>
+    <td class="desc">
+     如果精灵已打包（请参阅 Sprite.packed），则返回其 SpritePackingMode。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-packingRotation.html">
+      packingRotation
+     </a>
+    </td>
+    <td class="desc">
+     如果精灵已打包（请参阅 Sprite.packed），则返回其 SpritePackingRotation。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-pivot.html">
+      pivot
+     </a>
+    </td>
+    <td class="desc">
+     精灵的中心点在原始纹理的 Rect 中的位置（以像素为单位指定）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-pixelsPerUnit.html">
+      pixelsPerUnit
+     </a>
+    </td>
+    <td class="desc">
+     对应世界空间中一个单位的精灵中的像素数。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-rect.html">
+      rect
+     </a>
+    </td>
+    <td class="desc">
+     精灵在原始纹理中的位置（以像素为单位指定）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-spriteAtlasTextureScale.html">
+      spriteAtlasTextureScale
+     </a>
+    </td>
+    <td class="desc">
+     精灵使用的纹理的可变比例。这对于检查精灵何时使用变体 SpriteAtlas 很有用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-texture.html">
+      texture
+     </a>
+    </td>
+    <td class="desc">
+     获取对使用的纹理的引用。如果已打包，则指向图集；如果未打包，则指向源精灵。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-textureRect.html">
+      textureRect
+     </a>
+    </td>
+    <td class="desc">
+     获取该精灵在其纹理上使用的矩形。如果该精灵紧密打包在图集中，则引发异常。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-textureRectOffset.html">
+      textureRectOffset
+     </a>
+    </td>
+    <td class="desc">
+     获取该精灵在其纹理上使用的矩形到原始精灵边界的偏移。如果精灵网格类型为 FullRect，则偏移为零。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-triangles.html">
+      triangles
+     </a>
+    </td>
+    <td class="desc">
+     返回包含精灵网格三角形的数组的副本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-uv.html">
+      uv
+     </a>
+    </td>
+    <td class="desc">
+     精灵网格的基础纹理坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite-vertices.html">
+      vertices
+     </a>
+    </td>
+    <td class="desc">
+     返回包含精灵网格顶点位置的数组的副本。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.GetPhysicsShape.html">
+      GetPhysicsShape
+     </a>
+    </td>
+    <td class="desc">
+     按索引从精灵获取物理形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.GetPhysicsShapeCount.html">
+      GetPhysicsShapeCount
+     </a>
+    </td>
+    <td class="desc">
+     精灵的物理形状数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.GetPhysicsShapePointCount.html">
+      GetPhysicsShapePointCount
+     </a>
+    </td>
+    <td class="desc">
+     所选的精灵物理形状中的点数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.OverrideGeometry.html">
+      OverrideGeometry
+     </a>
+    </td>
+    <td class="desc">
+     设置新的精灵几何形状。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.OverridePhysicsShape.html">
+      OverridePhysicsShape
+     </a>
+    </td>
+    <td class="desc">
+     设置新的精灵物理形状。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Sprite.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     创建新的 Sprite 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

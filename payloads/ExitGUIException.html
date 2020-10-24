@@ -1,0 +1,55 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ExitGUIException
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   异常，将阻止所有后续即时模式 GUI 函数估算 GUI 循环的其余部分。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果在您的
+   <a href="GUI.html">
+    GUI
+   </a>
+   代码中处理异常，不应捕捉此异常类型，因为在某些情况下，Unity 的即时模式 GUI 系统依靠此异常来正确退出当前
+   <a href="GUI.html">
+    GUI
+   </a>
+   循环。
+   <br/>
+   <br/>
+   如果您需要在自己的代码中退出即时模式 GUI 循环，您应调用
+   <a href="GUIUtility.ExitGUI.html">
+    GUIUtility.ExitGUI
+   </a>
+   ，而不是直接抛出此异常。
+  </p>
+ </div>
+</div>

@@ -1,0 +1,163 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IUxmlFactory
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEngine.UIElements
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   UXML 工厂接口。虽然并非严格要求，但具体工厂应该来自泛型类
+   <a href="UIElements.InspectorElement.UxmlFactory.html">
+    UxmlFactory
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-canHaveAnyAttribute.html">
+      canHaveAnyAttribute
+     </a>
+    </td>
+    <td class="desc">
+     如果 UXML 元素属性不限于 uxmlAttributesDescription 枚举的值，则必须返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-substituteForTypeName.html">
+      substituteForTypeName
+     </a>
+    </td>
+    <td class="desc">
+     此元素类型可以替换的元素类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-substituteForTypeNamespace.html">
+      substituteForTypeNamespace
+     </a>
+    </td>
+    <td class="desc">
+     substituteForTypeName 返回的类型的 UXML 命名空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-substituteForTypeQualifiedName.html">
+      substituteForTypeQualifiedName
+     </a>
+    </td>
+    <td class="desc">
+     substituteForTypeName 返回的类型的完全限定 XML 名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-uxmlAttributesDescription.html">
+      uxmlAttributesDescription
+     </a>
+    </td>
+    <td class="desc">
+     描述元素预期的 UXML 属性。此处枚举的属性将显示在 UXML 架构中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-uxmlChildElementsDescription.html">
+      uxmlChildElementsDescription
+     </a>
+    </td>
+    <td class="desc">
+     描述在 UXML 文件中可以作为此元素的子项出现的元素类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-uxmlName.html">
+      uxmlName
+     </a>
+    </td>
+    <td class="desc">
+     工厂读取的 UXML 元素的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-uxmlNamespace.html">
+      uxmlNamespace
+     </a>
+    </td>
+    <td class="desc">
+     工厂读取的 UXML 元素的命名空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory-uxmlQualifiedName.html">
+      uxmlQualifiedName
+     </a>
+    </td>
+    <td class="desc">
+     工厂读取的 UXML 元素的完全限定名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory.AcceptsAttributeBag.html">
+      AcceptsAttributeBag
+     </a>
+    </td>
+    <td class="desc">
+     如果工厂接受属性包的内容，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.IUxmlFactory.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     实例化并初始化类型为 T0 的对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

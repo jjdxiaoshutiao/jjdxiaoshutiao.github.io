@@ -1,0 +1,129 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   PolygonId
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示导航网格节点数据的紧凑标识符。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   它在
+   <a href="Experimental.AI.NavMeshQuery.html">
+    NavMeshQuery
+   </a>
+   操作中用于精确定位和访问导航网格中的相关节点。每个节点只能由一种代理使用。另请参阅：
+   <a href="../Manual/class-NavMeshSurface.html">
+    NavMeshSurface
+   </a>
+   。
+   <br/>
+   <br/>
+   从导航网格删除节点之后（通过完全删除表面或通过修改节点附近的表面），此标识符将变为无效。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Experimental.AI.NavMeshQuery.IsValid.html">
+    NavMeshQuery.IsValid
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PolygonId.Equals.html">
+      Equals
+     </a>
+    </td>
+    <td class="desc">
+     如果两个 PolygonId 对象引用同一导航网格节点，则返回 /true/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PolygonId.GetHashCode.html">
+      GetHashCode
+     </a>
+    </td>
+    <td class="desc">
+     返回集合中使用的哈希代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PolygonId.IsNull.html">
+      IsNull
+     </a>
+    </td>
+    <td class="desc">
+     如果 PolygonId 已创建为空并且从未指向导航网格中的任何节点，则返回 /true/。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PolygonId-operator_ne.html">
+      operator !=
+     </a>
+    </td>
+    <td class="desc">
+     如果两个 PolygonId 对象引用不同的导航网格节点或如果其中一个为空，则返回 /true/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PolygonId-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     如果两个 PolygonId 对象引用同一导航网格节点或如果两者都为空，则返回 /true/。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

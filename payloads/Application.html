@@ -1,0 +1,610 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Application
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   对应用程序运行时数据的访问权限。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该类包含用于查找关于运行时数据的信息和控制此类数据的静态方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Application-absoluteURL.html">
+      absoluteURL
+     </a>
+    </td>
+    <td class="desc">
+     文档的 URL。对于 WebGL，这是 web URL。对于 Android、iOS 或通用 Windows 平台 (UWP)，这是深层链接 URL。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-backgroundLoadingPriority.html">
+      backgroundLoadingPriority
+     </a>
+    </td>
+    <td class="desc">
+     后台加载线程的优先级。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-buildGUID.html">
+      buildGUID
+     </a>
+    </td>
+    <td class="desc">
+     返回此构建的 GUID（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-cloudProjectId.html">
+      cloudProjectId
+     </a>
+    </td>
+    <td class="desc">
+     唯一的云端项目标识符。它对于每个项目而言都是唯一的（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-companyName.html">
+      companyName
+     </a>
+    </td>
+    <td class="desc">
+     返回应用程序公司名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-consoleLogPath.html">
+      consoleLogPath
+     </a>
+    </td>
+    <td class="desc">
+     返回控制台日志文件的路径，如果当前平台不支持日志文件，则返回空字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-dataPath.html">
+      dataPath
+     </a>
+    </td>
+    <td class="desc">
+     包含目标设备上的游戏数据文件夹路径（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-genuine.html">
+      genuine
+     </a>
+    </td>
+    <td class="desc">
+     如果应用程序在构建后以任何方式进行了更改，则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-genuineCheckAvailable.html">
+      genuineCheckAvailable
+     </a>
+    </td>
+    <td class="desc">
+     如果可以确认应用程序完整性，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-identifier.html">
+      identifier
+     </a>
+    </td>
+    <td class="desc">
+     在运行时返回应用程序标识。在 Apple 平台上为保存在 info.plist 文件中的“bundleIdentifier”，在 Android 平台上为 AndroidManifest.xml 中的“package”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-installerName.html">
+      installerName
+     </a>
+    </td>
+    <td class="desc">
+     返回安装应用程序的商店或包的名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-installMode.html">
+      installMode
+     </a>
+    </td>
+    <td class="desc">
+     返回应用程序安装模式（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-internetReachability.html">
+      internetReachability
+     </a>
+    </td>
+    <td class="desc">
+     返回设备上当前可用的 Internet 可访问性类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isBatchMode.html">
+      isBatchMode
+     </a>
+    </td>
+    <td class="desc">
+     如果从命令行以 -batchmode 标志启动了 Unity，则返回 true（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isConsolePlatform.html">
+      isConsolePlatform
+     </a>
+    </td>
+    <td class="desc">
+     当前的运行时平台是否为已知的控制台平台？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isEditor.html">
+      isEditor
+     </a>
+    </td>
+    <td class="desc">
+     是否在 Unity Editor 内运行？（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isFocused.html">
+      isFocused
+     </a>
+    </td>
+    <td class="desc">
+     播放器当前是否具有焦点？只读。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isMobilePlatform.html">
+      isMobilePlatform
+     </a>
+    </td>
+    <td class="desc">
+     当前的运行时平台是否为已知的移动平台？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-isPlaying.html">
+      isPlaying
+     </a>
+    </td>
+    <td class="desc">
+     在任何类型的已构建播放器中调用时，或者在播放模式的编辑器中调用时，返回 true（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-persistentDataPath.html">
+      persistentDataPath
+     </a>
+    </td>
+    <td class="desc">
+     包含持久数据目录的路径（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-platform.html">
+      platform
+     </a>
+    </td>
+    <td class="desc">
+     返回游戏运行平台（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-productName.html">
+      productName
+     </a>
+    </td>
+    <td class="desc">
+     返回应用程序产品名称（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-runInBackground.html">
+      runInBackground
+     </a>
+    </td>
+    <td class="desc">
+     当应用程序在后台时，播放器是否应该运行？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-sandboxType.html">
+      sandboxType
+     </a>
+    </td>
+    <td class="desc">
+     返回在沙盒中运行的应用程序（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-streamingAssetsPath.html">
+      streamingAssetsPath
+     </a>
+    </td>
+    <td class="desc">
+     StreamingAssets 文件夹的路径（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-systemLanguage.html">
+      systemLanguage
+     </a>
+    </td>
+    <td class="desc">
+     用户操作系统运行时所使用的语言。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-targetFrameRate.html">
+      targetFrameRate
+     </a>
+    </td>
+    <td class="desc">
+     指示游戏尝试以指定的帧率渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-temporaryCachePath.html">
+      temporaryCachePath
+     </a>
+    </td>
+    <td class="desc">
+     包含临时数据/缓存目录的路径（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-unityVersion.html">
+      unityVersion
+     </a>
+    </td>
+    <td class="desc">
+     用于播放内容的 Unity 运行时版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-version.html">
+      version
+     </a>
+    </td>
+    <td class="desc">
+     返回应用程序版本号（只读）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Application.CanStreamedLevelBeLoaded.html">
+      CanStreamedLevelBeLoaded
+     </a>
+    </td>
+    <td class="desc">
+     能否加载流式传输的关卡？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.GetBuildTags.html">
+      GetBuildTags
+     </a>
+    </td>
+    <td class="desc">
+     返回用于此构建的功能标签数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.GetStackTraceLogType.html">
+      GetStackTraceLogType
+     </a>
+    </td>
+    <td class="desc">
+     获取堆栈跟踪日志记录选项。默认值为 StackTraceLogType.ScriptOnly。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.HasProLicense.html">
+      HasProLicense
+     </a>
+    </td>
+    <td class="desc">
+     Unity 是否是使用 Pro 许可证激活？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.HasUserAuthorization.html">
+      HasUserAuthorization
+     </a>
+    </td>
+    <td class="desc">
+     检查用户是否已授权在 WebPlayer 中使用网络摄像头或麦克风。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.IsPlaying.html">
+      IsPlaying
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是游戏世界的一部分（在任何类型的已构建播放器中或在播放模式中），则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.OpenURL.html">
+      OpenURL
+     </a>
+    </td>
+    <td class="desc">
+     遵循应用程序当前平台和环境的权限和限制，打开指定 URL。这采用不同方式进行处理（具体取决于 URL 的性质），并具有不同的安全限制（具体取决于运行时平台）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.Quit.html">
+      Quit
+     </a>
+    </td>
+    <td class="desc">
+     退出播放器应用程序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.RequestAdvertisingIdentifierAsync.html">
+      RequestAdvertisingIdentifierAsync
+     </a>
+    </td>
+    <td class="desc">
+     请求 iOS、Android 和 Windows 应用商店的广告 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.RequestUserAuthorization.html">
+      RequestUserAuthorization
+     </a>
+    </td>
+    <td class="desc">
+     请求授权在 iOS 中使用网络摄像头或麦克风。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.SetBuildTags.html">
+      SetBuildTags
+     </a>
+    </td>
+    <td class="desc">
+     设置此构建的功能标签数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.SetStackTraceLogType.html">
+      SetStackTraceLogType
+     </a>
+    </td>
+    <td class="desc">
+     设置堆栈跟踪日志记录选项。默认值为 StackTraceLogType.ScriptOnly。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.Unload.html">
+      Unload
+     </a>
+    </td>
+    <td class="desc">
+     卸载可释放 Unity 播放器所获取的内存，并使当前进程保持活动状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Application-deepLinkActivated.html">
+      deepLinkActivated
+     </a>
+    </td>
+    <td class="desc">
+     如果在 Android、iOS 或通用 Windows 平台 (UWP) 上运行的应用程序是使用深层链接 URL 激活，则会引发此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-focusChanged.html">
+      focusChanged
+     </a>
+    </td>
+    <td class="desc">
+     定义要用于注册在其中获得或失去焦点的事件的委托。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-logMessageReceived.html">
+      logMessageReceived
+     </a>
+    </td>
+    <td class="desc">
+     收到日志消息时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-logMessageReceivedThreaded.html">
+      logMessageReceivedThreaded
+     </a>
+    </td>
+    <td class="desc">
+     收到日志消息时触发的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-lowMemory.html">
+      lowMemory
+     </a>
+    </td>
+    <td class="desc">
+     当应用程序在前台运行时，若 iOS 或 Android 设备通知内存不足，则会发生此事件。您可以从内存中释放非关键资源（例如，纹理或音频剪辑）以应对此情况，从而避免应用程序终止。您还可以加载此类资源的较小版本。此外，您应该将任何瞬态数据序列化为永久存储，以避免在应用程序终止时丢失数据。此事件对应于不同平台上的以下回调：
+- iOS：[UIApplicationDelegate applicationDidReceiveMemoryWarning]
+- Android：onLowMemory() 和 onTrimMemory(level == TRIM_MEMORY_RUNNING_CRITICAL)以下是处理回调的示例：
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-onBeforeRender.html">
+      onBeforeRender
+     </a>
+    </td>
+    <td class="desc">
+     用于注册 VR 设备的“Just Before Render”输入更新的委托方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-quitting.html">
+      quitting
+     </a>
+    </td>
+    <td class="desc">
+     当播放器应用程序退出时，Unity 会引发此事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application-wantsToQuit.html">
+      wantsToQuit
+     </a>
+    </td>
+    <td class="desc">
+     当播放器应用程序想要退出时，Unity 会引发此事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Application.AdvertisingIdentifierCallback.html">
+      AdvertisingIdentifierCallback
+     </a>
+    </td>
+    <td class="desc">
+     用于获取广告 ID 的委托方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.LogCallback.html">
+      LogCallback
+     </a>
+    </td>
+    <td class="desc">
+     将此委托类型与 Application.logMessageReceived 或 Application.logMessageReceivedThreaded 结合使用来监控记录内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Application.LowMemoryCallback.html">
+      LowMemoryCallback
+     </a>
+    </td>
+    <td class="desc">
+     这是移动设备通知内存不足时调用的委托函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

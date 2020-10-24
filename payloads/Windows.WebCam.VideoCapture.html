@@ -1,0 +1,295 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   VideoCapture
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.WebCam
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   直接将来自网络摄像机的视频录制到磁盘上。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   最终视频录制内容将以 MP4 格式存储在文件系统上。
+   <br/>
+   <br/>
+   下面的示例将录制 5 秒视频并存储到文件系统上。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;
+using System.Linq;
+using UnityEngine.Windows.WebCam;<br/><br/>public class VideoCaptureExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    static readonly float MaxRecordingTime = 5.0f;<br/><br/>    <a href="Windows.WebCam.VideoCapture.html">VideoCapture</a> m_VideoCapture = null;
+    float m_stopRecordingTimer = float.MaxValue;<br/><br/>    // Use this for initialization
+    void Start()
+    {
+        StartVideoCaptureTest();
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (m_VideoCapture == null || !m_VideoCapture.IsRecording)
+        {
+            return;
+        }<br/><br/>        if (<a href="Time-time.html">Time.time</a> &gt; m_stopRecordingTimer)
+        {
+            m_VideoCapture.StopRecordingAsync(OnStoppedRecordingVideo);
+        }
+    }<br/><br/>    void StartVideoCaptureTest()
+    {
+        <a href="Resolution.html">Resolution</a> cameraResolution = VideoCapture.SupportedResolutions.OrderByDescending((res) =&gt; res.width * res.height).First();
+        <a href="Debug.Log.html">Debug.Log</a>(cameraResolution);<br/><br/>        float cameraFramerate = <a href="Windows.WebCam.VideoCapture.GetSupportedFrameRatesForResolution.html">VideoCapture.GetSupportedFrameRatesForResolution</a>(cameraResolution).OrderByDescending((fps) =&gt; fps).First();
+        <a href="Debug.Log.html">Debug.Log</a>(cameraFramerate);<br/><br/>        <a href="Windows.WebCam.VideoCapture.CreateAsync.html">VideoCapture.CreateAsync</a>(false, delegate(<a href="Windows.WebCam.VideoCapture.html">VideoCapture</a> videoCapture)
+        {
+            if (videoCapture != null)
+            {
+                m_VideoCapture = videoCapture;
+                <a href="Debug.Log.html">Debug.Log</a>("Created <a href="Windows.WebCam.VideoCapture.html">VideoCapture</a> Instance!");<br/><br/>                <a href="Windows.WebCam.CameraParameters.html">CameraParameters</a> cameraParameters = new <a href="Windows.WebCam.CameraParameters.html">CameraParameters</a>();
+                cameraParameters.hologramOpacity = 0.0f;
+                cameraParameters.frameRate = cameraFramerate;
+                cameraParameters.cameraResolutionWidth = cameraResolution.width;
+                cameraParameters.cameraResolutionHeight = cameraResolution.height;
+                cameraParameters.pixelFormat = <a href="Windows.WebCam.CapturePixelFormat.BGRA32.html">CapturePixelFormat.BGRA32</a>;<br/><br/>                m_VideoCapture.StartVideoModeAsync(cameraParameters,
+                    <a href="Windows.WebCam.VideoCapture.AudioState.ApplicationAndMicAudio.html">VideoCapture.AudioState.ApplicationAndMicAudio</a>,
+                    OnStartedVideoCaptureMode);
+            }
+            else
+            {
+                <a href="Debug.LogError.html">Debug.LogError</a>("Failed to create <a href="Windows.WebCam.VideoCapture.html">VideoCapture</a> Instance!");
+            }
+        });
+    }<br/><br/>    void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Started Video Capture <a href="Scripting.GarbageCollector.Mode.html">Mode</a>!");
+        string timeStamp = Time.time.ToString().Replace(".", "").Replace(":", "");
+        string filename = string.Format("TestVideo_{0}.mp4", timeStamp);
+        string filepath = System.IO.Path.Combine(<a href="Application-persistentDataPath.html">Application.persistentDataPath</a>, filename);
+        filepath = filepath.Replace("/", @"\");
+        m_VideoCapture.StartRecordingAsync(filepath, OnStartedRecordingVideo);
+    }<br/><br/>    void OnStoppedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Stopped Video Capture <a href="Scripting.GarbageCollector.Mode.html">Mode</a>!");
+    }<br/><br/>    void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Started Recording Video!");
+        m_stopRecordingTimer = <a href="Time-time.html">Time.time</a> + MaxRecordingTime;
+    }<br/><br/>    void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Stopped Recording Video!");
+        m_VideoCapture.StopVideoModeAsync(OnStoppedVideoCaptureMode);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.SupportedResolutions.html">
+      SupportedResolutions
+     </a>
+    </td>
+    <td class="desc">
+     用于录制视频的所有受支持的设备分辨率列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.IsRecording.html">
+      IsRecording
+     </a>
+    </td>
+    <td class="desc">
+     指示 VideoCapture 实例当前是否在录制视频。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     必须调用 Dispose 来关闭 PhotoCapture 实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.GetUnsafePointerToVideoDeviceController.html">
+      GetUnsafePointerToVideoDeviceController
+     </a>
+    </td>
+    <td class="desc">
+     为原生 IVideoDeviceController 提供 COM 指针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.StartRecordingAsync.html">
+      StartRecordingAsync
+     </a>
+    </td>
+    <td class="desc">
+     将来自网络摄像机的视频异步录制到文件系统中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.StartVideoModeAsync.html">
+      StartVideoModeAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步启动视频模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.StopRecordingAsync.html">
+      StopRecordingAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步停止将来自网络摄像机的视频录制到文件系统。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.StopVideoModeAsync.html">
+      StopVideoModeAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步停止视频模式。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.CreateAsync.html">
+      CreateAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步创建 VideoCapture 对象的实例，该实例可将来自网络摄像机的视频录制到磁盘上。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.GetSupportedFrameRatesForResolution.html">
+      GetSupportedFrameRatesForResolution
+     </a>
+    </td>
+    <td class="desc">
+     返回可让系统以给定分辨率录制视频的受支持的帧率。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.OnStartedRecordingVideoCallback.html">
+      OnStartedRecordingVideoCallback
+     </a>
+    </td>
+    <td class="desc">
+     在网络摄像机开始录制视频时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.OnStoppedRecordingVideoCallback.html">
+      OnStoppedRecordingVideoCallback
+     </a>
+    </td>
+    <td class="desc">
+     在视频录制内容被保存到文件系统时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.OnVideoCaptureResourceCreatedCallback.html">
+      OnVideoCaptureResourceCreatedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在创建 VideoCapture 资源时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.OnVideoModeStartedCallback.html">
+      OnVideoModeStartedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在视频模式启动时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.VideoCapture.OnVideoModeStoppedCallback.html">
+      OnVideoModeStoppedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在视频模式停止时调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

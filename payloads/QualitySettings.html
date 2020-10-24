@@ -1,0 +1,659 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   QualitySettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="../Manual/class-QualitySettings.html">
+    Quality Settings
+   </a>
+   的脚本接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可以有任意数量的品质设置。在项目的
+   <a href="../Manual/class-QualitySettings.html">
+    Quality Settings
+   </a>
+   中设置每项品质设置的
+详细信息。在运行时，
+可以使用该类更改当前品质级别。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-activeColorSpace.html">
+      activeColorSpace
+     </a>
+    </td>
+    <td class="desc">
+     活动颜色空间（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-anisotropicFiltering.html">
+      anisotropicFiltering
+     </a>
+    </td>
+    <td class="desc">
+     全局各向异性过滤模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-antiAliasing.html">
+      antiAliasing
+     </a>
+    </td>
+    <td class="desc">
+     设置 AA 过滤选项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-asyncUploadBufferSize.html">
+      asyncUploadBufferSize
+     </a>
+    </td>
+    <td class="desc">
+     异步纹理和网格数据上传可在渲染线程上以基于时间片的方式异步上传纹理和网格数据，同时对内存和时间切片进行严格的控制。除了驱动程序必须进行的分配以外，不进行任何其他分配。为了读取数据和上传纹理及网格数据，Unity 将重用一个大小可控的环形缓冲区。使用 asyncUploadBufferSize 设置异步纹理和网格数据上传的缓冲区大小。此大小以兆字节 (MB) 为单位。最小值为 2，最大值为 512。缓冲区将自动调整大小以适应当前加载的最大纹理。为了避免重新调整缓冲区大小可能带来的性能开销，请将该值设置为近似于场景中使用的最大纹理的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-asyncUploadPersistentBuffer.html">
+      asyncUploadPersistentBuffer
+     </a>
+    </td>
+    <td class="desc">
+     此标志控制在没有活动加载操作的情况下是否仍然分配异步上传管线的环形缓冲区。
+要在所有上传操作完成后保持环缓冲区分配，请将其设置为 true。
+如果遇到内存使用过多的问题，可以将其设置为 false。这意味着可以减少运行时内存占用，但可能会出现内存碎片。
+默认值为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-asyncUploadTimeSlice.html">
+      asyncUploadTimeSlice
+     </a>
+    </td>
+    <td class="desc">
+     异步纹理上传可在渲染线程上以基于时间片的方式异步上传纹理，同时对内存和时间切片进行严格的控制。除了驱动程序必须进行的分配以外，不进行任何其他分配。为了读取数据和上传纹理数据，将重用一个大小可控的环形缓冲区。使用 asyncUploadTimeSlice 设置每帧的
+异步纹理上传时间片（以毫秒为单位）。最小值为 1，最大值为 33。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-billboardsFaceCameraPosition.html">
+      billboardsFaceCameraPosition
+     </a>
+    </td>
+    <td class="desc">
+     如果启用，公告牌将面向摄像机位置而不是摄像机方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-desiredColorSpace.html">
+      desiredColorSpace
+     </a>
+    </td>
+    <td class="desc">
+     所需的颜色空间（只读）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-lodBias.html">
+      lodBias
+     </a>
+    </td>
+    <td class="desc">
+     细节级别切换距离的全局乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-masterTextureLimit.html">
+      masterTextureLimit
+     </a>
+    </td>
+    <td class="desc">
+     应用到所有纹理的纹理大小限制。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-maximumLODLevel.html">
+      maximumLODLevel
+     </a>
+    </td>
+    <td class="desc">
+     最大细节级别。所有细节级别组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-maxQueuedFrames.html">
+      maxQueuedFrames
+     </a>
+    </td>
+    <td class="desc">
+     图形驱动程序排队的最大帧数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-names.html">
+      names
+     </a>
+    </td>
+    <td class="desc">
+     可用品质设置的索引列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-particleRaycastBudget.html">
+      particleRaycastBudget
+     </a>
+    </td>
+    <td class="desc">
+     关于每帧可执行多少次射线投射以进行近似碰撞测试的预算。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-pixelLightCount.html">
+      pixelLightCount
+     </a>
+    </td>
+    <td class="desc">
+     会影响任何对象的最大像素光照数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-realtimeReflectionProbes.html">
+      realtimeReflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     启用实时反射探针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-renderPipeline.html">
+      renderPipeline
+     </a>
+    </td>
+    <td class="desc">
+     此品质级别的 RenderPipelineAsset
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-resolutionScalingFixedDPIFactor.html">
+      resolutionScalingFixedDPIFactor
+     </a>
+    </td>
+    <td class="desc">
+     在分辨率缩放模式下，该因子用于与指定的目标固定 DPI 相乘，以获得用于该品质设置的实际固定 DPI。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowCascade2Split.html">
+      shadowCascade2Split
+     </a>
+    </td>
+    <td class="desc">
+     2 级联设置的标准化级联分布。该值定义级联相对于零的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowCascade4Split.html">
+      shadowCascade4Split
+     </a>
+    </td>
+    <td class="desc">
+     4 级联设置的标准化级联起始位置。向量的每个成员定义相应级联相对于零的标准化位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowCascades.html">
+      shadowCascades
+     </a>
+    </td>
+    <td class="desc">
+     用于方向光阴影的级联数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowDistance.html">
+      shadowDistance
+     </a>
+    </td>
+    <td class="desc">
+     阴影绘制距离。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowmaskMode.html">
+      shadowmaskMode
+     </a>
+    </td>
+    <td class="desc">
+     阴影遮罩的渲染模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowNearPlaneOffset.html">
+      shadowNearPlaneOffset
+     </a>
+    </td>
+    <td class="desc">
+     对阴影视锥体近平面进行偏移处理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowProjection.html">
+      shadowProjection
+     </a>
+    </td>
+    <td class="desc">
+     方向光阴影投影。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadowResolution.html">
+      shadowResolution
+     </a>
+    </td>
+    <td class="desc">
+     阴影贴图的默认分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-shadows.html">
+      shadows
+     </a>
+    </td>
+    <td class="desc">
+     要使用的实时阴影类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-skinWeights.html">
+      skinWeights
+     </a>
+    </td>
+    <td class="desc">
+     对于项目中所有蒙皮网格，可影响顶点的最大骨骼权重数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-softParticles.html">
+      softParticles
+     </a>
+    </td>
+    <td class="desc">
+     是否应为粒子使用软混合？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-softVegetation.html">
+      softVegetation
+     </a>
+    </td>
+    <td class="desc">
+     对地形引擎中的植被使用双通道着色器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsActive.html">
+      streamingMipmapsActive
+     </a>
+    </td>
+    <td class="desc">
+     根据与所有活动摄像机的距离启用纹理 Mipmap 级别的自动串流。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsAddAllCameras.html">
+      streamingMipmapsAddAllCameras
+     </a>
+    </td>
+    <td class="desc">
+     处理所有已启用的摄像机以进行纹理串流（不仅仅是包含 StreamingController 组件的摄像机）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsMaxFileIORequests.html">
+      streamingMipmapsMaxFileIORequests
+     </a>
+    </td>
+    <td class="desc">
+     来自纹理串流系统的活动纹理文件 IO 请求的最大数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsMaxLevelReduction.html">
+      streamingMipmapsMaxLevelReduction
+     </a>
+    </td>
+    <td class="desc">
+     要为每个纹理丢弃的 Mipmap 级别的最大数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsMemoryBudget.html">
+      streamingMipmapsMemoryBudget
+     </a>
+    </td>
+    <td class="desc">
+     串流和非串流纹理使用的内存总量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-streamingMipmapsRenderersPerFrame.html">
+      streamingMipmapsRenderersPerFrame
+     </a>
+    </td>
+    <td class="desc">
+     在计算关联纹理的所需 Mipmap 级别期间用于处理每个帧的渲染器数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings-vSyncCount.html">
+      vSyncCount
+     </a>
+    </td>
+    <td class="desc">
+     垂直同步数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings.DecreaseLevel.html">
+      DecreaseLevel
+     </a>
+    </td>
+    <td class="desc">
+     降低当前的品质级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings.GetQualityLevel.html">
+      GetQualityLevel
+     </a>
+    </td>
+    <td class="desc">
+     返回当前的图形品质级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings.GetRenderPipelineAssetAt.html">
+      GetRenderPipelineAssetAt
+     </a>
+    </td>
+    <td class="desc">
+     获取以指定品质级别分配的渲染管线资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings.IncreaseLevel.html">
+      IncreaseLevel
+     </a>
+    </td>
+    <td class="desc">
+     提高当前的品质级别。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="QualitySettings.SetQualityLevel.html">
+      SetQualityLevel
+     </a>
+    </td>
+    <td class="desc">
+     设置新的图形品质级别。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

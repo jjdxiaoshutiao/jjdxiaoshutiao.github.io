@@ -1,0 +1,151 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UploadHandlerFile
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Networking.UploadHandler.html">
+    Networking.UploadHandler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   专门用于从给定文件读取数据并将原始字节作为请求主体发送给服务器的 UploadHandler。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   您可以使用它向服务器发送大量数据，且占用的内存较少。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;<br/><br/>public class UHFileSample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        StartCoroutine(UploadFileData());
+    }<br/><br/>    IEnumerator UploadFileData()
+    {
+        using (var uwr = new <a href="Networking.UnityWebRequest.html">UnityWebRequest</a>("http://yourwebsite.com/upload", <a href="Networking.UnityWebRequest-kHttpVerbPUT.html">UnityWebRequest.kHttpVerbPUT</a>))
+        {
+            uwr.uploadHandler = new <a href="Networking.UploadHandlerFile.html">UploadHandlerFile</a>("/path/to/file");
+            yield return uwr.SendWebRequest();
+            if (uwr.isNetworkError || uwr.isHttpError)
+                <a href="Debug.LogError.html">Debug.LogError</a>(uwr.error);
+            else
+            {
+                // file data successfully sent
+            }
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.UploadHandlerFile-ctor.html">
+      UploadHandlerFile
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的上传处理程序，以将来自给定文件的数据发送到服务器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.UploadHandler-contentType.html">
+       contentType
+      </a>
+     </td>
+     <td class="desc">
+      确定将使用出站 HTTP 请求传输的默认 Content-Type 标头。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.UploadHandler-data.html">
+       data
+      </a>
+     </td>
+     <td class="desc">
+      将作为主体数据传输到远程服务器的原始数据。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Networking.UploadHandler-progress.html">
+       progress
+      </a>
+     </td>
+     <td class="desc">
+      返回上传到远程服务器的数据在上传的数据总量中占的比例。（只读）
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Networking.UploadHandler.Dispose.html">
+       Dispose
+      </a>
+     </td>
+     <td class="desc">
+      表示不再使用此 UploadHandler，并且应清理它使用的所有资源。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

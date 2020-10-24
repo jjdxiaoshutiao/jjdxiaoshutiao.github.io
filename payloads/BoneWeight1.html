@@ -1,0 +1,132 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BoneWeight1
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述任意数量的影响网格顶点的蒙皮骨骼权重。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   骨骼权重必须是降序，加起来等于 1。
+   <br/>
+   <br/>
+   此结构、关联的
+   <a href="Mesh.GetAllBoneWeights.html">
+    Mesh.GetAllBoneWeights
+   </a>
+   、
+   <a href="Mesh.SetBoneWeights.html">
+    Mesh.SetBoneWeights
+   </a>
+   和
+   <a href="Mesh.GetBonesPerVertex.html">
+    Mesh.GetBonesPerVertex
+   </a>
+   API 可以为每个顶点描述任意数量的骨骼权重。旧的
+   <a href="BoneWeight.html">
+    BoneWeight
+   </a>
+   结构、关联的
+   <a href="Mesh-boneWeights.html">
+    Mesh.boneWeights
+   </a>
+   和
+   <a href="Mesh.GetBoneWeights.html">
+    Mesh.GetBoneWeights
+   </a>
+   API 只能为每个顶点描述 4 个骨骼权重。
+   <br/>
+   <br/>
+   对于每个顶点有 4 个以上骨骼的网格，必须使用此结构。对于所有其他网格，使用此结构不会对性能有任何不利影响，而是可能会略微提高性能，原因是 Unity 无需执行不必要的转换操作就可以描述正好 4 个骨骼权重的顶点。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Mesh.SetBoneWeights.html">
+    Mesh.SetBoneWeights
+   </a>
+   、
+   <a href="Mesh.GetAllBoneWeights.html">
+    Mesh.GetAllBoneWeights
+   </a>
+   、
+   <a href="Mesh.GetBonesPerVertex.html">
+    Mesh.GetBonesPerVertex
+   </a>
+   、
+   <a href="Mesh-boneWeights.html">
+    Mesh.boneWeights
+   </a>
+   、
+   <a href="Mesh.GetBoneWeights.html">
+    Mesh.GetBoneWeights
+   </a>
+   、
+   <a href="ModelImporter-maxBonesPerVertex.html">
+    ModelImporter.maxBonesPerVertex
+   </a>
+   、
+   <a href="QualitySettings-skinWeights.html">
+    QualitySettings.skinWeights
+   </a>
+   、
+   <a href="SkinnedMeshRenderer-quality.html">
+    SkinnedMeshRenderer.quality
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoneWeight1-boneIndex.html">
+      boneIndex
+     </a>
+    </td>
+    <td class="desc">
+     骨骼的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoneWeight1-weight.html">
+      weight
+     </a>
+    </td>
+    <td class="desc">
+     骨骼的蒙皮权重。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

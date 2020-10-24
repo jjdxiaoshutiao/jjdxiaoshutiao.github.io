@@ -1,0 +1,73 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ReflectionProbeRefreshMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   枚举，描述 Player 中的实时反射探针刷新方式。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeRefreshMode.OnAwake.html">
+      OnAwake
+     </a>
+    </td>
+    <td class="desc">
+     指示探针只在它变为可见的第一帧更新。探针将不再自动更新，但随后可以使用 RenderProbe 刷新探针。另请参阅：ReflectionProbe.RenderProbe。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeRefreshMode.EveryFrame.html">
+      EveryFrame
+     </a>
+    </td>
+    <td class="desc">
+     指示 Unity 每帧更新探针的立方体贴图。
+请注意，更新探针的成本非常高。对太多探针设置此选项会对帧率产生明显的负面影响。使用时间切片有助于提高性能。另请参阅：ReflectionProbeTimeSlicingMode。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ReflectionProbeRefreshMode.ViaScripting.html">
+      ViaScripting
+     </a>
+    </td>
+    <td class="desc">
+     将探针设置为在游戏运行期间永远不会被 Unity 自动更新。使用此属性可完全通过脚本控制探针刷新。另请参阅：ReflectionProbe.RenderProbe。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

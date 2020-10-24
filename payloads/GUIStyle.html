@@ -1,0 +1,465 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GUIStyle
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   GUI 元素的样式信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   大多数 GUI 函数接受可选的 GUIStyle 参数来重写默认样式。这让您能够更改或根据不同状态（例如，当鼠标悬停在控件上时）切换颜色、字体及其他细节。当整个 GUI 设计需要一致的外观时，GUISkin 类为您提供了一种有用方法，可以收集一组 GUIStyle 设置并一次应用所有这些设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-none.html">
+      none
+     </a>
+    </td>
+    <td class="desc">
+     空 GUIStyle 的快捷方式。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-active.html">
+      active
+     </a>
+    </td>
+    <td class="desc">
+     按下控件时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-alignment.html">
+      alignment
+     </a>
+    </td>
+    <td class="desc">
+     文本对齐。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-border.html">
+      border
+     </a>
+    </td>
+    <td class="desc">
+     所有背景图像的边框。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-clipping.html">
+      clipping
+     </a>
+    </td>
+    <td class="desc">
+     如何处理要渲染的内容太大而无法放入给定区域的情况。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-contentOffset.html">
+      contentOffset
+     </a>
+    </td>
+    <td class="desc">
+     要应用于该 GUIstyle 的内容的像素偏移。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-fixedHeight.html">
+      fixedHeight
+     </a>
+    </td>
+    <td class="desc">
+     如果不为 0，则使用该样式呈现的任何 GUI 元素都将具有此处指定的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-fixedWidth.html">
+      fixedWidth
+     </a>
+    </td>
+    <td class="desc">
+     如果不为 0，则使用该样式呈现的任何 GUI 元素都将具有此处指定的宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-focused.html">
+      focused
+     </a>
+    </td>
+    <td class="desc">
+     元素具有键盘焦点时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-font.html">
+      font
+     </a>
+    </td>
+    <td class="desc">
+     用于渲染的字体。如果为 null，则改为使用当前 GUISkin 的默认字体。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-fontSize.html">
+      fontSize
+     </a>
+    </td>
+    <td class="desc">
+     要使用的字体大小（用于动态字体）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-fontStyle.html">
+      fontStyle
+     </a>
+    </td>
+    <td class="desc">
+     要使用的字体样式（用于动态字体）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-hover.html">
+      hover
+     </a>
+    </td>
+    <td class="desc">
+     鼠标悬停在控件上时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-imagePosition.html">
+      imagePosition
+     </a>
+    </td>
+    <td class="desc">
+     GUIContent 的图像和文本的组合方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-lineHeight.html">
+      lineHeight
+     </a>
+    </td>
+    <td class="desc">
+     具有该样式的文本行的高度，以像素为单位。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-margin.html">
+      margin
+     </a>
+    </td>
+    <td class="desc">
+     以该样式呈现的元素与任何其他 GUI 元素之间的边距。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-name.html">
+      name
+     </a>
+    </td>
+    <td class="desc">
+     该 GUIStyle 的名称。用于根据名称获取 GUIStyle。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-normal.html">
+      normal
+     </a>
+    </td>
+    <td class="desc">
+     正常显示组件时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-onActive.html">
+      onActive
+     </a>
+    </td>
+    <td class="desc">
+     启用和按下元素时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-onFocused.html">
+      onFocused
+     </a>
+    </td>
+    <td class="desc">
+     元素具有键盘焦点并且启用时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-onHover.html">
+      onHover
+     </a>
+    </td>
+    <td class="desc">
+     控件处于启用状态并且鼠标悬停在其上方时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-onNormal.html">
+      onNormal
+     </a>
+    </td>
+    <td class="desc">
+     控件处于启用状态时的渲染设置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-overflow.html">
+      overflow
+     </a>
+    </td>
+    <td class="desc">
+     要添加到背景图像的额外空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-padding.html">
+      padding
+     </a>
+    </td>
+    <td class="desc">
+     从 GUIStyle 边缘到内容起始处的空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-richText.html">
+      richText
+     </a>
+    </td>
+    <td class="desc">
+     为文本格式标记启用 HTML 样式标记。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-stretchHeight.html">
+      stretchHeight
+     </a>
+    </td>
+    <td class="desc">
+     是否可以垂直拉伸该样式的 GUI 元素来改善布局效果？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-stretchWidth.html">
+      stretchWidth
+     </a>
+    </td>
+    <td class="desc">
+     是否可以水平拉伸该样式的 GUI 元素来改善布局效果？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-wordWrap.html">
+      wordWrap
+     </a>
+    </td>
+    <td class="desc">
+     文本是否应该自动换行？？
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-ctor.html">
+      GUIStyle
+     </a>
+    </td>
+    <td class="desc">
+     空 GUIStyle 的构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.CalcHeight.html">
+      CalcHeight
+     </a>
+    </td>
+    <td class="desc">
+     使用特定的 width 呈现 content 时该元素的高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.CalcMinMaxWidth.html">
+      CalcMinMaxWidth
+     </a>
+    </td>
+    <td class="desc">
+     计算呈现 content 时该样式的最小和最大宽度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.CalcScreenSize.html">
+      CalcScreenSize
+     </a>
+    </td>
+    <td class="desc">
+     计算使用该样式格式化的元素的大小，以及内容的给定空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.CalcSize.html">
+      CalcSize
+     </a>
+    </td>
+    <td class="desc">
+     计算某些内容的大小（使用该样式呈现时）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.Draw.html">
+      Draw
+     </a>
+    </td>
+    <td class="desc">
+     将该 GUIStyle 绘制到屏幕上（内部版本）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.DrawCursor.html">
+      DrawCursor
+     </a>
+    </td>
+    <td class="desc">
+     绘制该 GUIStyle 时，附加选定的内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.DrawWithTextSelection.html">
+      DrawWithTextSelection
+     </a>
+    </td>
+    <td class="desc">
+     绘制该 GUIStyle 时，附加选定的内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.GetCursorPixelPosition.html">
+      GetCursorPixelPosition
+     </a>
+    </td>
+    <td class="desc">
+     获取给定字符串索引的像素位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle.GetCursorStringIndex.html">
+      GetCursorStringIndex
+     </a>
+    </td>
+    <td class="desc">
+     当用户在 cursorPixelPosition 处点击时，获取光标位置（在 contents.text 中的索引）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUIStyle-operator_string.html">
+      GUIStyle
+     </a>
+    </td>
+    <td class="desc">
+     从当前皮肤获取命名的 GUI 样式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

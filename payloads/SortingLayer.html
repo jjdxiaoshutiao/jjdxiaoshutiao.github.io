@@ -1,0 +1,155 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SortingLayer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   SortingLayer 可用于轻松设置多个精灵的渲染顺序。始终有一个名称为“Default”的默认 SortingLayer，最初所有精灵都添加到其中。添加了更多 SortingLayer，可轻松控制精灵组的渲染顺序。图层可排在默认图层的前面或后面。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="../Manual/class-TagManager.html">
+    Tags and Layers
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer-layers.html">
+      layers
+     </a>
+    </td>
+    <td class="desc">
+     返回在项目中定义的所有图层。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer-id.html">
+      id
+     </a>
+    </td>
+    <td class="desc">
+     这是分配给图层的唯一 ID。它不是一个有序的运行值，不应将其与其他图层进行比较以确定排序顺序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer-name.html">
+      name
+     </a>
+    </td>
+    <td class="desc">
+     返回 TagManager 中定义的图层的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer-value.html">
+      value
+     </a>
+    </td>
+    <td class="desc">
+     这是相对值，指示该图层相对于其他图层的排序顺序。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer.GetLayerValueFromID.html">
+      GetLayerValueFromID
+     </a>
+    </td>
+    <td class="desc">
+     返回最终排序图层值。要确定不同排序图层之间的排序顺序，请使用此方法获取最终排序值和使用 CompareTo 确定顺序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer.GetLayerValueFromName.html">
+      GetLayerValueFromName
+     </a>
+    </td>
+    <td class="desc">
+     返回最终排序图层值。另请参阅：GetLayerValueFromID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer.IDToName.html">
+      IDToName
+     </a>
+    </td>
+    <td class="desc">
+     返回图层的唯一 ID。如果提供的是无效 ID，则返回“&lt;unknown layer&gt;”。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果提供的 ID 是有效图层 ID，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SortingLayer.NameToID.html">
+      NameToID
+     </a>
+    </td>
+    <td class="desc">
+     根据给定的名称返回 ID。如果提供的是无效名称，则返回 0。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

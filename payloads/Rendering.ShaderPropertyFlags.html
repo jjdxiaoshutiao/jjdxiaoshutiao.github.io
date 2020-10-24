@@ -1,0 +1,151 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ShaderPropertyFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于控制着色器属性行为方式的标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 编辑器在编译 ShaderLab 脚本时，它根据为其着色器属性分配的特性为着色器属性分配着色器属性标志。例如，如果向着色器属性声明中添加 "[HideInInspector]" 特性，Unity 将在编译脚本时设置
+   <a href="Rendering.ShaderPropertyFlags.HideInInspector.html">
+    HideInInspector
+   </a>
+   标志。如果向一个属性中添加多个特性，编辑器将使用按位 OR 运算组合标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     未设置任何标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.HideInInspector.html">
+      HideInInspector
+     </a>
+    </td>
+    <td class="desc">
+     表示 Unity 在默认材质检视面板中隐藏属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.PerRendererData.html">
+      PerRendererData
+     </a>
+    </td>
+    <td class="desc">
+     Unity 将从渲染器的 MaterialPropertyBlock（而非材质）查询此属性的纹理值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.NoScaleOffset.html">
+      NoScaleOffset
+     </a>
+    </td>
+    <td class="desc">
+     在默认材质检视面板中的纹理旁边不显示 UV 缩放/偏移字段。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.Normal.html">
+      Normal
+     </a>
+    </td>
+    <td class="desc">
+     表示此属性的值包含标准（标准化矢量）数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.HDR.html">
+      HDR
+     </a>
+    </td>
+    <td class="desc">
+     表示此属性的值包含高动态范围 (HDR) 数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.Gamma.html">
+      Gamma
+     </a>
+    </td>
+    <td class="desc">
+     表示此属性的值位于伽马空间。如果活动颜色空间为线性，Unity 将这些值转换为线性空间值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.NonModifiableTextureData.html">
+      NonModifiableTextureData
+     </a>
+    </td>
+    <td class="desc">
+     不能在默认材质检视面板中编辑此纹理属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.MainTexture.html">
+      MainTexture
+     </a>
+    </td>
+    <td class="desc">
+     表示此属性的值包含材质的主纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.ShaderPropertyFlags.MainColor.html">
+      MainColor
+     </a>
+    </td>
+    <td class="desc">
+     表示此属性的值包含材质的主色。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

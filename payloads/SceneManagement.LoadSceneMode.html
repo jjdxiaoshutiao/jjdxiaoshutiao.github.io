@@ -1,0 +1,97 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   LoadSceneMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在播放器中加载场景时使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过 LoadSceneMode 选择在使用
+   <a href="SceneManagement.SceneManager.LoadScene.html">
+    SceneManager.LoadScene
+   </a>
+   时加载哪种类型的场景。可用模式为单模式和附加模式。
+   <br/>
+   <br/>
+   单模式将加载一个标准的 Unity 场景，该场景将独立显示在 Hierarchy 窗口中。附加模式将加载一个显示在 Hierarchy 窗口的场景，而窗口中同时还包含其他活动场景。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.SceneManagement;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        //This displays a <a href="UIElements.Button.html">Button</a> on the screen at position (20,30), width 150 and height 50. The button’s text reads the last parameter. Press this for the <a href="SceneManagement.SceneManager.html">SceneManager</a> to load the <a href="SceneManagement.Scene.html">Scene</a>.
+        if (<a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(20, 30, 150, 30), "Other <a href="SceneManagement.Scene.html">Scene</a> Single"))
+        {
+            //The <a href="SceneManagement.SceneManager.html">SceneManager</a> loads your new <a href="SceneManagement.Scene.html">Scene</a> as a single <a href="SceneManagement.Scene.html">Scene</a> (not overlapping). This is Single mode.
+            <a href="SceneManagement.SceneManager.LoadScene.html">SceneManager.LoadScene</a>("YourScene", <a href="SceneManagement.LoadSceneMode.Single.html">LoadSceneMode.Single</a>);
+        }<br/><br/>        //Whereas pressing this <a href="UIElements.Button.html">Button</a> loads the Additive <a href="SceneManagement.Scene.html">Scene</a>.
+        if (<a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(20, 60, 150, 30), "Other <a href="SceneManagement.Scene.html">Scene</a> Additive"))
+        {
+            //<a href="SceneManagement.SceneManager.html">SceneManager</a> loads your new <a href="SceneManagement.Scene.html">Scene</a> as an extra <a href="SceneManagement.Scene.html">Scene</a> (overlapping the other). This is Additive mode.
+            <a href="SceneManagement.SceneManager.LoadScene.html">SceneManager.LoadScene</a>("YourScene", <a href="SceneManagement.LoadSceneMode.Additive.html">LoadSceneMode.Additive</a>);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.LoadSceneMode.Single.html">
+      Single
+     </a>
+    </td>
+    <td class="desc">
+     关闭所有当前加载的场景
+                并加载一个场景。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneManagement.LoadSceneMode.Additive.html">
+      Additive
+     </a>
+    </td>
+    <td class="desc">
+     将场景添加到当前加载的场景。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

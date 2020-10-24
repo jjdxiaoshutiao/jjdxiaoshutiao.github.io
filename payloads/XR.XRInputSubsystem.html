@@ -1,0 +1,208 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   XRInputSubsystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="IntegratedSubsystem.html">
+    IntegratedSubsystem
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   XRInputSubsystem
+实例用于启用和禁用来自特定插件的输入。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   启动一个 XRInputSubsystem
+实例将会导致该插件开始将输入设备数据馈送至以下
+   <a href="XR.InputTracking.html">
+    InputTracking
+   </a>
+   系统：XR.InputTracking.GetLocalPosition 和 XR.InputTracking.GetLocalRotation。调用 Stop 或 Shutdown 函数将会禁用对该插件的任何输入设备数据的轮询。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.GetSupportedTrackingOriginModes.html">
+      GetSupportedTrackingOriginModes
+     </a>
+    </td>
+    <td class="desc">
+     获取此子系统支持的所有 TrackingOriginModeFlags。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.GetTrackingOriginMode.html">
+      GetTrackingOriginMode
+     </a>
+    </td>
+    <td class="desc">
+     获取跟踪原点模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.TryGetBoundaryPoints.html">
+      TryGetBoundaryPoints
+     </a>
+    </td>
+    <td class="desc">
+     获取表示 SDK 设置边界的 3D 位置值的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.TryGetInputDevices.html">
+      TryGetInputDevices
+     </a>
+    </td>
+    <td class="desc">
+     获取此 XRInputSubsystem 报告的所有连接的 InputDevice 的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.TryRecenter.html">
+      TryRecenter
+     </a>
+    </td>
+    <td class="desc">
+     将所有 InputDevice 上的跟踪功能居中到头戴式设备的当前位置和方向。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem.TrySetTrackingOriginMode.html">
+      TrySetTrackingOriginMode
+     </a>
+    </td>
+    <td class="desc">
+     尝试设置子系统的 TrackingOriginModeFlags。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem-boundaryChanged.html">
+      boundaryChanged
+     </a>
+    </td>
+    <td class="desc">
+     一个事件，接收 XRInputSubsystem 在更改其跟踪边界时调用的委托实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRInputSubsystem-trackingOriginUpdated.html">
+      trackingOriginUpdated
+     </a>
+    </td>
+    <td class="desc">
+     一个事件，接收 XRInputSubsystem 在更改其报告设备所在的原点位置时调用的委托实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem-running.html">
+       running
+      </a>
+     </td>
+     <td class="desc">
+      子系统是否在运行。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      销毁子系统的此实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Start.html">
+       Start
+      </a>
+     </td>
+     <td class="desc">
+      启动子系统的一个实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Stop.html">
+       Stop
+      </a>
+     </td>
+     <td class="desc">
+      停止子系统的一个实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

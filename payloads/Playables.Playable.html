@@ -1,0 +1,172 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Playable
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Playables
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Playables.IPlayable.html">
+    IPlayable
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Playable 是可自定义的运行时对象，此类对象可连接在一起并包含在
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   中以创建复杂的行为。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Playable 可用于创建复杂且灵活的数据评估树。Playable 是可连接在一起的节点，连接后，每一个 Playable 都可以设置其子项的“权重”或“影响”。
+   <br/>
+   <br/>
+   同一图中的可播放项包含在一个
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   中。一个 PlayableGraph 可有多个输出（也称为“播放器”），它们实现了
+   <a href="Playables.IPlayableOutput.html">
+    IPlayableOutput
+   </a>
+   。PlayableOutput 获取其源可播放项的结果并将其应用到场景中的对象。例如，将
+   <a href="Animations.AnimationPlayableOutput.html">
+    AnimationPlayableOutput
+   </a>
+   链接至图中的可播放项节点（“源可播放项”），以及场景中的
+   <a href="Animator.html">
+    Animator
+   </a>
+   。播放此图时，Animator 应用由图评估生成的动画姿势。PlayableOutputs 的数量与可播放项的类型（
+   <a href="Animations.AnimationPlayableOutput.html">
+    AnimationPlayableOutput
+   </a>
+   、
+   <a href="Audio.AudioPlayableOutput.html">
+    AudioPlayableOutput
+   </a>
+   、
+   <a href="Experimental.Playables.TexturePlayableOutput.html">
+    TexturePlayableOutput
+   </a>
+   以及
+   <a href="Playables.ScriptPlayableOutput.html">
+    ScriptPlayableOutput
+   </a>
+   等）一样多。
+   <br/>
+   <br/>
+   ScriptPlayable&lt;T&gt; 是一种特殊的可播放项。其主要角色为一个“自定义”可播放项。它是一个模板化结构，其中
+   <code class="mono">
+    T
+   </code>
+   必须由
+   <a href="Playables.PlayableBehaviour.html">
+    PlayableBehaviour
+   </a>
+   派生。借助这些自定义 PlayableBehaviour，您可以在特定时间在图评估中写入行为（请参阅
+   <a href="Playables.PlayableBehaviour.PrepareFrame.html">
+    PlayableBehaviour.PrepareFrame
+   </a>
+   以及
+   <a href="Playables.PlayableBehaviour.ProcessFrame.html">
+    PlayableBehaviour.ProcessFrame
+   </a>
+   ）。ScriptPlayable 的一个典型例子是控制 Timeline 图的 TimelinePlayable。ScriptPlayable 会创建负责轨道和剪辑的可播放项并将其链接在一起。
+   <br/>
+   <br/>
+   播放
+   <a href="Playables.PlayableGraph.html">
+    PlayableGraph
+   </a>
+   时，会遍历每个 PlayableOutput。遍历期间，它将在每个 Playable 上调用 PrepareFrame 方法。这允许 Playable“为下一评估做好准备”。在 PrepareFrame 阶段期间，每个 Playable 都可修改其子项（通过添加新的输入或是移除部分输入）。这样，Playable 可在运行时在 Playable 树中“生成”新的子树枝。这意味着 Playable 树不是静态结构。它们可以随时间进行调整和改变。
+   <br/>
+   <br/>
+   一旦准备完毕，PlayableOutput 会负责处理结果，这也是将其称为“玩家”的原因。如果使用
+   <a href="Animations.AnimationPlayableOutput.html">
+    AnimationPlayableOutput
+   </a>
+   ，
+   <a href="Animator.html">
+    Animator
+   </a>
+   会负责处理图；如果使用
+   <a href="Playables.ScriptPlayableOutput.html">
+    ScriptPlayableOutput
+   </a>
+   ，将在每个 ScriptPlayable 上调用
+   <a href="Playables.PlayableBehaviour.ProcessFrame.html">
+    PlayableBehaviour.ProcessFrame
+   </a>
+   。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   您可以在实现
+   <a href="Playables.IPlayable.html">
+    IPlayable
+   </a>
+   的任何结构上使用
+   <a href="Playables.PlayableExtensions.html">
+    PlayableExtensions
+   </a>
+   方法。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   在手册中，详细介绍了
+   <a href="../Manual/Playables.html">
+    Playables API
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.Playable.Null.html">
+      Null
+     </a>
+    </td>
+    <td class="desc">
+     返回无效的 Playable。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

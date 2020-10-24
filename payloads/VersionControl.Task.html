@@ -1,0 +1,184 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Task
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.VersionControl
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   任务是对版本控制操作实例的描述。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   通过此类型的对象，可以处理
+   <a href="VersionControl.Provider.Checkout.html">
+    Provider.Checkout
+   </a>
+   、
+   <a href="VersionControl.Provider.GetLatest.html">
+    Provider.GetLatest
+   </a>
+   和
+   <a href="VersionControl.Provider.Submit.html">
+    Provider.Submit
+   </a>
+   等操作。几乎每次要求
+   <a href="VersionControl.Provider.html">
+    Provider
+   </a>
+   执行操作时，Unity 都会创建该项目。版本控制操作返回的任务对象在后台执行，并且不总是立即完成，如果需要等待它们完成，请使用
+   <a href="VersionControl.Task.Wait.html">
+    Task.Wait
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-assetList.html">
+      assetList
+     </a>
+    </td>
+    <td class="desc">
+     多种任务的结果。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-changeSets.html">
+      changeSets
+     </a>
+    </td>
+    <td class="desc">
+     一些任务返回的变更集列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-description.html">
+      description
+     </a>
+    </td>
+    <td class="desc">
+     当前任务的简短描述。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-messages.html">
+      messages
+     </a>
+    </td>
+    <td class="desc">
+     可能包含版本控制插件的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-progressPct.html">
+      progressPct
+     </a>
+    </td>
+    <td class="desc">
+     当前任务的进度百分比。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-resultCode.html">
+      resultCode
+     </a>
+    </td>
+    <td class="desc">
+     一些任务会返回结果代码，这些代码将存储在此处。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-secondsSpent.html">
+      secondsSpent
+     </a>
+    </td>
+    <td class="desc">
+     自任务启动以来在此任务中花费的总时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-success.html">
+      success
+     </a>
+    </td>
+    <td class="desc">
+     确定任务是否已成功完成。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task-text.html">
+      text
+     </a>
+    </td>
+    <td class="desc">
+     将包含 Provider.ChangeSetDescription 任务的结果。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task.SetCompletionAction.html">
+      SetCompletionAction
+     </a>
+    </td>
+    <td class="desc">
+     完成任务后，执行一个完成任务（如果已设置）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="VersionControl.Task.Wait.html">
+      Wait
+     </a>
+    </td>
+    <td class="desc">
+     一种阻塞方法，用于等待任务完成。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

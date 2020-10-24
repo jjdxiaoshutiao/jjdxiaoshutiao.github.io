@@ -1,0 +1,207 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   SortingCriteria
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   如何在渲染期间对对象进行排序。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在绘制对象之前，通过使用并组合以下标志，控制 Unity 对对象进行排序的方式。
+   <br/>
+   <br/>
+   基本标志包括：
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.SortingLayer.html">
+    SortingLayer
+   </a>
+   、
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.RenderQueue.html">
+    RenderQueue
+   </a>
+   、
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.BackToFront.html">
+    BackToFront
+   </a>
+   、
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.QuantizedFrontToBack.html">
+    QuantizedFrontToBack
+   </a>
+   、
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.OptimizeStateChanges.html">
+    OptimizeStateChanges
+   </a>
+   、
+   <br/>
+   -
+   <a href="Rendering.SortingCriteria.CanvasOrder.html">
+    CanvasOrder
+   </a>
+   。
+   <br/>
+   <br/>
+   组合使用多个标志时，系统按上述顺序应用标志。
+   <br/>
+   <br/>
+   为方便起见，我们提供了一些常用的排序组合。对于不透明对象，请使用
+   <a href="Rendering.SortingCriteria.CommonOpaque.html">
+    CommonOpaque
+   </a>
+   。这种标志组合包括有关减少绘制状态更改次数的优化，并大致从前到后绘制，以减少在相同像素上绘制的次数。对于透明对象，请使用
+   <a href="Rendering.SortingCriteria.CommonTransparent.html">
+    CommonTransparent
+   </a>
+   ，这需要在绘制对象之前从后到前对其进行排序，以便所有对象都会显示。
+   <br/>
+   <br/>
+   另请参阅：DrawingSettings.sorting、
+   <a href="Rendering.ScriptableRenderContext.DrawRenderers.html">
+    ScriptableRenderContext.DrawRenderers
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不对对象进行排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.SortingLayer.html">
+      SortingLayer
+     </a>
+    </td>
+    <td class="desc">
+     按渲染器排序图层排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.RenderQueue.html">
+      RenderQueue
+     </a>
+    </td>
+    <td class="desc">
+     按材质渲染队列排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.BackToFront.html">
+      BackToFront
+     </a>
+    </td>
+    <td class="desc">
+     从后到前对对象进行排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.QuantizedFrontToBack.html">
+      QuantizedFrontToBack
+     </a>
+    </td>
+    <td class="desc">
+     在大致从前到后的存储桶中对对象进行排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.OptimizeStateChanges.html">
+      OptimizeStateChanges
+     </a>
+    </td>
+    <td class="desc">
+     对对象进行排序，以减少绘制状态更改的次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.CanvasOrder.html">
+      CanvasOrder
+     </a>
+    </td>
+    <td class="desc">
+     根据画布顺序对渲染器进行排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.RendererPriority.html">
+      RendererPriority
+     </a>
+    </td>
+    <td class="desc">
+     按渲染器优先级对对象排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.CommonOpaque.html">
+      CommonOpaque
+     </a>
+    </td>
+    <td class="desc">
+     不透明对象的典型排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.SortingCriteria.CommonTransparent.html">
+      CommonTransparent
+     </a>
+    </td>
+    <td class="desc">
+     透明对象的典型排序。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

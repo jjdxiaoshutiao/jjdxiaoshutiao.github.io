@@ -1,0 +1,95 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimatorClipInfo
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   有关动画器正在播放和混合的剪辑的信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="Animator.GetCurrentAnimatorClipInfo.html">
+    Animator.GetCurrentAnimatorClipInfo
+   </a>
+   和
+   <a href="Animator.GetNextAnimatorClipInfo.html">
+    Animator.GetNextAnimatorClipInfo
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//Create a <a href="GameObject.html">GameObject</a> and attach an <a href="Animator.html">Animator</a> component (Click the Add <a href="Component.html">Component</a> button in the Inspector of the <a href="GameObject.html">GameObject</a> and go to Miscellaneous&gt;<a href="Animator.html">Animator</a>). Set up the <a href="Animator.html">Animator</a> how you would like.
+//Attach this script to the <a href="GameObject.html">GameObject</a><br/><br/>//This script outputs the current clip from the <a href="Animator.html">Animator</a> to the console
+using UnityEngine;<br/><br/>public class AnimationClipInfoClipExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Animator.html">Animator</a> m_Animator;
+    <a href="AnimatorClipInfo.html">AnimatorClipInfo</a>[] m_AnimatorClipInfo;<br/><br/>    // Use this for initialization
+    void Start()
+    {
+        //Fetch the <a href="Animator.html">Animator</a> component from the <a href="GameObject.html">GameObject</a>
+        m_Animator = GetComponent&lt;<a href="Animator.html">Animator</a>&gt;();
+        //Get the animator clip information from the <a href="Animator.html">Animator</a> Controller
+        m_AnimatorClipInfo = m_Animator.GetCurrentAnimatorClipInfo(0);
+        //Output the name of the starting clip
+        <a href="Debug.Log.html">Debug.Log</a>("Starting clip : " + m_AnimatorClipInfo[0].clip);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AnimatorClipInfo-clip.html">
+      clip
+     </a>
+    </td>
+    <td class="desc">
+     返回动画器播放的动画剪辑。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AnimatorClipInfo-weight.html">
+      weight
+     </a>
+    </td>
+    <td class="desc">
+     返回 Animator 用于混合该剪辑的混合权重。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IShouldIncludeInBuildCallback
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEditor.PackageManager
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包管理器用来请求有关包的构建信息的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在构建操作中，对包中名为
+   <a href="PackageManager.IShouldIncludeInBuildCallback.PackageName.html">
+    PackageName
+   </a>
+   的每个托管插件 (DLL) 调用
+   <a href="PackageManager.IShouldIncludeInBuildCallback.ShouldIncludeInBuild.html">
+    ShouldIncludeInBuild
+   </a>
+   方法。
+   <br/>
+   <br/>
+   使用
+   <a href="PackageManager.BuildUtilities.RegisterShouldIncludeInBuildCallback.html">
+    BuildUtilities.RegisterShouldIncludeInBuildCallback
+   </a>
+   在 Package Manager 中注册你的实现。只能为每个包注册此接口的一个实现。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="PackageManager.BuildUtilities.html">
+    BuildUtilities
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PackageManager.IShouldIncludeInBuildCallback.PackageName.html">
+      PackageName
+     </a>
+    </td>
+    <td class="desc">
+     包的名称。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PackageManager.IShouldIncludeInBuildCallback.ShouldIncludeInBuild.html">
+      ShouldIncludeInBuild
+     </a>
+    </td>
+    <td class="desc">
+     确定是否在构建中包含托管插件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

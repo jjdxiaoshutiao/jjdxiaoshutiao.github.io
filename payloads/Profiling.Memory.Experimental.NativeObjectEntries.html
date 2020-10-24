@@ -1,0 +1,160 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NativeObjectEntries
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Profiling.Memory.Experimental
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含本机对象数据的类，由
+   <a href="MemoryProfiler.PackedMemorySnapshot-nativeObjects.html">
+    PackedMemorySnapshot.nativeObjects
+   </a>
+   返回。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-flags.html">
+      flags
+     </a>
+    </td>
+    <td class="desc">
+     包含标志（这些标志附加到 NativeObjectEntries.nativeObjectAddress 数组中引用的本机内存对象）的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-gcHandleIndex.html">
+      gcHandleIndex
+     </a>
+    </td>
+    <td class="desc">
+     PackedMemorySnapshot.gcHandles 数组内的句柄的索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-hideFlags.html">
+      hideFlags
+     </a>
+    </td>
+    <td class="desc">
+     隐藏附加到本机对象的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-instanceId.html">
+      instanceId
+     </a>
+    </td>
+    <td class="desc">
+     此本机对象的实例 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-nativeObjectAddress.html">
+      nativeObjectAddress
+     </a>
+    </td>
+    <td class="desc">
+     指向本机 C++ 对象的内存地址数组。这与 UnityEngine.Object 的“m_CachePtr”字段相匹配。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-nativeTypeArrayIndex.html">
+      nativeTypeArrayIndex
+     </a>
+    </td>
+    <td class="desc">
+     用于检索本机 C++ 类型描述的 PackedMemorySnapshot.nativeTypes 数组索引的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-objectName.html">
+      objectName
+     </a>
+    </td>
+    <td class="desc">
+     包含本机对象名称的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-rootReferenceId.html">
+      rootReferenceId
+     </a>
+    </td>
+    <td class="desc">
+     包含本机对象根引用 ID 的数组。与 NativeRootReferenceEntries.id 数组中的条目相对应。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     此对象的大小（以字节为单位）。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.Memory.Experimental.NativeObjectEntries.GetNumEntries.html">
+      GetNumEntries
+     </a>
+    </td>
+    <td class="desc">
+     获取本机对象条目的数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

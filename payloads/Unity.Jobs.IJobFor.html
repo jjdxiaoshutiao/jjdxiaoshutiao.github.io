@@ -1,0 +1,140 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   IJobFor
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in Unity.Jobs
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   For 作业允许对原生容器的每个元素执行相同的独立操作，或者迭代固定的次数。
+此作业类型为控制作业的调度提供了最灵活的方式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   该作业允许通过多种方式选择如何对工作进行调度。:
+   <br/>
+   <br/>
+   Run 会在主线程上运行作业并立即完成。
+   <br/>
+   <br/>
+   Schedule 会将作业调度到工作线程（或者可能是主线程）上运行，但是会指示工作应在单个线程中进行。
+此选项允许在主线程之外完成工作，不过由于工作会按顺序执行，因此更易于推断。
+   <br/>
+   <br/>
+   ScheduleParallel 会调度作业到多个工作线程上同时运行。此调度选项可以提供最佳性能，但是需要用户了解，在从多个工作线程同时访问相同数据时可能发生的冲突。
+   <br/>
+   <br/>
+   Execute(int index) 会对每个索引（从 0 到提供的长度）执行一次。
+   <br/>
+   <br/>
+   Run 和 Schedule 会保证按顺序调用作业的 Execute(int index) 方法。
+   <br/>
+   <br/>
+   ScheduleParallel 不会提供这种保证，因为会从多个相互并行的工作线程中调用。
+每个迭代必须独立于其他迭代（安全系统会强制执行此规则）。索引没有确定的顺序，而是在多个核心上并行执行。
+Unity 会自动将工作拆分为不小于所提供 batchSize 的块，并根据工作线程数、数组长度和批次大小调度适当数量的作业。
+批次大小通常应根据作业中执行的工作量来选择。简单作业（例如互相添加一些 Vector3）的批次大小应为 32 到 128。但是，如果执行的工作涉及十分高昂的成本，那么最好使用较小的批次大小；对于高成本工作，完全可以将批次大小设置为 1。IJobFor 使用原子操作执行工作窃取。批次大小可能较小，但仍有开销。
+   <br/>
+   <br/>
+   返回的 JobHandle 可用于确保作业已完成。它也可以作为依赖项传递给其他作业，从而确保作业在工作线程中逐个执行。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using Unity.Collections;
+using Unity.Jobs;<br/><br/>class ApplyVelocityParallelForSample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    struct VelocityJob : <a href="Unity.Jobs.IJobFor.html">IJobFor</a>
+    {
+        // Jobs declare all data that will be accessed in the job
+        // By declaring it as read only, multiple jobs are allowed to access the data in parallel
+        [ReadOnly]
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; velocity;<br/><br/>        // By default containers are assumed to be read &amp;amp; write
+        public NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt; position;<br/><br/>        // Delta time must be copied to the job since jobs generally don't have concept of a frame.
+        // The main thread waits for the job same frame or next frame, but the job should do work deterministically
+        // independent on when the job happens to run on the worker threads.
+        public float deltaTime;<br/><br/>        // The code actually running on the job
+        public void Execute(int i)
+        {
+            // Move the positions based on delta time and velocity
+            position[i] = position[i] + velocity[i] * deltaTime;
+        }
+    }<br/><br/>    public void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        var position = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);<br/><br/>        var velocity = new NativeArray&lt;<a href="Vector3.html">Vector3</a>&gt;(500, <a href="Unity.Collections.Allocator.Persistent.html">Allocator.Persistent</a>);
+        for (var i = 0; i &lt; velocity.Length; i++)
+            velocity[i] = new <a href="Vector3.html">Vector3</a>(0, 10, 0);<br/><br/>        // Initialize the job data
+        var job = new VelocityJob()
+        {
+            deltaTime = <a href="Time-deltaTime.html">Time.deltaTime</a>,
+            position = position,
+            velocity = velocity
+        };<br/><br/>        // Schedule job to run immediately on main thread. First parameter is how many for-each iterations to perform.
+        job.Run(position.Length);<br/><br/>        // Schedule job to run at a later point on a single worker thread.
+        // First parameter is how many for-each iterations to perform.
+        // The second parameter is a <a href="Unity.Jobs.JobHandle.html">JobHandle</a> to use for this job's dependencies.
+        //   Dependencies are used to ensure that a job executes on worker threads after the dependency has completed execution.
+        //   In this case we don't need our job to depend on anything so we can use a default one.
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> sheduleJobDependency = new <a href="Unity.Jobs.JobHandle.html">JobHandle</a>();
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> sheduleJobHandle = job.Schedule(position.Length, sheduleJobDependency);<br/><br/>        // Schedule job to run on parallel worker threads.
+        // First parameter is how many for-each iterations to perform.
+        // The second parameter is the batch size,
+        //   essentially the no-overhead innerloop that just invokes Execute(i) in a loop.
+        //   When there is a lot of work in each iteration then a value of 1 can be sensible.
+        //   When there is very little work values of 32 or 64 can make sense.
+        // The third parameter is a <a href="Unity.Jobs.JobHandle.html">JobHandle</a> to use for this job's dependencies.
+        //   Dependencies are used to ensure that a job executes on worker threads after the dependency has completed execution.
+        <a href="Unity.Jobs.JobHandle.html">JobHandle</a> sheduleParralelJobHandle = job.ScheduleParallel(position.Length, 64, sheduleJobHandle);<br/><br/>        // Ensure the job has completed.
+        // It is not recommended to Complete a job immediately,
+        // since that reduces the chance of having other jobs run in parallel with this one.
+        // You optimally want to schedule a job early in a frame and then wait for it later in the frame.
+        sheduleParralelJobHandle.Complete();<br/><br/>        <a href="Debug.Log.html">Debug.Log</a>(job.position[0]);<br/><br/>        // Native arrays must be disposed manually.
+        position.Dispose();
+        velocity.Dispose();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.IJobFor.Execute.html">
+      Execute
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法以针对特定迭代索引执行工作。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioClipLoadType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   确定音频剪辑的加载方式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   确定是以压缩格式将音频剪辑载入内存（每次播放将即时解码数据 -“CompressedInMemory”）、在场景启动时解压缩（可在极低的 CPU 使用率下播放剪辑，并且可以修改 ir 中的音频数据 -“DecompressOnLoad”）还是从磁盘直接流式加载（由于只需要在内存中保留很短的流式传输缓冲区数据，这种方法的内存使用量通常是最低的 -“Streaming”）。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AudioClipLoadType.DecompressOnLoad.html">
+      DecompressOnLoad
+     </a>
+    </td>
+    <td class="desc">
+     加载音频剪辑时解压缩音频数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioClipLoadType.CompressedInMemory.html">
+      CompressedInMemory
+     </a>
+    </td>
+    <td class="desc">
+     剪辑的音频数据将以压缩格式保留在内存中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AudioClipLoadType.Streaming.html">
+      Streaming
+     </a>
+    </td>
+    <td class="desc">
+     从磁盘流式传输音频数据。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

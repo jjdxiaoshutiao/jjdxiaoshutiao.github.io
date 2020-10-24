@@ -1,0 +1,497 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AnimatorController
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Animations
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="RuntimeAnimatorController.html">
+    RuntimeAnimatorController
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   动画控制器 (Animator Controller) 通过具有状态机（由参数控制）的层来控制动画。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Animations;
+using System.Collections;<br/><br/>// Create a menu item that causes a new controller and statemachine to be created.<br/><br/>public class SM : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    [<a href="MenuItem.html">MenuItem</a>("MyMenu/Create Controller")]
+    static void CreateController()
+    {
+        // Creates the controller
+        var controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath("Assets/Mecanim/StateMachineTransitions.controller");<br/><br/>        // Add parameters
+        controller.AddParameter("TransitionNow", <a href="AnimatorControllerParameterType.Trigger.html">AnimatorControllerParameterType.Trigger</a>);
+        controller.AddParameter("Reset", <a href="AnimatorControllerParameterType.Trigger.html">AnimatorControllerParameterType.Trigger</a>);
+        controller.AddParameter("GotoB1", <a href="AnimatorControllerParameterType.Trigger.html">AnimatorControllerParameterType.Trigger</a>);
+        controller.AddParameter("GotoC", <a href="AnimatorControllerParameterType.Trigger.html">AnimatorControllerParameterType.Trigger</a>);<br/><br/>        // Add StateMachines
+        var rootStateMachine = controller.layers[0].stateMachine;
+        var stateMachineA = rootStateMachine.AddStateMachine("smA");
+        var stateMachineB = rootStateMachine.AddStateMachine("smB");
+        var stateMachineC = stateMachineB.AddStateMachine("smC");<br/><br/>        // Add <a href="VersionControl.Asset.States.html">States</a>
+        var stateA1 = stateMachineA.AddState("stateA1");
+        var stateB1 = stateMachineB.AddState("stateB1");
+        var stateB2 = stateMachineB.AddState("stateB2");
+        stateMachineC.AddState("stateC1");
+        var stateC2 = stateMachineC.AddState("stateC2"); // don’t add an entry transition, should entry to state by default<br/><br/>        // Add Transitions
+        var exitTransition = stateA1.AddExitTransition();
+        exitTransition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "TransitionNow");
+        exitTransition.duration = 0;<br/><br/>        var resetTransition = rootStateMachine.AddAnyStateTransition(stateA1);
+        resetTransition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "Reset");
+        resetTransition.duration = 0;<br/><br/>        var transitionB1 = stateMachineB.AddEntryTransition(stateB1);
+        transitionB1.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "GotoB1");
+        stateMachineB.AddEntryTransition(stateB2);
+        stateMachineC.defaultState = stateC2;
+        var exitTransitionC2 = stateC2.AddExitTransition();
+        exitTransitionC2.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "TransitionNow");
+        exitTransitionC2.duration = 0;<br/><br/>        var stateMachineTransition = rootStateMachine.AddStateMachineTransition(stateMachineA, stateMachineC);
+        stateMachineTransition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "GotoC");
+        rootStateMachine.AddStateMachineTransition(stateMachineA, stateMachineB);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController-layers.html">
+      layers
+     </a>
+    </td>
+    <td class="desc">
+     控制器中的层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController-parameters.html">
+      parameters
+     </a>
+    </td>
+    <td class="desc">
+     用于在脚本和控制器之间通信的参数。例如，它们用于驱动过渡和混合树。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController-ctor.html">
+      AnimatorController
+     </a>
+    </td>
+    <td class="desc">
+     构造函数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.AddEffectiveStateMachineBehaviour.html">
+      AddEffectiveStateMachineBehaviour
+     </a>
+    </td>
+    <td class="desc">
+     为层 layerIndex 向 AnimatorState 添加 stateMachineBehaviourType 类型的状态机行为类。在处理同步层并且要在同步层添加状态机行为时应使用此函数。C# 用户可以使用通用版本。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.AddLayer.html">
+      AddLayer
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向控制器添加一个层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.AddMotion.html">
+      AddMotion
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用其中的运动创建一个新状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.AddParameter.html">
+      AddParameter
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于向控制器添加一个参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.CreateBlendTreeInController.html">
+      CreateBlendTreeInController
+     </a>
+    </td>
+    <td class="desc">
+     在新 AnimatorState 中创建一个 BlendTree。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.GetBehaviours.html">
+      GetBehaviours
+     </a>
+    </td>
+    <td class="desc">
+     返回所有与类型 T 匹配或派生自 T 的 StateMachineBehaviour。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.GetStateEffectiveBehaviours.html">
+      GetStateEffectiveBehaviours
+     </a>
+    </td>
+    <td class="desc">
+     获取 AnimatorState 的有效状态机行为列表。行为或者存储在 AnimatorStateMachine 中，或者存储在 AnimatorLayer 的重载中。使用此函数可获取有效使用的 Behaviour 列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.GetStateEffectiveMotion.html">
+      GetStateEffectiveMotion
+     </a>
+    </td>
+    <td class="desc">
+     获取 AnimatorState 的有效 Motion。Motion 或者存储在 AnimatorStateMachine 中，或者存储在 AnimatorLayer 的重载中。使用此函数可获取有效使用的 Motion。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.MakeUniqueLayerName.html">
+      MakeUniqueLayerName
+     </a>
+    </td>
+    <td class="desc">
+     为层创建唯一名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.MakeUniqueParameterName.html">
+      MakeUniqueParameterName
+     </a>
+    </td>
+    <td class="desc">
+     为参数创建唯一名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.RemoveLayer.html">
+      RemoveLayer
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从控制器删除一个层。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.RemoveParameter.html">
+      RemoveParameter
+     </a>
+    </td>
+    <td class="desc">
+     Utility 函数，用于从控制器删除一个参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.SetStateEffectiveBehaviours.html">
+      SetStateEffectiveBehaviours
+     </a>
+    </td>
+    <td class="desc">
+     为 AnimatorState 设置有效的状态机 Behaviour 列表。Behaviour 列表或者存储在 AnimatorStateMachine 中，或者存储在 AnimatorLayer 的重载中。使用此函数可设置有效使用的 Behaviour 列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.SetStateEffectiveMotion.html">
+      SetStateEffectiveMotion
+     </a>
+    </td>
+    <td class="desc">
+     设置 AnimatorState 的有效 Motion。Motion 或者存储在 AnimatorStateMachine 中，或者存储在 AnimatorLayer 的重载中。使用此函数可设置有效使用的 Motion。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.CreateAnimatorControllerAtPath.html">
+      CreateAnimatorControllerAtPath
+     </a>
+    </td>
+    <td class="desc">
+     在给定路径处创建一个 AnimatorController。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.CreateAnimatorControllerAtPathWithClip.html">
+      CreateAnimatorControllerAtPathWithClip
+     </a>
+    </td>
+    <td class="desc">
+     在给定路径处创建一个 AnimatorController，并自动创建一个带有 AnimatorStateMachine 的 AnimatorLayer，该状态机使用其中的 AnimationClip 添加一个 State。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.CreateStateMachineBehaviour.html">
+      CreateStateMachineBehaviour
+     </a>
+    </td>
+    <td class="desc">
+     此函数将根据此脚本中的类定义创建一个 StateMachineBehaviour 实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Animations.AnimatorController.FindStateMachineBehaviourContext.html">
+      FindStateMachineBehaviourContext
+     </a>
+    </td>
+    <td class="desc">
+     使用此函数可检索行为的所有者。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="RuntimeAnimatorController-animationClips.html">
+       animationClips
+      </a>
+     </td>
+     <td class="desc">
+      检索控制器使用的所有 AnimationClip。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

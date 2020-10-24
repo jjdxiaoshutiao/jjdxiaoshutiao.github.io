@@ -1,0 +1,101 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ModelImporterNormalSmoothingSource
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="ModelImporter.html">
+    ModelImporter
+   </a>
+   中用于计算法线的平滑信息的来源。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   描述 Unity 如何计算边缘具有硬法线还是平滑法线（使用平滑组或面之间的角度）。默认情况下，如果存在平滑组，Unity 将使用平滑组。如果不存在，则使用角度。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="ModelImporter-normalSmoothingSource.html">
+    ModelImporter.normalSmoothingSource
+   </a>
+   、
+   <a href="Mesh-normals.html">
+    Mesh.normals
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterNormalSmoothingSource.PreferSmoothingGroups.html">
+      PreferSmoothingGroups
+     </a>
+    </td>
+    <td class="desc">
+     如果模型文件中存在平滑组，则使用平滑组，否则使用角度（默认）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterNormalSmoothingSource.FromSmoothingGroups.html">
+      FromSmoothingGroups
+     </a>
+    </td>
+    <td class="desc">
+     使用平滑组来确定哪些边缘是平滑边缘，哪些边缘是硬边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterNormalSmoothingSource.FromAngle.html">
+      FromAngle
+     </a>
+    </td>
+    <td class="desc">
+     使用相邻面之间的角度来确定边缘是平滑边缘还是硬边缘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterNormalSmoothingSource.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     不创建硬边缘。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

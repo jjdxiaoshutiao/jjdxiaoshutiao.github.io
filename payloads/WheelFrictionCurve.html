@@ -1,0 +1,175 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WheelFrictionCurve
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="WheelCollider.html">
+    WheelCollider
+   </a>
+   使用 WheelFrictionCurve 描述轮胎的摩擦属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   曲线以轮胎打滑的度量值作为输入，并以力作为输出。曲线由包含两部分的
+样条图近似模拟。第一部分从
+   <em>
+    (0,0)
+   </em>
+   到
+   <em>
+    (extremumSlip,extremumValue)
+   </em>
+   ，目标
+点处曲线的正切值为零。第二部分从
+   <em>
+    (extremumSlip,extremumValue)
+   </em>
+   到
+   <em>
+    (asymptoteSlip,asymptoteValue)
+   </em>
+   ，目标点处曲线的正切值再次为零：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/WheelFrictionCurve.png"/>
+   <br/>
+   <br/>
+   车轮碰撞体使用基于滑动的摩擦模型计算摩擦力
+（独立于物理引擎的其余部分）。它将整体摩擦力分为“前向”分量（
+滚动方向，负责加速和制动）和“侧向”分量
+（与滚动方向正交，负责保持车辆定向）。轮胎摩擦
+在这两个方向上使用
+   <a href="WheelCollider-forwardFriction.html">
+    WheelCollider.forwardFriction
+   </a>
+   和
+   <a href="WheelCollider-sidewaysFriction.html">
+    WheelCollider.sidewaysFriction
+   </a>
+   分别描述。
+在这两个方向上，首先确定轮胎打滑的程度（基于轮胎橡胶和道路之间的
+速度差异）。然后，将该打滑值用于计算施加在接触点上的轮胎力。
+   <br/>
+   <br/>
+   根据真实轮胎的特性，在低打滑条件下，轮胎可能会施加很大的力，因为橡胶会
+通过拉伸来补偿打滑。随后，当打滑变得非常高时，随着轮胎开始滑动或旋转，
+力会减小。因此，轮胎摩擦曲线的形状与上图相似。
+   <br/>
+   <br/>
+   因为轮胎摩擦是分别计算的，地面的
+   <a href="PhysicMaterial.html">
+    PhysicMaterial
+   </a>
+   不会对车轮造成影响。不同道路材质的模拟是通过更改
+车轮的
+   <a href="WheelCollider-forwardFriction.html">
+    WheelCollider.forwardFriction
+   </a>
+   和
+   <a href="WheelCollider-sidewaysFriction.html">
+    WheelCollider.sidewaysFriction
+   </a>
+   实现的，
+这些更改基于车轮所碰撞的材质。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="WheelCollider.html">
+    WheelCollider
+   </a>
+   、
+   <a href="WheelCollider-forwardFriction.html">
+    WheelCollider.forwardFriction
+   </a>
+   、
+   <a href="WheelCollider-sidewaysFriction.html">
+    WheelCollider.sidewaysFriction
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WheelFrictionCurve-asymptoteSlip.html">
+      asymptoteSlip
+     </a>
+    </td>
+    <td class="desc">
+     渐近点打滑（默认值为 2）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelFrictionCurve-asymptoteValue.html">
+      asymptoteValue
+     </a>
+    </td>
+    <td class="desc">
+     渐近点打滑处的力（默认值为 10000）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelFrictionCurve-extremumSlip.html">
+      extremumSlip
+     </a>
+    </td>
+    <td class="desc">
+     极值点打滑（默认值为 1）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelFrictionCurve-extremumValue.html">
+      extremumValue
+     </a>
+    </td>
+    <td class="desc">
+     极值点打滑处的力（默认值为 20000）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="WheelFrictionCurve-stiffness.html">
+      stiffness
+     </a>
+    </td>
+    <td class="desc">
+     extremumValue 和 asymptoteValue 值的乘数（默认值为 1）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

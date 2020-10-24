@@ -1,0 +1,128 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   UploadHandler
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Networking
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   的 helper 对象。管理 HTTP 请求期间主体数据的缓冲和传输。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   附加到
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   后，UploadHandler 对象在 HTTP 请求期间会处理与主体数据缓冲及传输有关的所有信息。通过将数据放置在 UploadHandler 上并将此对象附加到
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   ，隐式指示
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   将 UploadHandler 的数据传输至远程服务器。此数据将始终作为 HTTP 请求主体数据传递。
+   <br/>
+   <br/>
+   UploadHandler 是一个基类，不能直接实例化。目前，仅一种类型的 Upload Handler 可用：
+   <a href="Networking.UploadHandlerRaw.html">
+    UploadHandlerRaw
+   </a>
+   。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Networking.UnityWebRequest.html">
+    UnityWebRequest
+   </a>
+   、
+   <a href="Networking.UploadHandlerRaw.html">
+    UploadHandlerRaw
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.UploadHandler-contentType.html">
+      contentType
+     </a>
+    </td>
+    <td class="desc">
+     确定将使用出站 HTTP 请求传输的默认 Content-Type 标头。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.UploadHandler-data.html">
+      data
+     </a>
+    </td>
+    <td class="desc">
+     将作为主体数据传输到远程服务器的原始数据。（只读）
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.UploadHandler-progress.html">
+      progress
+     </a>
+    </td>
+    <td class="desc">
+     返回上传到远程服务器的数据在上传的数据总量中占的比例。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.UploadHandler.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     表示不再使用此 UploadHandler，并且应清理它使用的所有资源。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AreaScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理
+   <a href="GUILayout.BeginArea.html">
+    BeginArea
+   </a>
+   /
+   <a href="GUILayout.EndArea.html">
+    EndArea
+   </a>
+   的可处置的 Helper 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="GUILayout.BeginArea.html">
+    BeginArea
+   </a>
+   在构造时调用，
+   <a href="GUILayout.EndArea.html">
+    EndArea
+   </a>
+   在处置实例时调用。
+默认情况下，使用 GUILayout 创建的任何 GUI 控件都放置在屏幕的左上角。
+若要在任意区域放置一系列自动布局的控件，请使用
+   <a href="GUILayout.BeginArea.html">
+    GUILayout.BeginArea
+   </a>
+   为自动布局系统定义要使用的新区域。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="GUILayout.BeginArea.html">
+    BeginArea
+   </a>
+   、
+   <a href="GUILayout.EndArea.html">
+    EndArea
+   </a>
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/GUILayoutArea.png"/>
+   \
+   <em>
+    说明示例区域。
+   </em>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        using (var areaScope = new <a href="GUILayout.AreaScope.html">GUILayout.AreaScope</a>(new <a href="Rect.html">Rect</a>(10, 10, 100, 100)))
+        {
+            <a href="GUILayout.Button.html">GUILayout.Button</a>("Click me");
+            <a href="GUILayout.Button.html">GUILayout.Button</a>("Or me");
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUILayout.AreaScope-ctor.html">
+      GUILayout.AreaScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 AreaScope 并开始相应的区域。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,306 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AudioMixer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Audio
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   混音器资源。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这是一个代表项目中特定混音器资源的单例。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer-outputAudioMixerGroup.html">
+      outputAudioMixerGroup
+     </a>
+    </td>
+    <td class="desc">
+     路由目标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer-updateMode.html">
+      updateMode
+     </a>
+    </td>
+    <td class="desc">
+     混音器的时间应如何进展。在快照转换期间使用。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.ClearFloat.html">
+      ClearFloat
+     </a>
+    </td>
+    <td class="desc">
+     将暴露的参数重置为其初始值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.FindMatchingGroups.html">
+      FindMatchingGroups
+     </a>
+    </td>
+    <td class="desc">
+     混合器中连接的组形成一个从混合器的母带组指向树叶的路径。此路径的格式为“Master Group/Child of Master Group/Grandchild of Master Group”，因此为了在此示例中找到孙组，有效搜索字符串（例如“randchi”）会返回一个组，而“hild”或“oup/”会返回 2 个不同的组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.FindSnapshot.html">
+      FindSnapshot
+     </a>
+    </td>
+    <td class="desc">
+     名称必须完全匹配。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.GetFloat.html">
+      GetFloat
+     </a>
+    </td>
+    <td class="desc">
+     返回指定的暴露参数的值。如果参数不存在，则函数返回 false。对于此参数，在调用 SetFloat 之前和调用 ClearFloat 之后，返回的值将是当前快照或快照转换的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.SetFloat.html">
+      SetFloat
+     </a>
+    </td>
+    <td class="desc">
+     设置指定的暴露参数的值。如果参数暴露，则它无法由混合器快照控制，因此只能通过此函数更改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Audio.AudioMixer.TransitionToSnapshots.html">
+      TransitionToSnapshots
+     </a>
+    </td>
+    <td class="desc">
+     向指定快照的加权混合的转换。这可用于将游戏状态指定为状态之间的连续体的游戏，或用于插值来自三角地图位置的快照。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   GroupScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于管理
+   <a href="GUI.BeginGroup.html">
+    BeginGroup
+   </a>
+   /
+   <a href="GUI.EndGroup.html">
+    EndGroup
+   </a>
+   的可处置的 Helper 类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="GUI.BeginGroup.html">
+    BeginGroup
+   </a>
+   在构造时调用，
+   <a href="GUI.EndGroup.html">
+    EndGroup
+   </a>
+   在处置实例时调用。
+当您开始组时，将设置 GUI 控件的坐标系 - (0,0) 为组的左上角。所有控件都被裁剪到组中。
+组可以嵌套 - 当组嵌套时，子项将裁剪到其父项。
+   <br/>
+   <br/>
+   当在屏幕上移动一组 GUI 元素时，这非常有用。一个常见的用例是设计适合特定屏幕尺寸的菜单，然后将 GUI 放置在较大显示屏的中心位置。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        // Constrain all drawing to be within a 800x600 pixel area centered on the screen.
+        using (var groupScope = new <a href="GUI.GroupScope.html">GUI.GroupScope</a>(new <a href="Rect.html">Rect</a>(<a href="Screen-width.html">Screen.width</a> / 2 - 400, <a href="Screen-height.html">Screen.height</a> / 2 - 300, 800, 600)))
+        {
+            // Draw a box in the new coordinate space defined by the BeginGroup.
+            // Notice how (0,0) has now been moved on-screen.
+            <a href="GUI.Box.html">GUI.Box</a>(new <a href="Rect.html">Rect</a>(0, 0, 800, 600), "This box is now centered! - here you would put your main menu");
+        }
+        // The group is now ended.
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="GUI.GroupScope-ctor.html">
+      GUI.GroupScope
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的 GroupScope 并开始相应的组。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   FFTWindow
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   频谱分析窗口化类型。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   用于减少频段中的信号泄漏。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.Rectangular.html">
+      Rectangular
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = 1.0。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.Triangle.html">
+      Triangle
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = TRI(2n/N)。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.Hamming.html">
+      Hamming
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = 0.54 - (0.46 * COS(n/N) )。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.Hanning.html">
+      Hanning
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = 0.5 * (1.0 - COS(n/N) )。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.Blackman.html">
+      Blackman
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = 0.42 - (0.5 * COS(n/N) ) + (0.08 * COS(2.0 * n/N) )。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="FFTWindow.BlackmanHarris.html">
+      BlackmanHarris
+     </a>
+    </td>
+    <td class="desc">
+     W[n] = 0.35875 - (0.48829 * COS(1.0 * n/N)) + (0.14128 * COS(2.0 * n/N)) - (0.01168 * COS(3.0 * n/N))。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,259 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Display
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   提供对显示器/屏幕的访问，以便进行渲染操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可在 PC (Windows/Mac/Linux)、iOS 和 Android 上获得多显示渲染。
+   <br/>
+   <br/>
+   使用 Display 类可在显示器本身上进行操作，使用
+   <a href="Camera-targetDisplay.html">
+    Camera.targetDisplay
+   </a>
+   可设置摄像机，以便分别渲染到各显示器。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Camera-targetDisplay.html">
+    Camera.targetDisplay
+   </a>
+   、
+   <a href="Canvas-targetDisplay.html">
+    Canvas.targetDisplay
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Camera.html">Camera</a> extCam;
+    <a href="Camera.html">Camera</a> cam;<br/><br/>    void Start()
+    {
+        // <a href="GUI.html">GUI</a> is rendered with last camera.
+        // As we want it to end up in the main screen, make sure main camera is the last one drawn.
+        extCam.depth = cam.depth - 1;<br/><br/>        cam.SetTargetBuffers(Display.main.colorBuffer, Display.main.depthBuffer);
+        extCam.enabled = false;
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (Display.displays.Length &gt; 1 &amp;amp;&amp;amp; !extCam.enabled)
+        {
+            <a href="Display-displays.html">Display.displays</a>[1].SetRenderingResolution(256, 256);
+            extCam.SetTargetBuffers(<a href="Display-displays.html">Display.displays</a>[1].colorBuffer, <a href="Display-displays.html">Display.displays</a>[1].depthBuffer);
+        }
+        extCam.enabled = Display.displays.Length &gt; 1;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Display-displays.html">
+      displays
+     </a>
+    </td>
+    <td class="desc">
+     当前连接的 Displays 的列表。包含至少一个（主）显示器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-main.html">
+      main
+     </a>
+    </td>
+    <td class="desc">
+     主显示器。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Display-active.html">
+      active
+     </a>
+    </td>
+    <td class="desc">
+     获取该显示器的状态，如果该显示器处于活动状态，返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-colorBuffer.html">
+      colorBuffer
+     </a>
+    </td>
+    <td class="desc">
+     颜色 RenderBuffer。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-depthBuffer.html">
+      depthBuffer
+     </a>
+    </td>
+    <td class="desc">
+     深度 RenderBuffer。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-renderingHeight.html">
+      renderingHeight
+     </a>
+    </td>
+    <td class="desc">
+     该显示器正在渲染时所采用的垂直分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-renderingWidth.html">
+      renderingWidth
+     </a>
+    </td>
+    <td class="desc">
+     该显示器正在渲染时所采用的水平分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-requiresBlitToBackbuffer.html">
+      requiresBlitToBackbuffer
+     </a>
+    </td>
+    <td class="desc">
+     当后缓冲区需要中间纹理进行渲染时为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-requiresSrgbBlitToBackbuffer.html">
+      requiresSrgbBlitToBackbuffer
+     </a>
+    </td>
+    <td class="desc">
+     当对后缓冲区进行 blit 需要手动进行颜色空间转换时为 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-systemHeight.html">
+      systemHeight
+     </a>
+    </td>
+    <td class="desc">
+     垂直原生显示分辨率。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display-systemWidth.html">
+      systemWidth
+     </a>
+    </td>
+    <td class="desc">
+     水平原生显示分辨率。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Display.Activate.html">
+      Activate
+     </a>
+    </td>
+    <td class="desc">
+     激活外部显示器。例如，连接到系统的辅助监视器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display.SetParams.html">
+      SetParams
+     </a>
+    </td>
+    <td class="desc">
+     设置渲染大小和屏幕上的位置（仅限 Windows）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Display.SetRenderingResolution.html">
+      SetRenderingResolution
+     </a>
+    </td>
+    <td class="desc">
+     设置该显示器的渲染分辨率。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Display.RelativeMouseAt.html">
+      RelativeMouseAt
+     </a>
+    </td>
+    <td class="desc">
+     查询相对鼠标坐标。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

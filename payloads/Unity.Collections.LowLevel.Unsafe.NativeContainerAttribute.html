@@ -1,0 +1,165 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NativeContainerAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Collections.LowLevel.Unsafe
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   允许您创建自己的自定义原生容器。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   借助原生容器，您可以创建新的容器类型，此类容器不分配任何 GC 内存，也不对分配操作进行显式控制。它们所包含的数据必须为 Blittable 类型。原生容器还可以在作业中使用，作业系统可识别 NativeContainers，作业调试器能够确保对容器的所有访问都是安全的，如果任何所用代码包含竞争条件或包含不确定性行为，该调试器会抛出异常。
+   <br/>
+   <br/>
+   原生容器必须嵌入一个 AtomicSafetyHandle，以确保作业调试系统能够检测到所有可能的竞争条件。DisposeSentinel 用于立即检测任何泄漏。
+   <br/>
+   <br/>
+   请注意，务必要仔细按照以下代码示例创建您自己的自定义容器。创建自定义容器时，尤其是向作业集成时，强烈建议为所有场景添加测试覆盖，以确保预防所有竞争条件。如果未正确实现，自定义容器很容易导致 Unity 崩溃，而不会抛出任何有用的异常。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Diagnostics;
+using System;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.Collections;<br/><br/>// Marks our struct as a NativeContainer.
+// If ENABLE_UNITY_COLLECTIONS_CHECKS is enabled,
+// it is required that m_Safety &amp;amp; m_DisposeSentinel are declared, with exactly these names.
+[NativeContainer]
+// The [NativeContainerSupportsMinMaxWriteRestriction] enables
+// a common jobification pattern where an <a href="Unity.Jobs.IJobParallelFor.html">IJobParallelFor</a> is split into ranges
+// And the job is only allowed to access the index range being Executed by that worker thread.
+// Effectively limiting access of the array to the specific index passed into the Execute(int index) method
+// This attribute requires m_MinIndex &amp;amp; m_MaxIndex to exist.
+// and the container is expected to perform out of bounds checks against it.
+// m_MinIndex &amp;amp; m_MaxIndex will be set by the job scheduler before Execute is called on the worker thread.
+[NativeContainerSupportsMinMaxWriteRestriction]
+// It is recommended to always implement a Debugger proxy
+// to visualize the contents of the array in VisualStudio and other tools.
+[DebuggerDisplay("<a href="UIElements.Length.html">Length</a> = {<a href="UIElements.Length.html">Length</a>}")]
+[DebuggerTypeProxy(typeof(NativeCustomArrayDebugView&lt;&gt;))]
+public struct NativeCustomArray&lt;T&gt; : IDisposable where T : struct
+{
+    internal IntPtr                   m_Buffer;
+    internal int                      m_Length;<br/><br/>#if ENABLE_UNITY_COLLECTIONS_CHECKS
+    internal int                      m_MinIndex;
+    internal int                      m_MaxIndex;
+    internal AtomicSafetyHandle       m_Safety;
+    internal DisposeSentinel          m_DisposeSentinel;
+#endif<br/><br/>    internal <a href="Unity.Collections.Allocator.html">Allocator</a>                m_AllocatorLabel;<br/><br/>    public NativeCustomArray(int length, <a href="Unity.Collections.Allocator.html">Allocator</a> allocator)
+    {
+        ulong totalSize = (ulong)<a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.SizeOf.html">UnsafeUtility.SizeOf</a>&lt;T&gt;() * (ulong)length;<br/><br/>#if ENABLE_UNITY_COLLECTIONS_CHECKS
+        // Native allocation is only valid for Temp, Job and Persistent
+        if (allocator &lt;= <a href="Unity.Collections.Allocator.None.html">Allocator.None</a>)
+            throw new ArgumentException("<a href="Unity.Collections.Allocator.html">Allocator</a> must be Temp, TempJob or Persistent", "allocator");
+        if (length &lt; 0)
+            throw new ArgumentOutOfRangeException("length", "<a href="UIElements.Length.html">Length</a> must be &gt;= 0");
+        if (!<a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.IsBlittable.html">UnsafeUtility.IsBlittable</a>&lt;T&gt;())
+            throw new ArgumentException(string.Format("{0} used in NativeCustomArray&lt;{0}&gt; must be blittable", typeof(T)));
+#endif<br/><br/>        m_Buffer = <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.Malloc.html">UnsafeUtility.Malloc</a>(totalSize, <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.AlignOf.html">UnsafeUtility.AlignOf</a>&lt;T&gt;(), allocator);
+        <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.MemClear.html">UnsafeUtility.MemClear</a>(m_Buffer , totalSize);<br/><br/>        m_Length = length;
+        m_AllocatorLabel = allocator;<br/><br/>#if ENABLE_UNITY_COLLECTIONS_CHECKS
+        m_MinIndex = 0;
+        m_MaxIndex = length - 1;
+        DisposeSentinel.Create(m_Buffer, allocator, out m_Safety, out m_DisposeSentinel, 0);
+#endif
+    }<br/><br/>    public int <a href="UIElements.Length.html">Length</a> { get { return m_Length; } }<br/><br/>    public unsafe T this[int index]
+    {
+        get
+        {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+            // If the container is currently not allowed to read from the buffer
+            // then this will throw an exception.
+            // This handles all cases, from already disposed containers
+            // to safe multithreaded access.
+            AtomicSafetyHandle.CheckReadAndThrow(m_Safety);<br/><br/>            // Perform out of range checks based on
+            // the NativeContainerSupportsMinMaxWriteRestriction policy
+            if (index &lt; m_MinIndex || index &gt; m_MaxIndex)
+                FailOutOfRangeError(index);
+#endif
+            // Read the element from the allocated native memory
+            return <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ReadArrayElement.html">UnsafeUtility.ReadArrayElement</a>&lt;T&gt;(m_Buffer, index);
+        }<br/><br/>        set
+        {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+            // If the container is currently not allowed to write to the buffer
+            // then this will throw an exception.
+            // This handles all cases, from already disposed containers
+            // to safe multithreaded access.
+            AtomicSafetyHandle.CheckWriteAndThrow(m_Safety);<br/><br/>            // Perform out of range checks based on
+            // the NativeContainerSupportsMinMaxWriteRestriction policy
+            if (index &lt; m_MinIndex || index &gt; m_MaxIndex)
+                FailOutOfRangeError(index);
+#endif
+            // Writes value to the allocated native memory
+            <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.WriteArrayElement.html">UnsafeUtility.WriteArrayElement</a>(m_Buffer, index, value);
+        }
+    }<br/><br/>    public T[] ToArray()
+    {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+        AtomicSafetyHandle.CheckReadAndThrow(m_Safety);
+#endif<br/><br/>        var array = new T[<a href="UIElements.Length.html">Length</a>];
+        for (var i = 0; i &lt; <a href="UIElements.Length.html">Length</a>; i++)
+            array[i] = <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.ReadArrayElement.html">UnsafeUtility.ReadArrayElement</a>&lt;T&gt;(m_Buffer, i);
+        return array;
+    }<br/><br/>    public bool IsCreated
+    {
+        get { return m_Buffer != IntPtr.Zero; }
+    }<br/><br/>    public void Dispose()
+    {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+        DisposeSentinel.Dispose(m_Safety, ref m_DisposeSentinel);
+#endif<br/><br/>        <a href="Unity.Collections.LowLevel.Unsafe.UnsafeUtility.Free.html">UnsafeUtility.Free</a>(m_Buffer, m_AllocatorLabel);
+        m_Buffer = IntPtr.Zero;
+        m_Length = 0;
+    }<br/><br/>#if ENABLE_UNITY_COLLECTIONS_CHECKS
+    private void FailOutOfRangeError(int index)
+    {
+        if (index &lt; <a href="UIElements.Length.html">Length</a> &amp;amp;&amp;amp; (m_MinIndex != 0 || m_MaxIndex != <a href="UIElements.Length.html">Length</a> - 1))
+            throw new IndexOutOfRangeException(string.Format(
+                "Index {0} is out of restricted <a href="Unity.Jobs.IJobParallelFor.html">IJobParallelFor</a> range [{1}...{2}] in ReadWriteBuffer.\n" +
+                "ReadWriteBuffers are restricted to only read &amp;amp; write the element at the job index. " +
+                "You can use double buffering strategies to avoid race conditions due to " +
+                "reading &amp;amp; writing in parallel to the same elements from a job.",
+                index, m_MinIndex, m_MaxIndex));<br/><br/>        throw new IndexOutOfRangeException(string.Format("Index {0} is out of range of '{1}' <a href="UIElements.Length.html">Length</a>.", index, <a href="UIElements.Length.html">Length</a>));
+    }<br/><br/>#endif
+}<br/><br/>// Visualizes the custom array in the C# debugger
+internal sealed class NativeCustomArrayDebugView&lt;T&gt; where T : struct
+{
+    private NativeCustomArray&lt;T&gt; m_Array;<br/><br/>    public NativeCustomArrayDebugView(NativeCustomArray&lt;T&gt; array)
+    {
+        m_Array = array;
+    }<br/><br/>    public T[] Items
+    {
+        get { return m_Array.ToArray(); }
+    }
+}
+</pre>
+ </div>
+</div>

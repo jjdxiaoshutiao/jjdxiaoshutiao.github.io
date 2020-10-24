@@ -1,0 +1,127 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ExecuteAlways
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使脚本的实例在播放模式期间以及编辑时始终执行。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   默认情况下，MonoBehaviours 仅在播放模式下并且仅当它们位于包含用户场景的主阶段中的游戏对象上时才执行。它们不会在编辑模式下执行，也不在预制件模式下编辑的对象上执行，即使此时在播放模式下也是如此。通过添加此属性，MonoBehaviour 的任何实例都将始终执行其回调函数。
+   <br/>
+   <br/>
+   当您希望脚本作为编辑器工具的一部分执行某些操作时，即可使用 [ExecuteAlways] 属性，不一定要与构建播放器和播放模式中发生的播放逻辑相关。有时，此类脚本的“播放”功能与其“编辑模式”功能相同，而其他情况下则相差很大。
+   <br/>
+   <br/>
+   使用此属性的 MonoBehaviour 必须确保它们在编辑模式下或者在对象不是游戏世界的一部分时不会运行可能导致对象被错误修改的播放逻辑。为达到此目的，可以使用
+   <a href="Application.IsPlaying.html">
+    Application.IsPlaying
+   </a>
+   ，在其中，脚本可以传入自己的游戏对象以检查它是否是游戏世界的一部分。
+   <br/>
+   <br/>
+   如果 MonoBehaviour 在播放模式下运行播放逻辑并且无法检查其游戏对象是否是游戏世界的一部分，则在预制件模式下编辑的预制件可能会被仅用作游戏世界一部分的逻辑错误地修改和保存。
+   <br/>
+   <br/>
+   如果您的脚本使用静态变量或单例模式，则应确保属于游戏世界的脚本实例和不属于游戏世界的实例不会通过这些变量或单例意外地相互影响。
+   <br/>
+   <br/>
+   在不属于游戏世界的对象上，不会像其他情况那样不断地调用以下函数。
+   <br/>
+   -
+   <a href="MonoBehaviour.Update.html">
+    Update
+   </a>
+   is only called when something in the Scene changed.
+   <br/>
+   -
+   <a href="MonoBehaviour.OnGUI.html">
+    OnGUI
+   </a>
+   is called when the Game view receives a non-editor-only
+   <a href="Event.html">
+    Event
+   </a>
+   that it does not use (e.g.,
+   <a href="EventType.ScrollWheel.html">
+    EventType.ScrollWheel
+   </a>
+   ) and does not forward to the Editor's keyboard shortcut system (e.g.,
+   <a href="EventType.KeyDown.html">
+    EventType.KeyDown
+   </a>
+   ,
+   <a href="EventType.KeyUp.html">
+    EventType.KeyUp
+   </a>
+   ). Events forwarded to the Game view are enqueued and are not guaranteed to be processed immediately.
+   <br/>
+   -
+   <a href="MonoBehaviour.OnRenderObject.html">
+    OnRenderObject
+   </a>
+   and the other rendering callback functions are called on every repaint of the Scene view or Game view.
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Application.IsPlaying.html">
+    Application.IsPlaying
+   </a>
+   、
+   <a href="MonoBehaviour-runInEditMode.html">
+    runInEditMode
+   </a>
+   、
+   <a href="EditorApplication.QueuePlayerLoopUpdate.html">
+    EditorApplication.QueuePlayerLoopUpdate
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>[<a href="ExecuteAlways.html">ExecuteAlways</a>]
+public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        if (<a href="Application.IsPlaying.html">Application.IsPlaying</a>(gameObject))
+        {
+            // Play logic
+        }
+        else
+        {
+            // <a href="Editor.html">Editor</a> logic
+        }
+    }
+}
+</pre>
+ </div>
+</div>

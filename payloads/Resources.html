@@ -1,0 +1,165 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Resources
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   Resources 类允许您查找和访问资源等对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在编辑器中，
+   <a href="Resources.FindObjectsOfTypeAll.html">
+    Resources.FindObjectsOfTypeAll
+   </a>
+   可用于定位资源和场景对象。
+   <br/>
+   <br/>
+   通过
+   <a href="Resources.Load.html">
+    Resources.Load
+   </a>
+   函数，可访问 Assets 文件夹中处于任意位置的名为“Resources”的文件夹中的所有资源。
+可以存在多个“Resources”文件夹，加载对象时，将对每个文件夹进行检查。
+   <br/>
+   <br/>
+   在 Unity 中，我们通常不使用路径名称访问资源，而是通过声明一个成员变量来公开对资源的引用，然后在 Inspector 中对其进行分配。
+使用该技术时，Unity 在构建玩家时能够自动计算使用的资源。
+这从根本上将玩家的大小尽可能地限制为您在构建的游戏中实际使用的资源大小。
+当您将资源放入“Resources”文件夹时，则无法实现这一效果，因此“Resources”文件夹中的所有资源都将包含在构建中。
+   <br/>
+   <br/>
+   使用路径名称的另一个缺点是，由于脚本会对所使用的资源的放置位置提出特定的硬编码要求，因此会降低代码的重用性。
+另一方面，在 Inspector 中使用公开的引用具有自文档化的特点，对脚本用户来说也更加直观易懂。
+   <br/>
+   <br/>
+   但是，在某些情况下，通过名称获取资源比在 Inspector 中链接到资源更为方便。
+基本上，只要不方便在 Inspector 中为对象分配引用时，
+您就应该，例如，在脚本中以程序方式创建游戏对象、将纹理指定给程序生成的网格等。
+   <br/>
+   <br/>
+   某些已加载的资源，尤其是纹理，即使在场景中不存在其实例时，也会占用相当多的内存。要在不再需要该资源时回收其内存，可以使用
+   <a href="Resources.UnloadUnusedAssets.html">
+    Resources.UnloadUnusedAssets
+   </a>
+   。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   Assets 中的
+   <a href="Resources.html">
+    Resources
+   </a>
+   文件夹需要在使用前创建。创建新项目时，不会创建该文件夹。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        <a href="GameObject.html">GameObject</a> go = <a href="GameObject.CreatePrimitive.html">GameObject.CreatePrimitive</a>(<a href="PrimitiveType.Plane.html">PrimitiveType.Plane</a>);
+        <a href="Renderer.html">Renderer</a> rend = go.GetComponent&lt;<a href="Renderer.html">Renderer</a>&gt;();
+        rend.material.mainTexture = <a href="Resources.Load.html">Resources.Load</a>("glass") as <a href="Texture.html">Texture</a>;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Resources.FindObjectsOfTypeAll.html">
+      FindObjectsOfTypeAll
+     </a>
+    </td>
+    <td class="desc">
+     返回所有类型为 T 的对象的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Resources.Load.html">
+      Load
+     </a>
+    </td>
+    <td class="desc">
+     加载存储在 Resources 文件夹中的 path 处的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Resources.LoadAll.html">
+      LoadAll
+     </a>
+    </td>
+    <td class="desc">
+     加载位于 Resources 文件夹中的 path 处的文件夹中的所有资源，或加载位于该处的文件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Resources.LoadAsync.html">
+      LoadAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步加载存储在 Resources 文件夹中的 path 处的资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Resources.UnloadAsset.html">
+      UnloadAsset
+     </a>
+    </td>
+    <td class="desc">
+     从内存中卸载 /assetToUnload/。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Resources.UnloadUnusedAssets.html">
+      UnloadUnusedAssets
+     </a>
+    </td>
+    <td class="desc">
+     卸载未使用的资源。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

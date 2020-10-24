@@ -1,0 +1,228 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+  </h1>
+  <div class="clear">
+  </div>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述 XR 系统跟踪的节点的状态。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   要跟踪可用的 XR 节点并获取状态数据，请处理
+   <a href="XR.InputTracking-nodeAdded.html">
+    InputTracking.nodeAdded
+   </a>
+   和
+   <a href="XR.InputTracking-nodeRemoved.html">
+    InputTracking.nodeRemoved
+   </a>
+   事件或调用
+   <a href="XR.InputTracking.GetNodeStates.html">
+    InputTracking.GetNodeStates
+   </a>
+   。
+   <br/>
+   并非所有 XR 平台都提供完整的跟踪数据。如果有数据，可以使用
+   <a href="XR.XRNodeState.TryGetPosition.html">
+    XRNodeState.TryGetPosition
+   </a>
+   、
+   <a href="XR.XRNodeState.TryGetRotation.html">
+    XRNodeState.TryGetRotation
+   </a>
+   等方法读取数据。
+   <br/>
+   <br/>
+   可以通过不同的方式访问 XR 设备，其中 XR 节点代表物理输入源，例如头部位置、手或摄像机。
+   <br/>
+   有关访问 XR 设备的概述，请参阅
+   <a href="../Manual/xr_input.html">
+    XR 输入
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-acceleration.html">
+      acceleration
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前加速度的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-angularAcceleration.html">
+      angularAcceleration
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前角加速度的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-angularVelocity.html">
+      angularVelocity
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前角速度的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-nodeType.html">
+      nodeType
+     </a>
+    </td>
+    <td class="desc">
+     XRNode 中指定的跟踪节点的类型。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前位置的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-rotation.html">
+      rotation
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前旋转的四元数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-tracked.html">
+      tracked
+     </a>
+    </td>
+    <td class="desc">
+     如果底层 XR 系统当前正在跟踪节点，则设置为 true；
+如果底层 XR 系统当前未跟踪节点，则设置为 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-uniqueID.html">
+      uniqueID
+     </a>
+    </td>
+    <td class="desc">
+     跟踪节点的唯一标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState-velocity.html">
+      velocity
+     </a>
+    </td>
+    <td class="desc">
+     设置表示跟踪节点的当前速度的向量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetAcceleration.html">
+      TryGetAcceleration
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前加速度的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetAngularAcceleration.html">
+      TryGetAngularAcceleration
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前角加速度的 Vector3。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetAngularVelocity.html">
+      TryGetAngularVelocity
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前角速度的 Vector3。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetPosition.html">
+      TryGetPosition
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前位置的向量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetRotation.html">
+      TryGetRotation
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前旋转的四元数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNodeState.TryGetVelocity.html">
+      TryGetVelocity
+     </a>
+    </td>
+    <td class="desc">
+     尝试检索表示跟踪节点的当前速度的向量。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

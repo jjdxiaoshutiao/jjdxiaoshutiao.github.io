@@ -1,0 +1,152 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   QosType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   所有支持的服务质量通道模式的枚举。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.Unreliable.html">
+      Unreliable
+     </a>
+    </td>
+    <td class="desc">
+     不保证送达或排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.UnreliableFragmented.html">
+      UnreliableFragmented
+     </a>
+    </td>
+    <td class="desc">
+     不保证送达或排序，但允许每条消息中包含最多具有 32 个碎片的碎片化消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.UnreliableSequenced.html">
+      UnreliableSequenced
+     </a>
+    </td>
+    <td class="desc">
+     不保证送达，并且所有无序消息都将被删除。示例：VoIP。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.Reliable.html">
+      Reliable
+     </a>
+    </td>
+    <td class="desc">
+     保证每条消息都会送达，但不能保证按顺序送达。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.ReliableFragmented.html">
+      ReliableFragmented
+     </a>
+    </td>
+    <td class="desc">
+     保证每条消息都会送达，同时允许每条消息中包含最多具有 32 个碎片的碎片化消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.ReliableSequenced.html">
+      ReliableSequenced
+     </a>
+    </td>
+    <td class="desc">
+     保证每条消息都会按顺序送达。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.StateUpdate.html">
+      StateUpdate
+     </a>
+    </td>
+    <td class="desc">
+     不可靠消息。仅发送缓冲区中的最后一条消息会被发送。仅接收缓冲区中的最新消息会被送达。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.ReliableStateUpdate.html">
+      ReliableStateUpdate
+     </a>
+    </td>
+    <td class="desc">
+     可靠消息。注意：仅发送缓冲区中的最后一条消息会被发送。仅接收缓冲区中的最新消息会被送达。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.AllCostDelivery.html">
+      AllCostDelivery
+     </a>
+    </td>
+    <td class="desc">
+     在确认之前将以高频率重新发送的可靠消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.UnreliableFragmentedSequenced.html">
+      UnreliableFragmentedSequenced
+     </a>
+    </td>
+    <td class="desc">
+     保证排序，不保证送达，但允许每条消息中包含最多具有 32 个碎片的碎片化消息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Networking.QosType.ReliableFragmentedSequenced.html">
+      ReliableFragmentedSequenced
+     </a>
+    </td>
+    <td class="desc">
+     保证每条消息都会按顺序送达，同时允许每条消息中包含最多具有 32 个碎片的碎片化消息。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

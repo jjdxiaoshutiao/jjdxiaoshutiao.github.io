@@ -1,0 +1,121 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   NavMeshLocation
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Experimental.AI
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   世界位置，保证位于导航网格表面上。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   NavMeshLocation 会存储导航网格表面上的位置，以及包含相应位置的导航网格节点的
+   <a href="Experimental.AI.PolygonId.html">
+    PolygonId
+   </a>
+   。如果将 NavMeshLocations 与
+   <a href="Experimental.AI.NavMeshQuery.html">
+    NavMeshQuery
+   </a>
+   操作结合使用，将无需在每次操作开始时将所需世界位置投射到导航网格。
+   <br/>
+   <br/>
+   在以下两种情况下，NavMeshLocation 可能会无效：
+1.创建为空，而非
+   <a href="Experimental.AI.NavMeshQuery.html">
+    NavMeshQuery
+   </a>
+   操作的结果时。
+2.导航网格已在指示位置或其邻近位置被删除或修改时。
+   <br/>
+   <br/>
+   如果 NavMeshLocation 因
+   <a href="AI.NavMeshObstacle.html">
+    NavMeshObstacle
+   </a>
+   在导航网格的邻近位置对其进行雕刻而变得无效，则在删除
+   <a href="AI.NavMeshObstacle.html">
+    NavMeshObstacle
+   </a>
+   时，NavMeshLocation 会返回有效状态。这是因为删除
+   <a href="AI.NavMeshObstacle.html">
+    NavMeshObstacle
+   </a>
+   会将导航网格恢复为其原始形式，而不是重新生成。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Experimental.AI.NavMeshQuery.MapLocation.html">
+    NavMeshQuery.MapLocation
+   </a>
+   、
+   <a href="Experimental.AI.NavMeshQuery.IsValid.html">
+    NavMeshQuery.IsValid
+   </a>
+   、
+   <a href="Experimental.AI.PolygonId.html">
+    PolygonId
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshLocation-polygon.html">
+      polygon
+     </a>
+    </td>
+    <td class="desc">
+     世界位置已映射到的导航网格中节点的唯一标识符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.NavMeshLocation-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     世界位置，精确地位于导航网格表面或其链接上。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

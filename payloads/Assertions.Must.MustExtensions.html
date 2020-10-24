@@ -1,0 +1,68 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Method group is Obsolete
+   </b>
+   <br/>
+  </div>
+  <h1 class="heading inherit">
+   MustExtensions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Assertions.Must
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+     Obsolete
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用作 Assert 类的包装器的扩展类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   MustExtension 类将 Assertion.Assert 包裹成更具可读性且更短的语法。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.Assertions.Must;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public int health;
+    public <a href="GameObject.html">GameObject</a> go;
+    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        //This assertion
+        <a href="Assertions.Assert.AreNotEqual.html">Assert.AreNotEqual</a>(0, health);
+        //can be also written like this
+        health.MustNotBeEqual(0);<br/><br/>        //Same with this assertion
+        <a href="Assertions.Assert.IsTrue.html">Assert.IsTrue</a>(go.activeInHierarchy);
+        //can be also written like this
+        go.activeInHierarchy.MustBeTrue();
+    }
+}
+</pre>
+ </div>
+</div>

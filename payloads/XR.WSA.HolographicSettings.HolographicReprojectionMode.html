@@ -1,0 +1,72 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   HolographicReprojectionMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示应用程序正在请求的重投影类型，以稳定与用户头部活动相关的全息渲染。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.HolographicSettings.HolographicReprojectionMode.PositionAndOrientation.html">
+      PositionAndOrientation
+     </a>
+    </td>
+    <td class="desc">
+     应针对用户头部的位置和方向变化稳定图像。此方法最适合应在用户走动时在物理上保持静止的世界锁定内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.HolographicSettings.HolographicReprojectionMode.OrientationOnly.html">
+      OrientationOnly
+     </a>
+    </td>
+    <td class="desc">
+     应仅针对用户头部方向的变化稳定图像，忽略位置变化。此方法最适合应在用户走动时紧跟用户的身体锁定内容，例如 360 度视频。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.WSA.HolographicSettings.HolographicReprojectionMode.Disabled.html">
+      Disabled
+     </a>
+    </td>
+    <td class="desc">
+     不应针对用户的头部动作稳定图像，而应在显示屏中保持固定。通常不建议这么做，因为它仅在谨慎使用的情况下适用于用户，例如唯一可见的内容是一个小光标时。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

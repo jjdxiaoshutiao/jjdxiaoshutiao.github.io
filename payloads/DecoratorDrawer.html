@@ -1,0 +1,205 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DecoratorDrawer
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="GUIDrawer.html">
+    GUIDrawer
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于派生自定义装饰器绘制器的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   DecoratorDrawer 类似于
+   <a href="PropertyDrawer.html">
+    PropertyDrawer
+   </a>
+   ，但它不绘制属性，而是纯粹基于从其对应的
+   <a href="PropertyAttribute.html">
+    PropertyAttribute
+   </a>
+   中获取的数据来绘制装饰元素。
+   <br/>
+   <br/>
+   Unity 对
+   <a href="SpaceAttribute.html">
+    SpaceAttribute
+   </a>
+   和
+   <a href="HeaderAttribute.html">
+    HeaderAttribute
+   </a>
+   使用内置的 DecoratorDrawer。您还可以使用匹配的 PropertyAttribute 创建您自己的 DecoratorDrawer。
+   <br/>
+   <br/>
+   尽管 DecoratorDrawer 从概念上讲并不意味着要与特定字段相关联，但其属性仍需放在脚本中的字段上。然而，与 PropertyDrawer 属性不同，同一字段上可以有多个 DecoratorDrawer 属性。同样与 PropertyDrawer 不同，如果 DecoratorDrawer 属性放在为列表或数组的字段上，则该装饰器只会在此数组前显示一次，而不是针对每个数组元素显示。
+   <br/>
+   <br/>
+   以下示例有两个脚本。
+   <br/>
+   <br/>
+   第一个脚本定义了名为 "ColorSpacer" 的示例属性，然后定义了用于决定如何在检视面板中绘制它的 DecoratorDrawer。
+   <br/>
+   <br/>
+   第二个脚本是一个示例 MonoBehaviour，它使用 ColorSpacer 属性在检视面板中直观地分隔两组公共属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Name this script "ColorSpacerExample"<br/><br/>using UnityEngine;
+using System.Collections;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>// This class defines the ColorSpacer attribute, so that
+// it can be used in your regular <a href="MonoBehaviour.html">MonoBehaviour</a> scripts:<br/><br/>public class ColorSpacer : <a href="PropertyAttribute.html">PropertyAttribute</a>
+{
+    public float spaceHeight;
+    public float lineHeight;
+    public float lineWidth;
+    public <a href="Color.html">Color</a> lineColor = <a href="Color-red.html">Color.red</a>;<br/><br/>    public ColorSpacer(float spaceHeight, float lineHeight, float lineWidth, float r, float g, float b)
+    {
+        this.spaceHeight = spaceHeight;
+        this.lineHeight = lineHeight;
+        this.lineWidth = lineWidth;<br/><br/>        // unfortunately we can't pass a color through as a <a href="Color.html">Color</a> object
+        // so we pass as 3 floats and make the object here
+        this.lineColor = new <a href="Color.html">Color</a>(r, g, b);
+    }
+}<br/><br/>
+// This defines how the ColorSpacer should be drawn
+// in the inspector, when inspecting a <a href="GameObject.html">GameObject</a> with
+// a <a href="MonoBehaviour.html">MonoBehaviour</a> which uses the ColorSpacer attribute<br/><br/>[<a href="CustomPropertyDrawer.html">CustomPropertyDrawer</a>(typeof(ColorSpacer))]
+public class ColorSpacerDrawer : <a href="DecoratorDrawer.html">DecoratorDrawer</a>
+{
+    ColorSpacer colorSpacer
+    {
+        get { return ((ColorSpacer)attribute); }
+    }<br/><br/>    public override float GetHeight()
+    {
+        return base.GetHeight() + colorSpacer.spaceHeight;
+    }<br/><br/>    public override void OnGUI(<a href="Rect.html">Rect</a> position)
+    {
+        // calculate the rect values for where to draw the line in the inspector
+        float lineX = (position.x + (position.width / 2)) - colorSpacer.lineWidth / 2;
+        float lineY = position.y + (colorSpacer.spaceHeight / 2);
+        float lineWidth = colorSpacer.lineWidth;
+        float lineHeight = colorSpacer.lineHeight;<br/><br/>        // Draw the line in the calculated place in the inspector
+        // (using the built in white pixel texture, tinted with <a href="GUI-color.html">GUI.color</a>)
+        <a href="Color.html">Color</a> oldGuiColor = <a href="GUI-color.html">GUI.color</a>;
+        <a href="GUI-color.html">GUI.color</a> = colorSpacer.lineColor;
+        <a href="EditorGUI.DrawPreviewTexture.html">EditorGUI.DrawPreviewTexture</a>(new <a href="Rect.html">Rect</a>(lineX, lineY, lineWidth, lineHeight), <a href="Texture2D-whiteTexture.html">Texture2D.whiteTexture</a>);
+        <a href="GUI-color.html">GUI.color</a> = oldGuiColor;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   这里的第二个脚本是指使用上面定义的 ColorSpacer 属性的脚本：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class ShowDecoratorDrawerExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    public int a = 1;
+    public int b = 2;
+    public int c = 3;<br/><br/>    // this shows our custom Decorator Drawer between the groups of properties
+    [ColorSpacer(30, 3, 100, 1, 0, 0)]<br/><br/>    public string d = "d";
+    public string e = "e";
+    public string f = "f";
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DecoratorDrawer-attribute.html">
+      attribute
+     </a>
+    </td>
+    <td class="desc">
+     装饰器的 PropertyAttribute。（只读）
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DecoratorDrawer.CanCacheInspectorGUI.html">
+      CanCacheInspectorGUI
+     </a>
+    </td>
+    <td class="desc">
+     重写此方法，以确定您的装饰器的检视面板 GUI 是否可以缓存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DecoratorDrawer.GetHeight.html">
+      GetHeight
+     </a>
+    </td>
+    <td class="desc">
+     重写此方法，以指定此装饰器的 GUI 的高度（单位：像素）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DecoratorDrawer.OnGUI.html">
+      OnGUI
+     </a>
+    </td>
+    <td class="desc">
+     重写此方法，以针对该装饰器构建您自己的 GUI。
+请参阅 DecoratorDrawer，了解如何使用此方法的示例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+ </div>
+</div>

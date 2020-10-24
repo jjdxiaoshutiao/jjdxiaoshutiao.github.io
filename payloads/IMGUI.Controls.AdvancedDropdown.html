@@ -1,0 +1,141 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AdvancedDropdown
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.IMGUI.Controls
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   从此类继承以实现自己的下拉控件。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEngine;
+using UnityEditor.IMGUI.Controls;<br/><br/>class WeekdaysDropdown : <a href="IMGUI.Controls.AdvancedDropdown.html">AdvancedDropdown</a>
+{
+    public WeekdaysDropdown(<a href="IMGUI.Controls.AdvancedDropdownState.html">AdvancedDropdownState</a> state) : base(state)
+    {
+    }<br/><br/>    protected override <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a> BuildRoot()
+    {
+        var root = new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Weekdays");<br/><br/>        var firstHalf = new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("First half");
+        var secondHalf = new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Second half");
+        var weekend = new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Weekend");<br/><br/>        firstHalf.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Monday"));
+        firstHalf.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Tuesday"));
+        secondHalf.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Wednesday"));
+        secondHalf.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Thursday"));
+        weekend.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Friday"));
+        weekend.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Saturday"));
+        weekend.AddChild(new <a href="IMGUI.Controls.AdvancedDropdownItem.html">AdvancedDropdownItem</a>("Sunday"));<br/><br/>        root.AddChild(firstHalf);
+        root.AddChild(secondHalf);
+        root.AddChild(weekend);<br/><br/>        return root;
+    }
+}<br/><br/>public class AdvancedDropdownTestWindow : <a href="EditorWindow.html">EditorWindow</a>
+{
+    void OnGUI()
+    {
+        var rect = <a href="GUILayoutUtility.GetRect.html">GUILayoutUtility.GetRect</a>(new <a href="GUIContent.html">GUIContent</a>("Show"), <a href="EditorStyles-toolbarButton.html">EditorStyles.toolbarButton</a>);
+        if (<a href="GUI.Button.html">GUI.Button</a>(rect, new <a href="GUIContent.html">GUIContent</a>("Show"), <a href="EditorStyles-toolbarButton.html">EditorStyles.toolbarButton</a>))
+        {
+            var dropdown = new WeekdaysDropdown(new <a href="IMGUI.Controls.AdvancedDropdownState.html">AdvancedDropdownState</a>());
+            dropdown.Show(rect);
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.AdvancedDropdown-minimumSize.html">
+      minimumSize
+     </a>
+    </td>
+    <td class="desc">
+     下拉窗口的最小大小。默认情况下，下拉窗口会尽量匹配给定矩形或所渲染内容的宽度。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.AdvancedDropdown.Show.html">
+      Show
+     </a>
+    </td>
+    <td class="desc">
+     调用此方法可在给定位置显示下拉窗口。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   受保护的函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.AdvancedDropdown.BuildRoot.html">
+      BuildRoot
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法可生成下拉窗口的内容。
+此方法在下拉窗口显示时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.AdvancedDropdown.ItemSelected.html">
+      ItemSelected
+     </a>
+    </td>
+    <td class="desc">
+     重写此方法可在选择项时获得通知。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

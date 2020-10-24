@@ -1,0 +1,211 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CameraSettings
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此类可设置
+   <a href="SceneView.html">
+    SceneView
+   </a>
+   摄像机属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Create a folder (right click in the Assets directory, click <strong>Create</strong>&gt;<strong>Folder</strong>)
+// and name it <em>Editor</em> if one doesn't exist already. Create a new C# script called <em>CustomSettings</em>
+// and place it in that folder.<br/><br/>// This script creates a new menu item <strong>Edit</strong>&gt;<strong>SceneView Settings</strong>&gt;<strong>Update Camera Settings</strong> in the main menu.
+// Use it to update the <a href="Camera.html">Camera</a> settings in the <a href="SceneManagement.Scene.html">Scene</a> view.<br/><br/>using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class CustomSettings
+{
+    [<a href="MenuItem.html">MenuItem</a>("Edit/<a href="SceneView.html">SceneView</a> <a href="CameraEditor.Settings.html">Settings</a>/<a href="PlayerLoop.Update.html">Update</a> <a href="Camera.html">Camera</a> <a href="CameraEditor.Settings.html">Settings</a>")]
+    static void UpdateCameraSettings()
+    {
+        <a href="SceneView.CameraSettings.html">SceneView.CameraSettings</a> settings = new <a href="SceneView.CameraSettings.html">SceneView.CameraSettings</a>();
+        settings.accelerationEnabled = false;
+        settings.speedMin = 1f;
+        settings.speedMax = 10f;
+        settings.speed = 5f;
+        settings.easingEnabled = true;
+        settings.easingDuration = 0.6f;
+        settings.dynamicClip = false;
+        settings.fieldOfView = 120f;
+        settings.nearClip = 0.01f;
+        settings.farClip = 1000f;
+        settings.occlusionCulling = true;
+        <a href="SceneView.html">SceneView</a> sceneView = <a href="SceneView-lastActiveSceneView.html">SceneView.lastActiveSceneView</a>;
+        sceneView.cameraSettings = settings;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-accelerationEnabled.html">
+      accelerationEnabled
+     </a>
+    </td>
+    <td class="desc">
+     在 SceneView 中启用摄像机移动加速。这会使摄像机在移动过程中加速。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-dynamicClip.html">
+      dynamicClip
+     </a>
+    </td>
+    <td class="desc">
+     启用时，将计算相对于场景视口大小的 SceneView 摄像机近和远裁剪面。而禁用时，使用 nearClip 和 farClip。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-easingDuration.html">
+      easingDuration
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机的速度加速到其初始全速所需的时间。以秒为测量单位。有效值在 [0.1, 2] 之间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-easingEnabled.html">
+      easingEnabled
+     </a>
+    </td>
+    <td class="desc">
+     在 SceneView 中启用摄像机移动缓动。这使摄像机在开始移动时缓入，而在停止时缓出。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-farClip.html">
+      farClip
+     </a>
+    </td>
+    <td class="desc">
+     离 SceneView 摄像机的最远绘制点。有效最小值为 0.02。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-fieldOfView.html">
+      fieldOfView
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机视角的高度。以垂直方向的测量度数或者沿局部 Y 轴的测量度数为单位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-nearClip.html">
+      nearClip
+     </a>
+    </td>
+    <td class="desc">
+     到 SceneView 摄像机的最近绘制点。有效最小值为 0.01。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-occlusionCulling.html">
+      occlusionCulling
+     </a>
+    </td>
+    <td class="desc">
+     在 SceneView 中启用遮挡剔除。这样可以防止 Unity 渲染摄像机看不到的 GameObjects（因为它们被其他 GameObjects 所遮挡）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-speed.html">
+      speed
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机的速度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-speedMax.html">
+      speedMax
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机的最大速度。有效值在 [0.02, 99] 之间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-speedMin.html">
+      speedMin
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机的最小速度。有效值在 [0.01, 98] 之间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-speedNormalized.html">
+      speedNormalized
+     </a>
+    </td>
+    <td class="desc">
+     SceneView 摄像机相对于当前最小/最大范围的归一化速度。有效值在 [0, 1] 之间。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="SceneView.CameraSettings-ctor.html">
+      SceneView.CameraSettings
+     </a>
+    </td>
+    <td class="desc">
+     创建新 CameraSettings 对象。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

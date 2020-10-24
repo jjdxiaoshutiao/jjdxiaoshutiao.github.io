@@ -1,0 +1,259 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CompilationPipeline
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Compilation
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   脚本编译管线的方法和属性。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.AssemblyDefinitionReferenceGUIDToGUID.html">
+      AssemblyDefinitionReferenceGUIDToGUID
+     </a>
+    </td>
+    <td class="desc">
+     将程序集定义文件 GUID 引用转换为 GUID 字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblies.html">
+      GetAssemblies
+     </a>
+    </td>
+    <td class="desc">
+     获取所有由 Unity 编译、由 AssembliesType 过滤的脚本程序集。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyDefinitionFilePathFromAssemblyName.html">
+      GetAssemblyDefinitionFilePathFromAssemblyName
+     </a>
+    </td>
+    <td class="desc">
+     从程序集名称返回程序集定义文件路径。如果给定的程序集名称没有程序集定义文件，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyDefinitionFilePathFromAssemblyReference.html">
+      GetAssemblyDefinitionFilePathFromAssemblyReference
+     </a>
+    </td>
+    <td class="desc">
+     返回程序集定义文件 GUID 或程序集名称引用的程序集定义文件路径。如果给定的程序集引用没有程序集定义文件，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyDefinitionFilePathFromScriptPath.html">
+      GetAssemblyDefinitionFilePathFromScriptPath
+     </a>
+    </td>
+    <td class="desc">
+     返回源（脚本）路径的程序集定义文件路径。如果给定的脚本路径没有程序集定义文件，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyDefinitionPlatforms.html">
+      GetAssemblyDefinitionPlatforms
+     </a>
+    </td>
+    <td class="desc">
+     返回程序集定义文件支持的所有平台。另请参阅：AssemblyDefinitionPlatform。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyDefinitionReferenceType.html">
+      GetAssemblyDefinitionReferenceType
+     </a>
+    </td>
+    <td class="desc">
+     用于确定程序集定义文件引用是 GUID 引用还是程序集名称引用的实用程序方法。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetAssemblyNameFromScriptPath.html">
+      GetAssemblyNameFromScriptPath
+     </a>
+    </td>
+    <td class="desc">
+     返回源（脚本）路径的程序集名称。如果给定的脚本路径没有程序集名称，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetDefinesFromAssemblyName.html">
+      GetDefinesFromAssemblyName
+     </a>
+    </td>
+    <td class="desc">
+     列出用于编译指定程序集的所有 #define 指令。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetPrecompiledAssemblyNames.html">
+      GetPrecompiledAssemblyNames
+     </a>
+    </td>
+    <td class="desc">
+     获取所有预编译的程序集名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetPrecompiledAssemblyPathFromAssemblyName.html">
+      GetPrecompiledAssemblyPathFromAssemblyName
+     </a>
+    </td>
+    <td class="desc">
+     从程序集名称返回程序集文件路径。如果没有预编译的程序集名称匹配，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetPrecompiledAssemblyPaths.html">
+      GetPrecompiledAssemblyPaths
+     </a>
+    </td>
+    <td class="desc">
+     返回在构建编辑器程序集时包含的预编译程序集的路径并匹配任何给定的 PrecompiledAssemblySources。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GetSystemAssemblyDirectories.html">
+      GetSystemAssemblyDirectories
+     </a>
+    </td>
+    <td class="desc">
+     用于获取目录的列表，这些目录包含用于特定 ApiCompatibilityLevel 的系统引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.GUIDToAssemblyDefinitionReferenceGUID.html">
+      GUIDToAssemblyDefinitionReferenceGUID
+     </a>
+    </td>
+    <td class="desc">
+     将给定的 GUID 转换为程序集定义文件 GUID 引用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.IsDefineConstraintsCompatible.html">
+      IsDefineConstraintsCompatible
+     </a>
+    </td>
+    <td class="desc">
+     用于测试指定的 #define 指令列表是否满足指定的 #define 约束。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.ParseResponseFile.html">
+      ParseResponseFile
+     </a>
+    </td>
+    <td class="desc">
+     获取描述响应文件内容的 ResponseFileData。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline.RequestScriptCompilation.html">
+      RequestScriptCompilation
+     </a>
+    </td>
+    <td class="desc">
+     使用此函数可让 Unity 编辑器以异步方式重新编译项目中的每个脚本。编译完成后，Unity 编辑器加载已编译的程序集。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline-assemblyCompilationFinished.html">
+      assemblyCompilationFinished
+     </a>
+    </td>
+    <td class="desc">
+     程序集编译完成时调用的主线程上的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline-assemblyCompilationStarted.html">
+      assemblyCompilationStarted
+     </a>
+    </td>
+    <td class="desc">
+     程序集构建开始时在主线程中调用的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline-compilationFinished.html">
+      compilationFinished
+     </a>
+    </td>
+    <td class="desc">
+     程序集编译完成时在主线程中调用的事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Compilation.CompilationPipeline-compilationStarted.html">
+      compilationStarted
+     </a>
+    </td>
+    <td class="desc">
+     程序集编译开始时在主线程中调用的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

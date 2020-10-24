@@ -1,0 +1,103 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   TreeViewState
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.IMGUI.Controls
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   TreeViewState 包含 TreeView 的可序列化状态信息。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   这主要是指用户可以通过与 TreeView 交互来更改的状态，例如选择状态、扩展状态、导航状态和滚动状态。
+   <br/>
+   <br/>
+   TreeViewState 是 TreeView 中唯一应序列化/反序列化的状态。TreeView 本身不可序列化，应该通过它所代表的树数据进行重建。
+   <br/>
+   <br/>
+   此类中包含的所有状态都由 TreeView 本身更新。也可以通过 TreeView API 获取此状态。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.TreeViewState-expandedIDs.html">
+      expandedIDs
+     </a>
+    </td>
+    <td class="desc">
+     这是当前展开的 TreeViewItem ID 的列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.TreeViewState-lastClickedID.html">
+      lastClickedID
+     </a>
+    </td>
+    <td class="desc">
+     当前用于多选项和键导航的 TreeViewItem 的 ID。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.TreeViewState-scrollPos.html">
+      scrollPos
+     </a>
+    </td>
+    <td class="desc">
+     TreeView 滚动视图的当前滚动值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.TreeViewState-searchString.html">
+      searchString
+     </a>
+    </td>
+    <td class="desc">
+     搜索字符串状态，可在 TreeView 中使用以在创建 TreeViewItem 时过滤树数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="IMGUI.Controls.TreeViewState-selectedIDs.html">
+      selectedIDs
+     </a>
+    </td>
+    <td class="desc">
+     选定的 TreeViewItem ID。使用 SetSelection 和 IsSelected API 将会访问此状态。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

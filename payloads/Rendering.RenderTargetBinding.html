@@ -1,0 +1,153 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderTargetBinding
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Rendering
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   描述渲染目标，此渲染目标具有一个或多个颜色缓冲区、深度/模板缓冲区以及渲染目标处于活动状态时应用的相关加载/存储操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此数据结构类似于
+   <a href="RenderTargetSetup.html">
+    RenderTargetSetup
+   </a>
+   ，但依赖于
+   <a href="Rendering.RenderTargetIdentifier.html">
+    RenderTargetIdentifier
+   </a>
+   来确保与
+   <a href="Rendering.CommandBuffer.SetRenderTarget.html">
+    CommandBuffer.SetRenderTarget
+   </a>
+   的兼容性。
+   <br/>
+   <br/>
+   要渲染到特定的 Mip 级别、立方体贴图面或深度切片，应相应地创建
+   <a href="Rendering.RenderTargetIdentifier.html">
+    RenderTargetIdentifier
+   </a>
+   。
+   <br/>
+   <br/>
+   注意：为颜色缓冲区指定的加载和存储操作的数量必须等于颜色缓冲区的数量。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rendering.CommandBuffer.html">
+    CommandBuffer
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-colorLoadActions.html">
+      colorLoadActions
+     </a>
+    </td>
+    <td class="desc">
+     颜色缓冲区的加载操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-colorRenderTargets.html">
+      colorRenderTargets
+     </a>
+    </td>
+    <td class="desc">
+     要用作渲染目标的颜色缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-colorStoreActions.html">
+      colorStoreActions
+     </a>
+    </td>
+    <td class="desc">
+     颜色缓冲区的存储操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-depthLoadAction.html">
+      depthLoadAction
+     </a>
+    </td>
+    <td class="desc">
+     深度/模板缓冲区的加载操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-depthRenderTarget.html">
+      depthRenderTarget
+     </a>
+    </td>
+    <td class="desc">
+     要用作渲染目标的深度/模板缓冲区。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-depthStoreAction.html">
+      depthStoreAction
+     </a>
+    </td>
+    <td class="desc">
+     深度/模板缓冲区的存储操作。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderTargetBinding-ctor.html">
+      RenderTargetBinding
+     </a>
+    </td>
+    <td class="desc">
+     构造 RenderTargetBinding。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

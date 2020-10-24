@@ -1,0 +1,354 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   XRDisplaySubsystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.XR
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="IntegratedSubsystem.html">
+    IntegratedSubsystem
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   XRDisplaySubsystem 控制如何渲染到头部跟踪显示器。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-contentProtectionEnabled.html">
+      contentProtectionEnabled
+     </a>
+    </td>
+    <td class="desc">
+     设置或获取当前活动提供程序的内容保护状态。                对于大多数提供程序，内容保护允许你使用仅写入纹理进行渲染。这会使应用程序无法从显卡读取纹理以及查看/记录可能以某种方式进行保护的图像。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-disableLegacyRenderer.html">
+      disableLegacyRenderer
+     </a>
+    </td>
+    <td class="desc">
+     当此 XRDisplaySubsystem 处于活动状态时，禁用旧版渲染器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-displayOpaque.html">
+      displayOpaque
+     </a>
+    </td>
+    <td class="desc">
+     确定当前连接的设备是否具有不透明显示屏。                大多数 VR 设备是不透明的，以便提高沉浸式体验，而 AR 设备是透明的，以便可以与当前环境的增强内容进行交互。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-reprojectionMode.html">
+      reprojectionMode
+     </a>
+    </td>
+    <td class="desc">
+     应用程序请求的重投影类型，以稳定与用户头部活动相关的全息渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-singlePassRenderingDisabled.html">
+      singlePassRenderingDisabled
+     </a>
+    </td>
+    <td class="desc">
+     禁用单通道立体渲染时返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-zFar.html">
+      zFar
+     </a>
+    </td>
+    <td class="desc">
+     设置 DisplaySubsystem 以将 zFar 用于渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-zNear.html">
+      zNear
+     </a>
+    </td>
+    <td class="desc">
+     设置 DisplaySubsystem 以将 zNear 用于渲染。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.AddGraphicsThreadMirrorViewBlit.html">
+      AddGraphicsThreadMirrorViewBlit
+     </a>
+    </td>
+    <td class="desc">
+     此函数将显示子系统的原生 blit 事件记录到目标命令缓冲区中。此函数通常由可编程渲染管线进行调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetCullingParameters.html">
+      GetCullingParameters
+     </a>
+    </td>
+    <td class="desc">
+     获取特定剔除通道索引的剔除参数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetMirrorViewBlitDesc.html">
+      GetMirrorViewBlitDesc
+     </a>
+    </td>
+    <td class="desc">
+     从当前显示子系统获取镜像视图 blit 操作描述符。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetPreferredMirrorBlitMode.html">
+      GetPreferredMirrorBlitMode
+     </a>
+    </td>
+    <td class="desc">
+     返回 XR 显示的首选镜像 blit 模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetRenderPass.html">
+      GetRenderPass
+     </a>
+    </td>
+    <td class="desc">
+     获取特定索引的 XRRenderPass。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetRenderPassCount.html">
+      GetRenderPassCount
+     </a>
+    </td>
+    <td class="desc">
+     此 XR 显示的 XRRenderPass 条目数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.GetRenderTextureForRenderPass.html">
+      GetRenderTextureForRenderPass
+     </a>
+    </td>
+    <td class="desc">
+     给定一个渲染通道，返回为该渲染通道提供支持的 RenderTexture 实例。如果渲染通道无效，或是如果渲染纹理不存在，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.SetFocusPlane.html">
+      SetFocusPlane
+     </a>
+    </td>
+    <td class="desc">
+     针对此帧，在 3D 空间中将一个点设置为场景的焦点。这有助于提高此点周围内容的视觉保真度。必须每一帧都设置此值。                请注意，指定将焦点中的内容锁定到身体，系统将以未锁定到身体的内容为代价，提高锁定到身体的内容的保真度。这在用户移动时尤其明显。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.SetPreferredMirrorBlitMode.html">
+      SetPreferredMirrorBlitMode
+     </a>
+    </td>
+    <td class="desc">
+     从脚本覆盖 XR 显示的首选镜像 blit 模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetAppGPUTimeLastFrame.html">
+      TryGetAppGPUTimeLastFrame
+     </a>
+    </td>
+    <td class="desc">
+     从应用程序的最后一帧获取 GPU 执行命令所花费的时间（由 XR 插件报告）。以秒为测量单位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetCompositorGPUTimeLastFrame.html">
+      TryGetCompositorGPUTimeLastFrame
+     </a>
+    </td>
+    <td class="desc">
+     获取 GPU 在最后一帧中执行合成器渲染器所花费的时间量（由 XR 插件报告）。以秒为测量单位。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetDisplayRefreshRate.html">
+      TryGetDisplayRefreshRate
+     </a>
+    </td>
+    <td class="desc">
+     获取显示器刷新率（由 XR 插件报告）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetDroppedFrameCount.html">
+      TryGetDroppedFrameCount
+     </a>
+    </td>
+    <td class="desc">
+     获取 XR 插件报告的丢弃的帧数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetFramePresentCount.html">
+      TryGetFramePresentCount
+     </a>
+    </td>
+    <td class="desc">
+     获取 XR 插件报告的当前帧绘制到设备中的次数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem.TryGetMotionToPhoton.html">
+      TryGetMotionToPhoton
+     </a>
+    </td>
+    <td class="desc">
+     获取 XR 插件报告的 motion-to-photon 值。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   Events
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRDisplaySubsystem-displayFocusChanged.html">
+      displayFocusChanged
+     </a>
+    </td>
+    <td class="desc">
+     XR 显示焦点更改时发送的事件。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem-running.html">
+       running
+      </a>
+     </td>
+     <td class="desc">
+      子系统是否在运行。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      销毁子系统的此实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Start.html">
+       Start
+      </a>
+     </td>
+     <td class="desc">
+      启动子系统的一个实例。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="IntegratedSubsystem.Stop.html">
+       Stop
+      </a>
+     </td>
+     <td class="desc">
+      停止子系统的一个实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

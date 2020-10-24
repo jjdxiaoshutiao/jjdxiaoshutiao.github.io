@@ -1,0 +1,155 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   NavMeshBuildDebugFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   位掩码，用于与导航网格构建过程的调试数据结合使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   可在以下两种情况下使用：
+   <br/>
+   - 在
+   <a href="AI.NavMeshBuildSettings-debug.html">
+    NavMeshBuildSettings.debug
+   </a>
+   中指定应在构建完成后保留哪些调试数据，从而保留世界位置和方向；
+   <br/>
+   - 作为
+   <a href="AI.NavMeshEditorHelpers.DrawBuildDebug.html">
+    NavMeshEditorHelpers.DrawBuildDebug
+   </a>
+   的参数，控制针对特定导航网格可以显示哪些调试数据类型。\
+\
+另请参阅：
+   <a href="AI.NavMeshBuildSettings.html">
+    NavMeshBuildSettings
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     导航网格构建过程中的所有调试数据均不考虑在内。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.InputGeometry.html">
+      InputGeometry
+     </a>
+    </td>
+    <td class="desc">
+     作为计算新导航网格的基础使用的整个几何体的三角形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.Voxels.html">
+      Voxels
+     </a>
+    </td>
+    <td class="desc">
+     将源几何体光栅化为可行走区域和不可行走区域时生成的体素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.Regions.html">
+      Regions
+     </a>
+    </td>
+    <td class="desc">
+     将可遍历表面细分为生成简单多边形所必需的较小区域。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.RawContours.html">
+      RawContours
+     </a>
+    </td>
+    <td class="desc">
+     紧贴每个表面区域边缘的轮廓。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.SimplifiedContours.html">
+      SimplifiedContours
+     </a>
+    </td>
+    <td class="desc">
+     包围每个表面区域的轮廓，与 RawContours 相比，顶点更少，边缘更直。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.PolygonMeshes.html">
+      PolygonMeshes
+     </a>
+    </td>
+    <td class="desc">
+     在相邻区域的统一轮廓内构建的凸多边形网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.PolygonMeshesDetail.html">
+      PolygonMeshesDetail
+     </a>
+    </td>
+    <td class="desc">
+     高度细节较为接近源几何体的三角形网格。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="AI.NavMeshBuildDebugFlags.All.html">
+      All
+     </a>
+    </td>
+    <td class="desc">
+     导航网格构建过程中的所有调试数据均考虑在内。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

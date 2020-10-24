@@ -1,0 +1,397 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayableExtensions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Playables
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   适用于实现
+   <a href="Playables.IPlayable.html">
+    IPlayable
+   </a>
+   的所有类型的扩展。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   扩展方法属于静态方法，可以像调用扩展类型上的实例方法那样调用它们。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.Playables;<br/><br/>public class ExamplePlayableBehaviour : <a href="Playables.PlayableBehaviour.html">PlayableBehaviour</a>
+{
+    void Start()
+    {
+        <a href="Playables.PlayableGraph.html">PlayableGraph</a> graph = <a href="Playables.PlayableGraph.Create.html">PlayableGraph.Create</a>();
+        <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a> mixer = <a href="Animations.AnimationMixerPlayable.Create.html">AnimationMixerPlayable.Create</a>(graph, 1);<br/><br/>        // Calling method <a href="Playables.PlayableExtensions.SetDuration.html">PlayableExtensions.SetDuration</a> on <a href="Animations.AnimationMixerPlayable.html">AnimationMixerPlayable</a> as if it was an instance method.
+        mixer.SetDuration(10);<br/><br/>        // The line above is the same as calling directly <a href="Playables.PlayableExtensions.SetDuration.html">PlayableExtensions.SetDuration</a>, but it is more compact and readable.
+        <a href="Playables.PlayableExtensions.SetDuration.html">PlayableExtensions.SetDuration</a>(mixer, 10);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.AddInput.html">
+      AddInput
+     </a>
+    </td>
+    <td class="desc">
+     创建新的输入端口并将其连接到给定 Playable 的输出端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.ConnectInput.html">
+      ConnectInput
+     </a>
+    </td>
+    <td class="desc">
+     将 Playable 的输出端口连接到其中一个输入端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.Destroy.html">
+      Destroy
+     </a>
+    </td>
+    <td class="desc">
+     销毁当前 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.DisconnectInput.html">
+      DisconnectInput
+     </a>
+    </td>
+    <td class="desc">
+     断开 Playable 的输入端口。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetDuration.html">
+      GetDuration
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 的持续时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetGraph.html">
+      GetGraph
+     </a>
+    </td>
+    <td class="desc">
+     返回拥有此 Playable 的 PlayableGraph。Playable 只能在用于创建它的图中使用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetInput.html">
+      GetInput
+     </a>
+    </td>
+    <td class="desc">
+     返回给定输入端口索引处连接的 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetInputCount.html">
+      GetInputCount
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 支持的输入数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetInputWeight.html">
+      GetInputWeight
+     </a>
+    </td>
+    <td class="desc">
+     返回给定输入端口索引处连接的 Playable 的权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetLeadTime.html">
+      GetLeadTime
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 前置时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetOutput.html">
+      GetOutput
+     </a>
+    </td>
+    <td class="desc">
+     返回给定输出端口索引处连接的 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetOutputCount.html">
+      GetOutputCount
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 支持的输出数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetPlayState.html">
+      GetPlayState
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 的当前播放状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetPreviousTime.html">
+      GetPreviousTime
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 的上一个本地时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetPropagateSetTime.html">
+      GetPropagateSetTime
+     </a>
+    </td>
+    <td class="desc">
+     返回此 Playable 的时间传播行为。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetSpeed.html">
+      GetSpeed
+     </a>
+    </td>
+    <td class="desc">
+     返回应用于当前 Playable 的速度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetTime.html">
+      GetTime
+     </a>
+    </td>
+    <td class="desc">
+     返回 Playable 的当前本地时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.GetTraversalMode.html">
+      GetTraversalMode
+     </a>
+    </td>
+    <td class="desc">
+     返回多输出可播放项的传播模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.IsDone.html">
+      IsDone
+     </a>
+    </td>
+    <td class="desc">
+     返回指示可播放项已完成操作的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.IsNull.html">
+      IsNull
+     </a>
+    </td>
+    <td class="desc">
+     如果 Playable 为 null，则返回 true，否则返回 false。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     返回当前 Playable 的有效性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.Pause.html">
+      Pause
+     </a>
+    </td>
+    <td class="desc">
+     发出暂停 Playable 的通知。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.Play.html">
+      Play
+     </a>
+    </td>
+    <td class="desc">
+     开始播放 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetDone.html">
+      SetDone
+     </a>
+    </td>
+    <td class="desc">
+     更改指示可播放项已完成操作的标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetDuration.html">
+      SetDuration
+     </a>
+    </td>
+    <td class="desc">
+     更改 Playable 的持续时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetInputCount.html">
+      SetInputCount
+     </a>
+    </td>
+    <td class="desc">
+     更改 Playable 支持的输入数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetInputWeight.html">
+      SetInputWeight
+     </a>
+    </td>
+    <td class="desc">
+     更改连接到当前 Playable 的 Playable 的权重。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetLeadTime.html">
+      SetLeadTime
+     </a>
+    </td>
+    <td class="desc">
+     设置 Playable 前置时间（以秒为单位）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetOutputCount.html">
+      SetOutputCount
+     </a>
+    </td>
+    <td class="desc">
+     更改 Playable 支持的输出数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetPropagateSetTime.html">
+      SetPropagateSetTime
+     </a>
+    </td>
+    <td class="desc">
+     更改此 Playable 的时间传播行为。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetSpeed.html">
+      SetSpeed
+     </a>
+    </td>
+    <td class="desc">
+     更改应用于当前 Playable 的速度乘数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetTime.html">
+      SetTime
+     </a>
+    </td>
+    <td class="desc">
+     更改 Playable 的当前本地时间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableExtensions.SetTraversalMode.html">
+      SetTraversalMode
+     </a>
+    </td>
+    <td class="desc">
+     设置多输出可播放项的 PrepareFrame 和 ProcessFrame 传播模式。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

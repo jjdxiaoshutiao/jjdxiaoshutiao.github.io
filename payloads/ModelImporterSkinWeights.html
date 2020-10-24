@@ -1,0 +1,93 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ModelImporterSkinWeights
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="ModelImporter.html">
+    ModelImporter
+   </a>
+   的蒙皮权重选项。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   要为每个顶点导入 4 个以上蒙皮权重，请将
+   <a href="ModelImporter-skinWeights.html">
+    ModelImporter.skinWeights
+   </a>
+   设置为
+   <a href="ModelImporterSkinWeights.Custom.html">
+    ModelImporterSkinWeights.Custom
+   </a>
+   ，并将
+   <a href="ModelImporter-maxBonesPerVertex.html">
+    ModelImporter.maxBonesPerVertex
+   </a>
+   设置为所需数目。可能还需要将骨骼数目限制为少于 4，或通过
+   <a href="ModelImporter-minBoneWeight.html">
+    ModelImporter.minBoneWeight
+   </a>
+   设置权重阈值。
+   <br/>
+   <br/>
+   注意，必须将
+   <a href="QualitySettings-skinWeights.html">
+    QualitySettings.skinWeights
+   </a>
+   设置为 Unlimited 才能使用更多蒙皮权重。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterSkinWeights.Standard.html">
+      Standard
+     </a>
+    </td>
+    <td class="desc">
+     为每个顶点导入标准数目（当前为 4）的骨骼。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ModelImporterSkinWeights.Custom.html">
+      Custom
+     </a>
+    </td>
+    <td class="desc">
+     为每个顶点导入自定义数目的骨骼。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

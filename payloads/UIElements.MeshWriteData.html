@@ -1,0 +1,140 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   MeshWriteData
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.UIElements
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示为绘制
+   <a href="UIElements.VisualElement.html">
+    VisualElement
+   </a>
+   的内容而分配的顶点和索引数据的类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   只能在对
+   <a href="UIElements.VisualElement-generateVisualContent.html">
+    VisualElement.generateVisualContent
+   </a>
+   委托进行回调过程中使用此对象填充顶点和索引的值。不要存储超出
+   <a href="UIElements.VisualElement-generateVisualContent.html">
+    VisualElement.generateVisualContent
+   </a>
+   范围的已传递
+   <a href="UIElements.MeshWriteData.html">
+    MeshWriteData
+   </a>
+   ，因为 Unity 可回收它，以用于其他回调。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData-indexCount.html">
+      indexCount
+     </a>
+    </td>
+    <td class="desc">
+     为 VisualElement 内容绘制而成功调用的索引数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData-uvRegion.html">
+      uvRegion
+     </a>
+    </td>
+    <td class="desc">
+     描述保留传递到 MeshGenerationContext.Allocate 的纹理的 UV 区域的矩形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData-vertexCount.html">
+      vertexCount
+     </a>
+    </td>
+    <td class="desc">
+     为 VisualElement 内容绘制而成功调用的顶点数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData.SetAllIndices.html">
+      SetAllIndices
+     </a>
+    </td>
+    <td class="desc">
+     通过直接从数组中复制已分配索引的值来填充这些值。每 3 个连续顶点可形成一个三角形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData.SetAllVertices.html">
+      SetAllVertices
+     </a>
+    </td>
+    <td class="desc">
+     要从中进行复制的顶点的数组。该数组的长度必须与分配的顶点数量一致。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData.SetNextIndex.html">
+      SetNextIndex
+     </a>
+    </td>
+    <td class="desc">
+     分配已分配索引列表的下一个索引的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="UIElements.MeshWriteData.SetNextVertex.html">
+      SetNextVertex
+     </a>
+    </td>
+    <td class="desc">
+     分配已分配顶点列表的下一个顶点的值。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

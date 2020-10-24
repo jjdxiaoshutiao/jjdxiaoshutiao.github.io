@@ -1,0 +1,209 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   JobsUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Jobs.LowLevel.Unsafe
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含用于创建、运行和调试作业的功能的静态类。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.CacheLineSize.html">
+      CacheLineSize
+     </a>
+    </td>
+    <td class="desc">
+     缓存行的大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.IsExecutingJob.html">
+      IsExecutingJob
+     </a>
+    </td>
+    <td class="desc">
+     如果从 C# 作业内部调用它，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.JobCompilerEnabled.html">
+      JobCompilerEnabled
+     </a>
+    </td>
+    <td class="desc">
+     禁用后，强制已使用 Burst 编译的作业改为以单声道运行。例如，如果要调试 C# 作业或者只希望比较行为或性能。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.JobDebuggerEnabled.html">
+      JobDebuggerEnabled
+     </a>
+    </td>
+    <td class="desc">
+     在运行时启用和禁用作业调试器。请注意，目前只有 Editor 支持作业调试器。因此，此调试器只在 Editor 中有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.JobWorkerCount.html">
+      JobWorkerCount
+     </a>
+    </td>
+    <td class="desc">
+     可用于 Unity JobQueue 的当前工作线程数目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.JobWorkerMaximumCount.html">
+      JobWorkerMaximumCount
+     </a>
+    </td>
+    <td class="desc">
+     可用于 Unity JobQueue (Read Only) 的最大工作线程数目。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.MaxJobThreadCount.html">
+      MaxJobThreadCount
+     </a>
+    </td>
+    <td class="desc">
+     最大作业线程数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.CreateJobReflectionData.html">
+      CreateJobReflectionData
+     </a>
+    </td>
+    <td class="desc">
+     创建作业反射数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.GetJobRange.html">
+      GetJobRange
+     </a>
+    </td>
+    <td class="desc">
+     返回范围的起始索引和结束索引。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.GetWorkStealingRange.html">
+      GetWorkStealingRange
+     </a>
+    </td>
+    <td class="desc">
+     返回工作窃取范围。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.PatchBufferMinMaxRanges.html">
+      PatchBufferMinMaxRanges
+     </a>
+    </td>
+    <td class="desc">
+     为最小和最大本机数组范围注入调试检查。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.ResetJobWorkerCount.html">
+      ResetJobWorkerCount
+     </a>
+    </td>
+    <td class="desc">
+     将 JobWorkerCount 重置为 Unity 调整的值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.Schedule.html">
+      Schedule
+     </a>
+    </td>
+    <td class="desc">
+     调度单个 IJob。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.ScheduleParallelFor.html">
+      ScheduleParallelFor
+     </a>
+    </td>
+    <td class="desc">
+     调度 IJobParallelFor 作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.ScheduleParallelForDeferArraySize.html">
+      ScheduleParallelForDeferArraySize
+     </a>
+    </td>
+    <td class="desc">
+     调度 IJobParallelFor 作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Unity.Jobs.LowLevel.Unsafe.JobsUtility.ScheduleParallelForTransform.html">
+      ScheduleParallelForTransform
+     </a>
+    </td>
+    <td class="desc">
+     调度 IJobParallelForTransform 作业。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

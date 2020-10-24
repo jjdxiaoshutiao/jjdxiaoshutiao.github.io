@@ -1,0 +1,231 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PhotoCapture
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Windows.WebCam
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   捕捉来自网络摄像机的照片并存储在内存中或磁盘上。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   演示如何使用 PhotoCapture 功能拍摄照片并将照片显示在 Unity 游戏对象上。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;
+using System.Linq;
+using UnityEngine.Windows.WebCam;<br/><br/>public class PhotoCaptureExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Windows.WebCam.PhotoCapture.html">PhotoCapture</a> photoCaptureObject = null;
+    <a href="Texture2D.html">Texture2D</a> targetTexture = null;<br/><br/>    // Use this for initialization
+    void Start()
+    {
+        <a href="Resolution.html">Resolution</a> cameraResolution = PhotoCapture.SupportedResolutions.OrderByDescending((res) =&gt; res.width * res.height).First();
+        targetTexture = new <a href="Texture2D.html">Texture2D</a>(cameraResolution.width, cameraResolution.height);<br/><br/>        // Create a <a href="Windows.WebCam.PhotoCapture.html">PhotoCapture</a> object
+        <a href="Windows.WebCam.PhotoCapture.CreateAsync.html">PhotoCapture.CreateAsync</a>(false, delegate(<a href="Windows.WebCam.PhotoCapture.html">PhotoCapture</a> captureObject) {
+            photoCaptureObject = captureObject;
+            <a href="Windows.WebCam.CameraParameters.html">CameraParameters</a> cameraParameters = new <a href="Windows.WebCam.CameraParameters.html">CameraParameters</a>();
+            cameraParameters.hologramOpacity = 0.0f;
+            cameraParameters.cameraResolutionWidth = cameraResolution.width;
+            cameraParameters.cameraResolutionHeight = cameraResolution.height;
+            cameraParameters.pixelFormat = <a href="Windows.WebCam.CapturePixelFormat.BGRA32.html">CapturePixelFormat.BGRA32</a>;<br/><br/>            // Activate the camera
+            photoCaptureObject.StartPhotoModeAsync(cameraParameters, delegate(PhotoCapture.PhotoCaptureResult result) {
+                // Take a picture
+                photoCaptureObject.TakePhotoAsync(OnCapturedPhotoToMemory);
+            });
+        });
+    }<br/><br/>    void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, <a href="Windows.WebCam.PhotoCaptureFrame.html">PhotoCaptureFrame</a> photoCaptureFrame)
+    {
+        // Copy the raw image data into our target texture
+        photoCaptureFrame.UploadImageDataToTexture(targetTexture);<br/><br/>        // Create a gameobject that we can apply our texture to
+        <a href="GameObject.html">GameObject</a> quad = <a href="GameObject.CreatePrimitive.html">GameObject.CreatePrimitive</a>(<a href="PrimitiveType.Quad.html">PrimitiveType.Quad</a>);
+        <a href="Renderer.html">Renderer</a> quadRenderer = quad.GetComponent&lt;<a href="Renderer.html">Renderer</a>&gt;() as <a href="Renderer.html">Renderer</a>;
+        quadRenderer.material = new <a href="Material.html">Material</a>(<a href="Shader.Find.html">Shader.Find</a>("Unlit/<a href="Texture.html">Texture</a>"));<br/><br/>        quad.transform.parent = this.transform;
+        quad.transform.localPosition = new <a href="Vector3.html">Vector3</a>(0.0f, 0.0f, 3.0f);<br/><br/>        quadRenderer.material.SetTexture("_MainTex", targetTexture);<br/><br/>        // Deactivate our camera
+        photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);
+    }<br/><br/>    void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
+    {
+        // Shutdown our photo capture resource
+        photoCaptureObject.Dispose();
+        photoCaptureObject = null;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.SupportedResolutions.html">
+      SupportedResolutions
+     </a>
+    </td>
+    <td class="desc">
+     用于拍摄照片的所有受支持的设备分辨率列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.Dispose.html">
+      Dispose
+     </a>
+    </td>
+    <td class="desc">
+     必须调用 Dispose 来关闭 PhotoCapture 实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.GetUnsafePointerToVideoDeviceController.html">
+      GetUnsafePointerToVideoDeviceController
+     </a>
+    </td>
+    <td class="desc">
+     为原生 IVideoDeviceController 提供 COM 指针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.StartPhotoModeAsync.html">
+      StartPhotoModeAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步启动照片模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.StopPhotoModeAsync.html">
+      StopPhotoModeAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步停止照片模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.TakePhotoAsync.html">
+      TakePhotoAsync
+     </a>
+    </td>
+    <td class="desc">
+     使用网络摄像机异步捕捉照片并将照片存储在磁盘上。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.CreateAsync.html">
+      CreateAsync
+     </a>
+    </td>
+    <td class="desc">
+     异步创建可用于捕捉照片的 PhotoCapture 对象的实例。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.OnCapturedToDiskCallback.html">
+      OnCapturedToDiskCallback
+     </a>
+    </td>
+    <td class="desc">
+     在照片被保存到文件系统时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.OnCapturedToMemoryCallback.html">
+      OnCapturedToMemoryCallback
+     </a>
+    </td>
+    <td class="desc">
+     在照片被捕捉到内存中时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback.html">
+      OnCaptureResourceCreatedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在创建 PhotoCapture 资源时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.OnPhotoModeStartedCallback.html">
+      OnPhotoModeStartedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在照片模式启动时调用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Windows.WebCam.PhotoCapture.OnPhotoModeStoppedCallback.html">
+      OnPhotoModeStoppedCallback
+     </a>
+    </td>
+    <td class="desc">
+     在照片模式停止时调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

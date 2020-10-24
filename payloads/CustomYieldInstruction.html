@@ -1,0 +1,202 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CustomYieldInstruction
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   基类，用于暂停协同程序的自定义 yield 指令。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <a href="CustomYieldInstruction.html">
+    CustomYieldInstruction
+   </a>
+   可使您实现自定义 yield 指令，
+以暂停执行协同程序，直至发生事件为止。在后台，自定义 yield
+指令只是另一个正在运行的协同程序。要实现该指令，应继承
+   <a href="CustomYieldInstruction.html">
+    CustomYieldInstruction
+   </a>
+   类，然后重写
+   <a href="CustomYieldInstruction-keepWaiting.html">
+    keepWaiting
+   </a>
+   属性。要使
+协同程序保持暂停，则返回 /true/。要使协同程序继续执行，则返回
+/false/。在
+   <a href="MonoBehaviour.Update.html">
+    MonoBehaviour.Update
+   </a>
+   后以及
+   <a href="MonoBehaviour.LateUpdate.html">
+    MonoBehaviour.LateUpdate
+   </a>
+   前的每一帧均查询
+   <a href="CustomYieldInstruction-keepWaiting.html">
+    keepWaiting
+   </a>
+   属性。
+   <br/>
+   <br/>
+   该类要求 Unity 5.3 或更高版本。
+   <br/>
+   <br/>
+   要使协同程序保持暂停，则返回 /true/。要使协同程序继续执行，
+则返回 /false/。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Example showing how a <a href="CustomYieldInstruction.html">CustomYieldInstruction</a> script file
+// can be used.  This waits for the left button to go up and then
+// waits for the right button to go down.
+using System.Collections;
+using UnityEngine;<br/><br/>public class ExampleScript : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        if (<a href="Input.GetMouseButtonUp.html">Input.GetMouseButtonUp</a>(0))
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Left mouse button up");
+            StartCoroutine(waitForMouseDown());
+        }
+    }<br/><br/>    public IEnumerator waitForMouseDown()
+    {
+        yield return new WaitForMouseDown();
+        <a href="Debug.Log.html">Debug.Log</a>("Right mouse button pressed");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   以下脚本实现
+   <code class="varname">
+    keepWaiting
+   </code>
+   的可重写
+版本。此 c# 实现可由 JS 使用。
+在这种情况下，确保此 c# 脚本位于
+   <code class="varname">
+    Plugins
+   </code>
+   之类的文件夹中，以便使其在
+上述 JS 脚本示例之前加以编译。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>public class WaitForMouseDown : <a href="CustomYieldInstruction.html">CustomYieldInstruction</a>
+{
+    public override bool keepWaiting
+    {
+        get
+        {
+            return !<a href="Input.GetMouseButtonDown.html">Input.GetMouseButtonDown</a>(1);
+        }
+    }<br/><br/>    public WaitForMouseDown()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("Waiting for Mouse right button down");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System.Collections;
+using UnityEngine;
+using System;<br/><br/>// Implementation of <a href="WaitWhile.html">WaitWhile</a> yield instruction. This can be later used as:
+// yield return new <a href="WaitWhile.html">WaitWhile</a>(() =&gt; Princess.isInCastle);
+class WaitWhile1 : <a href="CustomYieldInstruction.html">CustomYieldInstruction</a>
+{
+    Func&lt;bool&gt; m_Predicate;<br/><br/>    public override bool keepWaiting { get { return m_Predicate(); } }<br/><br/>    public WaitWhile1(Func&lt;bool&gt; predicate) { m_Predicate = predicate; }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   为获得更多控制并实现更复杂的 yield 指令，您可以直接继承
+   <code class="mono">
+    System.Collections.IEnumerator
+   </code>
+   类。在这种情况下，按照您实现
+   <a href="CustomYieldInstruction-keepWaiting.html">
+    keepWaiting
+   </a>
+   属性的相同方式实现
+   <code class="mono">
+    MoveNext()
+   </code>
+   方法。此外，您还可以在
+   <code class="mono">
+    Current
+   </code>
+   属性中返回一个对象，在执行了
+   <code class="mono">
+    MoveNext()
+   </code>
+   方法后，Unity 的协同程序计划程序将处理该对象。因此，例如，如果
+   <code class="mono">
+    Current
+   </code>
+   返回了继承
+   <code class="mono">
+    IEnumerator
+   </code>
+   的另一个对象，则当前枚举器将暂停，直到返回的对象已完成为止。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System;
+using System.Collections;<br/><br/>// Same <a href="WaitWhile.html">WaitWhile</a> implemented by inheriting from IEnumerator.
+class WaitWhile2 : IEnumerator
+{
+    Func&lt;bool&gt; m_Predicate;<br/><br/>    public object Current { get { return null; } }<br/><br/>    public bool MoveNext() { return m_Predicate(); }<br/><br/>    public void Reset() {}<br/><br/>    public WaitWhile2(Func&lt;bool&gt; predicate) { m_Predicate = predicate; }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CustomYieldInstruction-keepWaiting.html">
+      keepWaiting
+     </a>
+    </td>
+    <td class="desc">
+     指示协同程序是否应保持暂停。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

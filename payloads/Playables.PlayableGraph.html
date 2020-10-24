@@ -1,0 +1,320 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PlayableGraph
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine.Playables
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用 PlayableGraph 可管理
+   <a href="Playables.Playable.html">
+    Playable
+   </a>
+   的创建和销毁。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   此外，PlayableGraph 也是指向不同系统的链接，这通过实现了
+   <a href="Playables.IPlayableOutput.html">
+    IPlayableOutput
+   </a>
+   （例如
+   <a href="Animations.AnimationPlayableOutput.html">
+    AnimationPlayableOutput
+   </a>
+   或
+   <a href="Audio.AudioPlayableOutput.html">
+    AudioPlayableOutput
+   </a>
+   ）的结构来完成。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Connect.html">
+      Connect
+     </a>
+    </td>
+    <td class="desc">
+     连接两个 Playable 实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Destroy.html">
+      Destroy
+     </a>
+    </td>
+    <td class="desc">
+     销毁图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.DestroyOutput.html">
+      DestroyOutput
+     </a>
+    </td>
+    <td class="desc">
+     销毁 PlayableOutput。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.DestroyPlayable.html">
+      DestroyPlayable
+     </a>
+    </td>
+    <td class="desc">
+     销毁可播放项。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.DestroySubgraph.html">
+      DestroySubgraph
+     </a>
+    </td>
+    <td class="desc">
+     以递归方式销毁 Playable 及其所有输入。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Disconnect.html">
+      Disconnect
+     </a>
+    </td>
+    <td class="desc">
+     断开 Playable 的连接。这些连接决定了 PlayableGraph 的拓扑及其评估方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Evaluate.html">
+      Evaluate
+     </a>
+    </td>
+    <td class="desc">
+     评估图中的所有 PlayableOutput，然后更新图中所有已连接的 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetEditorName.html">
+      GetEditorName
+     </a>
+    </td>
+    <td class="desc">
+     返回 PlayableGraph 的名称。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetOutput.html">
+      GetOutput
+     </a>
+    </td>
+    <td class="desc">
+     获取图中给定索引处的 PlayableOutput。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetOutputByType.html">
+      GetOutputByType
+     </a>
+    </td>
+    <td class="desc">
+     获取图中给定索引处请求类型的 PlayableOutput。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetOutputCount.html">
+      GetOutputCount
+     </a>
+    </td>
+    <td class="desc">
+     返回图中的 PlayableOutput 数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetOutputCountByType.html">
+      GetOutputCountByType
+     </a>
+    </td>
+    <td class="desc">
+     获取图中请求类型的 PlayableOutput 数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetPlayableCount.html">
+      GetPlayableCount
+     </a>
+    </td>
+    <td class="desc">
+     返回图所拥有的 Playable 数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetResolver.html">
+      GetResolver
+     </a>
+    </td>
+    <td class="desc">
+     返回图用于解析 ExposedReference 的表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetRootPlayable.html">
+      GetRootPlayable
+     </a>
+    </td>
+    <td class="desc">
+     返回给定索引处无任何输出连接的 Playable。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetRootPlayableCount.html">
+      GetRootPlayableCount
+     </a>
+    </td>
+    <td class="desc">
+     返回没有连接任何输出的图所拥有的 Playable 数量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.GetTimeUpdateMode.html">
+      GetTimeUpdateMode
+     </a>
+    </td>
+    <td class="desc">
+     返回播放时的时间递增方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.IsDone.html">
+      IsDone
+     </a>
+    </td>
+    <td class="desc">
+     指示图已完成操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.IsPlaying.html">
+      IsPlaying
+     </a>
+    </td>
+    <td class="desc">
+     指示图当前正在运行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果已使用 PlayableGraph.CreateGraph 正确构造 PlayableGraph 且未将其删除，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Play.html">
+      Play
+     </a>
+    </td>
+    <td class="desc">
+     播放图。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.SetResolver.html">
+      SetResolver
+     </a>
+    </td>
+    <td class="desc">
+     更改图用于解析 ExposedReference 的表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.SetTimeUpdateMode.html">
+      SetTimeUpdateMode
+     </a>
+    </td>
+    <td class="desc">
+     更改播放时的时间递增方式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Stop.html">
+      Stop
+     </a>
+    </td>
+    <td class="desc">
+     如果图正在播放，则将其停止。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Playables.PlayableGraph.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     创建 PlayableGraph。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

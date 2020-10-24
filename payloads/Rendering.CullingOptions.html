@@ -1,0 +1,157 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CullingOptions
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Rendering.ScriptableCullingParameters-cullingOptions.html">
+    ScriptableCullingParameters.cullingOptions
+   </a>
+   用来配置剔除操作的标志。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 将一些
+   <a href="Rendering.CullingOptions.html">
+    CullingOptions
+   </a>
+   标志设置为默认值，并根据从中获取
+   <a href="Rendering.ScriptableCullingParameters.html">
+    ScriptableCullingParameters
+   </a>
+   结构的
+   <a href="Camera.html">
+    Camera
+   </a>
+   的属性来设置其他标志。可在执行剔除操作之前覆盖这些值。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Rendering.ScriptableCullingParameters-cullingOptions.html">
+    ScriptableCullingParameters.cullingOptions
+   </a>
+   、
+   <a href="Rendering.ScriptableRenderContext.Cull.html">
+    ScriptableRenderContext.Cull
+   </a>
+   、
+   <a href="Camera.html">
+    Camera
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.None.html">
+      None
+     </a>
+    </td>
+    <td class="desc">
+     取消设置所有 CullingOptions 标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.ForceEvenIfCameraIsNotActive.html">
+      ForceEvenIfCameraIsNotActive
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，即使 Camera 未处于活动状态，Unity 也会执行剔除操作。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.OcclusionCull.html">
+      OcclusionCull
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将在剔除操作期间执行遮挡剔除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.NeedsLighting.html">
+      NeedsLighting
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将在剔除操作期间剔除光源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.NeedsReflectionProbes.html">
+      NeedsReflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将在剔除操作期间剔除反射探针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.Stereo.html">
+      Stereo
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将同时剔除双眼，以实现立体渲染。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.DisablePerObjectCulling.html">
+      DisablePerObjectCulling
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将不执行按对象剔除。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.CullingOptions.ShadowCasters.html">
+      ShadowCasters
+     </a>
+    </td>
+    <td class="desc">
+     如果设置了此标志，Unity 将在剔除操作期间剔除阴影投射物。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

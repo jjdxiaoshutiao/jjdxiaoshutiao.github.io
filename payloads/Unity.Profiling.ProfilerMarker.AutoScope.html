@@ -1,0 +1,82 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   AutoScope
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in Unity.Profiling
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   与
+   <a href="Unity.Profiling.ProfilerMarker.Auto.html">
+    ProfilerMarker.Auto
+   </a>
+   结合使用的 helper IDisposable 结构。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用
+   <a href="Unity.Profiling.ProfilerMarker.Auto.html">
+    ProfilerMarker.Auto
+   </a>
+   将要在
+   <em>
+    using
+   </em>
+   语句中分析的一段代码包裹起来。
+   <em>
+    AutoScope
+   </em>
+   的构造函数调用
+   <a href="Unity.Profiling.ProfilerMarker.Begin.html">
+    ProfilerMarker.Begin
+   </a>
+   和
+   <em>
+    Dispose
+   </em>
+   方法 -
+   <a href="Unity.Profiling.ProfilerMarker.Begin.html">
+    ProfilerMarker.Begin
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Profiling;<br/><br/>public class MySystemClass
+{
+    <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a> simulatePerfMarker = new <a href="Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a>("MySystem.Simulate");<br/><br/>    public void UpdateLogic()
+    {
+        using (simulatePerfMarker.Auto())
+        {
+            // ...
+        }
+    }
+}
+</pre>
+ </div>
+</div>

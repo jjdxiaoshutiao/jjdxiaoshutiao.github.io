@@ -1,0 +1,427 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Rect
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   由 X 和 Y 位置、宽度以及高度定义的 2D 矩形。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 使用了一些 2D 坐标空间，其中大部分将 X 定义为向右增加，而 Y 向上增加。
+ 一个例外是 GUI 和 GUILayout 类，其中 Y 向下增加。
+   <br/>
+   <br/>
+   以下示例在 GUI 空间中进行展示，其中 (0,0) 表示左上角，而 Y 向下增加。
+   <br/>
+   <br/>
+   矩形可以采用两种不同方式进行指定。第一种是使用
+   <a href="Rect-x.html">
+    x
+   </a>
+   和
+   <a href="Rect-y.html">
+    y
+   </a>
+   位置以及
+   <a href="Rect-width.html">
+    width
+   </a>
+   和
+   <a href="Rect-height.html">
+    height
+   </a>
+   ：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/RectXY.svg"/>
+   <br/>
+   <br/>
+   另一种方式是使用其每个边缘的 X 和 Y 坐标。这些坐标称为
+   <a href="Rect-xMin.html">
+    xMin
+   </a>
+   、
+   <a href="Rect-xMax.html">
+    xMax
+   </a>
+   、
+   <a href="Rect-yMin.html">
+    yMin
+   </a>
+   和
+   <a href="Rect-yMax.html">
+    yMax
+   </a>
+   ：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/RectXMinYMin.svg"/>
+   <br/>
+   <br/>
+   请注意，虽然
+   <code class="varname">
+    x
+   </code>
+   和
+   <code class="varname">
+    y
+   </code>
+   的值与
+   <code class="varname">
+    xMin
+   </code>
+   和
+   <code class="varname">
+    yMin
+   </code>
+   相同，但是它们在进行设置时具有不同的行为方式。设置
+   <code class="varname">
+    x
+   </code>
+   或
+   <code class="varname">
+    y
+   </code>
+   会改变矩形的位置，而大小不变：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/RectSetX.svg"/>
+   <br/>
+   <br/>
+   设置
+   <code class="varname">
+    yMin
+   </code>
+   、
+   <code class="varname">
+    yMin
+   </code>
+   、
+   <code class="varname">
+    yMin
+   </code>
+   和
+   <code class="varname">
+    yMax
+   </code>
+   中的任何值会调整矩形大小，但是相对边缘的位置保持不变：
+   <br/>
+   <br/>
+   <img src="../StaticFiles/ScriptRefImages/RectSetXMin.svg"/>
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="../Manual/gui-Basics.html">
+    GUI 脚本指南
+   </a>
+   、
+   <a href="Camera-rect.html">
+    Camera.rect
+   </a>
+   、
+   <a href="Camera-pixelRect.html">
+    Camera.pixelRect
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect-zero.html">
+      zero
+     </a>
+    </td>
+    <td class="desc">
+     用于编写 new Rect(0,0,0,0) 的简便方法。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     矩形中心的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-height.html">
+      height
+     </a>
+    </td>
+    <td class="desc">
+     矩形的高度（从 Y 位置进行测量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-max.html">
+      max
+     </a>
+    </td>
+    <td class="desc">
+     矩形最大角的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-min.html">
+      min
+     </a>
+    </td>
+    <td class="desc">
+     矩形最小角的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     矩形的 X 和 Y 位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     矩形的宽度和高度。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-width.html">
+      width
+     </a>
+    </td>
+    <td class="desc">
+     矩形的宽度（从 X 位置进行测量）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-x.html">
+      x
+     </a>
+    </td>
+    <td class="desc">
+     矩形的 X 坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-xMax.html">
+      xMax
+     </a>
+    </td>
+    <td class="desc">
+     矩形的最大 X 坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-xMin.html">
+      xMin
+     </a>
+    </td>
+    <td class="desc">
+     矩形的最小 X 坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-y.html">
+      y
+     </a>
+    </td>
+    <td class="desc">
+     矩形的 Y 坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-yMax.html">
+      yMax
+     </a>
+    </td>
+    <td class="desc">
+     矩形的最大 Y 坐标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect-yMin.html">
+      yMin
+     </a>
+    </td>
+    <td class="desc">
+     矩形的最小 Y 坐标。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect-ctor.html">
+      Rect
+     </a>
+    </td>
+    <td class="desc">
+     创建一个新的矩形。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect.Contains.html">
+      Contains
+     </a>
+    </td>
+    <td class="desc">
+     如果 point 的 x 和 y 分量是此矩形内部的点，则返回 true。如果 allowInverse 存在并且为 true，则允许 Rect 的宽度和高度取负值（即，最小值大于最大值），测试仍然有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect.Overlaps.html">
+      Overlaps
+     </a>
+    </td>
+    <td class="desc">
+     如果另一个矩形与此矩形重叠，则返回 true。如果 allowInverse 存在并且为 true，则允许 Rect 的宽度和高度取负值（即，最小值大于最大值），测试仍然有效。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect.Set.html">
+      Set
+     </a>
+    </td>
+    <td class="desc">
+     设置现有 Rect 的分量。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     对于此 Rect，返回整齐格式化的字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect.MinMaxRect.html">
+      MinMaxRect
+     </a>
+    </td>
+    <td class="desc">
+     通过最小/最大坐标值创建矩形。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect.NormalizedToPoint.html">
+      NormalizedToPoint
+     </a>
+    </td>
+    <td class="desc">
+     根据给定的标准化坐标，返回矩形内的点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rect.PointToNormalized.html">
+      PointToNormalized
+     </a>
+    </td>
+    <td class="desc">
+     返回与点对应的标准化坐标。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   运算符
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rect-operator_eq.html">
+      operator ==
+     </a>
+    </td>
+    <td class="desc">
+     如果矩形相同，则返回 true。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

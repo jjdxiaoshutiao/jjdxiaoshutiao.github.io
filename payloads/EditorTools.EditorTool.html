@@ -1,0 +1,374 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EditorTool
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.EditorTools
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="ScriptableObject.html">
+    ScriptableObject
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用此类可实现自定义编辑器工具。它是所有编辑器工具继承自的基类。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   将此类与
+   <a href="EditorTools.EditorToolAttribute.html">
+    EditorToolAttribute
+   </a>
+   结合使用可向编辑器注册自定义编辑器工具。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using System;
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.EditorTools;<br/><br/>// Tagging a class with the <a href="EditorTools.EditorTool.html">EditorTool</a> attribute and no target type registers a global tool. Global tools are valid for any selection, and are accessible through the top left toolbar in the editor.
+[<a href="EditorTools.EditorTool.html">EditorTool</a>("Platform <a href="Tool.html">Tool</a>")]
+class PlatformTool : <a href="EditorTools.EditorTool.html">EditorTool</a>
+{
+    // Serialize this value to set a default value in the Inspector.
+    [<a href="SerializeField.html">SerializeField</a>]
+    <a href="Texture2D.html">Texture2D</a> m_ToolIcon;<br/><br/>    <a href="GUIContent.html">GUIContent</a> m_IconContent;<br/><br/>    void OnEnable()
+    {
+        m_IconContent = new <a href="GUIContent.html">GUIContent</a>()
+        {
+            image = m_ToolIcon,
+            text = "Platform <a href="Tool.html">Tool</a>",
+            tooltip = "Platform <a href="Tool.html">Tool</a>"
+        };
+    }<br/><br/>    public override <a href="GUIContent.html">GUIContent</a> toolbarIcon
+    {
+        get { return m_IconContent; }
+    }<br/><br/>    // This is called for each window that your tool is active in. Put the functionality of your tool here.
+    public override void OnToolGUI(<a href="EditorWindow.html">EditorWindow</a> window)
+    {
+        <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();<br/><br/>        <a href="Vector3.html">Vector3</a> position = <a href="Tools-handlePosition.html">Tools.handlePosition</a>;<br/><br/>        using (new <a href="Handles.DrawingScope.html">Handles.DrawingScope</a>(<a href="Color-green.html">Color.green</a>))
+        {
+            position = <a href="Handles.Slider.html">Handles.Slider</a>(position, <a href="Vector3-right.html">Vector3.right</a>);
+        }<br/><br/>        if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+        {
+            <a href="Vector3.html">Vector3</a> delta = position - <a href="Tools-handlePosition.html">Tools.handlePosition</a>;<br/><br/>            <a href="Undo.RecordObjects.html">Undo.RecordObjects</a>(<a href="Selection-transforms.html">Selection.transforms</a>, "Move Platform");<br/><br/>            foreach (var transform in <a href="Selection-transforms.html">Selection.transforms</a>)
+                transform.position += delta;
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorTools.EditorTool-target.html">
+      target
+     </a>
+    </td>
+    <td class="desc">
+     所检查的对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorTools.EditorTool-targets.html">
+      targets
+     </a>
+    </td>
+    <td class="desc">
+     正在检查的对象的数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorTools.EditorTool-toolbarIcon.html">
+      toolbarIcon
+     </a>
+    </td>
+    <td class="desc">
+     用于自定义编辑器工具的图标和工具提示。如果此函数未实现，工具栏将显示用于目标类型的 Inspector 图标。如果未定义目标类型，工具栏将显示 Tool Mode 图标。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EditorTools.EditorTool.IsAvailable.html">
+      IsAvailable
+     </a>
+    </td>
+    <td class="desc">
+     根据编辑器状态检查自定义编辑器工具是否可用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EditorTools.EditorTool.OnToolGUI.html">
+      OnToolGUI
+     </a>
+    </td>
+    <td class="desc">
+     使用此方法可实现自定义编辑器工具。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.CreateInstance.html">
+       CreateInstance
+      </a>
+     </td>
+     <td class="desc">
+      创建脚本化对象的实例。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    消息
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.Awake.html">
+       Awake
+      </a>
+     </td>
+     <td class="desc">
+      当 ScriptableObject 脚本启动时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDestroy.html">
+       OnDestroy
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象将销毁时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnDisable.html">
+       OnDisable
+      </a>
+     </td>
+     <td class="desc">
+      当脚本化对象超出范围时调用此函数。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="ScriptableObject.OnEnable.html">
+       OnEnable
+      </a>
+     </td>
+     <td class="desc">
+      当对象加载时调用此函数。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

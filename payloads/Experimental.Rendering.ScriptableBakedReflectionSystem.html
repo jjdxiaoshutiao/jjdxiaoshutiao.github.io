@@ -1,0 +1,141 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <div class="message message-error mb20">
+   <b>
+    Experimental
+   </b>
+   : this API is experimental and might be changed or
+            removed in the future.
+  </div>
+  <h1 class="heading inherit">
+   ScriptableBakedReflectionSystem
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Experimental.Rendering
+  </p>
+  <br/>
+  <p class="cl mb0 left">
+   实现接口：
+   <a class="cl" href="Experimental.Rendering.IScriptableBakedReflectionSystem.html">
+    IScriptableBakedReflectionSystem
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Experimental.Rendering.IScriptableBakedReflectionSystem.html">
+    IScriptableBakedReflectionSystem
+   </a>
+   的空实现。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   将此类用作基类并重载其方法以实现您自己的 ScriptableBakedReflectionSystem。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem-stageCount.html">
+      stageCount
+     </a>
+    </td>
+    <td class="desc">
+     烘焙过程的阶段数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem-stateHashes.html">
+      stateHashes
+     </a>
+    </td>
+    <td class="desc">
+     ScriptableBakedReflectionSystem 当前烘焙状态的哈希。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem.BakeAllReflectionProbes.html">
+      BakeAllReflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     实现此方法可烘焙所有加载的反射探针。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem.Cancel.html">
+      Cancel
+     </a>
+    </td>
+    <td class="desc">
+     取消正在运行的烘焙作业。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     清除 ScriptableBakedReflectionSystem 的状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem.SynchronizeReflectionProbes.html">
+      SynchronizeReflectionProbes
+     </a>
+    </td>
+    <td class="desc">
+     将烘焙数据与实际组件和渲染设置同步。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.Rendering.ScriptableBakedReflectionSystem.Tick.html">
+      Tick
+     </a>
+    </td>
+    <td class="desc">
+     在编辑器更新过程中会调用此方法，直到 ScriptableBakedReflectionSystem 指示烘焙完成，即 handle.SetIsDone(true)。（请参阅 IScriptableBakedReflectionSystemStageNotifier.SetIsDone）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

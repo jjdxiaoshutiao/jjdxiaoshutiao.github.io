@@ -1,0 +1,183 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PathQueryStatus
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   位标识，表示
+   <a href="Experimental.AI.NavMeshQuery.html">
+    NavMeshQuery
+   </a>
+   操作的最终状态。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   主要值有
+   <code class="varname">
+    Failure
+   </code>
+   、
+   <code class="varname">
+    Failure
+   </code>
+   和
+   <code class="varname">
+    StatusDetailMask
+   </code>
+   。状态通常只设置其中一个主标志。在操作期间遇到特定问题时，将设置辅助标志（详细信息）。
+   <code class="varname">
+    StatusDetailMask
+   </code>
+   是位掩码，可用于过滤掉这些辅助标志。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   在某些情况下，由于存在某些详细信息标志而突出显示的问题可能涉及用户控制之外的内部结构，因此用户无法始终通过在代码中采取必要的操作来缓解这些问题。未来将提供处理这些情况的方法。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.Failure.html">
+      Failure
+     </a>
+    </td>
+    <td class="desc">
+     操作失败。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.Success.html">
+      Success
+     </a>
+    </td>
+    <td class="desc">
+     操作成功。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.InProgress.html">
+      InProgress
+     </a>
+    </td>
+    <td class="desc">
+     操作正在进行中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.StatusDetailMask.html">
+      StatusDetailMask
+     </a>
+    </td>
+    <td class="desc">
+     位掩码，针对 Failure、Failure 和 InProgress 位设置为 0，针对所有其他标志设置为 1。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.WrongMagic.html">
+      WrongMagic
+     </a>
+    </td>
+    <td class="desc">
+     无法识别和使用导航网格中的数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.WrongVersion.html">
+      WrongVersion
+     </a>
+    </td>
+    <td class="desc">
+     导航网格世界中的数据版本错误。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.OutOfMemory.html">
+      OutOfMemory
+     </a>
+    </td>
+    <td class="desc">
+     操作耗尽了内存。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.InvalidParam.html">
+      InvalidParam
+     </a>
+    </td>
+    <td class="desc">
+     参数不包含可用于执行导航网格查询的有效信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.BufferTooSmall.html">
+      BufferTooSmall
+     </a>
+    </td>
+    <td class="desc">
+     查询的节点缓冲区太小，无法存储所有结果。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.OutOfNodes.html">
+      OutOfNodes
+     </a>
+    </td>
+    <td class="desc">
+     查询在搜索期间耗尽了节点堆栈空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Experimental.AI.PathQueryStatus.PartialResult.html">
+      PartialResult
+     </a>
+    </td>
+    <td class="desc">
+     查询未到达终点，返回了最佳猜测。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

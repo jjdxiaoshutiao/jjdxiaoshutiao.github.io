@@ -1,0 +1,152 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   DynamicGI
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于控制动态全局光照。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅：
+   <a href="RendererExtensions.UpdateGIMaterials.html">
+    RendererExtensions.UpdateGIMaterials
+   </a>
+   、
+   <a href="TerrainExtensions.UpdateGIMaterials.html">
+    TerrainExtensions.UpdateGIMaterials
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI-indirectScale.html">
+      indirectScale
+     </a>
+    </td>
+    <td class="desc">
+     允许调整来自实时和烘焙光照贴图的贡献。注意：此值可以在 Lighting 窗口 UI 中设置并且已序列化，但此类中的其他属性不是这种情况。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI-isConverged.html">
+      isConverged
+     </a>
+    </td>
+    <td class="desc">
+     预计算的实时全局光照输出是否融合？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI-materialUpdateTimeSlice.html">
+      materialUpdateTimeSlice
+     </a>
+    </td>
+    <td class="desc">
+     可以在材质更新上花费的毫秒数。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI-synchronousMode.html">
+      synchronousMode
+     </a>
+    </td>
+    <td class="desc">
+     启用时，每个帧中均显示新的动态全局光照输出。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI-updateThreshold.html">
+      updateThreshold
+     </a>
+    </td>
+    <td class="desc">
+     阈值，用于限制实时 GI 的更新。测量单位是“强度变化百分比”。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI.SetEmissive.html">
+      SetEmissive
+     </a>
+    </td>
+    <td class="desc">
+     可实现快速为给定渲染器设置发光颜色，无需渲染整个系统的发光输入。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI.SetEnvironmentData.html">
+      SetEnvironmentData
+     </a>
+    </td>
+    <td class="desc">
+     允许在不更改天空盒材质的情况下重写实时 GI 的远处环境光照。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI.UpdateEnvironment.html">
+      UpdateEnvironment
+     </a>
+    </td>
+    <td class="desc">
+     安排更新此环境纹理。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="DynamicGI.UpdateMaterials.html">
+      UpdateMaterials
+     </a>
+    </td>
+    <td class="desc">
+     安排更新包含渲染器或地形的系统的反照率和发光纹理。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

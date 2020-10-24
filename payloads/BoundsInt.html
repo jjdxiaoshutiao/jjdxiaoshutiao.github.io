@@ -1,0 +1,253 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BoundsInt
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   struct in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   表示一个所有值均为整数的轴对齐的包围盒。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   轴对齐的包围盒（简称 AABB）是与坐标轴对齐并且完全包围
+某个对象的盒体。由于该盒体从不相对于这些轴旋转，因此可通过
+   <a href="BoundsInt-min.html">
+    min
+   </a>
+   和
+   <a href="BoundsInt-max.html">
+    max
+   </a>
+   点对它进行定义。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-allPositionsWithin.html">
+      allPositionsWithin
+     </a>
+    </td>
+    <td class="desc">
+     包含 BoundsInt 中所有位置的 BoundsInt.PositionCollection。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-center.html">
+      center
+     </a>
+    </td>
+    <td class="desc">
+     该包围盒的中心。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-max.html">
+      max
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最大点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-min.html">
+      min
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最小点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-position.html">
+      position
+     </a>
+    </td>
+    <td class="desc">
+     该包围盒的位置。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-size.html">
+      size
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的总大小。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-x.html">
+      x
+     </a>
+    </td>
+    <td class="desc">
+     该盒体最小点的 X 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-xMax.html">
+      xMax
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最大 x 点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-xMin.html">
+      xMin
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最小 x 点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-y.html">
+      y
+     </a>
+    </td>
+    <td class="desc">
+     该盒体最小点的 Y 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-yMax.html">
+      yMax
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最大 y 点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-yMin.html">
+      yMin
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最小 y 点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-z.html">
+      z
+     </a>
+    </td>
+    <td class="desc">
+     该盒体最小点的 Z 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-zMax.html">
+      zMax
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最大 z 点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt-zMin.html">
+      zMin
+     </a>
+    </td>
+    <td class="desc">
+     该盒体的最小 z 点。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt.ClampToBounds.html">
+      ClampToBounds
+     </a>
+    </td>
+    <td class="desc">
+     将该包围盒的位置和大小限制在给定边界。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt.Contains.html">
+      Contains
+     </a>
+    </td>
+    <td class="desc">
+     point 是否包含在该包围盒中？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt.SetMinMax.html">
+      SetMinMax
+     </a>
+    </td>
+    <td class="desc">
+     将这些边界设置为该盒体的 min 和 max 值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="BoundsInt.ToString.html">
+      ToString
+     </a>
+    </td>
+    <td class="desc">
+     对于这些边界，返回整齐格式化的字符串。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

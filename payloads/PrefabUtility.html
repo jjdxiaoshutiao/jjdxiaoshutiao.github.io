@@ -1,0 +1,667 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   PrefabUtility
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   可用于任何预制件相关操作的实用程序类。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// Create a folder (right click in the Assets directory, click <strong>Create</strong>&gt;<strong>New Folder</strong>)
+// and name it “<a href="Editor.html">Editor</a>” if one doesn’t exist already. Place this script in that folder.<br/><br/>// This script creates a new menu item <strong>Examples</strong>&gt;<strong>Create Prefab</strong> in the main menu.
+// Use it to create Prefab(s) from the selected <a href="GameObject.html">GameObject</a>(s).
+// It will be placed in the root <strong>Assets</strong> folder.<br/><br/>using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;<br/><br/>public class Example
+{
+    // Creates a new menu item 'Examples &gt; Create Prefab' in the main menu.
+    [<a href="MenuItem.html">MenuItem</a>("Examples/Create Prefab")]
+    static void CreatePrefab()
+    {
+        // Keep track of the currently selected <a href="GameObject.html">GameObject</a>(s)
+        <a href="GameObject.html">GameObject</a>[] objectArray = <a href="Selection-gameObjects.html">Selection.gameObjects</a>;<br/><br/>        // Loop through every <a href="GameObject.html">GameObject</a> in the array above
+        foreach (<a href="GameObject.html">GameObject</a> gameObject in objectArray)
+        {
+            // Set the path as within the Assets folder,
+            // and name it as the <a href="GameObject.html">GameObject</a>'s name with the .Prefab format
+            string localPath = "Assets/" + gameObject.name + ".prefab";<br/><br/>            // Make sure the file name is unique, in case an existing Prefab has the same name.
+            localPath = <a href="AssetDatabase.GenerateUniqueAssetPath.html">AssetDatabase.GenerateUniqueAssetPath</a>(localPath);<br/><br/>            // Create the new Prefab.
+            <a href="PrefabUtility.SaveAsPrefabAssetAndConnect.html">PrefabUtility.SaveAsPrefabAssetAndConnect</a>(gameObject, localPath, <a href="InteractionMode.UserAction.html">InteractionMode.UserAction</a>);
+        }
+    }<br/><br/>    // Disable the menu item if no selection is in place.
+    [<a href="MenuItem.html">MenuItem</a>("Examples/Create Prefab", true)]
+    static bool ValidateCreatePrefab()
+    {
+        return <a href="Selection-activeGameObject.html">Selection.activeGameObject</a> != null &amp;amp;&amp;amp; !<a href="EditorUtility.IsPersistent.html">EditorUtility.IsPersistent</a>(<a href="Selection-activeGameObject.html">Selection.activeGameObject</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility-prefabInstanceUpdated.html">
+      prefabInstanceUpdated
+     </a>
+    </td>
+    <td class="desc">
+     在场景中的预制件实例完成更新后调用。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyAddedComponent.html">
+      ApplyAddedComponent
+     </a>
+    </td>
+    <td class="desc">
+     将添加的组件应用于给定资源路径上的预制件资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyAddedGameObject.html">
+      ApplyAddedGameObject
+     </a>
+    </td>
+    <td class="desc">
+     将添加的游戏对象应用于给定资源路径上的预制件资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyObjectOverride.html">
+      ApplyObjectOverride
+     </a>
+    </td>
+    <td class="desc">
+     将预制件实例组件或游戏对象上的所有重载属性应用于给定资源路径上的预制件资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyPrefabInstance.html">
+      ApplyPrefabInstance
+     </a>
+    </td>
+    <td class="desc">
+     将预制件实例上的所有重载应用于其预制件资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyPropertyOverride.html">
+      ApplyPropertyOverride
+     </a>
+    </td>
+    <td class="desc">
+     将预制件实例上的单个重载属性应用于给定资源路径上的预制件资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.ApplyRemovedComponent.html">
+      ApplyRemovedComponent
+     </a>
+    </td>
+    <td class="desc">
+     从含有组件的预制件资源中，删除该组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetAddedComponents.html">
+      GetAddedComponents
+     </a>
+    </td>
+    <td class="desc">
+     返回 PrefabUtility.AddedComponent 对象的列表；这些对象包含预制件实例上添加的组件重载的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetAddedGameObjects.html">
+      GetAddedGameObjects
+     </a>
+    </td>
+    <td class="desc">
+     返回 PrefabUtility.AddedGameObject 对象的列表；这些对象包含预制件实例上添加的游戏对象的信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetCorrespondingObjectFromOriginalSource.html">
+      GetCorrespondingObjectFromOriginalSource
+     </a>
+    </td>
+    <td class="desc">
+     返回给定对象的原始对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetCorrespondingObjectFromSource.html">
+      GetCorrespondingObjectFromSource
+     </a>
+    </td>
+    <td class="desc">
+     返回 source 的相应资源对象，如果找不到，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetCorrespondingObjectFromSourceAtPath.html">
+      GetCorrespondingObjectFromSourceAtPath
+     </a>
+    </td>
+    <td class="desc">
+     从给定的预制件资源路径，返回给定对象的相应对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetIconForGameObject.html">
+      GetIconForGameObject
+     </a>
+    </td>
+    <td class="desc">
+     返回给定游戏对象的图标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetNearestPrefabInstanceRoot.html">
+      GetNearestPrefabInstanceRoot
+     </a>
+    </td>
+    <td class="desc">
+     返回游戏对象（它是对象所属的最近预制件实例的根）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetObjectOverrides.html">
+      GetObjectOverrides
+     </a>
+    </td>
+    <td class="desc">
+     返回对象的列表，其中包含预制件实例上对象重载的相关信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetOutermostPrefabInstanceRoot.html">
+      GetOutermostPrefabInstanceRoot
+     </a>
+    </td>
+    <td class="desc">
+     返回游戏对象（它是对象所属的最外层预制件实例的根）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot.html">
+      GetPrefabAssetPathOfNearestInstanceRoot
+     </a>
+    </td>
+    <td class="desc">
+     返回指定对象所属的最近预制件实例根的资源路径。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetPrefabAssetType.html">
+      GetPrefabAssetType
+     </a>
+    </td>
+    <td class="desc">
+     枚举值，指示预制件资源类型（例如常规预制件、模型预制件和预制件变体）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetPrefabInstanceHandle.html">
+      GetPrefabInstanceHandle
+     </a>
+    </td>
+    <td class="desc">
+     此函数将为提供的对象所属的最外层预制件实例提供 PrefabInstance 对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetPrefabInstanceStatus.html">
+      GetPrefabInstanceStatus
+     </a>
+    </td>
+    <td class="desc">
+     枚举值，其中包含有关预制件实例是否已正确连接到其资源的状态。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetPropertyModifications.html">
+      GetPropertyModifications
+     </a>
+    </td>
+    <td class="desc">
+     提取应用于预制件实例的所有修改（与父预制件相比）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.GetRemovedComponents.html">
+      GetRemovedComponents
+     </a>
+    </td>
+    <td class="desc">
+     返回对象的列表，其中包含预制件实例上已删除组件的相关信息。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.HasPrefabInstanceAnyOverrides.html">
+      HasPrefabInstanceAnyOverrides
+     </a>
+    </td>
+    <td class="desc">
+     如果给定预制件实例有任何重载，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.InstantiateAttachedAsset.html">
+      InstantiateAttachedAsset
+     </a>
+    </td>
+    <td class="desc">
+     将预制件所引用的资源实例化，并在预制件实例上使用该资源。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.InstantiatePrefab.html">
+      InstantiatePrefab
+     </a>
+    </td>
+    <td class="desc">
+     将给定场景中的给定预制件实例化。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsAddedComponentOverride.html">
+      IsAddedComponentOverride
+     </a>
+    </td>
+    <td class="desc">
+     是否将该组件作为重载添加到预制件实例？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsAddedGameObjectOverride.html">
+      IsAddedGameObjectOverride
+     </a>
+    </td>
+    <td class="desc">
+     是否将此游戏对象作为子代添加到预制件实例？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsAnyPrefabInstanceRoot.html">
+      IsAnyPrefabInstanceRoot
+     </a>
+    </td>
+    <td class="desc">
+     该游戏对象是任何预制件实例的根？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsDefaultOverride.html">
+      IsDefaultOverride
+     </a>
+    </td>
+    <td class="desc">
+     如果将给定修改视为默认重载，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsDisconnectedFromPrefabAsset.html">
+      IsDisconnectedFromPrefabAsset
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是缺失 PrefabInstance 对象的实例的一部分，但是给定对象具有有效的相应对象，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsOutermostPrefabInstanceRoot.html">
+      IsOutermostPrefabInstanceRoot
+     </a>
+    </td>
+    <td class="desc">
+     该游戏对象是预制件实例（不包括嵌套预制件）的根？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfAnyPrefab.html">
+      IsPartOfAnyPrefab
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是任何种类的预制件的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfImmutablePrefab.html">
+      IsPartOfImmutablePrefab
+     </a>
+    </td>
+    <td class="desc">
+     该对象是无法编辑的预制件的一部分？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfModelPrefab.html">
+      IsPartOfModelPrefab
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是模型预制件资源或模型预制件实例的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfNonAssetPrefabInstance.html">
+      IsPartOfNonAssetPrefabInstance
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是预制件实例的一部分而不是资源的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfPrefabAsset.html">
+      IsPartOfPrefabAsset
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是预制件资源的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfPrefabInstance.html">
+      IsPartOfPrefabInstance
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是预制件实例的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfPrefabThatCanBeAppliedTo.html">
+      IsPartOfPrefabThatCanBeAppliedTo
+     </a>
+    </td>
+    <td class="desc">
+     该对象是无法应用于的预制件的一部分？
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfRegularPrefab.html">
+      IsPartOfRegularPrefab
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是常规预制件资源或预制件实例的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPartOfVariantPrefab.html">
+      IsPartOfVariantPrefab
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是预制件变体资源或预制件变体实例的一部分，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.IsPrefabAssetMissing.html">
+      IsPrefabAssetMissing
+     </a>
+    </td>
+    <td class="desc">
+     如果给定对象是预制件实例的一部分，但是源资源缺失，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.LoadPrefabContents.html">
+      LoadPrefabContents
+     </a>
+    </td>
+    <td class="desc">
+     将给定路径上的预制件资源加载到孤立场景中，并返回预制件的根游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.LoadPrefabContentsIntoPreviewScene.html">
+      LoadPrefabContentsIntoPreviewScene
+     </a>
+    </td>
+    <td class="desc">
+     将给定路径上的预制件资源加载到给定预览场景中，并返回预制件的根游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RecordPrefabInstancePropertyModifications.html">
+      RecordPrefabInstancePropertyModifications
+     </a>
+    </td>
+    <td class="desc">
+     指示记录对预制件实例所做的修改。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertAddedComponent.html">
+      RevertAddedComponent
+     </a>
+    </td>
+    <td class="desc">
+     删除预制件实例上添加的此组件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertAddedGameObject.html">
+      RevertAddedGameObject
+     </a>
+    </td>
+    <td class="desc">
+     从预制件实例删除所添加的此游戏对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertObjectOverride.html">
+      RevertObjectOverride
+     </a>
+    </td>
+    <td class="desc">
+     还原预制件实例组件或游戏对象上的所有重载属性。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertPrefabInstance.html">
+      RevertPrefabInstance
+     </a>
+    </td>
+    <td class="desc">
+     还原预制件实例上的所有重载。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertPropertyOverride.html">
+      RevertPropertyOverride
+     </a>
+    </td>
+    <td class="desc">
+     还原预制件实例上的单属性重载。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.RevertRemovedComponent.html">
+      RevertRemovedComponent
+     </a>
+    </td>
+    <td class="desc">
+     将删除的该组件添加回预制件实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.SaveAsPrefabAsset.html">
+      SaveAsPrefabAsset
+     </a>
+    </td>
+    <td class="desc">
+     使用该函数，在给定路径上，从给定的游戏对象创建一个预制件资源（包括场景中的任何子项），而不修改输入对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.SaveAsPrefabAssetAndConnect.html">
+      SaveAsPrefabAssetAndConnect
+     </a>
+    </td>
+    <td class="desc">
+     使用该函数，在给定路径上，从给定的游戏对象创建一个预制件资源（包括场景中的任何子项），同时让给定游戏对象进入新预制件的实例。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.SavePrefabAsset.html">
+      SavePrefabAsset
+     </a>
+    </td>
+    <td class="desc">
+     使用此函数将内存中存在的现有预制件资源版本保存回磁盘。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.SetPropertyModifications.html">
+      SetPropertyModifications
+     </a>
+    </td>
+    <td class="desc">
+     指定应用于预制件实例的所有修改（与父预制件相比）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.UnloadPrefabContents.html">
+      UnloadPrefabContents
+     </a>
+    </td>
+    <td class="desc">
+     从内存中释放以前随 LoadPrefabContents 加载的预制件的内容。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.UnpackPrefabInstance.html">
+      UnpackPrefabInstance
+     </a>
+    </td>
+    <td class="desc">
+     将给定的预制件实例解压，以便将其替换为预制件资源的内容，同时保留所有重载值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.UnpackPrefabInstanceAndReturnNewOutermostRoots.html">
+      UnpackPrefabInstanceAndReturnNewOutermostRoots
+     </a>
+    </td>
+    <td class="desc">
+     此函数将使用 unpackMode 指定的行为，对给定的预制件实例进行解压缩。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   委托
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="PrefabUtility.PrefabInstanceUpdated.html">
+      PrefabInstanceUpdated
+     </a>
+    </td>
+    <td class="desc">
+     在场景中的预制件实例完成更新后所调用的方法的委托。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

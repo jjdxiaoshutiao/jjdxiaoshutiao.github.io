@@ -1,0 +1,148 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   XRNode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   可由 XR 输入或发送的触觉数据进行更新的 XR 节点的枚举。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   <strong>
+    注意：
+   </strong>
+   GameController、TrackingReference 和 HardwareTracker 类型被认为是非单一节点，因为每个类型可以有很多节点。因此，InputTracking.GetLocalPosition 和 InputTracking.GetLocalRotation 将无法使用这些值。请改用
+   <a href="XR.InputTracking.GetNodeStates.html">
+    InputTracking.GetNodeStates
+   </a>
+   。
+   <strong>
+    注意：
+   </strong>
+   只有具有有效触觉设备作为端点的 XR 节点才能被发送触觉数据。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.LeftEye.html">
+      LeftEye
+     </a>
+    </td>
+    <td class="desc">
+     表示左眼的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.RightEye.html">
+      RightEye
+     </a>
+    </td>
+    <td class="desc">
+     表示右眼的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.CenterEye.html">
+      CenterEye
+     </a>
+    </td>
+    <td class="desc">
+     表示左眼和右眼之间的点的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.Head.html">
+      Head
+     </a>
+    </td>
+    <td class="desc">
+     表示用户头部的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.LeftHand.html">
+      LeftHand
+     </a>
+    </td>
+    <td class="desc">
+     表示左手的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.RightHand.html">
+      RightHand
+     </a>
+    </td>
+    <td class="desc">
+     表示右手的节点。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.GameController.html">
+      GameController
+     </a>
+    </td>
+    <td class="desc">
+     表示与特定的手无关的跟踪游戏控制器。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.TrackingReference.html">
+      TrackingReference
+     </a>
+    </td>
+    <td class="desc">
+     表示可用作跟踪区域中的参考点的静止物理设备。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="XR.XRNode.HardwareTracker.html">
+      HardwareTracker
+     </a>
+    </td>
+    <td class="desc">
+     表示为自身附加的对象提供跟踪数据的物理设备。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

@@ -1,0 +1,229 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CustomSampler
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine.Profiling
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Profiling.Sampler.html">
+    Profiling.Sampler
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   用于分析任意代码块的自定义 CPU 性能分析器标签。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用 CustomSampler 测量脚本代码块的执行时间。生成的信息将显示在
+   <a href="../Manual/ProfilerCPU.html">
+    CPU 性能分析器
+   </a>
+   中，并且可以通过
+   <a href="Profiling.Recorder.html">
+    Recorder
+   </a>
+   捕获。\
+使用 CustomSampler 来分析代码比使用
+   <a href="Profiling.Profiler.BeginSample.html">
+    Profiler.BeginSample
+   </a>
+   更高效。这是因为与
+   <a href="Profiling.Profiler.BeginSample.html">
+    Profiler.BeginSample
+   </a>
+   相比，预先创建的 CustomSamplers 具有非常低的
+   <a href="Profiling.CustomSampler.Begin.html">
+    Begin
+   </a>
+   调用开销。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using UnityEngine.Profiling;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    <a href="Profiling.CustomSampler.html">CustomSampler</a> sampler;
+    void Start()
+    {
+        sampler = <a href="Profiling.CustomSampler.Create.html">CustomSampler.Create</a>("MyCustomSampler");
+    }<br/><br/>    void <a href="PlayerLoop.Update.html">Update</a>()
+    {
+        sampler.Begin();
+        // do something that takes a lot of time
+        sampler.End();
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   CustomSampler.Begin 是使用 ConditionalAttribute 按条件编译的。
+因此，在非开发版中部署时，它的开销为零。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Profiling.Sampler.html">
+    Sampler
+   </a>
+   、
+   <a href="Profiling.CustomSampler.Create.html">
+    CustomSampler.Create
+   </a>
+   、
+   <a href="Profiling.CustomSampler.Begin.html">
+    CustomSampler.Begin
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.CustomSampler.Begin.html">
+      Begin
+     </a>
+    </td>
+    <td class="desc">
+     开始使用由 CustomSampler 的此实例定义的自定义标签分析一段代码。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.CustomSampler.End.html">
+      End
+     </a>
+    </td>
+    <td class="desc">
+     使用自定义标签结束对一段代码的分析。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Profiling.CustomSampler.Create.html">
+      Create
+     </a>
+    </td>
+    <td class="desc">
+     创建一个用于分析代码的各个部分的新 CustomSampler。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Profiling.Sampler-isValid.html">
+       isValid
+      </a>
+     </td>
+     <td class="desc">
+      如果采样器有效，则返回 true。（只读）
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Profiling.Sampler-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      采样器名称。（只读）
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Profiling.Sampler.GetRecorder.html">
+       GetRecorder
+      </a>
+     </td>
+     <td class="desc">
+      返回与采样器关联的 Recorder。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Profiling.Sampler.Get.html">
+       Get
+      </a>
+     </td>
+     <td class="desc">
+      返回特定 CPU 性能分析器标签的 Sampler 对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Profiling.Sampler.GetNames.html">
+       GetNames
+      </a>
+     </td>
+     <td class="desc">
+      返回所有已注册性能分析器标签的数量和名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

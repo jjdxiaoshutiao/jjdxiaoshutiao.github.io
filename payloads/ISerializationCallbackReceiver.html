@@ -1,0 +1,114 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   ISerializationCallbackReceiver
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   interface in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在序列化和反序列化时接收回调的接口。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Unity 的序列化器能够序列化大多数（并非全部）数据类型。对于不支持的数据类型，Unity 提供了两个供您手动处理它们的回调函数，以便 Unity 能够序列化和反序列化这些数据类型。
+   <br/>
+   <br/>
+   使用这两个回调时需要注意，Unity 的序列化器运行在与大多数 Unity API 不同的线程上，因此，建议只处理数据类型操作，以尽可能减轻处理负担。
+   <br/>
+   <br/>
+   在任何类型的操作期间，都可能需要进行序列化。例如，使用 Instantiate() 克隆对象时，Unity 会对原始对象进行序列化和反序列化，以便查找对原始对象的内部引用，并将它们替换为对克隆对象的引用。在这种情况下，您也可以使用上述回调来更新任何使用了 Unity 无法序列化的类型的内部引用。
+   <br/>
+   <br/>
+   该回调接口仅用于类。不用于结构。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   <br/>
+   - 对于标记有 [SerializeReference]，并且引用带 [SerializeReference] 字段的托管实例的字段，回调的顺序未定义。这种情况下，请对主脚本对象使用回调。
+   <br/>
+   <br/>
+   <br/>
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System;
+using System.Collections.Generic;<br/><br/>public class SerializationCallbackScript : <a href="MonoBehaviour.html">MonoBehaviour</a>, <a href="ISerializationCallbackReceiver.html">ISerializationCallbackReceiver</a>
+{
+    public List&lt;int&gt; _keys = new List&lt;int&gt; { 3, 4, 5 };
+    public List&lt;string&gt; _values = new List&lt;string&gt; { "I", "Love", "Unity" };<br/><br/>    //Unity doesn't know how to serialize a Dictionary
+    public Dictionary&lt;int, string&gt;  _myDictionary = new Dictionary&lt;int, string&gt;();<br/><br/>    public void OnBeforeSerialize()
+    {
+        _keys.Clear();
+        _values.Clear();<br/><br/>        foreach (var kvp in _myDictionary)
+        {
+            _keys.Add(kvp.Key);
+            _values.Add(kvp.Value);
+        }
+    }<br/><br/>    public void OnAfterDeserialize()
+    {
+        _myDictionary = new Dictionary&lt;int, string&gt;();<br/><br/>        for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
+            _myDictionary.Add(_keys[i], _values[i]);
+    }<br/><br/>    void OnGUI()
+    {
+        foreach (var kvp in _myDictionary)
+            <a href="GUILayout.Label.html">GUILayout.Label</a>("Key: " + kvp.Key + " value: " + kvp.Value);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="ISerializationCallbackReceiver.OnAfterDeserialize.html">
+      OnAfterDeserialize
+     </a>
+    </td>
+    <td class="desc">
+     实现该方法，以便在 Unity 反序列化您的对象后接收回调。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="ISerializationCallbackReceiver.OnBeforeSerialize.html">
+      OnBeforeSerialize
+     </a>
+    </td>
+    <td class="desc">
+     实现该方法，以便在 Unity 序列化您的对象前接收回调。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

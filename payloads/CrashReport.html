@@ -1,0 +1,171 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   CrashReport
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   包含单个应用程序崩溃事件的数据，以及提供对所有已收集的崩溃报告的访问。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果使用适当的设置进行编译，Unity 将在您的应用程序崩溃时尝试收集有用信息，例如位置和线程堆栈跟踪。在下一次应用程序启动时，如果数据收集成功，则所有崩溃信息都可使用此 API 进行访问。
+   <br/>
+   <br/>
+   要启用崩溃报告生成，则在 iOS Player Settings 中，将“Script Call Optimization”选项设置为“Fast but no Exceptions”。在 Unity 中构建了您的 Xcode 项目后，打开该项目，然后编辑 trampoline 文件：Classes/CrashReporter.h。将 ENABLE_CUSTOM_CRASH_REPORTER 定义从 0 更改为 1。注意，iOS Player Settings 包含一个具有“Enable CrashReport API”的 Crash Reporting 设置。
+   <br/>
+   <br/>
+   注意：此 API 当前仅针对 iOS。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="CrashReport-reports.html">
+    CrashReport.reports
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;<br/><br/>
+// This example shows a list of crash reports (if available),
+// and allows you to output crash data to console, or
+// delete them.
+public class Crashes : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        var reports = <a href="CrashReport-reports.html">CrashReport.reports</a>;
+        <a href="GUILayout.Label.html">GUILayout.Label</a>("Crash reports:");
+        foreach (var r in reports)
+        {
+            <a href="GUILayout.BeginHorizontal.html">GUILayout.BeginHorizontal</a>();
+            <a href="GUILayout.Label.html">GUILayout.Label</a>("Crash: " + r.time);
+            if (<a href="GUILayout.Button.html">GUILayout.Button</a>("Log"))
+            {
+                <a href="Debug.Log.html">Debug.Log</a>(r.text);
+            }
+            if (<a href="GUILayout.Button.html">GUILayout.Button</a>("Remove"))
+            {
+                r.Remove();
+            }
+            <a href="GUILayout.EndHorizontal.html">GUILayout.EndHorizontal</a>();
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport-lastReport.html">
+      lastReport
+     </a>
+    </td>
+    <td class="desc">
+     返回上次崩溃报告，或者如果没有可用报告，则返回 null。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport-reports.html">
+      reports
+     </a>
+    </td>
+    <td class="desc">
+     在一个新的数组中返回所有当前可用的报告。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport-text.html">
+      text
+     </a>
+    </td>
+    <td class="desc">
+     格式化文本形式的崩溃报告数据。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport-time.html">
+      time
+     </a>
+    </td>
+    <td class="desc">
+     发生崩溃的时间。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport.Remove.html">
+      Remove
+     </a>
+    </td>
+    <td class="desc">
+     将报告从可用报告列表中移除。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="CrashReport.RemoveAll.html">
+      RemoveAll
+     </a>
+    </td>
+    <td class="desc">
+     将所有报告从可用报告列表中移除。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

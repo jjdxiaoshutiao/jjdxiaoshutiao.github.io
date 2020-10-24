@@ -1,0 +1,90 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderBufferStoreAction
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此枚举描述在 GPU 渲染到渲染目标中后应对渲染目标执行的操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当 GPU 渲染到渲染目标中后，此设置指定应对渲染结果执行的操作。如果存储操作为 DontCare，基于区块的 GPU 可以获得性能优势。例如，如果渲染帧后不再需要深度缓冲区内容，此设置可能非常有用。
+   <br/>
+   <br/>
+   请注意，并不是所有平台都有加载/存储操作，因此在运行时可能忽略此设置。通常，面向移动的图形 API（OpenGL ES、Metal）会利用这些设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferStoreAction.Store.html">
+      Store
+     </a>
+    </td>
+    <td class="desc">
+     需要存储到 RAM 中的 RenderBuffer 内容。如果表面启用了 MSAA，这会存储未解析表面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferStoreAction.Resolve.html">
+      Resolve
+     </a>
+    </td>
+    <td class="desc">
+     解析 (MSAA'd) 表面。目前只用于 RenderPass API。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferStoreAction.StoreAndResolve.html">
+      StoreAndResolve
+     </a>
+    </td>
+    <td class="desc">
+     解析 (MSAA'd) 表面，但也会存储多采样版本。目前只用于 RenderPass API。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferStoreAction.DontCare.html">
+      DontCare
+     </a>
+    </td>
+    <td class="desc">
+     不再需要 RenderBuffer 的内容，可以丢弃。基于区块的 GPU 将直接跳过写出表面内容，从而提供性能提升。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

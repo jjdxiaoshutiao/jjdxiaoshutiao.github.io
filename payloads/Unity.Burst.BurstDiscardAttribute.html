@@ -1,0 +1,59 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   BurstDiscardAttribute
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in Unity.Burst
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   BurstDiscard 属性允许您通过 Burst 编译器禁止将某个方法或属性编译到本机代码中。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   默认情况下，使用 Burst 编译的作业将编译将所有方法。在某些情况下，您可能会存在无法编译到本机（例如，确认有效性只在托管环境中有效或使用托管对象进行记录等）且不应在运行时执行的托管方法。在这种情况下，您可以通过 Burst 编译器使用此属性将某个方法或属性标记为不可编译。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;<br/><br/>public struct MyJob : <a href="Unity.Jobs.IJob.html">IJob</a>
+{
+    // ...<br/><br/>    [BurstDiscard]
+    public void NotExecutedInNative()
+    {
+        <a href="Debug.Log.html">Debug.Log</a>("This is a log from a managed job");
+    }<br/><br/>    public void Execute()
+    {
+        // The following method call will not be compiled
+        NotExecutedInNative();
+    }
+}
+</pre>
+ </div>
+</div>

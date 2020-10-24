@@ -1,0 +1,237 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Array
+  </h1>
+  <div class="clear">
+  </div>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   数组允许您在单个变量中存储多个对象。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Array 类仅在 Javascript 中可用。
+   <br/>
+   <br/>
+   以下是关于使用数组类能够执行哪些操作的基本示例：
+   <br/>
+   <br/>
+   在 Unity 中有两种类型的数组，即内置数组和常规的 Javascript 数组。
+内置数组（原生 .NET 数组）非常迅速高效，但无法调整大小。
+   <br/>
+   <br/>
+   它们属于静态类型，能够在检视面板中进行编辑。以下是关于如何使用内置数组的基本示例：
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+// example c# script showing how
+// an array can be implemented.
+using UnityEngine;
+using System.Collections;<br/><br/>public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    // Exposes an float array in the inspector, which you can edit there.
+    public float[] values;
+    void Start()
+    {
+        foreach (float value in values)
+        {
+            print(value);
+        }<br/><br/>        // Since we can't resize builtin arrays
+        // we have to recreate the array to resize it
+        values = new float[10];<br/><br/>        // assign the second element
+        values[1] = 5.0F;
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   内置数组在性能关键代码中十分有用（借助 Unity 的 javascript 和内置数组，您可以使用
+   <a href="Mesh.html">
+    mesh interface
+   </a>
+   在一秒内轻松处理 200 万个顶点。)
+   <br/>
+   <br/>
+   另一方面，常规的 Javascript 数组可以调整大小、排序，并且还可以执行您希望数组类能够执行的所有其他操作。
+Javascript 数组不会在检视面板中显示。
+   <strong>
+    注意：
+   </strong>
+   您可以轻松在 Javascript 数组和内置数组之间进行转换。
+   <br/>
+   <br/>
+   注意，按照 Unity 的命名惯例，Array 函数采用大写形式。
+为了方便 javascript 用户使用，Unity 还接受 Array 类的小写函数。
+   <br/>
+   <br/>
+   <strong>
+    注意：
+   </strong>
+   Unity 不支持“列表中的列表”或“数组中的数组”的序列化。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Array-length.html">
+      length
+     </a>
+    </td>
+    <td class="desc">
+     长度属性，可返回或设置 Array 中的元素数量。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Array-ctor.html">
+      Array
+     </a>
+    </td>
+    <td class="desc">
+     创建一个固定大小的数组。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Array.Add.html">
+      Add
+     </a>
+    </td>
+    <td class="desc">
+     将/值/添加到该数组的末尾。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     清空该数组。该数组的长度将为零。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Concat.html">
+      Concat
+     </a>
+    </td>
+    <td class="desc">
+     合并两个或多个数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Join.html">
+      Join
+     </a>
+    </td>
+    <td class="desc">
+     将数组的内容合并到一个字符串中。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Pop.html">
+      Pop
+     </a>
+    </td>
+    <td class="desc">
+     删除数组的最后一个元素并返回该数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Push.html">
+      Push
+     </a>
+    </td>
+    <td class="desc">
+     将/值/添加到该数组的末尾。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.RemoveAt.html">
+      RemoveAt
+     </a>
+    </td>
+    <td class="desc">
+     从数组中删除/索引/处的元素。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Shift.html">
+      Shift
+     </a>
+    </td>
+    <td class="desc">
+     删除数组的第一个元素并返回该数组。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Sort.html">
+      Sort
+     </a>
+    </td>
+    <td class="desc">
+     对所有数组元素进行排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Array.Unshift.html">
+      Unshift
+     </a>
+    </td>
+    <td class="desc">
+     Unshift 将一个或多个元素添加到数组的开头，并返回该数组的新长度。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

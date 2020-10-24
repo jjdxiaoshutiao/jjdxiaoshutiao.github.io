@@ -1,0 +1,106 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   OpaqueSortMode
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   <a href="Camera.html">
+    Camera
+   </a>
+   的不透明对象排序模式。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   不透明对象是按多种条件进行排序（排序层、着色器队列、
+材质、距离、光照贴图等），目的是最大程序地提高 CPU 效率（减少状态更改数
+并改进绘制调用批处理）和 GPU 效率
+（很多 GPU 首选粗略的从前到后渲染顺序，以便更快地剔除不可见
+表面）。
+   <br/>
+   <br/>
+   默认情况下，在使用这种方式有利的 GPU 上，不透明对象分组为
+粗略的从前到后存储桶。在某些 GPU 上，执行这种基于距离的
+排序没有实际帮助（最明显的就是 PowerVR/Apple GPU），因此在这些 GPU 上，
+不默认使用这种基于距离的排序。
+   <br/>
+   <br/>
+   使用
+   <a href="Camera-opaqueSortMode.html">
+    Camera.opaqueSortMode
+   </a>
+   属性可以重写此默认行为。
+例如，如果对 CPU 性能的要求远高于 GPU 性能，
+可能就不希望对不透明对象执行基于距离的排序。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Camera-opaqueSortMode.html">
+    Camera.opaqueSortMode
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OpaqueSortMode.Default.html">
+      Default
+     </a>
+    </td>
+    <td class="desc">
+     默认不透明对象排序模式。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OpaqueSortMode.FrontToBack.html">
+      FrontToBack
+     </a>
+    </td>
+    <td class="desc">
+     对不透明对象执行粗略的从前到后排序。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.OpaqueSortMode.NoDistanceSort.html">
+      NoDistanceSort
+     </a>
+    </td>
+    <td class="desc">
+     不按距离对不透明对象排序。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

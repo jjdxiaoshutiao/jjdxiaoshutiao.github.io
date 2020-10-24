@@ -1,0 +1,80 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderBufferLoadAction
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   此枚举描述在渲染目标激活（加载）时应对其执行的操作。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   当 GPU 开始渲染到渲染目标中时，此设置指定应对该表面的现有内容执行的操作。如果加载操作为 Clear 或 DontCare，基于区块的 GPU 可以获得性能优势。用户应尽可能避免使用 RenderBufferLoadAction.Load。
+   <br/>
+   <br/>
+   请注意，并不是所有平台都有加载/存储操作，因此在运行时可能忽略此设置。通常，面向移动的图形 API（OpenGL ES、Metal）会利用这些设置。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferLoadAction.Load.html">
+      Load
+     </a>
+    </td>
+    <td class="desc">
+     激活此 RenderBuffer 时，保留其现有内容。在基于区块的 GPU 上，此设置成本高昂，应尽可能避免使用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferLoadAction.Clear.html">
+      Clear
+     </a>
+    </td>
+    <td class="desc">
+     激活渲染缓冲区时清除其内容。目前只用于 RenderPass API。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RenderBufferLoadAction.DontCare.html">
+      DontCare
+     </a>
+    </td>
+    <td class="desc">
+     激活此 RenderBuffer 时，指示 GPU 不考虑该 RenderBuffer 的现有内容。在基于区块的 GPU 上，这意味着不需要将 RenderBuffer 内容加载到区块内存中，从而实现性能提升。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

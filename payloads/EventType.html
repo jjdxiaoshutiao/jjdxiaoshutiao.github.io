@@ -1,0 +1,273 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   EventType
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   UnityGUI 输入和处理事件的类型。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   使用它来辨别在 GUI 中发生了哪种类型的事件。Events 类型包括鼠标点击、鼠标拖动、按下按钮、鼠标进入或退出窗口、滚轮以及以下提到的其他类型。
+   <br/>
+   <br/>
+   另请参阅：
+   <a href="Event-type.html">
+    Event.type
+   </a>
+   、
+   <a href="Event.html">
+    Event
+   </a>
+   、
+   <a href="../Manual/GUIScriptingGuide.html">
+    GUI Scripting Guide
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+//Attach this script to a <a href="GameObject.html">GameObject</a>
+//This script is a basic overview of some of the <a href="Event.html">Event</a> Types available. It outputs messages depending on the current <a href="Event.html">Event</a> Type.<br/><br/>using UnityEngine;<br/><br/>public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void OnGUI()
+    {
+        <a href="Event.html">Event</a> m_Event = <a href="Event-current.html">Event.current</a>;<br/><br/>        if (m_Event.type == <a href="EventType.MouseDown.html">EventType.MouseDown</a>)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Mouse Down.");
+        }<br/><br/>        if (m_Event.type == <a href="EventType.MouseDrag.html">EventType.MouseDrag</a>)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Mouse Dragged.");
+        }<br/><br/>        if (m_Event.type == <a href="EventType.MouseUp.html">EventType.MouseUp</a>)
+        {
+            <a href="Debug.Log.html">Debug.Log</a>("Mouse Up.");
+        }
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseDown.html">
+      MouseDown
+     </a>
+    </td>
+    <td class="desc">
+     按下了鼠标键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseUp.html">
+      MouseUp
+     </a>
+    </td>
+    <td class="desc">
+     释放了鼠标键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseMove.html">
+      MouseMove
+     </a>
+    </td>
+    <td class="desc">
+     移动了鼠标（仅限 Editor 视图）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseDrag.html">
+      MouseDrag
+     </a>
+    </td>
+    <td class="desc">
+     拖动了鼠标。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.KeyDown.html">
+      KeyDown
+     </a>
+    </td>
+    <td class="desc">
+     按下了一个键盘键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.KeyUp.html">
+      KeyUp
+     </a>
+    </td>
+    <td class="desc">
+     释放了一个键盘键。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.ScrollWheel.html">
+      ScrollWheel
+     </a>
+    </td>
+    <td class="desc">
+     移动了滚轮。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.Repaint.html">
+      Repaint
+     </a>
+    </td>
+    <td class="desc">
+     重绘事件。每一帧都发送一个。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.Layout.html">
+      Layout
+     </a>
+    </td>
+    <td class="desc">
+     布局事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.DragUpdated.html">
+      DragUpdated
+     </a>
+    </td>
+    <td class="desc">
+     仅限 Editor：拖放操作已更新。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.DragPerform.html">
+      DragPerform
+     </a>
+    </td>
+    <td class="desc">
+     仅限 Editor：拖放操作已执行。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.DragExited.html">
+      DragExited
+     </a>
+    </td>
+    <td class="desc">
+     仅限 Editor：拖放操作已退出。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.Ignore.html">
+      Ignore
+     </a>
+    </td>
+    <td class="desc">
+     应忽略 Event。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.Used.html">
+      Used
+     </a>
+    </td>
+    <td class="desc">
+     已经处理了事件。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.ValidateCommand.html">
+      ValidateCommand
+     </a>
+    </td>
+    <td class="desc">
+     验证特殊命令（例如复制和粘贴）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.ExecuteCommand.html">
+      ExecuteCommand
+     </a>
+    </td>
+    <td class="desc">
+     执行特殊命令（例如复制和粘贴）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.ContextClick.html">
+      ContextClick
+     </a>
+    </td>
+    <td class="desc">
+     用户已点击了右键（或者在 Mac 上点击了 Control）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseEnterWindow.html">
+      MouseEnterWindow
+     </a>
+    </td>
+    <td class="desc">
+     鼠标进入了某个窗口（仅限 Editor 视图）。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="EventType.MouseLeaveWindow.html">
+      MouseLeaveWindow
+     </a>
+    </td>
+    <td class="desc">
+     鼠标离开了某个窗口（仅限 Editor 视图）。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

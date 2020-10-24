@@ -1,0 +1,140 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   WaitForSecondsRealtime
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEngine
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="CustomYieldInstruction.html">
+    CustomYieldInstruction
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   使用未缩放时间将协同程序执行暂停指定的秒数。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   如果要使用缩放时间进行等待，请参阅
+   <a href="WaitForSeconds.html">
+    WaitForSeconds
+   </a>
+   。\
+在协程中，WaitForSecondsRealtime 只能与
+   <code class="varname">
+    yield
+   </code>
+   语句结合使用。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using UnityEngine;
+using System.Collections;<br/><br/>public class WaitForSecondsExample : <a href="MonoBehaviour.html">MonoBehaviour</a>
+{
+    void Start()
+    {
+        StartCoroutine(Example());
+    }<br/><br/>    IEnumerator Example()
+    {
+        print(<a href="Time-time.html">Time.time</a>);
+        yield return new <a href="WaitForSecondsRealtime.html">WaitForSecondsRealtime</a>(5);
+        print(<a href="Time-time.html">Time.time</a>);
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <p>
+   另请参阅
+   <a href="MonoBehaviour.StartCoroutine.html">
+    MonoBehaviour.StartCoroutine
+   </a>
+   。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WaitForSecondsRealtime-waitTime.html">
+      waitTime
+     </a>
+    </td>
+    <td class="desc">
+     yield 指令等待的给定秒数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="WaitForSecondsRealtime-ctor.html">
+      WaitForSecondsRealtime
+     </a>
+    </td>
+    <td class="desc">
+     创建一个 yield 指令，以使用未缩放时间等待指定的秒数。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="CustomYieldInstruction-keepWaiting.html">
+       keepWaiting
+      </a>
+     </td>
+     <td class="desc">
+      指示协同程序是否应保持暂停。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

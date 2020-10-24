@@ -1,0 +1,402 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   Preset
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   class in UnityEditor.Presets
+  </p>
+  <p class="cl mb0 left mr10">
+   /
+  </p>
+  <p class="cl mb0 left">
+   继承自：
+   <a class="cl" href="Object.html">
+    Object
+   </a>
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   一个预设包含一个对象的默认值。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   Preset 类包含创建对象时所用的对象类型以及含此对象的每个已序列化属性/值对的列表。
+此类可用于在 Editor 中存储任何已序列化对象的信息，并可将这些信息重新应用到此对象或同类型的其他任何对象。
+此外，还可以使用 .preset 扩展名将预设另存为资源。
+  </p>
+ </div>
+ <div class="subsection">
+  <pre class="codeExampleCS">
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Presets;
+using UnityEngine;<br/><br/>public static class PresetUsageExample
+{
+    // This method uses a <a href="Presets.Preset.html">Preset</a> to copy the serialized values from the source to the target and return true if the copy succeed.
+    public static bool CopyObjectSerialization(Object source, Object target)
+    {
+        <a href="Presets.Preset.html">Preset</a> preset = new <a href="Presets.Preset.html">Preset</a>(source);
+        return preset.ApplyTo(target);
+    }<br/><br/>    // This method creates a <a href="Presets.Preset.html">Preset</a> from a given Object and save it as an asset in the project.
+    public static void CreatePresetAsset(Object source, string name)
+    {
+        <a href="Presets.Preset.html">Preset</a> preset = new <a href="Presets.Preset.html">Preset</a>(source);
+        <a href="AssetDatabase.CreateAsset.html">AssetDatabase.CreateAsset</a>(preset, "Assets/" + name + ".preset");
+    }
+}
+</pre>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.PropertyModifications.html">
+      PropertyModifications
+     </a>
+    </td>
+    <td class="desc">
+     返回此预设所拥有的 PropertyModification 数组的副本。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   构造函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset-ctor.html">
+      Preset
+     </a>
+    </td>
+    <td class="desc">
+     从给定的对象中构造新的预设。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   公共函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.ApplyTo.html">
+      ApplyTo
+     </a>
+    </td>
+    <td class="desc">
+     将此预设应用到目标对象。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.CanBeAppliedTo.html">
+      CanBeAppliedTo
+     </a>
+    </td>
+    <td class="desc">
+     如果此预设可应用到目标对象，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.DataEquals.html">
+      DataEquals
+     </a>
+    </td>
+    <td class="desc">
+     确定目标对象是否具有与预设相同的序列化值。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.GetPresetType.html">
+      GetPresetType
+     </a>
+    </td>
+    <td class="desc">
+     返回预设的 PresetType。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.GetTargetFullTypeName.html">
+      GetTargetFullTypeName
+     </a>
+    </td>
+    <td class="desc">
+     返回此预设目标完整类型的可读字符串，包括命名空间。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.GetTargetTypeName.html">
+      GetTargetTypeName
+     </a>
+    </td>
+    <td class="desc">
+     返回此预设目标类型的可读字符串。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.IsValid.html">
+      IsValid
+     </a>
+    </td>
+    <td class="desc">
+     如果此预设的预设类型有效，则返回 true。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.UpdateProperties.html">
+      UpdateProperties
+     </a>
+    </td>
+    <td class="desc">
+     使用给定对象的值来更新此预设的属性。给定对象的类型必须与此预设的类型相匹配。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   静态函数
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.GetDefaultPresetsForObject.html">
+      GetDefaultPresetsForObject
+     </a>
+    </td>
+    <td class="desc">
+     获取在应用于目标时设置默认值的预设的有序列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.GetDefaultPresetsForType.html">
+      GetDefaultPresetsForType
+     </a>
+    </td>
+    <td class="desc">
+     获取基于指定 PresetType 的 DefaultPreset 的有序列表。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.RemoveFromDefault.html">
+      RemoveFromDefault
+     </a>
+    </td>
+    <td class="desc">
+     删除项目中具有默认值的预设。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Presets.Preset.SetDefaultPresetsForType.html">
+      SetDefaultPresetsForType
+     </a>
+    </td>
+    <td class="desc">
+     使用特定 PresetType 的过滤器设置默认预设列表。
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="subsection">
+  <h2>
+   继承的成员
+  </h2>
+  <div class="subsection">
+   <h2>
+    变量
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-hideFlags.html">
+       hideFlags
+      </a>
+     </td>
+     <td class="desc">
+      该对象应该隐藏、随场景一起保存还是由用户修改？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-name.html">
+       name
+      </a>
+     </td>
+     <td class="desc">
+      对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    公共函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.GetInstanceID.html">
+       GetInstanceID
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的实例 ID。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.ToString.html">
+       ToString
+      </a>
+     </td>
+     <td class="desc">
+      返回对象的名称。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    静态函数
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object.Destroy.html">
+       Destroy
+      </a>
+     </td>
+     <td class="desc">
+      移除 GameObject、组件或资源。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DestroyImmediate.html">
+       DestroyImmediate
+      </a>
+     </td>
+     <td class="desc">
+      立即销毁对象 /obj/。强烈建议您改用 Destroy。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.DontDestroyOnLoad.html">
+       DontDestroyOnLoad
+      </a>
+     </td>
+     <td class="desc">
+      在加载新的 Scene 时，请勿销毁 Object。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectOfType.html">
+       FindObjectOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回第一个类型为 type 的已加载的激活对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.FindObjectsOfType.html">
+       FindObjectsOfType
+      </a>
+     </td>
+     <td class="desc">
+      返回所有类型为 type 的已加载的激活对象的列表。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object.Instantiate.html">
+       Instantiate
+      </a>
+     </td>
+     <td class="desc">
+      克隆 original 对象并返回克隆对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="subsection">
+   <h2>
+    运算符
+   </h2>
+   <table class="list">
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_Object.html">
+       bool
+      </a>
+     </td>
+     <td class="desc">
+      该对象是否存在？
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_ne.html">
+       operator !=
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象是否引用不同的对象。
+     </td>
+    </tr>
+    <tr>
+     <td class="lbl">
+      <a href="Object-operator_eq.html">
+       operator ==
+      </a>
+     </td>
+     <td class="desc">
+      比较两个对象引用，判断它们是否引用同一个对象。
+     </td>
+    </tr>
+   </table>
+  </div>
+ </div>
+</div>

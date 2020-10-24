@@ -1,0 +1,104 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RealtimeGICPUUsage
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   在运行时为最终光照计算分配多少 CPU 使用率。
+  </p>
+ </div>
+ <div class="subsection">
+  <p>
+   在 Player 中为 Realtime Global Illumination 光照计算创建的 CPU 工作线程数。增加此值会加快系统对光照更改的反应速度，成本是使用更多 CPU 时间。CPU Usage 值越高，为解决 Realtime GI 创建的工作线程就越多。\
+\
+   <strong>
+    请注意
+   </strong>
+   有些平台允许工作线程占用所有 CPU，而有些平台有最大限制：\
+   <strong>
+    Xbox One：
+   </strong>
+   4 个 CPU 内核。\
+   <strong>
+    PS4：
+   </strong>
+   4 个 CPU 内核。\
+   <strong>
+    Android：
+   </strong>
+   如果设备为 bigLittle 架构，将只使用小 CPU，否则为 CPU 数 - 1。\
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RealtimeGICPUUsage.Low.html">
+      Low
+     </a>
+    </td>
+    <td class="desc">
+     将可用 CPU 线程的 25% 用作工作线程
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RealtimeGICPUUsage.Medium.html">
+      Medium
+     </a>
+    </td>
+    <td class="desc">
+     将可用 CPU 线程的 50% 用作工作线程
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RealtimeGICPUUsage.High.html">
+      High
+     </a>
+    </td>
+    <td class="desc">
+     将可用 CPU 线程的 75% 用作工作线程。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="Rendering.RealtimeGICPUUsage.Unlimited.html">
+      Unlimited
+     </a>
+    </td>
+    <td class="desc">
+     将可用 CPU 线程的 100% 用作工作线程
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>

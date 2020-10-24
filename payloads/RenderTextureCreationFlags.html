@@ -1,0 +1,146 @@
+<div class="section">
+ <div class="mb20 clear" id="">
+  <h1 class="heading inherit">
+   RenderTextureCreationFlags
+  </h1>
+  <div class="clear">
+  </div>
+  <p class="cl mb0 left mr10">
+   enumeration
+  </p>
+  <div class="clear">
+  </div>
+  <a class="switch-link gray-btn sbtn left hide" href="">
+   切换到手册
+  </a>
+  <div class="clear">
+  </div>
+ </div>
+ <div class="subsection">
+  <div class="signature">
+   <div class="signature-CS sig-block">
+    <span style="color:red;">
+    </span>
+   </div>
+  </div>
+ </div>
+ <div class="subsection">
+  <h2>
+   描述
+  </h2>
+  <p>
+   标志设置，这些标志控制新创建的 RenderTexture 的状态。
+  </p>
+ </div>
+ <div class="subsection">
+  <h2>
+   变量
+  </h2>
+  <table class="list">
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.MipMap.html">
+      MipMap
+     </a>
+    </td>
+    <td class="desc">
+     设置此标志可在 RenderTexture 中分配多级渐进纹理。有关更多详细信息，请参阅 RenderTexture.useMipMap。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.AutoGenerateMips.html">
+      AutoGenerateMips
+     </a>
+    </td>
+    <td class="desc">
+     确定当 RenderTexture 发生修改时是否自动生成多级渐进纹理。
+此标志是默认设置的，未同时设置 RenderTextureCreationFlags.MipMap 标志时将不起作用。
+有关更多详细信息，请参阅 RenderTexture.autoGenerateMips。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.SRGB.html">
+      SRGB
+     </a>
+    </td>
+    <td class="desc">
+     如果设置此标志，对此纹理的读写将转换到 SRGB 颜色空间。有关更多详细信息，请参阅 RenderTexture.sRGB。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.EyeTexture.html">
+      EyeTexture
+     </a>
+    </td>
+    <td class="desc">
+     当纹理用作 VR 眼睛纹理时，使用此标志。此标志默认已清除。当从 GetDefaultVREyeTextureDesc 或其他返回 RenderTextureDesc 的 VR 函数返回 RenderTextureDesc 时，对 RenderTextureDesc 设置此标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.EnableRandomWrite.html">
+      EnableRandomWrite
+     </a>
+    </td>
+    <td class="desc">
+     设置此标志可启用从着色器对 RenderTexture 的随机访问写入。
+正常情况下，像素着色器只对给定的像素操作。没有此标志，计算着色器不能写入纹理。随机写入允许着色器写入 RenderTexture 的任意位置。有关更多详细信息（包括支持的平台），请参阅 RenderTexture.enableRandomWrite。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.CreatedFromScript.html">
+      CreatedFromScript
+     </a>
+    </td>
+    <td class="desc">
+     从脚本创建 RenderTexture 时，始终在内部设置此标志。从脚本代码手动设置时，此标志将不起作用。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.AllowVerticalFlip.html">
+      AllowVerticalFlip
+     </a>
+    </td>
+    <td class="desc">
+     当 RenderTexture 是 VR 眼睛纹理并且设备不支持显示时自动翻转纹理时，清除此标志。这是特定于平台的属性，
+该属性是默认设置的。仅当从 GetDefaultVREyeTextureDesc 或其他返回 RenderTextureDesc 的 VR 函数返回部分 RenderTextureDesc 时，才清除此标志。目前，只有 Hololens 眼睛纹理需要清除此标志。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.NoResolvedColorSurface.html">
+      NoResolvedColorSurface
+     </a>
+    </td>
+    <td class="desc">
+     如果设置此标志，引擎将不会自动解析颜色表面。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.DynamicallyScalable.html">
+      DynamicallyScalable
+     </a>
+    </td>
+    <td class="desc">
+     如果目标平台/图形 API 支持动态分辨率，设置此标志以标记 RenderTexture 支持动态分辨率。有关更多详细信息，请参阅 ScalabeBufferManager。
+    </td>
+   </tr>
+   <tr>
+    <td class="lbl">
+     <a href="RenderTextureCreationFlags.BindMS.html">
+      BindMS
+     </a>
+    </td>
+    <td class="desc">
+     设置此标志会使 RenderTexture 绑定为着色器中的多重采样纹理。当 RenderTexture.antiAliasing 大于 1 时，该标志会阻止 RenderTexture 被默认解析。
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>
